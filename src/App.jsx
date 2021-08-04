@@ -18,7 +18,7 @@ import Meet from "./containers/Meet";
 
 function App() {
   return (
-    <Container fluid style={{ minHeight: "200vh", padding: "0" }}>
+    <Container fluid style={{ minHeight: "100vh" }}>
       <Router>
         <NavBar /> {/* Always dispaly it at the top */}
         <Switch>
