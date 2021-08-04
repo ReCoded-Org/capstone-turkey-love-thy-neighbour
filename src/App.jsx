@@ -1,8 +1,14 @@
+// react
+import React from "react";
+
+// react-bootstrap
+import { Container } from "react-bootstrap";
+
 function App() {
   return (
-    <div className="App">
-      <p>This project has officially begun folks!!</p>
-    </div>
+    <Container fluid style={{ padding: "0", minHeight: "100vh" }}>
+      <p>This project has officially begun folks!</p>
+    </Container>
   );
 }
 
