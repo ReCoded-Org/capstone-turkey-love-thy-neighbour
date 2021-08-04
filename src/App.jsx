@@ -18,6 +18,7 @@ import Users from "./containers/Users";
 import Meet from "./containers/Meet";
 import ContactUs from "./containers/ContactUs";
 import OurTeam from "./containers/OurTeam";
+import FAQ from "./containers/FAQ";
 
 function App() {
   return (
@@ -45,7 +46,7 @@ function App() {
             <ContactUs />
           </Route>
           <Route path="/faq">
-            <p>FAQ</p>
+            <FAQ />
           </Route>
         </Switch>
         <Footer />
