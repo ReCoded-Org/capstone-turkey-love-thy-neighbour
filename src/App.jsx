@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // components
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./containers/Home";
+import Profile from "./containers/Profile";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/profile">
-            <p>Profile</p>
+            <Profile />
           </Route>
           <Route path="/users">
             <p>Users</p>
