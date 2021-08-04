@@ -11,6 +11,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./containers/Home";
 import Profile from "./containers/Profile";
+import Users from "./containers/Users";
+import Meet from "./containers/Meet";
 
 function App() {
   return (
@@ -25,10 +27,10 @@ function App() {
             <Profile />
           </Route>
           <Route path="/users">
-            <p>Users</p>
+            <Users />
           </Route>
           <Route path="/meet">
-            <p>Meet</p>
+            <Meet />
           </Route>
           <Route path="/signin">
             <p>Sign In</p>
