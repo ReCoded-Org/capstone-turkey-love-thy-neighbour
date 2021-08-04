@@ -8,9 +8,11 @@ import Navbar from "react-bootstrap/Navbar";
 // react-router-dom
 import { Link } from "react-router-dom";
 
+import "./NavBar.scss";
+
 function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" variant="dark">
       <Container>
         <Link to="/home" className="navbar-brand">
           Logo
