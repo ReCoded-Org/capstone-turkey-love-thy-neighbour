@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 // utils
 import Logo from "../../utils/logo.svg";
 
-import "./NavBar.scss";
+import "./index.scss";
 
 function NavBar() {
   return (
