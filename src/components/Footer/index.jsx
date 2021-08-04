@@ -18,20 +18,34 @@ function Footer() {
   return (
     <Container fluid className="footer-container-fluid">
       <Container>
-        <Row className="footer-container d-flex  justify-content-between align-items-center">
-          <Col xs={12} sm={12} md={4}>
-            <Link to="/our-team" className="ms-sm-auto ms-xs-auto">
-              Our Team
-            </Link>
+        <Row className="footer-container d-flex justify-content-between align-items-center">
+          <Col
+            xs={12}
+            sm={12}
+            md={4}
+            className="text-md-start text-sm-center text-center"
+          >
+            <Link to="/our-team">Our Team</Link>
             <Link to="/contact-us" style={{ margin: "0 16px" }}>
               Contact Us
             </Link>
             <Link to="/faq">FAQ</Link>
           </Col>
-          <Col xs={12} sm={12} md={4} style={{ fontSize: "12px" }}>
+          <Col
+            xs={12}
+            sm={12}
+            md={4}
+            style={{ fontSize: "12px" }}
+            className="text-center"
+          >
             Copyright © Re-coded 2021
           </Col>
-          <Col xs={12} sm={12} md={4}>
+          <Col
+            xs={12}
+            sm={12}
+            md={4}
+            className="text-md-end text-sm-center text-center"
+          >
             <img src={InstagramLogo} alt="instagram logo" />
             <img src={TwitterLogo} alt="twitter logo" />
             <img src={FacebookLogo} alt="facebook logo" />
