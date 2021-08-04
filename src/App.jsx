@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // components
 import NavBar from "./components/NavBar/NavBar";
+import Home from "./containers/Home";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <NavBar /> {/* Always dispaly it at the top */}
         <Switch>
           <Route exact path="/home">
-            <p>Home</p>
+            <Home />
           </Route>
           <Route path="/profile">
             <p>Profile</p>

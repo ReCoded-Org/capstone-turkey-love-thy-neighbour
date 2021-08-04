@@ -31,6 +31,7 @@ function NavBar() {
             </Link>
           </Nav>
           <Nav>
+            {/* Add conditional rendering to show sign out when user is signed in */}
             <Nav.Link>Sign In</Nav.Link>
             {/* Handle the click to show sign in pop up */}
             <Nav.Link>Sign Up</Nav.Link>
