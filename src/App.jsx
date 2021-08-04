@@ -8,13 +8,13 @@ import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // components
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   return (
     <Container fluid style={{ minHeight: "100vh", padding: "0" }}>
       <Router>
-        <NavBar />
+        <NavBar /> {/* Always dispaly it at the top */}
         <Switch>
           <Route exact path="/home">
             <p>Home</p>
