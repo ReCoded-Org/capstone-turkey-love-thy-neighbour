@@ -1,0 +1,20 @@
+@import "../../style/variables";
+
+.footer-container-fluid {
+  background-color: $dark-blue;
+}
+
+.footer-container {
+  height: 60px;
+  color: white;
+}
+
+.footer-container a,
+.footer-container a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-container img {
+  cursor: pointer;
+}

@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // components
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 // containers
 import Home from "./containers/Home";
@@ -20,7 +21,8 @@ function App() {
   return (
     <Container fluid style={{ minHeight: "100vh" }}>
       <Router>
-        <NavBar /> {/* Always dispaly it at the top */}
+        <NavBar />
+        {/* Always dispaly it at the top */}
         <Switch>
           <Route exact path="/home">
             <Home />
@@ -34,13 +36,17 @@ function App() {
           <Route path="/meet">
             <Meet />
           </Route>
-          <Route path="/signin">
-            <p>Sign In</p>
+          <Route path="/our-team">
+            <p>Our Team</p>
           </Route>
-          <Route path="/signup">
-            <p>Sign Up</p>
+          <Route path="/contact-us">
+            <p>Contact Us</p>
+          </Route>
+          <Route path="/faq">
+            <p>FAQ</p>
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </Container>
   );
