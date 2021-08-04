@@ -8,6 +8,9 @@ import Navbar from "react-bootstrap/Navbar";
 // react-router-dom
 import { Link } from "react-router-dom";
 
+// utils
+import Logo from "../../utils/logo.svg";
+
 import "./NavBar.scss";
 
 function NavBar() {
@@ -15,7 +18,7 @@ function NavBar() {
     <Navbar collapseOnSelect expand="lg" variant="dark">
       <Container>
         <Link to="/home" className="navbar-brand">
-          Logo
+          <img src={Logo} alt="logo" />
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

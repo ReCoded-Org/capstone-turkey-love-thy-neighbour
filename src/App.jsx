@@ -9,6 +9,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // components
 import NavBar from "./components/NavBar/NavBar";
+
+// containers
 import Home from "./containers/Home";
 import Profile from "./containers/Profile";
 import Users from "./containers/Users";
