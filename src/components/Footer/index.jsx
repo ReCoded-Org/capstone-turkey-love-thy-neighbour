@@ -17,7 +17,11 @@ import "./index.scss";
 function Footer() {
   return (
     <Container fluid className="footer-container-fluid">
-      <Container className="footer-container d-flex justify-content-between align-items-center">
+      <Container
+        xs={12}
+        sm={12}
+        className="footer-container d-flex  justify-content-between align-items-center col-12 col-sm-12"
+      >
         <Nav>
           <Link to="/our-team">Our Team</Link>
           <Link to="/contact-us" style={{ margin: "0 16px" }}>

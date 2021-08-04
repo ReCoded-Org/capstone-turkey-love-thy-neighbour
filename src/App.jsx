@@ -16,6 +16,7 @@ import Home from "./containers/Home";
 import Profile from "./containers/Profile";
 import Users from "./containers/Users";
 import Meet from "./containers/Meet";
+import ContactUs from "./containers/ContactUs";
 
 function App() {
   return (
@@ -40,7 +41,7 @@ function App() {
             <p>Our Team</p>
           </Route>
           <Route path="/contact-us">
-            <p>Contact Us</p>
+            <ContactUs />
           </Route>
           <Route path="/faq">
             <p>FAQ</p>
