@@ -1,14 +1,9 @@
-// react
 import React from "react";
 
-// react-bootstrap
-import { Container, Nav } from "react-bootstrap";
-import Navbar from "react-bootstrap/Navbar";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
-// react-router-dom
 import { Link } from "react-router-dom";
 
-// utils
 import Logo from "../../utils/logo.svg";
 
 import "./index.scss";
