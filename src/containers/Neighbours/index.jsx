@@ -2,12 +2,12 @@ import React from "react";
 
 import { Container } from "react-bootstrap";
 
-function Users() {
+function Neighbours() {
   return (
     <Container>
-      <p>Users</p>
+      <p>Neighbours</p>
     </Container>
   );
 }
 
-export default Users;
+export default Neighbours;
