@@ -1,15 +1,5 @@
 @import "../../../style/variables";
 
-.primary-hero-img-bg,
-.primary-hero-content-container {
-  height: calc(100vh - 60px);
-}
-
-.primary-hero-content-row,
-.primary-hero-content-row > .col {
-  width: 100%;
-}
-
 .primary-hero-img-bg {
   background-image: url("../../../utils/PrimaryHeroBgImg.png");
 

@@ -23,6 +23,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
+            {/* Conditionally render links below */}
             <Link to="/profile" className="nav-link">
               Profile
             </Link>
@@ -34,7 +35,6 @@ function NavBar() {
             </Link>
           </Nav>
           <Nav>
-            {/* Add conditional rendering to show sign out when user is signed in */}
             <Nav.Link>Sign In</Nav.Link>
             {/* Handle the click to show sign in pop up */}
             <Nav.Link>Sign Up</Nav.Link>
