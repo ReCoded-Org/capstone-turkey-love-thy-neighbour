@@ -1,7 +1,11 @@
+import React from "react";
+import ProfilePageContainer from "./containers/ProfilePageContainer/profilePageContainer";
+
 function App() {
   return (
-    <div className="App">
-      <p>This project has officially begun folks!</p>
+    <div>
+      {/* <p>This project has officially begun folks!</p> */}
+      <ProfilePageContainer />
     </div>
   );
 }
