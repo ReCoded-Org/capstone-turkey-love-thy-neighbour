@@ -1,23 +1,32 @@
 @import "../../../style/variables";
 
-.hero1-img-bg,
-.hero1-content-container,
-.hero1-content-row {
+.primary-hero-img-bg,
+.primary-hero-content-container {
   height: calc(100vh - 60px);
 }
 
-.hero1-img-bg {
-  background-image: url("../../../utils/Hero1BgImg.png");
+.primary-hero-content-row,
+.primary-hero-content-row > .col {
+  height: 350px !important;
+  width: 100%;
+}
+
+.primary-hero-img-bg {
+  background-image: url("../../../utils/PrimaryHeroBgImg.png");
 
   h1 {
     color: $logo-blue;
-    font-size: calc(5vw - 10px);
-    // font-size: 65px;
+    font-size: max(40px);
   }
 
   p {
     color: white;
-    font-size: 32px;
+    font-size: 20px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
   }
 
   .cta-button {
