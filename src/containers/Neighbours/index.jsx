@@ -4,7 +4,7 @@ import React from "react";
 // react-bootstrap
 import { Container } from "react-bootstrap";
 
-function Users() {
+function Neighbours() {
   return (
     <Container>
       <p>Users</p>
@@ -12,4 +12,4 @@ function Users() {
   );
 }
 
-export default Users;
+export default Neighbours;

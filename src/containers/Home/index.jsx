@@ -5,13 +5,12 @@ import React from "react";
 import { Container } from "react-bootstrap";
 
 // components
-import FirstSection from "../../components/FirstSection";
+import Hero1 from "./Hero1";
 
 function Home() {
   return (
     <Container>
-      <p>Home</p>
-      <FirstSection />
+      <Hero1 />
     </Container>
   );
 }

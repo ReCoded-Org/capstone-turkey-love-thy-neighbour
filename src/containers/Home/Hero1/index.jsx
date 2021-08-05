@@ -4,12 +4,12 @@ import React from "react";
 // react-bootstrap
 import { Container } from "react-bootstrap";
 
-function FirstSection() {
+function Hero1() {
   return (
     <Container>
-      <p>First Section</p>
+      <p>First Hero Section</p>
     </Container>
   );
 }
 
-export default FirstSection;
+export default Hero1;

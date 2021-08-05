@@ -13,7 +13,7 @@ import NavBar from "./components/NavBar";
 // containers
 import Home from "./containers/Home";
 import Profile from "./containers/Profile";
-import Users from "./containers/Users";
+import Neighbours from "./containers/Neighbours";
 import Meet from "./containers/Meet";
 
 function App() {
@@ -28,8 +28,8 @@ function App() {
           <Route path="/profile">
             <Profile />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/neighbours">
+            <Neighbours />
           </Route>
           <Route path="/meet">
             <Meet />
