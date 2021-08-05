@@ -5,12 +5,12 @@ import React from "react";
 import { Container } from "react-bootstrap";
 
 // components
-import Hero1 from "./Hero1";
+import PrimaryHero from "./PrimaryHero";
 
 function Home() {
   return (
     <Container fluid>
-      <Hero1 />
+      <PrimaryHero />
     </Container>
   );
 }

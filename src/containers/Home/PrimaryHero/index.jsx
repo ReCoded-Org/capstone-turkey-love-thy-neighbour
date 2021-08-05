@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 import "./index.scss";
 
-function Hero1() {
+function PrimaryHero() {
   const CATButton = styled.button`
     background-color: transparent;
     border: none;
@@ -34,4 +34,4 @@ function Hero1() {
   );
 }
 
-export default Hero1;
+export default PrimaryHero;
