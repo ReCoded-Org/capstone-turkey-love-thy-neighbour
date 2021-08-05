@@ -26,7 +26,7 @@ function PrimaryHero() {
             xs={12}
             sm={12}
             md={6}
-            className="p-0 pb-xs-5 pb-md-5 d-flex flex-column justify-content-center align-items-start"
+            className="first-column p-0 pb-xs-5 pb-md-5 d-flex flex-column justify-content-center align-items-start"
           >
             <h1>Love Thy Neighbor!</h1>
             <p>

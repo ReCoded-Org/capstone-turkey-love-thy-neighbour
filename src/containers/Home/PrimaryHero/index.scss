@@ -28,6 +28,12 @@
     height: 100%;
   }
 
+  .first-column {
+    @media screen and (max-width: 768px) {
+      padding-bottom: 50px !important;
+    }
+  }
+
   .cta-button {
     background-color: $dark-blue;
   }
