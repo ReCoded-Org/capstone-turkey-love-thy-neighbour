@@ -1,5 +1,5 @@
 import React from "react";
-import ProfilePageContainer from "./containers/ProfilePageContainer/profilePageContainer";
+import ProfilePageContainer from "./containers/ProfilePageContainer";
 
 function App() {
   return (
