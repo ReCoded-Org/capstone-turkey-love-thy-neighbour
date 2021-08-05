@@ -1,0 +1,26 @@
+@import "../../../style/variables";
+
+.hero1-img-bg,
+.hero1-content-container,
+.hero1-content-row {
+  height: calc(100vh - 60px);
+}
+
+.hero1-img-bg {
+  background-image: url("../../../utils/Hero1BgImg.png");
+
+  h1 {
+    color: $logo-blue;
+    font-size: calc(5vw - 10px);
+    // font-size: 65px;
+  }
+
+  p {
+    color: white;
+    font-size: 32px;
+  }
+
+  .cta-button {
+    background-color: $dark-blue;
+  }
+}

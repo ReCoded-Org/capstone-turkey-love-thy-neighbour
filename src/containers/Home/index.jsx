@@ -9,7 +9,7 @@ import Hero1 from "./Hero1";
 
 function Home() {
   return (
-    <Container>
+    <Container fluid>
       <Hero1 />
     </Container>
   );
