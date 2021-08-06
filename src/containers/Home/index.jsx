@@ -7,6 +7,8 @@ import { Container } from "react-bootstrap";
 // components
 import PrimaryHero from "./PrimaryHero";
 
+import "./index.scss";
+
 function Home() {
   return (
     <Container fluid>
