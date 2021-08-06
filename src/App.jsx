@@ -22,7 +22,7 @@ function App() {
       <Router>
         <NavBar /> {/* Always dispaly it at the top */}
         <Switch>
-          <Route exact path="/home">
+          <Route exact path="/">
             <Home />
           </Route>
           <Route path="/profile">
