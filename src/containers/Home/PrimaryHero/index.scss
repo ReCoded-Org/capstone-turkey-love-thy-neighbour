@@ -1,15 +1,5 @@
 @import "../../../style/variables";
 
-.primary-hero-img-bg,
-.primary-hero-content-container {
-  height: calc(100vh - 60px);
-}
-
-.primary-hero-content-row,
-.primary-hero-content-row > .col {
-  width: 100%;
-}
-
 .primary-hero-img-bg {
   background-image: url("../../../utils/PrimaryHeroBgImg.png");
 
@@ -25,7 +15,10 @@
 
   img {
     width: 100%;
-    height: 100%;
+    max-height: 350px;
+    @media screen and (max-width: 767px) {
+      max-height: 286px;
+    }
   }
 
   .first-column {
