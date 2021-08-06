@@ -9,7 +9,7 @@ import "./index.scss";
 
 function Home() {
   return (
-    <Container fluid>
+    <Container fluid className="section-wrapper">
       <PrimaryHero />
       <SecondarySection />
     </Container>

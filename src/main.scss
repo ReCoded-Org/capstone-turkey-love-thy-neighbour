@@ -1,5 +1,18 @@
+html {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 60px;
+}
+
 body {
   margin: 0;
+}
+
+section {
+  scroll-snap-align: start;
+}
+.main-wrapper {
+  min-height: 100vh;
+  scroll-snap-type: y mandatory;
 }
 
 .container,

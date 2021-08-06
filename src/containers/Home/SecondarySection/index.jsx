@@ -27,7 +27,7 @@ function SecondarySection() {
             className="px-0 pt-xs-5 pt-xs-5 pt-md-0 d-flex flex-column justify-content-center align-items-start"
           >
             <h2>Welcome,</h2>
-            <h1>to be welcomed.</h1>
+            <h1 className="to-be-welcomed">to be welcomed.</h1>
             <p>
               Respect each other and feel the genuine <span>connection.</span>
             </p>
