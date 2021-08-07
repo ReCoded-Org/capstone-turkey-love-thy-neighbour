@@ -6,8 +6,6 @@ import img from "../../../utils/SecondaryHeroContentBgImg.png";
 import "./index.scss";
 
 function SecondarySection() {
-  // sm and xs screen sizes wil be displayed in a one column layout
-
   return (
     <section className="secondary-hero-img-bg container-fluid">
       <Container className="secondary-hero-content-container d-flex align-items-center">

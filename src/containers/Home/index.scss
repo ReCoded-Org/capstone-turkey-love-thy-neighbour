@@ -2,22 +2,16 @@ h1 {
   font-size: 36px;
 }
 
-.secondary-hero-img-bg,
-.secondary-hero-content-container {
-  height: calc(100vh - 60px);
-}
-
 .secondary-hero-content-row,
-.secondary-hero-content-row > .col {
+.primary-hero-content-row,
+.secondary-hero-content-row > .col,
+.primary-hero-content-row > .col {
   width: 100%;
 }
 
 .primary-hero-img-bg,
-.primary-hero-content-container {
+.secondary-hero-img-bg,
+.primary-hero-content-container,
+.secondary-hero-content-container {
   height: calc(100vh - 60px);
-}
-
-.primary-hero-content-row,
-.primary-hero-content-row > .col {
-  width: 100%;
 }
