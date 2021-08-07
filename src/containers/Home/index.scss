@@ -2,16 +2,18 @@ h1 {
   font-size: 36px;
 }
 
-.secondary-hero-content-row,
 .primary-hero-content-row,
-.secondary-hero-content-row > .col,
-.primary-hero-content-row > .col {
+.secondary-hero-content-row,
+.primary-hero-content-row > .col,
+.secondary-hero-content-row > .col {
   width: 100%;
 }
 
-.primary-hero-img-bg,
-.secondary-hero-img-bg,
-.primary-hero-content-container,
-.secondary-hero-content-container {
+.primary-hero-img-bg, // section
+.secondary-hero-img-bg, // section
+.social-proof-section, // section
+.primary-hero-content-container, 
+.secondary-hero-content-container,
+.social-proof-content-container {
   height: calc(100vh - 60px);
 }
