@@ -6,7 +6,6 @@ import styled from "styled-components";
 
 import "./index.scss";
 import img from "../../../utils/PrimaryHeroContentBgImg.png";
-// sm and xs screen sizes wil be displayed in a one column layout
 
 function PrimaryHero() {
   const CATButton = styled.button`
