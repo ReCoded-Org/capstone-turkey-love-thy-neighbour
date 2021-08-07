@@ -1,14 +1,10 @@
-// react
 import React from "react";
 
-// react-bootstrap
 import { Container, Nav } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 
-// react-router-dom
 import { Link } from "react-router-dom";
 
-// utils
 import Logo from "../../utils/logo.svg";
 
 import "./index.scss";
@@ -36,9 +32,9 @@ function NavBar() {
           </Nav>
           <Nav>
             <Nav.Link>Sign In</Nav.Link>
-            {/* Handle the click to show sign in pop up */}
+            {/* TODO: Handle the click to show sign in pop up */}
             <Nav.Link>Sign Up</Nav.Link>
-            {/* Handle the click to show sign in pop up */}
+            {/* TODO: Handle the click to show sign in pop up */}
           </Nav>
         </Navbar.Collapse>
       </Container>
