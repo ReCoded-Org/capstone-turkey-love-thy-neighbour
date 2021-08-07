@@ -5,7 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import styled from "styled-components";
 
 import "./index.scss";
-import img from "../../../utils/PrimaryHeroContentBgImg.png";
+import img from "../../../images/PrimaryHeroContentBgImg.png";
 
 function PrimaryHero() {
   const CATButton = styled.button`

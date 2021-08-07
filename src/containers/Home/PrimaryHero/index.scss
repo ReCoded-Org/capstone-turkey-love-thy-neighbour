@@ -1,7 +1,7 @@
 @import "../../../style/variables";
 
 .primary-hero-img-bg {
-  background-image: url("../../../utils/PrimaryHeroBgImg.png");
+  background-image: url("../../../images/PrimaryHeroBgImg.png");
 
   h1 {
     color: $logo-blue;
@@ -25,9 +25,5 @@
     @media screen and (max-width: 768px) {
       padding-bottom: 50px !important;
     }
-  }
-
-  .cta-button {
-    background-color: $dark-blue;
   }
 }
