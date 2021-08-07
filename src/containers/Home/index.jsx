@@ -3,7 +3,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 
 import PrimaryHero from "./PrimaryHero";
-import SecondarySection from "./SecondarySection";
+import SecondarySection from "./SecondaryHero";
 
 import "./index.scss";
 
