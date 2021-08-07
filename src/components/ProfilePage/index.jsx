@@ -3,17 +3,25 @@ import { Container, Button, Card } from "react-bootstrap";
 
 import "./index.scss";
 import PPMaleSVG from "../../images/ProfilePage/PPMaleSVG.svg";
+import EditProfileModal from "../EditProfileModal";
+import SignInModal from "../SignInModal";
+import SignUpModal from "../SignUpModal";
 // import PPFemaleSVG from "../../images/ProfilePage/PPFemaleSVG.svg";
 
 const ProfilePage = () => {
   // modal states
-  const [show, setShow] = useState(false);
-  const handleClick = () => setShow(true);
-  console.log(show);
+  const [showModal, setShowModal] = useState(false);
+  const handleClick = () => setShowModal(!showModal);
+
+  const [showSignInModal, setShowSignInModal] = useState(false);
+  const handleClickSignIn = () => setShowSignInModal(!showSignInModal);
+
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
+  const handleClickSignUp = () => setShowSignUpModal(!showSignUpModal);
 
   return (
     <section className="profile-page-bg">
-      <Container className="profile-page-main-container">
+      <Container className="profile-page-main-container d-flex flex-column justify-content-center align-items-center flex-wrap align-content-center">
         {/* TODO: Make the gap between the sections smaller */}
         <section>
           <Container>
@@ -25,10 +33,42 @@ const ProfilePage = () => {
           <Button onClick={handleClick} className="edit-button" type="submit">
             Edit profile
           </Button>
+          {showModal && (
+            <EditProfileModal handleClick={handleClick} showModal={showModal} />
+          )}
+
+          <Button
+            onClick={handleClickSignIn}
+            className="edit-button"
+            type="submit"
+          >
+            Sign In
+          </Button>
+          {showSignInModal && (
+            <SignInModal
+              handleClickSignIn={handleClickSignIn}
+              showSignInModal={showSignInModal}
+              handleClickSignUp={handleClickSignUp}
+            />
+          )}
+          <Button
+            onClick={handleClickSignUp}
+            className="edit-button"
+            type="submit"
+          >
+            Sign Up
+          </Button>
+          {showSignUpModal && (
+            <SignUpModal
+              handleClickSignUp={handleClickSignUp}
+              showSignUpModal={showSignUpModal}
+              handleClickSignIn={handleClickSignIn}
+            />
+          )}
         </section>
 
         <section>
-          <Container className="cards-container">
+          <Container className="cards-container d-flex justify-content-around flex-wrap">
             <Card className="info-cards white-cards">
               <Card.Body>
                 <Card.Title className="card-title">General</Card.Title>

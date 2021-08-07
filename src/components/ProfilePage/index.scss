@@ -1,72 +1,61 @@
-.cards-container {
-    display:flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
 .profile-photo {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .info-cards {
-    width: 24rem;
-    border-radius: 15px !important;
-    margin: 15px;
+  width: 24rem;
+  border-radius: 15px !important;
+  margin: 15px;
 }
 
 .info-cards ul {
-    list-style: none;
+  list-style: none;
 }
 
-.info-cards li{
-    color: #57b7df;
-    font-weight: bold;
+.info-cards li {
+  color: #57b7df;
+  font-weight: bold;
 }
 
-.info-cards span{
-    color: black;
-    font-weight: normal;
+.info-cards span {
+  color: black;
+  font-weight: normal;
 }
 
 .card-title {
-    font-weight: bold;
+  font-weight: bold;
 }
 .profile-page-bg {
-    background-image: url("../../images/ProfilePage/PBG.jpg");
-    background-repeat: no-repeat;
+  background-image: url("../../images/ProfilePage/PBG.jpg");
+  background-repeat: no-repeat;
 }
 .profile-page-main-container,
 .profile-page-bg {
-    height: calc(100vh - 60px);
+  height: calc(100vh - 60px);
 }
 
 .white-cards {
-    background-color: #ffffff !important;
+  background-color: #ffffff !important;
 }
 
 .blue-cards {
-    background-color: #2A5885 !important;
-    color: #ffffff;
+  background-color: #2a5885 !important;
+  color: #ffffff;
 }
 
 .blue-cards span {
-    color: #ffffff;
+  color: #ffffff;
 }
 
-.profile-page-main-container {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: space-around;
-        align-items: center;
-        align-content: stretch;
+.profile-page-main-container > section {
+  margin: 10px;
 }
 
 .edit-button {
-    color: #2a5885 !important;
-    background-color: #ffffff !important;
-    font-weight: bold !important;
-    border-color: #ffffff !important;
-    border-radius: 16px !important;
+  color: #2a5885 !important;
+  background-color: #ffffff !important;
+  font-weight: bold !important;
+  border-color: #ffffff !important;
+  border-radius: 16px !important;
 }
