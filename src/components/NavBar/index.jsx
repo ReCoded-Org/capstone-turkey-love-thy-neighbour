@@ -1,14 +1,9 @@
-// react
 import React from "react";
 
-// react-bootstrap
-import { Container, Nav } from "react-bootstrap";
-import Navbar from "react-bootstrap/Navbar";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
-// react-router-dom
 import { Link } from "react-router-dom";
 
-// utils
 import Logo from "../../utils/logo.svg";
 
 import "./index.scss";
@@ -23,6 +18,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
+            {/* We'll need conditional rendering for the navlinks below */}
             <Link to="/profile" className="nav-link">
               Profile
             </Link>
@@ -34,11 +30,10 @@ function NavBar() {
             </Link>
           </Nav>
           <Nav>
-            {/* Add conditional rendering to show sign out when user is signed in */}
             <Nav.Link>Sign In</Nav.Link>
-            {/* Handle the click to show sign in pop up */}
+            {/* TODO: Handle the click to show sign in pop up */}
             <Nav.Link>Sign Up</Nav.Link>
-            {/* Handle the click to show sign in pop up */}
+            {/* TODO: Handle the click to show sign in pop up */}
           </Nav>
         </Navbar.Collapse>
       </Container>
