@@ -23,8 +23,8 @@ function NavBar() {
             <Link to="/profile" className="nav-link">
               Profile
             </Link>
-            <Link to="/users" className="nav-link">
-              Users
+            <Link to="/neighbors" className="nav-link">
+              Neighbors
             </Link>
             <Link to="/meet" className="nav-link">
               Meet
