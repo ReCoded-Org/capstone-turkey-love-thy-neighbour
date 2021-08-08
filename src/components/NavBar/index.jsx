@@ -1,7 +1,11 @@
 import React from "react";
 
+<<<<<<< HEAD
 import { Container, Nav } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
+=======
+import { Container, Nav, Navbar } from "react-bootstrap";
+>>>>>>> secondary-hero
 
 import { Link } from "react-router-dom";
 
