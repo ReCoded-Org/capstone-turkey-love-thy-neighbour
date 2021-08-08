@@ -5,11 +5,7 @@ import styled from "styled-components";
 import CustomButton from "../../../components/CustomButton";
 
 import "./index.scss";
-<<<<<<< HEAD
-import img from "../../../utils/PrimaryHeroContentBgImg.png";
-=======
 import img from "../../../images/PrimaryHeroContentBgImg.png";
->>>>>>> primary-hero
 
 const CTAButton = styled(CustomButton)`
   color: var(--white);
