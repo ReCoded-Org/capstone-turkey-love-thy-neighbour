@@ -7,6 +7,8 @@ import SecondaryHero from "./SecondaryHero";
 
 import "./index.scss";
 
+import "./index.scss";
+
 function Home() {
   return (
     <Container fluid className="section-wrapper">
