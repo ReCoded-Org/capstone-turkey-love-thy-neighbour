@@ -1,7 +1,10 @@
 import React from "react";
 
-import { Container, Accordion } from "react-bootstrap";
+import { Container, Accordion, Carousel } from "react-bootstrap";
 import AvatarSVG from "../../../images/avatar-one.svg";
+import MeetingOne from "../../../images/meeting-one.png";
+import MeetingTwo from "../../../images/meeting-two.png";
+import MeetingThree from "../../../images/meeting-three.png";
 
 import "./index.scss";
 
@@ -53,6 +56,29 @@ function SocialProof() {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
+        <Carousel>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={MeetingOne}
+              alt="First meeting slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={MeetingTwo}
+              alt="Second meeting slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={MeetingThree}
+              alt="Third meeting slide"
+            />
+          </Carousel.Item>
+        </Carousel>
       </Container>
     </section>
   );
