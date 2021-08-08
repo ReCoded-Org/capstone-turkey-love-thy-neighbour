@@ -31,7 +31,7 @@ const ProfilePage = () => {
 
         <section>
           <Button onClick={handleClick} className="edit-button" type="submit">
-            Edit profile
+            Edit Profile
           </Button>
           {showModal && (
             <EditProfileModal handleClick={handleClick} showModal={showModal} />

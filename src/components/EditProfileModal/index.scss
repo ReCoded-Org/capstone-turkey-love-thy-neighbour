@@ -1,3 +1,5 @@
+@import "../../style/variables";
+
 .form-cards {
   padding: 10px;
   margin: 10px;
@@ -8,4 +10,21 @@
   color: rgb(122, 12, 22);
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.edit-form-button {
+  background-color: $dark-blue !important;
+  color: white;
+  border: none !important;
+}
+
+.edit-form-input {
+  margin: 3px;
+  border: 1px solid $dark-blue;
+}
+
+.edit-form-discard-button {
+  background-color: $logo-red !important;
+  color: white;
+  border: none !important;
 }

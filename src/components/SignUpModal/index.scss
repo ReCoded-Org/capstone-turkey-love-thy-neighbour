@@ -1,0 +1,23 @@
+@import "../../style/variables";
+
+.sign-up-form-item {
+  margin-top: 10px;
+  border: 1px solid $dark-blue;
+}
+.sign-up-button {
+  background-color: $dark-blue !important;
+  color: white;
+  border: none !important;
+}
+
+.sign-up-google-button {
+  background-color: $logo-red !important;
+  color: white;
+  border: none !important;
+}
+
+.sign-up-facebook-button {
+  background-color: $logo-blue !important;
+  color: white;
+  border: none !important;
+}

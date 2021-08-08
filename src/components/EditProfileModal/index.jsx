@@ -2,7 +2,8 @@ import React from "react";
 import { Modal, Button, Card } from "react-bootstrap";
 import { useFormik } from "formik";
 import "./index.scss";
-import activityList from "../../utils/helpers";
+import helpers from "../../utils/helpers";
+import Logo from "../../images/Logo.svg";
 
 const EditProfileModal = ({ handleClick, showModal }) => {
   // TODO: We need to add the validation errors for other stuff.
@@ -15,8 +16,8 @@ const EditProfileModal = ({ handleClick, showModal }) => {
     if (!values.lastName) {
       errors.lastName = "Required";
     }
-    if (!values.email) {
-      errors.email = "Required";
+    if (!values.district) {
+      errors.district = "Required";
     }
     if (!values.gender) {
       errors.gender = "Required";
@@ -45,7 +46,7 @@ const EditProfileModal = ({ handleClick, showModal }) => {
     initialValues: {
       firstName: "",
       lastName: "",
-      email: "",
+      district: "",
       gender: "",
       age: "",
       education: "",
@@ -62,10 +63,24 @@ const EditProfileModal = ({ handleClick, showModal }) => {
     },
   });
 
+  const toggle = () => {
+    handleClick();
+  };
+
   return (
     <Modal show={showModal} onHide={handleClick}>
-      <Modal.Header closeButton>
-        <Modal.Title>Edit Profile</Modal.Title>
+      <Modal.Header>
+        <Modal.Title className="d-flex justify-content-between align-items-center align-content-between">
+          <img src={Logo} alt="logo" />
+          <span>Edit Profile</span>
+        </Modal.Title>
+        <Button
+          type="button"
+          data-toggle="modal"
+          className="btn-close"
+          aria-label="Close"
+          onClick={toggle}
+        />
       </Modal.Header>
 
       <form onSubmit={formik.handleSubmit}>
@@ -73,45 +88,59 @@ const EditProfileModal = ({ handleClick, showModal }) => {
           <Card className="form-cards">
             <Card.Body>
               <Card.Text>
-                <input
-                  id="firstName"
-                  name="firstName"
-                  placeholder="First Name"
-                  onChange={formik.handleChange}
-                  value={formik.values.firstName}
-                  onBlur={formik.handleBlur}
-                />
-                {formik.touched.firstName && formik.errors.firstName ? (
-                  <div className="error-msg">{formik.errors.firstName}</div>
-                ) : null}
-                <input
-                  id="lastName"
-                  name="lastName"
-                  placeholder="Last Name"
-                  onChange={formik.handleChange}
-                  value={formik.values.lastName}
-                  onBlur={formik.handleBlur}
-                />
-                {formik.touched.lastName && formik.errors.lastName ? (
-                  <div className="error-msg">{formik.errors.lastName}</div>
-                ) : null}
-                <section>
+                {/* TODO: Fix the overflow issue with the Last Name error message */}
+                <section className="d-flex flex-row justify-content-between align-items-stretch">
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="District"
+                    className="edit-form-input p-2 flex-fill"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="First Name"
                     onChange={formik.handleChange}
-                    value={formik.values.email}
+                    value={formik.values.firstName}
                     onBlur={formik.handleBlur}
                   />
-                  {formik.touched.email && formik.errors.email ? (
-                    <div className="error-msg">{formik.errors.email}</div>
+                  {formik.touched.firstName && formik.errors.firstName ? (
+                    <div className="error-msg">{formik.errors.firstName}</div>
+                  ) : null}
+                </section>
+                <section className="d-flex flex-row justify-content-between align-items-stretch">
+                  <input
+                    className="edit-form-input p-2 flex-fill"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Last Name"
+                    onChange={formik.handleChange}
+                    value={formik.values.lastName}
+                    onBlur={formik.handleBlur}
+                  />
+                  {formik.touched.lastName && formik.errors.lastName ? (
+                    <div className="error-msg">{formik.errors.lastName}</div>
+                  ) : null}
+                </section>
+                <section className="d-flex flex-row justify-content-between align-items-stretch">
+                  <select
+                    className="edit-form-input p-2 flex-fill"
+                    id="district"
+                    name="district"
+                    onChange={formik.handleChange}
+                    value={formik.values.district}
+                    onBlur={formik.handleBlur}
+                  >
+                    <option disabled value="">
+                      Districts
+                    </option>
+                    {helpers.districtList.map((district) => {
+                      return <option value={district}>{district}</option>;
+                    })}
+                  </select>
+                  {formik.touched.district && formik.errors.district ? (
+                    <div className="error-msg">{formik.errors.district}</div>
                   ) : null}
                 </section>
 
-                <section>
+                <section className="d-flex flex-row justify-content-between align-items-stretch">
                   <select
+                    className="edit-form-input p-2 flex-fill"
                     name="gender"
                     onChange={formik.handleChange}
                     value={formik.values.gender}
@@ -128,6 +157,7 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                     <div className="error-msg">{formik.errors.gender}</div>
                   ) : null}
                   <input
+                    className="edit-form-input p-2 flex-fill"
                     id="age"
                     name="age"
                     type="number"
@@ -142,21 +172,30 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                     <div className="error-msg">{formik.errors.age}</div>
                   ) : null}
                 </section>
-                <section>
-                  <input
+                <section className="d-flex flex-row justify-content-between align-items-stretch">
+                  <select
+                    className="edit-form-input p-2 flex-fill"
                     id="education"
                     name="education"
                     placeholder="Education"
                     onChange={formik.handleChange}
                     value={formik.values.education}
                     onBlur={formik.handleBlur}
-                  />
+                  >
+                    <option disabled value="">
+                      Education
+                    </option>
+                    {helpers.educationList.map((education) => {
+                      return <option value={education}>{education}</option>;
+                    })}
+                  </select>
                   {formik.touched.education && formik.errors.education ? (
                     <div className="error-msg">{formik.errors.education}</div>
                   ) : null}
                 </section>
-                <section>
+                <section className="d-flex flex-row justify-content-between align-items-stretch">
                   <input
+                    className="edit-form-input p-2 flex-fill"
                     id="bio"
                     name="bio"
                     placeholder="Bio"
@@ -168,8 +207,9 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                     <div className="error-msg">{formik.errors.bio}</div>
                   ) : null}
                 </section>
-                <section>
+                <section className="d-flex flex-row justify-content-between align-items-stretch">
                   <select
+                    className="edit-form-input p-2 flex-fill"
                     id="interests"
                     name="interests"
                     placeholder="Interests"
@@ -177,10 +217,11 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                     value={formik.values.interests}
                     onBlur={formik.handleBlur}
                   >
+                    {/* TODO: Move the helper function inside utils/helpers */}
                     <option disabled value="">
                       Interests
                     </option>
-                    {activityList.map((activity) => {
+                    {helpers.activityList.map((activity) => {
                       return <option value={activity}>{activity}</option>;
                     })}
                   </select>
@@ -188,8 +229,9 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                     <div className="error-msg">{formik.errors.interests}</div>
                   ) : null}
                 </section>
-                <section>
+                <section className="d-flex flex-row justify-content-between align-items-stretch">
                   <input
+                    className="edit-form-input p-2 flex-fill"
                     id="number"
                     name="number"
                     type="tel"
@@ -202,8 +244,9 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                     <div className="error-msg">{formik.errors.number}</div>
                   ) : null}
                 </section>
-                <section>
+                <section className="d-flex flex-row justify-content-between align-items-stretch">
                   <input
+                    className="edit-form-input p-2 flex-fill"
                     id="address"
                     name="address"
                     placeholder="Address"
@@ -215,8 +258,9 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                     <div className="error-msg">{formik.errors.address}</div>
                   ) : null}
                 </section>
-                <section>
+                <section className="d-flex flex-row justify-content-between align-items-stretch">
                   <input
+                    className="edit-form-input p-2 flex-fill"
                     id="profileImageUrl"
                     name="profileImageUrl"
                     type="url"
@@ -232,8 +276,9 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                     </div>
                   ) : null}
                 </section>
-                <section>
+                <section className="d-flex flex-row justify-content-between align-items-stretch">
                   <input
+                    className="edit-form-input p-2 flex-fill"
                     id="backgroundImageUrl"
                     name="backgroundImageUrl"
                     type="url"
@@ -255,8 +300,12 @@ const EditProfileModal = ({ handleClick, showModal }) => {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button>Discard Changes</Button>
-          <Button type="submit">Save Changes</Button>
+          <Button className="edit-form-discard-button" onClick={toggle}>
+            Discard Changes
+          </Button>
+          <Button type="submit" className="edit-form-button">
+            Save Changes
+          </Button>
         </Modal.Footer>
       </form>
     </Modal>
