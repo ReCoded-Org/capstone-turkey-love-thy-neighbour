@@ -8,8 +8,6 @@ import SocialProof from "./SocialProof";
 
 import "./index.scss";
 
-import "./index.scss";
-
 function Home() {
   return (
     <Container fluid className="section-wrapper">

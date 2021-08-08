@@ -1,0 +1,17 @@
+@import "../../../style/variables";
+
+.first-accordion,
+.second-accordion,
+.third-accordion {
+  img {
+    border: solid 2px var(--black);
+    border-radius: 50%;
+  }
+
+  div {
+    margin-left: 23px;
+    small {
+      color: var(--dark-gray);
+    }
+  }
+}
