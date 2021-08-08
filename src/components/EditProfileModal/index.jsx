@@ -2,6 +2,7 @@ import React from "react";
 import { Modal, Button, Card } from "react-bootstrap";
 import { useFormik } from "formik";
 import "./index.scss";
+import activityList from "../../utils/helpers";
 
 const EditProfileModal = ({ handleClick, showModal }) => {
   // TODO: We need to add the validation errors for other stuff.
@@ -75,7 +76,6 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                 <input
                   id="firstName"
                   name="firstName"
-                  type="firstName"
                   placeholder="First Name"
                   onChange={formik.handleChange}
                   value={formik.values.firstName}
@@ -87,7 +87,6 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                 <input
                   id="lastName"
                   name="lastName"
-                  type="lastName"
                   placeholder="Last Name"
                   onChange={formik.handleChange}
                   value={formik.values.lastName}
@@ -118,14 +117,16 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                     value={formik.values.gender}
                     onBlur={formik.handleBlur}
                   >
-                    <option value="male">Male </option>
+                    <option disabled value="">
+                      Gender
+                    </option>
+                    <option value="male">Male</option>
                     <option value="female">Female </option>
                     <option value="other">Prefer not to say</option>
                   </select>
                   {formik.touched.gender && formik.errors.gender ? (
                     <div className="error-msg">{formik.errors.gender}</div>
                   ) : null}
-
                   <input
                     id="age"
                     name="age"
@@ -137,7 +138,6 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                     value={formik.values.age}
                     onBlur={formik.handleBlur}
                   />
-
                   {formik.touched.age && formik.errors.age ? (
                     <div className="error-msg">{formik.errors.age}</div>
                   ) : null}
@@ -146,7 +146,6 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                   <input
                     id="education"
                     name="education"
-                    type="education"
                     placeholder="Education"
                     onChange={formik.handleChange}
                     value={formik.values.education}
@@ -160,7 +159,6 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                   <input
                     id="bio"
                     name="bio"
-                    type="bio"
                     placeholder="Bio"
                     onChange={formik.handleChange}
                     value={formik.values.bio}
@@ -171,15 +169,21 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                   ) : null}
                 </section>
                 <section>
-                  <input
+                  <select
                     id="interests"
                     name="interests"
-                    type="interests"
                     placeholder="Interests"
                     onChange={formik.handleChange}
                     value={formik.values.interests}
                     onBlur={formik.handleBlur}
-                  />
+                  >
+                    <option disabled value="">
+                      Interests
+                    </option>
+                    {activityList.map((activity) => {
+                      return <option value={activity}>{activity}</option>;
+                    })}
+                  </select>
                   {formik.touched.interests && formik.errors.interests ? (
                     <div className="error-msg">{formik.errors.interests}</div>
                   ) : null}
@@ -202,7 +206,6 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                   <input
                     id="address"
                     name="address"
-                    type="address"
                     placeholder="Address"
                     onChange={formik.handleChange}
                     value={formik.values.address}
