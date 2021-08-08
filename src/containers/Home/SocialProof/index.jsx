@@ -6,7 +6,7 @@ import Accordion from "react-bootstrap/Accordion";
 function SocialProof() {
   return (
     <section className="social-proof-section container-fluid">
-      <Container className="social-proof-content-container d-flex flex-column justify-content-center">
+      <Container className="social-proof-content-container d-flex flex-column justify-content-around">
         <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="0">
             <Accordion.Header>Accordion Item #1</Accordion.Header>
@@ -15,6 +15,10 @@ function SocialProof() {
           <Accordion.Item eventKey="1">
             <Accordion.Header>Accordion Item #2</Accordion.Header>
             <Accordion.Body>Second accordion body</Accordion.Body>
+          </Accordion.Item>
+          <Accordion.Item eventKey="2">
+            <Accordion.Header>Accordion Item #3</Accordion.Header>
+            <Accordion.Body>Third accordion body</Accordion.Body>
           </Accordion.Item>
         </Accordion>
       </Container>
