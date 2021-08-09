@@ -15,7 +15,7 @@ const CTAButton = styled(CustomButton)`
 
 function PrimaryHero() {
   return (
-    <section className="primary-hero-img-bg container-fluid">
+    <section className="snapping-section primary-hero-img-bg container-fluid">
       <Container className="primary-hero-content-container d-flex align-items-center">
         <Row className="primary-hero-content-row m-0">
           <Col

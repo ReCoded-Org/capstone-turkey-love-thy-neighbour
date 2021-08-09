@@ -16,6 +16,10 @@
   }
 }
 
-.carousel {
-  max-height: calc(100vh - 368px) !important;
+// .carousel {
+//   max-height: calc(100vh - 368px) !important;
+// }
+
+.carousel-item {
+  max-height: 250px;
 }

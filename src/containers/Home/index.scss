@@ -9,11 +9,14 @@ h1 {
   width: 100%;
 }
 
-.primary-hero-img-bg, // section
-.secondary-hero-img-bg, // section
+.primary-hero-img-bg, // 
 .social-proof-section, // section
 .primary-hero-content-container, 
 .secondary-hero-content-container,
 .social-proof-content-container {
   height: calc(100vh - 60px);
+}
+
+.snapping-section {
+  scroll-snap-align: start;
 }
