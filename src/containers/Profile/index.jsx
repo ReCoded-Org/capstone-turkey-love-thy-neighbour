@@ -71,28 +71,26 @@ const ProfilePage = () => {
               <Card.Body>
                 <Card.Title className="card-title">General</Card.Title>
                 {/* //TODO : Display the card items in such a way that no whitespace is unused inside the card */}
-                <Card.Text>
-                  <ul>
-                    <li>
-                      First Name: <span>Ali Rıza</span>
-                    </li>
-                    <li>
-                      Last Name: <span>Şahin</span>
-                    </li>
-                    <li>
-                      Gender: <span>Male</span>
-                    </li>
-                    <li>
-                      Age: <span>19</span>
-                    </li>
-                    <li>
-                      Education: <span>High School Graduate</span>
-                    </li>
-                    <li>
-                      District: <span>Sultanbeyli</span>
-                    </li>
-                  </ul>
-                </Card.Text>
+                <ul>
+                  <li>
+                    First Name: <span>Ali Rıza</span>
+                  </li>
+                  <li>
+                    Last Name: <span>Şahin</span>
+                  </li>
+                  <li>
+                    Gender: <span>Male</span>
+                  </li>
+                  <li>
+                    Age: <span>19</span>
+                  </li>
+                  <li>
+                    Education: <span>High School Graduate</span>
+                  </li>
+                  <li>
+                    District: <span>Sultanbeyli</span>
+                  </li>
+                </ul>
               </Card.Body>
             </Card>
 
@@ -100,21 +98,20 @@ const ProfilePage = () => {
               <Card.Body>
                 <Card.Title className="card-title">About You</Card.Title>
                 {/* //TODO : Display the card items in such a way that no whitespace is unused inside the card */}
-                <Card.Text>
-                  <ul>
-                    <li>
-                      Bio:{" "}
-                      <span>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Semper gravida tincidunt aliquam quam.
-                      </span>
-                    </li>
-                    <li>
-                      Interests:{" "}
-                      <span>Learning, coding, collaborating, designing.</span>
-                    </li>
-                  </ul>
-                </Card.Text>
+
+                <ul>
+                  <li>
+                    Bio:{" "}
+                    <span>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Semper gravida tincidunt aliquam quam.
+                    </span>
+                  </li>
+                  <li>
+                    Interests:{" "}
+                    <span>Learning, coding, collaborating, designing.</span>
+                  </li>
+                </ul>
               </Card.Body>
             </Card>
 
