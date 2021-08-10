@@ -11,6 +11,7 @@ const CTAButton = styled(CustomButton)`
   color: var(--white);
   padding: 13px 65px;
   margin-top: 13px;
+  background-color: red;
 `;
 
 function PrimaryHero() {

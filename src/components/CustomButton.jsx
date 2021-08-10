@@ -17,7 +17,7 @@ CustomButton.propTypes = {
 };
 
 CustomButton.defaultProps = {
-  className: true,
+  className: "",
 };
 
 export default CustomButton;
