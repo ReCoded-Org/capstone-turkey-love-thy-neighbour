@@ -1,0 +1,9 @@
+@import "../../style/variables";
+
+.navbar {
+  background-color: $dark-blue;
+  min-height: 60px;
+  padding: 0 !important;
+  position: sticky !important;
+  top: 0px;
+}
