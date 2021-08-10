@@ -70,7 +70,7 @@ const EditProfileModal = ({ handleClick, showModal }) => {
   return (
     <Modal show={showModal} onHide={handleClick}>
       <Modal.Header>
-        <Modal.Title className="d-flex justify-content-between align-items-center align-content-between">
+        <Modal.Title className="d-flex justify-content-between align-items-center align-content-between modal-title">
           <img src={Logo} alt="logo" />
           <span>Edit Profile</span>
         </Modal.Title>
@@ -90,7 +90,6 @@ const EditProfileModal = ({ handleClick, showModal }) => {
               <Card.Text>
                 {/* TODO: Fix the overflow issue with the Last Name error message */}
                 <section className="d-flex flex-column justify-content-between align-items-stretch">
-                  {/* TODO: Change flex direction of the sections that has inputs and error messages inside to column */}
                   <input
                     className="edit-form-input p-2 flex-fill"
                     id="firstName"

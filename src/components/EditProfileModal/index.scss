@@ -28,3 +28,15 @@
   color: white;
   border: none !important;
 }
+
+.modal-title {
+  img {
+    margin-left: 18px;
+  }
+  button {
+    margin-right: 18px !important;
+  }
+  span {
+    align-self: center;
+  }
+}
