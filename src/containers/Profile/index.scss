@@ -7,20 +7,18 @@
   width: 24rem;
   border-radius: 15px !important;
   margin: 15px;
-}
 
-.info-cards ul {
-  list-style: none;
-}
-
-.info-cards li {
-  color: #57b7df;
-  font-weight: bold;
-}
-
-.info-cards span {
-  color: black;
-  font-weight: normal;
+  ul {
+    list-style: none;
+  }
+  li {
+    color: #57b7df;
+    font-weight: bold;
+  }
+  span {
+    color: black;
+    font-weight: normal;
+  }
 }
 
 .card-title {
@@ -43,10 +41,9 @@
 .blue-cards {
   background-color: #2a5885 !important;
   color: #ffffff;
-}
-
-.blue-cards span {
-  color: #ffffff;
+  span {
+    color: #ffffff;
+  }
 }
 
 .profile-page-main-container > section {
