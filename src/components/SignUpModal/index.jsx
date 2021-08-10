@@ -59,7 +59,7 @@ const SignUpModal = ({
     <Modal show={showSignUpModal} onHide={handleClickSignUp}>
       <Modal.Header>
         <img src={Logo} alt="logo" />
-        <span>Sign Up</span>
+        <h4>Sign Up</h4>
         <Button
           type="button"
           data-toggle="modal"
