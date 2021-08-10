@@ -24,7 +24,6 @@ const ProfilePage = () => {
     <section className="profile-page-bg">
       <Container className="profile-page-main-container d-flex flex-column justify-content-center align-items-center flex-wrap align-content-center">
         {/* TODO: Make the gap between the sections smaller */}
-        {/* TODO: Delete the Card.Text components from the cards */}
         <section>
           <img className="profile-photo" alt="profilePic" src={PPMaleSVG} />
         </section>
@@ -119,19 +118,17 @@ const ProfilePage = () => {
               <Card.Body>
                 <Card.Title className="card-title">Contact</Card.Title>
                 {/* //TODO : Display the card items in such a way that no whitespace is unused inside the card */}
-                <Card.Text>
-                  <ul>
-                    <li>
-                      Email: <span>ars.style@hotmail.com</span>
-                    </li>
-                    <li>
-                      Phone: <span>+90 537 779 50 60</span>
-                    </li>
-                    <li>
-                      Adress: <span>Somewhere in time</span>
-                    </li>
-                  </ul>
-                </Card.Text>
+                <ul>
+                  <li>
+                    Email: <span>ars.style@hotmail.com</span>
+                  </li>
+                  <li>
+                    Phone: <span>+90 537 779 50 60</span>
+                  </li>
+                  <li>
+                    Adress: <span>Somewhere in time</span>
+                  </li>
+                </ul>
               </Card.Body>
             </Card>
           </Container>
