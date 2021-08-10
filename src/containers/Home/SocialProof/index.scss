@@ -1,25 +1,49 @@
 @import "../../../style/variables";
 
-.first-accordion,
-.second-accordion,
-.third-accordion {
-  img {
-    border: solid 2px var(--black);
-    border-radius: 50%;
+.social-proof-content-row {
+  min-height: 390px;
+  @media screen and (max-width: 768px) {
   }
 
-  div {
-    margin-left: 23px;
-    small {
-      color: var(--dark-gray);
+  & > div {
+    padding: 0;
+    width: 49%;
+  }
+
+  h2 {
+    @media screen and (min-width: 992px) {
+      font-size: 30px !important;
+    }
+    @media screen and (max-width: 991px) {
+      font-size: 20px !important;
     }
   }
-}
 
-// .carousel {
-//   max-height: calc(100vh - 368px) !important;
-// }
+  .first-accordion,
+  .second-accordion,
+  .third-accordion {
+    img {
+      border: solid 2px var(--black);
+      border-radius: 50%;
+    }
 
-.carousel-item {
-  max-height: 250px;
+    div {
+      margin-left: 23px;
+      small {
+        color: var(--dark-gray);
+      }
+    }
+
+    .accordion-body {
+      padding-left: 40px;
+    }
+
+    .carousel {
+      max-height: 232px;
+
+      .carousel-item {
+        max-height: 232px;
+      }
+    }
+  }
 }
