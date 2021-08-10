@@ -53,14 +53,13 @@ const SignUpModal = ({
   const toggle = () => {
     handleClickSignUp();
   };
+  // <Modal.Title className="d-flex justify-content-between align-items-center align-content-between">
 
   return (
     <Modal show={showSignUpModal} onHide={handleClickSignUp}>
       <Modal.Header>
-        <Modal.Title className="d-flex justify-content-between align-items-center align-content-between">
-          <img src={Logo} alt="logo" />
-          <span>Sign Up</span>
-        </Modal.Title>
+        <img src={Logo} alt="logo" />
+        <span>Sign Up</span>
         <Button
           type="button"
           data-toggle="modal"
@@ -68,6 +67,7 @@ const SignUpModal = ({
           aria-label="Close"
           onClick={toggle}
         />
+        {/* 18 px offset from right and left for the text just make margin: 0 auto */}
       </Modal.Header>
 
       <form onSubmit={formik.handleSubmit}>

@@ -90,6 +90,7 @@ const EditProfileModal = ({ handleClick, showModal }) => {
               <Card.Text>
                 {/* TODO: Fix the overflow issue with the Last Name error message */}
                 <section className="d-flex flex-row justify-content-between align-items-stretch">
+                  {/* TODO: Change flex direction of the sections that has inputs and error messages inside to column */}
                   <input
                     className="edit-form-input p-2 flex-fill"
                     id="firstName"

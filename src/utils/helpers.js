@@ -1,4 +1,7 @@
 const helpers = {
+  example() {
+    console.log("wassup");
+  },
   activityList: [
     "Animals",
     "Arts",
