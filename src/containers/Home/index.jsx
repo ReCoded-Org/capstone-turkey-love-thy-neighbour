@@ -1,12 +1,15 @@
 import React from "react";
 
 import { Container } from "react-bootstrap";
+import Features from "../../components/Features";
 
 function Home() {
   return (
-    <Container>
-      <p>Home</p>
-    </Container>
+    <section className="container-fluid">
+      <Container>
+        <Features />
+      </Container>
+    </section>
   );
 }
 
