@@ -9,6 +9,9 @@ import Home from "./containers/Home";
 import Profile from "./containers/Profile";
 import Neighbours from "./containers/Neighbours";
 import Meet from "./containers/Meet";
+import OurTeam from "./containers/OurTeam";
+import ContactUs from "./containers/ContactUs";
+import FAQ from "./containers/FAQ";
 import Footer from "./components/Footer";
 
 function App() {
@@ -28,6 +31,15 @@ function App() {
           </Route>
           <Route path="/meet">
             <Meet />
+          </Route>
+          <Route path="/our-team">
+            <OurTeam />
+          </Route>
+          <Route path="/contact-us">
+            <ContactUs />
+          </Route>
+          <Route path="/faq">
+            <FAQ />
           </Route>
         </Switch>
         <Footer />

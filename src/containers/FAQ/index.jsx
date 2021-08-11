@@ -1,7 +1,15 @@
 import React from "react";
 
+import { Container } from "react-bootstrap";
+
 function FAQ() {
-  return <div />;
+  return (
+    <Container fluid>
+      <Container>
+        <p>FAQ</p>
+      </Container>
+    </Container>
+  );
 }
 
 export default FAQ;
