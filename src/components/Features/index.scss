@@ -1,0 +1,32 @@
+@import "../../style/variables";
+
+h2 {
+  color: $logo-blue;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.features-content-row {
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  p,
+  .card-title {
+    text-align: center;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .card {
+    max-width: 300px;
+    height: 230px;
+
+    .card-title {
+      color: $logo-red;
+    }
+  }
+}
