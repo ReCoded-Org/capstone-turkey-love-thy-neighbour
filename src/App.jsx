@@ -5,11 +5,11 @@ import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
-
 import Home from "./containers/Home";
 import Profile from "./containers/Profile";
 import Neighbours from "./containers/Neighbours";
 import Meet from "./containers/Meet";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -36,6 +36,7 @@ function App() {
             <p>Sign Up</p>
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </Container>
   );
