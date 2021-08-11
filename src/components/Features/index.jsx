@@ -13,45 +13,42 @@ function Features() {
     <section className="container-fluid">
       <Container className="features-content-container d-flex flex-column justify-content-center">
         <h2>Features</h2>
-        <Row className="features-content-row">
-          <Col xs={12} sm={12} md={4}>
-            <Card className="d-flex flex-column align-items-center justify-content-start">
+        <Row className="features-content-row d-md-flex justify-content-md-around">
+          <Col xs={12} sm={12} md={3}>
+            <Card className="d-flex flex-column align-items-center justify-content-center">
               <img src={NetworkImg} className="img-fluid" alt="network svg" />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card&lsquo;s content.
-                </Card.Text>
-              </Card.Body>
+
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card&lsquo;s content.
+              </Card.Text>
             </Card>
           </Col>
-          <Col xs={12} sm={12} md={4}>
-            <Card className="d-flex flex-column align-items-center justify-content-start">
+          <Col xs={12} sm={12} md={3}>
+            <Card className="d-flex flex-column align-items-center justify-content-center">
               <img
                 src={SpeechBubbleImg}
                 className="img-fluid"
                 alt="speech bubble svg"
               />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card&lsquo;s content.
-                </Card.Text>
-              </Card.Body>
+
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card&lsquo;s content.
+              </Card.Text>
             </Card>
           </Col>
-          <Col xs={12} sm={12} md={4}>
-            <Card className="d-flex flex-column align-items-center justify-content-start">
+          <Col xs={12} sm={12} md={3}>
+            <Card className="d-flex flex-column align-items-center justify-content-center">
               <img src={CouponImg} className="img-fluid" alt="coupon svg" />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card&lsquo;s content.
-                </Card.Text>
-              </Card.Body>
+
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card&lsquo;s content.
+              </Card.Text>
             </Card>
           </Col>
         </Row>
