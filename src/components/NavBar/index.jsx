@@ -5,7 +5,6 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import Logo from "../../images/logo.svg";
-
 import "./index.scss";
 
 function NavBar() {
