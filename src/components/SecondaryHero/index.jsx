@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
 
-import img from "../../../images/SecondaryHeroContentBgImg.png";
+import img from "../../images/SecondaryHeroContentBgImg.png";
 import "./index.scss";
 
 function SecondaryHero() {

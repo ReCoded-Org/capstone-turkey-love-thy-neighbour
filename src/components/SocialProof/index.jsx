@@ -1,10 +1,10 @@
 import React from "react";
 
 import { Container, Row, Col, Accordion, Carousel } from "react-bootstrap";
-import AvatarSVG from "../../../images/avatar-one.svg";
-import MeetingOne from "../../../images/meeting-one.png";
-import MeetingTwo from "../../../images/meeting-two.png";
-import MeetingThree from "../../../images/meeting-three.png";
+import AvatarSVG from "../../images/avatar-one.svg";
+import MeetingOne from "../../images/meeting-one.png";
+import MeetingTwo from "../../images/meeting-two.png";
+import MeetingThree from "../../images/meeting-three.png";
 
 import "./index.scss";
 
