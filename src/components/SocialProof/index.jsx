@@ -70,7 +70,7 @@ function SocialProof() {
               </Accordion.Item>
             </Accordion>
           </Col>
-          <Col xs={12} sm={12} md={5}>
+          <Col xs={12} sm={12} md={5} className="mt-xs-4 mt-sm-4 mt-md-0">
             <h2 className="text-center text-sm-center text-md-start">
               Pictures of Their Meetings
             </h2>
