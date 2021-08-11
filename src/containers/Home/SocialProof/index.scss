@@ -5,7 +5,6 @@
   min-height: 390px;
 
   & > div {
-    // columns
     padding: 0;
     @media screen and (min-width: 768px) {
       width: 49%;
@@ -13,6 +12,7 @@
   }
 
   h2 {
+    color: $logo-blue;
     @media screen and (min-width: 992px) {
       font-size: 30px !important;
     }
