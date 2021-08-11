@@ -37,12 +37,16 @@
     .accordion-body {
       padding-left: 40px;
     }
+  }
 
-    .carousel {
-      max-height: 232px;
+  .carousel {
+    height: 312px;
+
+    .carousel-inner {
+      height: 100%;
 
       .carousel-item {
-        max-height: 232px;
+        height: 100%;
       }
     }
   }
