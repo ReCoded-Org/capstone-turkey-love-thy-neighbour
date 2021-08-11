@@ -7,26 +7,75 @@ h2 {
 }
 
 .features-content-row {
+  margin: 0 !important;
+
   img {
-    width: 100px;
-    height: 100px;
+    @media screen and (min-width: 768px) {
+      width: 100px;
+      height: 100px;
+    }
+    @media screen and (max-width: 767px) {
+      width: 70px;
+      height: 70px;
+    }
   }
 
   p,
   .card-title {
     text-align: center;
+    transition: all ease-in-out 300ms;
   }
 
   p {
-    font-size: 14px;
+    @media screen and (max-width: 236px) {
+      font-size: 11px;
+    }
+    @media screen and (min-width: 237px) {
+      font-size: 14px;
+    }
+  }
+
+  & > div {
+    padding: 0;
+
+    & > div {
+      margin: 0 auto;
+    }
   }
 
   .card {
-    max-width: 300px;
-    height: 230px;
+    transition: all ease-in-out 300ms;
+
+    @media screen and (min-width: 576px) {
+      max-width: 300px;
+    }
+    @media screen and (min-width: 342px) {
+      height: 153px;
+    }
+    @media screen and (min-width: 576px) {
+      height: 170px;
+    }
+    @media screen and (min-width: 768px) {
+      height: 200px;
+    }
+    // height: 177px;
+
+    .card-body {
+      padding: 0;
+
+      .card-title {
+        color: $logo-red;
+      }
+    }
+  }
+
+  .card:hover {
+    background-color: $logo-blue;
+    transition: all ease-in-out 300ms;
 
     .card-title {
-      color: $logo-red;
+      color: $white;
+      transition: all ease-in-out 300ms;
     }
   }
 }

@@ -5,11 +5,9 @@ import Features from "../../components/Features";
 
 function Home() {
   return (
-    <section className="container-fluid">
-      <Container>
-        <Features />
-      </Container>
-    </section>
+    <Container fluid>
+      <Features />
+    </Container>
   );
 }
 

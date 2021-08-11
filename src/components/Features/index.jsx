@@ -10,12 +10,12 @@ import "./index.scss";
 
 function Features() {
   return (
-    <Container fluid>
+    <section className="container-fluid">
       <Container>
         <h2>Features</h2>
         <Row className="features-content-row">
-          <Col>
-            <Card className="d-flex flex-column align-items-center">
+          <Col xs={12} sm={12} md={4}>
+            <Card className="d-flex flex-column align-items-center justify-content-start">
               <img src={NetworkImg} className="img-fluid" alt="network svg" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -26,8 +26,8 @@ function Features() {
               </Card.Body>
             </Card>
           </Col>
-          <Col>
-            <Card className="d-flex flex-column align-items-center">
+          <Col xs={12} sm={12} md={4}>
+            <Card className="d-flex flex-column align-items-center justify-content-start">
               <img
                 src={SpeechBubbleImg}
                 className="img-fluid"
@@ -42,19 +42,21 @@ function Features() {
               </Card.Body>
             </Card>
           </Col>
-          <Col>
-            <Card className="d-flex flex-column align-items-center justify-content-center">
+          <Col xs={12} sm={12} md={4}>
+            <Card className="d-flex flex-column align-items-center justify-content-start">
               <img src={CouponImg} className="img-fluid" alt="coupon svg" />
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card&lsquo;s content.
-              </Card.Text>
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card&lsquo;s content.
+                </Card.Text>
+              </Card.Body>
             </Card>
           </Col>
         </Row>
       </Container>
-    </Container>
+    </section>
   );
 }
 
