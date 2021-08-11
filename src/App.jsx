@@ -8,7 +8,7 @@ import NavBar from "./components/NavBar";
 
 import Home from "./containers/Home";
 import Profile from "./containers/Profile";
-import Neighbours from "./containers/Neighbours";
+import Neighbors from "./containers/Neighbors";
 import Meet from "./containers/Meet";
 
 function App() {
@@ -17,23 +17,17 @@ function App() {
       <Router>
         <NavBar /> {/* Always dispaly it at the top */}
         <Switch>
-          <Route exact path="/home">
+          <Route exact path="/">
             <Home />
           </Route>
           <Route path="/profile">
             <Profile />
           </Route>
-          <Route path="/neighbours">
-            <Neighbours />
+          <Route path="/neighbors">
+            <Neighbors />
           </Route>
           <Route path="/meet">
             <Meet />
-          </Route>
-          <Route path="/signin">
-            <p>Sign In</p>
-          </Route>
-          <Route path="/signup">
-            <p>Sign Up</p>
           </Route>
         </Switch>
       </Router>
