@@ -1,23 +1,14 @@
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
-const Button = styled.button`
+const BaseButton = styled.button`
   border: none;
   border-radius: 5px;
   background-color: var(--dark-blue);
 `;
 
-function CustomButton({ children, className }) {
-  return <Button className={className}>{children}</Button>;
-}
-
-CustomButton.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-};
-
-CustomButton.defaultProps = {
-  className: true,
-};
-
-export default CustomButton;
+/* eslint-disable-next-line import/prefer-default-export */
+export const CTAButton = styled(BaseButton)`
+  color: var(--white);
+  padding: 13px 65px;
+  margin-top: 13px;
+`;
