@@ -1,17 +1,10 @@
 import React from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
-import styled from "styled-components";
-import CustomButton from "../CustomButton";
+import { CTAButton } from "../CustomButton";
 
 import "./index.scss";
 import img from "../../images/PrimaryHeroContentBgImg.png";
-
-const CTAButton = styled(CustomButton)`
-  color: var(--white);
-  padding: 13px 65px;
-  margin-top: 13px;
-`;
 
 function PrimaryHero() {
   return (
@@ -29,7 +22,7 @@ function PrimaryHero() {
               Let’s build a strong, dynamic and caring community that uplifts
               each other.
             </p>
-            <CTAButton className="cta-button">Join Us!</CTAButton>
+            <CTAButton>Join Us!</CTAButton>
             {/* TODO: Show sign up pop up when clicked */}
           </Col>
           <Col xs={12} sm={12} md={6} className="p-0 px-xs-1 px-md-1 h-100">

@@ -1,23 +1,15 @@
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
-const Button = styled.button`
+const BaseButton = styled.button`
   border: none;
   border-radius: 5px;
-  background-color: var(--dark-blue);
+  color: var(--white);
 `;
 
-function CustomButton({ children, className }) {
-  return <Button className={className}>{children}</Button>;
-}
-
-CustomButton.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-};
-
-CustomButton.defaultProps = {
-  className: "",
-};
-
-export default CustomButton;
+// I disabled the next line's import/prefer-default-export rule because since in this version we just have one export it keeps telling me that I should export it with default
+/* eslint-disable-next-line import/prefer-default-export */
+export const CTAButton = styled(BaseButton)`
+  background-color: var(--dark-blue);
+  padding: 13px 65px;
+  margin-top: 13px;
+`;
