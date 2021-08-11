@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
-import { CTAButton } from "../CustomButton";
+import { CTAButton } from "../CustomButtons";
 
 import "./index.scss";
 import img from "../../images/PrimaryHeroContentBgImg.png";
