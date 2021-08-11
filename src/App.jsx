@@ -29,12 +29,6 @@ function App() {
           <Route path="/meet">
             <Meet />
           </Route>
-          <Route path="/signin">
-            <p>Sign In</p>
-          </Route>
-          <Route path="/signup">
-            <p>Sign Up</p>
-          </Route>
         </Switch>
         <Footer />
       </Router>
