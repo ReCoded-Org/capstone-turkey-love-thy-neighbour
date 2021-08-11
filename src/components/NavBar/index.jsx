@@ -4,7 +4,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
-import Logo from "../../images/logo.svg";
+import Logo from "../../images/Logo.svg";
 
 import "./index.scss";
 
