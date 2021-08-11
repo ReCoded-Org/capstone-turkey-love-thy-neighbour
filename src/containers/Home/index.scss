@@ -1,22 +1,25 @@
-h1 {
-    font-size: 36px;
-  }
+// h1 {
+//     font-size: 20px;
+//   }
   .primary-hero-content-row,
   .secondary-hero-content-row,
+  .faq-row,
   .primary-hero-content-row > .col,
-  .secondary-hero-content-row > .col {
+  .secondary-hero-content-row > .col 
+  .faq-row > .col{
     width: 100%;
   }
-//   .primary-hero-img-bg, //
-//   .social-proof-section, // section
-//   .primary-hero-content-container,
-//   .secondary-hero-content-container,
-//   .social-proof-content-container {
-//     height: calc(100vh - 60px);
-//   }
+
+  .social-proof-section, // section
+  .primary-hero-content-container,
+  .secondary-hero-content-container,
+  .social-proof-content-container,
+  .faq-container  {
+    height: calc(100vh - 40px);
+  }
 
 section {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 40px);
 }
   .snapping-section {
     scroll-snap-align: start;
