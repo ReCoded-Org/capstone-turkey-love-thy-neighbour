@@ -12,7 +12,7 @@ function SocialProof() {
   return (
     <section className="snapping-section social-proof-section container-fluid">
       <Container className="social-proof-content-container d-flex align-items-center">
-        <Row className="social-proof-content-row gap-2">
+        <Row className="social-proof-content-row m-0 gap-2">
           <Col xs={12} sm={12} md={5}>
             <h2 className="text-center text-sm-center text-md-start">
               Experiences of Our Neighbors

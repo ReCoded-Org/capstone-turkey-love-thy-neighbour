@@ -7,7 +7,7 @@ const BaseButton = styled.button`
 `;
 
 /* eslint-disable import/prefer-default-export */
-// I disabled this rule for now because since there's one export for now it's telling me that I should use use default export
+// I had to disable the next line's import/prefer-default-export rule because since in this version we just have one export it keeps telling me that I should export it with default
 export const CTAButton = styled(BaseButton)`
   background-color: var(--dark-blue);
   padding: 13px 65px;
