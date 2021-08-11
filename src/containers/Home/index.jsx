@@ -2,10 +2,8 @@ import React from "react";
 
 import { Container } from "react-bootstrap";
 
-import PrimaryHero from "./PrimaryHero";
-import SecondaryHero from "./SecondaryHero";
-
-import "./index.scss";
+import PrimaryHero from "../../components/PrimaryHero";
+import SecondaryHero from "../../components/SecondaryHero";
 
 import "./index.scss";
 
