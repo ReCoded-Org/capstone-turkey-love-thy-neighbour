@@ -1,13 +1,15 @@
 @import "../../../style/variables";
 
 .social-proof-content-row {
+  margin: 0;
   min-height: 390px;
-  @media screen and (max-width: 768px) {
-  }
 
   & > div {
+    // columns
     padding: 0;
-    width: 49%;
+    @media screen and (min-width: 768px) {
+      width: 49%;
+    }
   }
 
   h2 {
@@ -19,28 +21,42 @@
     }
   }
 
-  .first-accordion,
-  .second-accordion,
-  .third-accordion {
-    img {
-      border: solid 2px var(--black);
-      border-radius: 50%;
+  .accordion {
+    @media screen and (max-width: 767px) {
+      width: 75%;
+      margin: 0 auto;
     }
 
-    div {
-      margin-left: 23px;
-      small {
-        color: var(--dark-gray);
+    .first-accordion-item,
+    .second-accordion-item,
+    .third-accordion-item {
+      img {
+        border: solid 2px var(--black);
+        border-radius: 50%;
       }
-    }
 
-    .accordion-body {
-      padding-left: 40px;
+      div {
+        margin-left: 23px;
+        small {
+          color: var(--dark-gray);
+        }
+      }
+
+      .accordion-body {
+        padding-left: 40px;
+      }
     }
   }
 
   .carousel {
-    height: 312px;
+    @media screen and (min-width: 768px) {
+      height: 312px;
+    }
+    @media screen and (max-width: 767px) {
+      height: 150px;
+      width: 75%;
+      margin: 0 auto;
+    }
 
     .carousel-inner {
       height: 100%;

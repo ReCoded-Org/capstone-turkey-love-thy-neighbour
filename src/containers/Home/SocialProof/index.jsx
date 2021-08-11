@@ -14,11 +14,13 @@ function SocialProof() {
       <Container className="social-proof-content-container d-flex align-items-center">
         <Row className="social-proof-content-row gap-2">
           <Col xs={12} sm={12} md={5}>
-            <h2>Experiences of Our Neighbors</h2>
+            <h2 className="text-center text-sm-center text-md-start">
+              Experiences of Our Neighbors
+            </h2>
             <Accordion
               defaultActiveKey={window.innerWidth >= 768 ? "0" : undefined}
             >
-              <Accordion.Item className="first-accordion" eventKey="0">
+              <Accordion.Item className="first-accordion-item" eventKey="0">
                 <Accordion.Header className="d-flex align-items-center">
                   <img src={AvatarSVG} alt="avatar svg" />
                   <div className="d-flex flex-column">
@@ -34,7 +36,7 @@ function SocialProof() {
                   Add some text about how they like to use our services...
                 </Accordion.Body>
               </Accordion.Item>
-              <Accordion.Item className="second-accordion" eventKey="1">
+              <Accordion.Item className="second-accordion-item" eventKey="1">
                 <Accordion.Header className="d-flex align-items-center">
                   <img src={AvatarSVG} alt="avatar svg" />
                   <div className="d-flex flex-column">
@@ -50,7 +52,7 @@ function SocialProof() {
                   Add some text about how they like to use our services...
                 </Accordion.Body>
               </Accordion.Item>
-              <Accordion.Item className="third-accordion" eventKey="2">
+              <Accordion.Item className="third-accordion-item" eventKey="2">
                 <Accordion.Header className="d-flex align-items-center">
                   <img src={AvatarSVG} alt="avatar svg" />
                   <div className="d-flex flex-column">
@@ -69,7 +71,9 @@ function SocialProof() {
             </Accordion>
           </Col>
           <Col xs={12} sm={12} md={5}>
-            <h2>Pictures of Their Meetings</h2>
+            <h2 className="text-center text-sm-center text-md-start">
+              Pictures of Their Meetings
+            </h2>
             <Carousel>
               <Carousel.Item>
                 <img
