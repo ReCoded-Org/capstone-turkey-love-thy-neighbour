@@ -22,8 +22,8 @@ function NavBar() {
             <Link to="/profile" className="nav-link">
               Profile
             </Link>
-            <Link to="/neighbours" className="nav-link">
-              Neighbours
+            <Link to="/neighbors" className="nav-link">
+              Neighbors
             </Link>
             <Link to="/meet" className="nav-link">
               Meet
