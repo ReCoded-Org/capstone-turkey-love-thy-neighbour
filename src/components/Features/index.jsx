@@ -11,7 +11,7 @@ import "./index.scss";
 function Features() {
   return (
     <section className="container-fluid">
-      <Container className="features-content-container">
+      <Container className="features-content-container d-flex flex-column justify-content-center">
         <h2>Features</h2>
         <Row className="features-content-row">
           <Col xs={12} sm={12} md={4}>
