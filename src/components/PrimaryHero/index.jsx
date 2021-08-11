@@ -2,16 +2,15 @@ import React from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
 import styled from "styled-components";
-import CustomButton from "../../../components/CustomButton";
+import CustomButton from "../CustomButton";
 
 import "./index.scss";
-import img from "../../../images/PrimaryHeroContentBgImg.png";
+import img from "../../images/PrimaryHeroContentBgImg.png";
 
 const CTAButton = styled(CustomButton)`
   color: var(--white);
   padding: 13px 65px;
   margin-top: 13px;
-  background-color: red;
 `;
 
 function PrimaryHero() {

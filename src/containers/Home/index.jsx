@@ -2,7 +2,7 @@ import React from "react";
 
 import { Container } from "react-bootstrap";
 
-import PrimaryHero from "./PrimaryHero";
+import PrimaryHero from "../../components/PrimaryHero";
 
 import "./index.scss";
 
