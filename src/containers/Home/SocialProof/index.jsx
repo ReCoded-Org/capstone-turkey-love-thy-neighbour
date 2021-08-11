@@ -15,7 +15,9 @@ function SocialProof() {
         <Row className="social-proof-content-row gap-2">
           <Col xs={12} sm={12} md={5}>
             <h2>Experiences of Our Neighbors</h2>
-            <Accordion>
+            <Accordion
+              defaultActiveKey={window.innerWidth >= 768 ? "0" : undefined}
+            >
               <Accordion.Item className="first-accordion" eventKey="0">
                 <Accordion.Header className="d-flex align-items-center">
                   <img src={AvatarSVG} alt="avatar svg" />
