@@ -25,6 +25,16 @@
   .footer-content-row {
     margin: 0;
 
+    .social-media-logos {
+      svg {
+        transition: all ease-in-out 300ms;
+      }
+      svg:hover {
+        filter: brightness(90%) contrast(60%);
+        transition: all ease-in-out 300ms;
+      }
+    }
+
     & > div {
       padding: 0;
     }
