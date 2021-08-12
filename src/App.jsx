@@ -17,7 +17,7 @@ function App() {
       <Router>
         <NavBar /> {/* Always dispaly it at the top */}
         <Switch>
-          <Route exact path="/home">
+          <Route exact path="/">
             <Home />
           </Route>
           <Route path="/profile">
@@ -28,12 +28,6 @@ function App() {
           </Route>
           <Route path="/meet">
             <Meet />
-          </Route>
-          <Route path="/signin">
-            <p>Sign In</p>
-          </Route>
-          <Route path="/signup">
-            <p>Sign Up</p>
           </Route>
         </Switch>
       </Router>

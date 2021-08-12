@@ -1,0 +1,38 @@
+@import "../../style/variables"; // it's nice taht you used the sass variables for colors :)
+
+.faq-content-container {
+  // if you don't nest the thing inside the classname that you have gave to the row or something, the styles you have written for h2, h3 and all of that will be applied to other section's h2 and h3s which is something we don't want. Specificity is important here.
+  h2 {
+    color: $logo-red;
+    font-weight: bold;
+    font-family: Roboto, sans-serif;
+  }
+
+  h3 {
+    color: $logo-blue;
+    font-size: 15px; // I don't think you need max there
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-family: Roboto, sans-serif;
+  }
+
+  p {
+    color: $black; // this was pitch black, I used the black that was declared in sass variabls
+    font-size: 15px;
+    font-family: Roboto, sans-serif; // oh it's good that you didn't forget making the stuff Roboto, I actually forgot that so thanks for reminding
+  }
+
+  img {
+    width: 100%;
+    max-height: 450px;
+    @media screen and (max-width: 767px) {
+      max-height: 280px;
+    }
+  }
+
+  .first-column {
+    @media screen and (max-width: 768px) {
+      padding: 30px !important;
+    }
+  }
+}

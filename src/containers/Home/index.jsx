@@ -2,11 +2,11 @@ import React from "react";
 
 import { Container } from "react-bootstrap";
 import "./index.scss";
-import FAQ from "./FAQ";
+import FAQ from "../../components/FAQ";
 
 function Home() {
   return (
-    <Container>
+    <Container fluid>
       <FAQ />
     </Container>
   );
