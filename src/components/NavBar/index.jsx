@@ -12,7 +12,7 @@ function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark">
       <Container>
-        <Link to="/home" className="navbar-brand">
+        <Link to="/" className="navbar-brand">
           <img src={Logo} alt="logo" />
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -22,8 +22,8 @@ function NavBar() {
             <Link to="/profile" className="nav-link">
               Profile
             </Link>
-            <Link to="/neighbours" className="nav-link">
-              Neighbours
+            <Link to="/neighbors" className="nav-link">
+              Neighbors
             </Link>
             <Link to="/meet" className="nav-link">
               Meet

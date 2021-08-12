@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./containers/Home";
 import Profile from "./containers/Profile";
-import Neighbours from "./containers/Neighbours";
+import Neighbors from "./containers/Neighbors";
 import Meet from "./containers/Meet";
 import OurTeam from "./containers/OurTeam";
 import ContactUs from "./containers/ContactUs";
@@ -20,14 +20,14 @@ function App() {
       <Router>
         <NavBar /> {/* Always dispaly it at the top */}
         <Switch>
-          <Route exact path="/home">
+          <Route exact path="/">
             <Home />
           </Route>
           <Route path="/profile">
             <Profile />
           </Route>
-          <Route path="/neighbours">
-            <Neighbours />
+          <Route path="/neighbors">
+            <Neighbors />
           </Route>
           <Route path="/meet">
             <Meet />

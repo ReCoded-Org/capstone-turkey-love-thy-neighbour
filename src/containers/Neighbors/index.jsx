@@ -2,12 +2,12 @@ import React from "react";
 
 import { Container } from "react-bootstrap";
 
-function Neighbours() {
+function Neighbors() {
   return (
     <Container>
-      <p>Neighbours</p>
+      <p>Neighbors</p>
     </Container>
   );
 }
 
-export default Neighbours;
+export default Neighbors;
