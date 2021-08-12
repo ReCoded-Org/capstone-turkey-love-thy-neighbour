@@ -77,7 +77,7 @@ function SocialProof() {
             className="second-column mt-xs-4 mt-sm-4 mt-md-0"
           >
             <h2 className="text-center text-sm-center text-md-start">
-              Pictures of Their Meetings
+              Neighbor Meetings
             </h2>
             <Carousel>
               <Carousel.Item>

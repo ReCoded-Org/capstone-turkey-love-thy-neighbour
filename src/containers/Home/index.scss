@@ -2,23 +2,15 @@ h1 {
   font-size: 36px;
 }
 
-.primary-hero-content-row,
-.secondary-hero-content-row,
-.social-proof-content-row,
-.primary-hero-content-row > .col,
-.secondary-hero-content-row > .col,
-.social-proof-content-row > .col {
-  width: 100%;
-}
-
-.primary-hero-img-bg,
-.social-proof-section,
-.primary-hero-content-container,
-.secondary-hero-content-container,
-.social-proof-content-container {
+// for sections and content containers
+section, // all the sections inside home page
+section > div // all the content containers inside home page
+{
   height: calc(100vh - 60px);
+  scroll-snap-align: start;
 }
 
-.snapping-section {
-  scroll-snap-align: start;
+// section --> content container --> row
+section > div > div.row {
+  width: 100% !important;
 }
