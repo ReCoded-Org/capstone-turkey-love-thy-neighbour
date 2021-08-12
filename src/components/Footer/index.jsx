@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 import { Container, Row, Col } from "react-bootstrap";
 
-import TwitterLogo from "../../images/twitter-logo.svg";
-import InstagramLogo from "../../images/instagram-logo.svg";
-import FacebookLogo from "../../images/facebook-logo.svg";
+import { ReactComponent as TwitterLogo } from "../../images/twitter-logo.svg";
+import { ReactComponent as InstagramLogo } from "../../images/instagram-logo.svg";
+import { ReactComponent as FacebookLogo } from "../../images/facebook-logo.svg";
 
 import "./index.scss";
 
@@ -46,21 +46,21 @@ function Footer() {
               target="_blank"
               rel="external noreferrer"
             >
-              <img src={TwitterLogo} alt="twitter logo" />
+              <TwitterLogo />
             </a>
             <a
               href="https://www.instagram.com"
               target="_blank"
               rel="external noreferrer"
             >
-              <img src={InstagramLogo} alt="instagram logo" />
+              <InstagramLogo />
             </a>
             <a
               href="https://www.facebook.com"
               target="_blank"
               rel="external noreferrer"
             >
-              <img src={FacebookLogo} alt="facebook logo" />
+              <FacebookLogo />
             </a>
           </Col>
         </Row>
