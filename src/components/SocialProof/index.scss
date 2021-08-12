@@ -44,6 +44,11 @@
 
       .accordion-body {
         padding-left: 40px;
+
+        @media screen and (max-width: 575px) {
+          margin-left: 0;
+          padding-left: 0;
+        }
       }
     }
   }
