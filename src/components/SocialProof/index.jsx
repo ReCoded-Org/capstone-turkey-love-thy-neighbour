@@ -13,7 +13,7 @@ function SocialProof() {
     <section className="snapping-section social-proof-section container-fluid">
       <Container className="social-proof-content-container d-flex align-items-center">
         <Row className="social-proof-content-row m-0 gap-2">
-          <Col xs={12} sm={12} md={5}>
+          <Col xs={12} sm={12} md={5} className="first-column">
             <h2 className="text-center text-sm-center text-md-start">
               Experiences of Our Neighbors
             </h2>
@@ -70,7 +70,12 @@ function SocialProof() {
               </Accordion.Item>
             </Accordion>
           </Col>
-          <Col xs={12} sm={12} md={5} className="mt-xs-4 mt-sm-4 mt-md-0">
+          <Col
+            xs={12}
+            sm={12}
+            md={5}
+            className="second-column mt-xs-4 mt-sm-4 mt-md-0"
+          >
             <h2 className="text-center text-sm-center text-md-start">
               Pictures of Their Meetings
             </h2>

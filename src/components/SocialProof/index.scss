@@ -21,53 +21,66 @@
     }
   }
 
-  .accordion {
-    @media screen and (max-width: 767px) {
-      width: 75%;
-      margin: 0 auto;
+  .first-column {
+    @media screen and (max-width: 575px) {
+      margin-bottom: 5px;
     }
 
-    .first-accordion-item,
-    .second-accordion-item,
-    .third-accordion-item {
-      img {
-        border: solid 2px var(--black);
-        border-radius: 50%;
+    .accordion {
+      @media screen and (max-width: 767px) {
+        width: 75%;
+        margin: 0 auto;
       }
 
-      div {
-        margin-left: 23px;
-        small {
-          color: var(--dark-gray);
+      .first-accordion-item,
+      .second-accordion-item,
+      .third-accordion-item {
+        img {
+          border: solid 2px var(--black);
+          border-radius: 50%;
         }
-      }
 
-      .accordion-body {
-        padding-left: 40px;
+        div {
+          margin-left: 23px;
+          small {
+            color: var(--dark-gray);
 
-        @media screen and (max-width: 575px) {
-          margin-left: 0;
-          padding-left: 0;
+            @media screen and (max-width: 575px) {
+              display: none !important;
+            }
+          }
+        }
+
+        .accordion-body {
+          padding-left: 40px;
+
+          @media screen and (max-width: 575px) {
+            margin-left: 0;
+            padding-left: 0;
+            font-size: 13px;
+          }
         }
       }
     }
   }
 
-  .carousel {
-    @media screen and (min-width: 768px) {
-      height: 312px;
-    }
-    @media screen and (max-width: 767px) {
-      height: 150px;
-      width: 75%;
-      margin: 0 auto;
-    }
+  .second-column {
+    .carousel {
+      @media screen and (min-width: 768px) {
+        height: 312px;
+      }
+      @media screen and (max-width: 767px) {
+        height: 150px;
+        width: 75%;
+        margin: 0 auto;
+      }
 
-    .carousel-inner {
-      height: 100%;
-
-      .carousel-item {
+      .carousel-inner {
         height: 100%;
+
+        .carousel-item {
+          height: 100%;
+        }
       }
     }
   }
