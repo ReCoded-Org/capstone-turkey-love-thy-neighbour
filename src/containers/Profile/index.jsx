@@ -9,6 +9,8 @@ import "./index.scss";
 const ProfilePage = () => {
   // modal states
   // TODO: use one state that has an object of states
+  // TODO: Replace buttons with the custom buttons
+  // remove paddins from the columns
   const [showModal, setShowModal] = useState(false);
   const handleClick = () => setShowModal(!showModal);
 
