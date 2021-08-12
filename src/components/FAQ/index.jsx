@@ -13,7 +13,7 @@ function FAQ() {
             xs={12}
             sm={12}
             md={6}
-            className="first-column pb-md-5 d-flex flex-column justify-content-center align-items-start"
+            className="first-column d-flex flex-column justify-content-center align-items-start"
           >
             <h2>FAQs</h2>
             <h5>Are meetings safe?</h5>
@@ -38,7 +38,12 @@ function FAQ() {
             </p>
           </Col>
 
-          <Col xs={12} sm={12} md={6} className="p-3 px-xs-1 px-md-1 h-100">
+          <Col
+            xs={12}
+            sm={12}
+            md={6}
+            className="my-md-auto d-flex d-sm-flex d-md-block justify-content-center justify-content-sm-center justify-content-md-center"
+          >
             <img src={img} alt="img" className="img-fluid" />
           </Col>
         </Row>
