@@ -41,13 +41,25 @@ function Footer() {
             md={4}
             className="d-flex justify-content-center justify-content-sm-center justify-content-md-end align-items-center"
           >
-            <a href="#x">
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="external noreferrer"
+            >
               <img src={TwitterLogo} alt="twitter logo" />
             </a>
-            <a href="#x">
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="external noreferrer"
+            >
               <img src={InstagramLogo} alt="instagram logo" />
             </a>
-            <a href="#x">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="external noreferrer"
+            >
               <img src={FacebookLogo} alt="facebook logo" />
             </a>
           </Col>
