@@ -3,7 +3,7 @@ import { Modal, Button, Card } from "react-bootstrap";
 import { useFormik } from "formik";
 import "./index.scss";
 import helpers from "../../utils/helpers";
-import Logo from "../../images/Logo.svg";
+import logo from "../../images/logo.svg";
 
 const EditProfileModal = ({ handleClick, showModal }) => {
   // TODO: Add the validation errors for other stuff.
@@ -71,7 +71,7 @@ const EditProfileModal = ({ handleClick, showModal }) => {
     <Modal show={showModal} onHide={handleClick}>
       <Modal.Header>
         <Modal.Title className="d-flex justify-content-between align-items-center align-content-between modal-title">
-          <img src={Logo} alt="logo" />
+          <img src={logo} alt="logo" />
           <span>Edit Profile</span>
         </Modal.Title>
         <Button

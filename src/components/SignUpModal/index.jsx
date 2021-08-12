@@ -3,7 +3,7 @@ import { Modal, Button, Card } from "react-bootstrap";
 import { useFormik } from "formik";
 
 import "./index.scss";
-import Logo from "../../images/Logo.svg";
+import logo from "../../images/logo.svg";
 
 const SignUpModal = ({
   handleClickSignIn,
@@ -58,7 +58,7 @@ const SignUpModal = ({
   return (
     <Modal show={showSignUpModal} onHide={handleClickSignUp}>
       <Modal.Header>
-        <img src={Logo} alt="logo" />
+        <img src={logo} alt="logo" />
         <h4>Sign Up</h4>
         <Button
           type="button"

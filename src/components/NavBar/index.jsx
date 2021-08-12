@@ -4,8 +4,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
-import Logo from "../../images/Logo.svg";
-
+import logo from "../../images/logo.svg";
 import "./index.scss";
 
 function NavBar() {
@@ -13,12 +12,12 @@ function NavBar() {
     <Navbar collapseOnSelect expand="lg" variant="dark">
       <Container>
         <Link to="/" className="navbar-brand">
-          <img src={Logo} alt="logo" />
+          <img src={logo} alt="logo" />
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            {/* We'll need conditional rendering for the navlinks below */}
+            {/* TODO: Conditionally render links below */}
             <Link to="/profile" className="nav-link">
               Profile
             </Link>
