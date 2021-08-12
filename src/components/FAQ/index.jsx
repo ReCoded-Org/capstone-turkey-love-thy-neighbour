@@ -8,7 +8,7 @@ function FAQ() {
   return (
     <section className="container-fluid">
       <Container className="faq-content-container d-flex align-items-center">
-        <Row className="faq-row m-0">
+        <Row className="faq-content-row m-0">
           <Col
             xs={12}
             sm={12}

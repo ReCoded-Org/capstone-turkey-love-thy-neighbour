@@ -2,39 +2,28 @@ h1 {
   font-size: 36px;
 }
 
+// for content rows
 .primary-hero-content-row,
 .secondary-hero-content-row,
-.primary-hero-content-row > .col,
-.secondary-hero-content-row > .col {
+.faq-content-row {
   width: 100%;
 }
 
-.primary-hero-img-bg,
-.secondary-hero-img-bg,
-.primary-hero-content-container,
+// for section tags and content containers inside them
+.primary-hero-img-bg, // section tag
+.secondary-hero-img-bg, // section tag
+.primary-hero-content-container, 
 .secondary-hero-content-container {
   height: calc(100vh - 60px);
 }
 
-// <<<<<<< HEAD
-// // h1 {
-// //     font-size: 20px;
-// //   }
-// .primary-hero-content-row,
-// .secondary-hero-content-row,
-// .faq-row,
-// .primary-hero-content-row > .col,
-// .secondary-hero-content-row > .col .faq-row > .col {
-//   width: 100%;
-// }
-
-// .social-proof-section,
-// .primary-hero-content-container,
-// .secondary-hero-content-container,
-// .social-proof-content-container,
-// .faq-container {
-//   height: calc(100vh - 40px);
-// }
+.social-proof-section,
+.primary-hero-content-container,
+.secondary-hero-content-container,
+.social-proof-content-container,
+.faq-container {
+  height: calc(100vh - 40px);
+}
 
 // section {
 //   height: calc(100vh - 40px);
