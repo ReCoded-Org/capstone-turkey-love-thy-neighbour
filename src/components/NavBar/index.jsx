@@ -17,7 +17,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            {/* Conditionally render links below */}
+            {/* TODO: Conditionally render links below */}
             <Link to="/profile" className="nav-link">
               Profile
             </Link>
