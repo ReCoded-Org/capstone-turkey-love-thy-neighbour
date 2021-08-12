@@ -5,7 +5,6 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import Logo from "../../images/logo.svg";
-
 import "./index.scss";
 
 function NavBar() {
@@ -18,7 +17,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            {/* TODO: We'll need conditional rendering for the navlinks below */}
+            {/* TODO: Conditionally render links below */}
             <Link to="/profile" className="nav-link">
               Profile
             </Link>

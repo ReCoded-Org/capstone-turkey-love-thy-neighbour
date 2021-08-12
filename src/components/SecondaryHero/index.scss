@@ -1,0 +1,31 @@
+@import "../../style/variables";
+
+.secondary-hero-img-bg {
+  background-image: url("../../images/SecondaryHeroBgImg.png");
+
+  h1 {
+    color: $logo-blue;
+    font-size: max(40px);
+    font-weight: bold;
+    font-family: Roboto, sans-serif;
+  }
+
+  h2 {
+    color: $logo-red;
+    position: relative;
+    top: 10px;
+    font-style: italic;
+    font-weight: bold;
+    font-family: Roboto, sans-serif;
+  }
+
+  p {
+    color: white;
+    font-size: 20px;
+  }
+
+  img {
+    width: 300px;
+    max-height: 400px;
+  }
+}
