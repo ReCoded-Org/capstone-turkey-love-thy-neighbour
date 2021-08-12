@@ -2,31 +2,15 @@ h1 {
   font-size: 36px;
 }
 
-// for content rows
-.primary-hero-content-row,
-.secondary-hero-content-row,
-.faq-content-row {
-  width: 100%;
-}
-
-// for section tags and content containers inside them
-.primary-hero-img-bg, // section tag
-.secondary-hero-img-bg, // section tag
-.primary-hero-content-container, 
-.secondary-hero-content-container {
+// for sections and content containers
+section, // all the sections inside home page
+section > div // all the content containers inside home page
+{
   height: calc(100vh - 60px);
+  scroll-snap-align: start;
 }
 
-.social-proof-section,
-.primary-hero-content-container,
-.secondary-hero-content-container,
-.social-proof-content-container,
-.faq-container {
-  height: calc(100vh - 40px);
+// section --> content container --> row
+section > div > div.row {
+  width: 100% !important;
 }
-
-// section {
-//   height: calc(100vh - 40px);
-// }
-// .snapping-section {
-//   scroll-snap-align: start;
