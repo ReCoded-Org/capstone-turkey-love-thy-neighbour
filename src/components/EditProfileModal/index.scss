@@ -1,42 +1,56 @@
 @import "../../style/variables";
 
-.form-cards {
-  padding: 10px;
-  margin: 10px;
-}
+.modal {
+  form {
+    input,
+    select {
+      height: 38px;
+    }
 
-.error-msg {
-  font-size: 12px;
-  color: rgb(122, 12, 22);
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
+    .form-cards {
+      padding: 10px;
+      margin: 10px;
+    }
 
-.edit-form-button {
-  background-color: $dark-blue !important;
-  color: white;
-  border: none !important;
-}
+    .error-msg {
+      font-size: 12px;
+      color: rgb(122, 12, 22);
+      margin-top: 5px;
+      margin-bottom: 5px;
+      margin-left: 15.25px;
+    }
 
-.edit-form-input {
-  margin: 3px;
-  border: 1px solid $dark-blue;
-}
+    .edit-form-button {
+      background-color: $dark-blue !important;
+      color: white;
+      border: none !important;
+    }
 
-.edit-form-discard-button {
-  background-color: $logo-red !important;
-  color: white;
-  border: none !important;
-}
+    .edit-form-input {
+      margin: 3px;
+      border: 1px solid $dark-blue;
+    }
 
-.modal-title {
-  img {
-    margin-left: 18px;
+    .edit-form-discard-button {
+      background-color: $logo-red !important;
+      color: white;
+      border: none !important;
+    }
+    .gender-age-wrapper > div {
+      width: 50%;
+    }
   }
-  button {
-    margin-right: 18px !important;
-  }
-  span {
-    align-self: center;
+
+  .modal-header {
+    svg {
+      margin-left: 18px;
+    }
+    button {
+      margin-right: 18px;
+      margin-left: 0;
+    }
+    h2 {
+      margin-bottom: 0;
+    }
   }
 }

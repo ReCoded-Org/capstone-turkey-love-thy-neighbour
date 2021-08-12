@@ -1,60 +1,62 @@
-.profile-photo {
-  width: 100px;
-  height: 100px;
-}
-
-.info-cards {
-  width: 24rem;
-  border-radius: 15px !important;
-  margin: 15px;
-
-  ul {
-    list-style: none;
-  }
-  li {
-    color: #57b7df;
-    font-weight: bold;
-  }
-  span {
-    color: black;
-    font-weight: normal;
-  }
-}
-
-.card-title {
-  font-weight: bold;
-  margin-left: 30px;
-}
 .profile-page-bg {
   background-image: url("../../images/ProfilePage/PBG.jpg");
   background-repeat: no-repeat;
   background-position: center;
-}
-.profile-page-main-container,
-.profile-page-bg {
-  height: calc(100vh - 60px);
-}
-
-.white-cards {
-  background-color: #ffffff !important;
-}
-
-.blue-cards {
-  background-color: #2a5885 !important;
-  color: #ffffff;
-  span {
-    color: #ffffff;
+  .profile-photo {
+    width: 100px;
+    height: 100px;
   }
-}
 
-.profile-page-main-container > section {
-  margin: 10px;
-}
+  .cards-container {
+    // .cards-container:first-child {
+    //   background-color: red !important;
+    // }
+    .info-cards {
+      width: 24rem;
+      border-radius: 15px !important;
+      margin: 15px;
 
-.edit-button {
-  color: #2a5885 !important;
-  background-color: #ffffff !important;
-  font-weight: bold !important;
-  border-color: #ffffff !important;
-  border-radius: 16px !important;
+      ul {
+        list-style: none;
+      }
+      li {
+        color: #57b7df;
+        font-weight: bold;
+      }
+      span {
+        color: black;
+        font-weight: normal;
+      }
+    }
+
+    .card-title {
+      font-weight: bold;
+      margin-left: 30px;
+    }
+
+    .white-cards {
+      background-color: #ffffff !important;
+    }
+
+    .blue-cards {
+      background-color: #2a5885 !important;
+      color: #ffffff;
+      span {
+        color: #ffffff;
+      }
+    }
+  }
+
+  .profile-page-main-container > section {
+    margin: 10px;
+  }
+
+  .edit-button {
+    color: #2a5885 !important;
+    background-color: #ffffff !important;
+    font-weight: bold !important;
+    border-color: #ffffff !important;
+    border-radius: 16px !important;
+    margin: 5px;
+  }
 }

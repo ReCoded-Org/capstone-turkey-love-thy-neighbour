@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import "./index.scss";
 
-function NavBar() {
+function NavBar({ handleClickSignIn, handleClickSignUp }) {
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark">
       <Container>
@@ -29,9 +29,9 @@ function NavBar() {
             </Link>
           </Nav>
           <Nav>
-            <Nav.Link>Sign In</Nav.Link>
+            <Nav.Link onClick={handleClickSignIn}>Sign In</Nav.Link>
             {/* TODO: Handle the click to show sign in pop up */}
-            <Nav.Link>Sign Up</Nav.Link>
+            <Nav.Link onClick={handleClickSignUp}>Sign Up</Nav.Link>
             {/* TODO: Handle the click to show sign in pop up */}
           </Nav>
         </Navbar.Collapse>

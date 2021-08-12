@@ -3,7 +3,7 @@ import { Modal, Button, Card } from "react-bootstrap";
 import { useFormik } from "formik";
 import "./index.scss";
 import helpers from "../../utils/helpers";
-import logo from "../../images/logo.svg";
+import { ReactComponent as Logo } from "../../images/logo.svg";
 
 const EditProfileModal = ({ handleClick, showModal }) => {
   // TODO: Add the validation errors for other stuff.
@@ -69,11 +69,9 @@ const EditProfileModal = ({ handleClick, showModal }) => {
 
   return (
     <Modal show={showModal} onHide={handleClick}>
-      <Modal.Header>
-        <Modal.Title className="d-flex justify-content-between align-items-center align-content-between modal-title">
-          <img src={logo} alt="logo" />
-          <span>Edit Profile</span>
-        </Modal.Title>
+      <Modal.Header className="d-flex justify-content-between">
+        <Logo />
+        <h2 className="mx-auto">Edit Profile</h2>
         <Button
           type="button"
           data-toggle="modal"
@@ -89,7 +87,7 @@ const EditProfileModal = ({ handleClick, showModal }) => {
             <Card.Body>
               <Card.Text>
                 {/* TODO: Fix the overflow issue with the Last Name error message */}
-                <section className="d-flex flex-column justify-content-between align-items-stretch">
+                <div className="d-flex flex-column justify-content-between align-items-stretch">
                   <input
                     className="edit-form-input p-2 flex-fill"
                     id="firstName"
@@ -102,8 +100,8 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                   {formik.touched.firstName && formik.errors.firstName ? (
                     <div className="error-msg">{formik.errors.firstName}</div>
                   ) : null}
-                </section>
-                <section className="d-flex flex-column justify-content-between align-items-stretch">
+                </div>
+                <div className="d-flex flex-column justify-content-between align-items-stretch">
                   <input
                     className="edit-form-input p-2 flex-fill"
                     id="lastName"
@@ -116,8 +114,8 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                   {formik.touched.lastName && formik.errors.lastName ? (
                     <div className="error-msg">{formik.errors.lastName}</div>
                   ) : null}
-                </section>
-                <section className="d-flex flex-column justify-content-between align-items-stretch">
+                </div>
+                <div className="d-flex flex-column justify-content-between align-items-stretch">
                   <select
                     className="edit-form-input p-2 flex-fill"
                     id="district"
@@ -136,12 +134,12 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                   {formik.touched.district && formik.errors.district ? (
                     <div className="error-msg">{formik.errors.district}</div>
                   ) : null}
-                </section>
+                </div>
 
-                <section className="d-flex flex-row justify-content-between align-items-stretch">
-                  <section className="d-flex flex-column">
+                <div className="gender-age-wrapper d-flex">
+                  <div className="d-flex flex-column">
                     <select
-                      className="edit-form-input p-2 flex-fill"
+                      className="edit-form-input p-2"
                       name="gender"
                       onChange={formik.handleChange}
                       value={formik.values.gender}
@@ -154,13 +152,14 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                       <option value="female">Female </option>
                       <option value="other">Prefer not to say</option>
                     </select>
+
                     {formik.touched.gender && formik.errors.gender ? (
                       <div className="error-msg">{formik.errors.gender}</div>
                     ) : null}
-                  </section>
-                  <section className="d-flex flex-column">
+                  </div>
+                  <div className="d-flex flex-column">
                     <input
-                      className="edit-form-input p-2 flex-fill"
+                      className="edit-form-input p-2"
                       id="age"
                       name="age"
                       type="number"
@@ -174,9 +173,9 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                     {formik.touched.age && formik.errors.age ? (
                       <div className="error-msg">{formik.errors.age}</div>
                     ) : null}
-                  </section>
-                </section>
-                <section className="d-flex flex-column justify-content-between align-items-stretch">
+                  </div>
+                </div>
+                <div className="d-flex flex-column justify-content-between align-items-stretch">
                   <select
                     className="edit-form-input p-2 flex-fill"
                     id="education"
@@ -196,8 +195,8 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                   {formik.touched.education && formik.errors.education ? (
                     <div className="error-msg">{formik.errors.education}</div>
                   ) : null}
-                </section>
-                <section className="d-flex flex-column justify-content-between align-items-stretch">
+                </div>
+                <div className="d-flex flex-column justify-content-between align-items-stretch">
                   <textarea
                     className="edit-form-input p-2 flex-fill"
                     id="bio"
@@ -210,8 +209,8 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                   {formik.touched.bio && formik.errors.bio ? (
                     <div className="error-msg">{formik.errors.bio}</div>
                   ) : null}
-                </section>
-                <section className="d-flex flex-column justify-content-between align-items-stretch">
+                </div>
+                <div className="d-flex flex-column justify-content-between align-items-stretch">
                   <select
                     className="edit-form-input p-2 flex-fill"
                     id="interests"
@@ -232,8 +231,8 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                   {formik.touched.interests && formik.errors.interests ? (
                     <div className="error-msg">{formik.errors.interests}</div>
                   ) : null}
-                </section>
-                <section className="d-flex flex-column justify-content-between align-items-stretch">
+                </div>
+                <div className="d-flex flex-column justify-content-between align-items-stretch">
                   <input
                     className="edit-form-input p-2 flex-fill"
                     id="number"
@@ -247,8 +246,8 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                   {formik.touched.number && formik.errors.number ? (
                     <div className="error-msg">{formik.errors.number}</div>
                   ) : null}
-                </section>
-                <section className="d-flex flex-column justify-content-between align-items-stretch">
+                </div>
+                <div className="d-flex flex-column justify-content-between align-items-stretch">
                   <input
                     className="edit-form-input p-2 flex-fill"
                     id="address"
@@ -261,8 +260,8 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                   {formik.touched.address && formik.errors.address ? (
                     <div className="error-msg">{formik.errors.address}</div>
                   ) : null}
-                </section>
-                <section className="d-flex flex-column justify-content-between align-items-stretch">
+                </div>
+                <div className="d-flex flex-column justify-content-between align-items-stretch">
                   <input
                     className="edit-form-input p-2 flex-fill"
                     id="profileImageUrl"
@@ -279,8 +278,8 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                       {formik.errors.profileImageUrl}
                     </div>
                   ) : null}
-                </section>
-                <section className="d-flex flex-column justify-content-between align-items-stretch">
+                </div>
+                <div className="d-flex flex-column justify-content-between align-items-stretch">
                   <input
                     className="edit-form-input p-2 flex-fill"
                     id="backgroundImageUrl"
@@ -297,7 +296,7 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                       {formik.errors.backgroundImageUrl}
                     </div>
                   ) : null}
-                </section>
+                </div>
               </Card.Text>
             </Card.Body>
           </Card>
