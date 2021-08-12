@@ -8,7 +8,7 @@ import NavBar from "./components/NavBar";
 
 import Home from "./containers/Home";
 import Profile from "./containers/Profile";
-import Neighbours from "./containers/Neighbours";
+import Neighbors from "./containers/Neighbors";
 import Meet from "./containers/Meet";
 
 function App() {
@@ -23,8 +23,8 @@ function App() {
           <Route path="/profile">
             <Profile />
           </Route>
-          <Route path="/neighbours">
-            <Neighbours />
+          <Route path="/neighbors">
+            <Neighbors />
           </Route>
           <Route path="/meet">
             <Meet />
