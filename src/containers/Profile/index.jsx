@@ -84,14 +84,14 @@ const ProfilePage = () => {
                     <Card.Title className="card-title">About You</Card.Title>
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
-                        Bio:
+                        Bio:{" "}
                         <span>
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit. Semper gravida tincidunt aliquam quam.
                         </span>
                       </li>
                       <li>
-                        Interests:
+                        Interests:{" "}
                         <span>Learning, coding, collaborating, designing.</span>
                       </li>
                     </ul>
