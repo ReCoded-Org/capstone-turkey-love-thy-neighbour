@@ -1,62 +1,103 @@
+@import "../../style/variables";
+
 .profile-page-bg {
+  min-height: calc(100vh - 60px);
   background-image: url("../../images/ProfilePage/PBG.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  .profile-photo {
-    width: 100px;
-    height: 100px;
-  }
 
-  .cards-container {
-    // .cards-container:first-child {
-    //   background-color: red !important;
-    // }
-    .info-cards {
-      width: 24rem;
-      border-radius: 15px !important;
-      margin: 15px;
+  .profile-content-container {
+    min-height: calc(100vh - 60px);
 
-      ul {
-        list-style: none;
+    & > div.row {
+      width: 100%;
+
+      & > div:first-child {
+        // picture and button column
+
+        .profile-photo {
+          width: 100px;
+          height: 100px;
+        }
+
+        .edit-button {
+          color: #2a5885 !important;
+          background-color: #ffffff !important;
+          font-weight: bold !important;
+          border-color: #ffffff !important;
+          border-radius: 16px !important;
+          margin: 5px;
+        }
       }
-      li {
-        color: #57b7df;
-        font-weight: bold;
-      }
-      span {
-        color: black;
-        font-weight: normal;
+
+      & > div:last-child {
+        // cards column
+        padding: 0;
+
+        & > div.cards-row {
+          // cards row
+          margin: 0;
+
+          & > div {
+            // card column
+            padding: 0;
+            min-height: 250px;
+
+            @media screen and (max-width: 991px) {
+              width: 100% !important;
+              margin-bottom: 16px;
+            }
+
+            & > div.card {
+              // <Card></Card> component
+              border-radius: 15px !important;
+              height: 100%;
+              margin: 0 !important;
+
+              @media screen and (min-width: 768px) {
+                width: 95% !important;
+              }
+              @media screen and (max-width: 767px) {
+                width: 100% !important;
+              }
+
+              & > div.card-body {
+                & > ul {
+                  list-style: none;
+                  height: 85%;
+
+                  & > li {
+                    color: $logo-blue;
+                    font-weight: bold;
+
+                    & > span {
+                      color: $black;
+                      font-weight: normal;
+                    }
+                  }
+                }
+
+                & > div.card-title {
+                  font-weight: bold;
+                  margin-left: 30px;
+                }
+              }
+            }
+
+            & > #blue-card {
+              background-color: #2a5885;
+              color: #ffffff;
+              span {
+                color: #ffffff;
+              }
+            }
+
+            & > .white-card {
+              background-color: #ffffff;
+            }
+          }
+        }
       }
     }
-
-    .card-title {
-      font-weight: bold;
-      margin-left: 30px;
-    }
-
-    .white-cards {
-      background-color: #ffffff !important;
-    }
-
-    .blue-cards {
-      background-color: #2a5885 !important;
-      color: #ffffff;
-      span {
-        color: #ffffff;
-      }
-    }
-  }
-
-  .profile-page-main-container > section {
-    margin: 10px;
-  }
-
-  .edit-button {
-    color: #2a5885 !important;
-    background-color: #ffffff !important;
-    font-weight: bold !important;
-    border-color: #ffffff !important;
-    border-radius: 16px !important;
-    margin: 5px;
   }
 }
