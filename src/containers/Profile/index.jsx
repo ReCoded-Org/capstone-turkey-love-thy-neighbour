@@ -4,17 +4,14 @@ import { Container, Row, Col, Button, Card } from "react-bootstrap";
 
 import PPMaleSVG from "../../images/ProfilePage/PPMaleSVG.svg";
 import EditProfileModal from "../../components/EditProfileModal";
+import { EditProfileButton } from "../../components/CustomButtons/index";
 import "./index.scss";
 
 const ProfilePage = () => {
-  // modal states
   // TODO: use one state that has an object of states
   // TODO: Replace buttons with the custom buttons
-  // remove paddins from the columns
   const [showModal, setShowModal] = useState(false);
   const handleClick = () => setShowModal(!showModal);
-
-  //     TODO: Make the gap between the sections smaller
 
   return (
     <Container fluid className="profile-page-bg">
@@ -23,19 +20,15 @@ const ProfilePage = () => {
           <Col
             xs={12}
             sm={12}
-            className="d-flex flex-column align-items-center mb-3 mt-5 mt-sm-5 mt-md-0"
+            className="d-flex flex-column align-items-center mb-3"
           >
             <div>
               <img className="profile-photo" alt="profilePic" src={PPMaleSVG} />
             </div>
             <div>
-              <Button
-                onClick={handleClick}
-                className="edit-button"
-                type="submit"
-              >
+              <EditProfileButton onClick={handleClick} type="submit">
                 Edit Profile
-              </Button>
+              </EditProfileButton>
               {showModal && (
                 <EditProfileModal
                   handleClick={handleClick}

@@ -3,7 +3,7 @@ import { Modal, Button, Card } from "react-bootstrap";
 import { useFormik } from "formik";
 
 import "./index.scss";
-import logo from "../../images/logo.svg";
+import { ReactComponent as Logo } from "../../images/logo.svg";
 
 const SignInModal = ({
   handleClickSignIn,
@@ -45,11 +45,9 @@ const SignInModal = ({
 
   return (
     <Modal show={showSignInModal} onHide={handleClickSignIn}>
-      <Modal.Header>
-        <Modal.Title className="d-flex justify-content-between align-items-center align-content-between">
-          <img src={logo} alt="logo" />
-          <span>Sign In</span>
-        </Modal.Title>
+      <Modal.Header className="d-flex justify-content-between">
+        <Logo />
+        <h2 className="mx-auto">Sign In</h2>
         <Button
           type="button"
           data-toggle="modal"

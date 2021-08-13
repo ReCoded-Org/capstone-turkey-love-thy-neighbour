@@ -13,3 +13,27 @@ export const CTAButton = styled(BaseButton)`
   padding: 13px 65px;
   margin-top: 13px;
 `;
+
+export const EditProfileButton = styled(BaseButton)`
+  color: #2a5885 !important;
+  background-color: #ffffff !important;
+  font-weight: bold !important;
+  border-color: #ffffff !important;
+  border-radius: 16px !important;
+  margin: 5px;
+  padding: 10px 30px;
+`;
+
+export const DiscardChangesButton = styled(BaseButton)`
+  background-color: var(--logo-red) !important;
+  color: var(--white);
+  border: none !important;
+  padding: 6px 12px;
+`;
+
+export const SaveChangesButton = styled(BaseButton)`
+  background-color: var(--dark-blue) !important;
+  color: white;
+  border: none !important;
+  padding: 6px 12px;
+`;

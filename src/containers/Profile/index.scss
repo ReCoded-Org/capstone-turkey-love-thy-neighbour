@@ -14,19 +14,16 @@
 
       & > div:first-child {
         // picture and button column
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+
+        @media screen and (max-width: 991px) {
+          margin-top: 48px;
+        }
 
         .profile-photo {
           width: 100px;
           height: 100px;
-        }
-
-        .edit-button {
-          color: #2a5885 !important;
-          background-color: #ffffff !important;
-          font-weight: bold !important;
-          border-color: #ffffff !important;
-          border-radius: 16px !important;
-          margin: 5px;
         }
       }
 

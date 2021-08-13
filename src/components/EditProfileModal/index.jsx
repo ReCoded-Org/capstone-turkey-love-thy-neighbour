@@ -1,9 +1,13 @@
 import React from "react";
+
 import { Modal, Button, Card } from "react-bootstrap";
+
 import { useFormik } from "formik";
-import "./index.scss";
+
 import helpers from "../../utils/helpers";
 import { ReactComponent as Logo } from "../../images/logo.svg";
+import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
+import "./index.scss";
 
 const EditProfileModal = ({ handleClick, showModal }) => {
   // TODO: Add the validation errors for other stuff.
@@ -303,12 +307,10 @@ const EditProfileModal = ({ handleClick, showModal }) => {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button className="edit-form-discard-button" onClick={toggle}>
+          <DiscardChangesButton onClick={toggle}>
             Discard Changes
-          </Button>
-          <Button type="submit" className="edit-form-button">
-            Save Changes
-          </Button>
+          </DiscardChangesButton>
+          <SaveChangesButton type="submit">Save Changes</SaveChangesButton>
         </Modal.Footer>
       </form>
     </Modal>
