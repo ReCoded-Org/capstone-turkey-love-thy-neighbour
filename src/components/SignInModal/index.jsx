@@ -2,8 +2,13 @@ import React from "react";
 import { Modal, Button, Card } from "react-bootstrap";
 import { useFormik } from "formik";
 
-import "./index.scss";
 import { ReactComponent as Logo } from "../../images/logo.svg";
+import {
+  SignInUpButton,
+  SignInUpGoogleButton,
+  SignInUpFacebookButton,
+} from "../CustomButtons";
+import "./index.scss";
 
 const SignInModal = ({
   handleClickSignIn,
@@ -94,15 +99,13 @@ const SignInModal = ({
         </Modal.Body>
 
         <Modal.Footer className="sign-in-buttons d-flex flex-column align-items-stretch">
-          <Button type="submit" className="sign-in-button p-2 ">
-            Sign In
-          </Button>
-          <Button type="submit" className="sign-in-google-button p-2 ">
+          <SignInUpButton type="submit">Sign In</SignInUpButton>
+          <SignInUpGoogleButton type="submit">
             Sign In With Google
-          </Button>
-          <Button type="submit" className="sign-in-facebook-button p-2 ">
+          </SignInUpGoogleButton>
+          <SignInUpFacebookButton type="submit">
             Sign In With Facebook
-          </Button>
+          </SignInUpFacebookButton>
         </Modal.Footer>
         <Modal.Footer className="d-flex flex-column align-items-center">
           <span>

@@ -4,6 +4,11 @@ import { useFormik } from "formik";
 
 import "./index.scss";
 import logo from "../../images/logo.svg";
+import {
+  SignInUpButton,
+  SignInUpGoogleButton,
+  SignInUpFacebookButton,
+} from "../CustomButtons";
 
 const SignUpModal = ({
   handleClickSignIn,
@@ -144,15 +149,13 @@ const SignUpModal = ({
         </Modal.Body>
 
         <Modal.Footer className="sign-up-buttons d-flex flex-column align-items-stretch">
-          <Button type="submit" className="sign-up-button p-2 ">
-            Sign Up
-          </Button>
-          <Button type="submit" className="sign-up-google-button p-2 ">
+          <SignInUpButton type="submit">Sign Up</SignInUpButton>
+          <SignInUpGoogleButton type="submit">
             Sign Up With Google
-          </Button>
-          <Button type="submit" className="sign-up-facebook-button p-2 ">
+          </SignInUpGoogleButton>
+          <SignInUpFacebookButton type="submit">
             Sign Up With Facebook
-          </Button>
+          </SignInUpFacebookButton>
         </Modal.Footer>
         <Modal.Footer className="d-flex flex-column align-items-center">
           <span>

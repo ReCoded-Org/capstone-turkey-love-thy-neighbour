@@ -33,7 +33,31 @@ export const DiscardChangesButton = styled(BaseButton)`
 
 export const SaveChangesButton = styled(BaseButton)`
   background-color: var(--dark-blue) !important;
-  color: white;
+  color: var(--white);
   border: none !important;
-  padding: 6px 12px;
+  padding: 8px;
+`;
+
+export const SignInUpButton = styled(BaseButton)`
+  background-color: var(--dark-blue) !important;
+  color: var(--white);
+  border: none !important;
+  padding: 8px;
+  width: 100% !important;
+`;
+
+export const SignInUpGoogleButton = styled(BaseButton)`
+  background-color: var(--logo-red) !important;
+  color: var(--white);
+  border: none !important;
+  padding: 8px;
+  width: 100% !important;
+`;
+
+export const SignInUpFacebookButton = styled(BaseButton)`
+  background-color: var(--logo-blue) !important;
+  color: var(--white);
+  border: none !important;
+  padding: 8px;
+  width: 100% !important;
 `;
