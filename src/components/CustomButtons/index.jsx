@@ -35,7 +35,7 @@ export const SaveChangesButton = styled(BaseButton)`
   background-color: var(--dark-blue) !important;
   color: var(--white);
   border: none !important;
-  padding: 8px;
+  padding: 6px 12px;
 `;
 
 export const SignInUpButton = styled(BaseButton)`
