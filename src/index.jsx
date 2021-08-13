@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import thunkMiddleware from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-import userReducer from "./userSlice";
+import rootReducer from "./rootReducer";
 
 import App from "./App";
 
@@ -16,7 +16,7 @@ import "./main.scss";
 
 const composedEnhacer = composeWithDevTools(applyMiddleware(thunkMiddleware));
 
-const store = createStore(userReducer, composedEnhacer);
+const store = createStore(rootReducer, composedEnhacer);
 
 ReactDOM.render(
   <React.StrictMode>
