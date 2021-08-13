@@ -1,10 +1,17 @@
 @import "../../style/_variables.scss";
 
 .meet-container-fluid {
+  height: calc(100vh - 60px);
+
   & > .meet-container {
+    height: 100%;
+
     & > .meet-row {
-      padding: 0;
+      margin: 0;
+
       & > div:first-child {
+        padding: 0;
+
         h1 {
           color: $logo-red;
         }
@@ -17,8 +24,9 @@
           color: $black;
         }
       }
-      //   & > div:last-child {
-      //   }
+      & > div:last-child {
+        padding: 0;
+      }
     }
   }
 }
