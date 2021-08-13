@@ -13,7 +13,7 @@ function Meet() {
     <Container fluid className="meet-container-fluid">
       <Container className="meet-container d-flex align-items-center">
         <Row className="meet-row">
-          <Col xs={12} sm={12} md={6} className="mt-5 mt-sm-5 mt-md-0">
+          <Col xs={12} sm={12} md={6}>
             <h3>Hello, Ali</h3>
             <h1>Meet nearby people with our cutting edge algorithms.</h1>
             <p>
