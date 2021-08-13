@@ -1,0 +1,24 @@
+@import "../../style/_variables.scss";
+
+.meet-container-fluid {
+  & > .meet-container {
+    & > .meet-row {
+      padding: 0;
+      & > div:first-child {
+        h1 {
+          color: $logo-red;
+        }
+
+        h3 {
+          color: $logo-blue;
+        }
+
+        p {
+          color: $black;
+        }
+      }
+      //   & > div:last-child {
+      //   }
+    }
+  }
+}
