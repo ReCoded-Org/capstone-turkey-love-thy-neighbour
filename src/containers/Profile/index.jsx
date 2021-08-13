@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 
 import PPMaleSVG from "../../images/ProfilePage/PPMaleSVG.svg";
 import EditProfileModal from "../../components/EditProfileModal";
@@ -8,8 +8,6 @@ import { EditProfileButton } from "../../components/CustomButtons/index";
 import "./index.scss";
 
 const ProfilePage = () => {
-  // TODO: use one state that has an object of states
-  // TODO: Replace buttons with the custom buttons
   const [showModal, setShowModal] = useState(false);
   const handleClick = () => setShowModal(!showModal);
 
@@ -108,7 +106,6 @@ const ProfilePage = () => {
                 <Card className="info-cards white-card">
                   <Card.Body>
                     <Card.Title className="card-title">Contact</Card.Title>
-                    {/* //TODO : Display the card items in such a way that no whitespace is unused inside the card */}
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
                         Email: <span>ars.style@hotmail.com</span>
