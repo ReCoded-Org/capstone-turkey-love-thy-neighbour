@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import userReducer from "./userSlice";
-import popupReducer from "./popupSlice";
+import userReducer from "./slices/userSlice";
+import popupReducer from "./slices/popupSlice";
 
 const rootReducer = combineReducers({
   user: userReducer,

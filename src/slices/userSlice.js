@@ -1,4 +1,4 @@
-import { auth, firestore } from "./firebaseConfig";
+import { auth, firestore } from "../firebaseConfig";
 
 /* eslint-disable no-unused-vars */
 export const listenForAuthChanges = () => {
