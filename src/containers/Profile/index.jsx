@@ -2,14 +2,18 @@ import React, { useState } from "react";
 
 import { Container, Row, Col, Card } from "react-bootstrap";
 
+import { useDispatch, useSelector } from "react-redux";
+
 import PPMaleSVG from "../../images/ProfilePage/PPMaleSVG.svg";
 import EditProfileModal from "../../components/EditProfileModal";
 import { EditProfileButton } from "../../components/CustomButtons/index";
 import "./index.scss";
 
 const ProfilePage = () => {
-  const [showModal, setShowModal] = useState(false);
-  const handleClick = () => setShowModal(!showModal);
+  const dispatch = useDispatch();
+  const isEditProfileOpen = useSelector(
+    (state) => state.popup.isEditProfileOpen
+  );
 
   return (
     <Container fluid className="profile-page-bg">
@@ -24,13 +28,16 @@ const ProfilePage = () => {
               <img className="profile-photo" alt="profilePic" src={PPMaleSVG} />
             </div>
             <div>
-              <EditProfileButton onClick={handleClick} type="submit">
+              <EditProfileButton
+                onClick={() => dispatch({ type: "editProfile" })}
+                type="submit"
+              >
                 Edit Profile
               </EditProfileButton>
-              {showModal && (
+              {isEditProfileOpen && (
                 <EditProfileModal
-                  handleClick={handleClick}
-                  showModal={showModal}
+                // handleClick={handleClick}
+                // showModal={showModal}
                 />
               )}
             </div>

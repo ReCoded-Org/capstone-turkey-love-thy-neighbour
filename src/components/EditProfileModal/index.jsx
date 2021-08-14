@@ -4,12 +4,14 @@ import { Modal, Button, Card } from "react-bootstrap";
 
 import { useFormik } from "formik";
 
+import { useSelector, useDispatch } from "react-redux";
+
 import helpers from "../../utils/helpers";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
 
-const EditProfileModal = ({ handleClick, showModal }) => {
+const EditProfileModal = () => {
   // TODO: Add the validation errors for other stuff.
   const validate = (values) => {
     const errors = {};
@@ -67,12 +69,14 @@ const EditProfileModal = ({ handleClick, showModal }) => {
     },
   });
 
-  const toggle = () => {
-    handleClick();
-  };
+  const dispatch = useDispatch();
+  const isEditProfileOpen = useSelector((user) => user.popup.isEditProfileOpen);
 
   return (
-    <Modal show={showModal} onHide={handleClick}>
+    <Modal
+      show={isEditProfileOpen}
+      onHide={() => dispatch({ type: "editProfile" })}
+    >
       <Modal.Header className="d-flex justify-content-between">
         <Logo />
         <h2 className="mx-auto">Edit Profile</h2>
@@ -81,7 +85,7 @@ const EditProfileModal = ({ handleClick, showModal }) => {
           data-toggle="modal"
           className="btn-close"
           aria-label="Close"
-          onClick={toggle}
+          onClick={() => dispatch({ type: "editProfile" })}
         />
       </Modal.Header>
 
@@ -193,7 +197,11 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                       Education
                     </option>
                     {helpers.educationList.map((education) => {
-                      return <option value={education}>{education}</option>;
+                      return (
+                        <option key={education} value={education}>
+                          {education}
+                        </option>
+                      );
                     })}
                   </select>
                   {formik.touched.education && formik.errors.education ? (
@@ -307,7 +315,9 @@ const EditProfileModal = ({ handleClick, showModal }) => {
         </Modal.Body>
 
         <Modal.Footer>
-          <DiscardChangesButton onClick={toggle}>
+          <DiscardChangesButton
+            onClick={() => dispatch({ type: "editProfile" })}
+          >
             Discard Changes
           </DiscardChangesButton>
           <SaveChangesButton type="submit">Save Changes</SaveChangesButton>

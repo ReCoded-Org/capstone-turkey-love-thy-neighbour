@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { Container } from "react-bootstrap";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { listenForAuthChanges } from "./userSlice";
+import { listenForAuthChanges } from "./slices/userSlice";
 
 import NavBar from "./components/NavBar";
 
@@ -14,7 +14,7 @@ import Profile from "./containers/Profile";
 import Neighbors from "./containers/Neighbors";
 import Meet from "./containers/Meet";
 import SignInModal from "./components/SignInModal";
-import SingUpModal from "./components/SignUpModal";
+import SignUpModal from "./components/SignUpModal";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,35 +22,18 @@ function App() {
     dispatch(listenForAuthChanges());
   }, [dispatch]);
 
-  // const [showSignInModal, setShowSignInModal] = useState(false);
-  // const handleClickSignIn = () => setShowSignInModal(!showSignInModal);
-
-  // const [showSignUpModal, setShowSignUpModal] = useState(false);
-  // const handleClickSignUp = () => setShowSignUpModal(!showSignUpModal);
-
   return (
     <Container fluid className="main-wrapper">
       <Router>
-        <NavBar
-        // handleClickSignIn={handleClickSignIn}
-        // handleClickSignUp={handleClickSignUp}
-        />
+        <NavBar />
         {/* Always display it at the top */}
-        <SignInModal
-        // showSignInModal={showSignInModal}
-        // handleClickSignIn={handleClickSignIn}
-        // handleClickSignUp={handleClickSignUp}
-        />
-        <SingUpModal
-        // showSignUpModal={showSignUpModal}
-        // handleClickSignIn={handleClickSignIn}
-        // handleClickSignUp={handleClickSignUp}
-        />
+        <SignInModal />
+        <SignUpModal />
         <Switch>
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/profile">
+          <Route path="/profile/:uid">
             <Profile />
           </Route>
           <Route path="/neighbors">
