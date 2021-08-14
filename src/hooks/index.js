@@ -8,5 +8,7 @@ export function removeOneProp(object, propToBeRemoved) {
 }
 
 export function setUserDocument(docTitle, docData) {
+  console.log("docTitle", docTitle);
+  console.log("docData", docData);
   firestore.collection("users").doc(docTitle).set(docData);
 }

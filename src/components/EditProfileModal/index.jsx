@@ -136,7 +136,11 @@ const EditProfileModal = () => {
                       Districts
                     </option>
                     {helpers.districtList.map((district) => {
-                      return <option value={district}>{district}</option>;
+                      return (
+                        <option key={district} value={district}>
+                          {district}
+                        </option>
+                      );
                     })}
                   </select>
                   {formik.touched.district && formik.errors.district ? (
@@ -237,7 +241,11 @@ const EditProfileModal = () => {
                       Interests
                     </option>
                     {helpers.activityList.map((activity) => {
-                      return <option value={activity}>{activity}</option>;
+                      return (
+                        <option key={activity} value={activity}>
+                          {activity}
+                        </option>
+                      );
                     })}
                   </select>
                   {formik.touched.interests && formik.errors.interests ? (

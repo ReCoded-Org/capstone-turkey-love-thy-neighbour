@@ -4,6 +4,12 @@ import { useFormik } from "formik";
 
 import { useDispatch, useSelector } from "react-redux";
 
+import { useHistory } from "react-router-dom";
+
+import { removeOneProp, setUserDocument } from "../../hooks/index";
+
+import { auth } from "../../firebaseConfig";
+
 import "./index.scss";
 import logo from "../../images/logo.svg";
 import {
@@ -13,6 +19,10 @@ import {
 } from "../CustomButtons";
 
 const SignUpModal = () => {
+  const dispatch = useDispatch();
+  const isSignUpOpen = useSelector((state) => state.popup.isSignUpOpen);
+  const history = useHistory();
+
   const validate = (values) => {
     const errors = {};
     if (!values.firstName) {
@@ -43,12 +53,32 @@ const SignUpModal = () => {
     },
     validate,
     onSubmit: (values) => {
+      console.log(values);
       alert(JSON.stringify(values, null, 2));
+      const objWithoutPasswordConfigProp = removeOneProp(
+        values,
+        "repeatedPassword"
+      );
+      auth
+        .createUserWithEmailAndPassword(values.email, values.password)
+        .then((userCred) => {
+          setUserDocument(userCred.user.uid, objWithoutPasswordConfigProp);
+          return userCred;
+        }) // set the document in firestore
+        .then((userCred) => {
+          history.push(`/profile/${userCred.user.uid}`);
+          // TODO: add this case to the userSlice.js reducer
+          dispatch({ type: "signUp" });
+        }) // take the user to their profile
+        .catch((error) =>
+          console.error(
+            "A problem occured while your account being created!",
+            error
+          )
+        );
     },
   });
 
-  const dispatch = useDispatch();
-  const isSignUpOpen = useSelector((state) => state.popup.isSignUpOpen);
   return (
     <Modal
       show={isSignUpOpen}
