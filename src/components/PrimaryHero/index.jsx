@@ -1,10 +1,10 @@
 import React from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
-import { CTAButton } from "../CustomButtons";
 
-import "./index.scss";
+import { CTAButton } from "../CustomButtons";
 import img from "../../images/PrimaryHeroContentBgImg.png";
+import "./index.scss";
 
 function PrimaryHero() {
   return (
