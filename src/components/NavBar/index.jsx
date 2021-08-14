@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useDispatch } from "react-redux";
+
 import { Container, Nav, Navbar } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
@@ -8,6 +10,8 @@ import logo from "../../images/logo.svg";
 import "./index.scss";
 
 function NavBar({ handleClickSignIn, handleClickSignUp }) {
+  const dispatch = useDispatch();
+
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark">
       <Container>
@@ -29,9 +33,13 @@ function NavBar({ handleClickSignIn, handleClickSignUp }) {
             </Link>
           </Nav>
           <Nav>
-            <Nav.Link onClick={handleClickSignIn}>Sign In</Nav.Link>
+            <Nav.Link onClick={() => dispatch({ type: "signIn" })}>
+              Sign In
+            </Nav.Link>
             {/* TODO: Handle the click to show sign in pop up */}
-            <Nav.Link onClick={handleClickSignUp}>Sign Up</Nav.Link>
+            <Nav.Link onClick={() => dispatch({ type: "signUp" })}>
+              Sign Up
+            </Nav.Link>
             {/* TODO: Handle the click to show sign in pop up */}
           </Nav>
         </Navbar.Collapse>

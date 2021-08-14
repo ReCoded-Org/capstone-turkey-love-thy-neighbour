@@ -2,6 +2,8 @@ import React from "react";
 import { Modal, Button, Card } from "react-bootstrap";
 import { useFormik } from "formik";
 
+import { useSelector, useDispatch } from "react-redux";
+
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import {
   SignInUpButton,
@@ -38,18 +40,21 @@ const SignInModal = ({
     },
   });
 
-  const onClick = (e) => {
-    e.preventDefault();
-    handleClickSignUp();
-    handleClickSignIn();
-  };
+  // const onClick = (e) => {
+  //   e.preventDefault();
+  //   handleClickSignUp();
+  //   handleClickSignIn();
+  // };
 
-  const toggle = () => {
-    handleClickSignIn();
-  };
+  // const toggle = () => {
+  //   handleClickSignIn();
+  // };
+
+  const dispatch = useDispatch();
+  const isSignInOpen = useSelector((state) => state.popup.isSignInOpen);
 
   return (
-    <Modal show={showSignInModal} onHide={handleClickSignIn}>
+    <Modal show={isSignInOpen} onHide={() => dispatch({ type: "signIn" })}>
       <Modal.Header className="d-flex justify-content-between">
         <Logo />
         <h2 className="mx-auto">Sign In</h2>
@@ -58,7 +63,7 @@ const SignInModal = ({
           data-toggle="modal"
           className="btn-close"
           aria-label="Close"
-          onClick={toggle}
+          onClick={() => dispatch({ type: "signIn" })}
         />
       </Modal.Header>
 
@@ -110,7 +115,13 @@ const SignInModal = ({
         <Modal.Footer className="d-flex flex-column align-items-center">
           <span>
             Dont have an{" "}
-            <a href="/" onClick={onClick}>
+            <a
+              href="/"
+              onClick={() => {
+                dispatch({ type: "signIn" });
+                dispatch({ type: "signUp" });
+              }}
+            >
               Account
             </a>
             ?
