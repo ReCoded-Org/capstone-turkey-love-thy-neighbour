@@ -20,8 +20,8 @@
         @media screen and (min-width: 993px) {
           font-size: 15px;
         }
-        @media screen and (max-width: 767px) {
-          font-size: 11px;
+        @media screen and (max-width: 252px) {
+          font-size: 10px;
         }
       }
 
@@ -42,6 +42,12 @@
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .faq-content-row p {
     font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 253px) and (max-width: 767px) {
+  .faq-content-row p {
+    font-size: 11px;
   }
 }
 
