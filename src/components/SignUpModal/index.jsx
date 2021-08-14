@@ -2,6 +2,8 @@ import React from "react";
 import { Modal, Button, Card } from "react-bootstrap";
 import { useFormik } from "formik";
 
+import { useDispatch, useSelector } from "react-redux";
+
 import "./index.scss";
 import logo from "../../images/logo.svg";
 import {
@@ -10,11 +12,7 @@ import {
   SignInUpFacebookButton,
 } from "../CustomButtons";
 
-const SignUpModal = ({
-  handleClickSignIn,
-  showSignUpModal,
-  handleClickSignUp,
-}) => {
+const SignUpModal = () => {
   const validate = (values) => {
     const errors = {};
     if (!values.firstName) {
@@ -49,30 +47,27 @@ const SignUpModal = ({
     },
   });
 
-  const onClick = (e) => {
-    e.preventDefault();
-    handleClickSignIn();
-    handleClickSignUp();
-  };
-
-  const toggle = () => {
-    handleClickSignUp();
-  };
-  // <Modal.Title className="d-flex justify-content-between align-items-center align-content-between">
-
+  const dispatch = useDispatch();
+  const isSignUpOpen = useSelector((state) => state.popup.isSignUpOpen);
   return (
-    <Modal show={showSignUpModal} onHide={handleClickSignUp}>
+    <Modal
+      show={isSignUpOpen}
+      onHide={() => {
+        dispatch({ type: "signUp" });
+      }}
+    >
       <Modal.Header>
         <img src={logo} alt="logo" />
-        <h4>Sign Up</h4>
+        <h2>Sign Up</h2>
         <Button
           type="button"
           data-toggle="modal"
           className="btn-close"
           aria-label="Close"
-          onClick={toggle}
+          onClick={() => {
+            dispatch({ type: "signUp" });
+          }}
         />
-        {/* 18 px offset from right and left for the text just make margin: 0 auto */}
       </Modal.Header>
 
       <form onSubmit={formik.handleSubmit}>
@@ -160,7 +155,14 @@ const SignUpModal = ({
         <Modal.Footer className="d-flex flex-column align-items-center">
           <span>
             Already got an{" "}
-            <a href="/" onClick={onClick}>
+            <a
+              href="/"
+              onClick={(event) => {
+                event.preventDefault();
+                dispatch({ type: "signUp" });
+                dispatch({ type: "signIn" });
+              }}
+            >
               Account
             </a>
             ?

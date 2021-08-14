@@ -12,11 +12,7 @@ import {
 } from "../CustomButtons";
 import "./index.scss";
 
-const SignInModal = ({
-  handleClickSignIn,
-  showSignInModal,
-  handleClickSignUp,
-}) => {
+const SignInModal = () => {
   const validate = (values) => {
     const errors = {};
 
@@ -39,16 +35,6 @@ const SignInModal = ({
       alert(JSON.stringify(values, null, 2));
     },
   });
-
-  // const onClick = (e) => {
-  //   e.preventDefault();
-  //   handleClickSignUp();
-  //   handleClickSignIn();
-  // };
-
-  // const toggle = () => {
-  //   handleClickSignIn();
-  // };
 
   const dispatch = useDispatch();
   const isSignInOpen = useSelector((state) => state.popup.isSignInOpen);
@@ -117,7 +103,8 @@ const SignInModal = ({
             Dont have an{" "}
             <a
               href="/"
-              onClick={() => {
+              onClick={(event) => {
+                event.preventDefault();
                 dispatch({ type: "signIn" });
                 dispatch({ type: "signUp" });
               }}
