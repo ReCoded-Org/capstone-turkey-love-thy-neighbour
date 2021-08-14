@@ -8,8 +8,8 @@ import "./index.scss";
 function Subscription() {
   return (
     <section className="subscription-img-bg primary-hero-section container-fluid">
-      <Container className="faq-content-container d-flex align-items-center">
-        <Row className="faq-content-row m-0">
+      <Container className="subscription-content-container d-flex align-items-center">
+        <Row className="subscription-content-row m-0">
           <Col
             xs={12}
             sm={12}
