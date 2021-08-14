@@ -13,8 +13,9 @@ h2 {
   margin: 0 !important;
 
   svg {
-    width: 70px;
-    height: 70px;
+    min-width: 70px;
+    max-width: 120px;
+    max-height: 70px;
 
     &.network-svg {
       margin-bottom: 7px;
@@ -56,6 +57,9 @@ h2 {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
       rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
+    @media screen and (max-width: 575px) {
+      padding: 10px;
+    }
     @media screen and (min-width: 342px) {
       height: 153px;
     }
