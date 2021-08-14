@@ -1,6 +1,27 @@
+import { auth, firestore } from "./firebaseConfig";
+
 /* eslint-disable no-unused-vars */
-export const test = () => {
-  return { type: "test" };
+export const listenForAuthChanges = () => {
+  return (dispatch) => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        firestore
+          .collection("users")
+          .doc(user.uid)
+          .get()
+          .then((doc) => {
+            const userReduxState = {
+              isSignedIn: true,
+              firestoreDoc: doc.data(),
+              authCred: user,
+            };
+            dispatch({ type: "signedIn", payload: userReduxState });
+          });
+      } else {
+        dispatch({ type: "notSignedIn" }); // set the state to it's initial values
+      }
+    });
+  };
 };
 
 const initialState = {
@@ -11,8 +32,12 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "test":
-      return "this is a test";
+    case "signedIn":
+      return { ...action.payload };
+
+    case "notSignedIn":
+      return { ...initialState };
+
     default:
       return state;
   }
