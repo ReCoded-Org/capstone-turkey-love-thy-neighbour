@@ -62,4 +62,10 @@ const helpers = {
   ],
 };
 
+export const newActivityList = helpers.activityList.map((exercise) => {
+  return {
+    content: exercise,
+  };
+});
+
 export default helpers;

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Modal, Button, Card } from "react-bootstrap";
+
+import Multiselect from "multiselect-react-dropdown";
 
 import { useFormik } from "formik";
 
@@ -8,7 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { firestore } from "../../firebaseConfig";
 
-import helpers from "../../utils/helpers";
+import helpers, { newActivityList } from "../../utils/helpers";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
@@ -18,6 +20,8 @@ const EditProfileModal = () => {
   const isEditProfileOpen = useSelector((user) => user.popup.isEditProfileOpen);
   const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
   const uid = useSelector((state) => state.user.authCred?.uid);
+
+  const [interests, setInterests] = useState([]);
 
   // TODO: Add the validation errors for other stuff.
   const validate = (values) => {
@@ -64,7 +68,7 @@ const EditProfileModal = () => {
       age: !firestoreDoc?.age ? 15 : firestoreDoc.age,
       education: !firestoreDoc?.education ? "" : firestoreDoc.education,
       bio: !firestoreDoc?.bio ? "" : firestoreDoc.bio,
-      interests: !firestoreDoc?.interests ? "" : firestoreDoc.interests,
+      interests: firestoreDoc?.interests ? firestoreDoc.interests : [],
       number: !firestoreDoc?.number ? "" : firestoreDoc.number,
       address: !firestoreDoc?.address ? "" : firestoreDoc.address,
       profileImageUrl: !firestoreDoc?.profileImageUrl
@@ -76,10 +80,12 @@ const EditProfileModal = () => {
     },
     validate,
     onSubmit: (values) => {
+      const valuesCopy = { ...values };
+      valuesCopy.interests = interests;
       firestore
         .collection("users")
         .doc(uid)
-        .set(values, { merge: true })
+        .set(valuesCopy, { merge: true })
         .then(() => dispatch({ type: "editProfile" }));
     },
   });
@@ -238,16 +244,16 @@ const EditProfileModal = () => {
                 ) : null}
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
-                <select
+                {/* <select
                   className="edit-form-input p-2 flex-fill"
                   id="interests"
                   name="interests"
                   onChange={formik.handleChange}
                   value={formik.values.interests}
                   onBlur={formik.handleBlur}
-                >
-                  {/* TODO: Move the helper function inside utils/helpers */}
-                  <option disabled value="">
+                > */}
+                {/* TODO: Move the helper function inside utils/helpers */}
+                {/* <option disabled value="">
                     Select Your Interests
                   </option>
                   {helpers.activityList.map((activity) => {
@@ -257,7 +263,18 @@ const EditProfileModal = () => {
                       </option>
                     );
                   })}
-                </select>
+                </select> */}
+                <Multiselect
+                  displayValue="content"
+                  onRemove={(selectedOptions) =>
+                    setInterests([...interests, selectedOptions])
+                  }
+                  onSelect={(selectedOptions) =>
+                    setInterests([...interests, selectedOptions])
+                  }
+                  options={newActivityList}
+                  selectedValues={formik.values.interests}
+                />
                 {formik.touched.interests && formik.errors.interests ? (
                   <div className="error-msg">{formik.errors.interests}</div>
                 ) : null}
