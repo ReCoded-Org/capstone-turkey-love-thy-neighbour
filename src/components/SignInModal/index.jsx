@@ -4,6 +4,10 @@ import { useFormik } from "formik";
 
 import { useSelector, useDispatch } from "react-redux";
 
+import { useHistory } from "react-router-dom";
+
+import { auth } from "../../firebaseConfig";
+
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import {
   SignInUpButton,
@@ -13,6 +17,11 @@ import {
 import "./index.scss";
 
 const SignInModal = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const isSignInOpen = useSelector((state) => state.popup.isSignInOpen);
+  const isSignedIn = useSelector((state) => state.user.isSignedIn);
+
   const validate = (values) => {
     const errors = {};
 
@@ -31,13 +40,22 @@ const SignInModal = () => {
       password: "",
     },
     validate,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: (values, { setSubmitting, resetForm }) => {
+      resetForm();
+      if (!isSignedIn) {
+        auth
+          .signInWithEmailAndPassword(values.email, values.password)
+          .then((cred) => {
+            history.push(`/profile/${cred.user.uid}`);
+            dispatch({ type: "signIn" });
+          })
+          .catch((error) =>
+            console.error("A problem occurred while logging in.", error)
+          );
+        setSubmitting(false);
+      }
     },
   });
-
-  const dispatch = useDispatch();
-  const isSignInOpen = useSelector((state) => state.popup.isSignInOpen);
 
   return (
     <Modal
@@ -60,35 +78,33 @@ const SignInModal = () => {
       <form onSubmit={formik.handleSubmit}>
         <Modal.Body>
           <Card>
-            <Card.Body>
-              <Card.Text className="d-flex flex-column">
-                <input
-                  className="sign-in-email p-2"
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                  onChange={formik.handleChange}
-                  value={formik.values.email}
-                  onBlur={formik.handleBlur}
-                />
-                {formik.touched.email && formik.errors.email ? (
-                  <div className="error-msg">{formik.errors.email}</div>
-                ) : null}
-                <input
-                  className="sign-in-password p-2"
-                  id="password"
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  onChange={formik.handleChange}
-                  value={formik.values.password}
-                  onBlur={formik.handleBlur}
-                />
-                {formik.touched.password && formik.errors.password ? (
-                  <div className="error-msg">{formik.errors.password}</div>
-                ) : null}
-              </Card.Text>
+            <Card.Body className="d-flex flex-column">
+              <input
+                className="sign-in-email p-2"
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Email"
+                onChange={formik.handleChange}
+                value={formik.values.email}
+                onBlur={formik.handleBlur}
+              />
+              {formik.touched.email && formik.errors.email ? (
+                <div className="error-msg">{formik.errors.email}</div>
+              ) : null}
+              <input
+                className="sign-in-password p-2"
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Password"
+                onChange={formik.handleChange}
+                value={formik.values.password}
+                onBlur={formik.handleBlur}
+              />
+              {formik.touched.password && formik.errors.password ? (
+                <div className="error-msg">{formik.errors.password}</div>
+              ) : null}
             </Card.Body>
           </Card>
         </Modal.Body>

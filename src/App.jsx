@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Container } from "react-bootstrap";
 
@@ -18,9 +18,12 @@ import SignUpModal from "./components/SignUpModal";
 
 function App() {
   const dispatch = useDispatch();
+  const isSignedIn = useSelector((state) => state.user.isSignedIn);
   useEffect(() => {
     dispatch(listenForAuthChanges());
   }, [dispatch]);
+
+  console.log(isSignedIn);
 
   return (
     <Container fluid className="main-wrapper">
