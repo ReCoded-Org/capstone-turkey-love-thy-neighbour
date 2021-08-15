@@ -17,8 +17,10 @@ const EditProfileModal = () => {
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector((user) => user.popup.isEditProfileOpen);
   const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
-  const uid = useSelector((state) => state.user.authCred.uid);
+  const uid = useSelector((state) => state.user.authCred?.uid);
 
+  // alternative bg image url: https://img.freepik.com/free-photo/abstract-flowing-neon-wave-background_53876-101942.jpg?size=626&ext=jpg
+  // alternative image url: https://www.acibadem.com.tr/assets/images/doctors/kutay-colakoglu-banner.png
   // TODO: Add the validation errors for other stuff.
   const validate = (values) => {
     const errors = {};
@@ -57,27 +59,30 @@ const EditProfileModal = () => {
   };
   const formik = useFormik({
     initialValues: {
-      firstName: !firestoreDoc.firstName ? "" : firestoreDoc.firstName,
-      lastName: !firestoreDoc.lastName ? "" : firestoreDoc.lastName,
-      district: !firestoreDoc.district ? "" : firestoreDoc.district,
-      gender: !firestoreDoc.gender ? "" : firestoreDoc.gender,
-      age: !firestoreDoc.age ? 15 : firestoreDoc.age,
-      education: "",
-      bio: !firestoreDoc.bio ? "" : firestoreDoc.bio,
-      interests: !firestoreDoc.interests ? "" : firestoreDoc.interest,
-      number: !firestoreDoc.number ? "" : firestoreDoc.number,
-      address: !firestoreDoc.address ? "" : firestoreDoc.address,
-      profileImageUrl: !firestoreDoc.profileImageUrl
+      firstName: !firestoreDoc?.firstName ? "" : firestoreDoc.firstName,
+      lastName: !firestoreDoc?.lastName ? "" : firestoreDoc.lastName,
+      district: !firestoreDoc?.district ? "" : firestoreDoc.district,
+      gender: !firestoreDoc?.gender ? "" : firestoreDoc.gender,
+      age: !firestoreDoc?.age ? 15 : firestoreDoc.age,
+      education: !firestoreDoc?.education ? "" : firestoreDoc.education,
+      bio: !firestoreDoc?.bio ? "" : firestoreDoc.bio,
+      interests: !firestoreDoc?.interests ? "" : firestoreDoc.interests,
+      number: !firestoreDoc?.number ? "" : firestoreDoc.number,
+      address: !firestoreDoc?.address ? "" : firestoreDoc.address,
+      profileImageUrl: !firestoreDoc?.profileImageUrl
         ? ""
         : firestoreDoc.profileImageUrl,
-      backgroundImageUrl: !firestoreDoc.backgroundImageUrl
+      backgroundImageUrl: !firestoreDoc?.backgroundImageUrl
         ? ""
         : firestoreDoc.backgroundImageUrl,
     },
     validate,
     onSubmit: (values) => {
-      firestore.collection("users").doc(uid).set(values);
-      alert(JSON.stringify(values, null, 2));
+      firestore
+        .collection("users")
+        .doc(uid)
+        .set(values, { merge: true })
+        .then(() => dispatch({ type: "editProfile" }));
     },
   });
 
@@ -167,7 +172,7 @@ const EditProfileModal = () => {
                     onBlur={formik.handleBlur}
                   >
                     <option disabled value="">
-                      Gender
+                      Select your Gender
                     </option>
                     <option value="male">Male</option>
                     <option value="female">Female </option>
@@ -184,7 +189,7 @@ const EditProfileModal = () => {
                     id="age"
                     name="age"
                     type="number"
-                    placeholder="Age"
+                    placeholder="Enter your Age"
                     min="15"
                     max="99"
                     onChange={formik.handleChange}
@@ -279,7 +284,7 @@ const EditProfileModal = () => {
                   className="edit-form-input p-2 flex-fill"
                   id="address"
                   name="address"
-                  placeholder="Address"
+                  placeholder="Write your Address"
                   onChange={formik.handleChange}
                   value={formik.values.address}
                   onBlur={formik.handleBlur}
@@ -329,12 +334,12 @@ const EditProfileModal = () => {
         </Modal.Body>
 
         <Modal.Footer>
+          <SaveChangesButton type="submit">Save Changes</SaveChangesButton>
           <DiscardChangesButton
             onClick={() => dispatch({ type: "editProfile" })}
           >
             Discard Changes
           </DiscardChangesButton>
-          <SaveChangesButton type="submit">Save Changes</SaveChangesButton>
         </Modal.Footer>
       </form>
     </Modal>

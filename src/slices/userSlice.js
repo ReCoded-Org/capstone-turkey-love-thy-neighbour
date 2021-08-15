@@ -1,5 +1,16 @@
 import { auth, firestore } from "../firebaseConfig";
 
+export const attachListenerToUserDoc = (uid) => {
+  return (dispatch) => {
+    return firestore
+      .collection("users")
+      .doc(uid)
+      .onSnapshot((doc) => {
+        dispatch({ type: "getUpdatedUser", payload: doc.data() });
+      });
+  };
+};
+
 /* eslint-disable no-unused-vars */
 export const listenForAuthChanges = () => {
   return (dispatch) => {
@@ -16,24 +27,15 @@ export const listenForAuthChanges = () => {
               authCred: user,
             };
             dispatch({ type: "signedIn", payload: userReduxState });
+            return userReduxState;
+          })
+          .then((userReduxState) => {
+            dispatch(attachListenerToUserDoc(userReduxState.authCred.uid));
           });
       } else {
         dispatch({ type: "notSignedIn" }); // set the state to it's initial values
       }
     });
-  };
-};
-
-export const fetchUpdatedUser = (uid) => {
-  return (dispatch) => {
-    console.log("listener is attached!");
-    return firestore
-      .collection("users")
-      .doc(uid)
-      .onSnapshot((doc) => {
-        console.log("something changed!");
-        dispatch({ type: "getUpdatedUser", payload: doc.data() });
-      });
   };
 };
 
@@ -52,7 +54,7 @@ const userReducer = (state = initialState, action) => {
       return { ...initialState };
 
     case "getUpdatedUser":
-      return { ...initialState, firestoreDoc: action.payload };
+      return { ...state, firestoreDoc: action.payload };
 
     default:
       return state;

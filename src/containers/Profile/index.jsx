@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { Container, Row, Col, Card } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
-
-import { fetchUpdatedUser } from "../../slices/userSlice";
 
 import PPMaleSVG from "../../images/ProfilePage/PPMaleSVG.svg";
 import EditProfileModal from "../../components/EditProfileModal";
@@ -17,15 +15,6 @@ const ProfilePage = () => {
     (state) => state.popup.isEditProfileOpen
   );
   const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
-  const uid = useSelector((state) => state.user.authCred?.uid);
-
-  useEffect(() => {
-    const userFirestoreDocListener = dispatch(fetchUpdatedUser(uid));
-    console.log("asdsad");
-    return () => {
-      return userFirestoreDocListener();
-    };
-  }, []);
 
   return (
     <Container fluid className="profile-page-bg">
@@ -131,9 +120,9 @@ const ProfilePage = () => {
                       <li>
                         Interests:{" "}
                         <span>
-                          {!firestoreDoc?.bio
+                          {!firestoreDoc?.interests
                             ? "Learning, coding, collaborating."
-                            : firestoreDoc.bio}
+                            : firestoreDoc.interests}
                         </span>
                       </li>
                     </ul>
@@ -162,9 +151,9 @@ const ProfilePage = () => {
                       <li>
                         Phone:{" "}
                         <span>
-                          {!firestoreDoc?.phone
+                          {!firestoreDoc?.number
                             ? "+90 537 779 50 60"
-                            : firestoreDoc.phone}
+                            : firestoreDoc.number}
                         </span>
                       </li>
                       <li>

@@ -19,6 +19,8 @@ import SignUpModal from "./components/SignUpModal";
 function App() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  const isSignedIn = useSelector((state) => state.user.isSignedIn);
+  console.log(isSignedIn);
   useEffect(() => {
     dispatch(listenForAuthChanges());
   }, [dispatch]);
@@ -37,7 +39,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/profile/:uid">
-            <Profile />
+            {isSignedIn ? <Profile /> : <h1>Sign in please.</h1>}
           </Route>
           <Route path="/neighbors">
             <Neighbors />
