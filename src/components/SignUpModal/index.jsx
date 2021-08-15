@@ -52,9 +52,8 @@ const SignUpModal = () => {
       repeatedPassword: "",
     },
     validate,
-    onSubmit: (values) => {
-      console.log(values);
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: (values, { resetForm, setSubmitting }) => {
+      resetForm();
       const objWithoutPasswordConfigProp = removeOneProp(
         values,
         "repeatedPassword"
@@ -76,6 +75,7 @@ const SignUpModal = () => {
             error
           )
         );
+      setSubmitting(false);
     },
   });
 
@@ -174,11 +174,13 @@ const SignUpModal = () => {
         </Modal.Body>
 
         <Modal.Footer className="sign-up-buttons d-flex flex-column align-items-stretch">
-          <SignInUpButton type="submit">Sign Up</SignInUpButton>
-          <SignInUpGoogleButton type="submit">
+          <SignInUpButton type="submit" disabled={formik.isSubmitting}>
+            Sign Up
+          </SignInUpButton>
+          <SignInUpGoogleButton type="submit" disabled={formik.isSubmitting}>
             Sign Up With Google
           </SignInUpGoogleButton>
-          <SignInUpFacebookButton type="submit">
+          <SignInUpFacebookButton type="submit" disabled={formik.isSubmitting}>
             Sign Up With Facebook
           </SignInUpFacebookButton>
         </Modal.Footer>
