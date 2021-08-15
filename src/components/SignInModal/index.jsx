@@ -49,7 +49,7 @@ const SignInModal = ({
   };
 
   return (
-    <Modal show={showSignInModal} onHide={handleClickSignIn}>
+    <Modal show={showSignInModal} onHide={handleClickSignIn} id="sign-in-modal">
       <Modal.Header className="d-flex justify-content-between">
         <Logo />
         <h2 className="mx-auto">Sign In</h2>

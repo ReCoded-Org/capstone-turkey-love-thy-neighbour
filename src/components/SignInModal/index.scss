@@ -1,9 +1,16 @@
 @import "../../style/variables";
 
-.modal {
+#sign-in-modal {
   .modal-header {
     button {
       margin-right: 0;
+      margin-left: 0;
+    }
+
+    h2 {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
     }
 
     svg {
