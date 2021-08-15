@@ -1,0 +1,101 @@
+@import "../../style/variables";
+
+.profile-page-bg {
+  min-height: calc(100vh - 60px);
+  background-image: url("../../images/ProfilePage/PBG.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  .profile-content-container {
+    min-height: calc(100vh - 60px);
+
+    & > div.row {
+      width: 100%;
+
+      & > div:first-child {
+        // picture and button column
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+
+        @media screen and (max-width: 991px) {
+          margin-top: 48px;
+        }
+
+        .profile-photo {
+          width: 150px;
+          height: 150px;
+        }
+      }
+
+      & > div:last-child {
+        // cards column
+        padding: 0;
+
+        & > div.cards-row {
+          // cards row
+          margin: 0;
+
+          & > div {
+            // card column
+            padding: 0;
+            min-height: 250px;
+
+            @media screen and (max-width: 991px) {
+              width: 100% !important;
+              margin-bottom: 16px;
+            }
+
+            & > div.card {
+              // <Card></Card> component
+              border-radius: 15px !important;
+              height: 100%;
+              margin: 0 !important;
+
+              @media screen and (min-width: 768px) {
+                width: 95% !important;
+              }
+              @media screen and (max-width: 767px) {
+                width: 100% !important;
+              }
+
+              & > div.card-body {
+                & > ul {
+                  list-style: none;
+                  height: 85%;
+
+                  & > li {
+                    color: $logo-blue;
+                    font-weight: bold;
+
+                    & > span {
+                      color: $black;
+                      font-weight: normal;
+                    }
+                  }
+                }
+
+                & > div.card-title {
+                  font-weight: bold;
+                  margin-left: 30px;
+                }
+              }
+            }
+
+            & > #blue-card {
+              background-color: #2a5885;
+              color: #ffffff;
+              span {
+                color: #ffffff;
+              }
+            }
+
+            & > .white-card {
+              background-color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
