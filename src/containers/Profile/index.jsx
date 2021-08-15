@@ -9,15 +9,32 @@ import EditProfileModal from "../../components/EditProfileModal";
 import { EditProfileButton } from "../../components/CustomButtons/index";
 import "./index.scss";
 
+// alternative bg image url: https://img.freepik.com/free-photo/abstract-flowing-neon-wave-background_53876-101942.jpg?size=626&ext=jpg
+// alternative image url: https://www.acibadem.com.tr/assets/images/doctors/kutay-colakoglu-banner.png
+
 const ProfilePage = () => {
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector(
     (state) => state.popup.isEditProfileOpen
   );
   const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
+  const backgroundImageUrl = useSelector(
+    (state) => state.user.firestoreDoc?.backgroundImageUrl
+  );
+  const profileImageUrl = useSelector(
+    (state) => state.user.firestoreDoc?.profileImageUrl
+  );
 
   return (
-    <Container fluid className="profile-page-bg">
+    <Container
+      fluid
+      className="profile-page-bg"
+      style={
+        backgroundImageUrl
+          ? { backgroundImage: `url(${backgroundImageUrl})` }
+          : null
+      }
+    >
       <Container className="profile-content-container d-flex flex-column justify-content-center align-items-center flex-wrap align-content-center">
         <Row>
           <Col
@@ -26,7 +43,11 @@ const ProfilePage = () => {
             className="d-flex flex-column align-items-center mb-3"
           >
             <div>
-              <img className="profile-photo" alt="profilePic" src={PPMaleSVG} />
+              <img
+                className="profile-photo"
+                alt="profilePic"
+                src={profileImageUrl || PPMaleSVG}
+              />
             </div>
             <div>
               <EditProfileButton

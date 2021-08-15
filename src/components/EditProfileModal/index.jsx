@@ -19,8 +19,6 @@ const EditProfileModal = () => {
   const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
   const uid = useSelector((state) => state.user.authCred?.uid);
 
-  // alternative bg image url: https://img.freepik.com/free-photo/abstract-flowing-neon-wave-background_53876-101942.jpg?size=626&ext=jpg
-  // alternative image url: https://www.acibadem.com.tr/assets/images/doctors/kutay-colakoglu-banner.png
   // TODO: Add the validation errors for other stuff.
   const validate = (values) => {
     const errors = {};

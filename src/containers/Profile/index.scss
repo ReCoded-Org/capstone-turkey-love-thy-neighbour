@@ -5,6 +5,7 @@
   background-image: url("../../images/ProfilePage/PBG.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 
   .profile-content-container {
     min-height: calc(100vh - 60px);
@@ -22,8 +23,8 @@
         }
 
         .profile-photo {
-          width: 100px;
-          height: 100px;
+          width: 150px;
+          height: 150px;
         }
       }
 
