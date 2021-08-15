@@ -1,6 +1,21 @@
 @import "../../style/variables";
 
-.sign-up-form-item {
-  margin-top: 10px;
-  border: 1px solid $dark-blue;
+.modal {
+  .sign-up-buttons {
+    padding: 16px;
+
+    button {
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+    }
+
+    button:nth-child(2) {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+  .sign-up-form-item {
+    margin-top: 10px;
+    border: 1px solid $dark-blue;
+  }
 }
