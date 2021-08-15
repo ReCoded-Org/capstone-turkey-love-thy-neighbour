@@ -61,10 +61,10 @@ const SignUpModal = ({
   // <Modal.Title className="d-flex justify-content-between align-items-center align-content-between">
 
   return (
-    <Modal show={showSignUpModal} onHide={handleClickSignUp}>
+    <Modal show={showSignUpModal} onHide={handleClickSignUp} id="sign-up-modal">
       <Modal.Header>
         <img src={logo} alt="logo" />
-        <h4>Sign Up</h4>
+        <h2>Sign Up</h2>
         <Button
           type="button"
           data-toggle="modal"
