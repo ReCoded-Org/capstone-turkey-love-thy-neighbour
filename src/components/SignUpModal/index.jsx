@@ -79,7 +79,7 @@ const SignUpModal = ({
         <Modal.Body>
           <Card>
             <Card.Body>
-              <Card.Text className="sign-up-buttons d-flex flex-column ">
+              <Card.Text className="d-flex flex-column ">
                 <input
                   className="sign-up-form-item p-2 "
                   id="firstName"
