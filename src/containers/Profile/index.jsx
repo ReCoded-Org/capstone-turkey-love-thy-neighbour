@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 
 import { Container, Row, Col, Card } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
+
+import { fetchUpdatedUser } from "../../slices/userSlice";
 
 import PPMaleSVG from "../../images/ProfilePage/PPMaleSVG.svg";
 import EditProfileModal from "../../components/EditProfileModal";
@@ -14,6 +16,16 @@ const ProfilePage = () => {
   const isEditProfileOpen = useSelector(
     (state) => state.popup.isEditProfileOpen
   );
+  const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
+  const uid = useSelector((state) => state.user.authCred?.uid);
+
+  useEffect(() => {
+    const userFirestoreDocListener = dispatch(fetchUpdatedUser(uid));
+    console.log("asdsad");
+    return () => {
+      return userFirestoreDocListener();
+    };
+  }, []);
 
   return (
     <Container fluid className="profile-page-bg">
@@ -30,16 +42,10 @@ const ProfilePage = () => {
             <div>
               <EditProfileButton
                 onClick={() => dispatch({ type: "editProfile" })}
-                type="submit"
               >
                 Edit Profile
               </EditProfileButton>
-              {isEditProfileOpen && (
-                <EditProfileModal
-                // handleClick={handleClick}
-                // showModal={showModal}
-                />
-              )}
+              {isEditProfileOpen && <EditProfileModal />}
             </div>
           </Col>
           <Col xs={12} sm={12}>
@@ -56,22 +62,48 @@ const ProfilePage = () => {
                     {/* //TODO : Display the card items in such a way that no whitespace is unused inside the card */}
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
-                        First Name: <span>Ali Rıza</span>
+                        First Name:{" "}
+                        <span>
+                          {!firestoreDoc?.firstName
+                            ? "Ali Riza"
+                            : firestoreDoc.firstName}
+                        </span>
                       </li>
                       <li>
-                        Last Name: <span>Şahin</span>
+                        Last Name:{" "}
+                        <span>
+                          {!firestoreDoc?.firstName
+                            ? "Sahin"
+                            : firestoreDoc.lastName}
+                        </span>
                       </li>
                       <li>
-                        Gender: <span>Male</span>
+                        Gender:{" "}
+                        <span>
+                          {!firestoreDoc?.gender ? "M/F" : firestoreDoc.gender}
+                        </span>
                       </li>
                       <li>
-                        Age: <span>19</span>
+                        Age:{" "}
+                        <span>
+                          {!firestoreDoc?.age ? "15" : firestoreDoc.age}
+                        </span>
                       </li>
                       <li>
-                        Education: <span>High School Graduate</span>
+                        Education:{" "}
+                        <span>
+                          {!firestoreDoc?.education
+                            ? "Enter you Education"
+                            : firestoreDoc.education}
+                        </span>
                       </li>
                       <li>
-                        District: <span>Sultanbeyli</span>
+                        District:{" "}
+                        <span>
+                          {!firestoreDoc?.district
+                            ? "Istanbul"
+                            : firestoreDoc.district}
+                        </span>
                       </li>
                     </ul>
                   </Card.Body>
@@ -91,13 +123,18 @@ const ProfilePage = () => {
                       <li>
                         Bio:{" "}
                         <span>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Semper gravida tincidunt aliquam quam.
+                          {!firestoreDoc?.bio
+                            ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."
+                            : firestoreDoc.bio}
                         </span>
                       </li>
                       <li>
                         Interests:{" "}
-                        <span>Learning, coding, collaborating, designing.</span>
+                        <span>
+                          {!firestoreDoc?.bio
+                            ? "Learning, coding, collaborating."
+                            : firestoreDoc.bio}
+                        </span>
                       </li>
                     </ul>
                   </Card.Body>
@@ -115,13 +152,28 @@ const ProfilePage = () => {
                     <Card.Title className="card-title">Contact</Card.Title>
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
-                        Email: <span>ars.style@hotmail.com</span>
+                        Email:{" "}
+                        <span>
+                          {!firestoreDoc?.email
+                            ? "example@example.com"
+                            : firestoreDoc.email}
+                        </span>
                       </li>
                       <li>
-                        Phone: <span>+90 537 779 50 60</span>
+                        Phone:{" "}
+                        <span>
+                          {!firestoreDoc?.phone
+                            ? "+90 537 779 50 60"
+                            : firestoreDoc.phone}
+                        </span>
                       </li>
                       <li>
-                        Adress: <span>Somewhere in time</span>
+                        Address:{" "}
+                        <span>
+                          {!firestoreDoc?.address
+                            ? "Somewhere in the world"
+                            : firestoreDoc.address}
+                        </span>
                       </li>
                     </ul>
                   </Card.Body>

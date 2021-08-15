@@ -65,9 +65,9 @@ const SignUpModal = () => {
           return userCred;
         }) // set the document in firestore
         .then((userCred) => {
-          history.push(`/profile/${userCred.user.uid}`);
-          // TODO: add this case to the userSlice.js reducer
           dispatch({ type: "signUp" });
+          history.push(`/profile/${userCred.user.uid}`);
+          dispatch({ type: "editProfile" });
         }) // take the user to their profile
         .catch((error) =>
           console.error(

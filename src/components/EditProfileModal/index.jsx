@@ -6,12 +6,19 @@ import { useFormik } from "formik";
 
 import { useSelector, useDispatch } from "react-redux";
 
+import { firestore } from "../../firebaseConfig";
+
 import helpers from "../../utils/helpers";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
 
 const EditProfileModal = () => {
+  const dispatch = useDispatch();
+  const isEditProfileOpen = useSelector((user) => user.popup.isEditProfileOpen);
+  const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
+  const uid = useSelector((state) => state.user.authCred.uid);
+
   // TODO: Add the validation errors for other stuff.
   const validate = (values) => {
     const errors = {};
@@ -50,27 +57,29 @@ const EditProfileModal = () => {
   };
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
-      district: "",
-      gender: "",
-      age: "",
+      firstName: !firestoreDoc.firstName ? "" : firestoreDoc.firstName,
+      lastName: !firestoreDoc.lastName ? "" : firestoreDoc.lastName,
+      district: !firestoreDoc.district ? "" : firestoreDoc.district,
+      gender: !firestoreDoc.gender ? "" : firestoreDoc.gender,
+      age: !firestoreDoc.age ? 15 : firestoreDoc.age,
       education: "",
-      bio: "",
-      interests: "",
-      number: "",
-      address: "",
-      profileImageUrl: "",
-      backgroundImageUrl: "",
+      bio: !firestoreDoc.bio ? "" : firestoreDoc.bio,
+      interests: !firestoreDoc.interests ? "" : firestoreDoc.interest,
+      number: !firestoreDoc.number ? "" : firestoreDoc.number,
+      address: !firestoreDoc.address ? "" : firestoreDoc.address,
+      profileImageUrl: !firestoreDoc.profileImageUrl
+        ? ""
+        : firestoreDoc.profileImageUrl,
+      backgroundImageUrl: !firestoreDoc.backgroundImageUrl
+        ? ""
+        : firestoreDoc.backgroundImageUrl,
     },
     validate,
     onSubmit: (values) => {
+      firestore.collection("users").doc(uid).set(values);
       alert(JSON.stringify(values, null, 2));
     },
   });
-
-  const dispatch = useDispatch();
-  const isEditProfileOpen = useSelector((user) => user.popup.isEditProfileOpen);
 
   return (
     <Modal
@@ -192,13 +201,12 @@ const EditProfileModal = () => {
                   className="edit-form-input p-2 flex-fill"
                   id="education"
                   name="education"
-                  placeholder="Education"
                   onChange={formik.handleChange}
                   value={formik.values.education}
                   onBlur={formik.handleBlur}
                 >
                   <option disabled value="">
-                    Education
+                    Select your Education
                   </option>
                   {helpers.educationList.map((education) => {
                     return (
@@ -217,7 +225,7 @@ const EditProfileModal = () => {
                   className="edit-form-input p-2 flex-fill"
                   id="bio"
                   name="bio"
-                  placeholder="Bio"
+                  placeholder="Your bio..."
                   onChange={formik.handleChange}
                   value={formik.values.bio}
                   onBlur={formik.handleBlur}
@@ -231,14 +239,13 @@ const EditProfileModal = () => {
                   className="edit-form-input p-2 flex-fill"
                   id="interests"
                   name="interests"
-                  placeholder="Interests"
                   onChange={formik.handleChange}
                   value={formik.values.interests}
                   onBlur={formik.handleBlur}
                 >
                   {/* TODO: Move the helper function inside utils/helpers */}
                   <option disabled value="">
-                    Interests
+                    Select Your Interests
                   </option>
                   {helpers.activityList.map((activity) => {
                     return (

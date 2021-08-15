@@ -18,12 +18,12 @@ import SignUpModal from "./components/SignUpModal";
 
 function App() {
   const dispatch = useDispatch();
-  const isSignedIn = useSelector((state) => state.user.isSignedIn);
+  const user = useSelector((state) => state.user);
   useEffect(() => {
     dispatch(listenForAuthChanges());
   }, [dispatch]);
 
-  console.log(isSignedIn);
+  console.log(user);
 
   return (
     <Container fluid className="main-wrapper">

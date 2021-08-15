@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Container, Nav, Navbar } from "react-bootstrap";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { auth } from "../../firebaseConfig";
 
@@ -12,6 +12,7 @@ import logo from "../../images/logo.svg";
 import "./index.scss";
 
 function NavBar() {
+  const history = useHistory();
   const dispatch = useDispatch();
   const isSignedIn = useSelector((state) => state.user.isSignedIn);
 
@@ -45,6 +46,7 @@ function NavBar() {
                 onClick={() =>
                   auth
                     .signOut()
+                    .then(() => history.push("/"))
                     .catch((error) =>
                       console.error(
                         "A problem occurred while logging out.",
