@@ -85,6 +85,7 @@ const SignUpModal = () => {
       onHide={() => {
         dispatch({ type: "signUp" });
       }}
+      id="sign-up-modal"
     >
       <Modal.Header>
         <img src={logo} alt="logo" />
@@ -99,7 +100,6 @@ const SignUpModal = () => {
           }}
         />
       </Modal.Header>
-
       <form onSubmit={formik.handleSubmit}>
         <Modal.Body>
           <Card>

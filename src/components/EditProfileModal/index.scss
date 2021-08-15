@@ -1,15 +1,10 @@
 @import "../../style/variables";
 
-.modal {
+#edit-profile-modal {
   form {
     input,
     select {
       height: 38px;
-    }
-
-    .form-cards {
-      padding: 10px;
-      margin: 10px;
     }
 
     .error-msg {
@@ -17,7 +12,7 @@
       color: rgb(122, 12, 22);
       margin-top: 5px;
       margin-bottom: 5px;
-      margin-left: 15.25px;
+      margin-left: 3px;
     }
 
     .edit-form-input {
@@ -31,12 +26,8 @@
   }
 
   .modal-header {
-    svg {
-      margin-left: 18px;
-    }
     button {
-      margin-right: 18px;
-      margin-left: 0;
+      margin: 0;
     }
     h2 {
       margin-bottom: 0;

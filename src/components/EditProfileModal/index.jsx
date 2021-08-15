@@ -76,6 +76,7 @@ const EditProfileModal = () => {
     <Modal
       show={isEditProfileOpen}
       onHide={() => dispatch({ type: "editProfile" })}
+      id="edit-profile-modal"
     >
       <Modal.Header className="d-flex justify-content-between">
         <Logo />
@@ -93,231 +94,221 @@ const EditProfileModal = () => {
         <Modal.Body>
           <Card className="form-cards">
             <Card.Body>
-              <Card.Text>
-                {/* TODO: Fix the overflow issue with the Last Name error message */}
-                <div className="d-flex flex-column justify-content-between align-items-stretch">
-                  <input
-                    className="edit-form-input p-2 flex-fill"
-                    id="firstName"
-                    name="firstName"
-                    placeholder="First Name"
-                    onChange={formik.handleChange}
-                    value={formik.values.firstName}
-                    onBlur={formik.handleBlur}
-                  />
-                  {formik.touched.firstName && formik.errors.firstName ? (
-                    <div className="error-msg">{formik.errors.firstName}</div>
-                  ) : null}
-                </div>
-                <div className="d-flex flex-column justify-content-between align-items-stretch">
-                  <input
-                    className="edit-form-input p-2 flex-fill"
-                    id="lastName"
-                    name="lastName"
-                    placeholder="Last Name"
-                    onChange={formik.handleChange}
-                    value={formik.values.lastName}
-                    onBlur={formik.handleBlur}
-                  />
-                  {formik.touched.lastName && formik.errors.lastName ? (
-                    <div className="error-msg">{formik.errors.lastName}</div>
-                  ) : null}
-                </div>
-                <div className="d-flex flex-column justify-content-between align-items-stretch">
+              {/* TODO: Fix the overflow issue with the Last Name error message */}
+              <div className="d-flex flex-column justify-content-between align-items-stretch">
+                <input
+                  className="edit-form-input p-2 flex-fill"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="First Name"
+                  onChange={formik.handleChange}
+                  value={formik.values.firstName}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.firstName && formik.errors.firstName ? (
+                  <div className="error-msg">{formik.errors.firstName}</div>
+                ) : null}
+              </div>
+              <div className="d-flex flex-column justify-content-between align-items-stretch">
+                <input
+                  className="edit-form-input p-2 flex-fill"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Last Name"
+                  onChange={formik.handleChange}
+                  value={formik.values.lastName}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.lastName && formik.errors.lastName ? (
+                  <div className="error-msg">{formik.errors.lastName}</div>
+                ) : null}
+              </div>
+              <div className="d-flex flex-column justify-content-between align-items-stretch">
+                <select
+                  className="edit-form-input p-2 flex-fill"
+                  id="district"
+                  name="district"
+                  onChange={formik.handleChange}
+                  value={formik.values.district}
+                  onBlur={formik.handleBlur}
+                >
+                  <option disabled value="">
+                    Districts
+                  </option>
+                  {helpers.districtList.map((district) => {
+                    return <option value={district}>{district}</option>;
+                  })}
+                </select>
+                {formik.touched.district && formik.errors.district ? (
+                  <div className="error-msg">{formik.errors.district}</div>
+                ) : null}
+              </div>
+
+              <div className="gender-age-wrapper d-flex">
+                <div className="d-flex flex-column">
                   <select
-                    className="edit-form-input p-2 flex-fill"
-                    id="district"
-                    name="district"
+                    className="edit-form-input p-2"
+                    name="gender"
                     onChange={formik.handleChange}
-                    value={formik.values.district}
+                    value={formik.values.gender}
                     onBlur={formik.handleBlur}
                   >
                     <option disabled value="">
-                      Districts
+                      Gender
                     </option>
-                    {helpers.districtList.map((district) => {
-                      return (
-                        <option key={district} value={district}>
-                          {district}
-                        </option>
-                      );
-                    })}
+                    <option value="male">Male</option>
+                    <option value="female">Female </option>
+                    <option value="other">Prefer not to say</option>
                   </select>
-                  {formik.touched.district && formik.errors.district ? (
-                    <div className="error-msg">{formik.errors.district}</div>
+
+                  {formik.touched.gender && formik.errors.gender ? (
+                    <div className="error-msg">{formik.errors.gender}</div>
                   ) : null}
                 </div>
-
-                <div className="gender-age-wrapper d-flex">
-                  <div className="d-flex flex-column">
-                    <select
-                      className="edit-form-input p-2"
-                      name="gender"
-                      onChange={formik.handleChange}
-                      value={formik.values.gender}
-                      onBlur={formik.handleBlur}
-                    >
-                      <option disabled value="">
-                        Gender
+                <div className="d-flex flex-column">
+                  <input
+                    className="edit-form-input p-2"
+                    id="age"
+                    name="age"
+                    type="number"
+                    placeholder="Age"
+                    min="15"
+                    max="99"
+                    onChange={formik.handleChange}
+                    value={formik.values.age}
+                    onBlur={formik.handleBlur}
+                  />
+                  {formik.touched.age && formik.errors.age ? (
+                    <div className="error-msg">{formik.errors.age}</div>
+                  ) : null}
+                </div>
+              </div>
+              <div className="d-flex flex-column justify-content-between align-items-stretch">
+                <select
+                  className="edit-form-input p-2 flex-fill"
+                  id="education"
+                  name="education"
+                  placeholder="Education"
+                  onChange={formik.handleChange}
+                  value={formik.values.education}
+                  onBlur={formik.handleBlur}
+                >
+                  <option disabled value="">
+                    Education
+                  </option>
+                  {helpers.educationList.map((education) => {
+                    return <option value={education}>{education}</option>;
+                  })}
+                </select>
+                {formik.touched.education && formik.errors.education ? (
+                  <div className="error-msg">{formik.errors.education}</div>
+                ) : null}
+              </div>
+              <div className="d-flex flex-column justify-content-between align-items-stretch">
+                <textarea
+                  className="edit-form-input p-2 flex-fill"
+                  id="bio"
+                  name="bio"
+                  placeholder="Bio"
+                  onChange={formik.handleChange}
+                  value={formik.values.bio}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.bio && formik.errors.bio ? (
+                  <div className="error-msg">{formik.errors.bio}</div>
+                ) : null}
+              </div>
+              <div className="d-flex flex-column justify-content-between align-items-stretch">
+                <select
+                  className="edit-form-input p-2 flex-fill"
+                  id="interests"
+                  name="interests"
+                  placeholder="Interests"
+                  onChange={formik.handleChange}
+                  value={formik.values.interests}
+                  onBlur={formik.handleBlur}
+                >
+                  {/* TODO: Move the helper function inside utils/helpers */}
+                  <option disabled value="">
+                    Interests
+                  </option>
+                  {helpers.activityList.map((activity) => {
+                    return (
+                      <option key={activity} value={activity}>
+                        {activity}
                       </option>
-                      <option value="male">Male</option>
-                      <option value="female">Female </option>
-                      <option value="other">Prefer not to say</option>
-                    </select>
-
-                    {formik.touched.gender && formik.errors.gender ? (
-                      <div className="error-msg">{formik.errors.gender}</div>
-                    ) : null}
+                    );
+                  })}
+                </select>
+                {formik.touched.interests && formik.errors.interests ? (
+                  <div className="error-msg">{formik.errors.interests}</div>
+                ) : null}
+              </div>
+              <div className="d-flex flex-column justify-content-between align-items-stretch">
+                <input
+                  className="edit-form-input p-2 flex-fill"
+                  id="number"
+                  name="number"
+                  type="tel"
+                  placeholder="Number"
+                  onChange={formik.handleChange}
+                  value={formik.values.number}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.number && formik.errors.number ? (
+                  <div className="error-msg">{formik.errors.number}</div>
+                ) : null}
+              </div>
+              <div className="d-flex flex-column justify-content-between align-items-stretch">
+                <input
+                  className="edit-form-input p-2 flex-fill"
+                  id="address"
+                  name="address"
+                  placeholder="Address"
+                  onChange={formik.handleChange}
+                  value={formik.values.address}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.address && formik.errors.address ? (
+                  <div className="error-msg">{formik.errors.address}</div>
+                ) : null}
+              </div>
+              <div className="d-flex flex-column justify-content-between align-items-stretch">
+                <input
+                  className="edit-form-input p-2 flex-fill"
+                  id="profileImageUrl"
+                  name="profileImageUrl"
+                  type="url"
+                  placeholder="Profile Image URL"
+                  onChange={formik.handleChange}
+                  value={formik.values.profileImageUrl}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.profileImageUrl &&
+                formik.errors.profileImageUrl ? (
+                  <div className="error-msg">
+                    {formik.errors.profileImageUrl}
                   </div>
-                  <div className="d-flex flex-column">
-                    <input
-                      className="edit-form-input p-2"
-                      id="age"
-                      name="age"
-                      type="number"
-                      placeholder="Age"
-                      min="15"
-                      max="99"
-                      onChange={formik.handleChange}
-                      value={formik.values.age}
-                      onBlur={formik.handleBlur}
-                    />
-                    {formik.touched.age && formik.errors.age ? (
-                      <div className="error-msg">{formik.errors.age}</div>
-                    ) : null}
+                ) : null}
+              </div>
+              <div className="d-flex flex-column justify-content-between align-items-stretch">
+                <input
+                  className="edit-form-input p-2 flex-fill"
+                  id="backgroundImageUrl"
+                  name="backgroundImageUrl"
+                  type="url"
+                  placeholder="Background Image URL"
+                  onChange={formik.handleChange}
+                  value={formik.values.backgroundImageUrl}
+                  onBlur={formik.handleBlur}
+                />
+                {formik.touched.backgroundImageUrl &&
+                formik.errors.backgroundImageUrl ? (
+                  <div className="error-msg">
+                    {formik.errors.backgroundImageUrl}
                   </div>
-                </div>
-                <div className="d-flex flex-column justify-content-between align-items-stretch">
-                  <select
-                    className="edit-form-input p-2 flex-fill"
-                    id="education"
-                    name="education"
-                    placeholder="Education"
-                    onChange={formik.handleChange}
-                    value={formik.values.education}
-                    onBlur={formik.handleBlur}
-                  >
-                    <option disabled value="">
-                      Education
-                    </option>
-                    {helpers.educationList.map((education) => {
-                      return (
-                        <option key={education} value={education}>
-                          {education}
-                        </option>
-                      );
-                    })}
-                  </select>
-                  {formik.touched.education && formik.errors.education ? (
-                    <div className="error-msg">{formik.errors.education}</div>
-                  ) : null}
-                </div>
-                <div className="d-flex flex-column justify-content-between align-items-stretch">
-                  <textarea
-                    className="edit-form-input p-2 flex-fill"
-                    id="bio"
-                    name="bio"
-                    placeholder="Bio"
-                    onChange={formik.handleChange}
-                    value={formik.values.bio}
-                    onBlur={formik.handleBlur}
-                  />
-                  {formik.touched.bio && formik.errors.bio ? (
-                    <div className="error-msg">{formik.errors.bio}</div>
-                  ) : null}
-                </div>
-                <div className="d-flex flex-column justify-content-between align-items-stretch">
-                  <select
-                    className="edit-form-input p-2 flex-fill"
-                    id="interests"
-                    name="interests"
-                    placeholder="Interests"
-                    onChange={formik.handleChange}
-                    value={formik.values.interests}
-                    onBlur={formik.handleBlur}
-                  >
-                    {/* TODO: Move the helper function inside utils/helpers */}
-                    <option disabled value="">
-                      Interests
-                    </option>
-                    {helpers.activityList.map((activity) => {
-                      return (
-                        <option key={activity} value={activity}>
-                          {activity}
-                        </option>
-                      );
-                    })}
-                  </select>
-                  {formik.touched.interests && formik.errors.interests ? (
-                    <div className="error-msg">{formik.errors.interests}</div>
-                  ) : null}
-                </div>
-                <div className="d-flex flex-column justify-content-between align-items-stretch">
-                  <input
-                    className="edit-form-input p-2 flex-fill"
-                    id="number"
-                    name="number"
-                    type="tel"
-                    placeholder="Number"
-                    onChange={formik.handleChange}
-                    value={formik.values.number}
-                    onBlur={formik.handleBlur}
-                  />
-                  {formik.touched.number && formik.errors.number ? (
-                    <div className="error-msg">{formik.errors.number}</div>
-                  ) : null}
-                </div>
-                <div className="d-flex flex-column justify-content-between align-items-stretch">
-                  <input
-                    className="edit-form-input p-2 flex-fill"
-                    id="address"
-                    name="address"
-                    placeholder="Address"
-                    onChange={formik.handleChange}
-                    value={formik.values.address}
-                    onBlur={formik.handleBlur}
-                  />
-                  {formik.touched.address && formik.errors.address ? (
-                    <div className="error-msg">{formik.errors.address}</div>
-                  ) : null}
-                </div>
-                <div className="d-flex flex-column justify-content-between align-items-stretch">
-                  <input
-                    className="edit-form-input p-2 flex-fill"
-                    id="profileImageUrl"
-                    name="profileImageUrl"
-                    type="url"
-                    placeholder="Profile Image URL"
-                    onChange={formik.handleChange}
-                    value={formik.values.profileImageUrl}
-                    onBlur={formik.handleBlur}
-                  />
-                  {formik.touched.profileImageUrl &&
-                  formik.errors.profileImageUrl ? (
-                    <div className="error-msg">
-                      {formik.errors.profileImageUrl}
-                    </div>
-                  ) : null}
-                </div>
-                <div className="d-flex flex-column justify-content-between align-items-stretch">
-                  <input
-                    className="edit-form-input p-2 flex-fill"
-                    id="backgroundImageUrl"
-                    name="backgroundImageUrl"
-                    type="url"
-                    placeholder="Background Image URL"
-                    onChange={formik.handleChange}
-                    value={formik.values.backgroundImageUrl}
-                    onBlur={formik.handleBlur}
-                  />
-                  {formik.touched.backgroundImageUrl &&
-                  formik.errors.backgroundImageUrl ? (
-                    <div className="error-msg">
-                      {formik.errors.backgroundImageUrl}
-                    </div>
-                  ) : null}
-                </div>
-              </Card.Text>
+                ) : null}
+              </div>
             </Card.Body>
           </Card>
         </Modal.Body>

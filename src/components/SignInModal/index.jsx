@@ -40,7 +40,11 @@ const SignInModal = () => {
   const isSignInOpen = useSelector((state) => state.popup.isSignInOpen);
 
   return (
-    <Modal show={isSignInOpen} onHide={() => dispatch({ type: "signIn" })}>
+    <Modal
+      show={isSignInOpen}
+      onHide={() => dispatch({ type: "signIn" })}
+      id="sign-in-modal"
+    >
       <Modal.Header className="d-flex justify-content-between">
         <Logo />
         <h2 className="mx-auto">Sign In</h2>
