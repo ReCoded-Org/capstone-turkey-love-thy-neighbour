@@ -18,8 +18,20 @@ const ProfilePage = () => {
     (state) => state.popup.isEditProfileOpen
   );
   const { firestoreDoc, authCred } = useSelector((state) => state.user);
-  const { backgroundImageUrl, profileImageUrl } = firestoreDoc;
+  const { backgroundImageUrl, profileImageUrl, interests } = firestoreDoc;
   const { email } = authCred;
+
+  function createInterestString() {
+    let interestsString = "";
+    interests.forEach((interestObj, index, array) => {
+      if (index === array.length - 1) {
+        interestsString += `${interestObj.content}.`;
+        return;
+      }
+      interestsString += `${interestObj.content} | `;
+    });
+    return interestsString;
+  }
 
   return (
     <Container
@@ -140,7 +152,9 @@ const ProfilePage = () => {
                           {/* {!firestoreDoc?.interests
                             ? "Learning, coding, collaborating."
                             : firestoreDoc.interests}  removed this because react would think the document field that is an array should be mapped over and we are doing that in our multiselect branch with another library. If I include this I'll have merge the two in order to make this work. */}
-                          Default interest.
+                          {!firestoreDoc?.interests
+                            ? "Default interest."
+                            : createInterestString()}
                         </span>
                       </li>
                     </ul>

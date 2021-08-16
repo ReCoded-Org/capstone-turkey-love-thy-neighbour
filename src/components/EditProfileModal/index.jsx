@@ -96,7 +96,7 @@ const EditProfileModal = () => {
         .then(() => dispatch({ type: "editProfile" }));
     },
   });
-
+  console.log("formik interests value: ", formik.values.interests);
   return (
     <Modal
       show={isEditProfileOpen}
