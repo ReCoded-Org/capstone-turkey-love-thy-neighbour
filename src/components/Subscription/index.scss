@@ -1,4 +1,4 @@
-@import "../../style/variables"; // it's nice taht you used the sass variables for colors :)
+@import "../../style/variables"; 
 
 @media screen and (min-width: 768px) {
     .subscription-img-bg {
@@ -7,9 +7,11 @@
         background-size: contain;
     
     }
-    
   }
-      @media screen and (min-width: 0px) and (max-width: 767px) {
+
+
+
+      @media screen and (min-width: 351px) and (max-width: 767px) {
         .subscription-img-bg
       {
         background-image: url("../../images/PhoneandNotifications.svg"); 
