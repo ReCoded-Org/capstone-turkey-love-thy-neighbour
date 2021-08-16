@@ -2,9 +2,9 @@ import React from "react";
 
 import { Modal, Button, Card } from "react-bootstrap";
 
-import { useFormik } from "formik";
-
 import { useSelector, useDispatch } from "react-redux";
+
+import { useFormik } from "formik";
 
 import helpers from "../../utils/helpers";
 import { ReactComponent as Logo } from "../../images/logo.svg";
@@ -12,6 +12,13 @@ import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
 
 const EditProfileModal = () => {
+  const dispatch = useDispatch();
+  const isEditProfileOpen = useSelector((user) => user.popup.isEditProfileOpen);
+
+  function toggleEditProfileModal() {
+    dispatch({ type: "editProfile" });
+  }
+
   // TODO: Add the validation errors for other stuff.
   const validate = (values) => {
     const errors = {};
@@ -69,13 +76,10 @@ const EditProfileModal = () => {
     },
   });
 
-  const dispatch = useDispatch();
-  const isEditProfileOpen = useSelector((user) => user.popup.isEditProfileOpen);
-
   return (
     <Modal
       show={isEditProfileOpen}
-      onHide={() => dispatch({ type: "editProfile" })}
+      onHide={toggleEditProfileModal}
       id="edit-profile-modal"
     >
       <Modal.Header className="d-flex justify-content-between">
@@ -86,7 +90,7 @@ const EditProfileModal = () => {
           data-toggle="modal"
           className="btn-close"
           aria-label="Close"
-          onClick={() => dispatch({ type: "editProfile" })}
+          onClick={toggleEditProfileModal}
         />
       </Modal.Header>
 
@@ -94,7 +98,6 @@ const EditProfileModal = () => {
         <Modal.Body>
           <Card className="form-cards">
             <Card.Body>
-              {/* TODO: Fix the overflow issue with the Last Name error message */}
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
                   className="edit-form-input p-2 flex-fill"
@@ -322,9 +325,7 @@ const EditProfileModal = () => {
         </Modal.Body>
 
         <Modal.Footer>
-          <DiscardChangesButton
-            onClick={() => dispatch({ type: "editProfile" })}
-          >
+          <DiscardChangesButton onClick={toggleEditProfileModal}>
             Discard Changes
           </DiscardChangesButton>
           <SaveChangesButton type="submit">Save Changes</SaveChangesButton>
