@@ -14,10 +14,10 @@ function Meet() {
   const firstName = useSelector((state) => state.user.firestoreDoc?.firstName);
 
   return (
-    <Container fluid className="meet-container-fluid">
-      <Container className="meet-content-container d-flex align-items-center">
+    <Container fluid className="meet-container-fluid d-flex align-items-center">
+      <Container className="meet-content-container d-flex align-items-center h-100">
         <Row className="meet-row">
-          <Col xs={12} sm={12} md={6} className="d-flex flex-column justify-content-center align-items-start">
+          <Col xs={12} sm={12} md={6} className="d-flex flex-column justify-content-center align-items-start mt-5 mt-sm-5 mt-md-0">
             <h3>Hello, {firstName}</h3>
             <h1>Meet nearby people with our cutting edge algorithms.</h1>
             <p>

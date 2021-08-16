@@ -1,11 +1,9 @@
 @import "../../style/_variables.scss";
 
 .meet-container-fluid {
-  height: calc(100vh - 120px);
+  min-height: calc(100vh - 120px);
 
   & > .meet-content-container {
-    height: 100%;
-
     & > .meet-row {
       margin: 0;
 
@@ -14,7 +12,9 @@
 
         h1 {
           color: $logo-red;
-          font-size: 38px;
+          @media screen and (min-width: 992px) {
+            font-size: 38px;
+          }
           @media screen and (max-width: 991px) {
             font-size: 23px;
           }
@@ -47,14 +47,14 @@
   }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1200px) {
+@media screen and (min-width: 992px) and (max-width: 1199px) {
   .meet-container-fluid h3 {
-    font-size: 23px;
+    font-size: 23px !important;
   }
   .meet-container-fluid p {
-    font-size: 15px;
+    font-size: 15px !important;
   }
   .meet-container-fluid h1 {
-    font-size: 30px;
+    font-size: 30px !important;
   }
 }
