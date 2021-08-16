@@ -6,24 +6,18 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import Home from "./containers/Home";
-// import Profile from "./containers/Profile";
-// import Neighbors from "./containers/Neighbors";
-// import Meet from "./containers/Meet";
-// import OurTeam from "./containers/OurTeam";
 import ContactUs from "./containers/ContactUs";
-// import FAQ from "./containers/FAQ";
 import Footer from "./components/Footer";
 
 function App() {
   return (
     <Container fluid style={{ minHeight: "100vh" }}>
       <Router>
-        <NavBar /> {/* Always dispaly it at the top */}
+        <NavBar />
         <Switch>
           <Route exact path="/">
             <Home />
           </Route>
-
           <Route path="/contact-us">
             <ContactUs />
           </Route>
