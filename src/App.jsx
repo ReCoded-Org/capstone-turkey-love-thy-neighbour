@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Container } from "react-bootstrap";
 
@@ -18,9 +18,14 @@ import SignUpModal from "./components/SignUpModal";
 
 function App() {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
+  const isSignedIn = useSelector((state) => state.user.isSignedIn);
+  console.log(isSignedIn);
   useEffect(() => {
     dispatch(listenForAuthChanges());
   }, [dispatch]);
+
+  console.log(user);
 
   return (
     <Container fluid className="main-wrapper">
@@ -34,7 +39,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/profile/:uid">
-            <Profile />
+            {isSignedIn ? <Profile /> : <h1>Sign in please.</h1>}
           </Route>
           <Route path="/neighbors">
             <Neighbors />

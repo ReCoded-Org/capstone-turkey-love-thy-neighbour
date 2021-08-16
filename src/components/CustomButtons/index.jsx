@@ -13,10 +13,8 @@ export const CTAButton = styled(BaseButton)`
 `;
 
 export const EditProfileButton = styled(BaseButton)`
-  color: #2a5885 !important;
-  background-color: #ffffff !important;
+  color: #ffffff !important;
   font-weight: bold !important;
-  border-color: #ffffff !important;
   border-radius: 16px !important;
   margin: 5px;
   padding: 10px 30px;

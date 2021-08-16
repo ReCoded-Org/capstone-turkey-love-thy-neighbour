@@ -6,6 +6,8 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { useFormik } from "formik";
 
+import { firestore } from "../../firebaseConfig";
+
 import helpers from "../../utils/helpers";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
@@ -14,6 +16,8 @@ import "./index.scss";
 const EditProfileModal = () => {
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector((user) => user.popup.isEditProfileOpen);
+  const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
+  const uid = useSelector((state) => state.user.authCred?.uid);
 
   function toggleEditProfileModal() {
     dispatch({ type: "editProfile" });
@@ -57,22 +61,30 @@ const EditProfileModal = () => {
   };
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
-      district: "",
-      gender: "",
-      age: "",
-      education: "",
-      bio: "",
-      interests: "",
-      number: "",
-      address: "",
-      profileImageUrl: "",
-      backgroundImageUrl: "",
+      firstName: !firestoreDoc?.firstName ? "" : firestoreDoc.firstName,
+      lastName: !firestoreDoc?.lastName ? "" : firestoreDoc.lastName,
+      district: !firestoreDoc?.district ? "" : firestoreDoc.district,
+      gender: !firestoreDoc?.gender ? "" : firestoreDoc.gender,
+      age: !firestoreDoc?.age ? 15 : firestoreDoc.age,
+      education: !firestoreDoc?.education ? "" : firestoreDoc.education,
+      bio: !firestoreDoc?.bio ? "" : firestoreDoc.bio,
+      interests: !firestoreDoc?.interests ? "" : firestoreDoc.interests,
+      number: !firestoreDoc?.number ? "" : firestoreDoc.number,
+      address: !firestoreDoc?.address ? "" : firestoreDoc.address,
+      profileImageUrl: !firestoreDoc?.profileImageUrl
+        ? ""
+        : firestoreDoc.profileImageUrl,
+      backgroundImageUrl: !firestoreDoc?.backgroundImageUrl
+        ? ""
+        : firestoreDoc.backgroundImageUrl,
     },
     validate,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      firestore
+        .collection("users")
+        .doc(uid)
+        .set(values, { merge: true })
+        .then(() => dispatch({ type: "editProfile" }));
     },
   });
 
@@ -161,7 +173,7 @@ const EditProfileModal = () => {
                     onBlur={formik.handleBlur}
                   >
                     <option disabled value="">
-                      Gender
+                      Select your Gender
                     </option>
                     <option value="male">Male</option>
                     <option value="female">Female </option>
@@ -178,7 +190,7 @@ const EditProfileModal = () => {
                     id="age"
                     name="age"
                     type="number"
-                    placeholder="Age"
+                    placeholder="Enter your Age"
                     min="15"
                     max="99"
                     onChange={formik.handleChange}
@@ -195,13 +207,12 @@ const EditProfileModal = () => {
                   className="edit-form-input p-2 flex-fill"
                   id="education"
                   name="education"
-                  placeholder="Education"
                   onChange={formik.handleChange}
                   value={formik.values.education}
                   onBlur={formik.handleBlur}
                 >
                   <option disabled value="">
-                    Education
+                    Select your Education
                   </option>
                   {helpers.educationList.map((education) => {
                     return (
@@ -220,7 +231,7 @@ const EditProfileModal = () => {
                   className="edit-form-input p-2 flex-fill"
                   id="bio"
                   name="bio"
-                  placeholder="Bio"
+                  placeholder="Your bio..."
                   onChange={formik.handleChange}
                   value={formik.values.bio}
                   onBlur={formik.handleBlur}
@@ -234,14 +245,13 @@ const EditProfileModal = () => {
                   className="edit-form-input p-2 flex-fill"
                   id="interests"
                   name="interests"
-                  placeholder="Interests"
                   onChange={formik.handleChange}
                   value={formik.values.interests}
                   onBlur={formik.handleBlur}
                 >
                   {/* TODO: Move the helper function inside utils/helpers */}
                   <option disabled value="">
-                    Interests
+                    Select Your Interests
                   </option>
                   {helpers.activityList.map((activity) => {
                     return (
@@ -275,7 +285,7 @@ const EditProfileModal = () => {
                   className="edit-form-input p-2 flex-fill"
                   id="address"
                   name="address"
-                  placeholder="Address"
+                  placeholder="Write your Address"
                   onChange={formik.handleChange}
                   value={formik.values.address}
                   onBlur={formik.handleBlur}
@@ -325,10 +335,10 @@ const EditProfileModal = () => {
         </Modal.Body>
 
         <Modal.Footer>
+          <SaveChangesButton type="submit">Save Changes</SaveChangesButton>
           <DiscardChangesButton onClick={toggleEditProfileModal}>
             Discard Changes
           </DiscardChangesButton>
-          <SaveChangesButton type="submit">Save Changes</SaveChangesButton>
         </Modal.Footer>
       </form>
     </Modal>
