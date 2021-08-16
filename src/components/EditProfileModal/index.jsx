@@ -65,6 +65,7 @@ const EditProfileModal = () => {
     }
     return errors;
   };
+
   const formik = useFormik({
     initialValues: {
       firstName: !firestoreDoc?.firstName ? "" : firestoreDoc.firstName,
@@ -271,12 +272,8 @@ const EditProfileModal = () => {
                 </select> */}
                 <Multiselect
                   displayValue="content"
-                  onRemove={(selectedOptions) =>
-                    setInterests([...interests, selectedOptions])
-                  }
-                  onSelect={(selectedOptions) =>
-                    setInterests([...interests, selectedOptions])
-                  }
+                  onRemove={(selectedOptions) => setInterests(selectedOptions)}
+                  onSelect={(selectedOptions) => setInterests(selectedOptions)}
                   options={newActivityList}
                   selectedValues={formik.values.interests}
                 />
