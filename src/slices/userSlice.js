@@ -11,7 +11,6 @@ export const attachListenerToUserDoc = (uid) => {
   };
 };
 
-/* eslint-disable no-unused-vars */
 export const listenForAuthChanges = () => {
   return (dispatch) => {
     auth.onAuthStateChanged((user) => {

@@ -141,9 +141,10 @@ const ProfilePage = () => {
                       <li>
                         Interests:{" "}
                         <span>
-                          {!firestoreDoc?.interests
+                          {/* {!firestoreDoc?.interests
                             ? "Learning, coding, collaborating."
-                            : firestoreDoc.interests}
+                            : firestoreDoc.interests}  removed this because react would think the document field that is an array should be mapped over and we are doing that in our multiselect branch with another library. If I include this I'll have merge the two in order to make this work. */}
+                          Default interest.
                         </span>
                       </li>
                     </ul>

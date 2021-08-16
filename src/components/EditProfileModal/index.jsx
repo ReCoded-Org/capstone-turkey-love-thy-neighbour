@@ -68,7 +68,7 @@ const EditProfileModal = () => {
       age: !firestoreDoc?.age ? 15 : firestoreDoc.age,
       education: !firestoreDoc?.education ? "" : firestoreDoc.education,
       bio: !firestoreDoc?.bio ? "" : firestoreDoc.bio,
-      interests: !firestoreDoc?.interests ? "" : firestoreDoc.interests,
+      interests: "Default interest.",
       number: !firestoreDoc?.number ? "" : firestoreDoc.number,
       address: !firestoreDoc?.address ? "" : firestoreDoc.address,
       profileImageUrl: !firestoreDoc?.profileImageUrl
