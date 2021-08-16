@@ -17,9 +17,9 @@ const ProfilePage = () => {
   const isEditProfileOpen = useSelector(
     (state) => state.popup.isEditProfileOpen
   );
-  const { firestoreDoc, backgroundImageUrl, profileImageUrl } = useSelector(
-    (state) => state.user.firestoreDoc
-  );
+  const { firestoreDoc, authCred } = useSelector((state) => state.user);
+  const { backgroundImageUrl, profileImageUrl } = firestoreDoc;
+  const { email } = authCred;
 
   return (
     <Container
@@ -159,12 +159,7 @@ const ProfilePage = () => {
                     <Card.Title className="card-title">Contact</Card.Title>
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
-                        Email:{" "}
-                        <span>
-                          {!firestoreDoc?.email
-                            ? "example@example.com"
-                            : firestoreDoc.email}
-                        </span>
+                        Email: <span>{email}</span>
                       </li>
                       <li>
                         Phone:{" "}

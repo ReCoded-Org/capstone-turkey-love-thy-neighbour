@@ -17,9 +17,11 @@ import "./index.scss";
 
 const EditProfileModal = () => {
   const dispatch = useDispatch();
-  const isEditProfileOpen = useSelector((user) => user.popup.isEditProfileOpen);
-  const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
-  const uid = useSelector((state) => state.user.authCred?.uid);
+  const isEditProfileOpen = useSelector(
+    (state) => state.popup.isEditProfileOpen
+  );
+  const { firestoreDoc, authCred } = useSelector((state) => state.user);
+  const { uid } = authCred;
 
   const [interests, setInterests] = useState([]);
 
@@ -72,7 +74,7 @@ const EditProfileModal = () => {
       age: !firestoreDoc?.age ? 15 : firestoreDoc.age,
       education: !firestoreDoc?.education ? "" : firestoreDoc.education,
       bio: !firestoreDoc?.bio ? "" : firestoreDoc.bio,
-      interests: !firestoreDoc?.interests ? [] : firestoreDoc.bio,
+      interests: !firestoreDoc?.interests ? [] : firestoreDoc.interests,
       number: !firestoreDoc?.number ? "" : firestoreDoc.number,
       address: !firestoreDoc?.address ? "" : firestoreDoc.address,
       profileImageUrl: !firestoreDoc?.profileImageUrl
