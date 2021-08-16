@@ -26,7 +26,7 @@ function Meet() {
             </p>
             <CTAButton>Meet Now</CTAButton>
           </Col>
-          <Col xs={12} sm={12} md={6}>
+          <Col xs={12} sm={12} md={6} className="d-flex justify-content-end">
             <img src={MeetImg} className="img-fluid" alt="meet img" />
           </Col>
         </Row>
