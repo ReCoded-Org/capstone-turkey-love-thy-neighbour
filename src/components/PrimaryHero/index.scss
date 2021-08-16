@@ -6,7 +6,7 @@
   .primary-hero-content-container {
     .primary-hero-content-row {
       & > div:first-child {
-        padding-right: 10px;
+        padding-right: 10px !important;
 
         @media screen and (max-width: 768px) {
           padding-bottom: 50px !important;

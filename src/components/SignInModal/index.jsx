@@ -117,7 +117,7 @@ const SignInModal = () => {
       </Modal.Body>
 
       <div className="two-footer-wrapper">
-        <Modal.Footer className="sign-in-buttons d-flex flex-column align-items-stretch">
+        <Modal.Footer className="d-flex flex-column align-items-stretch">
           <SignInUpButton
             type="submit"
             disabled={formik.isSubmitting}
@@ -125,12 +125,8 @@ const SignInModal = () => {
           >
             Sign In
           </SignInUpButton>
-          <SignInUpGoogleButton type="submit">
-            Sign In With Google
-          </SignInUpGoogleButton>
-          <SignInUpFacebookButton type="submit">
-            Sign In With Facebook
-          </SignInUpFacebookButton>
+          <SignInUpGoogleButton>Sign In With Google</SignInUpGoogleButton>
+          <SignInUpFacebookButton>Sign In With Facebook</SignInUpFacebookButton>
         </Modal.Footer>
         <Modal.Footer className="d-flex flex-column align-items-center">
           <span>

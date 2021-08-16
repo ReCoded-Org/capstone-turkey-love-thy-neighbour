@@ -16,6 +16,7 @@ import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
 
 // TODO: display male or female with a capital letter
+// TODO: set every input field's height to 42px
 
 const EditProfileModal = () => {
   const dispatch = useDispatch();
@@ -183,7 +184,7 @@ const EditProfileModal = () => {
                     value={formik.values.gender}
                     onBlur={formik.handleBlur}
                   >
-                    <option disabled value="">
+                    <option disabled selected value="">
                       Select your Gender
                     </option>
                     <option value="male">Male</option>

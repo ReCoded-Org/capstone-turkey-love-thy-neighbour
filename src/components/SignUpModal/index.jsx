@@ -33,6 +33,9 @@ const SignUpModal = () => {
     if (!values.lastName) {
       errors.lastName = "Required";
     }
+    if (!values.gender) {
+      errors.gender = "Required";
+    }
     if (!values.email) {
       errors.email = "Required";
     }
@@ -49,6 +52,7 @@ const SignUpModal = () => {
     initialValues: {
       firstName: "",
       lastName: "",
+      gender: "",
       email: "",
       password: "",
       repeatedPassword: "",
@@ -112,7 +116,7 @@ const SignUpModal = () => {
               id="sign-up-form"
             >
               <input
-                className="sign-up-form-item p-2 "
+                className="p-2 "
                 id="firstName"
                 name="firstName"
                 placeholder="First Name"
@@ -124,7 +128,7 @@ const SignUpModal = () => {
                 <div className="error-msg">{formik.errors.firstName}</div>
               ) : null}
               <input
-                className="sign-up-form-item p-2 "
+                className="p-2 "
                 id="lastName"
                 name="lastName"
                 placeholder="Last Name"
@@ -135,8 +139,26 @@ const SignUpModal = () => {
               {formik.touched.lastName && formik.errors.lastName ? (
                 <div className="error-msg">{formik.errors.lastName}</div>
               ) : null}
+              <select
+                className="p-2 "
+                id="gender"
+                name="gender"
+                onChange={formik.handleChange}
+                value={formik.values.gender}
+                onBlur={formik.handleBlur}
+              >
+                <option disabled selected value="">
+                  Select a gender...
+                </option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+              </select>
+              {formik.touched.gender && formik.errors.gender ? (
+                <div className="error-msg">{formik.errors.gender}</div>
+              ) : null}
               <input
-                className="sign-up-form-item p-2 "
+                className="p-2 "
                 id="email"
                 name="email"
                 type="email"
@@ -149,7 +171,7 @@ const SignUpModal = () => {
                 <div className="error-msg">{formik.errors.email}</div>
               ) : null}
               <input
-                className="sign-up-form-item p-2 "
+                className="p-2 "
                 id="password"
                 name="password"
                 type="password"
@@ -162,7 +184,7 @@ const SignUpModal = () => {
                 <div className="error-msg">{formik.errors.password}</div>
               ) : null}
               <input
-                className="sign-up-form-item p-2 "
+                className="p-2 "
                 id="repeatedPassword"
                 name="repeatedPassword"
                 type="password"

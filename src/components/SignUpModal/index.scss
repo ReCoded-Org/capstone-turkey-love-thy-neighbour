@@ -25,6 +25,14 @@
               margin-top: 10px;
               border: 1px solid $black;
             }
+
+            select {
+              height: 42px;
+              margin: 0;
+              margin-top: 10px;
+              border: 1px solid $black;
+            }
+
             div.error-msg {
               font-size: 12px;
               color: rgb(122, 12, 22);
