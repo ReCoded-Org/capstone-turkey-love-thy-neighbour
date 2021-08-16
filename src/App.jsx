@@ -6,12 +6,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import Home from "./containers/Home";
-import Profile from "./containers/Profile";
-import Neighbors from "./containers/Neighbors";
-import Meet from "./containers/Meet";
-import OurTeam from "./containers/OurTeam";
+// import Profile from "./containers/Profile";
+// import Neighbors from "./containers/Neighbors";
+// import Meet from "./containers/Meet";
+// import OurTeam from "./containers/OurTeam";
 import ContactUs from "./containers/ContactUs";
-import FAQ from "./containers/FAQ";
+// import FAQ from "./containers/FAQ";
 import Footer from "./components/Footer";
 
 function App() {
@@ -23,23 +23,9 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-          <Route path="/neighbors">
-            <Neighbors />
-          </Route>
-          <Route path="/meet">
-            <Meet />
-          </Route>
-          <Route path="/our-team">
-            <OurTeam />
-          </Route>
+
           <Route path="/contact-us">
             <ContactUs />
-          </Route>
-          <Route path="/faq">
-            <FAQ />
           </Route>
         </Switch>
         <Footer />
