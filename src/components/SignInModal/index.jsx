@@ -77,10 +77,14 @@ const SignInModal = () => {
         />
       </Modal.Header>
 
-      <form onSubmit={formik.handleSubmit}>
-        <Modal.Body>
-          <Card>
-            <Card.Body className="d-flex flex-column">
+      <Modal.Body>
+        <Card>
+          <Card.Body>
+            <form
+              onSubmit={formik.handleSubmit}
+              className="d-flex flex-column"
+              id="sign-in-form"
+            >
               <input
                 className="sign-in-email p-2"
                 id="email"
@@ -107,12 +111,20 @@ const SignInModal = () => {
               {formik.touched.password && formik.errors.password ? (
                 <div className="error-msg">{formik.errors.password}</div>
               ) : null}
-            </Card.Body>
-          </Card>
-        </Modal.Body>
+            </form>
+          </Card.Body>
+        </Card>
+      </Modal.Body>
 
+      <div className="two-footer-wrapper">
         <Modal.Footer className="sign-in-buttons d-flex flex-column align-items-stretch">
-          <SignInUpButton type="submit">Sign In</SignInUpButton>
+          <SignInUpButton
+            type="submit"
+            disabled={formik.isSubmitting}
+            form="sign-in-form"
+          >
+            Sign In
+          </SignInUpButton>
           <SignInUpGoogleButton type="submit">
             Sign In With Google
           </SignInUpGoogleButton>
@@ -136,7 +148,7 @@ const SignInModal = () => {
             ?
           </span>
         </Modal.Footer>
-      </form>
+      </div>
     </Modal>
   );
 };

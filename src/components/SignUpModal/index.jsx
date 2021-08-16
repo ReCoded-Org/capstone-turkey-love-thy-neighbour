@@ -102,10 +102,15 @@ const SignUpModal = () => {
           }}
         />
       </Modal.Header>
+
       <Modal.Body>
         <Card>
           <Card.Body>
-            <form onSubmit={formik.handleSubmit} className="d-flex flex-column">
+            <form
+              onSubmit={formik.handleSubmit}
+              className="d-flex flex-column"
+              id="sign-up-form"
+            >
               <input
                 className="sign-up-form-item p-2 "
                 id="firstName"
@@ -176,7 +181,11 @@ const SignUpModal = () => {
 
       <div className="two-footer-wrapper">
         <Modal.Footer className="sign-up-buttons d-flex flex-column align-items-stretch">
-          <SignInUpButton type="submit" disabled={formik.isSubmitting}>
+          <SignInUpButton
+            type="submit"
+            disabled={formik.isSubmitting}
+            form="sign-up-form"
+          >
             Sign Up
           </SignInUpButton>
           <SignInUpGoogleButton type="submit" disabled={formik.isSubmitting}>
