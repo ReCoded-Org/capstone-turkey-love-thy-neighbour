@@ -1,9 +1,9 @@
 @import "../../style/_variables.scss";
 
 .meet-container-fluid {
-  height: calc(100vh - 60px);
+  height: calc(100vh - 120px);
 
-  & > .meet-container {
+  & > .meet-content-container {
     height: 100%;
 
     & > .meet-row {
@@ -14,19 +14,47 @@
 
         h1 {
           color: $logo-red;
+          font-size: 38px;
+          @media screen and (max-width: 991px) {
+            font-size: 23px;
+          }
         }
 
         h3 {
           color: $logo-blue;
+          margin-bottom: 0;
+          @media screen and (max-width: 991px) {
+            font-size: 18px;
+          }
         }
 
         p {
           color: $black;
+          font-size: 18px;
+          @media screen and (max-width: 991px) {
+            font-size: 13px;
+          }
         }
       }
       & > div:last-child {
         padding: 0;
+
+        & > img {
+          height: 100%;
+        }
       }
     }
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .meet-container-fluid h3 {
+    font-size: 23px;
+  }
+  .meet-container-fluid p {
+    font-size: 15px;
+  }
+  .meet-container-fluid h1 {
+    font-size: 30px;
   }
 }
