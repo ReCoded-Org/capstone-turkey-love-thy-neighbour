@@ -4,6 +4,7 @@ h4 {
   color: $logo-red;
   text-align: center;
   padding-top: 50px;
+  
   @media screen and (min-width: 768px) {
     margin-bottom: 30px !important;
     font-size: 40px !important;
@@ -99,14 +100,14 @@ background-size: cover;
     padding: 10px;
  
     @media screen and (min-width: 342px) {
-      height: 153px;
-    }
-    @media screen and (min-width: 576px) {
-      width: 300px;
       height: 170px;
     }
+    @media screen and (min-width: 576px) {
+      width: 250px;
+      height: 400px;
+    }
     @media screen and (max-width: 767px) {
-      width: 100% !important;
+     
     }
     @media screen and (min-width: 768px) {
       margin: 0 auto;
