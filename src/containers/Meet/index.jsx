@@ -4,7 +4,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 import { CTAButton } from "../../components/CustomButtons/index";
-import MeetImg from "../../images/meet.png";
+import MeetImg from "../../images/meet.jpg";
 import "./index.scss";
 // use https://lipis.github.io/bootstrap-sweetalert/ the second from the bottom for the how was your meeting alert
 
