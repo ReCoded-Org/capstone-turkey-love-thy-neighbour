@@ -15,6 +15,8 @@ import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
 
+// TODO: display male or female with a capital letter
+
 const EditProfileModal = () => {
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector(
