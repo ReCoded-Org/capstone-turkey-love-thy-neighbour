@@ -1,0 +1,24 @@
+@import "../../style/variables";
+
+.neighbors-container-fluid {
+  min-height: calc(100vh - 120px);
+
+  .neighbors-content-container {
+    height: 100%;
+
+    & > div:first-child {
+      h1 {
+        color: $logo-red;
+      }
+      .filter-wrapper {
+        select {
+          height: 32px;
+          width: 200px;
+        }
+      }
+    }
+    & > div:last-child {
+      margin: 0;
+    }
+  }
+}
