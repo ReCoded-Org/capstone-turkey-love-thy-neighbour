@@ -86,7 +86,7 @@ const SignInModal = () => {
               id="sign-in-form"
             >
               <input
-                className="sign-in-email p-2"
+                className="p-2"
                 id="email"
                 name="email"
                 type="email"
@@ -99,7 +99,7 @@ const SignInModal = () => {
                 <div className="error-msg">{formik.errors.email}</div>
               ) : null}
               <input
-                className="sign-in-password p-2"
+                className="p-2"
                 id="password"
                 name="password"
                 type="password"
@@ -134,7 +134,7 @@ const SignInModal = () => {
         </Modal.Footer>
         <Modal.Footer className="d-flex flex-column align-items-center">
           <span>
-            Dont have an{" "}
+            Don&lsquo;t you have an{" "}
             <a
               href="/"
               onClick={(event) => {
@@ -143,7 +143,7 @@ const SignInModal = () => {
                 dispatch({ type: "signUp" });
               }}
             >
-              Account
+              account
             </a>
             ?
           </span>

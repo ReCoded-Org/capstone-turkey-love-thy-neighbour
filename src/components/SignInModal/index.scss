@@ -20,36 +20,46 @@
     }
 
     & > div.modal-body {
-      form {
-        .error-msg {
-          font-size: 12px;
-          color: rgb(122, 12, 22);
-          margin-top: 5px;
-          margin-bottom: 5px;
-          margin-left: 3px;
+      .card {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+        .card-body {
+          form {
+            input {
+              margin-top: 10px;
+              border: 1px solid $black;
+            }
+            div.error-msg {
+              font-size: 12px;
+              color: rgb(122, 12, 22);
+              margin-top: 5px;
+              margin-bottom: 5px;
+              margin-left: 3px;
+            }
+          }
         }
       }
     }
 
     & > div.two-footer-wrapper {
-      .sign-in-buttons {
+      & > div.modal-footer:first-child {
         padding: 16px;
 
         button {
           margin-right: 0 !important;
           margin-left: 0 !important;
         }
-
         button:nth-child(2) {
           margin-top: 5px;
           margin-bottom: 5px;
         }
       }
 
-      .sign-in-password,
-      .sign-in-email {
-        margin-top: 10px;
-        border: 1px solid $dark-blue;
+      & > div.modal-footer:last-child {
+        a {
+          text-decoration: none;
+        }
       }
     }
   }

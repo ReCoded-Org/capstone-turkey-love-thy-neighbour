@@ -197,7 +197,7 @@ const SignUpModal = () => {
         </Modal.Footer>
         <Modal.Footer className="d-flex flex-column align-items-center">
           <span>
-            Already Got an{" "}
+            Already have an{" "}
             <a
               href="/"
               onClick={(event) => {
@@ -206,7 +206,7 @@ const SignUpModal = () => {
                 dispatch({ type: "signIn" });
               }}
             >
-              Account
+              account
             </a>
             ?
           </span>
