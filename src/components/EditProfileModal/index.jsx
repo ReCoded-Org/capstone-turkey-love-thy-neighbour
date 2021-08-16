@@ -121,7 +121,7 @@ const EditProfileModal = () => {
             <Card.Body>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className="edit-form-input p-2 flex-fill"
+                  className=" p-2 flex-fill"
                   id="firstName"
                   name="firstName"
                   placeholder="First Name"
@@ -135,7 +135,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className="edit-form-input p-2 flex-fill"
+                  className=" p-2 flex-fill"
                   id="lastName"
                   name="lastName"
                   placeholder="Last Name"
@@ -149,7 +149,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <select
-                  className="edit-form-input p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="district"
                   name="district"
                   onChange={formik.handleChange}
@@ -175,7 +175,7 @@ const EditProfileModal = () => {
               <div className="gender-age-wrapper d-flex">
                 <div className="d-flex flex-column">
                   <select
-                    className="edit-form-input p-2"
+                    className=" p-2"
                     name="gender"
                     onChange={formik.handleChange}
                     value={formik.values.gender}
@@ -195,7 +195,7 @@ const EditProfileModal = () => {
                 </div>
                 <div className="d-flex flex-column">
                   <input
-                    className="edit-form-input p-2"
+                    className=" p-2"
                     id="age"
                     name="age"
                     type="number"
@@ -213,7 +213,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <select
-                  className="edit-form-input p-2 flex-fill"
+                  className=" p-2 flex-fill"
                   id="education"
                   name="education"
                   onChange={formik.handleChange}
@@ -237,7 +237,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <textarea
-                  className="edit-form-input p-2 flex-fill"
+                  className=" p-2 flex-fill"
                   id="bio"
                   name="bio"
                   placeholder="Your bio..."
@@ -251,7 +251,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 {/* <select
-                  className="edit-form-input p-2 flex-fill"
+                  className=" p-2 flex-fill"
                   id="interests"
                   name="interests"
                   onChange={formik.handleChange}
@@ -283,7 +283,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className="edit-form-input p-2 flex-fill"
+                  className=" p-2 flex-fill"
                   id="number"
                   name="number"
                   type="tel"
@@ -298,7 +298,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className="edit-form-input p-2 flex-fill"
+                  className=" p-2 flex-fill"
                   id="address"
                   name="address"
                   placeholder="Write your Address"
@@ -312,7 +312,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className="edit-form-input p-2 flex-fill"
+                  className=" p-2 flex-fill"
                   id="profileImageUrl"
                   name="profileImageUrl"
                   type="url"
@@ -330,7 +330,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className="edit-form-input p-2 flex-fill"
+                  className=" p-2 flex-fill"
                   id="backgroundImageUrl"
                   name="backgroundImageUrl"
                   type="url"

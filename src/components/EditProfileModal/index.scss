@@ -2,26 +2,44 @@
 
 #edit-profile-modal {
   form {
-    input,
-    select {
-      height: 38px;
-    }
+    .modal-body {
+      .card {
+        .card-body {
+          & > div:not(.gender-age-wrapper) {
+            & > input:not(.searchBox),
+            textarea,
+            select {
+              height: 38px;
+              margin: 3px;
+              border: 1px solid $black;
+            }
 
-    .error-msg {
-      font-size: 12px;
-      color: rgb(122, 12, 22);
-      margin-top: 5px;
-      margin-bottom: 5px;
-      margin-left: 3px;
-    }
+            .error-msg {
+              font-size: 12px;
+              color: rgb(122, 12, 22);
+              margin-top: 5px;
+              margin-bottom: 5px;
+              margin-left: 3px;
+            }
+            .search-wrapper {
+              margin: 3px;
+              border: 1px solid $black !important;
+              border-radius: 0 !important;
+            }
+          }
 
-    .edit-form-input {
-      margin: 3px;
-      border: 1px solid $dark-blue;
-    }
+          & > div.gender-age-wrapper > div {
+            width: 50%;
 
-    .gender-age-wrapper > div {
-      width: 50%;
+            input,
+            select {
+              height: 38px;
+              margin: 3px;
+              border: 1px solid $black;
+            }
+          }
+        }
+      }
     }
   }
 
