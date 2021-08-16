@@ -11,6 +11,8 @@ import { auth } from "../../firebaseConfig";
 import logo from "../../images/logo.svg";
 import "./index.scss";
 
+// fix the link profile
+
 function NavBar() {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -29,7 +31,7 @@ function NavBar() {
             {/* TODO: Conditionally render links below */}
             {isSignedIn && (
               <>
-                <Link to={`profile/${uid}`} className="nav-link">
+                <Link to={`/profile/${uid}`} className="nav-link">
                   Profile
                 </Link>
                 <Link to="/neighbors" className="nav-link">

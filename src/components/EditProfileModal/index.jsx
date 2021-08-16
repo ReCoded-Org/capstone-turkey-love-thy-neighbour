@@ -99,7 +99,7 @@ const EditProfileModal = () => {
         .then(() => dispatch({ type: "editProfile" }));
     },
   });
-  console.log("formik interests value: ", formik.values.interests);
+  console.log("formik interests value: ", interests);
   return (
     <Modal
       show={isEditProfileOpen}
@@ -184,7 +184,7 @@ const EditProfileModal = () => {
                     value={formik.values.gender}
                     onBlur={formik.handleBlur}
                   >
-                    <option disabled selected value="">
+                    <option disabled defaultValue value="">
                       Select your Gender
                     </option>
                     <option value="male">Male</option>
@@ -253,27 +253,8 @@ const EditProfileModal = () => {
                 ) : null}
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
-                {/* <select
-                  className=" p-2 flex-fill"
-                  id="interests"
-                  name="interests"
-                  onChange={formik.handleChange}
-                  value={formik.values.interests}
-                  onBlur={formik.handleBlur}
-                > */}
-                {/* TODO: Move the helper function inside utils/helpers */}
-                {/* <option disabled value="">
-                    Select Your Interests
-                  </option>
-                  {helpers.activityList.map((activity) => {
-                    return (
-                      <option key={activity} value={activity}>
-                        {activity}
-                      </option>
-                    );
-                  })}
-                </select> */}
                 <Multiselect
+                  placeholder="Select interests..."
                   displayValue="content"
                   onRemove={(selectedOptions) => setInterests(selectedOptions)}
                   onSelect={(selectedOptions) => setInterests(selectedOptions)}
