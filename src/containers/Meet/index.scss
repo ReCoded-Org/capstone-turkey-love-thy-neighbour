@@ -35,6 +35,13 @@
             font-size: 13px;
           }
         }
+
+        button {
+          a {
+            text-decoration: none;
+            color: $white;
+          }
+        }
       }
       & > div:last-child {
         padding: 0;
