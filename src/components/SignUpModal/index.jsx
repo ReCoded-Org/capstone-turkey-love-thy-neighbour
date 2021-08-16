@@ -174,33 +174,35 @@ const SignUpModal = () => {
         </Card>
       </Modal.Body>
 
-      <Modal.Footer className="sign-up-buttons d-flex flex-column align-items-stretch">
-        <SignInUpButton type="submit" disabled={formik.isSubmitting}>
-          Sign Up
-        </SignInUpButton>
-        <SignInUpGoogleButton type="submit" disabled={formik.isSubmitting}>
-          Sign Up With Google
-        </SignInUpGoogleButton>
-        <SignInUpFacebookButton type="submit" disabled={formik.isSubmitting}>
-          Sign Up With Facebook
-        </SignInUpFacebookButton>
-      </Modal.Footer>
-      <Modal.Footer className="d-flex flex-column align-items-center">
-        <span>
-          Already got an{" "}
-          <a
-            href="/"
-            onClick={(event) => {
-              event.preventDefault();
-              dispatch({ type: "signUp" });
-              dispatch({ type: "signIn" });
-            }}
-          >
-            Account
-          </a>
-          ?
-        </span>
-      </Modal.Footer>
+      <div className="two-footer-wrapper">
+        <Modal.Footer className="sign-up-buttons d-flex flex-column align-items-stretch">
+          <SignInUpButton type="submit" disabled={formik.isSubmitting}>
+            Sign Up
+          </SignInUpButton>
+          <SignInUpGoogleButton type="submit" disabled={formik.isSubmitting}>
+            Sign Up With Google
+          </SignInUpGoogleButton>
+          <SignInUpFacebookButton type="submit" disabled={formik.isSubmitting}>
+            Sign Up With Facebook
+          </SignInUpFacebookButton>
+        </Modal.Footer>
+        <Modal.Footer className="d-flex flex-column align-items-center">
+          <span>
+            Already Got an{" "}
+            <a
+              href="/"
+              onClick={(event) => {
+                event.preventDefault();
+                dispatch({ type: "signUp" });
+                dispatch({ type: "signIn" });
+              }}
+            >
+              Account
+            </a>
+            ?
+          </span>
+        </Modal.Footer>
+      </div>
     </Modal>
   );
 };
