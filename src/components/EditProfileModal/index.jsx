@@ -23,6 +23,10 @@ const EditProfileModal = () => {
 
   const [interests, setInterests] = useState([]);
 
+  function toggleEditProfileModal() {
+    dispatch({ type: "editProfile" });
+  }
+
   // TODO: Add the validation errors for other stuff.
   const validate = (values) => {
     const errors = {};
@@ -68,7 +72,7 @@ const EditProfileModal = () => {
       age: !firestoreDoc?.age ? 15 : firestoreDoc.age,
       education: !firestoreDoc?.education ? "" : firestoreDoc.education,
       bio: !firestoreDoc?.bio ? "" : firestoreDoc.bio,
-      interests: firestoreDoc?.interests ? firestoreDoc.interests : [],
+      interests: !firestoreDoc?.interests ? [] : firestoreDoc.bio,
       number: !firestoreDoc?.number ? "" : firestoreDoc.number,
       address: !firestoreDoc?.address ? "" : firestoreDoc.address,
       profileImageUrl: !firestoreDoc?.profileImageUrl
@@ -93,7 +97,7 @@ const EditProfileModal = () => {
   return (
     <Modal
       show={isEditProfileOpen}
-      onHide={() => dispatch({ type: "editProfile" })}
+      onHide={toggleEditProfileModal}
       id="edit-profile-modal"
     >
       <Modal.Header className="d-flex justify-content-between">
@@ -104,7 +108,7 @@ const EditProfileModal = () => {
           data-toggle="modal"
           className="btn-close"
           aria-label="Close"
-          onClick={() => dispatch({ type: "editProfile" })}
+          onClick={toggleEditProfileModal}
         />
       </Modal.Header>
 
@@ -112,7 +116,6 @@ const EditProfileModal = () => {
         <Modal.Body>
           <Card className="form-cards">
             <Card.Body>
-              {/* TODO: Fix the overflow issue with the Last Name error message */}
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
                   className="edit-form-input p-2 flex-fill"
@@ -350,9 +353,7 @@ const EditProfileModal = () => {
 
         <Modal.Footer>
           <SaveChangesButton type="submit">Save Changes</SaveChangesButton>
-          <DiscardChangesButton
-            onClick={() => dispatch({ type: "editProfile" })}
-          >
+          <DiscardChangesButton onClick={toggleEditProfileModal}>
             Discard Changes
           </DiscardChangesButton>
         </Modal.Footer>
