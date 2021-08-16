@@ -20,13 +20,6 @@ const ProfilePage = () => {
   const { firestoreDoc, backgroundImageUrl, profileImageUrl } = useSelector(
     (state) => state.user.firestoreDoc
   );
-  // const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
-  // const backgroundImageUrl = useSelector(
-  // (state) => state.user.firestoreDoc?.backgroundImageUrl
-  // );
-  // const profileImageUrl = useSelector(
-  // (state) => state.user.firestoreDoc?.profileImageUrl
-  // );
 
   return (
     <Container
