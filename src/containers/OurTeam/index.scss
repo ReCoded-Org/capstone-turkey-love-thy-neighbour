@@ -1,0 +1,140 @@
+@import "../../style/variables";
+
+h4 {
+  color: $logo-red;
+  text-align: center;
+  padding-top: 50px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 30px !important;
+    font-size: 40px !important;
+  }
+}
+
+
+body{
+background-image: url(https://lz12v4f1p8c1cumxnbiqvm10-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/ice-cold-blue-to-yellow-gradient-background.jpg);
+background-size: cover;
+}
+
+.ourteam-content-row {
+  margin: 0 !important;
+  padding-top: 50px;
+  padding-bottom: 280px;
+  height: 575px;
+
+  svg {
+
+    @media screen and (min-width: 362px) {
+      min-height: 37px;
+      max-height: 37px;
+      padding-left: 15px;
+    }
+
+    @media screen and (max-width: 361px) {
+      height: 59px !important;
+      width: 70px !important;
+    }
+
+    &.network-svg {
+      margin-bottom: 7px;
+    }
+
+    &.speech-bubble-svg {
+      margin-bottom: 3px;
+    }
+  }
+
+ .img {
+    @media screen and (min-width: 342px) {
+        height: 15px;
+      }
+      @media screen and (min-width: 576px) {
+        width: 30px;
+        height: 40px;
+      }
+      @media screen and (max-width: 767px) {
+        width: 50px !important;
+        height: 100px !important;
+      }
+      @media screen and (min-width: 768px) {
+        margin: 0 auto;
+        height: 345px;
+        width: 245px;
+      }
+
+ }
+  p,
+  .card-title {
+    text-align: center;
+    transition: all ease-in-out 300ms;
+  }
+
+  p {
+    @media screen and (max-width: 341px) {
+      font-size: 11px;
+    }
+    @media screen and (min-width: 454px) {
+      font-size: 15px;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 17px;
+    }
+  }
+
+  & > div {
+    padding: 0;
+
+    & > div {
+      margin: 0;
+    }
+  }
+
+  .card {
+    transition: all ease-in-out 300ms;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      height: 600px;
+      width: 300px;
+   
+    padding: 10px;
+ 
+    @media screen and (min-width: 342px) {
+      height: 153px;
+    }
+    @media screen and (min-width: 576px) {
+      width: 300px;
+      height: 170px;
+    }
+    @media screen and (max-width: 767px) {
+      width: 100% !important;
+    }
+    @media screen and (min-width: 768px) {
+      margin: 0 auto;
+      height: 345px;
+      width: 245px;
+    }
+
+    .card-title {
+      color: $logo-blue;
+    }
+  }
+
+  .card:hover {
+    background-color: $logo-blue;
+    transition: all ease-in-out 300ms;
+
+    .card-title {
+      color: $white;
+      transition: all ease-in-out 300ms;
+    }
+  }
+}
+
+
+@media screen and (min-width: 237px) and (max-width: 767px) {
+  .ourteam-content-row p {
+    @media screen and (min-width: 342px) and (max-width: 453px) {
+      font-size: 13px;
+    }
+  }
+}
