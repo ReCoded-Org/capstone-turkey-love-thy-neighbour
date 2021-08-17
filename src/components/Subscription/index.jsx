@@ -7,7 +7,7 @@ import "./index.scss";
 
 function Subscription() {
   return (
-    <section className="subscription-img-bg primary-hero-section container-fluid">
+    <section className="subscription-img-bg container-fluid">
       <Container className="subscription-content-container d-flex align-items-center">
         <Row className="subscription-content-row m-0">
           <Col
