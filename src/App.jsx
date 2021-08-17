@@ -7,9 +7,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 
 import Home from "./containers/Home";
-import Profile from "./containers/Profile";
-import Neighbors from "./containers/Neighbors";
-import Meet from "./containers/Meet";
 
 function App() {
   return (
