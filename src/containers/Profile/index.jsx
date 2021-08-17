@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 import { Container, Row, Col, Card } from "react-bootstrap";
 
-import PPMaleSVG from "../../images/ProfilePage/PPMaleSVG.svg";
+import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
 import EditProfileModal from "../../components/EditProfileModal";
 import { EditProfileButton } from "../../components/CustomButtons/index";
 import "./index.scss";
 
-const ProfilePage = () => {
+const Profile = () => {
   const [showModal, setShowModal] = useState(false);
   const handleClick = () => setShowModal(!showModal);
 
@@ -127,4 +127,4 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default Profile;
