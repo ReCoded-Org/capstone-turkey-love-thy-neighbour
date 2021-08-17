@@ -30,9 +30,7 @@ function NavBar({ handleClickSignIn, handleClickSignUp }) {
           </Nav>
           <Nav>
             <Nav.Link onClick={handleClickSignIn}>Sign In</Nav.Link>
-            {/* TODO: Handle the click to show sign in pop up */}
             <Nav.Link onClick={handleClickSignUp}>Sign Up</Nav.Link>
-            {/* TODO: Handle the click to show sign in pop up */}
           </Nav>
         </Navbar.Collapse>
       </Container>
