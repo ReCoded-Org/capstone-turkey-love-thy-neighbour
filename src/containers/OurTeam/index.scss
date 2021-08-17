@@ -1,20 +1,18 @@
 @import "../../style/variables";
 
+body{
+  background-image: url(https://lz12v4f1p8c1cumxnbiqvm10-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/ice-cold-blue-to-yellow-gradient-background.jpg);
+  background-size: cover;
+  }
+
 h4 {
   color: $logo-red;
   text-align: center;
   padding-top: 50px;
-  
   @media screen and (min-width: 768px) {
     margin-bottom: 30px !important;
     font-size: 40px !important;
   }
-}
-
-
-body{
-background-image: url(https://lz12v4f1p8c1cumxnbiqvm10-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/ice-cold-blue-to-yellow-gradient-background.jpg);
-background-size: cover;
 }
 
 .ourteam-content-row {
@@ -23,8 +21,7 @@ background-size: cover;
   padding-bottom: 280px;
   height: 575px;
 
-  svg {
-
+svg {
     @media screen and (min-width: 362px) {
       min-height: 37px;
       max-height: 37px;
@@ -62,8 +59,8 @@ background-size: cover;
         height: 345px;
         width: 245px;
       }
-
  }
+
   p,
   .card-title {
     text-align: center;
@@ -91,13 +88,12 @@ background-size: cover;
   }
 
   .card {
-    transition: all ease-in-out 300ms;
+    transition: all ease-in-out 400ms;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
       rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
       height: 600px;
       width: 300px;
-   
-    padding: 10px;
+      padding: 10px;
  
     @media screen and (min-width: 342px) {
       height: 170px;
@@ -106,8 +102,7 @@ background-size: cover;
       width: 250px;
       height: 400px;
     }
-    @media screen and (max-width: 767px) {
-     
+    @media screen and (max-width: 767px) {                     
     }
     @media screen and (min-width: 768px) {
       margin: 0 auto;
@@ -115,7 +110,7 @@ background-size: cover;
       width: 245px;
     }
 
-    .card-title {
+  .card-title {
       color: $logo-blue;
     }
   }
@@ -124,7 +119,7 @@ background-size: cover;
     background-color: $logo-blue;
     transition: all ease-in-out 300ms;
 
-    .card-title {
+  .card-title {
       color: $white;
       transition: all ease-in-out 300ms;
     }

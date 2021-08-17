@@ -199,9 +199,9 @@ function OurTeam() {
         </Carousel.Item>
 
         <Carousel.Item>
-          <Row className="ourteam-content-row d-md-flex justify-content-md-around">
+          <Row className="ourteam-content-row d-md-flex justify-content-center">
             <Col xs={12} sm={12} md={3}>
-              <Card className="carda d-flex flex-column align-items-center justify-content-center">
+              <Card className="carda d-flex flex-column justify-content-center">
                 <img src={img} alt="img" className="img-fluid" />
                 <Card.Title>Moulham 6 Hallak </Card.Title>
                 <Col
