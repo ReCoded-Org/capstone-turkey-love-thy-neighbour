@@ -27,14 +27,14 @@ const ProfilePage = () => {
               <EditProfileButton onClick={handleClick} type="submit">
                 Edit Profile
               </EditProfileButton>
-              {showModal && (
-                <EditProfileModal
-                  handleClick={handleClick}
-                  showModal={showModal}
-                />
-              )}
+
+              <EditProfileModal
+                handleClick={handleClick}
+                showModal={showModal}
+              />
             </div>
           </Col>
+
           <Col xs={12} sm={12}>
             <Row className="cards-row d-flex justify-content-around flex-wrap">
               <Col
