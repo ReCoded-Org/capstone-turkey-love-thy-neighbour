@@ -41,7 +41,6 @@ function NavBar() {
             )}
           </Nav>
           <Nav>
-<<<<<<< HEAD
             {isSignedIn ? (
               <Nav.Link
                 onClick={() =>
@@ -68,10 +67,6 @@ function NavBar() {
                 </Nav.Link>{" "}
               </>
             )}
-=======
-            <Nav.Link onClick={handleClickSignIn}>Sign In</Nav.Link>
-            <Nav.Link onClick={handleClickSignUp}>Sign Up</Nav.Link>
->>>>>>> develop
           </Nav>
         </Navbar.Collapse>
       </Container>
