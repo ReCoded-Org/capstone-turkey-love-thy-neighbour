@@ -35,16 +35,16 @@ function Neighbors() {
           </div>
         </div>
         <Row className="neighbors-cards d-flex justify-content-around flex-wrap">
-          <Col xs={12} sm={6} md={4}>
+          <Col xs={12} sm={6} md={3}>
             <NeighborsCards />
           </Col>
-          <Col xs={12} sm={6} md={4}>
+          <Col xs={12} sm={6} md={3}>
             <NeighborsCards />
           </Col>
-          <Col xs={12} sm={6} md={4}>
+          <Col xs={12} sm={6} md={3}>
             <NeighborsCards />
           </Col>
-          <Col xs={12} sm={6} md={4}>
+          <Col xs={12} sm={6} md={3}>
             <NeighborsCards />
           </Col>
         </Row>
