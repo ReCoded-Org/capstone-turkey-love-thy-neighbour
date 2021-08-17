@@ -29,21 +29,8 @@ function App() {
       <Router>
         <NavBar />
         {/* Always display it at the top */}
-<<<<<<< HEAD
         <SignInModal />
         <SignUpModal />
-=======
-        <SignInModal
-          showSignInModal={showSignInModal}
-          handleClickSignIn={handleClickSignIn}
-          handleClickSignUp={handleClickSignUp}
-        />
-        <SignUpModal
-          showSignUpModal={showSignUpModal}
-          handleClickSignIn={handleClickSignIn}
-          handleClickSignUp={handleClickSignUp}
-        />
->>>>>>> develop
         <Switch>
           <Route exact path="/">
             <Home />
