@@ -1,0 +1,36 @@
+@import "../../style/variables";
+
+#edit-profile-modal {
+  form {
+    input,
+    select {
+      height: 38px;
+    }
+
+    .error-msg {
+      font-size: 12px;
+      color: rgb(122, 12, 22);
+      margin-top: 5px;
+      margin-bottom: 5px;
+      margin-left: 3px;
+    }
+
+    .edit-form-input {
+      margin: 3px;
+      border: 1px solid $dark-blue;
+    }
+
+    .gender-age-wrapper > div {
+      width: 50%;
+    }
+  }
+
+  .modal-header {
+    button {
+      margin: 0;
+    }
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+}
