@@ -11,7 +11,7 @@ import Profile from "./containers/Profile";
 import Neighbors from "./containers/Neighbors";
 import Meet from "./containers/Meet";
 import SignInModal from "./components/SignInModal";
-import SingUpModal from "./components/SignUpModal";
+import SignUpModal from "./components/SignUpModal";
 
 function App() {
   const [showSignInModal, setShowSignInModal] = useState(false);
@@ -33,7 +33,7 @@ function App() {
           handleClickSignIn={handleClickSignIn}
           handleClickSignUp={handleClickSignUp}
         />
-        <SingUpModal
+        <SignUpModal
           showSignUpModal={showSignUpModal}
           handleClickSignIn={handleClickSignIn}
           handleClickSignUp={handleClickSignUp}
