@@ -16,6 +16,8 @@ import {
 } from "../CustomButtons";
 import "./index.scss";
 
+// refactor styling
+
 const SignInModal = () => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -75,10 +77,10 @@ const SignInModal = () => {
         />
       </Modal.Header>
 
-      <form onSubmit={formik.handleSubmit}>
-        <Modal.Body>
-          <Card>
-            <Card.Body className="d-flex flex-column">
+      <Modal.Body>
+        <Card>
+          <Card.Body className="d-flex flex-column">
+            <form onSubmit={formik.handleSubmit}>
               <input
                 className="sign-in-email p-2"
                 id="email"
@@ -105,36 +107,36 @@ const SignInModal = () => {
               {formik.touched.password && formik.errors.password ? (
                 <div className="error-msg">{formik.errors.password}</div>
               ) : null}
-            </Card.Body>
-          </Card>
-        </Modal.Body>
+            </form>
+          </Card.Body>
+        </Card>
+      </Modal.Body>
 
-        <Modal.Footer className="sign-in-buttons d-flex flex-column align-items-stretch">
-          <SignInUpButton type="submit">Sign In</SignInUpButton>
-          <SignInUpGoogleButton type="submit">
-            Sign In With Google
-          </SignInUpGoogleButton>
-          <SignInUpFacebookButton type="submit">
-            Sign In With Facebook
-          </SignInUpFacebookButton>
-        </Modal.Footer>
-        <Modal.Footer className="d-flex flex-column align-items-center">
-          <span>
-            Dont have an{" "}
-            <a
-              href="/"
-              onClick={(event) => {
-                event.preventDefault();
-                dispatch({ type: "signIn" });
-                dispatch({ type: "signUp" });
-              }}
-            >
-              Account
-            </a>
-            ?
-          </span>
-        </Modal.Footer>
-      </form>
+      <Modal.Footer className="sign-in-buttons d-flex flex-column align-items-stretch">
+        <SignInUpButton type="submit">Sign In</SignInUpButton>
+        <SignInUpGoogleButton type="submit">
+          Sign In With Google
+        </SignInUpGoogleButton>
+        <SignInUpFacebookButton type="submit">
+          Sign In With Facebook
+        </SignInUpFacebookButton>
+      </Modal.Footer>
+      <Modal.Footer className="d-flex flex-column align-items-center">
+        <span>
+          Dont have an{" "}
+          <a
+            href="/"
+            onClick={(event) => {
+              event.preventDefault();
+              dispatch({ type: "signIn" });
+              dispatch({ type: "signUp" });
+            }}
+          >
+            Account
+          </a>
+          ?
+        </span>
+      </Modal.Footer>
     </Modal>
   );
 };

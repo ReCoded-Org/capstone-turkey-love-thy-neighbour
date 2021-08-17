@@ -18,6 +18,8 @@ import {
   SignInUpFacebookButton,
 } from "../CustomButtons";
 
+// refactor styling
+
 const SignUpModal = () => {
   const dispatch = useDispatch();
   const isSignUpOpen = useSelector((state) => state.popup.isSignUpOpen);
@@ -100,107 +102,105 @@ const SignUpModal = () => {
           }}
         />
       </Modal.Header>
-      <form onSubmit={formik.handleSubmit}>
-        <Modal.Body>
-          <Card>
-            <Card.Body>
-              <Card.Text className="d-flex flex-column ">
-                <input
-                  className="sign-up-form-item p-2 "
-                  id="firstName"
-                  name="firstName"
-                  placeholder="First Name"
-                  onChange={formik.handleChange}
-                  value={formik.values.firstName}
-                  onBlur={formik.handleBlur}
-                />
-                {formik.touched.firstName && formik.errors.firstName ? (
-                  <div className="error-msg">{formik.errors.firstName}</div>
-                ) : null}
-                <input
-                  className="sign-up-form-item p-2 "
-                  id="lastName"
-                  name="lastName"
-                  placeholder="Last Name"
-                  onChange={formik.handleChange}
-                  value={formik.values.lastName}
-                  onBlur={formik.handleBlur}
-                />
-                {formik.touched.lastName && formik.errors.lastName ? (
-                  <div className="error-msg">{formik.errors.lastName}</div>
-                ) : null}
-                <input
-                  className="sign-up-form-item p-2 "
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                  onChange={formik.handleChange}
-                  value={formik.values.email}
-                  onBlur={formik.handleBlur}
-                />
-                {formik.touched.email && formik.errors.email ? (
-                  <div className="error-msg">{formik.errors.email}</div>
-                ) : null}
-                <input
-                  className="sign-up-form-item p-2 "
-                  id="password"
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  onChange={formik.handleChange}
-                  value={formik.values.password}
-                  onBlur={formik.handleBlur}
-                />
-                {formik.touched.password && formik.errors.password ? (
-                  <div className="error-msg">{formik.errors.password}</div>
-                ) : null}
-                <input
-                  className="sign-up-form-item p-2 "
-                  id="repeatedPassword"
-                  name="repeatedPassword"
-                  type="password"
-                  placeholder="Repeat Password"
-                  onChange={formik.handleChange}
-                  value={formik.values.repeatedPassword}
-                  onBlur={formik.handleBlur}
-                />
-                {formik.touched.password && formik.errors.password ? (
-                  <div className="error-msg">{formik.errors.password}</div>
-                ) : null}
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Modal.Body>
+      <Modal.Body>
+        <Card>
+          <Card.Body>
+            <form onSubmit={formik.handleSubmit}>
+              <input
+                className="sign-up-form-item p-2 "
+                id="firstName"
+                name="firstName"
+                placeholder="First Name"
+                onChange={formik.handleChange}
+                value={formik.values.firstName}
+                onBlur={formik.handleBlur}
+              />
+              {formik.touched.firstName && formik.errors.firstName ? (
+                <div className="error-msg">{formik.errors.firstName}</div>
+              ) : null}
+              <input
+                className="sign-up-form-item p-2 "
+                id="lastName"
+                name="lastName"
+                placeholder="Last Name"
+                onChange={formik.handleChange}
+                value={formik.values.lastName}
+                onBlur={formik.handleBlur}
+              />
+              {formik.touched.lastName && formik.errors.lastName ? (
+                <div className="error-msg">{formik.errors.lastName}</div>
+              ) : null}
+              <input
+                className="sign-up-form-item p-2 "
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Email"
+                onChange={formik.handleChange}
+                value={formik.values.email}
+                onBlur={formik.handleBlur}
+              />
+              {formik.touched.email && formik.errors.email ? (
+                <div className="error-msg">{formik.errors.email}</div>
+              ) : null}
+              <input
+                className="sign-up-form-item p-2 "
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Password"
+                onChange={formik.handleChange}
+                value={formik.values.password}
+                onBlur={formik.handleBlur}
+              />
+              {formik.touched.password && formik.errors.password ? (
+                <div className="error-msg">{formik.errors.password}</div>
+              ) : null}
+              <input
+                className="sign-up-form-item p-2 "
+                id="repeatedPassword"
+                name="repeatedPassword"
+                type="password"
+                placeholder="Repeat Password"
+                onChange={formik.handleChange}
+                value={formik.values.repeatedPassword}
+                onBlur={formik.handleBlur}
+              />
+              {formik.touched.password && formik.errors.password ? (
+                <div className="error-msg">{formik.errors.password}</div>
+              ) : null}
+            </form>
+          </Card.Body>
+        </Card>
+      </Modal.Body>
 
-        <Modal.Footer className="sign-up-buttons d-flex flex-column align-items-stretch">
-          <SignInUpButton type="submit" disabled={formik.isSubmitting}>
-            Sign Up
-          </SignInUpButton>
-          <SignInUpGoogleButton type="submit" disabled={formik.isSubmitting}>
-            Sign Up With Google
-          </SignInUpGoogleButton>
-          <SignInUpFacebookButton type="submit" disabled={formik.isSubmitting}>
-            Sign Up With Facebook
-          </SignInUpFacebookButton>
-        </Modal.Footer>
-        <Modal.Footer className="d-flex flex-column align-items-center">
-          <span>
-            Already got an{" "}
-            <a
-              href="/"
-              onClick={(event) => {
-                event.preventDefault();
-                dispatch({ type: "signUp" });
-                dispatch({ type: "signIn" });
-              }}
-            >
-              Account
-            </a>
-            ?
-          </span>
-        </Modal.Footer>
-      </form>
+      <Modal.Footer className="sign-up-buttons d-flex flex-column align-items-stretch">
+        <SignInUpButton type="submit" disabled={formik.isSubmitting}>
+          Sign Up
+        </SignInUpButton>
+        <SignInUpGoogleButton type="submit" disabled={formik.isSubmitting}>
+          Sign Up With Google
+        </SignInUpGoogleButton>
+        <SignInUpFacebookButton type="submit" disabled={formik.isSubmitting}>
+          Sign Up With Facebook
+        </SignInUpFacebookButton>
+      </Modal.Footer>
+      <Modal.Footer className="d-flex flex-column align-items-center">
+        <span>
+          Already got an{" "}
+          <a
+            href="/"
+            onClick={(event) => {
+              event.preventDefault();
+              dispatch({ type: "signUp" });
+              dispatch({ type: "signIn" });
+            }}
+          >
+            Account
+          </a>
+          ?
+        </span>
+      </Modal.Footer>
     </Modal>
   );
 };
