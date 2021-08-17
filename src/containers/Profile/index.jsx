@@ -46,7 +46,6 @@ const ProfilePage = () => {
                 <Card className="info-cards white-card">
                   <Card.Body>
                     <Card.Title className="card-title">General</Card.Title>
-                    {/* //TODO : Display the card items in such a way that no whitespace is unused inside the card */}
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
                         First Name: <span>Ali Rıza</span>
