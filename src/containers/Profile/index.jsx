@@ -4,7 +4,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import PPMaleSVG from "../../images/ProfilePage/PPMaleSVG.svg";
+import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
 import EditProfileModal from "../../components/EditProfileModal";
 import { EditProfileButton } from "../../components/CustomButtons/index";
 import "./index.scss";
