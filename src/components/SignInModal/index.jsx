@@ -57,6 +57,15 @@ const SignInModal = () => {
     },
   });
 
+<<<<<<< HEAD
+=======
+  const onClick = (e) => {
+    e.preventDefault();
+    handleClickSignUp();
+    handleClickSignIn();
+  };
+
+>>>>>>> develop
   return (
     <Modal
       show={isSignInOpen}
@@ -71,7 +80,11 @@ const SignInModal = () => {
           data-toggle="modal"
           className="btn-close"
           aria-label="Close"
+<<<<<<< HEAD
           onClick={() => dispatch({ type: "signIn" })}
+=======
+          onClick={handleClickSignIn}
+>>>>>>> develop
         />
       </Modal.Header>
 

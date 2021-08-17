@@ -12,7 +12,7 @@ import "./index.scss";
 // alternative bg image url: https://img.freepik.com/free-photo/abstract-flowing-neon-wave-background_53876-101942.jpg?size=626&ext=jpg
 // alternative image url: https://www.acibadem.com.tr/assets/images/doctors/kutay-colakoglu-banner.png
 
-const ProfilePage = () => {
+const Profile = () => {
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector(
     (state) => state.popup.isEditProfileOpen
@@ -56,8 +56,10 @@ const ProfilePage = () => {
                 Edit Profile
               </EditProfileButton>
               {isEditProfileOpen && <EditProfileModal />}
+              {/* you could use the show modal prop of editprofilemodal */}
             </div>
           </Col>
+
           <Col xs={12} sm={12}>
             <Row className="cards-row d-flex justify-content-around flex-wrap">
               <Col
@@ -69,7 +71,6 @@ const ProfilePage = () => {
                 <Card className="info-cards white-card">
                   <Card.Body>
                     <Card.Title className="card-title">General</Card.Title>
-                    {/* //TODO : Display the card items in such a way that no whitespace is unused inside the card */}
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
                         First Name:{" "}
@@ -198,4 +199,4 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default Profile;

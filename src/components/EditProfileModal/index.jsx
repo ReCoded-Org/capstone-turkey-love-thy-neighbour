@@ -102,7 +102,11 @@ const EditProfileModal = () => {
           data-toggle="modal"
           className="btn-close"
           aria-label="Close"
+<<<<<<< HEAD
           onClick={toggleEditProfileModal}
+=======
+          onClick={handleClick}
+>>>>>>> develop
         />
       </Modal.Header>
 
@@ -335,8 +339,12 @@ const EditProfileModal = () => {
         </Modal.Body>
 
         <Modal.Footer>
+<<<<<<< HEAD
           <SaveChangesButton type="submit">Save Changes</SaveChangesButton>
           <DiscardChangesButton onClick={toggleEditProfileModal}>
+=======
+          <DiscardChangesButton onClick={handleClick}>
+>>>>>>> develop
             Discard Changes
           </DiscardChangesButton>
         </Modal.Footer>
