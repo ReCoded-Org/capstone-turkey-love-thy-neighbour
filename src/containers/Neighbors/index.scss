@@ -1,4 +1,5 @@
 @import "../../style/variables";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 .neighbors-container-fluid {
   min-height: calc(100vh - 120px);
@@ -7,9 +8,45 @@
     height: 100%;
 
     & > div:first-child {
+      & > div:first-child {
+      }
+      & > div.quote-wrapper:last-child {
+        width: 30%;
+        font-size: 12px;
+        font-family: Roboto, sans-serif;
+        position: relative;
+
+        p {
+          margin-bottom: 0;
+          line-height: 23px;
+        }
+
+        &::after,
+        &::before {
+          height: 30px;
+          width: 30px;
+          position: absolute;
+          color: var(--dark-blue);
+          font-size: 77px;
+        }
+
+        &::after {
+          content: "\201d";
+          right: -4px;
+          bottom: 16px;
+        }
+
+        &::before {
+          content: "\201c";
+          top: -22px;
+          left: -30px;
+        }
+      }
+
       h1 {
         color: $logo-red;
       }
+
       .filter-wrapper {
         select {
           height: 32px;
@@ -17,8 +54,14 @@
         }
       }
     }
+
     & > div:last-child {
+      // row
       margin: 0;
+
+      & > div {
+        padding: 0;
+      }
     }
   }
 }

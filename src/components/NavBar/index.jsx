@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import logo from "../../images/logo.svg";
 import "./index.scss";
 
+// TODO: make active styles for navlink
+
 function NavBar({ handleClickSignIn, handleClickSignUp }) {
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark">
