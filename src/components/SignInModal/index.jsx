@@ -44,10 +44,6 @@ const SignInModal = ({
     handleClickSignIn();
   };
 
-  const toggle = () => {
-    handleClickSignIn();
-  };
-
   return (
     <Modal show={showSignInModal} onHide={handleClickSignIn} id="sign-in-modal">
       <Modal.Header className="d-flex justify-content-between">
@@ -58,7 +54,7 @@ const SignInModal = ({
           data-toggle="modal"
           className="btn-close"
           aria-label="Close"
-          onClick={toggle}
+          onClick={handleClickSignIn}
         />
       </Modal.Header>
 
