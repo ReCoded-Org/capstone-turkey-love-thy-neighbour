@@ -67,10 +67,6 @@ const EditProfileModal = ({ handleClick, showModal }) => {
     },
   });
 
-  const toggle = () => {
-    handleClick();
-  };
-
   return (
     <Modal show={showModal} onHide={handleClick} id="edit-profile-modal">
       <Modal.Header className="d-flex justify-content-between">
@@ -81,7 +77,7 @@ const EditProfileModal = ({ handleClick, showModal }) => {
           data-toggle="modal"
           className="btn-close"
           aria-label="Close"
-          onClick={toggle}
+          onClick={handleClick}
         />
       </Modal.Header>
 
@@ -305,7 +301,7 @@ const EditProfileModal = ({ handleClick, showModal }) => {
         </Modal.Body>
 
         <Modal.Footer>
-          <DiscardChangesButton onClick={toggle}>
+          <DiscardChangesButton onClick={handleClick}>
             Discard Changes
           </DiscardChangesButton>
           <SaveChangesButton type="submit">Save Changes</SaveChangesButton>
