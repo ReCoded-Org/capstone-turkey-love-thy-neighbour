@@ -80,7 +80,7 @@ const EditProfileModal = () => {
         .collection("users")
         .doc(uid)
         .set(values, { merge: true })
-        .then(() => dispatch({ type: "editProfile" }));
+        .then(toggleEditProfileModal);
     },
   });
 
