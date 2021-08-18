@@ -61,22 +61,18 @@ const EditProfileModal = () => {
   };
   const formik = useFormik({
     initialValues: {
-      firstName: !firestoreDoc?.firstName ? "" : firestoreDoc.firstName,
-      lastName: !firestoreDoc?.lastName ? "" : firestoreDoc.lastName,
-      district: !firestoreDoc?.district ? "" : firestoreDoc.district,
-      gender: !firestoreDoc?.gender ? "" : firestoreDoc.gender,
-      age: !firestoreDoc?.age ? 15 : firestoreDoc.age,
-      education: !firestoreDoc?.education ? "" : firestoreDoc.education,
-      bio: !firestoreDoc?.bio ? "" : firestoreDoc.bio,
+      firstName: firestoreDoc?.firstName || "",
+      lastName: firestoreDoc?.lastName || "",
+      district: firestoreDoc?.district || "",
+      gender: firestoreDoc?.gender || "",
+      age: firestoreDoc?.age || "",
+      education: firestoreDoc?.education || "",
+      bio: firestoreDoc?.bio || "",
       interests: "Default interest.",
-      number: !firestoreDoc?.number ? "" : firestoreDoc.number,
-      address: !firestoreDoc?.address ? "" : firestoreDoc.address,
-      profileImageUrl: !firestoreDoc?.profileImageUrl
-        ? ""
-        : firestoreDoc.profileImageUrl,
-      backgroundImageUrl: !firestoreDoc?.backgroundImageUrl
-        ? ""
-        : firestoreDoc.backgroundImageUrl,
+      number: firestoreDoc?.number || "",
+      address: firestoreDoc?.address || "",
+      profileImageUrl: firestoreDoc?.profileImageUrl || "",
+      backgroundImageUrl: firestoreDoc?.backgroundImageUrl || "",
     },
     validate,
     onSubmit: (values) => {
