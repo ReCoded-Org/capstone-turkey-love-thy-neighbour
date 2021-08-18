@@ -5,6 +5,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 import PPMaleSVG from "../../images/ProfilePage/PPMaleSVG.svg";
+import PPFemaleSVG from "../../images/ProfilePage/PPFemaleSVG.svg";
 import EditProfileModal from "../../components/EditProfileModal";
 import { EditProfileButton } from "../../components/CustomButtons/index";
 import "./index.scss";
@@ -20,7 +21,8 @@ const ProfilePage = () => {
     (state) => state.popup.isEditProfileOpen
   );
   const { firestoreDoc, authCred } = useSelector((state) => state.user);
-  const { backgroundImageUrl, profileImageUrl, interests } = firestoreDoc;
+  const { backgroundImageUrl, profileImageUrl, interests, gender } =
+    firestoreDoc;
   const { email } = authCred;
 
   function createInterestString() {
@@ -56,7 +58,10 @@ const ProfilePage = () => {
               <img
                 className="profile-photo"
                 alt="profilePic"
-                src={profileImageUrl || PPMaleSVG}
+                src={
+                  profileImageUrl ||
+                  (gender === "Male" ? PPMaleSVG : PPFemaleSVG)
+                }
               />
             </div>
             <div>

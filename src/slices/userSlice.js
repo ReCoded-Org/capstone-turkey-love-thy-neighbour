@@ -45,7 +45,6 @@ const initialState = {
 };
 
 const userReducer = (state = initialState, action) => {
-  console.log("state inside the reducer", state);
   switch (action.type) {
     case "signedIn":
       return { ...action.payload };
