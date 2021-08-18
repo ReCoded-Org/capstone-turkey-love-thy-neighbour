@@ -102,10 +102,10 @@ const EditProfileModal = () => {
         />
       </Modal.Header>
 
-      <form onSubmit={formik.handleSubmit}>
-        <Modal.Body>
-          <Card className="form-cards">
-            <Card.Body>
+      <Modal.Body>
+        <Card className="form-cards">
+          <Card.Body>
+            <form onSubmit={formik.handleSubmit} id="edit-profile-form">
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
                   className="edit-form-input p-2 flex-fill"
@@ -326,17 +326,18 @@ const EditProfileModal = () => {
                   </div>
                 ) : null}
               </div>
-            </Card.Body>
-          </Card>
-        </Modal.Body>
-
-        <Modal.Footer>
-          <SaveChangesButton type="submit">Save Changes</SaveChangesButton>
-          <DiscardChangesButton onClick={toggleEditProfileModal}>
-            Discard Changes
-          </DiscardChangesButton>
-        </Modal.Footer>
-      </form>
+            </form>
+          </Card.Body>
+        </Card>
+      </Modal.Body>
+      <Modal.Footer>
+        <SaveChangesButton type="submit" form="edit-profile-form">
+          Save Changes
+        </SaveChangesButton>
+        <DiscardChangesButton onClick={toggleEditProfileModal}>
+          Discard Changes
+        </DiscardChangesButton>
+      </Modal.Footer>
     </Modal>
   );
 };

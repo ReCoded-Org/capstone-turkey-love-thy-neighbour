@@ -80,7 +80,7 @@ const SignInModal = () => {
       <Modal.Body>
         <Card>
           <Card.Body className="d-flex flex-column">
-            <form onSubmit={formik.handleSubmit}>
+            <form onSubmit={formik.handleSubmit} id="sign-in-form">
               <input
                 className="sign-in-email p-2"
                 id="email"
@@ -113,7 +113,9 @@ const SignInModal = () => {
       </Modal.Body>
 
       <Modal.Footer className="sign-in-buttons d-flex flex-column align-items-stretch">
-        <SignInUpButton type="submit">Sign In</SignInUpButton>
+        <SignInUpButton type="submit" form="sign-in-form">
+          Sign In
+        </SignInUpButton>
         <SignInUpGoogleButton type="submit">
           Sign In With Google
         </SignInUpGoogleButton>
@@ -123,7 +125,7 @@ const SignInModal = () => {
       </Modal.Footer>
       <Modal.Footer className="d-flex flex-column align-items-center">
         <span>
-          Dont you have an{" "}
+          Don&lsquo;t you have an{" "}
           <a
             href="/"
             onClick={(event) => {

@@ -105,7 +105,7 @@ const SignUpModal = () => {
       <Modal.Body>
         <Card>
           <Card.Body>
-            <form onSubmit={formik.handleSubmit}>
+            <form onSubmit={formik.handleSubmit} id="sign-up-form">
               <input
                 className="sign-up-form-item p-2 "
                 id="firstName"
@@ -175,7 +175,11 @@ const SignUpModal = () => {
       </Modal.Body>
 
       <Modal.Footer className="sign-up-buttons d-flex flex-column align-items-stretch">
-        <SignInUpButton type="submit" disabled={formik.isSubmitting}>
+        <SignInUpButton
+          type="submit"
+          disabled={formik.isSubmitting}
+          form="sign-up-form"
+        >
           Sign Up
         </SignInUpButton>
         <SignInUpGoogleButton type="submit" disabled={formik.isSubmitting}>
