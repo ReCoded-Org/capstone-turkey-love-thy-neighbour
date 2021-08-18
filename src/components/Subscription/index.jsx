@@ -1,7 +1,8 @@
 import React from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
-import img from "../../images/PhoneandNotifications.svg";
+
+import PhoneAndNotificationsImg from "../../images/PhoneandNotifications.svg";
 
 import "./index.scss";
 
@@ -50,7 +51,11 @@ function Subscription() {
             md={6}
             className="my-md-auto d-flex d-sm-flex d-md-block justify-content-center justify-content-sm-center justify-content-md-center"
           >
-            <img src={img} alt="img" className="img-fluid" />
+            <img
+              src={PhoneAndNotificationsImg}
+              alt="phoneimg"
+              className="img-fluid"
+            />
           </Col>
         </Row>
       </Container>
