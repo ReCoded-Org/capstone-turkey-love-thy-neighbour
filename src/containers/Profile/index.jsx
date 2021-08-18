@@ -55,8 +55,7 @@ const Profile = () => {
               >
                 Edit Profile
               </EditProfileButton>
-              {isEditProfileOpen && <EditProfileModal />}
-              {/* you could use the show modal prop of editprofilemodal */}
+              <EditProfileModal showModal={isEditProfileOpen} />
             </div>
           </Col>
 
