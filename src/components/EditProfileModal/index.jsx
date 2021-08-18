@@ -27,8 +27,6 @@ const EditProfileModal = () => {
   const { firestoreDoc, authCred } = useSelector((state) => state.user);
   const { uid } = authCred;
 
-  const [interests, setInterests] = useState([]);
-
   function toggleEditProfileModal() {
     dispatch({ type: "editProfile" });
   }
@@ -72,35 +70,29 @@ const EditProfileModal = () => {
 
   const formik = useFormik({
     initialValues: {
-      firstName: !firestoreDoc?.firstName ? "" : firestoreDoc.firstName,
-      lastName: !firestoreDoc?.lastName ? "" : firestoreDoc.lastName,
-      district: !firestoreDoc?.district ? "" : firestoreDoc.district,
-      gender: !firestoreDoc?.gender ? "" : firestoreDoc.gender,
-      age: !firestoreDoc?.age ? 15 : firestoreDoc.age,
-      education: !firestoreDoc?.education ? "" : firestoreDoc.education,
-      bio: !firestoreDoc?.bio ? "" : firestoreDoc.bio,
-      interests: !firestoreDoc?.interests ? [] : firestoreDoc.interests,
-      number: !firestoreDoc?.number ? "" : firestoreDoc.number,
-      address: !firestoreDoc?.address ? "" : firestoreDoc.address,
-      profileImageUrl: !firestoreDoc?.profileImageUrl
-        ? ""
-        : firestoreDoc.profileImageUrl,
-      backgroundImageUrl: !firestoreDoc?.backgroundImageUrl
-        ? ""
-        : firestoreDoc.backgroundImageUrl,
+      firstName: firestoreDoc?.firstName || "",
+      lastName: firestoreDoc?.lastName || "",
+      district: firestoreDoc?.district || "",
+      gender: firestoreDoc?.gender || "",
+      age: firestoreDoc?.age || 15,
+      education: firestoreDoc?.education || "",
+      bio: firestoreDoc?.bio || "",
+      interests: firestoreDoc?.interests || [],
+      number: firestoreDoc?.number || "",
+      address: firestoreDoc?.address || "",
+      profileImageUrl: firestoreDoc?.profileImageUrl || "",
+      backgroundImageUrl: firestoreDoc?.backgroundImageUrl || "",
     },
     validate,
     onSubmit: (values) => {
-      const valuesCopy = { ...values };
-      valuesCopy.interests = interests;
       firestore
         .collection("users")
         .doc(uid)
-        .set(valuesCopy, { merge: true })
-        .then(() => dispatch({ type: "editProfile" }));
+        .set(values, { merge: true })
+        .then(toggleEditProfileModal);
     },
   });
-  console.log("formik interests value: ", interests);
+
   return (
     <Modal
       show={isEditProfileOpen}
@@ -188,9 +180,11 @@ const EditProfileModal = () => {
                     <option disabled value="">
                       Select your Gender
                     </option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female </option>
-                    <option value="Prefer not to say">Prefer not to say</option>
+                    <option defaultValue="Male">Male</option>
+                    <option defaultValue="Female">Female </option>
+                    <option defaultValue="Prefer not to say">
+                      Prefer not to say
+                    </option>
                   </select>
 
                   {formik.touched.gender && formik.errors.gender ? (
@@ -257,8 +251,12 @@ const EditProfileModal = () => {
                 <Multiselect
                   placeholder="Select interests..."
                   displayValue="content"
-                  onRemove={(selectedOptions) => setInterests(selectedOptions)}
-                  onSelect={(selectedOptions) => setInterests(selectedOptions)}
+                  onRemove={(selectedOptions) => {
+                    formik.values.interests = selectedOptions;
+                  }}
+                  onSelect={(selectedOptions) => {
+                    formik.values.interests = selectedOptions;
+                  }}
                   options={newActivityList}
                   selectedValues={formik.values.interests}
                 />
