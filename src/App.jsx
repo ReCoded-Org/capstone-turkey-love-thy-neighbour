@@ -36,7 +36,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/profile/:uid">
-            {isSignedIn ? <Profile /> : <h1>Sign in please.</h1>}
+            {isSignedIn ? <Profile /> : <Home />}
           </Route>
           <Route path="/neighbors">
             <Neighbors />
