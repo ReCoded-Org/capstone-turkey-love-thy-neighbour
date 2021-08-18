@@ -19,13 +19,13 @@ function Meet() {
 
   return (
     <Container fluid className="meet-container-fluid d-flex align-items-center">
-      <Container className="meet-content-container d-flex align-items-center h-100">
+      <Container className="meet-content-container d-flex align-items-start align-items-sm-start align-items-md-center">
         <Row className="meet-row">
           <Col
-            xs={12}
-            sm={12}
-            md={6}
-            className="d-flex flex-column justify-content-center align-items-start mt-5 mt-sm-5 mt-md-0"
+            xs={{ span: 12, order: "last" }}
+            sm={{ span: 12, order: "last" }}
+            md={{ span: 6, order: "first" }}
+            className="d-flex flex-column justify-content-center align-items-center align-items-sm-center align-items-md-start text-center text-sm-center text-md-start"
           >
             <h3>Hello, {firstName}</h3>
             <h1>Meet nearby people with our cutting edge algorithms.</h1>
@@ -37,7 +37,12 @@ function Meet() {
               <Link to="/neighbors">Meet Now</Link>
             </CTAButton>
           </Col>
-          <Col xs={12} sm={12} md={6} className="d-flex justify-content-end">
+          <Col
+            xs={{ span: 12, order: "first" }}
+            sm={{ span: 12, order: "first" }}
+            md={{ span: 6, order: "last" }}
+            className="d-flex justify-content-end"
+          >
             <img src={MeetImg} className="img-fluid" alt="meet img" />
           </Col>
         </Row>
