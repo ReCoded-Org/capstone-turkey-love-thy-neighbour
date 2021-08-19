@@ -1,54 +1,64 @@
 @import "../../style/variables";
 
 #sign-in-modal {
-  .modal-header {
-    button {
-      margin-right: 0;
-      margin-left: 0;
+  & > .modal-content {
+    & > .modal-header {
+      button {
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      h2 {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+      }
+
+      svg {
+        margin-left: 0;
+      }
     }
 
-    h2 {
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 0;
+    & > .modal-body {
+      & > .card {
+        & > .card-body {
+          form {
+            input {
+              width: 100%;
+            }
+
+            .error-msg {
+              font-size: 12px;
+              color: rgb(122, 12, 22);
+              margin-top: 5px;
+              margin-bottom: 5px;
+              margin-left: 3px;
+            }
+          }
+        }
+      }
+    }
+    .modal-footer:nth-child(1) {
+      background-color: red !important;
     }
 
-    svg {
-      margin-left: 0;
+    .sign-in-buttons {
+      padding: 16px;
+
+      button {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+
+      button:nth-child(2) {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      .sign-in-password,
+      .sign-in-email {
+        margin-top: 10px;
+        border: 1px solid $dark-blue;
+      }
     }
-  }
-
-  form {
-    input {
-      width: 100%;
-    }
-
-    .error-msg {
-      font-size: 12px;
-      color: rgb(122, 12, 22);
-      margin-top: 5px;
-      margin-bottom: 5px;
-      margin-left: 3px;
-    }
-  }
-
-  .sign-in-buttons {
-    padding: 16px;
-
-    button {
-      margin-right: 0 !important;
-      margin-left: 0 !important;
-    }
-
-    button:nth-child(2) {
-      margin-top: 5px;
-      margin-bottom: 5px;
-    }
-  }
-
-  .sign-in-password,
-  .sign-in-email {
-    margin-top: 10px;
-    border: 1px solid $dark-blue;
   }
 }
