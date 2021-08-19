@@ -15,6 +15,7 @@ function NavBar() {
   const history = useHistory();
   const dispatch = useDispatch();
   const isSignedIn = useSelector((state) => state.user.isSignedIn);
+  const uid = useSelector((state) => state.user.authCred?.uid);
 
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark">
@@ -27,7 +28,7 @@ function NavBar() {
           <Nav className="me-auto">
             {isSignedIn && (
               <>
-                <Link to="/profile" className="nav-link">
+                <Link to={`/profile/${uid}`} className="nav-link">
                   Profile
                 </Link>
                 <Link to="/neighbors" className="nav-link">
