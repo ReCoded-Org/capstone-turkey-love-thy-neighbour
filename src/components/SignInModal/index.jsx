@@ -125,7 +125,7 @@ const SignInModal = () => {
       </Modal.Footer>
       <Modal.Footer className="d-flex flex-column align-items-center">
         <span>
-          Don&lsquo;t you have an{" "}
+          Don&lsquo;t have an{" "}
           <a
             href="/"
             onClick={(event) => {
