@@ -22,7 +22,7 @@ function Subscription() {
             </h1>
             <h3>Never miss an update !</h3>
             <p>Signup to our newsletter to get a weekly digest.</p>
-            <div className="button">
+            <div className="button-input-wrapper">
               <input
                 type="email"
                 className="form-control"
