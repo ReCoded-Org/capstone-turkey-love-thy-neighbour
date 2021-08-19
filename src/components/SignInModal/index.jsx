@@ -49,6 +49,7 @@ const SignInModal = () => {
           .signInWithEmailAndPassword(values.email, values.password)
           .then((cred) => {
             history.push(`/profile/${cred.user.uid}`);
+            dispatch({ type: "signIn" });
           })
           .catch((error) =>
             console.error("A problem occurred while logging in.", error)
