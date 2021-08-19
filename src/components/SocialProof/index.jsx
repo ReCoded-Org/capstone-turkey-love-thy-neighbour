@@ -33,7 +33,8 @@ function SocialProof() {
                   </div>
                 </Accordion.Header>
                 <Accordion.Body>
-                  Add some text about how they like to use our services...
+                  It definitely has been a great experiance connecting with my
+                  neighbors on LTN.
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item className="second-accordion-item" eventKey="1">
@@ -49,7 +50,8 @@ function SocialProof() {
                   </div>
                 </Accordion.Header>
                 <Accordion.Body>
-                  Add some text about how they like to use our services...
+                  LTN, definitely is the right place to find like-minded people
+                  around you.
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item className="third-accordion-item" eventKey="2">
@@ -65,7 +67,8 @@ function SocialProof() {
                   </div>
                 </Accordion.Header>
                 <Accordion.Body>
-                  Add some text about how they like to use our services...
+                  Had a lot of chances to connect with my community... Amazing
+                  app!
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
