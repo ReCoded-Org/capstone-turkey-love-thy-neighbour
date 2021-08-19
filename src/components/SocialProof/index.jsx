@@ -15,7 +15,7 @@ function SocialProof() {
         <Row className="social-proof-content-row m-0 gap-2">
           <Col xs={12} sm={12} md={5} className="first-column">
             <h2 className="text-center text-sm-center text-md-start">
-              Experiences of Our Neighbors
+              What our Neighbours say:
             </h2>
             <Accordion
               defaultActiveKey={window.innerWidth >= 768 ? "0" : undefined}
@@ -77,7 +77,7 @@ function SocialProof() {
             className="second-column mt-xs-4 mt-sm-4 mt-md-0"
           >
             <h2 className="text-center text-sm-center text-md-start">
-              Neighbor Meetings
+              When our Neighbours met:
             </h2>
             <Carousel>
               <Carousel.Item>
