@@ -74,45 +74,32 @@ const Profile = () => {
                       <li>
                         First Name:{" "}
                         <span>
-                          {!firestoreDoc?.firstName
-                            ? "Ali Riza"
-                            : firestoreDoc.firstName}
+                          {firestoreDoc.firstName || "Default first name."}
                         </span>
                       </li>
                       <li>
                         Last Name:{" "}
                         <span>
-                          {!firestoreDoc?.firstName
-                            ? "Sahin"
-                            : firestoreDoc.lastName}
+                          {firestoreDoc.lastName || "Default last name."}
                         </span>
                       </li>
                       <li>
                         Gender:{" "}
-                        <span>
-                          {!firestoreDoc?.gender ? "M/F" : firestoreDoc.gender}
-                        </span>
+                        <span>{firestoreDoc.gender || "Default gender."}</span>
                       </li>
                       <li>
-                        Age:{" "}
-                        <span>
-                          {!firestoreDoc?.age ? "15" : firestoreDoc.age}
-                        </span>
+                        Age: <span>{firestoreDoc.age || "Default age."}</span>
                       </li>
                       <li>
                         Education:{" "}
                         <span>
-                          {!firestoreDoc?.education
-                            ? "Enter you Education"
-                            : firestoreDoc.education}
+                          {firestoreDoc.education || "Defualt education."}
                         </span>
                       </li>
                       <li>
                         District:{" "}
                         <span>
-                          {!firestoreDoc?.district
-                            ? "Istanbul"
-                            : firestoreDoc.district}
+                          {firestoreDoc.district || "Default district."}
                         </span>
                       </li>
                     </ul>
@@ -133,9 +120,8 @@ const Profile = () => {
                       <li>
                         Bio:{" "}
                         <span>
-                          {!firestoreDoc?.bio
-                            ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."
-                            : firestoreDoc.bio}
+                          {firestoreDoc.bio ||
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."}
                         </span>
                       </li>
                       <li>

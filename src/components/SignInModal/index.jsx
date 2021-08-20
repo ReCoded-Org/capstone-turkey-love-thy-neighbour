@@ -112,7 +112,7 @@ const SignInModal = () => {
         </Card>
       </Modal.Body>
 
-      <Modal.Footer className="sign-in-buttons d-flex flex-column align-items-stretch">
+      <Modal.Footer className="first-modal-footer d-flex flex-column align-items-stretch">
         <SignInUpButton type="submit" form="sign-in-form">
           Sign In
         </SignInUpButton>
@@ -123,7 +123,7 @@ const SignInModal = () => {
           Sign In With Facebook
         </SignInUpFacebookButton>
       </Modal.Footer>
-      <Modal.Footer className="d-flex flex-column align-items-center">
+      <Modal.Footer className="second-modal-footer d-flex flex-column align-items-center">
         <span>
           Don&lsquo;t have an{" "}
           <a

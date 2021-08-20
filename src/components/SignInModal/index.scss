@@ -4,14 +4,11 @@
   & > .modal-content {
     & > .modal-header {
       button {
-        margin-right: 0;
-        margin-left: 0;
+        margin: 0;
       }
 
       h2 {
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 0;
+        margin: 0 auto;
       }
 
       svg {
@@ -25,6 +22,7 @@
           form {
             input {
               width: 100%;
+              margin-top: 10px;
             }
 
             .error-msg {
@@ -38,11 +36,8 @@
         }
       }
     }
-    .modal-footer:nth-child(1) {
-      background-color: red !important;
-    }
 
-    .sign-in-buttons {
+    & > div.first-modal-footer {
       padding: 16px;
 
       button {
@@ -58,6 +53,12 @@
       .sign-in-email {
         margin-top: 10px;
         border: 1px solid $dark-blue;
+      }
+    }
+
+    & > div.second-modal-footer {
+      a {
+        text-decoration: none;
       }
     }
   }
