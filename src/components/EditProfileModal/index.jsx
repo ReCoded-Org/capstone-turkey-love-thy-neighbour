@@ -8,7 +8,7 @@ import { useFormik } from "formik";
 
 import { firestore } from "../../firebaseConfig";
 
-import helpers from "../../utils/helpers";
+import constants from "../../utils/constants";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
@@ -146,7 +146,7 @@ const EditProfileModal = () => {
                   <option disabled value="">
                     Districts
                   </option>
-                  {helpers.districtList.map((district) => {
+                  {constants.districtList.map((district) => {
                     return (
                       <option key={district} value={district}>
                         {district}
@@ -210,7 +210,7 @@ const EditProfileModal = () => {
                   <option disabled value="">
                     Select your Education
                   </option>
-                  {helpers.educationList.map((education) => {
+                  {constants.educationList.map((education) => {
                     return (
                       <option key={education} value={education}>
                         {education}
@@ -245,11 +245,10 @@ const EditProfileModal = () => {
                   value={formik.values.interests}
                   onBlur={formik.handleBlur}
                 >
-                  {/* TODO: Move the helper function inside utils/helpers */}
                   <option disabled value="">
                     Select Your Interests
                   </option>
-                  {helpers.activityList.map((activity) => {
+                  {constants.activityList.map((activity) => {
                     return (
                       <option key={activity} value={activity}>
                         {activity}

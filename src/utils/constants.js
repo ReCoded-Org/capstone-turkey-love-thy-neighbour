@@ -1,4 +1,4 @@
-const helpers = {
+const constants = {
   activityList: [
     "Animals",
     "Arts",
@@ -62,4 +62,4 @@ const helpers = {
   ],
 };
 
-export default helpers;
+export default constants;
