@@ -24,6 +24,7 @@ const Profile = () => {
   const { email } = authCred;
 
   function createInterestString() {
+    console.log("initialised!");
     let interestsString = "";
     interests.forEach((interestObj, index, array) => {
       if (index === array.length - 1) {
@@ -34,7 +35,10 @@ const Profile = () => {
     });
     return interestsString;
   }
-
+  console.log(
+    firestoreDoc?.interests instanceof Array &&
+      firestoreDoc?.interests instanceof Object
+  );
   return (
     <Container
       fluid
@@ -140,7 +144,19 @@ const Profile = () => {
                       <li>
                         Interests:{" "}
                         <span>
-                          {!firestoreDoc?.interests
+                          {/* {!firestoreDoc?.interests &&
+                          firestoreDoc?.interests !== "Default interest."
+                            ? "Default interest."
+                            : createInterestString()} */}
+                          {/* 
+                          {"Default interest." ||
+                            (firestoreDoc?.interests instanceof Array &&
+                            firestoreDoc?.interests instanceof Object
+                              ? createInterestString
+                              : false)} */}
+
+                          {firestoreDoc?.interests === "Default interest." ||
+                          firestoreDoc?.interests === undefined
                             ? "Default interest."
                             : createInterestString()}
                         </span>
@@ -166,17 +182,13 @@ const Profile = () => {
                       <li>
                         Phone:{" "}
                         <span>
-                          {!firestoreDoc?.number
-                            ? "+90 537 779 50 60"
-                            : firestoreDoc.number}
+                          {firestoreDoc.number || "+90 123 456 78 90"}
                         </span>
                       </li>
                       <li>
                         Address:{" "}
                         <span>
-                          {!firestoreDoc?.address
-                            ? "Somewhere in the world"
-                            : firestoreDoc.address}
+                          {firestoreDoc.address || "Somewhere in the world"}
                         </span>
                       </li>
                     </ul>

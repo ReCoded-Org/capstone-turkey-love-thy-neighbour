@@ -2,22 +2,31 @@ import React from "react";
 
 import { Modal, Button, Card } from "react-bootstrap";
 
-import { useSelector, useDispatch } from "react-redux";
+import Multiselect from "multiselect-react-dropdown";
 
 import { useFormik } from "formik";
 
+import { useSelector, useDispatch } from "react-redux";
+
 import { firestore } from "../../firebaseConfig";
 
-import constants from "../../utils/constants";
+import constants, { newActivityList } from "../../utils/constants";
+
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
 
+// TODO: display male or female with a capital letter
+// TODO: set every input field's height to 42px
+// TODO: set the formik form to take the value of the profile
+
 const EditProfileModal = () => {
   const dispatch = useDispatch();
-  const isEditProfileOpen = useSelector((user) => user.popup.isEditProfileOpen);
-  const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
-  const uid = useSelector((state) => state.user.authCred?.uid);
+  const isEditProfileOpen = useSelector(
+    (state) => state.popup.isEditProfileOpen
+  );
+  const { firestoreDoc, authCred } = useSelector((state) => state.user);
+  const { uid } = authCred;
 
   function toggleEditProfileModal() {
     dispatch({ type: "editProfile" });
@@ -54,21 +63,22 @@ const EditProfileModal = () => {
     if (!values.address) {
       errors.address = "Required";
     }
-    if (!values.interests) {
+    if (values.interests.length === 0) {
       errors.interests = "Required";
     }
     return errors;
   };
+
   const formik = useFormik({
     initialValues: {
       firstName: firestoreDoc?.firstName || "",
       lastName: firestoreDoc?.lastName || "",
       district: firestoreDoc?.district || "",
       gender: firestoreDoc?.gender || "",
-      age: firestoreDoc?.age || "",
+      age: firestoreDoc?.age || 15,
       education: firestoreDoc?.education || "",
       bio: firestoreDoc?.bio || "",
-      interests: "Default interest.",
+      interests: firestoreDoc?.interests || [],
       number: firestoreDoc?.number || "",
       address: firestoreDoc?.address || "",
       profileImageUrl: firestoreDoc?.profileImageUrl || "",
@@ -171,9 +181,11 @@ const EditProfileModal = () => {
                     <option disabled value="">
                       Select your Gender
                     </option>
-                    <option value="male">Male</option>
-                    <option value="female">Female </option>
-                    <option value="other">Prefer not to say</option>
+                    <option defaultValue="Male">Male</option>
+                    <option defaultValue="Female">Female </option>
+                    <option defaultValue="Prefer not to say">
+                      Prefer not to say
+                    </option>
                   </select>
 
                   {formik.touched.gender && formik.errors.gender ? (
@@ -237,25 +249,18 @@ const EditProfileModal = () => {
                 ) : null}
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
-                <select
-                  className="p-2 flex-fill"
-                  id="interests"
-                  name="interests"
-                  onChange={formik.handleChange}
-                  value={formik.values.interests}
-                  onBlur={formik.handleBlur}
-                >
-                  <option disabled value="">
-                    Select Your Interests
-                  </option>
-                  {constants.activityList.map((activity) => {
-                    return (
-                      <option key={activity} value={activity}>
-                        {activity}
-                      </option>
-                    );
-                  })}
-                </select>
+                <Multiselect
+                  placeholder="Select interests..."
+                  displayValue="content"
+                  onRemove={(selectedOptions) => {
+                    formik.values.interests = selectedOptions;
+                  }}
+                  onSelect={(selectedOptions) => {
+                    formik.values.interests = selectedOptions;
+                  }}
+                  options={newActivityList}
+                  selectedValues={formik.values.interests}
+                />
                 {formik.touched.interests && formik.errors.interests ? (
                   <div className="error-msg">{formik.errors.interests}</div>
                 ) : null}
