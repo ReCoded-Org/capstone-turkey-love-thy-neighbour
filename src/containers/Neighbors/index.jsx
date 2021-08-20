@@ -1,8 +1,10 @@
 import React from "react";
 
-import { Card, Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import NeighborsCards from "../../components/NeighborsCards";
 import "./index.scss";
+
+// maybe you can search for the people in other districts
 
 function Neighbors() {
   return (
@@ -13,13 +15,19 @@ function Neighbors() {
             <h1>Nearby neighbors to meet :</h1>
             <div className="filter-wrapper">
               <select>
-                <option>option 1</option>
+                <option>All</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Not prefer to say</option>
+              </select>
+              <select>
+                <option>Age</option>
                 <option>option 2</option>
                 <option>option 3</option>
                 <option>option 4</option>
               </select>
               <select>
-                <option>option 1</option>
+                <option>Interests</option>
                 <option>option 2</option>
                 <option>option 3</option>
                 <option>option 4</option>
