@@ -18,7 +18,7 @@
 
         .card-body {
           form {
-            input,
+            input:not(#search_input),
             select,
             textarea {
               margin: 3px;
@@ -33,6 +33,12 @@
             textarea {
               margin: 3px;
               border: 1px solid $dark-blue;
+            }
+
+            div.search-wrapper {
+              margin: 3px;
+              border: 1px solid var(--dark-blue);
+              border-radius: 0px;
             }
 
             .error-msg {
