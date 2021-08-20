@@ -107,7 +107,7 @@ const SignUpModal = () => {
           <Card.Body>
             <form onSubmit={formik.handleSubmit} id="sign-up-form">
               <input
-                className="sign-up-form-item p-2 "
+                className="p-2"
                 id="firstName"
                 name="firstName"
                 placeholder="First Name"
@@ -119,7 +119,7 @@ const SignUpModal = () => {
                 <div className="error-msg">{formik.errors.firstName}</div>
               ) : null}
               <input
-                className="sign-up-form-item p-2 "
+                className="p-2"
                 id="lastName"
                 name="lastName"
                 placeholder="Last Name"
@@ -131,7 +131,7 @@ const SignUpModal = () => {
                 <div className="error-msg">{formik.errors.lastName}</div>
               ) : null}
               <input
-                className="sign-up-form-item p-2 "
+                className="p-2"
                 id="email"
                 name="email"
                 type="email"
@@ -144,7 +144,7 @@ const SignUpModal = () => {
                 <div className="error-msg">{formik.errors.email}</div>
               ) : null}
               <input
-                className="sign-up-form-item p-2 "
+                className="p-2"
                 id="password"
                 name="password"
                 type="password"
@@ -157,7 +157,7 @@ const SignUpModal = () => {
                 <div className="error-msg">{formik.errors.password}</div>
               ) : null}
               <input
-                className="sign-up-form-item p-2 "
+                className="p-2"
                 id="repeatedPassword"
                 name="repeatedPassword"
                 type="password"
@@ -174,7 +174,7 @@ const SignUpModal = () => {
         </Card>
       </Modal.Body>
 
-      <Modal.Footer className="sign-up-buttons d-flex flex-column align-items-stretch">
+      <Modal.Footer className="first-sign-up-modal-footer d-flex flex-column align-items-stretch">
         <SignInUpButton
           type="submit"
           disabled={formik.isSubmitting}
