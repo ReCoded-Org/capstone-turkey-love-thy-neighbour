@@ -23,6 +23,7 @@
             input {
               width: 100%;
               margin-top: 10px;
+              border: 1px solid $dark-blue;
             }
 
             .error-msg {
@@ -46,13 +47,7 @@
       }
 
       button:nth-child(2) {
-        margin-top: 5px;
-        margin-bottom: 5px;
-      }
-      .sign-in-password,
-      .sign-in-email {
-        margin-top: 10px;
-        border: 1px solid $dark-blue;
+        margin: 5px 0;
       }
     }
 
