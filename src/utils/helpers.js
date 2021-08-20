@@ -1,71 +1,12 @@
-const helpers = {
-  activityList: [
-    "Animals",
-    "Arts",
-    "Aviation",
-    "Architecture",
-    "Business",
-    "Coding",
-    "Computers",
-    "Design",
-    "Entrepreneurship",
-    "Fashion",
-    "Health",
-    "Machines",
-  ],
-  districtList: [
-    "ADALAR",
-    "ARNAVUTKÖY",
-    "ATAŞEHİR",
-    "AVCILAR",
-    "BAĞCILAR",
-    "BAHÇELİEVLER",
-    "BAKIRKÖY",
-    "BAŞAKŞEHİR",
-    "BAYRAMPAŞA",
-    "BEŞİKTAŞ",
-    "BEYKOZ",
-    "BEYLİKDÜZÜ",
-    "BEYOĞLU",
-    "BÜYÜKÇEKMECE",
-    "ÇATALCA",
-    "ÇEKMEKÖY",
-    "ESENLER",
-    "ESENYURT",
-    "EYÜPSULTAN",
-    "FATİH",
-    "GAZİOSMANPAŞA",
-    "GÜNGÖREN",
-    "KADIKÖY",
-    "KAĞITHANE",
-    "KARTAL",
-    "KÜÇÜKÇEKMECE",
-    "MALTEPE",
-    "PENDİK",
-    "SANCAKTEPE",
-    "SARIYER",
-    "SİLİVRİ",
-    "SULTANBEYLİ",
-    "SULTANGAZİ",
-    "ŞİLE",
-    "ŞİŞLİ",
-    "TUZLA",
-    "ÜMRANİYE",
-    "ÜSKÜDAR",
-    "ZEYTİNBURNU",
-  ],
-  educationList: [
-    "Primary School Grad",
-    "High School Grad",
-    "University",
-    "Higher Education",
-  ],
-};
+import { firestore } from "../firebaseConfig";
 
-export const newActivityList = helpers.activityList.map((exercise) => {
-  return {
-    content: exercise,
-  };
-});
+export function removeOneProp(object, propToBeRemoved) {
+  // propToBeRemoved is gonna be a string
+  const copyObj = { ...object };
+  delete copyObj[propToBeRemoved];
+  return copyObj;
+}
 
-export default helpers;
+export function setUserDocument(docTitle, docData) {
+  firestore.collection("users").doc(docTitle).set(docData);
+}

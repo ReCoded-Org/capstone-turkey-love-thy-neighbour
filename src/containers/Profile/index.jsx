@@ -13,8 +13,6 @@ import "./index.scss";
 // alternative bg image url: https://img.freepik.com/free-photo/abstract-flowing-neon-wave-background_53876-101942.jpg?size=626&ext=jpg
 // alternative image url: https://www.acibadem.com.tr/assets/images/doctors/kutay-colakoglu-banner.png
 
-// Add gender to the sign up and make conditional rendering for profile photo
-
 const ProfilePage = () => {
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector(
@@ -70,9 +68,10 @@ const ProfilePage = () => {
               >
                 Edit Profile
               </EditProfileButton>
-              {isEditProfileOpen && <EditProfileModal />}
+              <EditProfileModal showModal={isEditProfileOpen} />
             </div>
           </Col>
+
           <Col xs={12} sm={12}>
             <Row className="cards-row d-flex justify-content-around flex-wrap">
               <Col
@@ -84,50 +83,36 @@ const ProfilePage = () => {
                 <Card className="info-cards white-card">
                   <Card.Body>
                     <Card.Title className="card-title">General</Card.Title>
-                    {/* //TODO : Display the card items in such a way that no whitespace is unused inside the card */}
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
                         First Name:{" "}
                         <span>
-                          {!firestoreDoc?.firstName
-                            ? "Ali Riza"
-                            : firestoreDoc.firstName}
+                          {firestoreDoc.firstName || "Default first name."}
                         </span>
                       </li>
                       <li>
                         Last Name:{" "}
                         <span>
-                          {!firestoreDoc?.firstName
-                            ? "Sahin"
-                            : firestoreDoc.lastName}
+                          {firestoreDoc.lastName || "Default last name."}
                         </span>
                       </li>
                       <li>
                         Gender:{" "}
-                        <span>
-                          {!firestoreDoc?.gender ? "M/F" : firestoreDoc.gender}
-                        </span>
+                        <span>{firestoreDoc.gender || "Default gender."}</span>
                       </li>
                       <li>
-                        Age:{" "}
-                        <span>
-                          {!firestoreDoc?.age ? "15" : firestoreDoc.age}
-                        </span>
+                        Age: <span>{firestoreDoc.age || "Default age."}</span>
                       </li>
                       <li>
                         Education:{" "}
                         <span>
-                          {!firestoreDoc?.education
-                            ? "Enter you Education"
-                            : firestoreDoc.education}
+                          {firestoreDoc.education || "Defualt education."}
                         </span>
                       </li>
                       <li>
                         District:{" "}
                         <span>
-                          {!firestoreDoc?.district
-                            ? "Istanbul"
-                            : firestoreDoc.district}
+                          {firestoreDoc.district || "Default district."}
                         </span>
                       </li>
                     </ul>
@@ -148,9 +133,8 @@ const ProfilePage = () => {
                       <li>
                         Bio:{" "}
                         <span>
-                          {!firestoreDoc?.bio
-                            ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."
-                            : firestoreDoc.bio}
+                          {firestoreDoc.bio ||
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."}
                         </span>
                       </li>
                       <li>
@@ -210,4 +194,4 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default Profile;
