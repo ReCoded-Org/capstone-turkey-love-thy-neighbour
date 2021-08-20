@@ -1,36 +1,51 @@
 @import "../../style/variables";
 
 #edit-profile-modal {
-  form {
-    input,
-    select {
-      height: 38px;
+  .modal-content {
+    & > div.modal-header {
+      button {
+        margin: 0;
+      }
+      h2 {
+        margin-bottom: 0;
+      }
     }
 
-    .error-msg {
-      font-size: 12px;
-      color: rgb(122, 12, 22);
-      margin-top: 5px;
-      margin-bottom: 5px;
-      margin-left: 3px;
-    }
+    & > div.modal-body {
+      .card {
+        .card-body {
+          form {
+            input,
+            select,
+            textarea {
+              margin: 3px;
+              border: 1px solid $dark-blue;
+            }
 
-    .edit-form-input {
-      margin: 3px;
-      border: 1px solid $dark-blue;
-    }
+            input,
+            select {
+              height: 38px;
+            }
 
-    .gender-age-wrapper > div {
-      width: 50%;
-    }
-  }
+            textarea {
+              margin: 3px;
+              border: 1px solid $dark-blue;
+            }
 
-  .modal-header {
-    button {
-      margin: 0;
-    }
-    h2 {
-      margin-bottom: 0;
+            .error-msg {
+              font-size: 12px;
+              color: rgb(122, 12, 22);
+              margin-top: 5px;
+              margin-bottom: 5px;
+              margin-left: 3px;
+            }
+
+            .gender-age-wrapper > div {
+              width: 50%;
+            }
+          }
+        }
+      }
     }
   }
 }
