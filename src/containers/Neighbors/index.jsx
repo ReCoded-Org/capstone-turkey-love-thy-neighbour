@@ -3,7 +3,12 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 import { useFormik } from "formik";
+
 import NeighborsCards from "../../components/NeighborsCards";
+
+import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
+import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
+import PPGenderless from "../../images/Profile/PPGenderless.png";
 
 import { firestore } from "../../firebaseConfig";
 
@@ -78,9 +83,22 @@ function Neighbors() {
         </div>
         <Row className="neighbors-cards d-flex justify-content-around flex-wrap">
           {neighborsData.map((userDoc) => {
+            let photo;
+            if (userDoc.profileImageUrl === "") {
+              if (userDoc.gender === "Prefer not to say") {
+                photo = PPGenderless;
+              } else if (userDoc.gender === "Male") {
+                photo = PPMaleSVG;
+              } else if (userDoc.gender === "Female") {
+                photo = PPFemaleSVG;
+              }
+            } else if (userDoc.profileImageUrl !== "") {
+              photo = userDoc.profileImageUrl;
+            }
+
             return (
               <Col xs={12} sm={6} md={3} key={userDoc.email}>
-                <NeighborsCards userDoc={userDoc} />
+                <NeighborsCards photo={photo} />
               </Col>
             );
           })}
