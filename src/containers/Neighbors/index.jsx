@@ -1,12 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
+
+import { useFormik } from "formik";
 import NeighborsCards from "../../components/NeighborsCards";
+
+import { firestore } from "../../firebaseConfig";
+
 import "./index.scss";
 
 // maybe you can search for the people in other districts
 
 function Neighbors() {
+  const [neighborsData, setNeighborsData] = useState([]);
+
+  useEffect(() => {
+    function fetchAllNeighbors() {
+      return firestore
+        .collection("users")
+        .get()
+        .then((snapshot) => {
+          const { docs } = snapshot;
+          const users = docs.map((user) => user.data());
+          setNeighborsData(users);
+        });
+    }
+    fetchAllNeighbors();
+  }, []);
+
+  console.log("neighborsData", neighborsData);
+
+  const formik = useFormik({
+    initialValues: {
+      gender: "All",
+      age: 15,
+      interests: [],
+    },
+    onSubmit(values) {
+      console.log("submitted!");
+    },
+  });
+
   return (
     <Container fluid className="neighbors-container-fluid">
       <Container className="neighbors-content-container">
@@ -43,18 +77,13 @@ function Neighbors() {
           </div>
         </div>
         <Row className="neighbors-cards d-flex justify-content-around flex-wrap">
-          <Col xs={12} sm={6} md={3}>
-            <NeighborsCards />
-          </Col>
-          <Col xs={12} sm={6} md={3}>
-            <NeighborsCards />
-          </Col>
-          <Col xs={12} sm={6} md={3}>
-            <NeighborsCards />
-          </Col>
-          <Col xs={12} sm={6} md={3}>
-            <NeighborsCards />
-          </Col>
+          {neighborsData.map((userDoc) => {
+            return (
+              <Col xs={12} sm={6} md={3}>
+                <NeighborsCards userDoc={userDoc} />
+              </Col>
+            );
+          })}
         </Row>
       </Container>
     </Container>
