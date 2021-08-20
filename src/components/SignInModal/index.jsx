@@ -82,7 +82,7 @@ const SignInModal = () => {
           <Card.Body className="d-flex flex-column">
             <form onSubmit={formik.handleSubmit} id="sign-in-form">
               <input
-                className="sign-in-email p-2"
+                className="p-2"
                 id="email"
                 name="email"
                 type="email"
@@ -95,7 +95,7 @@ const SignInModal = () => {
                 <div className="error-msg">{formik.errors.email}</div>
               ) : null}
               <input
-                className="sign-in-password p-2"
+                className="p-2"
                 id="password"
                 name="password"
                 type="password"
