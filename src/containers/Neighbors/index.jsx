@@ -79,7 +79,7 @@ function Neighbors() {
         <Row className="neighbors-cards d-flex justify-content-around flex-wrap">
           {neighborsData.map((userDoc) => {
             return (
-              <Col xs={12} sm={6} md={3}>
+              <Col xs={12} sm={6} md={3} key={userDoc.email}>
                 <NeighborsCards userDoc={userDoc} />
               </Col>
             );
