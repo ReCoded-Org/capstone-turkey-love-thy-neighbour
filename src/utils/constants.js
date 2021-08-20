@@ -62,7 +62,7 @@ const constants = {
   ],
 };
 
-export const newActivityList = helpers.activityList.map((exercise) => {
+export const newActivityList = constants.activityList.map((exercise) => {
   return {
     content: exercise,
   };
