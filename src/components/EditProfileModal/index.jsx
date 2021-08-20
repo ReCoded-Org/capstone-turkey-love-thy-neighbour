@@ -309,7 +309,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className="edit-form-input p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="backgroundImageUrl"
                   name="backgroundImageUrl"
                   type="url"
