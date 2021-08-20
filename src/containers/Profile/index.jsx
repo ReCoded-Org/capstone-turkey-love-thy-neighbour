@@ -13,7 +13,7 @@ import "./index.scss";
 // alternative bg image url: https://img.freepik.com/free-photo/abstract-flowing-neon-wave-background_53876-101942.jpg?size=626&ext=jpg
 // alternative image url: https://www.acibadem.com.tr/assets/images/doctors/kutay-colakoglu-banner.png
 
-const ProfilePage = () => {
+const Profile = () => {
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector(
     (state) => state.popup.isEditProfileOpen
