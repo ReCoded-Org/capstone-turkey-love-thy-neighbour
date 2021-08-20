@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
 import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
+import PPGenderless from "../../images/Profile/PPGenderless.png";
+
 import EditProfileModal from "../../components/EditProfileModal";
 import { EditProfileButton } from "../../components/CustomButtons/index";
 import "./index.scss";
@@ -24,7 +26,6 @@ const Profile = () => {
   const { email } = authCred;
 
   function createInterestString() {
-    console.log("initialised!");
     let interestsString = "";
     interests.forEach((interestObj, index, array) => {
       if (index === array.length - 1) {
@@ -35,10 +36,7 @@ const Profile = () => {
     });
     return interestsString;
   }
-  console.log(
-    firestoreDoc?.interests instanceof Array &&
-      firestoreDoc?.interests instanceof Object
-  );
+
   return (
     <Container
       fluid
@@ -60,9 +58,16 @@ const Profile = () => {
               <img
                 className="profile-photo"
                 alt="profilePic"
+                style={
+                  gender === "Prefer not to say" ? { width: "190px" } : null
+                }
                 src={
-                  profileImageUrl ||
-                  (gender === "Male" ? PPMaleSVG : PPFemaleSVG)
+                  /* eslint-disable-next-line no-nested-ternary */
+                  profileImageUrl || gender === "Male"
+                    ? PPMaleSVG
+                    : gender === "Female"
+                    ? PPFemaleSVG
+                    : PPGenderless
                 }
               />
             </div>

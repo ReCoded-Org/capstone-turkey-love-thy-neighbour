@@ -81,7 +81,7 @@ const EditProfileModal = () => {
       interests: firestoreDoc?.interests || [],
       number: firestoreDoc?.number || "",
       address: firestoreDoc?.address || "",
-      profileImageUrl: firestoreDoc?.profileImageUrl || "",
+      profileImageUrl: firestoreDoc?.profileImageUrl || "", // male, female, Prefer not to say, ""
       backgroundImageUrl: firestoreDoc?.backgroundImageUrl || "",
     },
     validate,
@@ -181,11 +181,9 @@ const EditProfileModal = () => {
                     <option disabled value="">
                       Select your Gender
                     </option>
-                    <option defaultValue="Male">Male</option>
-                    <option defaultValue="Female">Female </option>
-                    <option defaultValue="Prefer not to say">
-                      Prefer not to say
-                    </option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female </option>
+                    <option value="Prefer not to say">Prefer not to say</option>
                   </select>
 
                   {formik.touched.gender && formik.errors.gender ? (
