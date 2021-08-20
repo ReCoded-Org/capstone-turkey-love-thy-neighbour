@@ -23,6 +23,7 @@
               margin-top: 10px;
               border: 1px solid $dark-blue;
             }
+
             .error-msg {
               font-size: 12px;
               color: rgb(122, 12, 22);
@@ -44,8 +45,7 @@
       }
 
       button:nth-child(2) {
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin: 5px 0;
       }
     }
 

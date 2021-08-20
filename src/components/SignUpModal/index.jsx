@@ -189,7 +189,7 @@ const SignUpModal = () => {
           Sign Up With Facebook
         </SignInUpFacebookButton>
       </Modal.Footer>
-      <Modal.Footer className="d-flex flex-column align-items-center">
+      <Modal.Footer className="second-sign-up-modal-footer d-flex flex-column align-items-center">
         <span>
           Already got an{" "}
           <a
