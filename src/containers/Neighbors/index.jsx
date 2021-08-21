@@ -41,7 +41,7 @@ function Neighbors() {
   const formik = useFormik({
     initialValues: {
       gender: "All",
-      age: 15,
+      age: "15 99",
       interests: [],
     },
     onSubmit(values) {
@@ -49,8 +49,11 @@ function Neighbors() {
       if (values.gender !== "All") {
         query = query.where("gender", "==", values.gender);
       }
-      if (values.age !== 15) {
-        query = query.where("age", ">=", values.age);
+      if (values.age !== "15 99") {
+        const [minAge, maxAge] = values.age
+          .split(" ")
+          .map((numberString) => parseInt(numberString, 10));
+        query = query.where("age", ">=", minAge).where("age", "<=", maxAge);
       }
       query.get().then((querySnapshot) => {
         const { docs } = querySnapshot;
@@ -76,11 +79,12 @@ function Neighbors() {
                   <option value="Female">Female</option>
                   <option value="Prefer not to say">Prefer not to say</option>
                 </select>
-                <select>
-                  <option>Age</option>
-                  <option>option 2</option>
-                  <option>option 3</option>
-                  <option>option 4</option>
+                <select name="age" onChange={formik.handleChange}>
+                  <option value="15 99">All</option>
+                  <option value="15 25">15 - 25</option>
+                  <option value="26 35">26 - 35</option>
+                  <option value="36 45">36 - 45</option>
+                  <option value="46 99">46+</option>
                 </select>
                 <select>
                   <option>Interests</option>
