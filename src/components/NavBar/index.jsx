@@ -31,11 +31,11 @@ function NavBar() {
                 <Link to={`/profile/${uid}`} className="nav-link">
                   Profile
                 </Link>
-                <Link to="/neighbors" className="nav-link">
-                  Neighbors
-                </Link>
                 <Link to="/meet" className="nav-link">
                   Meet
+                </Link>
+                <Link to="/neighbors" className="nav-link">
+                  Neighbors
                 </Link>
               </>
             )}
