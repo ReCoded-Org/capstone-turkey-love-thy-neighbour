@@ -7,6 +7,11 @@ import PhoneAndNotificationsImg from "../../images/PhoneandNotifications.svg";
 import "./index.scss";
 
 function Subscription() {
+  const [value, setValue] = React.useState("");
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
   return (
     <section className="subscription-img-bg container-fluid">
       <Container className="subscription-content-container d-flex align-items-center">
@@ -25,12 +30,18 @@ function Subscription() {
             <div className="button-input-wrapper">
               <input
                 type="email"
-                className="form-control"
+                className="form-email"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="E-Mail"
+                value={value}
+                onChange={handleChange}
               />
-              <button type="submit" className="btn btn-primary">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={!value}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
