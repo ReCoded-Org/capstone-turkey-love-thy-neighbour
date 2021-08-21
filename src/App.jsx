@@ -38,11 +38,9 @@ function App() {
           <Route path="/profile/:uid">
             {isSignedIn ? <Profile /> : <Home />}
           </Route>
+          <Route path="/meet">{isSignedIn ? <Meet /> : <Home />}</Route>
           <Route path="/neighbors">
-            <Neighbors />
-          </Route>
-          <Route path="/meet">
-            <Meet />
+            {isSignedIn ? <Neighbors /> : <Home />}
           </Route>
         </Switch>
       </Router>
