@@ -12,6 +12,8 @@ import { removeOneProp, setUserDocument } from "../../hooks/index";
 
 import { auth } from "../../firebaseConfig";
 
+import helpers from "../../utils/helpers";
+
 import "./index.scss";
 import logo from "../../images/logo.svg";
 import {
@@ -36,6 +38,9 @@ const SignUpModal = () => {
     if (!values.gender) {
       errors.gender = "Required";
     }
+    if (!values.district) {
+      errors.district = "Required";
+    }
     if (!values.email) {
       errors.email = "Required";
     }
@@ -53,6 +58,7 @@ const SignUpModal = () => {
       firstName: "",
       lastName: "",
       gender: "",
+      district: "",
       email: "",
       password: "",
       repeatedPassword: "",
@@ -156,6 +162,28 @@ const SignUpModal = () => {
               </select>
               {formik.touched.gender && formik.errors.gender ? (
                 <div className="error-msg">{formik.errors.gender}</div>
+              ) : null}
+              <select
+                className="p-2 flex-fill"
+                id="district"
+                name="district"
+                onChange={formik.handleChange}
+                value={formik.values.district}
+                onBlur={formik.handleBlur}
+              >
+                <option disabled value="">
+                  Districts
+                </option>
+                {helpers.districtList.map((district) => {
+                  return (
+                    <option key={district} value={district}>
+                      {district}
+                    </option>
+                  );
+                })}
+              </select>
+              {formik.touched.district && formik.errors.district ? (
+                <div className="error-msg">{formik.errors.district}</div>
               ) : null}
               <input
                 className="p-2 "
