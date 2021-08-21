@@ -21,7 +21,7 @@ import "./index.scss";
 function Neighbors() {
   const [neighborsData, setNeighborsData] = useState([]);
   const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
-  const { district } = firestoreDoc;
+  const { district, email } = firestoreDoc;
 
   useEffect(() => {
     function fetchAllNearbyNeighbors() {
@@ -105,33 +105,35 @@ function Neighbors() {
           </div>
         </div>
         <Row className="neighbors-cards d-flex justify-content-around flex-wrap">
-          {neighborsData.map((userDoc) => {
-            let photo;
-            if (
-              userDoc.profileImageUrl === "" ||
-              userDoc.profileImageUrl === undefined
-            ) {
-              if (userDoc.gender === "Prefer not to say") {
-                photo = PPGenderless;
-              } else if (userDoc.gender === "Male") {
-                photo = PPMaleSVG;
-              } else if (userDoc.gender === "Female") {
-                photo = PPFemaleSVG;
+          {neighborsData
+            .filter((userDoc) => userDoc.email !== firestoreDoc.email)
+            .map((userDoc) => {
+              let photo;
+              if (
+                userDoc.profileImageUrl === "" ||
+                userDoc.profileImageUrl === undefined
+              ) {
+                if (userDoc.gender === "Prefer not to say") {
+                  photo = PPGenderless;
+                } else if (userDoc.gender === "Male") {
+                  photo = PPMaleSVG;
+                } else if (userDoc.gender === "Female") {
+                  photo = PPFemaleSVG;
+                }
+              } else if (userDoc.profileImageUrl !== "") {
+                photo = userDoc.profileImageUrl;
               }
-            } else if (userDoc.profileImageUrl !== "") {
-              photo = userDoc.profileImageUrl;
-            }
 
-            return (
-              <Col xs={12} sm={6} md={3} key={userDoc.email}>
-                <NeighborsCards
-                  photo={photo}
-                  firstName={userDoc.firstName}
-                  lastName={userDoc.lastName}
-                />
-              </Col>
-            );
-          })}
+              return (
+                <Col xs={12} sm={6} md={3} key={userDoc.email}>
+                  <NeighborsCards
+                    photo={photo}
+                    firstName={userDoc.firstName}
+                    lastName={userDoc.lastName}
+                  />
+                </Col>
+              );
+            })}
         </Row>
       </Container>
     </Container>
