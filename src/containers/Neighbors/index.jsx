@@ -16,7 +16,7 @@ import { firestore } from "../../firebaseConfig";
 
 import "./index.scss";
 
-// maybe you can search for the people in other districts
+// maybe you can search for the people in other districts NO
 
 function Neighbors() {
   const [neighborsData, setNeighborsData] = useState([]);
