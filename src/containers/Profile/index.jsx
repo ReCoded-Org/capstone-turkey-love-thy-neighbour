@@ -62,12 +62,13 @@ const Profile = () => {
                   gender === "Prefer not to say" ? { width: "190px" } : null
                 }
                 src={
+                  profileImageUrl ||
                   /* eslint-disable-next-line no-nested-ternary */
-                  profileImageUrl || gender === "Male"
+                  (gender === "Male"
                     ? PPMaleSVG
                     : gender === "Female"
                     ? PPFemaleSVG
-                    : PPGenderless
+                    : PPGenderless)
                 }
               />
             </div>
