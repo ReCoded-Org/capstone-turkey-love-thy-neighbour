@@ -5,6 +5,9 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
+import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
+import PPGenderless from "../../images/Profile/PPGenderless.png";
+
 import EditProfileModal from "../../components/EditProfileModal";
 import { EditProfileButton } from "../../components/CustomButtons/index";
 import "./index.scss";
@@ -18,12 +21,7 @@ const Profile = () => {
     (state) => state.popup.isEditProfileOpen
   );
   const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
-  const backgroundImageUrl = useSelector(
-    (state) => state.user.firestoreDoc?.backgroundImageUrl
-  );
-  const profileImageUrl = useSelector(
-    (state) => state.user.firestoreDoc?.profileImageUrl
-  );
+  const { backgroundImageUrl, profileImageUrl, gender } = firestoreDoc;
 
   return (
     <Container
@@ -45,8 +43,18 @@ const Profile = () => {
             <div>
               <img
                 className="profile-photo"
-                alt="profilePic"
-                src={profileImageUrl || PPMaleSVG}
+                alt="profile"
+                style={
+                  gender === "Prefer not to say" ? { width: "190px" } : null
+                }
+                src={
+                  /* eslint-disable-next-line no-nested-ternary */
+                  profileImageUrl || gender === "Male"
+                    ? PPMaleSVG
+                    : gender === "Female"
+                    ? PPFemaleSVG
+                    : PPGenderless
+                }
               />
             </div>
             <div>

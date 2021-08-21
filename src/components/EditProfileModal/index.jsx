@@ -13,6 +13,8 @@ import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
 
+// why default interest is animal
+
 const EditProfileModal = () => {
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector((user) => user.popup.isEditProfileOpen);
@@ -171,9 +173,9 @@ const EditProfileModal = () => {
                     <option disabled value="">
                       Select your Gender
                     </option>
-                    <option value="male">Male</option>
-                    <option value="female">Female </option>
-                    <option value="other">Prefer not to say</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female </option>
+                    <option value="Prefer not to say">Prefer not to say</option>
                   </select>
 
                   {formik.touched.gender && formik.errors.gender ? (
@@ -245,7 +247,7 @@ const EditProfileModal = () => {
                   value={formik.values.interests}
                   onBlur={formik.handleBlur}
                 >
-                  <option disabled value="">
+                  <option disabled defaultValue value="">
                     Select Your Interests
                   </option>
                   {constants.activityList.map((activity) => {

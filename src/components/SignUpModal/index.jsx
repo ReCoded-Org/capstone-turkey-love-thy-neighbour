@@ -33,6 +33,9 @@ const SignUpModal = () => {
     if (!values.lastName) {
       errors.lastName = "Required";
     }
+    if (!values.gender) {
+      errors.email = "Required";
+    }
     if (!values.email) {
       errors.email = "Required";
     }
@@ -49,6 +52,7 @@ const SignUpModal = () => {
     initialValues: {
       firstName: "",
       lastName: "",
+      gender: "",
       email: "",
       password: "",
       repeatedPassword: "",
@@ -129,6 +133,24 @@ const SignUpModal = () => {
               />
               {formik.touched.lastName && formik.errors.lastName ? (
                 <div className="error-msg">{formik.errors.lastName}</div>
+              ) : null}
+              <select
+                className="p-2 "
+                id="gender"
+                name="gender"
+                onChange={formik.handleChange}
+                value={formik.values.gender}
+                onBlur={formik.handleBlur}
+              >
+                <option disabled defaultValue value="">
+                  Select a gender...
+                </option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+              {formik.touched.gender && formik.errors.gender ? (
+                <div className="error-msg">{formik.errors.gender}</div>
               ) : null}
               <input
                 className="p-2"
