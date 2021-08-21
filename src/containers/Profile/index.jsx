@@ -23,6 +23,8 @@ const Profile = () => {
   const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
   const { backgroundImageUrl, profileImageUrl, gender } = firestoreDoc;
 
+  console.log(profileImageUrl);
+
   return (
     <Container
       fluid
@@ -48,12 +50,13 @@ const Profile = () => {
                   gender === "Prefer not to say" ? { width: "190px" } : null
                 }
                 src={
+                  profileImageUrl ||
                   /* eslint-disable-next-line no-nested-ternary */
-                  profileImageUrl || gender === "Male"
+                  (gender === "Male"
                     ? PPMaleSVG
                     : gender === "Female"
                     ? PPFemaleSVG
-                    : PPGenderless
+                    : PPGenderless)
                 }
               />
             </div>

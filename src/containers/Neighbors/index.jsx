@@ -45,7 +45,6 @@ function Neighbors() {
       interests: [],
     },
     onSubmit(values) {
-      console.log("submitted!");
       let query = firestore.collection("users");
       if (values.gender !== "All") {
         query = query.where("gender", "==", values.gender);
