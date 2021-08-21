@@ -2,9 +2,10 @@
 
 .profile-page-bg {
   min-height: calc(100vh - 60px);
-  background-image: url("../../images/ProfilePage/PBG.jpg");
+  background-image: url("../../images/Profile/PBG.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 
   .profile-content-container {
     min-height: calc(100vh - 60px);
@@ -21,9 +22,13 @@
           margin-top: 48px;
         }
 
+        @media screen and (min-width: 992px) {
+          margin-top: 10px;
+        }
+
         .profile-photo {
-          width: 100px;
-          height: 100px;
+          width: 150px;
+          height: 150px;
         }
       }
 

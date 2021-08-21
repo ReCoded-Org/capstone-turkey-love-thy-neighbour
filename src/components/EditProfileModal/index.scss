@@ -1,45 +1,51 @@
 @import "../../style/variables";
 
-.modal {
-  form {
-    input,
-    select {
-      height: 38px;
+#edit-profile-modal {
+  .modal-content {
+    & > div.modal-header {
+      button {
+        margin: 0;
+      }
+      h2 {
+        margin-bottom: 0;
+      }
     }
 
-    .form-cards {
-      padding: 10px;
-      margin: 10px;
-    }
+    & > div.modal-body {
+      .card {
+        .card-body {
+          form {
+            input,
+            select,
+            textarea {
+              margin: 3px;
+              border: 1px solid $dark-blue;
+            }
 
-    .error-msg {
-      font-size: 12px;
-      color: rgb(122, 12, 22);
-      margin-top: 5px;
-      margin-bottom: 5px;
-      margin-left: 15.25px;
-    }
+            input,
+            select {
+              height: 38px;
+            }
 
-    .edit-form-input {
-      margin: 3px;
-      border: 1px solid $dark-blue;
-    }
+            textarea {
+              margin: 3px;
+              border: 1px solid $dark-blue;
+            }
 
-    .gender-age-wrapper > div {
-      width: 50%;
-    }
-  }
+            .error-msg {
+              font-size: 12px;
+              color: rgb(122, 12, 22);
+              margin-top: 5px;
+              margin-bottom: 5px;
+              margin-left: 3px;
+            }
 
-  .modal-header {
-    svg {
-      margin-left: 18px;
-    }
-    button {
-      margin-right: 18px;
-      margin-left: 0;
-    }
-    h2 {
-      margin-bottom: 0;
+            .gender-age-wrapper > div {
+              width: 50%;
+            }
+          }
+        }
+      }
     }
   }
 }
