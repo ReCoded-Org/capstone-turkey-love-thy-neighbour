@@ -24,7 +24,7 @@ function Neighbors() {
   const { district } = firestoreDoc;
 
   useEffect(() => {
-    function fetchAllNeighbors() {
+    function fetchAllNearbyNeighbors() {
       return firestore
         .collection("users")
         .where("district", "==", district)
@@ -35,7 +35,7 @@ function Neighbors() {
           setNeighborsData(users);
         });
     }
-    fetchAllNeighbors();
+    fetchAllNearbyNeighbors();
   }, []);
 
   const formik = useFormik({
@@ -46,10 +46,20 @@ function Neighbors() {
     },
     onSubmit(values) {
       console.log("submitted!");
+      let query = firestore.collection("users");
+      if (values.gender !== "All") {
+        query = query.where("gender", "==", values.gender);
+      }
+      if (values.age !== 15) {
+        query = query.where("age", ">=", values.age);
+      }
+      query.get().then((querySnapshot) => {
+        const { docs } = querySnapshot;
+        const users = docs.map((doc) => doc.data());
+        setNeighborsData(users);
+      });
     },
   });
-
-  console.log(formik.values.gender);
 
   return (
     <Container fluid className="neighbors-container-fluid">
@@ -60,10 +70,12 @@ function Neighbors() {
             <div className="filter-wrapper">
               <form onSubmit={formik.handleSubmit}>
                 <select name="gender" onChange={formik.handleChange}>
-                  <option value="All">All</option>
+                  <option defaultValue value="All">
+                    All
+                  </option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
-                  <option value="Not prefer to say">Not prefer to say</option>
+                  <option value="Prefer not to say">Prefer not to say</option>
                 </select>
                 <select>
                   <option>Age</option>
