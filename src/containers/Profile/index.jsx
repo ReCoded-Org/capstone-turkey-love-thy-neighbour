@@ -57,7 +57,7 @@ const Profile = () => {
             <div>
               <img
                 className="profile-photo"
-                alt="profilePic"
+                alt="profile"
                 style={
                   gender === "Prefer not to say" ? { width: "190px" } : null
                 }
