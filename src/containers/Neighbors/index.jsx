@@ -92,7 +92,10 @@ function Neighbors() {
         <Row className="neighbors-cards d-flex justify-content-around flex-wrap">
           {neighborsData.map((userDoc) => {
             let photo;
-            if (userDoc.profileImageUrl === "") {
+            if (
+              userDoc.profileImageUrl === "" ||
+              userDoc.profileImageUrl === undefined
+            ) {
               if (userDoc.gender === "Prefer not to say") {
                 photo = PPGenderless;
               } else if (userDoc.gender === "Male") {
