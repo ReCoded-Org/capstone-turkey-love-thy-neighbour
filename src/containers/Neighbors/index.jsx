@@ -120,7 +120,11 @@ function Neighbors() {
 
             return (
               <Col xs={12} sm={6} md={3} key={userDoc.email}>
-                <NeighborsCards photo={photo} />
+                <NeighborsCards
+                  photo={photo}
+                  firstName={userDoc.firstName}
+                  lastName={userDoc.lastName}
+                />
               </Col>
             );
           })}
