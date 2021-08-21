@@ -52,6 +52,7 @@ const SignUpModal = () => {
     initialValues: {
       firstName: "",
       lastName: "",
+      gender: "",
       email: "",
       password: "",
       repeatedPassword: "",
@@ -141,12 +142,12 @@ const SignUpModal = () => {
                 value={formik.values.gender}
                 onBlur={formik.handleBlur}
               >
-                <option disabled selected value="">
+                <option disabled defaultValue value="">
                   Select a gender...
                 </option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Prefer not to say</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Prefer not to say">Prefer not to say</option>
               </select>
               {formik.touched.gender && formik.errors.gender ? (
                 <div className="error-msg">{formik.errors.gender}</div>
