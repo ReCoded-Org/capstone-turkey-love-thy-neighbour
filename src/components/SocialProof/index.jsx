@@ -1,10 +1,11 @@
 import React from "react";
 
 import { Container, Row, Col, Accordion, Carousel } from "react-bootstrap";
-import AvatarSVG from "../../images/avatar-one.svg";
-import MeetingOne from "../../images/meeting-one.png";
-import MeetingTwo from "../../images/meeting-two.png";
-import MeetingThree from "../../images/meeting-three.png";
+import { ReactComponent as MaleAvatarSVG } from "../../images/SocialProof/male-avatar.svg";
+import { ReactComponent as FemaleAvatarSVG } from "../../images/SocialProof/female-avatar.svg";
+import MeetingOne from "../../images/SocialProof/meeting-one.png";
+import MeetingTwo from "../../images/SocialProof/meeting-two.png";
+import MeetingThree from "../../images/SocialProof/meeting-three.png";
 
 import "./index.scss";
 
@@ -22,13 +23,14 @@ function SocialProof() {
             >
               <Accordion.Item className="first-accordion-item" eventKey="0">
                 <Accordion.Header className="d-flex align-items-center">
-                  <img src={AvatarSVG} alt="avatar svg" />
+                  {/* <img src={MaleAvatarSVG} alt="avatar svg" /> */}
+                  <MaleAvatarSVG />
                   <div className="d-flex flex-column">
                     <p style={{ padding: "0", margin: "0" }}>Sammy Walson</p>
                     <small
                       style={{ padding: "0", margin: "0", display: "block" }}
                     >
-                      Istanbul, Kadikoy
+                      Istanbul, Uskudar
                     </small>
                   </div>
                 </Accordion.Header>
@@ -39,9 +41,9 @@ function SocialProof() {
               </Accordion.Item>
               <Accordion.Item className="second-accordion-item" eventKey="1">
                 <Accordion.Header className="d-flex align-items-center">
-                  <img src={AvatarSVG} alt="avatar svg" />
+                  <FemaleAvatarSVG />
                   <div className="d-flex flex-column">
-                    <p style={{ padding: "0", margin: "0" }}>Sammy Walson</p>
+                    <p style={{ padding: "0", margin: "0" }}>Violet Jenning</p>
                     <small
                       style={{ padding: "0", margin: "0", display: "block" }}
                     >
@@ -56,13 +58,16 @@ function SocialProof() {
               </Accordion.Item>
               <Accordion.Item className="third-accordion-item" eventKey="2">
                 <Accordion.Header className="d-flex align-items-center">
-                  <img src={AvatarSVG} alt="avatar svg" />
+                  {/* <img src={MaleAvatarSVG} alt="avatar svg" /> */}
+                  <MaleAvatarSVG />
                   <div className="d-flex flex-column">
-                    <p style={{ padding: "0", margin: "0" }}>Sammy Walson</p>
+                    <p style={{ padding: "0", margin: "0" }}>
+                      Andrew Fitzgerald
+                    </p>
                     <small
                       style={{ padding: "0", margin: "0", display: "block" }}
                     >
-                      Istanbul, Kadikoy
+                      Istanbul, Avcilar
                     </small>
                   </div>
                 </Accordion.Header>
