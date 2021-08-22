@@ -5,6 +5,8 @@
 // whenever the cards don't have any space between them shirk the sizes of the cards and use the left whitespace inside the column to center the card
 // find the breakpoints to change the font-sizes of the people's names
 
+// min w 992px accordion width 710px
+
 .neighbors-container-fluid {
   min-height: calc(100vh - 120px);
 
@@ -12,10 +14,11 @@
     height: 100%;
 
     & > div:first-child {
-      & > div:first-child {
+      h1 {
       }
-      & > div.quote-wrapper:last-child {
-        width: 30%;
+
+      div.quote-wrapper {
+        // width: 30%;
         font-size: 12px;
         font-family: Roboto, sans-serif;
         position: relative;
@@ -46,16 +49,16 @@
           left: -30px;
         }
       }
+    }
 
-      h1 {
-        color: $logo-red;
-      }
+    h1 {
+      color: $logo-red;
+    }
 
-      .filter-wrapper {
-        select {
-          height: 32px;
-          width: 200px;
-        }
+    .filter-wrapper {
+      select {
+        height: 32px;
+        width: 200px;
       }
     }
 
