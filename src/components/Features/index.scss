@@ -1,102 +1,101 @@
 @import "../../style/variables";
 
-h2 {
-  color: $logo-blue;
-  text-align: center;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 30px !important;
-    font-size: 40px !important;
-  }
-}
-
-.features-content-row {
-  margin: 0 !important;
-
-  svg {
-    // 361px
-    @media screen and (min-width: 362px) {
-      min-width: 70px;
-      max-width: 120px;
-      min-height: 35px;
-      max-height: 70px;
+.features-section {
+  .features-content-container {
+    h2 {
+      color: $logo-blue;
+      text-align: center;
+      @media screen and (min-width: 768px) {
+        margin-bottom: 30px;
+        font-size: 40px;
+      }
     }
 
-    @media screen and (max-width: 361px) {
-      height: 59px !important;
-      width: 70px !important;
-    }
+    .features-content-row {
+      margin: 0 !important;
 
-    &.network-svg {
-      margin-bottom: 7px;
-    }
+      & > div {
+        .card {
+          transition: all ease-in-out 300ms;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
-    &.speech-bubble-svg {
-      margin-bottom: 3px;
-    }
-  }
+          // @media screen and (max-width: 575px) {
+          padding: 10px;
+          // }
+          @media screen and (min-width: 342px) {
+            height: 153px;
+          }
+          @media screen and (min-width: 576px) {
+            width: 300px;
+            height: 170px;
+          }
+          @media screen and (max-width: 767px) {
+            width: 100% !important;
+          }
+          @media screen and (min-width: 768px) {
+            margin: 0 auto;
+            height: 245px;
+            width: 100% !important;
+          }
 
-  p,
-  .card-title {
-    text-align: center;
-    transition: all ease-in-out 300ms;
-  }
+          & > svg {
+            @media screen and (min-width: 362px) {
+              min-width: 70px;
+              max-width: 120px;
+              min-height: 35px;
+              max-height: 70px;
+            }
 
-  p {
-    @media screen and (max-width: 341px) {
-      font-size: 11px;
-    }
-    @media screen and (min-width: 454px) {
-      font-size: 15px;
-    }
-    @media screen and (min-width: 768px) {
-      font-size: 17px;
-    }
-  }
+            @media screen and (max-width: 361px) {
+              height: 59px !important;
+              width: 70px !important;
+            }
 
-  & > div {
-    padding: 0;
+            &.network-svg {
+              margin-bottom: 7px;
+            }
 
-    & > div {
-      margin: 0;
-    }
-  }
+            &.speech-bubble-svg {
+              margin-bottom: 3px;
+            }
+          }
 
-  .card {
-    transition: all ease-in-out 300ms;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+          & > .card-title {
+            color: $logo-red;
+          }
+        }
+      }
 
-    // @media screen and (max-width: 575px) {
-    padding: 10px;
-    // }
-    @media screen and (min-width: 342px) {
-      height: 153px;
-    }
-    @media screen and (min-width: 576px) {
-      width: 300px;
-      height: 170px;
-    }
-    @media screen and (max-width: 767px) {
-      width: 100% !important;
-    }
-    @media screen and (min-width: 768px) {
-      margin: 0 auto;
-      height: 245px;
-      width: 100% !important;
-    }
+      p {
+        @media screen and (max-width: 341px) {
+          font-size: 11px;
+        }
+        @media screen and (min-width: 454px) {
+          font-size: 15px;
+        }
+        @media screen and (min-width: 768px) {
+          font-size: 17px;
+        }
+      }
 
-    .card-title {
-      color: $logo-red;
-    }
-  }
+      & > div {
+        padding: 0;
 
-  .card:hover {
-    background-color: $logo-blue;
-    transition: all ease-in-out 300ms;
+        & > div {
+          margin: 0;
+        }
+      }
 
-    .card-title {
-      color: $white;
-      transition: all ease-in-out 300ms;
+      .card:hover {
+        background-color: $logo-blue;
+        transition: all ease-in-out 300ms;
+
+        .card-title {
+          color: $white;
+          transition: all ease-in-out 300ms;
+        }
+      }
     }
   }
 }

@@ -10,10 +10,10 @@ import "./index.scss";
 
 function Features() {
   return (
-    <section className="container-fluid">
+    <section className="features-section container-fluid">
       <Container className="features-content-container d-flex flex-column justify-content-center">
         <h2>Features</h2>
-        <Row className="features-content-row d-md-flex justify-content-md-around">
+        <Row className="features-content-row d-md-flex justify-content-md-around text-center">
           <Col xs={12} sm={12} md={3}>
             <Card className="d-flex flex-column align-items-center justify-content-center">
               <NetworkImg className="network-svg img-fluid" />
