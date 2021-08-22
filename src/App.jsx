@@ -7,7 +7,7 @@ import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { listenForAuthChanges } from "./slices/userSlice";
 
-import NavBar from "./components/NavBar/index";
+import NavBar from "./components/NavBar";
 
 import Home from "./containers/Home";
 import Profile from "./containers/Profile";
