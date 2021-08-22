@@ -30,16 +30,16 @@ p {
 
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #ccc !important;
+  color: lightgrey !important;
   // opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: #ccc !important;
+  color: lightgrey !important;
 }
 
 ::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: #ccc !important;
+  color: lightgrey !important;
 }

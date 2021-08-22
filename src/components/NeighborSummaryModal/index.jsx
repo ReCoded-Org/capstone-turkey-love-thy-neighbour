@@ -32,7 +32,7 @@ const NeighborSummaryModal = ({ selectedNeighbor }) => {
     <Modal
       show={isNeighborPopupOpen}
       onHide={() => dispatch({ type: "popupProfile" })}
-      id="edit-profile-modal"
+      id="neighbor-summary-modal"
     >
       <Container
         fluid
