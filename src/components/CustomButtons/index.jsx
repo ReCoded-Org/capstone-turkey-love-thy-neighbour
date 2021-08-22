@@ -51,3 +51,8 @@ export const NeighborCardButton = styled(BaseButton)`
   border: none !important;
   padding: 8px;
 `;
+
+export const NeighborsFilterButton = styled(BaseButton)`
+  width: 49%;
+  height: 40px;
+`;
