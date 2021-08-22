@@ -45,7 +45,7 @@ export const SignInUpFacebookButton = styled(BaseButton)`
   padding: 8px;
 `;
 
-export const NeighborsCardsButton = styled(BaseButton)`
+export const NeighborCardButton = styled(BaseButton)`
   background-color: var(--dark-blue) !important;
   color: var(--white);
   border: none !important;
