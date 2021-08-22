@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 // refactor styling
+// whenever the cards don't have any space between them shirk the sizes of the cards and use the left whitespace inside the column to center the card
+// find the breakpoints to change the font-sizes of the people's names
 
 .neighbors-container-fluid {
   min-height: calc(100vh - 120px);

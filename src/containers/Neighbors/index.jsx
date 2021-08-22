@@ -6,6 +6,10 @@ import { useSelector } from "react-redux";
 
 import { useFormik } from "formik";
 
+import Multiselect from "multiselect-react-dropdown";
+
+import { newActivityList } from "../../utils/constants";
+
 import NeighborsCards from "../../components/NeighborsCards";
 
 import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
@@ -59,6 +63,9 @@ function Neighbors() {
           .map((numberString) => parseInt(numberString, 10));
         query = query.where("age", ">=", minAge).where("age", "<=", maxAge);
       }
+      // if (values.interests.length !== 0) {
+      //   console.log("interests has been changed!");
+      // }
       query.get().then((querySnapshot) => {
         const { docs } = querySnapshot;
         const users = docs.map((doc) => doc.data());
@@ -90,12 +97,23 @@ function Neighbors() {
                   <option value="36 45">36 - 45</option>
                   <option value="46 99">46+</option>
                 </select>
-                <select>
-                  <option>Interests</option>
-                  <option>option 2</option>
-                  <option>option 3</option>
-                  <option>option 4</option>
-                </select>
+                <Multiselect
+                  style={{ width: "200px" }}
+                  placeholder="Select interests..."
+                  displayValue="content"
+                  onRemove={(selectedOptions) => {
+                    formik.values.interests = selectedOptions;
+                  }}
+                  onSelect={(selectedOptions) => {
+                    formik.values.interests = selectedOptions;
+                  }}
+                  options={newActivityList}
+                  selectedValues={
+                    formik.values.interests === "Default interest."
+                      ? []
+                      : formik.values.interests
+                  }
+                />
                 <button type="submit">Find!</button>
               </form>
             </div>
@@ -129,7 +147,7 @@ function Neighbors() {
               }
 
               return (
-                <Col xs={12} sm={6} md={3} key={userDoc.email}>
+                <Col xs={12} sm={6} md={4} key={userDoc.email}>
                   <NeighborsCards
                     photo={photo}
                     firstName={userDoc.firstName}
