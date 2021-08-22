@@ -8,10 +8,18 @@ import { NeighborsCardsButton } from "../CustomButtons";
 
 import "./index.scss";
 
-function NeighborsCards({ photo, firstName, lastName }) {
+function NeighborsCards({ photo, firstName, lastName, email }) {
   return (
     <Card className="neighbor-card mx-auto mb-2">
-      <Card.Img variant="top" src={photo} className="img-fluid" />
+      <Card.Img
+        variant="top"
+        src={photo}
+        className="img-fluid"
+        id={email}
+        onClick={(e) => {
+          e.target.id;
+        }}
+      />
       <Card.Body className="d-flex flex-column justify-content-center">
         <Card.Title className="text-center">{`${firstName} ${lastName}`}</Card.Title>
         <NeighborsCardsButton>Invite To Meet!</NeighborsCardsButton>
