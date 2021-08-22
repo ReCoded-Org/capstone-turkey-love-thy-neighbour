@@ -63,9 +63,14 @@ function Neighbors() {
           .map((numberString) => parseInt(numberString, 10));
         query = query.where("age", ">=", minAge).where("age", "<=", maxAge);
       }
-      // if (values.interests.length !== 0) {
-      //   console.log("interests has been changed!");
-      // }
+      if (values.interests.length !== 0) {
+        console.log("interests has been changed!");
+        query = query.where(
+          "interests",
+          "array-contains-any",
+          values.interests
+        );
+      }
       query.get().then((querySnapshot) => {
         const { docs } = querySnapshot;
         const users = docs.map((doc) => doc.data());
@@ -73,6 +78,8 @@ function Neighbors() {
       });
     },
   });
+
+  console.log("formik.values", formik.values.interests);
 
   return (
     <Container fluid className="neighbors-container-fluid">
@@ -128,7 +135,7 @@ function Neighbors() {
         </div>
         <Row className="neighbors-cards d-flex justify-content-around flex-wrap">
           {neighborsData
-            .filter((userDoc) => userDoc.email !== firestoreDoc.email)
+            .filter((userDoc) => userDoc.email !== email)
             .map((userDoc) => {
               let photo;
               if (
@@ -152,6 +159,7 @@ function Neighbors() {
                     photo={photo}
                     firstName={userDoc.firstName}
                     lastName={userDoc.lastName}
+                    email={userDoc.email}
                   />
                 </Col>
               );

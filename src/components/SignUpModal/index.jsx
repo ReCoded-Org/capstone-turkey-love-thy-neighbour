@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import { removeOneProp, setUserDocument } from "../../utils/helpers";
-import constants from "../../utils/constants";
+// import constants from "../../utils/constants";
 
 import { auth } from "../../firebaseConfig";
 
