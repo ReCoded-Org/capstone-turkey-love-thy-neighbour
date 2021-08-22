@@ -1,7 +1,11 @@
 @import "../../style/variables";
 
 .primary-hero-section {
+  height: calc(100vh - 120px);
+
   .faq-content-container {
+    height: 100%;
+
     .faq-content-row {
       & > div {
         padding: 0 !important;
