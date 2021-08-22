@@ -15,50 +15,43 @@
 
     & > div:first-child {
       h1 {
+        color: $logo-red;
+        font-weight: bold;
+        @media screen and (min-width: 503px) {
+          font-size: 40px;
+        }
+        @media screen and (max-width: 502px) {
+          font-size: 30px;
+        }
       }
 
-      div.quote-wrapper {
-        // width: 30%;
-        font-size: 12px;
+      p {
+        @media screen and (min-width: 503px) {
+          font-size: 16px;
+        }
+        @media screen and (max-width: 502px) {
+          font-size: 14px;
+        }
         font-family: Roboto, sans-serif;
         position: relative;
-
-        p {
-          margin-bottom: 0;
-          line-height: 23px;
-        }
-
-        &::after,
-        &::before {
-          height: 30px;
-          width: 30px;
-          position: absolute;
-          color: var(--dark-blue);
-          font-size: 77px;
-        }
-
-        &::after {
-          content: "\201d";
-          right: -4px;
-          bottom: 16px;
-        }
-
-        &::before {
-          content: "\201c";
-          top: -22px;
-          left: -30px;
-        }
+        margin: 8px 0;
+        line-height: 23px;
+        border-radius: 3px;
+        color: black;
+        border: 1px solid var(--dark-blue);
       }
-    }
 
-    h1 {
-      color: $logo-red;
-    }
+      form {
+        div.gender-age-wrapper {
+          select {
+            height: 41px;
+            width: 49%;
+          }
+        }
 
-    .filter-wrapper {
-      select {
-        height: 32px;
-        width: 200px;
+        .multiselect-container {
+          margin: 10px 0;
+        }
       }
     }
 
@@ -72,3 +65,24 @@
     }
   }
 }
+
+// &::after,
+// &::before {
+//   height: 30px;
+//   width: 30px;
+//   position: absolute;
+//   color: var(--dark-blue);
+//   font-size: 77px;
+// }
+
+// &::after {
+//   content: "\201d";
+//   right: -4px;
+//   bottom: 16px;
+// }
+
+// &::before {
+//   content: "\201c";
+//   top: -22px;
+//   left: -30px;
+// }

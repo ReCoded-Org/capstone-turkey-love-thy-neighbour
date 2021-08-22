@@ -12,7 +12,7 @@ import { newActivityList } from "../../utils/constants";
 
 import NeighborCard from "../../components/NeighborCard";
 
-import PopupProfileModal from "../../components/PopupProfileModal";
+import NeighborSummaryModal from "../../components/NeighborSummaryModal";
 
 import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
 import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
@@ -82,23 +82,21 @@ function Neighbors() {
 
   return (
     <Container fluid className="neighbors-container-fluid">
-      <PopupProfileModal neighborEmail={email} />
+      {/* <NeighborSummaryModal neighborEmail={email} /> */}
       <Container className="neighbors-content-container">
-        <div className="my-3 mx-3 mx-sm-0 text-center">
-          <h1>Nearby neighbors to meet :</h1>
-          <div className="quote-wrapper d-flex align-items-center">
-            <p>
-              By clicking on “Invite to Meet Button” you can notify the user you
-              want to meet with and if he/she returns back to your notification,
-              your e-mail adresses will be visible to each other.
-            </p>
-          </div>
+        <div className="py-4 mx-3 mx-sm-0 text-center">
+          <h1 className="m-0">Nearby neighbors to meet :</h1>
+          <p>
+            By clicking on “Invite to Meet Button” you can notify the user you
+            want to meet with and if he/she returns back to your notification,
+            your e-mail adresses will be visible to each other.
+          </p>
           <Accordion>
             <Accordion.Item eventKey="0">
               <Accordion.Header>Filter Your Neighbors</Accordion.Header>
               <Accordion.Body>
-                <div className="filter-wrapper">
-                  <form onSubmit={formik.handleSubmit}>
+                <form onSubmit={formik.handleSubmit}>
+                  <div className="gender-age-wrapper d-flex justify-content-between">
                     <select name="gender" onChange={formik.handleChange}>
                       <option defaultValue value="All">
                         All
@@ -116,26 +114,25 @@ function Neighbors() {
                       <option value="36 45">36 - 45</option>
                       <option value="46 99">46+</option>
                     </select>
-                    <Multiselect
-                      style={{ width: "200px" }}
-                      placeholder="Select interests..."
-                      displayValue="content"
-                      onRemove={(selectedOptions) => {
-                        formik.values.interests = selectedOptions;
-                      }}
-                      onSelect={(selectedOptions) => {
-                        formik.values.interests = selectedOptions;
-                      }}
-                      options={newActivityList}
-                      selectedValues={
-                        formik.values.interests === "Default interest."
-                          ? []
-                          : formik.values.interests
-                      }
-                    />
-                    <button type="submit">Find!</button>
-                  </form>
-                </div>
+                  </div>
+                  <Multiselect
+                    placeholder="Select interests..."
+                    displayValue="content"
+                    onRemove={(selectedOptions) => {
+                      formik.values.interests = selectedOptions;
+                    }}
+                    onSelect={(selectedOptions) => {
+                      formik.values.interests = selectedOptions;
+                    }}
+                    options={newActivityList}
+                    selectedValues={
+                      formik.values.interests === "Default interest."
+                        ? []
+                        : formik.values.interests
+                    }
+                  />
+                  <button type="submit">Find!</button>
+                </form>
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
