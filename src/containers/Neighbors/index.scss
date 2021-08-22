@@ -35,7 +35,8 @@
         line-height: 23px;
         border-radius: 3px;
         color: black;
-        border: 1px solid var(--dark-blue);
+        border: 1px solid #ccc;
+        padding: 5px 0;
 
         @media screen and (min-width: 992px) {
           width: 710px;
