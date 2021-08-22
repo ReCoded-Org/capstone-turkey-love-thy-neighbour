@@ -14,6 +14,8 @@ import NeighborCard from "../../components/NeighborCard";
 
 import NeighborSummaryModal from "../../components/NeighborSummaryModal";
 
+import { NeighborsFilterButton } from "../../components/CustomButtons";
+
 import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
 import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
 import PPGenderless from "../../images/Profile/PPGenderless.png";
@@ -85,7 +87,7 @@ function Neighbors() {
       {/* <NeighborSummaryModal neighborEmail={email} /> */}
       <Container className="neighbors-content-container">
         <div className="py-4 mx-3 mx-sm-0 text-center">
-          <h1 className="m-0">Nearby neighbors to meet :</h1>
+          <h1>Nearby neighbors to meet :</h1>
           <p>
             By clicking on “Invite to Meet Button” you can notify the user you
             want to meet with and if he/she returns back to your notification,
@@ -97,23 +99,39 @@ function Neighbors() {
               <Accordion.Body>
                 <form onSubmit={formik.handleSubmit}>
                   <div className="gender-age-wrapper d-flex justify-content-between">
-                    <select name="gender" onChange={formik.handleChange}>
-                      <option defaultValue value="All">
-                        All
-                      </option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                      <option value="Prefer not to say">
-                        Prefer not to say
-                      </option>
-                    </select>
-                    <select name="age" onChange={formik.handleChange}>
-                      <option value="15 99">All</option>
-                      <option value="15 25">15 - 25</option>
-                      <option value="26 35">26 - 35</option>
-                      <option value="36 45">36 - 45</option>
-                      <option value="46 99">46+</option>
-                    </select>
+                    <div>
+                      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                      <label htmlFor="gender">Gender:</label>
+                      <select
+                        id="gender"
+                        name="gender"
+                        onChange={formik.handleChange}
+                      >
+                        <option defaultValue value="All">
+                          All
+                        </option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Prefer not to say">
+                          Prefer not to say
+                        </option>
+                      </select>
+                    </div>
+                    <div>
+                      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                      <label htmlFor="age">Age:</label>
+                      <select
+                        id="age"
+                        name="age"
+                        onChange={formik.handleChange}
+                      >
+                        <option value="15 99">All</option>
+                        <option value="15 25">15 - 25</option>
+                        <option value="26 35">26 - 35</option>
+                        <option value="36 45">36 - 45</option>
+                        <option value="46 99">46+</option>
+                      </select>
+                    </div>
                   </div>
                   <Multiselect
                     placeholder="Select interests..."
@@ -131,7 +149,9 @@ function Neighbors() {
                         : formik.values.interests
                     }
                   />
-                  <button type="submit">Find!</button>
+                  <NeighborsFilterButton type="submit">
+                    Find!
+                  </NeighborsFilterButton>
                 </form>
               </Accordion.Body>
             </Accordion.Item>
