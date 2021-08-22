@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { Container, Row, Col, Accordion, Card } from "react-bootstrap";
+import { Container, Row, Col, Accordion } from "react-bootstrap";
 
 import { useSelector } from "react-redux";
 
@@ -28,6 +28,7 @@ import "./index.scss";
 // TODO: MAke a popup for the filter form
 
 function Neighbors() {
+  const [selectedNeighbor, setSelectedNeighbor] = useState({});
   const [neighborsData, setNeighborsData] = useState([]);
   const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
   const { district, email } = firestoreDoc;
@@ -84,7 +85,7 @@ function Neighbors() {
 
   return (
     <Container fluid className="neighbors-container-fluid">
-      {/* <NeighborSummaryModal neighborEmail={email} /> */}
+      <NeighborSummaryModal selectedNeighbor={selectedNeighbor} />
       <Container className="neighbors-content-container">
         <div className="py-4 mx-3 mx-sm-0 text-center">
           <h1>Nearby neighbors to meet :</h1>
@@ -183,9 +184,10 @@ function Neighbors() {
                     photo={photo}
                     firstName={userDoc.firstName}
                     lastName={userDoc.lastName}
-                    email={userDoc.email}
                     gender={userDoc.gender}
                     age={userDoc.age}
+                    email={userDoc.email}
+                    setSelectedNeighbor={setSelectedNeighbor}
                   />
                 </Col>
               );

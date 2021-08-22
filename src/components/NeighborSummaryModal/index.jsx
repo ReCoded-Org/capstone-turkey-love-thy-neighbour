@@ -1,10 +1,8 @@
-import { React, useState, useEffect } from "react";
+import { React } from "react";
 
 import { Modal, Container, Row, Col, Card } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
-
-import { firestore } from "../../firebaseConfig";
 
 import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
 import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
@@ -12,29 +10,15 @@ import PPGenderless from "../../images/Profile/PPGenderless.png";
 
 import "./index.scss";
 
-const NeighborSummaryModal = ({ neighborEmail }) => {
-  const [neighbor, setNeighbor] = useState();
+const NeighborSummaryModal = ({ selectedNeighbor }) => {
   const dispatch = useDispatch();
   const isNeighborPopupOpen = useSelector(
     (state) => state.popup.isNeighborPopupOpen
   );
 
-  useEffect(() => {
-    function findTheNeighbor() {
-      return firestore
-        .collection("users")
-        .where("email", "==", neighborEmail)
-        .get()
-        .then((snapshot) => {
-          setNeighbor(snapshot.docs[0].data());
-        });
-    }
-    findTheNeighbor();
-  }, [dispatch]);
-
   function createInterestString() {
     let interestsString = "";
-    neighbor?.interests.forEach((interestObj, index, array) => {
+    selectedNeighbor?.interests.forEach((interestObj, index, array) => {
       if (index === array.length - 1) {
         interestsString += `${interestObj.content}.`;
         return;
@@ -44,24 +28,18 @@ const NeighborSummaryModal = ({ neighborEmail }) => {
     return interestsString;
   }
 
-  function togglePopupProfile() {
-    dispatch({ type: "popupProfile" });
-  }
-
-  console.log("neighbor", neighbor);
-
   return (
     <Modal
       show={isNeighborPopupOpen}
-      onHide={togglePopupProfile}
+      onHide={() => dispatch({ type: "popupProfile" })}
       id="edit-profile-modal"
     >
       <Container
         fluid
         className="profile-page-bg"
         style={
-          neighbor?.backgroundImageUrl
-            ? { backgroundImage: `url(${neighbor.backgroundImageUrl})` }
+          selectedNeighbor?.backgroundImageUrl
+            ? { backgroundImage: `url(${selectedNeighbor.backgroundImageUrl})` }
             : null
         }
       >
@@ -77,16 +55,16 @@ const NeighborSummaryModal = ({ neighborEmail }) => {
                   className="profile-photo"
                   alt="profile"
                   style={
-                    neighbor?.gender === "Prefer not to say"
+                    selectedNeighbor?.gender === "Prefer not to say"
                       ? { width: "190px" }
                       : null
                   }
                   src={
-                    neighbor?.profileImageUrl ||
+                    selectedNeighbor?.profileImageUrl ||
                     /* eslint-disable-next-line no-nested-ternary */
-                    (neighbor?.gender === "Male"
+                    (selectedNeighbor?.gender === "Male"
                       ? PPMaleSVG
-                      : neighbor?.gender === "Female"
+                      : selectedNeighbor?.gender === "Female"
                       ? PPFemaleSVG
                       : PPGenderless)
                   }
@@ -109,15 +87,16 @@ const NeighborSummaryModal = ({ neighborEmail }) => {
                         <li>
                           Bio:{" "}
                           <span>
-                            {neighbor?.bio ||
+                            {selectedNeighbor?.bio ||
                               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."}
                           </span>
                         </li>
                         <li>
                           Interests:{" "}
                           <span>
-                            {neighbor?.interests === "Default interest." ||
-                            neighbor?.interests === undefined
+                            {selectedNeighbor?.interests ===
+                              "Default interest." ||
+                            selectedNeighbor?.interests === undefined
                               ? "Default interest."
                               : createInterestString()}
                           </span>
@@ -125,7 +104,8 @@ const NeighborSummaryModal = ({ neighborEmail }) => {
                         <li>
                           Education:{" "}
                           <span>
-                            {neighbor?.education || "Default education."}
+                            {selectedNeighbor?.education ||
+                              "Default education."}
                           </span>
                         </li>
                       </ul>

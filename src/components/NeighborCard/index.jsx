@@ -6,9 +6,19 @@ import { useDispatch } from "react-redux";
 
 import { NeighborCardButton } from "../CustomButtons";
 
+import { firestore } from "../../firebaseConfig";
+
 import "./index.scss";
 
-function NeighborCard({ photo, firstName, lastName, email, age, gender }) {
+function NeighborCard({
+  photo,
+  firstName,
+  lastName,
+  age,
+  gender,
+  email,
+  setSelectedNeighbor,
+}) {
   const dispatch = useDispatch();
 
   return (
@@ -18,7 +28,14 @@ function NeighborCard({ photo, firstName, lastName, email, age, gender }) {
         src={photo}
         className="img-fluid"
         id={email}
-        onClick={() => dispatch({ type: "popupProfile" })}
+        onClick={(event) => {
+          firestore
+            .collection("users")
+            .where("email", "==", event.target.id)
+            .get()
+            .then((snapshot) => setSelectedNeighbor(snapshot.docs[0].data()));
+          dispatch({ type: "popupProfile" });
+        }}
       />
       <Card.Body className="d-flex flex-column justify-content-center">
         <Card.Title className="text-center">{`${firstName} ${lastName}`}</Card.Title>
