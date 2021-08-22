@@ -1,0 +1,51 @@
+@import "../../style/variables";
+
+#edit-profile-modal {
+  .modal-content {
+    & > div.modal-header {
+      button {
+        margin: 0;
+      }
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+
+    & > div.modal-body {
+      .card {
+        .card-body {
+          form {
+            input,
+            select,
+            textarea {
+              margin: 3px;
+              border: 1px solid $dark-blue;
+            }
+
+            input,
+            select {
+              height: 38px;
+            }
+
+            textarea {
+              margin: 3px;
+              border: 1px solid $dark-blue;
+            }
+
+            .error-msg {
+              font-size: 12px;
+              color: rgb(122, 12, 22);
+              margin-top: 5px;
+              margin-bottom: 5px;
+              margin-left: 3px;
+            }
+
+            .gender-age-wrapper > div {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

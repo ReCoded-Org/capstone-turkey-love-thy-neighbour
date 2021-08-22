@@ -1,12 +1,16 @@
 import React from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
-import { CTAButton } from "../CustomButtons";
 
-import "./index.scss";
+import { useDispatch } from "react-redux";
+
+import { CTAButton } from "../CustomButtons";
 import img from "../../images/PrimaryHeroContentBgImg.png";
+import "./index.scss";
 
 function PrimaryHero() {
+  const dispatch = useDispatch();
+
   return (
     <section className="primary-hero-img-bg container-fluid">
       <Container className="primary-hero-content-container d-flex align-items-center">
@@ -22,8 +26,9 @@ function PrimaryHero() {
               Let’s build a strong, dynamic and caring community that uplifts
               each other.
             </p>
-            <CTAButton>Join Us!</CTAButton>
-            {/* TODO: Show sign up pop up when clicked */}
+            <CTAButton onClick={() => dispatch({ type: "signUp" })}>
+              Join Us!
+            </CTAButton>
           </Col>
           <Col xs={12} sm={12} md={6} className="p-0 px-xs-1 px-md-1 h-100">
             <img src={img} alt="img" className="img-fluid" />
