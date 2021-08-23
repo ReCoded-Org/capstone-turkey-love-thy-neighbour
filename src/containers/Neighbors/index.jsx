@@ -91,8 +91,8 @@ function Neighbors() {
         selectedNeighbor={selectedNeighbor}
         setSelectedNeighbor={setSelectedNeighbor}
       />
-      <Container className="neighbors-content-container">
-        <div className="py-4 mx-3 mx-sm-0 text-center">
+      <Container className="neighbors-content-container d-flex flex-column align-items-center">
+        <div className="pt-2 pb-4 mx-3 mx-sm-0 text-center">
           <h1>Nearby neighbors to meet :</h1>
           <p>
             By clicking on “Invite to Meet Button” you can notify the user you

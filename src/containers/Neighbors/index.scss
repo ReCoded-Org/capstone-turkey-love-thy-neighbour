@@ -14,6 +14,8 @@
     height: 100%;
 
     & > div:first-child {
+      max-width: 650px;
+
       & > h1 {
         color: $logo-red;
         font-weight: bold;
@@ -37,7 +39,7 @@
         color: black;
         border: 1px solid #ccc;
         padding: 5px 0;
-        max-width: 710px;
+        // max-width: 710px;
 
         @media screen and (min-width: 503px) {
           font-size: 16px;
@@ -45,43 +47,54 @@
         @media screen and (max-width: 502px) {
           font-size: 14px;
         }
+      }
 
-        & > .accordion {
-          margin: 10px auto;
-          max-width: 710px;
+      .accordion {
+        margin: 10px auto;
+        // max-width: 710px;
 
-          .accordion-item {
-            .accordion-collapse {
-              .accordion-body {
-                form {
-                  div.gender-age-wrapper {
-                    & > div {
-                      width: 49%;
+        .accordion-item {
+          .accordion-collapse {
+            .accordion-body {
+              & > form {
+                div.gender-age-wrapper {
+                  & > div {
+                    width: 49%;
 
-                      select {
-                        height: 41px;
-                        width: 100%;
-                        background-color: white;
-                        border: 1px solid #ccc;
-                        border-radius: 3px inherit;
-                        padding-left: 5px;
-                      }
-
-                      label {
-                        display: block;
-                        text-align: start;
-                      }
+                    select {
+                      height: 41px;
+                      width: 100%;
+                      background-color: white;
+                      border: 1px solid #ccc;
+                      border-radius: 3px inherit;
+                      padding-left: 5px;
                     }
-                  }
 
-                  .multiselect-container {
-                    margin: 10px 0;
+                    label {
+                      display: block;
+                      text-align: start;
+                    }
                   }
                 }
 
-                .carousel {
-                  max-width: 710px;
-                  margin: 0 auto;
+                .multiselect-container {
+                  margin: 10px 0;
+                }
+              }
+
+              & > .carousel {
+                max-height: 280px;
+
+                & > .carousel-inner {
+                  max-height: 280px;
+
+                  & > .carousel-item {
+                    max-height: 280px;
+
+                    & > img {
+                      filter: brightness(50%);
+                    }
+                  }
                 }
               }
             }
