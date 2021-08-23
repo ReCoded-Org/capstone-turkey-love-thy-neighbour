@@ -48,7 +48,7 @@ const SignInModal = () => {
         auth
           .signInWithEmailAndPassword(values.email, values.password)
           .then((cred) => {
-            history.push(`/profile/${cred.user.uid}`);
+            history.push(`/meet`);
             dispatch({ type: "signIn" });
           })
           .catch((error) =>
