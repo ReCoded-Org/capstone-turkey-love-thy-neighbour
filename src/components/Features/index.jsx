@@ -8,6 +8,8 @@ import { ReactComponent as CouponImg } from "../../images/coupon.svg";
 
 import "./index.scss";
 
+// TODO: add real content
+
 function Features() {
   return (
     <section className="features-section container-fluid">

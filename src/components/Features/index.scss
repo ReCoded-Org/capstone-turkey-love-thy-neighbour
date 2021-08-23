@@ -3,7 +3,7 @@
 .features-section {
   .features-content-container {
     h2 {
-      color: $logo-blue;
+      color: $logo-red;
       text-align: center;
       @media screen and (min-width: 768px) {
         margin-bottom: 30px;
@@ -15,14 +15,17 @@
       margin: 0 !important;
 
       & > div {
-        .card {
+        // columns inside the row
+        padding: 0;
+
+        div.card {
+          // card divs inside the columns
+          margin: 0;
+          padding: 10px;
           transition: all ease-in-out 300ms;
           box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
             rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
-          // @media screen and (max-width: 575px) {
-          padding: 10px;
-          // }
           @media screen and (min-width: 342px) {
             height: 153px;
           }
@@ -40,6 +43,9 @@
           }
 
           & > svg {
+            fill: $logo-blue;
+            transition: all ease-in-out 300ms;
+
             @media screen and (min-width: 362px) {
               min-width: 70px;
               max-width: 120px;
@@ -61,49 +67,52 @@
             }
           }
 
+          &:hover {
+            // whenever the card gets hovered on...
+            background-color: #8dd6f5;
+            transition: all ease-in-out 300ms;
+
+            svg {
+              transition: all ease-in-out 300ms;
+              fill: $black;
+            }
+
+            .card-title {
+              color: $logo-red;
+            }
+
+            .card-text {
+              color: $white;
+              transition: all ease-in-out 300ms;
+            }
+          }
+
           & > .card-title {
             color: $logo-red;
+
+            @media screen and (min-width: 992px) and (max-width: 1259px) {
+              font-size: 25px;
+            }
+            @media screen and (min-width: 1260px) {
+              font-size: 30px;
+            }
+          }
+
+          & > p.card-text {
+            transition: all ease-in-out 300ms;
+
+            @media screen and (max-width: 341px) {
+              font-size: 11px;
+            }
+            @media screen and (min-width: 342px) and (max-width: 1259px) {
+              font-size: 13px;
+            }
+            @media screen and (min-width: 1260px) {
+              font-size: 15px;
+            }
           }
         }
       }
-
-      p {
-        @media screen and (max-width: 341px) {
-          font-size: 11px;
-        }
-        @media screen and (min-width: 454px) {
-          font-size: 15px;
-        }
-        @media screen and (min-width: 768px) {
-          font-size: 17px;
-        }
-      }
-
-      & > div {
-        padding: 0;
-
-        & > div {
-          margin: 0;
-        }
-      }
-
-      .card:hover {
-        background-color: $logo-blue;
-        transition: all ease-in-out 300ms;
-
-        .card-title {
-          color: $white;
-          transition: all ease-in-out 300ms;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 237px) and (max-width: 767px) {
-  .features-content-row p {
-    @media screen and (min-width: 342px) and (max-width: 453px) {
-      font-size: 13px;
     }
   }
 }
