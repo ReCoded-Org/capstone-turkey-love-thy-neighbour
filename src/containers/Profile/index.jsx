@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
 import EditProfileModal from "../../components/EditProfileModal";
-import { EditProfileButton } from "../../components/CustomButtons/index";
+import { EditProfileButton } from "../../components/CustomButtons";
 import "./index.scss";
 
 // alternative bg image url: https://img.freepik.com/free-photo/abstract-flowing-neon-wave-background_53876-101942.jpg?size=626&ext=jpg
