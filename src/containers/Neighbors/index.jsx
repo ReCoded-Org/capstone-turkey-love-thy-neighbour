@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { Container, Row, Col, Accordion } from "react-bootstrap";
+import { Container, Row, Col, Accordion, Carousel } from "react-bootstrap";
 
 import { useSelector } from "react-redux";
 
@@ -159,6 +159,29 @@ function Neighbors() {
                     Find!
                   </NeighborsFilterButton>
                 </form>
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
+          <Accordion>
+            <Accordion.Item>
+              <Accordion.Header>Recommended places:</Accordion.Header>
+              <Accordion.Body>
+                <Carousel>
+                  <Carousel.Item>
+                    <img
+                      className="d-block w-100"
+                      src="https://b.zmtcdn.com/data/pictures/8/5905778/fc5a842de2747d06b427f3a07a384e58.jpg?fit=around|750:500&crop=750:500;*,*"
+                      alt="First slide"
+                    />
+                    <Carousel.Caption>
+                      <h3>First slide label</h3>
+                      <p>
+                        Nulla vitae elit libero, a pharetra augue mollis
+                        interdum.
+                      </p>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                </Carousel>
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
