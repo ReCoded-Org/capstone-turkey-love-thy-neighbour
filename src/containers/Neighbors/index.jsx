@@ -24,12 +24,12 @@ import { firestore } from "../../firebaseConfig";
 
 import "./index.scss";
 
-// maybe you can search for the people in other districts NO
-// TODO: MAke a popup for the filter form
+// Maybe you can search for the people in other districts
 
 function Neighbors() {
   const [selectedNeighbor, setSelectedNeighbor] = useState({});
   const [neighborsData, setNeighborsData] = useState([]);
+
   const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
   const { district, email } = firestoreDoc;
 
@@ -46,7 +46,7 @@ function Neighbors() {
         });
     }
     fetchAllNearbyNeighbors();
-  }, []);
+  }, [district]);
 
   const formik = useFormik({
     initialValues: {
