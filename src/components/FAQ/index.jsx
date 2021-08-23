@@ -31,7 +31,7 @@ function FAQ() {
               like you to care about your neighbour so that, we could be a
               stronger community.
             </p>
-            <h5>How all of this work?</h5>
+            <h5>How does all of this work?</h5>
             <p>
               With the data that you provide in your profile, we are carefully
               filtering neighbours that you may want to meet and network with.
