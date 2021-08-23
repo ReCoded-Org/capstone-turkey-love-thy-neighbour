@@ -8,10 +8,10 @@ import { ReactComponent as CheckIcon } from "../../images/Check.svg";
 import "./index.scss";
 
 function Subscription() {
-  const [buttonchanger, setButtonchanger] = React.useState("");
+  const [email, setEmail] = React.useState("");
 
   const handleChange = (event) => {
-    setButtonchanger(event.target.value);
+    setEmail(event.target.value);
   };
   return (
     <section className="subscription-img-bg container-fluid">
@@ -34,13 +34,13 @@ function Subscription() {
                 className="form-email"
                 aria-describedby="emailHelp"
                 placeholder="E-Mail"
-                value={buttonchanger}
+                value={email}
                 onChange={handleChange}
               />
               <button
                 type="submit"
                 className="btn btn-primary"
-                disabled={!buttonchanger}
+                disabled={!email}
               >
                 <CheckIcon />
               </button>
