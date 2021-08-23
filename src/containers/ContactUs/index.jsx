@@ -56,60 +56,63 @@ function ContactUs() {
               </h5>
 
               <form onSubmit={formik.handleSubmit}>
-                <div className="first-last-names">
+                <div className="form-box">
+                  <div className="first-last-names">
+                    <div>
+                      <input
+                        className="first-name"
+                        type="text"
+                        name="first_name"
+                        placeholder="First Name"
+                        value={formik.values.first_name}
+                        onChange={formik.handleChange}
+                      />
+                      {formik.errors.first_name &&
+                        formik.touched.first_name && (
+                          <p>{formik.errors.first_name}</p>
+                        )}
+                    </div>
+                    <div>
+                      <input
+                        className="last-name"
+                        type="text"
+                        name="last_name"
+                        placeholder="Last Name"
+                        value={formik.values.last_name}
+                        onChange={formik.handleChange}
+                      />
+                      {formik.errors.last_name && formik.touched.last_name && (
+                        <p>{formik.errors.last_name}</p>
+                      )}
+                    </div>
+                  </div>
                   <div>
-                    <h4>First Name</h4>
                     <input
-                      className="first-name"
-                      type="text"
-                      name="first_name"
-                      value={formik.values.first_name}
+                      className="email"
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      value={formik.values.email}
                       onChange={formik.handleChange}
                     />
-                    {formik.errors.first_name && formik.touched.first_name && (
-                      <p>{formik.errors.first_name}</p>
+                    {formik.errors.email && formik.touched.email && (
+                      <p>{formik.errors.email}</p>
                     )}
                   </div>
                   <div>
-                    <h4>Last Name</h4>
                     <input
-                      className="last-name"
+                      className="textarea"
                       type="text"
-                      name="last_name"
-                      value={formik.values.last_name}
+                      name="user_message"
+                      placeholder="Message"
+                      value={formik.values.user_message}
                       onChange={formik.handleChange}
                     />
-                    {formik.errors.last_name && formik.touched.last_name && (
-                      <p>{formik.errors.last_name}</p>
-                    )}
+                    {formik.errors.user_message &&
+                      formik.touched.user_message && (
+                        <p>{formik.errors.user_message}</p>
+                      )}
                   </div>
-                </div>
-                <div>
-                  <h4>Email</h4>
-                  <input
-                    className="email"
-                    type="email"
-                    name="email"
-                    value={formik.values.email}
-                    onChange={formik.handleChange}
-                  />
-                  {formik.errors.email && formik.touched.email && (
-                    <p>{formik.errors.email}</p>
-                  )}
-                </div>
-                <div>
-                  <h4>Message</h4>
-                  <input
-                    className="textarea"
-                    type="text"
-                    name="user_message"
-                    value={formik.values.user_message}
-                    onChange={formik.handleChange}
-                  />
-                  {formik.errors.user_message &&
-                    formik.touched.user_message && (
-                      <p>{formik.errors.user_message}</p>
-                    )}
                 </div>
                 <div>
                   <button type="submit">Submit</button>
