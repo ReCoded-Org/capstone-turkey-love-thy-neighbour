@@ -47,12 +47,15 @@
 
 }
   h1 {
-    color: $logo-blue;
+    color: $logo-red;
     font-size: max(40px);
+    text-align: center;
+    padding-bottom: 5%;
   }
-  h2 {
+  h5 {
     color: black;
-    font-size: 5px;
+    text-align: center;
+    padding: 0px 50px 0px 50px;
   }
 
   p {
@@ -74,6 +77,13 @@
     }
   }
 
-  .contactus-content-container{
-    padding: 30px;
+ 
+
+  .contactus-content-row{
+    padding: 62px;
   }
+
+  // .footer {
+  //   position: fixed;
+  //   bottom: 0;
+  // }

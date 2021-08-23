@@ -49,7 +49,7 @@ function ContactUs() {
             className="first-column p-0 pb-xs-5 pb-md-5 d-flex flex-column justify-content-center align-items-start"
           >
             <div className="App">
-              <h1>Validation with Formik + Yup</h1>
+              <h1 className="main-header">Contact Us</h1>
               <h5>
                 Help us create effective and active communities bt communicating
                 with us!
