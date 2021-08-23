@@ -4,6 +4,8 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
 
+import { createInterestString } from "../../utils/helpers";
+
 import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
 import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
 import PPGenderless from "../../images/Profile/PPGenderless.png";
@@ -24,18 +26,6 @@ const Profile = () => {
   const { backgroundImageUrl, profileImageUrl, interests, gender } =
     firestoreDoc;
   const { email } = authCred;
-
-  function createInterestString() {
-    let interestsString = "";
-    interests.forEach((interestObj, index, array) => {
-      if (index === array.length - 1) {
-        interestsString += `${interestObj.content}.`;
-        return;
-      }
-      interestsString += `${interestObj.content} | `;
-    });
-    return interestsString;
-  }
 
   return (
     <Container
@@ -150,21 +140,10 @@ const Profile = () => {
                       <li>
                         Interests:{" "}
                         <span>
-                          {/* {!firestoreDoc?.interests &&
-                          firestoreDoc?.interests !== "Default interest."
+                          {interests === "Default interest." ||
+                          interests === undefined
                             ? "Default interest."
-                            : createInterestString()} */}
-                          {/* 
-                          {"Default interest." ||
-                            (firestoreDoc?.interests instanceof Array &&
-                            firestoreDoc?.interests instanceof Object
-                              ? createInterestString
-                              : false)} */}
-
-                          {firestoreDoc?.interests === "Default interest." ||
-                          firestoreDoc?.interests === undefined
-                            ? "Default interest."
-                            : createInterestString()}
+                            : createInterestString(interests)}
                         </span>
                       </li>
                     </ul>
