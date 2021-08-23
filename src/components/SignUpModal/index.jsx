@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import { removeOneProp, setUserDocument } from "../../utils/helpers";
-// import constants from "../../utils/constants";
+import constants from "../../utils/constants";
 
 import { auth } from "../../firebaseConfig";
 
@@ -20,6 +20,7 @@ import {
 } from "../CustomButtons";
 
 // refactor styling
+// handle the styling of the district select
 
 const SignUpModal = () => {
   const dispatch = useDispatch();
@@ -35,7 +36,10 @@ const SignUpModal = () => {
       errors.lastName = "Required";
     }
     if (!values.gender) {
-      errors.email = "Required";
+      errors.gender = "Required";
+    }
+    if (!values.district) {
+      errors.district = "Required";
     }
     if (!values.email) {
       errors.email = "Required";
@@ -54,6 +58,7 @@ const SignUpModal = () => {
       firstName: "",
       lastName: "",
       gender: "",
+      district: "",
       email: "",
       password: "",
       repeatedPassword: "",
@@ -153,6 +158,29 @@ const SignUpModal = () => {
               </select>
               {formik.touched.gender && formik.errors.gender ? (
                 <div className="error-msg">{formik.errors.gender}</div>
+              ) : null}
+              <select
+                className="p-2 flex-fill"
+                id="district"
+                name="district"
+                onChange={formik.handleChange}
+                value={formik.values.district}
+                onBlur={formik.handleBlur}
+                required
+              >
+                <option disabled defaultValue value="">
+                  Select a district...
+                </option>
+                {constants.districtList.map((district) => {
+                  return (
+                    <option key={district} value={district}>
+                      {district}
+                    </option>
+                  );
+                })}
+              </select>
+              {formik.touched.district && formik.errors.district ? (
+                <div className="error-msg">{formik.errors.district}</div>
               ) : null}
               <input
                 className="p-2"
