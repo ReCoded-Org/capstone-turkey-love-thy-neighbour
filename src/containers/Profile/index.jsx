@@ -1,18 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Container, Row, Col, Card } from "react-bootstrap";
 
+import { useDispatch, useSelector } from "react-redux";
+
 import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
 import EditProfileModal from "../../components/EditProfileModal";
-import { EditProfileButton } from "../../components/CustomButtons/index";
+import { EditProfileButton } from "../../components/CustomButtons";
 import "./index.scss";
 
+// alternative bg image url: https://img.freepik.com/free-photo/abstract-flowing-neon-wave-background_53876-101942.jpg?size=626&ext=jpg
+// alternative image url: https://www.acibadem.com.tr/assets/images/doctors/kutay-colakoglu-banner.png
+
 const Profile = () => {
-  const [showModal, setShowModal] = useState(false);
-  const handleClick = () => setShowModal(!showModal);
+  const dispatch = useDispatch();
+  const isEditProfileOpen = useSelector(
+    (state) => state.popup.isEditProfileOpen
+  );
+  const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
+  const backgroundImageUrl = useSelector(
+    (state) => state.user.firestoreDoc?.backgroundImageUrl
+  );
+  const profileImageUrl = useSelector(
+    (state) => state.user.firestoreDoc?.profileImageUrl
+  );
 
   return (
-    <Container fluid className="profile-page-bg">
+    <Container
+      fluid
+      className="profile-page-bg"
+      style={
+        backgroundImageUrl
+          ? { backgroundImage: `url(${backgroundImageUrl})` }
+          : null
+      }
+    >
       <Container className="profile-content-container d-flex flex-column justify-content-center align-items-center flex-wrap align-content-center">
         <Row>
           <Col
@@ -21,17 +43,19 @@ const Profile = () => {
             className="d-flex flex-column align-items-center mb-3"
           >
             <div>
-              <img className="profile-photo" alt="profilePic" src={PPMaleSVG} />
+              <img
+                className="profile-photo"
+                alt="profilePic"
+                src={profileImageUrl || PPMaleSVG}
+              />
             </div>
             <div>
-              <EditProfileButton onClick={handleClick} type="submit">
+              <EditProfileButton
+                onClick={() => dispatch({ type: "editProfile" })}
+              >
                 Edit Profile
               </EditProfileButton>
-
-              <EditProfileModal
-                handleClick={handleClick}
-                showModal={showModal}
-              />
+              <EditProfileModal showModal={isEditProfileOpen} />
             </div>
           </Col>
 
@@ -48,22 +72,35 @@ const Profile = () => {
                     <Card.Title className="card-title">General</Card.Title>
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
-                        First Name: <span>Ali Rıza</span>
+                        First Name:{" "}
+                        <span>
+                          {firestoreDoc.firstName || "Default first name."}
+                        </span>
                       </li>
                       <li>
-                        Last Name: <span>Şahin</span>
+                        Last Name:{" "}
+                        <span>
+                          {firestoreDoc.lastName || "Default last name."}
+                        </span>
                       </li>
                       <li>
-                        Gender: <span>Male</span>
+                        Gender:{" "}
+                        <span>{firestoreDoc.gender || "Default gender."}</span>
                       </li>
                       <li>
-                        Age: <span>19</span>
+                        Age: <span>{firestoreDoc.age || "Default age."}</span>
                       </li>
                       <li>
-                        Education: <span>High School Graduate</span>
+                        Education:{" "}
+                        <span>
+                          {firestoreDoc.education || "Defualt education."}
+                        </span>
                       </li>
                       <li>
-                        District: <span>Sultanbeyli</span>
+                        District:{" "}
+                        <span>
+                          {firestoreDoc.district || "Default district."}
+                        </span>
                       </li>
                     </ul>
                   </Card.Body>
@@ -83,13 +120,18 @@ const Profile = () => {
                       <li>
                         Bio:{" "}
                         <span>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Semper gravida tincidunt aliquam quam.
+                          {firestoreDoc.bio ||
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."}
                         </span>
                       </li>
                       <li>
                         Interests:{" "}
-                        <span>Learning, coding, collaborating, designing.</span>
+                        <span>
+                          {/* {!firestoreDoc?.interests
+                            ? "Learning, coding, collaborating."
+                            : firestoreDoc.interests}  removed this because react would think the document field that is an array should be mapped over and we are doing that in our multiselect branch with another library. If I include this I'll have merge the two in order to make this work. */}
+                          Default interest.
+                        </span>
                       </li>
                     </ul>
                   </Card.Body>
@@ -107,13 +149,28 @@ const Profile = () => {
                     <Card.Title className="card-title">Contact</Card.Title>
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
-                        Email: <span>ars.style@hotmail.com</span>
+                        Email:{" "}
+                        <span>
+                          {!firestoreDoc?.email
+                            ? "example@example.com"
+                            : firestoreDoc.email}
+                        </span>
                       </li>
                       <li>
-                        Phone: <span>+90 537 779 50 60</span>
+                        Phone:{" "}
+                        <span>
+                          {!firestoreDoc?.number
+                            ? "+90 537 779 50 60"
+                            : firestoreDoc.number}
+                        </span>
                       </li>
                       <li>
-                        Adress: <span>Somewhere in time</span>
+                        Address:{" "}
+                        <span>
+                          {!firestoreDoc?.address
+                            ? "Somewhere in the world"
+                            : firestoreDoc.address}
+                        </span>
                       </li>
                     </ul>
                   </Card.Body>
