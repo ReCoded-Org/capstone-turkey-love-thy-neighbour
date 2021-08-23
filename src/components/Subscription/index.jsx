@@ -32,7 +32,6 @@ function Subscription() {
               <input
                 type="email"
                 className="form-email"
-                id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="E-Mail"
                 value={value}
