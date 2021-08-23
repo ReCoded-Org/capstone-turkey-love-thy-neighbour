@@ -10,3 +10,15 @@ export function removeOneProp(object, propToBeRemoved) {
 export function setUserDocument(docTitle, docData) {
   firestore.collection("users").doc(docTitle).set(docData);
 }
+
+export function createInterestString(interests) {
+  let interestsString = "";
+  interests.forEach((interestObj, index, array) => {
+    if (index === array.length - 1) {
+      interestsString += `${interestObj.content}.`;
+      return;
+    }
+    interestsString += `${interestObj.content} | `;
+  });
+  return interestsString;
+}
