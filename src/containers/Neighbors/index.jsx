@@ -85,7 +85,10 @@ function Neighbors() {
 
   return (
     <Container fluid className="neighbors-container-fluid">
-      <NeighborSummaryModal selectedNeighbor={selectedNeighbor} />
+      <NeighborSummaryModal
+        selectedNeighbor={selectedNeighbor}
+        setSelectedNeighbor={setSelectedNeighbor}
+      />
       <Container className="neighbors-content-container">
         <div className="py-4 mx-3 mx-sm-0 text-center">
           <h1>Nearby neighbors to meet :</h1>

@@ -34,7 +34,7 @@ function NeighborCard({
             .where("email", "==", event.target.id)
             .get()
             .then((snapshot) => setSelectedNeighbor(snapshot.docs[0].data()));
-          dispatch({ type: "popupProfile" });
+          dispatch({ type: "neighborSummary" });
         }}
       />
       <Card.Body className="d-flex flex-column justify-content-center">
