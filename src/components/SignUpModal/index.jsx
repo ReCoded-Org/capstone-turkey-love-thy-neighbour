@@ -142,6 +142,7 @@ const SignUpModal = () => {
                 onChange={formik.handleChange}
                 value={formik.values.gender}
                 onBlur={formik.handleBlur}
+                required
               >
                 <option disabled defaultValue value="">
                   Select a gender...

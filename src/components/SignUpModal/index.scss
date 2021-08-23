@@ -21,12 +21,19 @@
 
         .card-body {
           form {
+            select {
+              padding-left: 4px !important;
+            }
+            select:invalid {
+              color: #646464;
+            }
+
             input,
             select {
               height: 42px;
               width: 100%;
-              margin-top: 10px;
               border: 1px solid $dark-blue;
+              margin-top: 10px;
             }
 
             .error-msg {
