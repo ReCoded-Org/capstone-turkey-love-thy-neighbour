@@ -9,6 +9,7 @@ import { ReactComponent as CouponImg } from "../../images/coupon.svg";
 import "./index.scss";
 
 // TODO: add real content
+// TODO: update the branch with develop
 
 function Features() {
   return (
