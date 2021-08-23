@@ -16,11 +16,6 @@ import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
 
-// TODO: display male or female with a capital letter
-// TODO: set every input field's height to 42px
-// TODO: set the formik form to take the value of the profile
-// why default interest is animal
-
 const EditProfileModal = () => {
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector(
