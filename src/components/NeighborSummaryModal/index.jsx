@@ -4,6 +4,8 @@ import { Modal, Container, Row, Col, Card } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
 
+import { createInterestString } from "../../utils/helpers";
+
 import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
 import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
 import PPGenderless from "../../images/Profile/PPGenderless.png";
@@ -15,18 +17,6 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
   const isNeighborSummaryOpen = useSelector(
     (state) => state.popup.isNeighborSummaryOpen
   );
-
-  function createInterestString() {
-    let interestsString = "";
-    selectedNeighbor?.interests.forEach((interestObj, index, array) => {
-      if (index === array.length - 1) {
-        interestsString += `${interestObj.content}.`;
-        return;
-      }
-      interestsString += `${interestObj.content} | `;
-    });
-    return interestsString;
-  }
 
   return (
     Object.keys(selectedNeighbor).length !== 0 && (
@@ -104,7 +94,9 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
                                 "Default interest." ||
                               selectedNeighbor?.interests === undefined
                                 ? "Default interest."
-                                : createInterestString()}
+                                : createInterestString(
+                                    selectedNeighbor.interests
+                                  )}
                             </span>
                           </li>
                           <li>
