@@ -1,6 +1,6 @@
 import { React } from "react";
 
-import { Modal, Container, Row, Col, Card } from "react-bootstrap";
+import { Modal, Container, Card } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -11,6 +11,10 @@ import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
 import PPGenderless from "../../images/Profile/PPGenderless.png";
 
 import "./index.scss";
+
+// first and last name below the image and outside the card
+// we can show their aducation in here
+// education, bio and interests
 
 const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
   const dispatch = useDispatch();
@@ -30,7 +34,7 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
       >
         <Container
           fluid
-          className="profile-page-bg"
+          // className="profile-page-bg"
           style={
             selectedNeighbor?.backgroundImageUrl
               ? {
@@ -39,81 +43,58 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
               : null
           }
         >
-          <Container className="profile-content-container d-flex flex-column justify-content-center align-items-center flex-wrap align-content-center">
-            <Row>
-              <Col
-                xs={12}
-                sm={12}
-                className="d-flex flex-column align-items-center mb-3"
-              >
-                <div>
-                  <img
-                    className="profile-photo"
-                    alt="profile"
-                    style={
-                      selectedNeighbor?.gender === "Prefer not to say"
-                        ? { width: "190px" }
-                        : null
-                    }
-                    src={
-                      selectedNeighbor?.profileImageUrl ||
-                      /* eslint-disable-next-line no-nested-ternary */
-                      (selectedNeighbor?.gender === "Male"
-                        ? PPMaleSVG
-                        : selectedNeighbor?.gender === "Female"
-                        ? PPFemaleSVG
-                        : PPGenderless)
-                    }
-                  />
-                </div>
-              </Col>
+          <Modal.Header>
+            <img
+              className="profile-photo"
+              alt="profile"
+              style={
+                selectedNeighbor?.gender === "Prefer not to say"
+                  ? { width: "190px" }
+                  : null
+              }
+              src={
+                selectedNeighbor?.profileImageUrl ||
+                /* eslint-disable-next-line no-nested-ternary */
+                (selectedNeighbor?.gender === "Male"
+                  ? PPMaleSVG
+                  : selectedNeighbor?.gender === "Female"
+                  ? PPFemaleSVG
+                  : PPGenderless)
+              }
+            />
+          </Modal.Header>
 
-              <Col xs={12} sm={12}>
-                <Row className="cards-row d-flex justify-content-around flex-wrap">
-                  <Col
-                    xs={12}
-                    sm={12}
-                    md={4}
-                    className="d-flex justify-content-center align-items-center"
-                  >
-                    <Card className="info-cards white-card">
-                      <Card.Body>
-                        <Card.Title className="card-title">General</Card.Title>
-                        <ul className="d-flex flex-column justify-content-around  mb-0">
-                          <li>
-                            Bio:{" "}
-                            <span>
-                              {selectedNeighbor?.bio ||
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."}
-                            </span>
-                          </li>
-                          <li>
-                            Interests:{" "}
-                            <span>
-                              {selectedNeighbor?.interests ===
-                                "Default interest." ||
-                              selectedNeighbor?.interests === undefined
-                                ? "Default interest."
-                                : createInterestString(
-                                    selectedNeighbor.interests
-                                  )}
-                            </span>
-                          </li>
-                          <li>
-                            Education:{" "}
-                            <span>
-                              {selectedNeighbor?.education ||
-                                "Default education."}
-                            </span>
-                          </li>
-                        </ul>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
+          <Modal.Body>
+            <Card className="info-cards white-card">
+              <Card.Body>
+                <Card.Title className="card-title">General</Card.Title>
+                <ul className="d-flex flex-column justify-content-around  mb-0">
+                  <li>
+                    Bio:{" "}
+                    <span>
+                      {selectedNeighbor?.bio ||
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."}
+                    </span>
+                  </li>
+                  <li>
+                    Interests:{" "}
+                    <span>
+                      {selectedNeighbor?.interests === "Default interest." ||
+                      selectedNeighbor?.interests === undefined
+                        ? "Default interest."
+                        : createInterestString(selectedNeighbor.interests)}
+                    </span>
+                  </li>
+                  <li>
+                    Education:{" "}
+                    <span>
+                      {selectedNeighbor?.education || "Default education."}
+                    </span>
+                  </li>
+                </ul>
+              </Card.Body>
+            </Card>
+          </Modal.Body>
         </Container>
       </Modal>
     )

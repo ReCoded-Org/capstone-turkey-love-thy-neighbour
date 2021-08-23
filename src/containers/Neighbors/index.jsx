@@ -25,6 +25,8 @@ import { firestore } from "../../firebaseConfig";
 import "./index.scss";
 
 // Maybe you can search for the people in other districts
+// TODO: THERE'S A POSSIBILITY OF THEM SIGNING UP AND GETTING INTO NEIGHBORS WITHOUT SUBMITTING EDIT PROFILE MODAL FORM AND IT WILL GIVE US AN ERROR!
+// maybe you can solve this issue by making the only way of closing edit profile modal is submitting the form
 
 function Neighbors() {
   const [selectedNeighbor, setSelectedNeighbor] = useState({});
