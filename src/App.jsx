@@ -8,11 +8,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { listenForAuthChanges } from "./slices/userSlice";
 
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 import Home from "./containers/Home";
 import Profile from "./containers/Profile";
 import Neighbors from "./containers/Neighbors";
 import Meet from "./containers/Meet";
+import OurTeam from "./containers/OurTeam";
+import ContactUs from "./containers/ContactUs";
+import FAQ from "./containers/FAQ";
+
 import SignInModal from "./components/SignInModal";
 import SignUpModal from "./components/SignUpModal";
 
@@ -44,7 +49,17 @@ function App() {
           <Route path="/neighbors">
             {isSignedIn ? <Neighbors /> : <Home />}
           </Route>
+          <Route path="/our-team">
+            <OurTeam />
+          </Route>
+          <Route path="/contact-us">
+            <ContactUs />
+          </Route>
+          <Route path="/faq">
+            <FAQ />
+          </Route>
         </Switch>
+        <Footer />
       </Router>
     </Container>
   );

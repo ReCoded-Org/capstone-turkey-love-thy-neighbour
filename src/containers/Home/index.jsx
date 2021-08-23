@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 
 import PrimaryHero from "../../components/PrimaryHero";
 import SecondaryHero from "../../components/SecondaryHero";
+import SocialProof from "../../components/SocialProof";
 
 import "./index.scss";
 
@@ -12,6 +13,7 @@ function Home() {
     <Container fluid className="section-wrapper">
       <PrimaryHero />
       <SecondaryHero />
+      <SocialProof />
     </Container>
   );
 }

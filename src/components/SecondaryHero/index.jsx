@@ -7,7 +7,7 @@ import "./index.scss";
 
 function SecondaryHero() {
   return (
-    <section className="secondary-hero-img-bg container-fluid">
+    <section className="snapping-section secondary-hero-img-bg container-fluid">
       <Container className="secondary-hero-content-container d-flex align-items-center">
         <Row className="secondary-hero-content-row m-0">
           <Col
