@@ -79,6 +79,7 @@
 
             .card-title {
               color: $logo-red;
+              transition: all ease-in-out 300ms;
             }
 
             .card-text {
@@ -88,7 +89,8 @@
           }
 
           & > .card-title {
-            color: $logo-red;
+            color: $logo-orange;
+            transition: all ease-in-out 300ms;
 
             @media screen and (min-width: 992px) and (max-width: 1259px) {
               font-size: 25px;

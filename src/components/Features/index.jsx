@@ -19,7 +19,7 @@ function Features() {
           <Col xs={12} sm={12} md={3}>
             <Card className="d-flex flex-column align-items-center justify-content-center">
               <NetworkImg className="network-svg img-fluid" />
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>Meet</Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up
                 the bulk of the card&lsquo;s content.
@@ -41,7 +41,7 @@ function Features() {
             <Card className="d-flex flex-column align-items-center justify-content-center">
               <CouponImg className="coupon-svg img-fluid" />
 
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>Coupons</Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up
                 the bulk of the card&lsquo;s content.
