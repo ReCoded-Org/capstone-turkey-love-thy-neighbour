@@ -83,13 +83,13 @@
               }
 
               & > .carousel {
-                max-height: 280px;
+                height: 280px;
 
                 & > .carousel-inner {
-                  max-height: 280px;
+                  height: 280px;
 
                   & > .carousel-item {
-                    max-height: 280px;
+                    height: 280px;
 
                     & > img {
                       filter: brightness(50%);

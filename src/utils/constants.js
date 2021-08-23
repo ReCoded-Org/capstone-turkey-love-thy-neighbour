@@ -93,8 +93,9 @@ export const recommendedPlaces = {
   ],
   BEYOĞLU: [
     {
-      name: "https://sorabula.com.tr/wp-content/uploads/2020/06/james-joyce-irish-pub-1200x675.jpg",
-      image: "James Joyce Irish Pub",
+      name: "James Joyce Irish Pub",
+      image:
+        "https://sorabula.com.tr/wp-content/uploads/2020/06/james-joyce-irish-pub-1200x675.jpg",
       address: "Balo Sk. No:26, 34435 Beyoğlu/İstanbul",
     },
     {

@@ -10,6 +10,8 @@ import Multiselect from "multiselect-react-dropdown";
 
 import { newActivityList } from "../../utils/constants";
 
+import RecommendedPlacesAccordion from "../../components/RecommendedPlacesAccordion";
+
 import NeighborCard from "../../components/NeighborCard";
 
 import NeighborSummaryModal from "../../components/NeighborSummaryModal";
@@ -162,31 +164,9 @@ function Neighbors() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <Accordion>
-            <Accordion.Item>
-              <Accordion.Header>Recommended places:</Accordion.Header>
-              <Accordion.Body>
-                <Carousel>
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src="https://b.zmtcdn.com/data/pictures/8/5905778/fc5a842de2747d06b427f3a07a384e58.jpg?fit=around|750:500&crop=750:500;*,*"
-                      alt="First slide"
-                    />
-                    <Carousel.Caption>
-                      <h3>First slide label</h3>
-                      <p>
-                        Nulla vitae elit libero, a pharetra augue mollis
-                        interdum.
-                      </p>
-                    </Carousel.Caption>
-                  </Carousel.Item>
-                </Carousel>
-              </Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
+          <RecommendedPlacesAccordion district={district} />
         </div>
-        <Row className="neighbors-cards d-flex justify-content-around flex-wrap">
+        <Row className="neighbors-cards d-flex justify-content-around flex-wrap w-100">
           {neighborsData
             .filter((userDoc) => userDoc.email !== email)
             .map((userDoc) => {
