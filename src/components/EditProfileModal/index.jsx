@@ -10,7 +10,8 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { firestore } from "../../firebaseConfig";
 
-import helpers, { newActivityList } from "../../utils/helpers";
+import constants from "../../utils/constants";
+
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
@@ -111,13 +112,13 @@ const EditProfileModal = () => {
         />
       </Modal.Header>
 
-      <form onSubmit={formik.handleSubmit}>
-        <Modal.Body>
-          <Card className="form-cards">
-            <Card.Body>
+      <Modal.Body>
+        <Card className="form-cards">
+          <Card.Body>
+            <form onSubmit={formik.handleSubmit} id="edit-profile-form">
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className=" p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="firstName"
                   name="firstName"
                   placeholder="First Name"
@@ -131,7 +132,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className=" p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="lastName"
                   name="lastName"
                   placeholder="Last Name"
@@ -155,7 +156,7 @@ const EditProfileModal = () => {
                   <option disabled value="">
                     Districts
                   </option>
-                  {helpers.districtList.map((district) => {
+                  {constants.districtList.map((district) => {
                     return (
                       <option key={district} value={district}>
                         {district}
@@ -171,7 +172,7 @@ const EditProfileModal = () => {
               <div className="gender-age-wrapper d-flex">
                 <div className="d-flex flex-column">
                   <select
-                    className=" p-2"
+                    className="p-2"
                     name="gender"
                     onChange={formik.handleChange}
                     value={formik.values.gender}
@@ -193,7 +194,7 @@ const EditProfileModal = () => {
                 </div>
                 <div className="d-flex flex-column">
                   <input
-                    className=" p-2"
+                    className="p-2"
                     id="age"
                     name="age"
                     type="number"
@@ -211,7 +212,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <select
-                  className=" p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="education"
                   name="education"
                   onChange={formik.handleChange}
@@ -221,7 +222,7 @@ const EditProfileModal = () => {
                   <option disabled value="">
                     Select your Education
                   </option>
-                  {helpers.educationList.map((education) => {
+                  {constants.educationList.map((education) => {
                     return (
                       <option key={education} value={education}>
                         {education}
@@ -235,7 +236,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <textarea
-                  className=" p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="bio"
                   name="bio"
                   placeholder="Your bio..."
@@ -248,25 +249,32 @@ const EditProfileModal = () => {
                 ) : null}
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
-                <Multiselect
-                  placeholder="Select interests..."
-                  displayValue="content"
-                  onRemove={(selectedOptions) => {
-                    formik.values.interests = selectedOptions;
-                  }}
-                  onSelect={(selectedOptions) => {
-                    formik.values.interests = selectedOptions;
-                  }}
-                  options={newActivityList}
-                  selectedValues={formik.values.interests}
-                />
+                <select
+                  className="p-2 flex-fill"
+                  id="interests"
+                  name="interests"
+                  onChange={formik.handleChange}
+                  value={formik.values.interests}
+                  onBlur={formik.handleBlur}
+                >
+                  <option disabled value="">
+                    Select Your Interests
+                  </option>
+                  {constants.activityList.map((activity) => {
+                    return (
+                      <option key={activity} value={activity}>
+                        {activity}
+                      </option>
+                    );
+                  })}
+                </select>
                 {formik.touched.interests && formik.errors.interests ? (
                   <div className="error-msg">{formik.errors.interests}</div>
                 ) : null}
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className=" p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="number"
                   name="number"
                   type="tel"
@@ -281,7 +289,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className=" p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="address"
                   name="address"
                   placeholder="Write your Address"
@@ -295,7 +303,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className=" p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="profileImageUrl"
                   name="profileImageUrl"
                   type="url"
@@ -313,7 +321,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className=" p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="backgroundImageUrl"
                   name="backgroundImageUrl"
                   type="url"
@@ -329,17 +337,18 @@ const EditProfileModal = () => {
                   </div>
                 ) : null}
               </div>
-            </Card.Body>
-          </Card>
-        </Modal.Body>
-
-        <Modal.Footer>
-          <SaveChangesButton type="submit">Save Changes</SaveChangesButton>
-          <DiscardChangesButton onClick={toggleEditProfileModal}>
-            Discard Changes
-          </DiscardChangesButton>
-        </Modal.Footer>
-      </form>
+            </form>
+          </Card.Body>
+        </Card>
+      </Modal.Body>
+      <Modal.Footer>
+        <SaveChangesButton type="submit" form="edit-profile-form">
+          Save Changes
+        </SaveChangesButton>
+        <DiscardChangesButton onClick={toggleEditProfileModal}>
+          Discard Changes
+        </DiscardChangesButton>
+      </Modal.Footer>
     </Modal>
   );
 };

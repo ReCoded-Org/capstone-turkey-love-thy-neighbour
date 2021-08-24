@@ -18,6 +18,8 @@ import {
 } from "../CustomButtons";
 import "./index.scss";
 
+// refactor styling
+
 const SignInModal = () => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -79,12 +81,8 @@ const SignInModal = () => {
 
       <Modal.Body>
         <Card>
-          <Card.Body>
-            <form
-              onSubmit={formik.handleSubmit}
-              className="d-flex flex-column"
-              id="sign-in-form"
-            >
+          <Card.Body className="d-flex flex-column">
+            <form onSubmit={formik.handleSubmit} id="sign-in-form">
               <input
                 className="p-2"
                 id="email"
@@ -116,35 +114,33 @@ const SignInModal = () => {
         </Card>
       </Modal.Body>
 
-      <div className="two-footer-wrapper">
-        <Modal.Footer className="d-flex flex-column align-items-stretch">
-          <SignInUpButton
-            type="submit"
-            disabled={formik.isSubmitting}
-            form="sign-in-form"
+      <Modal.Footer className="first-sign-in-modal-footer d-flex flex-column align-items-stretch">
+        <SignInUpButton type="submit" form="sign-in-form">
+          Sign In
+        </SignInUpButton>
+        <SignInUpGoogleButton type="submit">
+          Sign In With Google
+        </SignInUpGoogleButton>
+        <SignInUpFacebookButton type="submit">
+          Sign In With Facebook
+        </SignInUpFacebookButton>
+      </Modal.Footer>
+      <Modal.Footer className="second-sign-in-modal-footer d-flex flex-column align-items-center">
+        <span>
+          Don&lsquo;t have an{" "}
+          <a
+            href="/"
+            onClick={(event) => {
+              event.preventDefault();
+              dispatch({ type: "signIn" });
+              dispatch({ type: "signUp" });
+            }}
           >
-            Sign In
-          </SignInUpButton>
-          <SignInUpGoogleButton>Sign In With Google</SignInUpGoogleButton>
-          <SignInUpFacebookButton>Sign In With Facebook</SignInUpFacebookButton>
-        </Modal.Footer>
-        <Modal.Footer className="d-flex flex-column align-items-center">
-          <span>
-            Don&lsquo;t you have an{" "}
-            <a
-              href="/"
-              onClick={(event) => {
-                event.preventDefault();
-                dispatch({ type: "signIn" });
-                dispatch({ type: "signUp" });
-              }}
-            >
-              account
-            </a>
-            ?
-          </span>
-        </Modal.Footer>
-      </div>
+            Account
+          </a>
+          ?
+        </span>
+      </Modal.Footer>
     </Modal>
   );
 };

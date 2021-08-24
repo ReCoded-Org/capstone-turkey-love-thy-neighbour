@@ -28,7 +28,6 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            {/* TODO: Conditionally render links below */}
             {isSignedIn && (
               <>
                 <Link to={`/profile/${uid}`} className="nav-link">

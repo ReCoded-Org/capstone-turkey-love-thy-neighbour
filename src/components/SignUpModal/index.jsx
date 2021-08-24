@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { useHistory } from "react-router-dom";
 
-import { removeOneProp, setUserDocument } from "../../hooks/index";
+import { removeOneProp, setUserDocument } from "../../utils/helpers";
 
 import { auth } from "../../firebaseConfig";
 
@@ -21,6 +21,8 @@ import {
   SignInUpGoogleButton,
   SignInUpFacebookButton,
 } from "../CustomButtons";
+
+// refactor styling
 
 const SignUpModal = () => {
   const dispatch = useDispatch();
@@ -112,17 +114,12 @@ const SignUpModal = () => {
           }}
         />
       </Modal.Header>
-
       <Modal.Body>
         <Card>
           <Card.Body>
-            <form
-              onSubmit={formik.handleSubmit}
-              className="d-flex flex-column"
-              id="sign-up-form"
-            >
+            <form onSubmit={formik.handleSubmit} id="sign-up-form">
               <input
-                className="p-2 "
+                className="p-2"
                 id="firstName"
                 name="firstName"
                 placeholder="First Name"
@@ -134,7 +131,7 @@ const SignUpModal = () => {
                 <div className="error-msg">{formik.errors.firstName}</div>
               ) : null}
               <input
-                className="p-2 "
+                className="p-2"
                 id="lastName"
                 name="lastName"
                 placeholder="Last Name"
@@ -145,48 +142,8 @@ const SignUpModal = () => {
               {formik.touched.lastName && formik.errors.lastName ? (
                 <div className="error-msg">{formik.errors.lastName}</div>
               ) : null}
-              <select
-                className="p-2 "
-                id="gender"
-                name="gender"
-                onChange={formik.handleChange}
-                value={formik.values.gender}
-                onBlur={formik.handleBlur}
-              >
-                <option disabled selected value="">
-                  Select a gender...
-                </option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Prefer not to say</option>
-              </select>
-              {formik.touched.gender && formik.errors.gender ? (
-                <div className="error-msg">{formik.errors.gender}</div>
-              ) : null}
-              <select
-                className="p-2 flex-fill"
-                id="district"
-                name="district"
-                onChange={formik.handleChange}
-                value={formik.values.district}
-                onBlur={formik.handleBlur}
-              >
-                <option disabled value="">
-                  Districts
-                </option>
-                {helpers.districtList.map((district) => {
-                  return (
-                    <option key={district} value={district}>
-                      {district}
-                    </option>
-                  );
-                })}
-              </select>
-              {formik.touched.district && formik.errors.district ? (
-                <div className="error-msg">{formik.errors.district}</div>
-              ) : null}
               <input
-                className="p-2 "
+                className="p-2"
                 id="email"
                 name="email"
                 type="email"
@@ -199,7 +156,7 @@ const SignUpModal = () => {
                 <div className="error-msg">{formik.errors.email}</div>
               ) : null}
               <input
-                className="p-2 "
+                className="p-2"
                 id="password"
                 name="password"
                 type="password"
@@ -212,7 +169,7 @@ const SignUpModal = () => {
                 <div className="error-msg">{formik.errors.password}</div>
               ) : null}
               <input
-                className="p-2 "
+                className="p-2"
                 id="repeatedPassword"
                 name="repeatedPassword"
                 type="password"
@@ -229,39 +186,37 @@ const SignUpModal = () => {
         </Card>
       </Modal.Body>
 
-      <div className="two-footer-wrapper">
-        <Modal.Footer className="sign-up-buttons d-flex flex-column align-items-stretch">
-          <SignInUpButton
-            type="submit"
-            disabled={formik.isSubmitting}
-            form="sign-up-form"
+      <Modal.Footer className="first-sign-up-modal-footer d-flex flex-column align-items-stretch">
+        <SignInUpButton
+          type="submit"
+          disabled={formik.isSubmitting}
+          form="sign-up-form"
+        >
+          Sign Up
+        </SignInUpButton>
+        <SignInUpGoogleButton type="submit" disabled={formik.isSubmitting}>
+          Sign Up With Google
+        </SignInUpGoogleButton>
+        <SignInUpFacebookButton type="submit" disabled={formik.isSubmitting}>
+          Sign Up With Facebook
+        </SignInUpFacebookButton>
+      </Modal.Footer>
+      <Modal.Footer className="second-sign-up-modal-footer d-flex flex-column align-items-center">
+        <span>
+          Already got an{" "}
+          <a
+            href="/"
+            onClick={(event) => {
+              event.preventDefault();
+              dispatch({ type: "signUp" });
+              dispatch({ type: "signIn" });
+            }}
           >
-            Sign Up
-          </SignInUpButton>
-          <SignInUpGoogleButton type="submit" disabled={formik.isSubmitting}>
-            Sign Up With Google
-          </SignInUpGoogleButton>
-          <SignInUpFacebookButton type="submit" disabled={formik.isSubmitting}>
-            Sign Up With Facebook
-          </SignInUpFacebookButton>
-        </Modal.Footer>
-        <Modal.Footer className="d-flex flex-column align-items-center">
-          <span>
-            Already have an{" "}
-            <a
-              href="/"
-              onClick={(event) => {
-                event.preventDefault();
-                dispatch({ type: "signUp" });
-                dispatch({ type: "signIn" });
-              }}
-            >
-              account
-            </a>
-            ?
-          </span>
-        </Modal.Footer>
-      </div>
+            Account
+          </a>
+          ?
+        </span>
+      </Modal.Footer>
     </Modal>
   );
 };
