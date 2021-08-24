@@ -189,6 +189,7 @@ function Neighbors() {
               return (
                 <Col xs={12} sm={6} md={4} key={userDoc.email}>
                   <NeighborCard
+                    key={userDoc.email}
                     photo={photo}
                     firstName={userDoc.firstName}
                     lastName={userDoc.lastName}

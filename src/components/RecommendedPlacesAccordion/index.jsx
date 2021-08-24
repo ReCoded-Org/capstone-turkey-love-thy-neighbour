@@ -12,7 +12,7 @@ function RecommendedPlacesAccordion({ district }) {
           <Carousel>
             {recommendedPlaces[district].map((placeObj) => {
               return (
-                <Carousel.Item>
+                <Carousel.Item key={placeObj.name}>
                   <img
                     className="d-block w-100"
                     src={placeObj.image}
