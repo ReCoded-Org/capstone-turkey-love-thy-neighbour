@@ -1,15 +1,9 @@
 import React from "react";
 
-import { Container } from "react-bootstrap";
+import FAQSection from "../../components/FAQ";
 
 function FAQ() {
-  return (
-    <Container fluid>
-      <Container>
-        <p>FAQ</p>
-      </Container>
-    </Container>
-  );
+  return <FAQSection />;
 }
 
 export default FAQ;
