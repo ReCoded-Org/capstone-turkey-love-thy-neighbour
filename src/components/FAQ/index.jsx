@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Container, Row, Col } from "react-bootstrap";
 
 import img from "../../images/UndrawQuestion.png";
@@ -6,7 +7,7 @@ import "./index.scss";
 
 function FAQ() {
   return (
-    <section className="primary-hero-section container-fluid">
+    <section className="faq-section container-fluid">
       <Container className="faq-content-container d-flex align-items-center">
         <Row className="faq-content-row m-0">
           <Col
