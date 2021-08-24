@@ -19,7 +19,7 @@ function Footer() {
             xs={12}
             sm={12}
             md={4}
-            className="d-flex justify-content-center justify-content-sm-center justify-content-md-start align-items-center"
+            className="mt-3 mt-sm-3 mt-md-0 d-flex justify-content-center justify-content-sm-center justify-content-md-start align-items-center"
           >
             <Link to="our-team">Our Team</Link>
             <Link to="contact-us" className="mx-3">
@@ -39,7 +39,7 @@ function Footer() {
             xs={12}
             sm={12}
             md={4}
-            className="social-media-logos d-flex justify-content-center justify-content-sm-center justify-content-md-end align-items-center"
+            className="social-media-logos  d-flex justify-content-center justify-content-sm-center justify-content-md-end align-items-center"
           >
             <a
               href="https://twitter.com"
