@@ -6,6 +6,9 @@ import "./index.scss";
 import { useFormik } from "formik";
 
 import * as Yup from "yup";
+import { Link } from "react-router-dom";
+import { CTAButton } from "../../components/CustomButtons/index";
+
 import mainImg from "../../images/firstContactUs.svg";
 import logoimg from "../../images/secondContactUs.svg";
 
@@ -114,8 +117,10 @@ function ContactUs() {
                       )}
                   </div>
                 </div>
-                <div>
-                  <button type="submit">Submit</button>
+                <div className="send-button">
+                  <CTAButton>
+                    <Link to="/neighbors">Send</Link>
+                  </CTAButton>
                 </div>
               </form>
             </div>

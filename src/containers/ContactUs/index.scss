@@ -48,7 +48,7 @@
   h5 {
     color: black;
     text-align: center;
-    padding: 0px 50px 0px 50px;
+    padding: 0px 50px 20px 50px;
   }
 
   p {
@@ -70,13 +70,30 @@
     }
   }
 
- 
+  button {
+  
+    a {
+      text-decoration: none;
+      color: $white;
+    }
+  }
+
+ .send-button{
+  padding-top: 20px;
+   display:flex;
+   justify-content: center;
+ }
 
   .contactus-content-row{
-    padding: 62px;
+    padding: 48px;
   }
 
   // .footer {
   //   position: fixed;
   //   bottom: 0;
   // }
+
+  input[type='text']::placeholder
+  {   
+      text-align: top;      /* for Chrome, Firefox, Opera */
+  }
