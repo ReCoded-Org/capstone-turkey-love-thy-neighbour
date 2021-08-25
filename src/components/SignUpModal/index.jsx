@@ -43,12 +43,16 @@ const SignUpModal = () => {
     }
     if (!values.email) {
       errors.email = "Required";
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+      errors.email = "Email address is invalid.";
     }
     if (!values.password) {
       errors.password = "Required";
     }
     if (!values.repeatedPassword) {
       errors.repeatedPassword = "Required";
+    } else if (values.repeatedPassword !== values.password) {
+      errors.repeatedPassword = "Passwords do not match";
     }
     return errors;
   };
@@ -218,8 +222,11 @@ const SignUpModal = () => {
                 value={formik.values.repeatedPassword}
                 onBlur={formik.handleBlur}
               />
-              {formik.touched.password && formik.errors.password ? (
-                <div className="error-msg">{formik.errors.password}</div>
+              {formik.touched.repeatedPassword &&
+              formik.errors.repeatedPassword ? (
+                <div className="error-msg">
+                  {formik.errors.repeatedPassword}
+                </div>
               ) : null}
             </form>
           </Card.Body>

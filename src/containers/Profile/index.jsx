@@ -30,7 +30,7 @@ const Profile = () => {
   return (
     <Container
       fluid
-      className="profile-page-bg"
+      className="profile-page-bg d-flex align-items-center"
       style={
         backgroundImageUrl
           ? { backgroundImage: `url(${backgroundImageUrl})` }
