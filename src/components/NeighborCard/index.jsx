@@ -29,7 +29,7 @@ function NeighborCard({
       message: "Heyo",
       to_email: "kutay.kagan.ozenn@gmail.com",
     })
-      .then(() => console.log("wassusssssssppp"))
+      .then(() => console.log("wassusssssssppp")) // TODO: replace this with a bootstrap alert
       .catch((err) => console.error("there's an error!", err));
   }
 

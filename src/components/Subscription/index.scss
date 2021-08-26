@@ -10,104 +10,101 @@
 }
 
 // tablet&phone background
-.subscription-img-bg{
+.subscription-img-bg {
   @media screen and (min-width: 375px) and (max-width: 768px) {
     background-image: url("../../images/PhoneandNotificationsBG.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center right;
     background-size: 45%;
-  img {
-    display: none;
+    img {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 375px) {
+    background-image: url("../../images/PhoneandNotificationsBG.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center right;
+    background-size: 250px 390px;
+    img {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 376px) and (max-width: 426px) {
+    background-image: url("../../images/PhoneandNotificationsBG.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center right;
+    background-size: 230px 380px;
+    img {
+      display: none;
+    }
   }
 }
-@media screen and (max-width: 375px) {
-  background-image: url("../../images/PhoneandNotificationsBG.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center right;
-  background-size: 250px 390px;
-img {
-  display: none;
-   }
-}
-@media screen and (min-width: 376px) and (max-width: 426px) {
-  background-image: url("../../images/PhoneandNotificationsBG.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center right;
-  background-size: 230px 380px;
-img {
-  display: none;
-  }
- }
-}
 
-  .subscription-content-container {
-    .subscription-content-row {
-      h1 {
-        color: $dark-blue;
-        font-weight: bold;
+.subscription-content-container {
+  .subscription-content-row {
+    h1 {
+      color: $dark-blue;
+      font-weight: bold;
 
-        @media screen and (min-width: 769px) {
-          padding-bottom: 200px;
-          font-size: 50px;
-        }
-        @media screen and (min-width: 426px) and (max-width: 768px) {
-          font-size: 38px;
-          padding-bottom: 220px;
-          padding-top: 50px;
-        }
-        @media screen and (min-width: 376px) and (max-width: 425px) {
-          font-size: 34px;
-          padding-bottom: 320px;
-        }
-        @media screen and (max-width: 375px) {
-          font-size: 30px;
-          padding-bottom: 380px;
-        }
+      @media screen and (min-width: 769px) {
+        padding-bottom: 200px;
+        font-size: 50px;
       }
-
-      h3 {
-        color: $logo-red;
-        font-weight: bold;
-        @media screen and (min-width: 768px) {
-          font-size: 30px;
-        }
-        @media screen and (max-width: 767px) {
-          font-size: 20px;
-        }
+      @media screen and (min-width: 426px) and (max-width: 768px) {
+        font-size: 38px;
+        padding-bottom: 220px;
+        padding-top: 50px;
       }
-
-      p {
-        color: $black;
-        @media screen and (min-width: 768px) {
-          font-size: 15px;
-        }
-        @media screen and (max-width: 767px) {
-          font-size: 11px;
-        }
-        @media screen and (min-width: 376px) and (max-width: 425px) {
-          font-size: 15px;
-        }
-        @media screen and (max-width: 375px) {
-          font-size: 15px;
-        }
+      @media screen and (min-width: 376px) and (max-width: 425px) {
+        font-size: 34px;
+        padding-bottom: 320px;
       }
-
-      .button-input-wrapper {
-        display: flex;
-        flex-direction: row;
+      @media screen and (max-width: 375px) {
+        font-size: 30px;
+        padding-bottom: 380px;
       }
+    }
 
-      img {
-        @media screen and (min-width: 768px) {
-          width: 100%;
-          height: 550px !important;
-        }
+    h3 {
+      color: $logo-red;
+      font-weight: bold;
+      @media screen and (min-width: 768px) {
+        font-size: 30px;
+      }
+      @media screen and (max-width: 767px) {
+        font-size: 20px;
+      }
+    }
+
+    p {
+      color: $black;
+      @media screen and (min-width: 768px) {
+        font-size: 15px;
+      }
+      @media screen and (max-width: 767px) {
+        font-size: 11px;
+      }
+      @media screen and (min-width: 376px) and (max-width: 425px) {
+        font-size: 15px;
+      }
+      @media screen and (max-width: 375px) {
+        font-size: 15px;
+      }
+    }
+
+    .button-input-wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+
+    img {
+      @media screen and (min-width: 768px) {
+        width: 100%;
+        height: 550px !important;
       }
     }
   }
-
-
-
+}
