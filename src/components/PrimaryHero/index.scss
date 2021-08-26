@@ -8,28 +8,35 @@
       & > div:first-child {
         padding-right: 10px !important;
 
-        @media screen and (max-width: 768px) {
-          padding-bottom: 50px !important;
-        }
-
         h1 {
           color: $logo-blue;
-          font-size: max(40px);
           font-weight: bold;
+          @media screen and (max-width: 991px) {
+            font-size: 32px;
+          }
         }
 
         p {
           color: white;
           font-size: 20px;
+          @media screen and (max-width: 991px) {
+            font-size: 17px;
+          }
         }
       }
 
       & > div:last-child {
         img {
           width: 100%;
-          max-height: 350px;
+
+          @media screen and (max-width: 281px) {
+            max-height: 310px;
+          }
           @media screen and (max-width: 767px) {
             max-height: 280px;
+          }
+          @media screen and (min-width: 767px) {
+            height: 450px;
           }
         }
       }
