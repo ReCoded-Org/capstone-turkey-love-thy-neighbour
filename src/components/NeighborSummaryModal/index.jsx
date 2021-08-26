@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { createInterestString } from "../../utils/helpers";
 
+import { NeighborCardButton } from "../CustomButtons";
+
 import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
 import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
 import PPGenderless from "../../images/Profile/PPGenderless.png";
@@ -34,7 +36,6 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
       >
         <Container
           fluid
-          // className="profile-page-bg"
           style={
             selectedNeighbor?.backgroundImageUrl
               ? {
@@ -43,7 +44,7 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
               : null
           }
         >
-          <Modal.Header>
+          <Modal.Header className="d-flex justify-content-start">
             <img
               className="profile-photo"
               alt="profile"
@@ -62,12 +63,13 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
                   : PPGenderless)
               }
             />
+            <span>{`${selectedNeighbor?.firstName} ${selectedNeighbor?.lastName}`}</span>
           </Modal.Header>
 
           <Modal.Body>
             <Card className="info-cards white-card">
               <Card.Body>
-                <Card.Title className="card-title">General</Card.Title>
+                <Card.Title className="card-title">Furthermore Info</Card.Title>
                 <ul className="d-flex flex-column justify-content-around  mb-0">
                   <li>
                     Bio:{" "}
@@ -95,6 +97,11 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
               </Card.Body>
             </Card>
           </Modal.Body>
+          <Modal.Footer>
+            <NeighborCardButton className="mx-auto">
+              Invite To Meet!
+            </NeighborCardButton>
+          </Modal.Footer>
         </Container>
       </Modal>
     )
