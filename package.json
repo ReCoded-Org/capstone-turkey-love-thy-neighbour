@@ -7,7 +7,6 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "^5.0.2",
-    "emailjs-com": "^3.2.0",
     "firebase": "^8.8.1",
     "formik": "^2.2.9",
     "multiselect-react-dropdown": "^2.0.5",
