@@ -22,7 +22,7 @@ import FAQ from "./containers/FAQ";
 import SignInModal from "./components/SignInModal";
 import SignUpModal from "./components/SignUpModal";
 
-// if the users are signed in, show them their profile when they click on the navbar logo
+// TODO: if the users are signed in, show them their profile when they click on the navbar logo
 
 function App() {
   const dispatch = useDispatch();
@@ -36,8 +36,8 @@ function App() {
   return (
     <Container fluid className="main-wrapper">
       <Router>
-        <NavBar />
         {/* Always display it at the top */}
+        <NavBar />
         <SignInModal />
         <SignUpModal />
         <Switch>
@@ -62,6 +62,7 @@ function App() {
           </Route>
         </Switch>
         <Footer />
+        {/* Always display it at the bottom */}
       </Router>
     </Container>
   );
