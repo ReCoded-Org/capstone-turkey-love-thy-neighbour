@@ -8,7 +8,7 @@ import "./index.scss";
 
 function NotificationMenu() {
   return (
-    <Dropdown>
+    <Dropdown id="notifications-menu">
       <Dropdown.Toggle variant="success" id="dropdown-basic">
         <NotificationBellSVG />
       </Dropdown.Toggle>

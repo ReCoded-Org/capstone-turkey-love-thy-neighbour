@@ -27,7 +27,6 @@ function NavBar() {
         <Link to="/" className="navbar-brand">
           <img src={logo} alt="logo" />
         </Link>
-        <NotificationsMenu />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           {isSignedIn && (
@@ -43,29 +42,30 @@ function NavBar() {
               </Link>
             </Nav>
           )}
-          <Nav className="ms-auto">
-            {isSignedIn ? (
-              <>
-                <Nav.Link
-                  onClick={() => {
-                    auth.signOut().then(() => history.push("/"));
-                    // TODO: Show the error within a modal
-                  }}
-                >
-                  Sign Out
-                </Nav.Link>
-              </>
-            ) : (
-              <>
-                <Nav.Link onClick={() => dispatch({ type: "signIn" })}>
-                  Sign In
-                </Nav.Link>
-                <Nav.Link onClick={() => dispatch({ type: "signUp" })}>
-                  Sign Up
-                </Nav.Link>{" "}
-              </>
-            )}
-          </Nav>
+          {isSignedIn ? (
+            <Nav className="ms-auto">
+              <NotificationsMenu />
+
+              <Nav.Link
+                onClick={() => {
+                  auth.signOut().then(() => history.push("/"));
+                  // TODO: Show the error within a modal
+                }}
+              >
+                Sign Out
+              </Nav.Link>
+            </Nav>
+          ) : (
+            <Nav className="ms-auto">
+              <NotificationsMenu />
+              <Nav.Link onClick={() => dispatch({ type: "signIn" })}>
+                Sign In
+              </Nav.Link>
+              <Nav.Link onClick={() => dispatch({ type: "signUp" })}>
+                Sign Up
+              </Nav.Link>{" "}
+            </Nav>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
