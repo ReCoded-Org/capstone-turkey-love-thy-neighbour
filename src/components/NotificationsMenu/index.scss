@@ -1,16 +1,23 @@
 @import "../../style/variables";
 
-.dropdown {
-  .dropdown-toggle {
+div#notifications-menu {
+  button.dropdown-toggle {
+    color: rgba(255, 255, 255, 0.55);
     background-color: $dark-blue;
     border: none;
+    box-shadow: none !important;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.75);
+
+      svg {
+        fill: rgba(255, 255, 255, 0.75);
+      }
+    }
 
     svg {
       fill: rgba(255, 255, 255, 0.55);
-    }
-
-    svg:focus {
-      border: none;
+      transition: all ease-in-out 150ms;
     }
   }
 }
