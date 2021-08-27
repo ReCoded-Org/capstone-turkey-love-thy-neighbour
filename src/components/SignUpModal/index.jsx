@@ -12,8 +12,6 @@ import { removeOneProp, setUserDocument } from "../../utils/helpers";
 
 import { auth } from "../../firebaseConfig";
 
-import helpers from "../../utils/helpers";
-
 import "./index.scss";
 import logo from "../../images/logo.svg";
 import {
@@ -82,13 +80,8 @@ const SignUpModal = () => {
           dispatch({ type: "signUp" });
           history.push(`/profile/${userCred.user.uid}`);
           dispatch({ type: "editProfile" });
-        }) // take the user to their profile
-        .catch((error) =>
-          console.error(
-            "A problem occured while your account being created!",
-            error
-          )
-        );
+        }); // take the user to their profile
+      // TODO: Show the error within a modal
       setSubmitting(false);
     },
   });

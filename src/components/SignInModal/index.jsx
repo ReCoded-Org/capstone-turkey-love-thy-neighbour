@@ -52,10 +52,8 @@ const SignInModal = () => {
           .then((cred) => {
             history.push(`/profile/${cred.user.uid}`);
             dispatch({ type: "signIn" });
-          })
-          .catch((error) =>
-            console.error("A problem occurred while logging in.", error)
-          );
+          });
+        // TODO: Show the error within a modal
         setSubmitting(false);
       }
     },
