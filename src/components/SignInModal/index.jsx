@@ -49,7 +49,7 @@ const SignInModal = () => {
       if (!isSignedIn) {
         auth
           .signInWithEmailAndPassword(values.email, values.password)
-          .then((cred) => {
+          .then(() => {
             history.push(`/meet`);
             dispatch({ type: "signIn" });
           });
