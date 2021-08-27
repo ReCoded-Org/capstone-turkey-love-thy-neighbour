@@ -10,11 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { firestore } from "../../firebaseConfig";
 
-<<<<<<< HEAD
 import constants, { newActivityList } from "../../utils/constants";
-=======
-import constants from "../../utils/constants";
->>>>>>> meet
 
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
