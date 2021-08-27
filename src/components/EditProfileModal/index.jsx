@@ -10,7 +10,11 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { firestore } from "../../firebaseConfig";
 
+<<<<<<< HEAD
 import constants, { newActivityList } from "../../utils/constants";
+=======
+import constants from "../../utils/constants";
+>>>>>>> meet
 
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
@@ -179,9 +183,11 @@ const EditProfileModal = () => {
                     <option disabled value="">
                       Select your Gender
                     </option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female </option>
-                    <option value="Prefer not to say">Prefer not to say</option>
+                    <option defaultValue="Male">Male</option>
+                    <option defaultValue="Female">Female </option>
+                    <option defaultValue="Prefer not to say">
+                      Prefer not to say
+                    </option>
                   </select>
 
                   {formik.touched.gender && formik.errors.gender ? (

@@ -42,7 +42,7 @@ const Profile = () => {
           <Col
             xs={12}
             sm={12}
-            className="d-flex flex-column align-items-center mb-3"
+            className="d-flex flex-column align-items-center mb-3 pe-2"
           >
             <div>
               <img

@@ -1,7 +1,7 @@
 {
-    "editor.codeActionsOnSave": { "source.fixAll.eslint": true }, 
-    "editor.formatOnSave": true, 
-    "eslint.alwaysShowStatus": true, 
-    "files.autoSave": "onFocusChange",
-    "files.eol": "\n"
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+  "editor.formatOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "files.autoSave": "onFocusChange",
+  "files.eol": "\n"
 }
