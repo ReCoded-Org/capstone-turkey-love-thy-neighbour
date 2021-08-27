@@ -2,6 +2,8 @@ import { React } from "react";
 
 import { Modal, Container, Card } from "react-bootstrap";
 
+import { send } from "emailjs-com";
+
 import { useDispatch, useSelector } from "react-redux";
 
 import { createInterestString } from "../../utils/helpers";
@@ -18,11 +20,31 @@ import "./index.scss";
 // we can show their aducation in here
 // education, bio and interests
 
-const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
+const NeighborSummaryModal = ({
+  selectedNeighbor,
+  setSelectedNeighbor,
+  senderEmail,
+  senderFullName,
+  setEmailAlertStatus,
+}) => {
   const dispatch = useDispatch();
   const isNeighborSummaryOpen = useSelector(
     (state) => state.popup.isNeighborSummaryOpen
   );
+  const { firstName, lastName, email } = selectedNeighbor;
+
+  function sendEmail() {
+    setEmailAlertStatus("empty");
+    send("service_9rwjsp6", "template_qlu5ttf", {
+      from_name: senderFullName,
+      from_email: senderEmail,
+      to_name: `${firstName} ${lastName}`,
+      to_email: email,
+    })
+      .then(() => setEmailAlertStatus("success"))
+      .catch(() => setEmailAlertStatus("danger"));
+    dispatch({ type: "neighborSummary" });
+  }
 
   return (
     Object.keys(selectedNeighbor).length !== 0 && (
@@ -98,7 +120,7 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
             </Card>
           </Modal.Body>
           <Modal.Footer>
-            <NeighborCardButton className="mx-auto">
+            <NeighborCardButton className="mx-auto" onClick={sendEmail}>
               Invite To Meet!
             </NeighborCardButton>
           </Modal.Footer>

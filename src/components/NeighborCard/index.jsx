@@ -4,6 +4,8 @@ import { Card } from "react-bootstrap";
 
 import { useDispatch } from "react-redux";
 
+import { send } from "emailjs-com";
+
 import { NeighborCardButton } from "../CustomButtons";
 
 import { firestore } from "../../firebaseConfig";
@@ -18,8 +20,23 @@ function NeighborCard({
   gender,
   email,
   setSelectedNeighbor,
+  senderEmail,
+  senderFullName,
+  setEmailAlertStatus,
 }) {
   const dispatch = useDispatch();
+
+  function sendEmail() {
+    setEmailAlertStatus("empty");
+    send("service_9rwjsp6", "template_qlu5ttf", {
+      from_name: senderFullName,
+      from_email: senderEmail,
+      to_name: `${firstName} ${lastName}`,
+      to_email: email,
+    })
+      .then(() => setEmailAlertStatus("success"))
+      .catch(() => setEmailAlertStatus("danger"));
+  }
 
   return (
     <Card className="neighbor-card mb-2 mx-auto">
@@ -40,7 +57,9 @@ function NeighborCard({
       <Card.Body className="d-flex flex-column justify-content-center">
         <Card.Title className="text-center">{`${firstName} ${lastName}`}</Card.Title>
         <small className="text-center">{`${age} / ${gender}`}</small>
-        <NeighborCardButton>Invite To Meet!</NeighborCardButton>
+        <NeighborCardButton onClick={sendEmail}>
+          Invite To Meet!
+        </NeighborCardButton>
       </Card.Body>
     </Card>
   );
