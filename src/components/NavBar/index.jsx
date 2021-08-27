@@ -9,11 +9,15 @@ import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebaseConfig";
 
 import logo from "../../images/logo.svg";
+
+// import NotificationBellSVG from "../../images/notification-bell.svg";
+
 import "./index.scss";
 
 function NavBar() {
   const history = useHistory();
   const dispatch = useDispatch();
+
   const isSignedIn = useSelector((state) => state.user.isSignedIn);
   const uid = useSelector((state) => state.user.authCred?.uid);
 
@@ -25,31 +29,31 @@ function NavBar() {
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            {isSignedIn && (
-              <>
-                <Link to={`/profile/${uid}`} className="nav-link">
-                  Profile
-                </Link>
-                <Link to="/meet" className="nav-link">
-                  Meet
-                </Link>
-                <Link to="/neighbors" className="nav-link">
-                  Neighbors
-                </Link>
-              </>
-            )}
-          </Nav>
-          <Nav>
+          {isSignedIn && (
+            <Nav className="me-auto">
+              <Link to={`/profile/${uid}`} className="nav-link">
+                Profile
+              </Link>
+              <Link to="/meet" className="nav-link">
+                Meet
+              </Link>
+              <Link to="/neighbors" className="nav-link">
+                Neighbors
+              </Link>
+            </Nav>
+          )}
+          <Nav className="ms-auto">
             {isSignedIn ? (
-              <Nav.Link
-                onClick={() => {
-                  auth.signOut().then(() => history.push("/"));
-                  // TODO: Show the error within a modal
-                }}
-              >
-                Sign Out
-              </Nav.Link>
+              <>
+                <Nav.Link
+                  onClick={() => {
+                    auth.signOut().then(() => history.push("/"));
+                    // TODO: Show the error within a modal
+                  }}
+                >
+                  Sign Out
+                </Nav.Link>
+              </>
             ) : (
               <>
                 <Nav.Link onClick={() => dispatch({ type: "signIn" })}>
