@@ -25,7 +25,7 @@ function Meet() {
             xs={{ span: 12, order: "last" }}
             sm={{ span: 12, order: "last" }}
             md={{ span: 6, order: "first" }}
-            className="d-flex flex-column justify-content-center align-items-center align-items-sm-center align-items-md-start text-center text-sm-center text-md-start"
+            className="d-flex flex-column justify-content-center align-items-center align-items-sm-center align-items-md-start text-center text-sm-center text-md-start mb-3 mb-sm-3 mb-md-0"
           >
             <h3>Hello, {firstName}</h3>
             <h1>Meet nearby people with our cutting edge algorithms.</h1>
