@@ -8,9 +8,9 @@ import { Link, useHistory } from "react-router-dom";
 
 import { auth } from "../../firebaseConfig";
 
-import logo from "../../images/logo.svg";
+import NotificationsMenu from "../NotificationsMenu";
 
-// import NotificationBellSVG from "../../images/notification-bell.svg";
+import logo from "../../images/logo.svg";
 
 import "./index.scss";
 
@@ -27,6 +27,7 @@ function NavBar() {
         <Link to="/" className="navbar-brand">
           <img src={logo} alt="logo" />
         </Link>
+        <NotificationsMenu />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           {isSignedIn && (
