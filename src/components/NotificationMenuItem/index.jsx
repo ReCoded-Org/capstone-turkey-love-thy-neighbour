@@ -4,6 +4,8 @@ import { CloseButton } from "react-bootstrap";
 
 import { useSelector } from "react-redux";
 
+import { GoodFeedbackButton, BadFeedbackButton } from "../CustomButtons/index";
+
 import firebaseApp, { firestore } from "../../firebaseConfig";
 
 import "./index.scss";
@@ -51,17 +53,17 @@ function NotificationMenuItem({ invitationNotificationObject }) {
       <div className="notification-menu-item-content">
         <p className="text-center">{message}</p>
         <div className="feedback-buttons d-flex justify-content-center">
-          <button
+          <GoodFeedbackButton
             type="button"
             className="me-3"
             id={id}
             onClick={handleButtonClick}
           >
             Good
-          </button>
-          <button type="button" id={id} onClick={handleButtonClick}>
+          </GoodFeedbackButton>
+          <BadFeedbackButton type="button" id={id} onClick={handleButtonClick}>
             Bad
-          </button>
+          </BadFeedbackButton>
           <CloseButton onClick={handleButtonClick} />
         </div>
       </div>
