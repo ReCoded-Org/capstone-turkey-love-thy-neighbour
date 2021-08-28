@@ -59,6 +59,10 @@ const SignInModal = () => {
     },
   });
 
+  function handleGoogleSignIn() {
+    auth.signInWithPopup(googleProvider);
+  }
+
   return (
     <Modal
       show={isSignInOpen}
@@ -116,14 +120,7 @@ const SignInModal = () => {
         <SignInUpButton type="submit" form="sign-in-form">
           Sign In
         </SignInUpButton>
-        <SignInUpGoogleButton
-          type="submit"
-          onClick={(e) => {
-            auth
-              .signInWithPopup(googleProvider)
-              .then((r) => console.log("bitch", r));
-          }}
-        >
+        <SignInUpGoogleButton type="submit" onClick={handleGoogleSignIn}>
           Sign In With Google
         </SignInUpGoogleButton>
         <SignInUpFacebookButton type="submit">
