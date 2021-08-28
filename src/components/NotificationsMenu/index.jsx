@@ -22,16 +22,24 @@ function NotificationMenu() {
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
+        <Dropdown.Header className="d-flex justify-content-between align-items-center">
+          Notifications<small type="button">Clear All</small>
+        </Dropdown.Header>
+
+        <Dropdown.Divider />
+
         {invitationNotifications?.length !== 0 &&
         invitationNotifications !== null &&
-        invitationNotifications !== undefined
-          ? invitationNotifications.map((invitationNotificationObject) => (
-              <NotificationMenuItem
-                key={invitationNotificationObject.id}
-                invitationNotificationObject={invitationNotificationObject}
-              />
-            ))
-          : null}
+        invitationNotifications !== undefined ? (
+          invitationNotifications.map((invitationNotificationObject) => (
+            <NotificationMenuItem
+              key={invitationNotificationObject.id}
+              invitationNotificationObject={invitationNotificationObject}
+            />
+          ))
+        ) : (
+          <p className="ms-3">No current notifications...</p>
+        )}
       </Dropdown.Menu>
     </Dropdown>
   );

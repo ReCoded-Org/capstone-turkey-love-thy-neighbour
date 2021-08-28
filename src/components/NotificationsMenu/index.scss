@@ -28,8 +28,17 @@ div#notifications-menu {
   }
 
   div.dropdown-menu {
+    min-height: 400px;
+    min-width: 300px;
+
     position: absolute;
     top: 38px;
-    right: 0;
+
+    @media screen and (max-width: 991px) {
+      right: -125px;
+    }
+    @media screen and (min-width: 992px) {
+      right: 0;
+    }
   }
 }
