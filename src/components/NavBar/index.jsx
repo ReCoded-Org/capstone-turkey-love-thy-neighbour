@@ -26,8 +26,8 @@ function NavBar() {
         <Link to="/" className="navbar-brand order-lg-6">
           <img src={logo} alt="logo" />
         </Link>
-        <NotificationsMenu />
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" /> {/* md sm xs */}
+        {isSignedIn && <NotificationsMenu />}
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className="order-lg-3" id="responsive-navbar-nav">
           {isSignedIn && (
             <Nav className="me-auto">
@@ -45,8 +45,6 @@ function NavBar() {
 
           {isSignedIn ? (
             <Nav className="ms-auto">
-              {/* <NotificationsMenu /> */}
-
               <Nav.Link
                 onClick={() => {
                   auth.signOut().then(() => history.push("/"));
