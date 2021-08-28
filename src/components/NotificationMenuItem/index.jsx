@@ -1,10 +1,12 @@
 import React from "react";
 
-import { Card } from "react-bootstrap";
+import { CloseButton } from "react-bootstrap";
 
 import { useSelector } from "react-redux";
 
 import firebaseApp, { firestore } from "../../firebaseConfig";
+
+import "./index.scss";
 
 function NotificationMenuItem({ invitationNotificationObject }) {
   const { message, id } = invitationNotificationObject;
@@ -12,7 +14,6 @@ function NotificationMenuItem({ invitationNotificationObject }) {
 
   function handleButtonClick(event) {
     const buttonText = event.target.innerText;
-    const notificationObjId = event.target.id;
 
     firestore
       .collection("users")
@@ -46,19 +47,25 @@ function NotificationMenuItem({ invitationNotificationObject }) {
   }
 
   return (
-    <Card>
-      {message}
-      <br />
-      <button type="button" id={id} onClick={handleButtonClick}>
-        Good
-      </button>
-      <button type="button" id={id} onClick={handleButtonClick}>
-        Bad
-      </button>
-      <button type="button" id={id} onClick={handleButtonClick}>
-        X
-      </button>
-    </Card>
+    <div className="notification-menu-item">
+      <div className="notification-menu-item-content">
+        <p className="text-center">{message}</p>
+        <div className="feedback-buttons d-flex justify-content-center">
+          <button
+            type="button"
+            className="me-3"
+            id={id}
+            onClick={handleButtonClick}
+          >
+            Good
+          </button>
+          <button type="button" id={id} onClick={handleButtonClick}>
+            Bad
+          </button>
+          <CloseButton onClick={handleButtonClick} />
+        </div>
+      </div>
+    </div>
   );
 }
 

@@ -28,8 +28,11 @@ div#notifications-dropdown {
   }
 
   div.dropdown-menu {
+    padding-bottom: 0;
+    max-height: calc(100vh - 200px);
     min-height: 400px;
     min-width: 300px;
+    overflow: scroll;
 
     position: absolute;
     top: 38px;
