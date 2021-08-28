@@ -16,21 +16,22 @@ function NotificationMenu() {
   );
 
   return (
-    <Dropdown id="notifications-menu">
+    <Dropdown id="notifications-menu" className="order-lg-last">
       <Dropdown.Toggle variant="success" id="dropdown-basic">
         <NotificationBellSVG />
       </Dropdown.Toggle>
 
-      <Dropdown.Menu style={{ width: "60%" }}>
-        {(invitationNotifications?.length !== 0 ||
-          invitationNotifications !== null ||
-          invitationNotifications !== undefined) &&
-          invitationNotifications.map((invitationNotificationMessage) => (
-            <NotificationMenuItem
-              key={invitationNotificationMessage}
-              invitationNotificationMessage={invitationNotificationMessage}
-            />
-          ))}
+      <Dropdown.Menu>
+        {invitationNotifications?.length !== 0 &&
+        invitationNotifications !== null &&
+        invitationNotifications !== undefined
+          ? invitationNotifications.map((invitationNotificationMessage) => (
+              <NotificationMenuItem
+                key={invitationNotificationMessage}
+                invitationNotificationMessage={invitationNotificationMessage}
+              />
+            ))
+          : null}
       </Dropdown.Menu>
     </Dropdown>
   );

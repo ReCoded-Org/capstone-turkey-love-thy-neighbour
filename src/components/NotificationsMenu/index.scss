@@ -1,6 +1,8 @@
 @import "../../style/variables";
 
 div#notifications-menu {
+  position: relative;
+
   button.dropdown-toggle {
     color: rgba(255, 255, 255, 0.55);
     background-color: $dark-blue;
@@ -23,5 +25,12 @@ div#notifications-menu {
       fill: rgba(255, 255, 255, 0.55);
       transition: all ease-in-out 150ms;
     }
+  }
+
+  div.dropdown-menu {
+    width: 70%;
+    position: absolute;
+    top: 38px;
+    right: 0;
   }
 }

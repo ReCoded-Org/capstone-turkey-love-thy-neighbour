@@ -17,18 +17,18 @@ import "./index.scss";
 function NavBar() {
   const history = useHistory();
   const dispatch = useDispatch();
-
   const isSignedIn = useSelector((state) => state.user.isSignedIn);
   const uid = useSelector((state) => state.user.authCred?.uid);
 
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark">
       <Container>
-        <Link to="/" className="navbar-brand">
+        <Link to="/" className="navbar-brand order-lg-6">
           <img src={logo} alt="logo" />
         </Link>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <NotificationsMenu />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" /> {/* md sm xs */}
+        <Navbar.Collapse className="order-lg-3" id="responsive-navbar-nav">
           {isSignedIn && (
             <Nav className="me-auto">
               <Link to={`/profile/${uid}`} className="nav-link">
@@ -42,9 +42,10 @@ function NavBar() {
               </Link>
             </Nav>
           )}
+
           {isSignedIn ? (
             <Nav className="ms-auto">
-              <NotificationsMenu />
+              {/* <NotificationsMenu /> */}
 
               <Nav.Link
                 onClick={() => {
@@ -57,7 +58,6 @@ function NavBar() {
             </Nav>
           ) : (
             <Nav className="ms-auto">
-              <NotificationsMenu />
               <Nav.Link onClick={() => dispatch({ type: "signIn" })}>
                 Sign In
               </Nav.Link>
