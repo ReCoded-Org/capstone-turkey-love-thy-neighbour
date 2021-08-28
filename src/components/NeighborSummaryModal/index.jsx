@@ -10,6 +10,8 @@ import { createInterestString } from "../../utils/helpers";
 
 import { NeighborCardButton } from "../CustomButtons";
 
+import firebaseApp, { firestore } from "../../firebaseConfig";
+
 import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
 import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
 import PPGenderless from "../../images/Profile/PPGenderless.png";
@@ -18,7 +20,6 @@ import "./index.scss";
 
 // first and last name below the image and outside the card
 // we can show their aducation in here
-// education, bio and interests
 
 const NeighborSummaryModal = ({
   selectedNeighbor,
@@ -32,6 +33,7 @@ const NeighborSummaryModal = ({
     (state) => state.popup.isNeighborSummaryOpen
   );
   const { firstName, lastName, email } = selectedNeighbor;
+  const uid = useSelector((state) => state.user.authCred?.uid);
 
   function sendEmail() {
     setEmailAlertStatus("empty");
@@ -43,7 +45,33 @@ const NeighborSummaryModal = ({
     })
       .then(() => setEmailAlertStatus("success"))
       .catch(() => setEmailAlertStatus("danger"));
+  }
+
+  function handleInvitation() {
     dispatch({ type: "neighborSummary" });
+    sendEmail();
+    firestore // create invitation notification for the invited user
+      .collection("users")
+      .where("email", "==", email)
+      .get()
+      .then((querySnapshot) => {
+        const { docs } = querySnapshot;
+        const firstDoc = docs[0];
+        const firstDocData = firstDoc.data();
+        firstDocData.invitationNotifications.push(
+          `How was your meeting with ${senderFullName}?`
+        );
+        firstDoc.ref.update(firstDocData);
+      });
+    firestore // create invitation notification for the inviter user
+      .collection("users")
+      .doc(uid)
+      .update({
+        // eslint-disable-next-line import/no-named-as-default-member
+        invitationNotifications: firebaseApp.firestore.FieldValue.arrayUnion(
+          `How was your meeting with ${firstName} ${lastName}?`
+        ),
+      });
   }
 
   return (
@@ -120,7 +148,7 @@ const NeighborSummaryModal = ({
             </Card>
           </Modal.Body>
           <Modal.Footer>
-            <NeighborCardButton className="mx-auto" onClick={sendEmail}>
+            <NeighborCardButton className="mx-auto" onClick={handleInvitation}>
               Invite To Meet!
             </NeighborCardButton>
           </Modal.Footer>

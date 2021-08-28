@@ -1,16 +1,16 @@
 import React from "react";
 
-// import { Dropdown } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 function NotificationMenuItem({ invitationNotificationMessage }) {
   return (
-    <div>
+    <Card>
       {invitationNotificationMessage}
       <br />
       <button type="button">Good</button>
       <button type="button">Bad</button>
       <button type="button">Didn&lsquo;t Meet</button>
-    </div>
+    </Card>
   );
 }
 
