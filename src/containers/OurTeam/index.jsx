@@ -5,7 +5,13 @@ import { Container, Row, Col, Card, Carousel } from "react-bootstrap";
 import { ReactComponent as Twitter } from "../../images/twitter.svg";
 import { ReactComponent as Linkedn } from "../../images/linkedn.svg";
 import { ReactComponent as Github } from "../../images/github.svg";
-import img from "../../images/ImgPlacehorder.png";
+import imgAli from "../../images/aliriza.jpg";
+import imgKutay from "../../images/kutay.jpg";
+import imgMoulham from "../../images/moulham.jpeg";
+import imgNur from "../../images/nur.jpg";
+import imgShrreya from "../../images/shrreya.jpeg";
+import imgAziza from "../../images/aziza.jpeg";
+
 import "./index.scss";
 
 function OurTeam() {
@@ -18,7 +24,7 @@ function OurTeam() {
           <Row className="ourteam-content-row d-md-flex justify-content-center">
             <Col xs={12} sm={12} md={3}>
               <Card className="carda d-flex flex-column align-items-center justify-content-center">
-                <img src={img} alt="img" className="img-fluid" />
+                <img src={imgShrreya} alt="img" className="img-fluid" />
                 <Card.Title> Shrreya Bhatachaarya </Card.Title>
                 <p>Lead Trainer</p>
                 <Col
@@ -58,9 +64,9 @@ function OurTeam() {
           <Row className="ourteam-content-row d-md-flex justify-content-center">
             <Col xs={12} sm={12} md={3}>
               <Card className="carda d-flex flex-column align-items-center justify-content-center">
-                <img src={img} alt="img" className="img-fluid" />
-                <Card.Title>Moulham 1 Hallak</Card.Title>
-                <p>Junior Software Developer</p>
+                <img src={imgAli} alt="img" className="img-fluid" />
+                <Card.Title>Ali Riza Sahin</Card.Title>
+                <p>Junior Developer</p>
                 <Col
                   xs={12}
                   sm={12}
@@ -68,21 +74,21 @@ function OurTeam() {
                   className="social-media-logos d-flex justify-content-center align-items-center"
                 >
                   <a
-                    href="https://twitter.com"
+                    href="https://twitter.com/ARS_coding"
                     target="_blank"
                     rel="external noreferrer"
                   >
                     <Twitter />
                   </a>
                   <a
-                    href="https://www.linkedin.com"
+                    href="https://www.linkedin.com/in/ars-coding/"
                     target="_blank"
                     rel="external noreferrer"
                   >
                     <Linkedn />
                   </a>
                   <a
-                    href="https://www.github.com"
+                    href="https://github.com/ARS-coding"
                     target="_blank"
                     rel="external noreferrer"
                   >
@@ -93,10 +99,10 @@ function OurTeam() {
             </Col>
             <Col xs={12} sm={12} md={3} className="my-1 my-sm-2 my-md-0">
               <Card className="carda d-flex flex-column align-items-center justify-content-center">
-                <img src={img} alt="img" className="img-fluid" />
+                <img src={imgKutay} alt="img" className="img-fluid" />
 
-                <Card.Title>Moulham 2 Hallak</Card.Title>
-                <p>Junior Software Developer</p>
+                <Card.Title>Kutay Kagan Ozen</Card.Title>
+                <p>Junior Developer</p>
                 <Col
                   xs={12}
                   sm={12}
@@ -118,7 +124,7 @@ function OurTeam() {
                     <Linkedn />
                   </a>
                   <a
-                    href="https://www.github.com"
+                    href="https://github.com/Iseluin"
                     target="_blank"
                     rel="external noreferrer"
                   >
@@ -129,10 +135,10 @@ function OurTeam() {
             </Col>
             <Col xs={12} sm={12} md={3}>
               <Card className="carda d-flex flex-column align-items-center justify-content-center">
-                <img src={img} alt="img" className="img-fluid" />
+                <img src={imgMoulham} alt="img" className="img-fluid" />
 
-                <Card.Title>Moulham 3 Hallak</Card.Title>
-                <p>Junior Software Developer</p>
+                <Card.Title>Moulham Hallak</Card.Title>
+                <p>Junior Developer</p>
                 <Col
                   xs={12}
                   sm={12}
@@ -140,21 +146,21 @@ function OurTeam() {
                   className="social-media-logos d-flex justify-content-center align-items-center"
                 >
                   <a
-                    href="https://twitter.com"
+                    href="https://twitter.com/Moulham990"
                     target="_blank"
                     rel="external noreferrer"
                   >
                     <Twitter />
                   </a>
                   <a
-                    href="https://www.linkedin.com"
+                    href="https://www.linkedin.com/in/mahmoud-moulham-hallak-a2a688147/"
                     target="_blank"
                     rel="external noreferrer"
                   >
                     <Linkedn />
                   </a>
                   <a
-                    href="https://www.github.com"
+                    href="https://github.com/MoulhamHallak"
                     target="_blank"
                     rel="external noreferrer"
                   >
@@ -170,9 +176,9 @@ function OurTeam() {
           <Row className="ourteam-content-row d-md-flex justify-content-center">
             <Col xs={12} sm={12} md={3}>
               <Card className="carda d-flex flex-column align-items-center justify-content-center">
-                <img src={img} alt="img" className="img-fluid" />
-                <Card.Title>Moulham 4 Hallak </Card.Title>
-                <p>Junior Software Developer</p>
+                <img src={imgAziza} alt="img" className="img-fluid" />
+                <Card.Title>Aziza Iliasova </Card.Title>
+                <p>Junior Developer</p>
                 <Col
                   xs={12}
                   sm={12}
@@ -187,14 +193,14 @@ function OurTeam() {
                     <Twitter />
                   </a>
                   <a
-                    href="https://www.linkedin.com"
+                    href="https://www.linkedin.com/in/mia-l-10b9a81b1/"
                     target="_blank"
                     rel="external noreferrer"
                   >
                     <Linkedn />
                   </a>
                   <a
-                    href="https://www.github.com"
+                    href="https://github.com/mimisha25"
                     target="_blank"
                     rel="external noreferrer"
                   >
@@ -205,9 +211,9 @@ function OurTeam() {
             </Col>
             <Col xs={12} sm={12} md={3} className="my-1 my-sm-2 my-md-0">
               <Card className="carda d-flex flex-column align-items-center justify-content-center">
-                <img src={img} alt="img" className="img-fluid" />
-                <Card.Title>Moulham 5 Hallak </Card.Title>
-                <p>Junior Software Developer</p>
+                <img src={imgNur} alt="img" className="img-fluid" />
+                <Card.Title>Nur Hafise Bacaksiz </Card.Title>
+                <p>Junior Developer</p>
                 <Col
                   xs={12}
                   sm={12}
@@ -222,14 +228,14 @@ function OurTeam() {
                     <Twitter />
                   </a>
                   <a
-                    href="https://www.linkedin.com"
+                    href="https://www.linkedin.com/in/h-nur-bacaks%C4%B1z-b352b2182"
                     target="_blank"
                     rel="external noreferrer"
                   >
                     <Linkedn />
                   </a>
                   <a
-                    href="https://www.github.com"
+                    href="https://github.com/nurbacaksiz"
                     target="_blank"
                     rel="external noreferrer"
                   >
