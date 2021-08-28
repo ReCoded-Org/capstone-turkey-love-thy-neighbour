@@ -1,10 +1,8 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Link from "../Link.react";
+import Subscription from ".";
 
 it("renders correctly", () => {
-  const tree = renderer
-    .create(<Link page="http://www.facebook.com">Facebook</Link>)
-    .toJSON();
+  const tree = renderer.create(<Subscription />).toJSON();
   expect(tree).toMatchSnapshot();
 });
