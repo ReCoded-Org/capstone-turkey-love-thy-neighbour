@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { useHistory } from "react-router-dom";
 
-import { auth } from "../../firebaseConfig";
+import { auth, googleProvider } from "../../firebaseConfig";
 
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import {
@@ -116,7 +116,14 @@ const SignInModal = () => {
         <SignInUpButton type="submit" form="sign-in-form">
           Sign In
         </SignInUpButton>
-        <SignInUpGoogleButton type="submit">
+        <SignInUpGoogleButton
+          type="submit"
+          onClick={(e) => {
+            auth
+              .signInWithPopup(googleProvider)
+              .then((r) => console.log("bitch", r));
+          }}
+        >
           Sign In With Google
         </SignInUpGoogleButton>
         <SignInUpFacebookButton type="submit">
