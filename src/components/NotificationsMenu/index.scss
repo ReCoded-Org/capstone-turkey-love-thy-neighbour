@@ -45,12 +45,20 @@ div#notifications-dropdown {
     }
 
     & > .dropdown-header {
-      & > button.clear-all-btn {
+      p {
+        margin: 0 !important;
+        color: black !important;
+      }
+
+      button.clear-all-btn {
         color: #6c757d;
         background-color: transparent;
         border: none;
         font-size: 10.5px;
       }
+    }
+    p {
+      color: #6c757d;
     }
   }
 }

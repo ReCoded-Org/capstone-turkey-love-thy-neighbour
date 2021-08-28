@@ -33,7 +33,7 @@ function NotificationMenu() {
 
       <Dropdown.Menu>
         <Dropdown.Header className="d-flex justify-content-between align-items-center">
-          Notifications
+          <p>Notifications</p>
           <button
             type="button"
             className="clear-all-btn"
@@ -55,7 +55,7 @@ function NotificationMenu() {
             />
           ))
         ) : (
-          <p className="ms-3">No current notifications...</p>
+          <p className="no-items-p ms-3">No current notifications...</p>
         )}
       </Dropdown.Menu>
     </Dropdown>
