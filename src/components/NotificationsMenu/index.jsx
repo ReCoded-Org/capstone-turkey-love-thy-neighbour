@@ -25,10 +25,10 @@ function NotificationMenu() {
         {invitationNotifications?.length !== 0 &&
         invitationNotifications !== null &&
         invitationNotifications !== undefined
-          ? invitationNotifications.map((invitationNotificationMessage) => (
+          ? invitationNotifications.map((invitationNotificationObject) => (
               <NotificationMenuItem
-                key={invitationNotificationMessage}
-                invitationNotificationMessage={invitationNotificationMessage}
+                key={invitationNotificationObject.id}
+                invitationNotificationObject={invitationNotificationObject}
               />
             ))
           : null}
