@@ -24,6 +24,25 @@ function NotificationMenuItem({ invitationNotificationObject }) {
           id,
         }),
       });
+
+    if (buttonText === "Good") {
+      firestore
+        .collection("data")
+        .doc("feedbackData")
+        .update({
+          // eslint-disable-next-line import/no-named-as-default-member
+          positiveFeedback: firebaseApp.firestore.FieldValue.increment(1),
+        });
+    }
+    if (buttonText === "Bad") {
+      firestore
+        .collection("data")
+        .doc("feedbackData")
+        .update({
+          // eslint-disable-next-line import/no-named-as-default-member
+          negativeFeedback: firebaseApp.firestore.FieldValue.increment(1),
+        });
+    }
   }
 
   return (
@@ -37,7 +56,7 @@ function NotificationMenuItem({ invitationNotificationObject }) {
         Bad
       </button>
       <button type="button" id={id} onClick={handleButtonClick}>
-        Close
+        X
       </button>
     </Card>
   );
