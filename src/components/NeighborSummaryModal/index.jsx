@@ -6,6 +6,7 @@ import { send } from "emailjs-com";
 
 import { useDispatch, useSelector } from "react-redux";
 
+import { v4 as uuidv4 } from "uuid";
 import { createInterestString } from "../../utils/helpers";
 
 import { NeighborCardButton } from "../CustomButtons";
@@ -58,9 +59,10 @@ const NeighborSummaryModal = ({
         const { docs } = querySnapshot;
         const firstDoc = docs[0];
         const firstDocData = firstDoc.data();
-        firstDocData.invitationNotifications.push(
-          `How was your meeting with ${senderFullName}?`
-        );
+        firstDocData.invitationNotifications.push({
+          message: `How was your meeting with ${senderFullName}?`,
+          id: uuidv4(),
+        });
         firstDoc.ref.update(firstDocData);
       });
     firestore // create invitation notification for the inviter user
@@ -68,9 +70,10 @@ const NeighborSummaryModal = ({
       .doc(uid)
       .update({
         // eslint-disable-next-line import/no-named-as-default-member
-        invitationNotifications: firebaseApp.firestore.FieldValue.arrayUnion(
-          `How was your meeting with ${firstName} ${lastName}?`
-        ),
+        invitationNotifications: firebaseApp.firestore.FieldValue.arrayUnion({
+          message: `How was your meeting with ${firstName} ${lastName}?`,
+          id: uuidv4(),
+        }),
       });
   }
 
