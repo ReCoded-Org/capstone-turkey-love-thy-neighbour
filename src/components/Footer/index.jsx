@@ -39,7 +39,7 @@ function Footer() {
             xs={12}
             sm={12}
             md={4}
-            className="social-media-logos  d-flex justify-content-center justify-content-sm-center justify-content-md-end align-items-center"
+            className="social-media-logos d-flex justify-content-center justify-content-sm-center justify-content-md-end align-items-center"
           >
             <a
               href="https://twitter.com"
