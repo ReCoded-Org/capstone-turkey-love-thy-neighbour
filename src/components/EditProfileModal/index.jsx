@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Modal, Button, Card } from "react-bootstrap";
-
-import Multiselect from "multiselect-react-dropdown";
 
 import { useFormik } from "formik";
 
@@ -15,10 +13,6 @@ import constants from "../../utils/constants";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
-
-// TODO: display male or female with a capital letter
-// TODO: set every input field's height to 42px
-// TODO: set the formik form to take the value of the profile
 
 const EditProfileModal = () => {
   const dispatch = useDispatch();
