@@ -70,11 +70,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-##Love Thy Neighbour 
+## Love Thy Neighbour 
 
 Love Thy Neighbour is a portal to let people meet and befriend each other, based on their location. It's going to help people have stronger and more diverse personal connections which can be in many ways.
 
-##Features
+## Features
 
 - Home page
 - About page
@@ -84,11 +84,11 @@ Love Thy Neighbour is a portal to let people meet and befriend each other, based
 - User profile page
 - Add/Edit personal info, add profile picture 
 
-##Live Demo
+## Live Demo
 
 [Netlify](https://lovethyneighbor.netlify.app/)
 
-##Technologies
+## Technologies
 
 - React js
 - Redux
@@ -106,7 +106,7 @@ Love Thy Neighbour is a portal to let people meet and befriend each other, based
 - Bootstrap
 
 
-##Authors
+## Authors
 
 - Ali Riza Sahin
 - Aziza Iliasova
