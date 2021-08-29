@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -25,6 +25,10 @@ import SignInModal from "./components/SignInModal";
 import SignUpModal from "./components/SignUpModal";
 
 // TODO: if the users are signed in, show them their profile when they click on the navbar logo
+
+// TODO: add more recommended places
+
+// TODO: redirect users whenever they sign in with google or facebook to profile
 
 function App() {
   const dispatch = useDispatch();
