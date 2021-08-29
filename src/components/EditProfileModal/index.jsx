@@ -2,14 +2,34 @@ import React from "react";
 
 import { Modal, Button, Card } from "react-bootstrap";
 
+import Multiselect from "multiselect-react-dropdown";
+
 import { useFormik } from "formik";
 
-import helpers from "../../utils/helpers";
+import { useSelector, useDispatch } from "react-redux";
+
+import { firestore } from "../../firebaseConfig";
+
+import constants, { newActivityList } from "../../utils/constants";
+
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
 
-const EditProfileModal = ({ handleClick, showModal }) => {
+// don't make phone and address fields required
+
+const EditProfileModal = () => {
+  const dispatch = useDispatch();
+  const isEditProfileOpen = useSelector(
+    (state) => state.popup.isEditProfileOpen
+  );
+  const { firestoreDoc, authCred } = useSelector((state) => state.user);
+  const { uid } = authCred;
+
+  function toggleEditProfileModal() {
+    dispatch({ type: "editProfile" });
+  }
+
   // TODO: Add the validation errors for other stuff.
   const validate = (values) => {
     const errors = {};
@@ -41,34 +61,43 @@ const EditProfileModal = ({ handleClick, showModal }) => {
     if (!values.address) {
       errors.address = "Required";
     }
-    if (!values.interests) {
+    if (values.interests.length === 0) {
       errors.interests = "Required";
     }
     return errors;
   };
+
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
-      district: "",
-      gender: "",
-      age: "",
-      education: "",
-      bio: "",
-      interests: "",
-      number: "",
-      address: "",
-      profileImageUrl: "",
-      backgroundImageUrl: "",
+      firstName: firestoreDoc?.firstName || "",
+      lastName: firestoreDoc?.lastName || "",
+      district: firestoreDoc?.district || "",
+      gender: firestoreDoc?.gender || "",
+      age: firestoreDoc?.age || 15,
+      education: firestoreDoc?.education || "",
+      bio: firestoreDoc?.bio || "",
+      interests: firestoreDoc?.interests || [],
+      number: firestoreDoc?.number || "",
+      address: firestoreDoc?.address || "",
+      profileImageUrl: firestoreDoc?.profileImageUrl || "", // male, female, Prefer not to say, ""
+      backgroundImageUrl: firestoreDoc?.backgroundImageUrl || "",
     },
     validate,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      firestore
+        .collection("users")
+        .doc(uid)
+        .set(values, { merge: true })
+        .then(toggleEditProfileModal);
     },
   });
 
   return (
-    <Modal show={showModal} onHide={handleClick} id="edit-profile-modal">
+    <Modal
+      show={isEditProfileOpen}
+      onHide={toggleEditProfileModal}
+      id="edit-profile-modal"
+    >
       <Modal.Header className="d-flex justify-content-between">
         <Logo />
         <h2 className="mx-auto">Edit Profile</h2>
@@ -77,18 +106,17 @@ const EditProfileModal = ({ handleClick, showModal }) => {
           data-toggle="modal"
           className="btn-close"
           aria-label="Close"
-          onClick={handleClick}
+          onClick={toggleEditProfileModal}
         />
       </Modal.Header>
 
-      <form onSubmit={formik.handleSubmit}>
-        <Modal.Body>
-          <Card className="form-cards">
-            <Card.Body>
-              {/* TODO: Fix the overflow issue with the Last Name error message */}
+      <Modal.Body>
+        <Card className="form-cards">
+          <Card.Body>
+            <form onSubmit={formik.handleSubmit} id="edit-profile-form">
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className="edit-form-input p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="firstName"
                   name="firstName"
                   placeholder="First Name"
@@ -102,7 +130,7 @@ const EditProfileModal = ({ handleClick, showModal }) => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className="edit-form-input p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="lastName"
                   name="lastName"
                   placeholder="Last Name"
@@ -116,7 +144,7 @@ const EditProfileModal = ({ handleClick, showModal }) => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <select
-                  className="edit-form-input p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="district"
                   name="district"
                   onChange={formik.handleChange}
@@ -126,8 +154,12 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                   <option disabled value="">
                     Districts
                   </option>
-                  {helpers.districtList.map((district) => {
-                    return <option value={district}>{district}</option>;
+                  {constants.districtList.map((district) => {
+                    return (
+                      <option key={district} value={district}>
+                        {district}
+                      </option>
+                    );
                   })}
                 </select>
                 {formik.touched.district && formik.errors.district ? (
@@ -138,18 +170,20 @@ const EditProfileModal = ({ handleClick, showModal }) => {
               <div className="gender-age-wrapper d-flex">
                 <div className="d-flex flex-column">
                   <select
-                    className="edit-form-input p-2"
+                    className="p-2"
                     name="gender"
                     onChange={formik.handleChange}
                     value={formik.values.gender}
                     onBlur={formik.handleBlur}
                   >
                     <option disabled value="">
-                      Gender
+                      Select your Gender
                     </option>
-                    <option value="male">Male</option>
-                    <option value="female">Female </option>
-                    <option value="other">Prefer not to say</option>
+                    <option defaultValue="Male">Male</option>
+                    <option defaultValue="Female">Female </option>
+                    <option defaultValue="Prefer not to say">
+                      Prefer not to say
+                    </option>
                   </select>
 
                   {formik.touched.gender && formik.errors.gender ? (
@@ -158,11 +192,11 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                 </div>
                 <div className="d-flex flex-column">
                   <input
-                    className="edit-form-input p-2"
+                    className="p-2"
                     id="age"
                     name="age"
                     type="number"
-                    placeholder="Age"
+                    placeholder="Enter your Age"
                     min="15"
                     max="99"
                     onChange={formik.handleChange}
@@ -176,19 +210,22 @@ const EditProfileModal = ({ handleClick, showModal }) => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <select
-                  className="edit-form-input p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="education"
                   name="education"
-                  placeholder="Education"
                   onChange={formik.handleChange}
                   value={formik.values.education}
                   onBlur={formik.handleBlur}
                 >
                   <option disabled value="">
-                    Education
+                    Select your Education
                   </option>
-                  {helpers.educationList.map((education) => {
-                    return <option value={education}>{education}</option>;
+                  {constants.educationList.map((education) => {
+                    return (
+                      <option key={education} value={education}>
+                        {education}
+                      </option>
+                    );
                   })}
                 </select>
                 {formik.touched.education && formik.errors.education ? (
@@ -197,10 +234,10 @@ const EditProfileModal = ({ handleClick, showModal }) => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <textarea
-                  className="edit-form-input p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="bio"
                   name="bio"
-                  placeholder="Bio"
+                  placeholder="Your bio..."
                   onChange={formik.handleChange}
                   value={formik.values.bio}
                   onBlur={formik.handleBlur}
@@ -210,30 +247,29 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                 ) : null}
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
-                <select
-                  className="edit-form-input p-2 flex-fill"
-                  id="interests"
-                  name="interests"
-                  placeholder="Interests"
-                  onChange={formik.handleChange}
-                  value={formik.values.interests}
-                  onBlur={formik.handleBlur}
-                >
-                  {/* TODO: Move the helper function inside utils/helpers */}
-                  <option disabled value="">
-                    Interests
-                  </option>
-                  {helpers.activityList.map((activity) => {
-                    return <option value={activity}>{activity}</option>;
-                  })}
-                </select>
+                <Multiselect
+                  placeholder="Select interests..."
+                  displayValue="content"
+                  onRemove={(selectedOptions) => {
+                    formik.values.interests = selectedOptions;
+                  }}
+                  onSelect={(selectedOptions) => {
+                    formik.values.interests = selectedOptions;
+                  }}
+                  options={newActivityList}
+                  selectedValues={
+                    formik.values.interests === "Default interest."
+                      ? []
+                      : formik.values.interests
+                  }
+                />
                 {formik.touched.interests && formik.errors.interests ? (
                   <div className="error-msg">{formik.errors.interests}</div>
                 ) : null}
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className="edit-form-input p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="number"
                   name="number"
                   type="tel"
@@ -248,10 +284,10 @@ const EditProfileModal = ({ handleClick, showModal }) => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className="edit-form-input p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="address"
                   name="address"
-                  placeholder="Address"
+                  placeholder="Write your Address"
                   onChange={formik.handleChange}
                   value={formik.values.address}
                   onBlur={formik.handleBlur}
@@ -262,7 +298,7 @@ const EditProfileModal = ({ handleClick, showModal }) => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className="edit-form-input p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="profileImageUrl"
                   name="profileImageUrl"
                   type="url"
@@ -280,7 +316,7 @@ const EditProfileModal = ({ handleClick, showModal }) => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
-                  className="edit-form-input p-2 flex-fill"
+                  className="p-2 flex-fill"
                   id="backgroundImageUrl"
                   name="backgroundImageUrl"
                   type="url"
@@ -296,17 +332,18 @@ const EditProfileModal = ({ handleClick, showModal }) => {
                   </div>
                 ) : null}
               </div>
-            </Card.Body>
-          </Card>
-        </Modal.Body>
-
-        <Modal.Footer>
-          <DiscardChangesButton onClick={handleClick}>
-            Discard Changes
-          </DiscardChangesButton>
-          <SaveChangesButton type="submit">Save Changes</SaveChangesButton>
-        </Modal.Footer>
-      </form>
+            </form>
+          </Card.Body>
+        </Card>
+      </Modal.Body>
+      <Modal.Footer>
+        <DiscardChangesButton onClick={toggleEditProfileModal}>
+          Discard Changes
+        </DiscardChangesButton>
+        <SaveChangesButton type="submit" form="edit-profile-form">
+          Save Changes
+        </SaveChangesButton>
+      </Modal.Footer>
     </Modal>
   );
 };

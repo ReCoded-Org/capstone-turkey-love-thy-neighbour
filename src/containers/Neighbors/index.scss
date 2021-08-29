@@ -1,0 +1,136 @@
+@import "../../style/variables";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+// refactor styling
+// whenever the cards don't have any space between them shirk the sizes of the cards and use the left whitespace inside the column to center the card
+// find the breakpoints to change the font-sizes of the people's names
+
+// min w 992px accordion width 710px
+
+.neighbors-container-fluid {
+  min-height: calc(100vh - 120px);
+
+  .neighbors-content-container {
+    height: 100%;
+
+    & > div:first-child {
+      max-width: 650px;
+
+      & > h1 {
+        color: $logo-red;
+        font-weight: bold;
+        @media screen and (min-width: 503px) {
+          font-size: 40px;
+        }
+        @media screen and (max-width: 502px) {
+          font-size: 30px;
+        }
+        @media screen and (max-width: 401px) {
+          font-size: 25px;
+        }
+      }
+
+      & > p {
+        margin: 10px auto;
+        font-family: Roboto, sans-serif;
+        position: relative;
+        line-height: 23px;
+        border-radius: 3px;
+        color: black;
+        border: 1px solid #ccc;
+        padding: 5px 0;
+        // max-width: 710px;
+
+        @media screen and (min-width: 503px) {
+          font-size: 16px;
+        }
+        @media screen and (max-width: 502px) {
+          font-size: 14px;
+        }
+      }
+
+      .accordion {
+        margin: 10px auto;
+        // max-width: 710px;
+
+        .accordion-item {
+          .accordion-collapse {
+            .accordion-body {
+              & > form {
+                div.gender-age-wrapper {
+                  & > div {
+                    width: 49%;
+
+                    select {
+                      height: 41px;
+                      width: 100%;
+                      background-color: white;
+                      border: 1px solid #ccc;
+                      border-radius: 3px inherit;
+                      padding-left: 5px;
+                    }
+
+                    label {
+                      display: block;
+                      text-align: start;
+                    }
+                  }
+                }
+
+                .multiselect-container {
+                  margin: 10px 0;
+                }
+              }
+
+              & > .carousel {
+                height: 280px;
+
+                & > .carousel-inner {
+                  height: 280px;
+
+                  & > .carousel-item {
+                    height: 280px;
+
+                    & > img {
+                      filter: brightness(50%);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & > div:last-child {
+      // row
+      margin: 0;
+
+      & > div {
+        padding: 0;
+      }
+    }
+  }
+}
+
+// &::after,
+// &::before {
+//   height: 30px;
+//   width: 30px;
+//   position: absolute;
+//   color: var(--dark-blue);
+//   font-size: 77px;
+// }
+
+// &::after {
+//   content: "\201d";
+//   right: -4px;
+//   bottom: 16px;
+// }
+
+// &::before {
+//   content: "\201c";
+//   top: -22px;
+//   left: -30px;
+// }

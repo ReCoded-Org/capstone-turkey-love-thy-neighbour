@@ -2,31 +2,36 @@ import React from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
 
+import { useDispatch } from "react-redux";
+
 import { CTAButton } from "../CustomButtons";
-import img from "../../images/PrimaryHeroContentBgImg.png";
+import BeKindImage from "../../images/PrimaryHeroContentBgImg.png";
 import "./index.scss";
 
 function PrimaryHero() {
+  const dispatch = useDispatch();
+
   return (
-    <section className="primary-hero-img-bg container-fluid">
+    <section className="snapping-section primary-hero-img-bg container-fluid">
       <Container className="primary-hero-content-container d-flex align-items-center">
         <Row className="primary-hero-content-row m-0">
           <Col
             xs={12}
             sm={12}
             md={6}
-            className="first-column p-0 pb-xs-5 pb-md-5 d-flex flex-column justify-content-center align-items-start"
+            className="first-column p-0 pb-2 pb-sm-2 pb-md-0 d-flex flex-column justify-content-center align-items-start"
           >
             <h1>Love Thy Neighbor!</h1>
             <p>
               Let’s build a strong, dynamic and caring community that uplifts
               each other.
             </p>
-            <CTAButton>Join Us!</CTAButton>
-            {/* TODO: Show sign up pop up when clicked */}
+            <CTAButton onClick={() => dispatch({ type: "signUp" })}>
+              Join Us!
+            </CTAButton>
           </Col>
-          <Col xs={12} sm={12} md={6} className="p-0 px-xs-1 px-md-1 h-100">
-            <img src={img} alt="img" className="img-fluid" />
+          <Col xs={12} sm={12} md={6} className="px-0 ps-0 ps-sm-0 ps-md-3 ">
+            <img src={BeKindImage} alt="img" className="img-fluid" />
           </Col>
         </Row>
       </Container>
