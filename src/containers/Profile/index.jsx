@@ -23,8 +23,7 @@ const Profile = () => {
     (state) => state.popup.isEditProfileOpen
   );
   const { firestoreDoc, authCred } = useSelector((state) => state.user);
-  const { backgroundImageUrl, profileImageUrl, interests, gender } =
-    firestoreDoc;
+  const { gender } = firestoreDoc;
   const { email } = authCred;
 
   return (
@@ -32,8 +31,8 @@ const Profile = () => {
       fluid
       className="profile-page-bg d-flex align-items-center"
       style={
-        backgroundImageUrl
-          ? { backgroundImage: `url(${backgroundImageUrl})` }
+        firestoreDoc?.backgroundImageUrl
+          ? { backgroundImage: `url(${firestoreDoc.backgroundImageUrl})` }
           : null
       }
     >
@@ -52,7 +51,7 @@ const Profile = () => {
                   gender === "Prefer not to say" ? { width: "190px" } : null
                 }
                 src={
-                  profileImageUrl ||
+                  firestoreDoc?.profileImageUrl ||
                   /* eslint-disable-next-line no-nested-ternary */
                   (gender === "Male"
                     ? PPMaleSVG
@@ -140,10 +139,10 @@ const Profile = () => {
                       <li>
                         Interests:{" "}
                         <span>
-                          {interests === "Default interest." ||
-                          interests === undefined
+                          {firestoreDoc?.interests === "Default interest." ||
+                          firestoreDoc?.interests === undefined
                             ? "Default interest."
-                            : createInterestString(interests)}
+                            : createInterestString(firestoreDoc?.interests)}
                         </span>
                       </li>
                     </ul>
