@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { useHistory } from "react-router-dom";
 
-import { auth, googleProvider } from "../../firebaseConfig";
+import { auth, googleProvider, firestore } from "../../firebaseConfig";
 
 import { setUserDocument } from "../../utils/helpers";
 
@@ -60,35 +60,51 @@ const SignInModal = () => {
       }
     },
   });
-
+  // wth is this.
   function handleGoogleSignIn() {
     auth
       .signInWithPopup(googleProvider)
       .then((credObj) => {
         const firestoreDocUid = credObj.user.uid;
-        const userData = credObj.additionalUserInfo.profile;
-        const {
-          // eslint-disable-next-line camelcase
-          given_name,
-          // eslint-disable-next-line camelcase
-          family_name,
-          email,
-          picture,
-          gender = "Prefer not to say",
-          district = "",
-        } = userData;
 
-        const firestoreDoc = {
-          firstName: given_name,
-          lastName: family_name,
-          email,
-          profileImageUrl: picture,
-          gender,
-          district,
-          invitationNotifications: [],
-        };
+        let isThereUserDoc;
 
-        setUserDocument(firestoreDocUid, firestoreDoc);
+        firestore
+          .collection("users")
+          .doc(firestoreDocUid)
+          .get()
+          .then((doc) => {
+            if (doc.data()) {
+              isThereUserDoc = true;
+              return;
+            }
+            isThereUserDoc = false;
+          })
+          .then(() => {
+            if (!isThereUserDoc) {
+              const userData = credObj.additionalUserInfo.profile;
+              const {
+                // eslint-disable-next-line camelcase
+                given_name,
+                // eslint-disable-next-line camelcase
+                family_name,
+                email,
+                picture,
+                gender = "Prefer not to say",
+                district = "",
+              } = userData;
+              const firestoreDoc = {
+                firstName: given_name,
+                lastName: family_name,
+                email,
+                profileImageUrl: picture,
+                gender,
+                district,
+                invitationNotifications: [],
+              };
+              setUserDocument(firestoreDocUid, firestoreDoc);
+            }
+          });
       })
       .then(() => dispatch({ type: "signIn" }));
   }
