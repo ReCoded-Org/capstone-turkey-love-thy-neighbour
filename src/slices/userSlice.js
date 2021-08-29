@@ -15,7 +15,6 @@ export const listenForAuthChanges = () => {
   return (dispatch) => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        console.log("wassup");
         firestore
           .collection("users")
           .doc(user.uid)

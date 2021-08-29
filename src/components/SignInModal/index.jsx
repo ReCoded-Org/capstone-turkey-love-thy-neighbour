@@ -8,6 +8,8 @@ import { useHistory } from "react-router-dom";
 
 import { auth, googleProvider } from "../../firebaseConfig";
 
+import { setUserDocument } from "../../utils/helpers";
+
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import {
   SignInUpButton,
@@ -60,7 +62,35 @@ const SignInModal = () => {
   });
 
   function handleGoogleSignIn() {
-    auth.signInWithPopup(googleProvider);
+    auth
+      .signInWithPopup(googleProvider)
+      .then((credObj) => {
+        const firestoreDocUid = credObj.user.uid;
+        const userData = credObj.additionalUserInfo.profile;
+        const {
+          // eslint-disable-next-line camelcase
+          given_name,
+          // eslint-disable-next-line camelcase
+          family_name,
+          email,
+          picture,
+          gender = "Prefer not to say",
+          district = "",
+        } = userData;
+
+        const firestoreDoc = {
+          firstName: given_name,
+          lastName: family_name,
+          email,
+          profileImageUrl: picture,
+          gender,
+          district,
+          invitationNotifications: [],
+        };
+
+        setUserDocument(firestoreDocUid, firestoreDoc);
+      })
+      .then(() => dispatch({ type: "signIn" }));
   }
 
   return (
