@@ -7,9 +7,10 @@ body{
   }
 
 h4 {
-  color: $logo-red;
+  color: $logo-blue;
   text-align: center;
   padding-top: 50px;
+  text-shadow: 1px 1px 1px red, 0 0 0.1em blue, 0 0 0.1em blue;
   @media screen and (min-width: 768px) {
     margin-bottom: 30px !important;
     font-size: 40px !important;
@@ -19,75 +20,56 @@ h4 {
 .ourteam-content-row {
   margin: 0 !important;
   padding-top: 50px;
-  padding-bottom: 280px;
-
+  padding-bottom: 120px;
+@media screen and (max-width: 374px){   
+  padding-left: 40px; 
+  padding-top: 25px;
+  padding-bottom: 150px;             
+}
+@media screen and (max-width: 425px) and (min-width: 375px) { 
+  padding-left: 60px;  
+  padding-top: 35px;
+  padding-bottom: 180px;                 
+}
+ @media screen and (max-width: 768px) and (min-width: 426px) {    
+  padding-bottom: 100px;  
+}
+ 
 
 svg {
-    @media screen and (min-width: 362px) {
-      min-height: 37px;
-      max-height: 37px;
-      padding-left: 15px;
-    }
-
-    @media screen and (max-width: 361px) {
-      height: 59px !important;
-      width: 70px !important;
-    }
-
-    &.network-svg {
-      margin-bottom: 7px;
-    }
-
-    &.speech-bubble-svg {
-      margin-bottom: 3px;
-    }
+  padding-left: 15px;
+     @media screen and (max-width: 424px){   
+     height: 20px;
+       
+     }
+     @media screen and (max-width: 425px) and (min-width: 1023px) {    
+     height: 25px;
+     }
   }
 
- .img {
-    @media screen and (min-width: 342px) {
-        height: 15px;
-      }
-      @media screen and (min-width: 576px) {
-        width: 30px;
-        height: 40px;
-      }
-      @media screen and (max-width: 767px) {
-        width: 50px !important;
-        height: 100px !important;
-      }
-      @media screen and (min-width: 768px) {
-        margin: 0 auto;
-        height: 345px;
-        width: 245px;
-      }
+  
+ .img-fluid {
+  @media screen and (max-width: 374px){   
+    height: 100px;
+    width: auto;  
+    padding-top: 20px;                
+  }
+  @media screen and (max-width: 425px) and (min-width: 375px) { 
+    height: 120px;
+    width: 140px;      
+    padding-top: 20px;
+  }
+  @media screen and (max-width: 768px) and (min-width: 426px) {    
+    height: 170px;
+    width: auto;  
+    padding: 10px;              
+  }
+  @media screen and (min-width: 769px) {
+    height: 220px;
+    width: 170px;
+    padding:5px
+  }
  }
-
-  p,
-  .card-title {
-    text-align: center;
-    transition: all ease-in-out 300ms;
-    padding-top: 8px;
-  }
-
-  p {
-    @media screen and (max-width: 341px) {
-      font-size: 11px;
-    }
-    @media screen and (min-width: 454px) {
-      font-size: 15px;
-    }
-    @media screen and (min-width: 768px) {
-      font-size: 17px;
-    }
-  }
-
-  & > div {
-    padding: 0;
-
-    & > div {
-      margin: 0;
-    }
-  }
 
   .card {
     transition: all ease-in-out 400ms;
@@ -95,46 +77,48 @@ svg {
       rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
       height: 400px;
       width: 230px;
-      padding: 10px;
-
     @media screen and (max-width: 374px){   
-      height: 150px;
-      width: auto;                  
+      height: 200px;
+      width: 200px;    
     }
     @media screen and (max-width: 424px) and (min-width: 375px) { 
-      height: 180px;
-      width: auto;                   
+      height: 230px;
+      width:220px;                   
     }
     @media screen and (max-width: 767px) and (min-width: 425px) {    
-      height: 200px;
-      width: auto;                
+      height: 240px;
+      width: 260px;      
+             
     }
     @media screen and (max-width: 1023px) and (min-width: 768px) {
       height: 350px;
       width: 170px;
     }
+  }
 
+  p,
   .card-title {
-      color: $logo-blue;
-    }
+    text-align: center;
+    transition: all ease-in-out 300ms;
+    color: $logo-blue;
+    @media screen and (max-width: 374px){   
+    font-size: 10px;             
+     }
+     @media screen and (max-width: 424px) and (min-width: 375px) { 
+       font-size: 15px;                
+     }
+     @media screen and (max-width: 768px) and (min-width: 425px) {    
+       font-size: 15px;     
+     }
+     @media screen and (max-width: 1023px) and (min-width: 769px) {
+       font-size: 18px; 
+     }
   }
 
   .card:hover {
     background-color: $logo-blue;
     transition: all ease-in-out 300ms;
-
-  .card-title {
-      color: $white;
-      transition: all ease-in-out 300ms;
-    }
   }
 }
 
 
-@media screen and (min-width: 237px) and (max-width: 767px) {
-  .ourteam-content-row p {
-    @media screen and (min-width: 342px) and (max-width: 453px) {
-      font-size: 13px;
-    }
-  }
-}
