@@ -9,8 +9,9 @@ Love Thy Neighbour is a portal to let people meet and befriend each other, based
 + Contact page
 + Login/signup with authentication
     + Allow Google, Facebook
-- User profile page
-- Add/Edit personal info, add profile picture 
++ User profile page
+    + Add/Edit personal info, add profile picture 
++ Joining the Newsletter functionality
 
 ## Live Demo
 
