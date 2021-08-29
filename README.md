@@ -50,7 +50,10 @@ The purpose of this website is to:
 - Moulham Hallak
 - Nur Bacaksiz
 
+# Some Images From Our Project
 
+### Home Page 
+![Home Page](https://user-images.githubusercontent.com/79417435/131257179-c3f3fd10-10c5-4645-92be-2328fadc2ecc.png)
 
 
 
