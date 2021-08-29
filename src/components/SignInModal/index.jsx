@@ -60,7 +60,7 @@ const SignInModal = () => {
       }
     },
   });
-  // wth is this.
+
   function handleGoogleSignIn() {
     auth
       .signInWithPopup(googleProvider)

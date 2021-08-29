@@ -175,7 +175,7 @@ function Neighbors() {
           )}
         </div>
         <Row className="neighbors-cards d-flex justify-content-around flex-wrap w-100">
-          {neighborsData.length <= 1 ? (
+          {neighborsData.length > 1 ? (
             neighborsData
               .filter((userDoc) => userDoc.email !== email)
               .map((userDoc) => {

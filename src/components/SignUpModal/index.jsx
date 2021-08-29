@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 import { removeOneProp, setUserDocument } from "../../utils/helpers";
 import constants from "../../utils/constants";
 
-import { auth } from "../../firebaseConfig";
+import { auth, firestore, googleProvider } from "../../firebaseConfig";
 
 import "./index.scss";
 import logo from "../../images/logo.svg";
@@ -90,6 +90,54 @@ const SignUpModal = () => {
       setSubmitting(false);
     },
   });
+
+  function handleGoogleSignIn() {
+    auth
+      .signInWithPopup(googleProvider)
+      .then((credObj) => {
+        const firestoreDocUid = credObj.user.uid;
+
+        let isThereUserDoc;
+
+        firestore
+          .collection("users")
+          .doc(firestoreDocUid)
+          .get()
+          .then((doc) => {
+            if (doc.data()) {
+              isThereUserDoc = true;
+              return;
+            }
+            isThereUserDoc = false;
+          })
+          .then(() => {
+            if (!isThereUserDoc) {
+              const userData = credObj.additionalUserInfo.profile;
+              const {
+                // eslint-disable-next-line camelcase
+                given_name,
+                // eslint-disable-next-line camelcase
+                family_name,
+                email,
+                picture,
+                gender = "Prefer not to say",
+                district = "",
+              } = userData;
+              const firestoreDoc = {
+                firstName: given_name,
+                lastName: family_name,
+                email,
+                profileImageUrl: picture,
+                gender,
+                district,
+                invitationNotifications: [],
+              };
+              setUserDocument(firestoreDocUid, firestoreDoc);
+            }
+          });
+      })
+      .then(() => dispatch({ type: "signUp" }));
+  }
 
   return (
     <Modal
@@ -237,10 +285,10 @@ const SignUpModal = () => {
         >
           Sign Up
         </SignInUpButton>
-        <SignInUpGoogleButton type="submit" disabled={formik.isSubmitting}>
+        <SignInUpGoogleButton type="submit" onClick={handleGoogleSignIn}>
           Sign Up With Google
         </SignInUpGoogleButton>
-        <SignInUpFacebookButton type="submit" disabled={formik.isSubmitting}>
+        <SignInUpFacebookButton type="submit">
           Sign Up With Facebook
         </SignInUpFacebookButton>
       </Modal.Footer>
