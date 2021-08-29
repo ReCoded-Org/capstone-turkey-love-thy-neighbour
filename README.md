@@ -55,7 +55,7 @@ The purpose of this website is to:
 ### Home Page 
 ![Home Page 1](https://user-images.githubusercontent.com/79417435/131257179-c3f3fd10-10c5-4645-92be-2328fadc2ecc.png)
 
-![Home Page 2](https://user-images.githubusercontent.com/79417435/131257363-a7ba778d-0838-41d7-acd3-dda12f9991c7.png)
+![Home Page 2](https://user-images.githubusercontent.com/79417435/131257425-5b5ac570-bbe7-465a-b839-563ac0b649be.png)
 
 ![Home Page 3](https://user-images.githubusercontent.com/79417435/131257375-f8a7caac-696b-4499-8b3a-d64c1820c533.png)
 
