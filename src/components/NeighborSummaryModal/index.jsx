@@ -24,6 +24,8 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
     (state) => state.popup.isNeighborSummaryOpen
   );
 
+  const { age, gender } = selectedNeighbor;
+
   return (
     Object.keys(selectedNeighbor).length !== 0 && (
       <Modal
