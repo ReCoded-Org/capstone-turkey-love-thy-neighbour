@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -11,6 +11,8 @@ import { CTAButton } from "../../components/CustomButtons/index";
 
 import mainImg from "../../images/firstContactUs.svg";
 import logoimg from "../../images/secondContactUs.svg";
+
+import { firestore } from "../../firebaseConfig";
 
 function ContactUs() {
   const formik = useFormik({
@@ -46,6 +48,31 @@ function ContactUs() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    firestore
+      .collection("contacts")
+      .add({
+        name,
+        lastname,
+        email,
+        message,
+      })
+      .then(() => {
+        // eslint-disable-next-line no-alert
+        alert("Message has been submitted!");
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-alert
+        alert(error.message);
+      });
+
+    setName("");
+    setLastname("");
+    setEmail("");
+    setMessage("");
+  };
+
   return (
     <section className="container-fluid">
       <Container className="contactus-content-container d-flex align-items-center">
@@ -63,7 +90,7 @@ function ContactUs() {
                 with us!
               </h5>
 
-              <form onSubmit={formik.handleSubmit}>
+              <form onSubmit={(formik.handleSubmit, handleSubmit)}>
                 <div className="form-box">
                   <div className="first-last-names">
                     <div>
@@ -73,7 +100,9 @@ function ContactUs() {
                         name="first_name"
                         placeholder="First Name"
                         value={(formik.values.first_name, name)}
-                        onChange={formik.handleChange}
+                        onChange={
+                          (formik.handleChange, (e) => setName(e.target.value))
+                        }
                       />
                       {formik.errors.first_name &&
                         formik.touched.first_name && (
@@ -86,8 +115,11 @@ function ContactUs() {
                         type="text"
                         name="last_name"
                         placeholder="Last Name"
-                        value={formik.values.last_name}
-                        onChange={formik.handleChange}
+                        value={(formik.values.last_name, lastname)}
+                        onChange={
+                          (formik.handleChange,
+                          (e) => setLastname(e.target.value))
+                        }
                       />
                       {formik.errors.last_name && formik.touched.last_name && (
                         <p>{formik.errors.last_name}</p>
@@ -100,8 +132,10 @@ function ContactUs() {
                       type="email"
                       name="email"
                       placeholder="Email"
-                      value={formik.values.email}
-                      onChange={formik.handleChange}
+                      value={(formik.values.email, email)}
+                      onChange={
+                        (formik.handleChange, (e) => setEmail(e.target.value))
+                      }
                     />
                     {formik.errors.email && formik.touched.email && (
                       <p>{formik.errors.email}</p>
@@ -113,8 +147,10 @@ function ContactUs() {
                       type="text"
                       name="user_message"
                       placeholder="Message"
-                      value={formik.values.user_message}
-                      onChange={formik.handleChange}
+                      value={(formik.values.user_message, message)}
+                      onChange={
+                        (formik.handleChange, (e) => setMessage(e.target.value))
+                      }
                     />
                     {formik.errors.user_message &&
                       formik.touched.user_message && (
