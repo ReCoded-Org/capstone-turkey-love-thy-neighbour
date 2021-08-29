@@ -10,9 +10,6 @@ import { CTAButton } from "../../components/CustomButtons/index";
 import MeetImg from "../../images/meet.jpg";
 import "./index.scss";
 
-// TODO: redirect users after sign in into here
-// TODO: use https://lipis.github.io/bootstrap-sweetalert/ the second from the bottom for the how was your meeting alert
-
 function Meet() {
   const firstName = useSelector((state) => state.user.firestoreDoc?.firstName);
 
