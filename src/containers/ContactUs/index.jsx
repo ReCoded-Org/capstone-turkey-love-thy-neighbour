@@ -156,10 +156,19 @@ function ContactUs() {
                     <Link to="/neighbors">Send</Link>
                   </CTAButton>
                   <Modal show={show} onHide={handleClose}>
-                    <Modal.Header />
+                    <Modal.Header>
+                      <img
+                        style={{
+                          height: 150,
+                          width: 150,
+                        }}
+                        src="https://simg.nicepng.com/png/small/29-290368_banner-library-library-check-icon-svg-public-domain.png"
+                        alt="img"
+                      />
+                    </Modal.Header>
                     <Modal.Body>
                       <h5>
-                        The message was successfully sent.
+                        The message was successfully sent!
                         <br />
                         We will get you back soon!
                       </h5>
