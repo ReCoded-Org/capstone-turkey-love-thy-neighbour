@@ -20,7 +20,7 @@ h4 {
   margin: 0 !important;
   padding-top: 50px;
   padding-bottom: 280px;
-  height: 575px;
+
 
 svg {
     @media screen and (min-width: 362px) {
@@ -93,25 +93,25 @@ svg {
     transition: all ease-in-out 400ms;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
       rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-      height: 600px;
-      width: 300px;
+      height: 400px;
+      width: 230px;
       padding: 10px;
- 
-    @media screen and (max-width: 342px) {
-      height: 250px;
-      width: 100px;
-      
+
+    @media screen and (max-width: 374px){   
+      height: 150px;
+      width: auto;                  
     }
-    @media screen and (min-width: 576px) {
-      width: 250px;
-      height: 400px;
+    @media screen and (max-width: 424px) and (min-width: 375px) { 
+      height: 180px;
+      width: auto;                   
     }
-    @media screen and (max-width: 767px) {                     
+    @media screen and (max-width: 767px) and (min-width: 425px) {    
+      height: 200px;
+      width: auto;                
     }
-    @media screen and (min-width: 768px) {
-      margin: 0 auto;
-      height: 400px;
-      width: 245px;
+    @media screen and (max-width: 1023px) and (min-width: 768px) {
+      height: 350px;
+      width: 170px;
     }
 
   .card-title {
