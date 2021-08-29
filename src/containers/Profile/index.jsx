@@ -49,7 +49,9 @@ const Profile = () => {
                 className="profile-photo"
                 alt="profile"
                 style={
-                  gender === "Prefer not to say" ? { width: "190px" } : null
+                  !profileImageUrl && gender === "Prefer not to say"
+                    ? { width: "190px" }
+                    : null
                 }
                 src={
                   profileImageUrl ||
