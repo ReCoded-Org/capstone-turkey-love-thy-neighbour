@@ -126,8 +126,8 @@ function ContactUs() {
             </div>
           </Col>
           <Col xs={12} sm={12} md={6} className="p-0 px-xs-1 px-md-1 h-100">
-            <img src={mainImg} alt="img" className="img-fluid" />
-            <img src={logoimg} alt="img" className="img-fluid" />
+            <img src={mainImg} alt="img" className="img-fluid main-img" />
+            <img src={logoimg} alt="img" className="img-fluid logo-img" />
           </Col>
         </Row>
       </Container>
