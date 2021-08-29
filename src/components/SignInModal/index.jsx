@@ -1,5 +1,7 @@
-import React from "react";
-import { Modal, Button, Card } from "react-bootstrap";
+import React, { useState } from "react";
+
+import { Modal, Button, Card, Alert } from "react-bootstrap";
+
 import { useFormik } from "formik";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -21,6 +23,9 @@ import "./index.scss";
 const SignInModal = () => {
   const history = useHistory();
   const dispatch = useDispatch();
+
+  const [signInAlertMessage, setSignInAlertMessage] = useState("");
+
   const isSignInOpen = useSelector((state) => state.popup.isSignInOpen);
   const isSignedIn = useSelector((state) => state.user.isSignedIn);
 
@@ -52,7 +57,8 @@ const SignInModal = () => {
           .then(() => {
             history.push(`/meet`);
             dispatch({ type: "signIn" });
-          });
+          })
+          .catch((err) => setSignInAlertMessage(err.message));
         // TODO: Show the error within a modal
         setSubmitting(false);
       }
@@ -139,6 +145,14 @@ const SignInModal = () => {
           ?
         </span>
       </Modal.Footer>
+      <Alert
+        variant="danger"
+        show={signInAlertMessage}
+        onClick={() => setSignInAlertMessage("")}
+        dismissible
+      >
+        {signInAlertMessage}
+      </Alert>
     </Modal>
   );
 };
