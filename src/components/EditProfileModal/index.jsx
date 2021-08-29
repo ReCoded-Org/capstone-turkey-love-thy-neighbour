@@ -255,11 +255,7 @@ const EditProfileModal = () => {
                     formik.values.interests = selectedOptions;
                   }}
                   options={newActivityList}
-                  selectedValues={
-                    formik.values.interests === "Default interest."
-                      ? []
-                      : formik.values.interests
-                  }
+                  selectedValues={formik.values.interests}
                 />
                 {formik.touched.interests && formik.errors.interests ? (
                   <div className="error-msg">{formik.errors.interests}</div>
