@@ -17,7 +17,7 @@ The purpose of this website is to:
 + User profile page
     + Add/Edit personal info, add profile picture 
 + Joining the Newsletter functionality
-+ Reccomended meeting places
++ Recommended meeting places
 + Pairing neighbors according to their gender, interests etc.
 
 ## Live Demo
