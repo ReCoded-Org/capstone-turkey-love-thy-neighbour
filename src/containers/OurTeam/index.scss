@@ -40,7 +40,6 @@ svg {
   padding-left: 15px;
      @media screen and (max-width: 424px){   
      height: 20px;
-       
      }
      @media screen and (max-width: 425px) and (min-width: 1023px) {    
      height: 25px;
@@ -87,8 +86,7 @@ svg {
     }
     @media screen and (max-width: 767px) and (min-width: 425px) {    
       height: 240px;
-      width: 260px;      
-             
+      width: 260px;         
     }
     @media screen and (max-width: 1023px) and (min-width: 768px) {
       height: 350px;
