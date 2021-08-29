@@ -1,5 +1,6 @@
 @import "../../style/variables";
 
+
 body{
   background-image: url(https://lz12v4f1p8c1cumxnbiqvm10-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/ice-cold-blue-to-yellow-gradient-background.jpg);
   background-size: cover;
@@ -96,8 +97,10 @@ svg {
       width: 300px;
       padding: 10px;
  
-    @media screen and (min-width: 342px) {
-      height: 170px;
+    @media screen and (max-width: 342px) {
+      height: 250px;
+      width: 100px;
+      
     }
     @media screen and (min-width: 576px) {
       width: 250px;
