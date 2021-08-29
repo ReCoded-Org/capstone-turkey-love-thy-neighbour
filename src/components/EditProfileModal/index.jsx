@@ -107,7 +107,7 @@ const EditProfileModal = () => {
           data-toggle="modal"
           className="btn-close"
           aria-label="Close"
-          onClick={toggleEditProfileModal}
+          onClick={district && toggleEditProfileModal}
         />
       </Modal.Header>
 

@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 import { removeOneProp, setUserDocument } from "../../utils/helpers";
 import constants from "../../utils/constants";
 
-import { auth, firestore, googleProvider } from "../../firebaseConfig";
+import { auth, googleProvider } from "../../firebaseConfig";
 
 import "./index.scss";
 import logo from "../../images/logo.svg";
@@ -18,9 +18,6 @@ import {
   SignInUpGoogleButton,
   SignInUpFacebookButton,
 } from "../CustomButtons";
-
-// refactor styling
-// handle the styling of the district select
 
 const SignUpModal = () => {
   const dispatch = useDispatch();
@@ -92,51 +89,41 @@ const SignUpModal = () => {
   });
 
   function handleGoogleSignIn() {
-    auth
-      .signInWithPopup(googleProvider)
-      .then((credObj) => {
-        const firestoreDocUid = credObj.user.uid;
+    auth.signInWithPopup(googleProvider).then((credObj) => {
+      const { isNewUser } = credObj.additionalUserInfo;
+      const firestoreDocUid = credObj.user.uid;
 
-        let isThereUserDoc;
+      if (isNewUser) {
+        const userData = credObj.additionalUserInfo.profile;
+        const {
+          // eslint-disable-next-line camelcase
+          given_name,
+          // eslint-disable-next-line camelcase
+          family_name,
+          email,
+          picture,
+          gender = "Prefer not to say",
+          district = "",
+        } = userData;
+        const firestoreDoc = {
+          firstName: given_name,
+          lastName: family_name,
+          email,
+          profileImageUrl: picture,
+          gender,
+          district,
+          invitationNotifications: [],
+        };
+        setUserDocument(firestoreDocUid, firestoreDoc)
+          .then(() => dispatch({ type: "signUp" }))
+          .then(() => history.push(`/profile/${firestoreDocUid}`))
+          .then(() => dispatch({ type: "editProfile" }));
+        return;
+      }
 
-        firestore
-          .collection("users")
-          .doc(firestoreDocUid)
-          .get()
-          .then((doc) => {
-            if (doc.data()) {
-              isThereUserDoc = true;
-              return;
-            }
-            isThereUserDoc = false;
-          })
-          .then(() => {
-            if (!isThereUserDoc) {
-              const userData = credObj.additionalUserInfo.profile;
-              const {
-                // eslint-disable-next-line camelcase
-                given_name,
-                // eslint-disable-next-line camelcase
-                family_name,
-                email,
-                picture,
-                gender = "Prefer not to say",
-                district = "",
-              } = userData;
-              const firestoreDoc = {
-                firstName: given_name,
-                lastName: family_name,
-                email,
-                profileImageUrl: picture,
-                gender,
-                district,
-                invitationNotifications: [],
-              };
-              setUserDocument(firestoreDocUid, firestoreDoc);
-            }
-          });
-      })
-      .then(() => dispatch({ type: "signUp" }));
+      dispatch({ type: "signUp" });
+      history.push("/meet");
+    });
   }
 
   return (

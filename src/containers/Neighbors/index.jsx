@@ -26,8 +26,6 @@ import { firestore } from "../../firebaseConfig";
 
 import "./index.scss";
 
-// Maybe you can search for the people in other districts
-
 function Neighbors() {
   const [selectedNeighbor, setSelectedNeighbor] = useState({});
   const [neighborsData, setNeighborsData] = useState([]);
@@ -175,7 +173,7 @@ function Neighbors() {
           )}
         </div>
         <Row className="neighbors-cards d-flex justify-content-around flex-wrap w-100">
-          {neighborsData.length > 1 ? (
+          {neighborsData.length > 1 &&
             neighborsData
               .filter((userDoc) => userDoc.email !== email)
               .map((userDoc) => {
@@ -212,8 +210,8 @@ function Neighbors() {
                     />
                   </Col>
                 );
-              })
-          ) : (
+              })}
+          {neighborsData.length <= 1 && district && (
             <small className="text-center">
               Couldn&lsquo;t find nearby neighbors in your district...
             </small>
