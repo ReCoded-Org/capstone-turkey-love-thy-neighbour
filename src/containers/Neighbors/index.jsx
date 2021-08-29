@@ -27,8 +27,6 @@ import { firestore } from "../../firebaseConfig";
 import "./index.scss";
 
 // Maybe you can search for the people in other districts
-// TODO: THERE'S A POSSIBILITY OF THEM SIGNING UP AND GETTING INTO NEIGHBORS WITHOUT SUBMITTING EDIT PROFILE MODAL FORM AND IT WILL GIVE US AN ERROR!
-// maybe you can solve this issue by making the only way of closing edit profile modal is submitting the form
 
 function Neighbors() {
   const [selectedNeighbor, setSelectedNeighbor] = useState({});
@@ -169,46 +167,57 @@ function Neighbors() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <RecommendedPlacesAccordion district={district} />
+          {(district === "KADIKÖY" ||
+            district === "BEYOĞLU" ||
+            district === "ŞİŞLİ" ||
+            district === "FATİH") && (
+            <RecommendedPlacesAccordion district={district} />
+          )}
         </div>
         <Row className="neighbors-cards d-flex justify-content-around flex-wrap w-100">
-          {neighborsData
-            .filter((userDoc) => userDoc.email !== email)
-            .map((userDoc) => {
-              let photo;
-              if (
-                userDoc.profileImageUrl === "" ||
-                userDoc.profileImageUrl === undefined
-              ) {
-                if (userDoc.gender === "Prefer not to say") {
-                  photo = PPGenderless;
-                } else if (userDoc.gender === "Male") {
-                  photo = PPMaleSVG;
-                } else if (userDoc.gender === "Female") {
-                  photo = PPFemaleSVG;
+          {neighborsData.length <= 1 ? (
+            neighborsData
+              .filter((userDoc) => userDoc.email !== email)
+              .map((userDoc) => {
+                let photo;
+                if (
+                  userDoc.profileImageUrl === "" ||
+                  userDoc.profileImageUrl === undefined
+                ) {
+                  if (userDoc.gender === "Prefer not to say") {
+                    photo = PPGenderless;
+                  } else if (userDoc.gender === "Male") {
+                    photo = PPMaleSVG;
+                  } else if (userDoc.gender === "Female") {
+                    photo = PPFemaleSVG;
+                  }
+                } else if (userDoc.profileImageUrl !== "") {
+                  photo = userDoc.profileImageUrl;
                 }
-              } else if (userDoc.profileImageUrl !== "") {
-                photo = userDoc.profileImageUrl;
-              }
 
-              return (
-                <Col xs={12} sm={6} md={4} key={userDoc.email}>
-                  <NeighborCard
-                    key={userDoc.email}
-                    photo={photo}
-                    firstName={userDoc.firstName}
-                    lastName={userDoc.lastName}
-                    gender={userDoc.gender}
-                    age={userDoc.age}
-                    email={userDoc.email}
-                    setSelectedNeighbor={setSelectedNeighbor}
-                    senderEmail={email} // email of the signed in user
-                    senderFullName={`${firstName} ${lastName}`}
-                    setEmailAlertStatus={setEmailAlertStatus}
-                  />
-                </Col>
-              );
-            })}
+                return (
+                  <Col xs={12} sm={6} md={4} key={userDoc.email}>
+                    <NeighborCard
+                      key={userDoc.email}
+                      photo={photo}
+                      firstName={userDoc.firstName}
+                      lastName={userDoc.lastName}
+                      gender={userDoc.gender}
+                      age={userDoc.age}
+                      email={userDoc.email}
+                      setSelectedNeighbor={setSelectedNeighbor}
+                      senderEmail={email} // email of the signed in user
+                      senderFullName={`${firstName} ${lastName}`}
+                      setEmailAlertStatus={setEmailAlertStatus}
+                    />
+                  </Col>
+                );
+              })
+          ) : (
+            <p className="text-center">
+              Couldn&lsquo;t find nearby neighbors in your district...
+            </p>
+          )}
         </Row>
         {emailAlertStatus !== "empty" && (
           <Alert
