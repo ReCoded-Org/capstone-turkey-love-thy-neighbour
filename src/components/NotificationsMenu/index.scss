@@ -1,6 +1,6 @@
 @import "../../style/variables";
 
-div#notifications-menu {
+div#notifications-dropdown {
   position: relative;
 
   button.dropdown-toggle {
@@ -28,8 +28,37 @@ div#notifications-menu {
   }
 
   div.dropdown-menu {
+    padding-bottom: 0;
+    max-height: calc(100vh - 200px);
+    min-height: 400px;
+    min-width: 300px;
+    overflow: scroll;
+
     position: absolute;
     top: 38px;
-    right: 0;
+
+    @media screen and (max-width: 991px) {
+      right: -125px;
+    }
+    @media screen and (min-width: 992px) {
+      right: 0;
+    }
+
+    & > .dropdown-header {
+      p {
+        margin: 0 !important;
+        color: black !important;
+      }
+
+      button.clear-all-btn {
+        color: #6c757d;
+        background-color: transparent;
+        border: none;
+        font-size: 10.5px;
+      }
+    }
+    p {
+      color: #6c757d;
+    }
   }
 }
