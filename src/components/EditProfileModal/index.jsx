@@ -24,6 +24,7 @@ const EditProfileModal = () => {
     (state) => state.popup.isEditProfileOpen
   );
   const { firestoreDoc, authCred } = useSelector((state) => state.user);
+  const { district } = firestoreDoc;
   const { uid } = authCred;
 
   function toggleEditProfileModal() {
@@ -95,7 +96,7 @@ const EditProfileModal = () => {
   return (
     <Modal
       show={isEditProfileOpen}
-      onHide={toggleEditProfileModal}
+      onHide={district && toggleEditProfileModal}
       id="edit-profile-modal"
     >
       <Modal.Header className="d-flex justify-content-between">
@@ -154,10 +155,10 @@ const EditProfileModal = () => {
                   <option disabled value="">
                     Districts
                   </option>
-                  {constants.districtList.map((district) => {
+                  {constants.districtList.map((districtInfo) => {
                     return (
-                      <option key={district} value={district}>
-                        {district}
+                      <option key={districtInfo} value={districtInfo}>
+                        {districtInfo}
                       </option>
                     );
                   })}
@@ -337,9 +338,11 @@ const EditProfileModal = () => {
         </Card>
       </Modal.Body>
       <Modal.Footer>
-        <DiscardChangesButton onClick={toggleEditProfileModal}>
-          Discard Changes
-        </DiscardChangesButton>
+        {district && (
+          <DiscardChangesButton onClick={toggleEditProfileModal}>
+            Discard Changes
+          </DiscardChangesButton>
+        )}
         <SaveChangesButton type="submit" form="edit-profile-form">
           Save Changes
         </SaveChangesButton>
