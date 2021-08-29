@@ -79,7 +79,7 @@ const EditProfileModal = () => {
       interests: firestoreDoc?.interests || [],
       number: firestoreDoc?.number || "",
       address: firestoreDoc?.address || "",
-      profileImageUrl: firestoreDoc?.profileImageUrl || "", // male, female, Prefer not to say, ""
+      profileImageUrl: firestoreDoc?.profileImageUrl || "",
       backgroundImageUrl: firestoreDoc?.backgroundImageUrl || "",
     },
     validate,
