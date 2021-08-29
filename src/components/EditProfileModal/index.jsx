@@ -49,18 +49,6 @@ const EditProfileModal = () => {
     if (!values.age) {
       errors.age = "Required";
     }
-    if (!values.education) {
-      errors.education = "Required";
-    }
-    if (!values.bio) {
-      errors.bio = "Required";
-    }
-    if (!values.number) {
-      errors.number = "Required";
-    }
-    if (!values.address) {
-      errors.address = "Required";
-    }
     if (values.interests.length === 0) {
       errors.interests = "Required";
     }
@@ -201,9 +189,6 @@ const EditProfileModal = () => {
                     value={formik.values.age}
                     onBlur={formik.handleBlur}
                   />
-                  {formik.touched.age && formik.errors.age ? (
-                    <div className="error-msg">{formik.errors.age}</div>
-                  ) : null}
                 </div>
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
@@ -226,9 +211,6 @@ const EditProfileModal = () => {
                     );
                   })}
                 </select>
-                {formik.touched.education && formik.errors.education ? (
-                  <div className="error-msg">{formik.errors.education}</div>
-                ) : null}
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <textarea
@@ -240,9 +222,6 @@ const EditProfileModal = () => {
                   value={formik.values.bio}
                   onBlur={formik.handleBlur}
                 />
-                {formik.touched.bio && formik.errors.bio ? (
-                  <div className="error-msg">{formik.errors.bio}</div>
-                ) : null}
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <Multiselect
@@ -272,9 +251,6 @@ const EditProfileModal = () => {
                   value={formik.values.number}
                   onBlur={formik.handleBlur}
                 />
-                {formik.touched.number && formik.errors.number ? (
-                  <div className="error-msg">{formik.errors.number}</div>
-                ) : null}
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
@@ -286,9 +262,6 @@ const EditProfileModal = () => {
                   value={formik.values.address}
                   onBlur={formik.handleBlur}
                 />
-                {formik.touched.address && formik.errors.address ? (
-                  <div className="error-msg">{formik.errors.address}</div>
-                ) : null}
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
