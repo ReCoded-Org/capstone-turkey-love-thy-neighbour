@@ -43,17 +43,10 @@ function NavBar() {
           <Nav>
             {isSignedIn ? (
               <Nav.Link
-                onClick={() =>
-                  auth
-                    .signOut()
-                    .then(() => history.push("/"))
-                    .catch((error) =>
-                      console.error(
-                        "A problem occurred while logging out.",
-                        error
-                      )
-                    )
-                }
+                onClick={() => {
+                  auth.signOut().then(() => history.push("/"));
+                  // TODO: Show the error within a modal
+                }}
               >
                 Sign Out
               </Nav.Link>
