@@ -2,6 +2,11 @@
 
 Love Thy Neighbour is a portal to let people meet and befriend each other, based on their location. It's going to help people have stronger and more diverse personal connections which can be in many ways.
 
+# Outline & Objective
+
+The purpose of this website is to:
+1. Connect people living in close proximity so they can meet new people in their neighborhoods 
+
 ## Features
 
 + Home page
