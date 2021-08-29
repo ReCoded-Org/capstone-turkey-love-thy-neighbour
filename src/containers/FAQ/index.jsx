@@ -1,9 +1,15 @@
 import React from "react";
 
-import FAQ from "../../components/FAQ";
+import { Container } from "react-bootstrap";
 
-function FAQContainer() {
-  return <FAQ />;
+import FAQContent from "../../components/FAQContent";
+
+function FAQ() {
+  return (
+    <Container fluid style={{ height: "calc(100vh - 120px)" }}>
+      <FAQContent />
+    </Container>
+  );
 }
 
-export default FAQContainer;
+export default FAQ;
