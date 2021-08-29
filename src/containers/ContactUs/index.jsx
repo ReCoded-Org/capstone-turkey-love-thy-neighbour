@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button, Modal } from "react-bootstrap";
 
 import "./index.scss";
 import { useFormik } from "formik";
@@ -50,29 +50,22 @@ function ContactUs() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    firestore
-      .collection("contacts")
-      .add({
-        name,
-        lastname,
-        email,
-        message,
-      })
-      .then(() => {
-        // eslint-disable-next-line no-alert
-        alert("Message has been submitted!");
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-alert
-        alert(error.message);
-      });
+    firestore.collection("contacts").add({
+      name,
+      lastname,
+      email,
+      message,
+    });
 
     setName("");
     setLastname("");
     setEmail("");
     setMessage("");
   };
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <section className="container-fluid">
       <Container className="contactus-content-container d-flex align-items-center">
@@ -159,9 +152,24 @@ function ContactUs() {
                   </div>
                 </div>
                 <div className="send-button">
-                  <CTAButton>
+                  <CTAButton onClick={handleShow}>
                     <Link to="/neighbors">Send</Link>
                   </CTAButton>
+                  <Modal show={show} onHide={handleClose}>
+                    <Modal.Header />
+                    <Modal.Body>
+                      <h5>
+                        The message was successfully sent!
+                        <br />
+                        We will get you back soon!
+                      </h5>
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="secondary" onClick={handleClose}>
+                        Close
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
                 </div>
               </form>
             </div>
