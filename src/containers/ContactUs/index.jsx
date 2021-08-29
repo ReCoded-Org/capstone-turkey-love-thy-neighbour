@@ -41,6 +41,11 @@ function ContactUs() {
     },
   });
 
+  const [name, setName] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   return (
     <section className="container-fluid">
       <Container className="contactus-content-container d-flex align-items-center">
@@ -67,7 +72,7 @@ function ContactUs() {
                         type="text"
                         name="first_name"
                         placeholder="First Name"
-                        value={formik.values.first_name}
+                        value={(formik.values.first_name, name)}
                         onChange={formik.handleChange}
                       />
                       {formik.errors.first_name &&
