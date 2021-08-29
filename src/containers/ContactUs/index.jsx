@@ -54,7 +54,7 @@ function ContactUs() {
             <div className="App">
               <h1 className="main-header">Contact Us</h1>
               <h5>
-                Help us create effective and active communities bt communicating
+                Help us create effective and active communities by communicating
                 with us!
               </h5>
 
