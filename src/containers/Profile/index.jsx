@@ -35,6 +35,8 @@ const Profile = () => {
     return interestsString;
   }
 
+  // TODO: change the "default ..." to "... yet to be added".
+
   return (
     <Container
       fluid
