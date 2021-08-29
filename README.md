@@ -68,3 +68,54 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+##Love Thy Neighbour 
+
+Love Thy Neighbour is a portal to let people meet and befriend each other, based on their location. It's going to help people have stronger and more diverse personal connections which can be in many ways.
+
+##Features
+
+- Home page
+- About page
+- Contact page
+- Login/signup with authentication
+  Allow Google, Facebook
+- User profile page
+- Add/Edit personal info, add profile picture 
+
+##Live Demo
+
+[Netlify](https://lovethyneighbor.netlify.app/)
+
+##Technologies
+
+- React js
+- Redux
+- Sass
+- Firebase
+- Formik
+- Netlify
+- i18n
+- Prettier
+- Email js
+- Eslint
+- Figma
+- Styled Components
+- React Bootstrap
+- Bootstrap
+
+
+##Authors
+
+- Ali Riza Sahin
+- Aziza Iliasova
+- Kutay Kagan Ozen
+- Moulham Hallak
+- Nur Bacaksiz
+
+
+
+
+
+
