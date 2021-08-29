@@ -33,7 +33,7 @@ function Footer() {
             md={4}
             className="d-flex justify-content-center align-items-center my-2 my-sm-2 my-sm-0"
           >
-            <p>Copyright © Re-coded 2021</p>
+            <p>Copyright © Re:Coded 2021</p>
           </Col>
           <Col
             xs={12}

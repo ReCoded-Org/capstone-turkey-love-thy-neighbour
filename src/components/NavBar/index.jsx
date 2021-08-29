@@ -1,39 +1,65 @@
 import React from "react";
 
+import { useDispatch, useSelector } from "react-redux";
+
 import { Container, Nav, Navbar } from "react-bootstrap";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
-import Logo from "../../images/logo.svg";
+import { auth } from "../../firebaseConfig";
 
+import logo from "../../images/logo.svg";
 import "./index.scss";
 
 function NavBar() {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const isSignedIn = useSelector((state) => state.user.isSignedIn);
+  const uid = useSelector((state) => state.user.authCred?.uid);
+
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark">
       <Container>
         <Link to="/" className="navbar-brand">
-          <img src={Logo} alt="logo" />
+          <img src={logo} alt="logo" />
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            {/* We'll need conditional rendering for the navlinks below */}
-            <Link to="/profile" className="nav-link">
-              Profile
-            </Link>
-            <Link to="/neighbors" className="nav-link">
-              Neighbors
-            </Link>
-            <Link to="/meet" className="nav-link">
-              Meet
-            </Link>
+            {isSignedIn && (
+              <>
+                <Link to={`/profile/${uid}`} className="nav-link">
+                  Profile
+                </Link>
+                <Link to="/neighbors" className="nav-link">
+                  Neighbors
+                </Link>
+                <Link to="/meet" className="nav-link">
+                  Meet
+                </Link>
+              </>
+            )}
           </Nav>
           <Nav>
-            <Nav.Link>Sign In</Nav.Link>
-            {/* TODO: Handle the click to show sign in pop up */}
-            <Nav.Link>Sign Up</Nav.Link>
-            {/* TODO: Handle the click to show sign in pop up */}
+            {isSignedIn ? (
+              <Nav.Link
+                onClick={() => {
+                  auth.signOut().then(() => history.push("/"));
+                  // TODO: Show the error within a modal
+                }}
+              >
+                Sign Out
+              </Nav.Link>
+            ) : (
+              <>
+                <Nav.Link onClick={() => dispatch({ type: "signIn" })}>
+                  Sign In
+                </Nav.Link>
+                <Nav.Link onClick={() => dispatch({ type: "signUp" })}>
+                  Sign Up
+                </Nav.Link>{" "}
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
