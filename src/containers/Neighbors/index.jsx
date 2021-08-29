@@ -214,9 +214,9 @@ function Neighbors() {
                 );
               })
           ) : (
-            <p className="text-center">
+            <small className="text-center">
               Couldn&lsquo;t find nearby neighbors in your district...
-            </p>
+            </small>
           )}
         </Row>
         {emailAlertStatus !== "empty" && (
