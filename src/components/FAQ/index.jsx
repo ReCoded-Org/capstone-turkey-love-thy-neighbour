@@ -2,7 +2,7 @@ import React from "react";
 
 import FAQContent from "../FAQContent";
 
-function FAQSection() {
+function FAQ() {
   return (
     <section className="container-fluid">
       <FAQContent />
@@ -10,4 +10,4 @@ function FAQSection() {
   );
 }
 
-export default FAQSection;
+export default FAQ;
