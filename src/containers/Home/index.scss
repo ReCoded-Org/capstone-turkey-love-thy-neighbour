@@ -1,16 +1,18 @@
-h1 {
-  font-size: 36px;
-}
+div.section-wrapper {
+  h1 {
+    font-size: 36px;
+  }
 
-// for sections and content containers
-section, // all the sections inside home page
-section > div // all the content containers inside home page
-{
-  height: calc(100vh - 60px);
-  scroll-snap-align: start;
-}
+  // for sections and content containers
+  section, // all the sections inside home page
+  section > div // all the content containers inside home page
+  {
+    height: calc(100vh - 60px);
+    scroll-snap-align: start;
+  }
 
-// section --> content container --> row
-section > div > div.row {
-  width: 100% !important;
+  // section --> content container --> row
+  section > div > div.row {
+    width: 100% !important;
+  }
 }
