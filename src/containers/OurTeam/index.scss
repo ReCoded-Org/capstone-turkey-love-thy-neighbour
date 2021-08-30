@@ -1,16 +1,9 @@
 @import "../../style/variables";
 
-
-body{
-  background-image: url(https://lz12v4f1p8c1cumxnbiqvm10-wpengine.netdna-ssl.com/wp-content/uploads/2015/11/ice-cold-blue-to-yellow-gradient-background.jpg);
-  background-size: cover;
-  }
-
 h4 {
   color: $logo-blue;
   text-align: center;
   padding-top: 50px;
-  text-shadow: 1px 1px 1px red, 0 0 0.1em blue, 0 0 0.1em blue;
   @media screen and (min-width: 768px) {
     margin-bottom: 30px !important;
     font-size: 40px !important;
@@ -21,29 +14,34 @@ h4 {
   margin: 0 !important;
   padding-top: 50px;
   padding-bottom: 120px;
-@media screen and (max-width: 374px){   
-  padding-left: 40px; 
-  padding-top: 25px;
-  padding-bottom: 150px;             
-}
-@media screen and (max-width: 425px) and (min-width: 375px) { 
-  padding-left: 60px;  
-  padding-top: 35px;
-  padding-bottom: 180px;                 
-}
- @media screen and (max-width: 768px) and (min-width: 426px) {    
-  padding-bottom: 100px;  
-}
+  display: flex;
+  justify-content: space-around;
+// @media screen and (max-width: 374px){   
+//   padding-left: 40px; 
+//   padding-top: 25px;
+//   padding-bottom: 150px;             
+// }
+// @media screen and (max-width: 425px) and (min-width: 375px) { 
+//   padding-left: 60px;  
+//   padding-top: 35px;
+//   padding-bottom: 180px;                 
+// }
+//  @media screen and (max-width: 768px) and (min-width: 426px) {    
+//   padding-bottom: 100px;  
+// }
  
 
 svg {
-  padding-left: 15px;
-     @media screen and (max-width: 424px){   
-     height: 20px;
-     }
-     @media screen and (max-width: 425px) and (min-width: 1023px) {    
-     height: 25px;
-     }
+  padding-right: 10px;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+    //  @media screen and (max-width: 424px){   
+    //  height: 20px;
+    //  }
+    //  @media screen and (max-width: 425px) and (min-width: 1023px) {    
+    //  height: 25px;
+    //  }
   }
 
   
@@ -64,59 +62,72 @@ svg {
     padding: 10px;              
   }
   @media screen and (min-width: 769px) {
-    height: 220px;
-    width: 170px;
+    height: 100%;
+    width: 100%;
     padding:5px
   }
  }
 
   .card {
-    transition: all ease-in-out 400ms;
+    // transition: all ease-in-out 400ms;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
       rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-      height: 400px;
-      width: 230px;
+      height: 25%;
+      width: 15%;
+
     @media screen and (max-width: 374px){   
-      height: 200px;
-      width: 200px;    
+      height: 90%;
+      width: 100px;         
+padding-bottom: 5px;
+display: flex;
+justify-content: space-around;   
     }
     @media screen and (max-width: 424px) and (min-width: 375px) { 
-      height: 230px;
-      width:220px;                   
+      height: 90%;
+      width: 160px;         
+padding-bottom: 5px;
+display: flex;
+justify-content: space-around;                   
     }
     @media screen and (max-width: 767px) and (min-width: 425px) {    
-      height: 240px;
+      height: 90%;
       width: 260px;         
+padding-bottom: 5px;
+display: flex;
+justify-content: space-around;
     }
-    @media screen and (max-width: 1023px) and (min-width: 768px) {
-      height: 350px;
-      width: 170px;
-    }
+    // @media screen and (max-width: 1023px) and (min-width: 768px) {
+    //   height: 350px;
+    //   width: 170px;
+    // }
   }
 
-  p,
+ 
+p{
+  color: black;
+  font-size: 90%;
+}
+
   .card-title {
     text-align: center;
-    transition: all ease-in-out 300ms;
-    color: $logo-blue;
-    @media screen and (max-width: 374px){   
-    font-size: 10px;             
-     }
-     @media screen and (max-width: 424px) and (min-width: 375px) { 
-       font-size: 15px;                
-     }
-     @media screen and (max-width: 768px) and (min-width: 425px) {    
-       font-size: 15px;     
-     }
-     @media screen and (max-width: 1023px) and (min-width: 769px) {
-       font-size: 18px; 
-     }
+    // transition: all ease-in-out 300ms;
+    color: $logo-red;
+    font-size: 90%;
+    // @media screen and (max-width: 374px){   
+    // font-size: 10px;             
+    //  }
+    //  @media screen and (max-width: 424px) and (min-width: 375px) { 
+    //    font-size: 15px;                
+    //  }
+    //  @media screen and (max-width: 768px) and (min-width: 425px) {    
+    //    font-size: 15px;     
+    //  }
+    //  @media screen and (max-width: 1023px) and (min-width: 769px) {
+    //    font-size: 18px; 
+    //  }
   }
 
   .card:hover {
     background-color: $logo-blue;
-    transition: all ease-in-out 300ms;
   }
 }
-
-
