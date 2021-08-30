@@ -105,7 +105,7 @@ function Neighbors() {
                   <div className="gender-age-wrapper d-flex justify-content-between">
                     <div>
                       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                      <label htmlFor="gender">Gender:</label>
+                      <label htmlFor="gender">Gender</label>
                       <select
                         id="gender"
                         name="gender"
@@ -123,7 +123,7 @@ function Neighbors() {
                     </div>
                     <div>
                       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                      <label htmlFor="age">Age:</label>
+                      <label htmlFor="age">Age</label>
                       <select
                         id="age"
                         name="age"

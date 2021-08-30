@@ -58,6 +58,10 @@
             .accordion-body {
               & > form {
                 div.gender-age-wrapper {
+                  label {
+                    font-size: 13px;
+                  }
+
                   & > div {
                     width: 49%;
 
