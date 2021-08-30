@@ -12,13 +12,13 @@
   .ourteam-content-row {
     margin: 0 !important;
     padding-top: 80px;
-    padding-bottom: 210px;
+    padding-bottom: 215px;
     display: flex;
     justify-content: space-around;
-    @media screen and (max-width: 767px){   
-      padding-bottom: 50px;
-      padding-top: 40px;
-      }
+      @media screen and (max-width: 767px){   
+        padding-bottom: 50px;
+        padding-top: 40px;
+        }
 
   svg {
     padding-right: 10px;
@@ -34,7 +34,6 @@
       height: 48px;
      }
   }
-
   
  .img-fluid {
     @media screen and (max-width: 767px){      
@@ -69,7 +68,6 @@
       }
   }
 
- 
    p{
     color: black;
     font-size: 90%;
@@ -83,9 +81,13 @@
       font-size: 80%;
         }
   }
+
  .short-define{
       @media screen and (max-width: 991px) and (min-width: 768px){   
         margin-top: 20px;
+        }
+      @media screen and (max-width: 374px){   
+        margin-top: 18px;
         }
   }
 
