@@ -11,8 +11,6 @@ import { auth } from "../../firebaseConfig";
 import logo from "../../images/logo.svg";
 import "./index.scss";
 
-// fix the link profile
-
 function NavBar() {
   const history = useHistory();
   const dispatch = useDispatch();
