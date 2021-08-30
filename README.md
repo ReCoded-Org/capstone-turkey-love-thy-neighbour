@@ -2,7 +2,7 @@
 
 Love Thy Neighbour is a portal to let people meet and befriend each other, based on their location. It's going to help people have stronger and more diverse personal connections which can be in many ways.
 
-[Presentation of the Project](https://drive.google.com/file/d/1wHyfIhurV-46E0Xa0I0flvUIVIZlraa7/view?usp=sharing)
+[Check out our project presentation](https://drive.google.com/file/d/1wHyfIhurV-46E0Xa0I0flvUIVIZlraa7/view?usp=sharing)
 
 
 # Outline & Objective
@@ -19,13 +19,14 @@ The purpose of this website is to:
     + Allow Google, Facebook
 + User profile page
     + Add/Edit personal info, add profile picture 
-+ Joining the Newsletter functionality
-+ Recommended meeting places
-+ Pairing neighbors according to their gender, interests etc.
++ Newsletter subscription
++ Recommended places to meet
++ Search neighbors by age, gender and common interests
++ Invite a neighbor to meet with our automated email system
 
-## Live Demo
+## Check out our application
 
-[Netlify](https://lovethyneighbor.netlify.app/)
+[https://lovethyneighbor.netlify.app](https://lovethyneighbor.netlify.app/)
 
 ## Technologies
 
@@ -49,9 +50,9 @@ The purpose of this website is to:
 - ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white) 
 
 
-## ✏ Contribute [🔝]
+## ✏ Our Amazing Team [🔝]
 
-- Our Amazing Team! Meet our team members and their github works
+- Meet our team members through their GitHub profiles
 
 | [<img alt="shrreya" src="https://avatars.githubusercontent.com/u/9050664?v=4?size=115" width="115"><br><sub>@Shrreya</sub>](https://github.com/Shrreya) | [<img alt="ali-riza" src="https://avatars.githubusercontent.com/u/80679047?v=4?size=115" width="115"><br><sub>@ARS-coding</sub>](https://github.com/ARS-coding) | [<img alt="aziza" src="https://avatars.githubusercontent.com/u/49067055?v=4?v=4?size=115" width="115"><br><sub>@mimisha25</sub>](https://github.com/mimisha25) | [<img alt="nur" src="https://avatars.githubusercontent.com/u/79417435?v=4?size=115" width="115"><br><sub>@nurbacaksiz</sub>](https://github.com/nurbacaksiz) | [<img alt="kutay" src="https://avatars.githubusercontent.com/u/63947758?v=4?size=115" width="115"><br><sub>@Iseluin</sub>](https://github.com/Iseluin) | [<img alt="moulham" src="https://avatars.githubusercontent.com/u/81989914?v=4?size=115" width="115"><br><sub>@MoulhamHallak</sub>](https://github.com/MoulhamHallak) |
 | :---: |:---: |:---: |:---: |:---: |:---: |
@@ -67,20 +68,14 @@ The purpose of this website is to:
 
 ![Home Page 3](https://user-images.githubusercontent.com/79417435/131257375-f8a7caac-696b-4499-8b3a-d64c1820c533.png)
 
+## Project Setup
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-Fork or Clone the Project
-
- `git@github.com:ReCoded-Org/capstone-turkey-love-thy-neighbour.git`
-
-Install Yarn
 
 ### `yarn install`
 
-In the project directory, you can run:
+Installs all dependencies
 
 ### `yarn start`
 
@@ -93,7 +88,6 @@ You will also see any lint errors in the console.
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
 
@@ -102,15 +96,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
