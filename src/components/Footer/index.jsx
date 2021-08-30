@@ -12,7 +12,7 @@ import "./index.scss";
 
 function Footer() {
   return (
-    <footer className="footer container-fluid d-flex align-items-center">
+    <footer className="footer container-fluid d-flex align-items-center pt-2">
       <Container>
         <Row className="footer-content-row w-100 h-100">
           <Col

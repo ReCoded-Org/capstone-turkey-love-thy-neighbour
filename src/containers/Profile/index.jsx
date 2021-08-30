@@ -5,6 +5,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
+import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
 import EditProfileModal from "../../components/EditProfileModal";
 import { EditProfileButton } from "../../components/CustomButtons";
 import "./index.scss";
@@ -17,13 +18,24 @@ const Profile = () => {
   const isEditProfileOpen = useSelector(
     (state) => state.popup.isEditProfileOpen
   );
-  const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
-  const backgroundImageUrl = useSelector(
-    (state) => state.user.firestoreDoc?.backgroundImageUrl
-  );
-  const profileImageUrl = useSelector(
-    (state) => state.user.firestoreDoc?.profileImageUrl
-  );
+  const { firestoreDoc, authCred } = useSelector((state) => state.user);
+  const { backgroundImageUrl, profileImageUrl, interests, gender } =
+    firestoreDoc;
+  const { email } = authCred;
+
+  function createInterestString() {
+    let interestsString = "";
+    interests.forEach((interestObj, index, array) => {
+      if (index === array.length - 1) {
+        interestsString += `${interestObj.content}.`;
+        return;
+      }
+      interestsString += `${interestObj.content} | `;
+    });
+    return interestsString;
+  }
+
+  // TODO: change the "default ..." to "... yet to be added".
 
   return (
     <Container
@@ -40,13 +52,16 @@ const Profile = () => {
           <Col
             xs={12}
             sm={12}
-            className="d-flex flex-column align-items-center mb-3"
+            className="d-flex flex-column align-items-center mb-3 pe-2"
           >
             <div>
               <img
                 className="profile-photo"
                 alt="profilePic"
-                src={profileImageUrl || PPMaleSVG}
+                src={
+                  profileImageUrl ||
+                  (gender === "Male" ? PPMaleSVG : PPFemaleSVG)
+                }
               />
             </div>
             <div>
@@ -127,10 +142,9 @@ const Profile = () => {
                       <li>
                         Interests:{" "}
                         <span>
-                          {/* {!firestoreDoc?.interests
-                            ? "Learning, coding, collaborating."
-                            : firestoreDoc.interests}  removed this because react would think the document field that is an array should be mapped over and we are doing that in our multiselect branch with another library. If I include this I'll have merge the two in order to make this work. */}
-                          Default interest.
+                          {!firestoreDoc?.interests
+                            ? "Default interest."
+                            : createInterestString()}
                         </span>
                       </li>
                     </ul>
@@ -149,12 +163,7 @@ const Profile = () => {
                     <Card.Title className="card-title">Contact</Card.Title>
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
-                        Email:{" "}
-                        <span>
-                          {!firestoreDoc?.email
-                            ? "example@example.com"
-                            : firestoreDoc.email}
-                        </span>
+                        Email: <span>{email}</span>
                       </li>
                       <li>
                         Phone:{" "}

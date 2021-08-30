@@ -62,4 +62,10 @@ const constants = {
   ],
 };
 
+export const newActivityList = constants.activityList.map((activity) => {
+  return {
+    content: activity,
+  };
+});
+
 export default constants;

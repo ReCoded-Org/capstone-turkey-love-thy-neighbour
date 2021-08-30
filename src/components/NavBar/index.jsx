@@ -11,6 +11,8 @@ import { auth } from "../../firebaseConfig";
 import logo from "../../images/logo.svg";
 import "./index.scss";
 
+// fix the link profile
+
 function NavBar() {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -31,11 +33,11 @@ function NavBar() {
                 <Link to={`/profile/${uid}`} className="nav-link">
                   Profile
                 </Link>
-                <Link to="/neighbors" className="nav-link">
-                  Neighbors
-                </Link>
                 <Link to="/meet" className="nav-link">
                   Meet
+                </Link>
+                <Link to="/neighbors" className="nav-link">
+                  Neighbors
                 </Link>
               </>
             )}
