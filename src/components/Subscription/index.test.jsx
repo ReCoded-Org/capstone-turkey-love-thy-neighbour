@@ -1,5 +1,4 @@
 import React from "react";
-// eslint-disable-next-line import/no-unresolved
 import renderer from "react-test-renderer";
 import Subscription from ".";
 
