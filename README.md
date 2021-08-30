@@ -29,33 +29,34 @@ The purpose of this website is to:
 
 ## Technologies
 
-![React Js](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) 
-![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white) 
-![Html](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![Css](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white) 
-![Firebase](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black) 
-- Formik
-- Netlify
-- i18n
-- Prettier
-- Email js
-- Eslint
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white) 
-![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white) 
-- React Bootstrap
-![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white) 
+- ![React Js](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) 
+- ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white) 
+- ![Html](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+- ![Css](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+- ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+- ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+- ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white) 
+- ![Firebase](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black) 
+- ![Formik](https://img.shields.io/badge/-Formik-blue) 
+- ![Netlify](https://img.shields.io/badge/-Netlify-blue) 
+- ![i18n](https://img.shields.io/badge/-i18n-lightgrey) 
+- ![Prettier](https://img.shields.io/badge/-Prettier-orange) 
+- ![Email.js](https://img.shields.io/badge/-Email.Js-yellow) 
+- ![Eslint](https://img.shields.io/badge/-Eslint-9cf) 
+- ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white) 
+- ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white) 
+- ![React Bootstrsp](https://img.shields.io/badge/-ReactBootstrap-blueviolet) 
+- ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white) 
 
 
-## Authors
+## ✏ Contribute [🔝]
 
-- Ali Riza Sahin
-- Aziza Iliasova
-- Kutay Kagan Ozen
-- Moulham Hallak
-- Nur Bacaksiz
+- Our Amazing Team! Meet our team members and their github works
+
+| [<img alt="shrreya" src="https://avatars.githubusercontent.com/u/9050664?v=4?size=115" width="115"><br><sub>@Shrreya</sub>](https://github.com/Shrreya) | [<img alt="ali-riza" src="https://avatars.githubusercontent.com/u/80679047?v=4?size=115" width="115"><br><sub>@ARS-coding</sub>](https://github.com/ARS-coding) | [<img alt="aziza" src="https://avatars.githubusercontent.com/u/49067055?v=4?v=4?size=115" width="115"><br><sub>@mimisha25</sub>](https://github.com/mimisha25) | [<img alt="nur" src="https://avatars.githubusercontent.com/u/79417435?v=4?size=115" width="115"><br><sub>@nurbacaksiz</sub>](https://github.com/nurbacaksiz) | [<img alt="kutay" src="https://avatars.githubusercontent.com/u/63947758?v=4?size=115" width="115"><br><sub>@Iseluin</sub>](https://github.com/Iseluin) | [<img alt="moulham" src="https://github.com/shivamkapasia0.png?size=115" width="115"><br><sub>@MoulhamHallak</sub>](https://github.com/shivamkapasia0) |
+| :---: |:---: |:---: |:---: |:---: |:---: |
+
+
 
 # Some Images From Our Project
 
