@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { Container, Row, Col, Accordion, Carousel } from "react-bootstrap";
+import { Container, Row, Col, Accordion } from "react-bootstrap";
 
 import { useSelector } from "react-redux";
 
