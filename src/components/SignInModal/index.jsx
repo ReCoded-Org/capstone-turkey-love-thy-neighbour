@@ -103,7 +103,6 @@ const SignInModal = () => {
 
   function handleFacebookSignIn() {
     auth.signInWithPopup(facebookProvider).then((credObj) => {
-      console.log("wassupppp", credObj);
       const { isNewUser } = credObj.additionalUserInfo;
 
       if (isNewUser) {
