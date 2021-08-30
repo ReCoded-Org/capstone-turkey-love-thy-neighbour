@@ -41,7 +41,7 @@ function NeighborCard({
   }
 
   function handleInvitation() {
-    sendEmail();
+    /* sendEmail(); */
     firestore // create invitation notification for the invited user
       .collection("users")
       .where("email", "==", email)

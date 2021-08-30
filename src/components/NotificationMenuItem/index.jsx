@@ -28,7 +28,7 @@ function NotificationMenuItem({ invitationNotificationObject }) {
         }),
       });
 
-    if (buttonText === "Good") {
+    if (buttonText === "👍🏼") {
       firestore
         .collection("data")
         .doc("feedbackData")
@@ -37,7 +37,7 @@ function NotificationMenuItem({ invitationNotificationObject }) {
           positiveFeedback: firebaseApp.firestore.FieldValue.increment(1),
         });
     }
-    if (buttonText === "Bad") {
+    if (buttonText === "👎🏼") {
       firestore
         .collection("data")
         .doc("feedbackData")
