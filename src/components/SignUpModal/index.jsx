@@ -1,5 +1,5 @@
-import React from "react";
-import { Modal, Button, Card } from "react-bootstrap";
+import React, { useState } from "react";
+import { Modal, Button, Card, Alert } from "react-bootstrap";
 import { useFormik } from "formik";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -24,6 +24,9 @@ import {
 
 const SignUpModal = () => {
   const dispatch = useDispatch();
+
+  const [signUpAlertMessage, setSignUpAlertMessage] = useState("");
+
   const isSignUpOpen = useSelector((state) => state.popup.isSignUpOpen);
   const history = useHistory();
 
@@ -79,12 +82,13 @@ const SignUpModal = () => {
         .then((userCred) => {
           setUserDocument(userCred.user.uid, objWithoutPasswordConfigProp);
           return userCred;
-        }) // set the document in firestore
+        })
         .then((userCred) => {
           dispatch({ type: "signUp" });
           history.push(`/profile/${userCred.user.uid}`);
           dispatch({ type: "editProfile" });
-        }); // take the user to their profile
+        })
+        .catch((err) => setSignUpAlertMessage(err.message));
       setSubmitting(false);
     },
   });
@@ -258,6 +262,14 @@ const SignUpModal = () => {
           ?
         </span>
       </Modal.Footer>
+      <Alert
+        variant="danger"
+        show={signUpAlertMessage}
+        onClick={() => setSignUpAlertMessage("")}
+        dismissible
+      >
+        {signUpAlertMessage}
+      </Alert>
     </Modal>
   );
 };
