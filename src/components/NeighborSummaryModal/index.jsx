@@ -4,7 +4,10 @@ import { Modal, Container, Card } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { createInterestString } from "../../utils/helpers";
+import {
+  createInterestString,
+  getDefaultGenderImage,
+} from "../../utils/helpers";
 
 import { NeighborCardButton } from "../CustomButtons";
 
@@ -50,13 +53,8 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
                   : null
               }
               src={
-                selectedNeighbor?.profileImageUrl ||
-                /* eslint-disable-next-line no-nested-ternary */
-                (selectedNeighbor?.gender === "Male"
-                  ? PPMaleSVG
-                  : selectedNeighbor?.gender === "Female"
-                  ? PPFemaleSVG
-                  : PPGenderless)
+                selectedNeighbor.profileImageUrl ||
+                getDefaultGenderImage(selectedNeighbor.gender)
               }
             />
             <span>{`${selectedNeighbor?.firstName} ${selectedNeighbor?.lastName}`}</span>
