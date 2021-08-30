@@ -85,7 +85,6 @@ const SignUpModal = () => {
           history.push(`/profile/${userCred.user.uid}`);
           dispatch({ type: "editProfile" });
         }); // take the user to their profile
-      // TODO: Show the error within a modal
       setSubmitting(false);
     },
   });
