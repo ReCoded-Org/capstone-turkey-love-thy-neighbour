@@ -96,9 +96,9 @@ function Neighbors() {
             {district.charAt(0) + district.slice(1).toLocaleLowerCase()}
           </h1>
           <p>
-            By clicking on “Invite to Meet Button” you can notify the user you
-            want to meet with and if he/she returns back to your notification,
-            your e-mail adresses will be visible to each other.
+            By clicking on “Invite to Meet” an email which includes your email
+            address will be sent from our team to the invited neighbor and if
+            they choose to meet, they will contact with you via email.
           </p>
           <Accordion>
             <Accordion.Item eventKey="0">
