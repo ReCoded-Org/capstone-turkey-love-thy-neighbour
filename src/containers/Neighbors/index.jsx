@@ -8,6 +8,8 @@ import { useFormik } from "formik";
 
 import Multiselect from "multiselect-react-dropdown";
 
+import { getDefaultGenderImage } from "../../utils/helpers";
+
 import { newActivityList } from "../../utils/constants";
 
 import RecommendedPlacesAccordion from "../../components/RecommendedPlacesAccordion";
@@ -17,10 +19,6 @@ import NeighborCard from "../../components/NeighborCard";
 import NeighborSummaryModal from "../../components/NeighborSummaryModal";
 
 import { NeighborsFilterButton } from "../../components/CustomButtons";
-
-import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
-import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
-import PPGenderless from "../../images/Profile/PPGenderless.png";
 
 import { firestore } from "../../firebaseConfig";
 
@@ -169,27 +167,14 @@ function Neighbors() {
           {neighborsData
             .filter((userDoc) => userDoc.email !== email)
             .map((userDoc) => {
-              let photo;
-              if (
-                userDoc.profileImageUrl === "" ||
-                userDoc.profileImageUrl === undefined
-              ) {
-                if (userDoc.gender === "Prefer not to say") {
-                  photo = PPGenderless;
-                } else if (userDoc.gender === "Male") {
-                  photo = PPMaleSVG;
-                } else if (userDoc.gender === "Female") {
-                  photo = PPFemaleSVG;
-                }
-              } else if (userDoc.profileImageUrl !== "") {
-                photo = userDoc.profileImageUrl;
-              }
-
               return (
                 <Col xs={12} sm={6} md={4} key={userDoc.email}>
                   <NeighborCard
                     key={userDoc.email}
-                    photo={photo}
+                    photo={
+                      userDoc.profileImageUrl ||
+                      getDefaultGenderImage(userDoc.gender)
+                    }
                     firstName={userDoc.firstName}
                     lastName={userDoc.lastName}
                     gender={userDoc.gender}
