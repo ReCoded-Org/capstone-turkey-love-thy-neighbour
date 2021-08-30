@@ -168,7 +168,7 @@ function ContactUs() {
                     </Modal.Header>
                     <Modal.Body>
                       <h5>
-                        The message was successfully sent!
+                        The message was successfully sent.s
                         <br />
                         We will get you back soon!
                       </h5>

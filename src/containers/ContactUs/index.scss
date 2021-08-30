@@ -44,7 +44,7 @@ p {
 
 img {
     width: 100%;
-    max-height: 350px;
+    max-height: 300px;
     @media screen and (max-width: 767px) {
       padding-top: 20px !important;
       padding-bottom: 20px;
@@ -157,7 +157,7 @@ input[type='text']::placeholder {
 
  }
  .first-name {
-  width:152px;
+  width:195px;
    height: 45px;
    margin: 20px 20px 10px 20px;
    border: 1px solid #026FC2;
@@ -165,7 +165,7 @@ input[type='text']::placeholder {
  }
  
  .last-name {
-  width:152px;
+  width:195px;
   margin-right: 25px !important;
   padding-right: 10px;
   height: 45px;
@@ -175,12 +175,12 @@ input[type='text']::placeholder {
  }
 
 .contactus-content-row{
-     padding-top: 100px;
-     padding-bottom: 100px;
+     padding-top: 50px;
+     padding-bottom: 10px;
     }
 
  img{
-   padding-top: 20px;
+   padding-top: 20px; 
    padding-bottom: 20px;
    max-height: 350px;
    display: block;
@@ -189,13 +189,13 @@ input[type='text']::placeholder {
    width: 80%;
    }
    .form-box{
-     width: 80%;
+     width: 100%;
    }
   }
 
   @media screen and (min-width: 1025px){
     .first-name {
-      width:217px;
+      width:276px;
        height: 45px;
        margin: 20px 20px 10px 20px;
        border: 1px solid #026FC2;
@@ -203,7 +203,7 @@ input[type='text']::placeholder {
      }
      
      .last-name {
-      width: 217px;
+      width: 276px;
       margin-right: 25px !important;
       padding-right: 10px;
       height: 45px;
@@ -211,4 +211,7 @@ input[type='text']::placeholder {
       border: 1px solid #026FC2;
       border-radius: 4px;
      }
+     .form-box{
+      width: 100%;
+    }
   }
