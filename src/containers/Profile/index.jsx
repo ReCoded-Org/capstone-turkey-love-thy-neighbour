@@ -140,8 +140,7 @@ const Profile = () => {
                       <li>
                         Interests:{" "}
                         <span>
-                          {interests === "Default interest." ||
-                          interests === undefined
+                          {!firestoreDoc?.interests
                             ? "Default interest."
                             : createInterestString(interests)}
                         </span>

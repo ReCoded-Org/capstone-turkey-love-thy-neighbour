@@ -2,8 +2,6 @@ import React from "react";
 
 import { Modal, Button, Card } from "react-bootstrap";
 
-import Multiselect from "multiselect-react-dropdown";
-
 import { useFormik } from "formik";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -15,8 +13,6 @@ import constants, { newActivityList } from "../../utils/constants";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
-
-// don't make phone and address fields required
 
 const EditProfileModal = () => {
   const dispatch = useDispatch();

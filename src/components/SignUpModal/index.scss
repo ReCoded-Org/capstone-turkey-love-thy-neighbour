@@ -21,11 +21,10 @@
 
         .card-body {
           form {
-            select {
-              padding-left: 4px !important;
-            }
-            select:invalid {
-              color: #646464;
+            input {
+              width: 100%;
+              margin-top: 10px;
+              border: 1px solid $dark-blue;
             }
 
             input,
@@ -48,12 +47,17 @@
       }
     }
 
-    & > div.first-sign-up-modal-footer {
-      padding: 16px;
-
-      button {
-        margin-right: 0 !important;
-        margin-left: 0 !important;
+    & > div.two-footer-wrapper {
+      & > div.modal-footer:first-child {
+        padding: 16px;
+        button {
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+        }
+        button:nth-child(2) {
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
       }
 
       button:nth-child(2) {

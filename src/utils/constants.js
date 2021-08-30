@@ -62,9 +62,9 @@ const constants = {
   ],
 };
 
-export const newActivityList = constants.activityList.map((exercise) => {
+export const newActivityList = constants.activityList.map((activity) => {
   return {
-    content: exercise,
+    content: activity,
   };
 });
 

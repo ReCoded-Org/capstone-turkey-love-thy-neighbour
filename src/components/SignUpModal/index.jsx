@@ -11,7 +11,6 @@ import constants from "../../utils/constants";
 
 import { auth } from "../../firebaseConfig";
 
-import "./index.scss";
 import logo from "../../images/logo.svg";
 import {
   SignInUpButton,
@@ -19,8 +18,7 @@ import {
   SignInUpFacebookButton,
 } from "../CustomButtons";
 
-// refactor styling
-// handle the styling of the district select
+import "./index.scss";
 
 const SignUpModal = () => {
   const dispatch = useDispatch();
@@ -228,38 +226,39 @@ const SignUpModal = () => {
           </Card.Body>
         </Card>
       </Modal.Body>
-
-      <Modal.Footer className="first-sign-up-modal-footer d-flex flex-column align-items-stretch">
-        <SignInUpButton
-          type="submit"
-          disabled={formik.isSubmitting}
-          form="sign-up-form"
-        >
-          Sign Up
-        </SignInUpButton>
-        <SignInUpGoogleButton type="submit" disabled={formik.isSubmitting}>
-          Sign Up With Google
-        </SignInUpGoogleButton>
-        <SignInUpFacebookButton type="submit" disabled={formik.isSubmitting}>
-          Sign Up With Facebook
-        </SignInUpFacebookButton>
-      </Modal.Footer>
-      <Modal.Footer className="second-sign-up-modal-footer d-flex flex-column align-items-center">
-        <span>
-          Already got an{" "}
-          <a
-            href="/"
-            onClick={(event) => {
-              event.preventDefault();
-              dispatch({ type: "signUp" });
-              dispatch({ type: "signIn" });
-            }}
+      <div className="two-footer-wrapper">
+        <Modal.Footer className="first-sign-up-modal-footer d-flex flex-column align-items-stretch">
+          <SignInUpButton
+            type="submit"
+            disabled={formik.isSubmitting}
+            form="sign-up-form"
           >
-            Account
-          </a>
-          ?
-        </span>
-      </Modal.Footer>
+            Sign Up
+          </SignInUpButton>
+          <SignInUpGoogleButton type="submit" disabled={formik.isSubmitting}>
+            Sign Up With Google
+          </SignInUpGoogleButton>
+          <SignInUpFacebookButton type="submit" disabled={formik.isSubmitting}>
+            Sign Up With Facebook
+          </SignInUpFacebookButton>
+        </Modal.Footer>
+        <Modal.Footer className="second-sign-up-modal-footer d-flex flex-column align-items-center">
+          <span>
+            Already got an{" "}
+            <a
+              href="/"
+              onClick={(event) => {
+                event.preventDefault();
+                dispatch({ type: "signUp" });
+                dispatch({ type: "signIn" });
+              }}
+            >
+              Account
+            </a>
+            ?
+          </span>
+        </Modal.Footer>
+      </div>
     </Modal>
   );
 };
