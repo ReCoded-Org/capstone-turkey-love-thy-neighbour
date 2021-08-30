@@ -2,6 +2,8 @@ import React from "react";
 
 import { Modal, Button, Card } from "react-bootstrap";
 
+import Multiselect from "multiselect-react-dropdown";
+
 import { useFormik } from "formik";
 
 import { useSelector, useDispatch } from "react-redux";
