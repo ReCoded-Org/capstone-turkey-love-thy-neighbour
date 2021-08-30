@@ -51,6 +51,7 @@ const SignInModal = () => {
     validate,
     onSubmit: (values, { setSubmitting, resetForm }) => {
       resetForm();
+      setSignInAlertMessage("");
       if (!isSignedIn) {
         auth
           .signInWithEmailAndPassword(values.email, values.password)
