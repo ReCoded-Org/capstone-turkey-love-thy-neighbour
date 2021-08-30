@@ -23,7 +23,7 @@ function OurTeam() {
         <Card className="card d-flex flex-column align-items-center justify-content-center">
           <img src={imgShrreya} alt="img" className="img-fluid" />
           <Card.Title> Shrreya Bhatachaarya </Card.Title>
-          <p>***Lead Trainer</p>
+          <p>Lead Trainer</p>
           <Col className="social-media-logos d-flex flex-row justify-content-center">
             {" "}
             <a
