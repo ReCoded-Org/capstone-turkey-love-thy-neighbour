@@ -6,6 +6,7 @@
     background-image: url("../../images/laptop-background-image.png");
     background-size: cover;
     background-size: contain;
+    height: calc(100vh - 120px);
   }
 }
 
