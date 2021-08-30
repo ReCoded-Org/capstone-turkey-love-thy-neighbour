@@ -1,4 +1,9 @@
-import { firestore } from "../firebaseConfig";
+import {
+  firestore,
+  auth,
+  googleProvider,
+  facebookProvider,
+} from "../firebaseConfig";
 
 export function removeOneProp(object, propToBeRemoved) {
   // propToBeRemoved is gonna be a string
