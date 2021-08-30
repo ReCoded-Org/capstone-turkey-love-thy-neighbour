@@ -16,8 +16,6 @@ import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 import "./index.scss";
 
-// don't make phone and address fields required
-
 const EditProfileModal = () => {
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector(

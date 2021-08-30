@@ -59,7 +59,6 @@ const SignInModal = () => {
             dispatch({ type: "signIn" });
           })
           .catch((err) => setSignInAlertMessage(err.message));
-        // TODO: Show the error within a modal
         setSubmitting(false);
       }
     },
