@@ -22,8 +22,6 @@ import FAQ from "./containers/FAQ";
 import SignInModal from "./components/SignInModal";
 import SignUpModal from "./components/SignUpModal";
 
-// TODO: if the users are signed in, show them their profile when they click on the navbar logo
-
 function App() {
   const dispatch = useDispatch();
   const isSignedIn = useSelector((state) => state.user.isSignedIn);
