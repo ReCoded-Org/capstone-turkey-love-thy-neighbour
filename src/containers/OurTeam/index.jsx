@@ -17,7 +17,7 @@ import "./index.scss";
 function OurTeam() {
   return (
     <Container className="ourteam-content-container d-flex flex-column justify-content-center">
-      <h4>Here’s our hard working development team:</h4>
+      <h2>Here’s our hard working development team:</h2>
 
       <Row className="ourteam-content-row">
         <Card className="carda d-flex flex-column align-items-center justify-content-center">
