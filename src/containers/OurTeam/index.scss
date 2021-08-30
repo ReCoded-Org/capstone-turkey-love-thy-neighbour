@@ -4,6 +4,9 @@
     color: $logo-blue;
     text-align: center;
     padding-top: 80px;
+    @media screen and (max-width: 768px){   
+      padding-top: 50px;
+      }
   }
 
   .ourteam-content-row {
@@ -12,6 +15,10 @@
     padding-bottom: 210px;
     display: flex;
     justify-content: space-around;
+    @media screen and (max-width: 767px){   
+      padding-bottom: 50px;
+      padding-top: 40px;
+      }
 
   svg {
     padding-right: 10px;
@@ -30,7 +37,7 @@
 
   
  .img-fluid {
-    @media screen and (max-width: 768px){      
+    @media screen and (max-width: 767px){      
       padding: 10px;              
     }
     @media screen and (min-width: 768px) {
