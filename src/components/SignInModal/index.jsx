@@ -24,7 +24,10 @@ const SignInModal = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const [signInAlertMessage, setSignInAlertMessage] = useState("");
+  const [signInAlertState, setSignInAlertState] = useState({
+    isOpen: false,
+    message: "",
+  });
 
   const isSignInOpen = useSelector((state) => state.popup.isSignInOpen);
   const isSignedIn = useSelector((state) => state.user.isSignedIn);
@@ -51,7 +54,7 @@ const SignInModal = () => {
     validate,
     onSubmit: (values, { setSubmitting, resetForm }) => {
       resetForm();
-      setSignInAlertMessage("");
+      setSignInAlertState({ isOpen: false, message: "" });
       if (!isSignedIn) {
         auth
           .signInWithEmailAndPassword(values.email, values.password)
@@ -59,7 +62,9 @@ const SignInModal = () => {
             history.push(`/meet`);
             dispatch({ type: "signIn" });
           })
-          .catch((err) => setSignInAlertMessage(err.message));
+          .catch((err) =>
+            setSignInAlertState({ isOpen: true, message: err.message })
+          );
         setSubmitting(false);
       }
     },
@@ -147,11 +152,11 @@ const SignInModal = () => {
       </Modal.Footer>
       <Alert
         variant="danger"
-        show={signInAlertMessage}
-        onClick={() => setSignInAlertMessage("")}
+        show={signInAlertState.isOpen}
+        onClick={() => setSignInAlertState({ isOpen: false, message: "" })}
         dismissible
       >
-        {signInAlertMessage}
+        {signInAlertState.message}
       </Alert>
     </Modal>
   );
