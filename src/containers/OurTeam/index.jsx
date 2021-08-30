@@ -20,7 +20,7 @@ function OurTeam() {
       <h2>Here’s our hard working development team</h2>
 
       <Row className="ourteam-content-row">
-        <Card className="carda d-flex flex-column align-items-center justify-content-center">
+        <Card className="card d-flex flex-column align-items-center justify-content-center">
           <img src={imgShrreya} alt="img" className="img-fluid" />
           <Card.Title> Shrreya Bhatachaarya </Card.Title>
           <p>***Lead Trainer</p>
@@ -50,9 +50,9 @@ function OurTeam() {
           </Col>
         </Card>
 
-        <Card className="carda d-flex flex-column align-items-center justify-content-center">
+        <Card className="card d-flex flex-column align-items-center justify-content-center">
           <img src={imgAli} alt="img" className="img-fluid" />
-          <Card.Title>Ali Riza Sahin</Card.Title>
+          <Card.Title>Ali Rıza Şahin</Card.Title>
           <p>Junior Developer</p>
           <Col
             xs={12}
@@ -85,9 +85,9 @@ function OurTeam() {
           </Col>
         </Card>
 
-        <Card className="carda d-flex flex-column align-items-center justify-content-center">
+        <Card className="card d-flex flex-column align-items-center justify-content-center">
           <img src={imgKutay} alt="img" className="img-fluid" />
-          <Card.Title>Kutay Kagan Ozen</Card.Title>
+          <Card.Title>Kutay Kağan Özen</Card.Title>
           <p>Junior Developer</p>
           <Col
             xs={12}
@@ -120,7 +120,7 @@ function OurTeam() {
           </Col>
         </Card>
 
-        <Card className="carda d-flex flex-column align-items-center justify-content-center">
+        <Card className="card d-flex flex-column align-items-center justify-content-center">
           <img src={imgMoulham} alt="img" className="img-fluid" />
           <Card.Title>Moulham Hallak</Card.Title>
           <p>Junior Developer</p>
@@ -155,7 +155,7 @@ function OurTeam() {
           </Col>
         </Card>
 
-        <Card className="carda d-flex flex-column align-items-center justify-content-center">
+        <Card className="card d-flex flex-column align-items-center justify-content-center">
           <img src={imgAziza} alt="img" className="img-fluid" />
           <Card.Title>Aziza Iliasova </Card.Title>
           <p>Junior Developer</p>
@@ -190,7 +190,7 @@ function OurTeam() {
           </Col>
         </Card>
 
-        <Card className="carda d-flex flex-column align-items-center justify-content-center">
+        <Card className="card d-flex flex-column align-items-center justify-content-center">
           <img src={imgNur} alt="img" className="img-fluid" />
           <Card.Title>Nur Hafise Bacaksiz </Card.Title>
           <p>Junior Developer</p>
