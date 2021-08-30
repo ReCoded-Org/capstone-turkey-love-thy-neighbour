@@ -8,10 +8,13 @@ import { GoodFeedbackButton, BadFeedbackButton } from "../CustomButtons/index";
 
 import firebaseApp, { firestore } from "../../firebaseConfig";
 
+<<<<<<< HEAD
 import { ReactComponent as ThumbsUp } from "../../images/Icons/thumbs-up.svg";
 
 import { ReactComponent as ThumbsDown } from "../../images/Icons/thumbs-down.svg";
 
+=======
+>>>>>>> 2ddc1141d9268ce06b20e7026b1bc37201856b8b
 import "./index.scss";
 
 function NotificationMenuItem({ invitationNotificationObject }) {
@@ -63,10 +66,10 @@ function NotificationMenuItem({ invitationNotificationObject }) {
             id={id}
             onClick={handleButtonClick}
           >
-            <ThumbsUp />
+            👍🏼
           </GoodFeedbackButton>
           <BadFeedbackButton type="button" id={id} onClick={handleButtonClick}>
-            <ThumbsDown />
+            👎🏼
           </BadFeedbackButton>
           <CloseButton onClick={handleButtonClick} />
         </div>
