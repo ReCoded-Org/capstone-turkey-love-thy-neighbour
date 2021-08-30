@@ -24,10 +24,8 @@ const SignInModal = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const [signInAlertState, setSignInAlertState] = useState({
-    isOpen: false,
-    message: "",
-  });
+  const initialSignInState = { isOpen: false, message: "" };
+  const [signInAlertState, setSignInAlertState] = useState(initialSignInState);
 
   const isSignInOpen = useSelector((state) => state.popup.isSignInOpen);
   const isSignedIn = useSelector((state) => state.user.isSignedIn);
@@ -54,7 +52,7 @@ const SignInModal = () => {
     validate,
     onSubmit: (values, { setSubmitting, resetForm }) => {
       resetForm();
-      setSignInAlertState({ isOpen: false, message: "" });
+      setSignInAlertState(initialSignInState);
       if (!isSignedIn) {
         auth
           .signInWithEmailAndPassword(values.email, values.password)
@@ -153,7 +151,7 @@ const SignInModal = () => {
       <Alert
         variant="danger"
         show={signInAlertState.isOpen}
-        onClick={() => setSignInAlertState({ isOpen: false, message: "" })}
+        onClick={() => setSignInAlertState(initialSignInState)}
         dismissible
       >
         {signInAlertState.message}

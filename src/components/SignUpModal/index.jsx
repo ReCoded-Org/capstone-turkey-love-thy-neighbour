@@ -25,7 +25,8 @@ import {
 const SignUpModal = () => {
   const dispatch = useDispatch();
 
-  const [signUpAlertMessage, setSignUpAlertMessage] = useState("");
+  const initialSignUpState = { isOpen: false, message: "" };
+  const [signUpAlertState, setSignUpAlertState] = useState(initialSignUpState);
 
   const isSignUpOpen = useSelector((state) => state.popup.isSignUpOpen);
   const history = useHistory();
@@ -73,6 +74,7 @@ const SignUpModal = () => {
     validate,
     onSubmit: (values, { resetForm, setSubmitting }) => {
       resetForm();
+      setSignUpAlertState(initialSignUpState);
       const objWithoutPasswordConfigProp = removeOneProp(
         values,
         "repeatedPassword"
@@ -88,7 +90,9 @@ const SignUpModal = () => {
           history.push(`/profile/${userCred.user.uid}`);
           dispatch({ type: "editProfile" });
         })
-        .catch((err) => setSignUpAlertMessage(err.message));
+        .catch((err) =>
+          setSignUpAlertState({ isOpen: true, message: err.message })
+        );
       setSubmitting(false);
     },
   });
@@ -264,11 +268,11 @@ const SignUpModal = () => {
       </Modal.Footer>
       <Alert
         variant="danger"
-        show={signUpAlertMessage}
-        onClick={() => setSignUpAlertMessage("")}
+        show={signUpAlertState.isOpen}
+        onClick={() => setSignUpAlertState(initialSignUpState)}
         dismissible
       >
-        {signUpAlertMessage}
+        {signUpAlertState.message}
       </Alert>
     </Modal>
   );
