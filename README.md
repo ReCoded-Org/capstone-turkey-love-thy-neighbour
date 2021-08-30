@@ -72,6 +72,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+Fork or Clone the Project
+
+ `git@github.com:ReCoded-Org/capstone-turkey-love-thy-neighbour.git`
+
+Install Yarn
+
+### `yarn install`
+
 In the project directory, you can run:
 
 ### `yarn start`
