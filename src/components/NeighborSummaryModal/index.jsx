@@ -71,13 +71,18 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
           <Modal.Body>
             <Card className="info-cards white-card">
               <Card.Body>
-                <Card.Title className="card-title">Furthermore Info</Card.Title>
+                <Card.Title className="card-title">Details</Card.Title>
                 <ul className="d-flex flex-column justify-content-around  mb-0">
                   <li>
-                    Bio:{" "}
+                    Age:{" "}
                     <span>
-                      {selectedNeighbor?.bio ||
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."}
+                      {selectedNeighbor?.age || "Age was not specified"}
+                    </span>
+                  </li>
+                  <li>
+                    Gender:{" "}
+                    <span>
+                      {selectedNeighbor?.gender || "Gender was not specified"}
                     </span>
                   </li>
                   <li>
@@ -93,6 +98,13 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
                     Education:{" "}
                     <span>
                       {selectedNeighbor?.education || "Default education."}
+                    </span>
+                  </li>
+                  <li>
+                    Bio:{" "}
+                    <span>
+                      {selectedNeighbor?.bio ||
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."}
                     </span>
                   </li>
                 </ul>
