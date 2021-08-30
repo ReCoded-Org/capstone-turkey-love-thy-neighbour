@@ -7,7 +7,7 @@ import { ReactComponent as Linkedn } from "../../images/linkedn.svg";
 import { ReactComponent as Github } from "../../images/github.svg";
 import imgAli from "../../images/aliriza.jpg";
 import imgKutay from "../../images/kutay.jpg";
-import imgMoulham from "../../images/moulham.jpeg";
+import imgMoulham from "../../images/moulham.png";
 import imgNur from "../../images/nur.jpg";
 import imgShrreya from "../../images/shrreya.jpeg";
 import imgAziza from "../../images/aziza.jpg";
@@ -20,28 +20,28 @@ function OurTeam() {
       <h2>Here’s our hard working development team</h2>
 
       <Row className="ourteam-content-row">
-        <Card className="card d-flex flex-column align-items-center justify-content-center">
+        <Card className="card d-flex flex-column align-items-center">
           <img src={imgShrreya} alt="img" className="img-fluid" />
           <Card.Title> Shrreya Bhatachaarya </Card.Title>
-          <p>Lead Trainer</p>
+          <p className="short-define">Lead Trainer</p>
           <Col className="social-media-logos d-flex flex-row justify-content-center">
             {" "}
             <a
-              href="https://www.github.com"
+              href="https://github.com/Shrreya"
               target="_blank"
               rel="external noreferrer"
             >
               <Github />
             </a>{" "}
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/shrreya/"
               target="_blank"
               rel="external noreferrer"
             >
               <Linkedn />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://twitter.com/__shrreya__"
               target="_blank"
               rel="external noreferrer"
             >
@@ -50,16 +50,11 @@ function OurTeam() {
           </Col>
         </Card>
 
-        <Card className="card d-flex flex-column align-items-center justify-content-center">
+        <Card className="card d-flex flex-column align-items-center">
           <img src={imgAli} alt="img" className="img-fluid" />
           <Card.Title>Ali Rıza Şahin</Card.Title>
           <p>Junior Developer</p>
-          <Col
-            xs={12}
-            sm={12}
-            md={4}
-            className="social-media-logos d-flex flex-row justify-content-center"
-          >
+          <Col className="social-media-logos d-flex flex-row justify-content-center">
             {" "}
             <a
               href="https://github.com/ARS-coding"
@@ -85,16 +80,11 @@ function OurTeam() {
           </Col>
         </Card>
 
-        <Card className="card d-flex flex-column align-items-center justify-content-center">
+        <Card className="card d-flex flex-column align-items-center">
           <img src={imgKutay} alt="img" className="img-fluid" />
           <Card.Title>Kutay Kağan Özen</Card.Title>
           <p>Junior Developer</p>
-          <Col
-            xs={12}
-            sm={12}
-            md={4}
-            className="social-media-logos d-flex flex-row justify-content-center"
-          >
+          <Col className="social-media-logos d-flex flex-row justify-content-center">
             {" "}
             <a
               href="https://github.com/Iseluin"
@@ -120,16 +110,11 @@ function OurTeam() {
           </Col>
         </Card>
 
-        <Card className="card d-flex flex-column align-items-center justify-content-center">
+        <Card className="card d-flex flex-column align-items-center">
           <img src={imgMoulham} alt="img" className="img-fluid" />
           <Card.Title>Moulham Hallak</Card.Title>
           <p>Junior Developer</p>
-          <Col
-            xs={12}
-            sm={12}
-            md={4}
-            className="social-media-logos d-flex flex-row justify-content-center"
-          >
+          <Col className="social-media-logos d-flex flex-row justify-content-center">
             {" "}
             <a
               href="https://github.com/MoulhamHallak"
@@ -155,16 +140,11 @@ function OurTeam() {
           </Col>
         </Card>
 
-        <Card className="card d-flex flex-column align-items-center justify-content-center">
+        <Card className="card d-flex flex-column align-items-center">
           <img src={imgAziza} alt="img" className="img-fluid" />
           <Card.Title>Aziza Iliasova </Card.Title>
           <p>Junior Developer</p>
-          <Col
-            xs={12}
-            sm={12}
-            md={4}
-            className="social-media-logos d-flex flex-row justify-content-center"
-          >
+          <Col className="social-media-logos d-flex flex-row justify-content-center">
             {" "}
             <a
               href="https://github.com/mimisha25"
@@ -190,16 +170,11 @@ function OurTeam() {
           </Col>
         </Card>
 
-        <Card className="card d-flex flex-column align-items-center justify-content-center">
+        <Card className="card d-flex flex-column align-items-center">
           <img src={imgNur} alt="img" className="img-fluid" />
           <Card.Title>Nur Hafise Bacaksiz </Card.Title>
           <p>Junior Developer</p>
-          <Col
-            xs={12}
-            sm={12}
-            md={4}
-            className="social-media-logos d-flex flex-row justify-content-center"
-          >
+          <Col className="social-media-logos d-flex flex-row justify-content-center">
             {" "}
             <a
               href="https://github.com/nurbacaksiz"
