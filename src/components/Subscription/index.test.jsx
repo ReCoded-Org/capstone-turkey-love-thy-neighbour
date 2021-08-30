@@ -3,7 +3,8 @@ import React from "react";
 import renderer from "react-test-renderer";
 import Subscription from ".";
 
-it("renders correctly", () => {
-  const tree = renderer.create(<Subscription />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
+describe("Subscription Section", () =>
+  it("renders Subscription section correctly", () => {
+    const tree = renderer.create(<Subscription />).toJSON();
+    expect(tree).toMatchSnapshot();
+  }));

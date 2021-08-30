@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Meet page renders Meet page correctly 1`] = `
+<div
+  className="container"
+>
+  <p>
+    Meet
+  </p>
+</div>
+`;
