@@ -127,23 +127,23 @@ const NeighborSummaryModal = ({
                   <li>
                     Bio:{" "}
                     <span>
-                      {selectedNeighbor?.bio ||
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."}
+                      {selectedNeighbor?.bio || "Bio yet to be added."}
                     </span>
                   </li>
                   <li>
                     Interests:{" "}
                     <span>
-                      {selectedNeighbor?.interests === "Default interest." ||
-                      selectedNeighbor?.interests === undefined
-                        ? "Default interest."
+                      {selectedNeighbor?.interests === undefined ||
+                      selectedNeighbor?.interests.length === 0
+                        ? "Interests yet to be added."
                         : createInterestString(selectedNeighbor.interests)}
                     </span>
                   </li>
                   <li>
                     Education:{" "}
                     <span>
-                      {selectedNeighbor?.education || "Default education."}
+                      {selectedNeighbor?.education ||
+                        "Education yet to be added."}
                     </span>
                   </li>
                 </ul>
