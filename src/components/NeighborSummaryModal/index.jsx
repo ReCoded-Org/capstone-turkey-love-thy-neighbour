@@ -11,10 +11,6 @@ import {
 
 import { NeighborCardButton } from "../CustomButtons";
 
-import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
-import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
-import PPGenderless from "../../images/Profile/PPGenderless.png";
-
 import "./index.scss";
 
 const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
