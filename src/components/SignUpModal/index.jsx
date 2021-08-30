@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 import { removeOneProp, setUserDocument } from "../../utils/helpers";
 import constants from "../../utils/constants";
 
-import { auth, googleProvider } from "../../firebaseConfig";
+import { auth, googleProvider, facebookProvider } from "../../firebaseConfig";
 
 import "./index.scss";
 import logo from "../../images/logo.svg";
@@ -113,6 +113,46 @@ const SignUpModal = () => {
           gender,
           district,
           invitationNotifications: [],
+        };
+        setUserDocument(firestoreDocUid, firestoreDoc)
+          .then(() => dispatch({ type: "signUp" }))
+          .then(() => history.push(`/profile/${firestoreDocUid}`))
+          .then(() => dispatch({ type: "editProfile" }));
+        return;
+      }
+
+      dispatch({ type: "signUp" });
+      history.push("/meet");
+    });
+  }
+
+  function handleFacebookSignIn() {
+    auth.signInWithPopup(facebookProvider).then((credObj) => {
+      const { isNewUser } = credObj.additionalUserInfo;
+
+      if (isNewUser) {
+        const firestoreDocUid = credObj.user.uid;
+        const userData = credObj.additionalUserInfo.profile;
+        const {
+          // eslint-disable-next-line camelcase
+          first_name,
+          // eslint-disable-next-line camelcase
+          last_name,
+          email,
+          picture,
+          gender = "Prefer not to say",
+          district = "",
+          invitationNotifications = [],
+        } = userData;
+
+        const firestoreDoc = {
+          firstName: first_name,
+          lastName: last_name,
+          email,
+          profileImageUrl: picture.data.url,
+          gender,
+          district,
+          invitationNotifications,
         };
         setUserDocument(firestoreDocUid, firestoreDoc)
           .then(() => dispatch({ type: "signUp" }))
@@ -275,7 +315,7 @@ const SignUpModal = () => {
         <SignInUpGoogleButton type="submit" onClick={handleGoogleSignIn}>
           Sign Up With Google
         </SignInUpGoogleButton>
-        <SignInUpFacebookButton type="submit">
+        <SignInUpFacebookButton type="submit" onClick={handleFacebookSignIn}>
           Sign Up With Facebook
         </SignInUpFacebookButton>
       </Modal.Footer>
