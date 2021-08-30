@@ -4,11 +4,10 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { createInterestString } from "../../utils/helpers";
-
-import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
-import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
-import PPGenderless from "../../images/Profile/PPGenderless.png";
+import {
+  createInterestString,
+  getDefaultGenderImage,
+} from "../../utils/helpers";
 
 import EditProfileModal from "../../components/EditProfileModal";
 import { EditProfileButton } from "../../components/CustomButtons";
@@ -49,12 +48,7 @@ const Profile = () => {
                 }
                 src={
                   firestoreDoc?.profileImageUrl ||
-                  /* eslint-disable-next-line no-nested-ternary */
-                  (gender === "Male"
-                    ? PPMaleSVG
-                    : gender === "Female"
-                    ? PPFemaleSVG
-                    : PPGenderless)
+                  getDefaultGenderImage(firestoreDoc.gender)
                 }
               />
             </div>
