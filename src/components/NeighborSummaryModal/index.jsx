@@ -14,17 +14,11 @@ import PPGenderless from "../../images/Profile/PPGenderless.png";
 
 import "./index.scss";
 
-// first and last name below the image and outside the card
-// we can show their aducation in here
-// education, bio and interests
-
 const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
   const dispatch = useDispatch();
   const isNeighborSummaryOpen = useSelector(
     (state) => state.popup.isNeighborSummaryOpen
   );
-
-  const { age, gender } = selectedNeighbor;
 
   return (
     Object.keys(selectedNeighbor).length !== 0 && (
@@ -97,14 +91,8 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
                   <li>
                     Education:{" "}
                     <span>
-                      {selectedNeighbor?.education || "Default education."}
-                    </span>
-                  </li>
-                  <li>
-                    Bio:{" "}
-                    <span>
-                      {selectedNeighbor?.bio ||
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."}
+                      {selectedNeighbor?.education ||
+                        "Education yet to be added."}
                     </span>
                   </li>
                 </ul>

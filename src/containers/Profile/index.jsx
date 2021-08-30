@@ -14,9 +14,6 @@ import EditProfileModal from "../../components/EditProfileModal";
 import { EditProfileButton } from "../../components/CustomButtons";
 import "./index.scss";
 
-// alternative bg image url: https://img.freepik.com/free-photo/abstract-flowing-neon-wave-background_53876-101942.jpg?size=626&ext=jpg
-// alternative image url: https://www.acibadem.com.tr/assets/images/doctors/kutay-colakoglu-banner.png
-
 const Profile = () => {
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector(
@@ -139,9 +136,10 @@ const Profile = () => {
                       <li>
                         Interests:{" "}
                         <span>
-                          {firestoreDoc?.interests === "Default interest." ||
+                          {firestoreDoc?.interests ===
+                            "Interests yet to be added." ||
                           firestoreDoc?.interests === undefined
-                            ? "Default interest."
+                            ? "Interests yet to be added."
                             : createInterestString(firestoreDoc?.interests)}
                         </span>
                       </li>

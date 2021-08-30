@@ -152,7 +152,7 @@ function Neighbors() {
                     }}
                     options={newActivityList}
                     selectedValues={
-                      formik.values.interests === "Default interest."
+                      formik.values.interests === "Interests yet to be added."
                         ? []
                         : formik.values.interests
                     }
