@@ -1,14 +1,13 @@
 # Love Thy Neighbour 
 
-Love Thy Neighbour is a portal to let people meet and befriend each other, based on their location. It's going to help people have stronger and more diverse personal connections which can be in many ways.
+Love Thy Neighbour is a portal to let people meet and befriend each other, based on their location. It's going to help people have stronger and more diverse personal connections.
 
 [Check out our project presentation](https://drive.google.com/file/d/1wHyfIhurV-46E0Xa0I0flvUIVIZlraa7/view?usp=sharing)
 
 
 # Outline & Objective
 
-The purpose of this website is to:
-1. Connect people living in close proximity so they can meet new people in their neighborhoods 
+The purpose of this website is to: Connect people living in close proximity so they can meet new people in their neighborhoods 
 
 ## Features
 
@@ -22,11 +21,13 @@ The purpose of this website is to:
 + Newsletter subscription
 + Recommended places to meet
 + Search neighbors by age, gender and common interests
-+ Invite a neighbor to meet with our automated email system
++ Invite a neighbor to meet with automated email notifications
 
 ## Check out our application
 
 [https://lovethyneighbor.netlify.app](https://lovethyneighbor.netlify.app/)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/be3c2453-48c6-4df6-8655-5a069dd6cdd1/deploy-status)](https://app.netlify.com/sites/lovethyneighbor/deploys)
 
 ## Technologies
 
@@ -50,9 +51,9 @@ The purpose of this website is to:
 - ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white) 
 
 
-## ✏ Our Amazing Team [🔝]
+## Our Amazing Team
 
-- Meet our team members through their GitHub profiles
+Meet our team members through their GitHub profiles
 
 | [<img alt="shrreya" src="https://avatars.githubusercontent.com/u/9050664?v=4?size=115" width="115"><br><sub>@Shrreya</sub>](https://github.com/Shrreya) | [<img alt="ali-riza" src="https://avatars.githubusercontent.com/u/80679047?v=4?size=115" width="115"><br><sub>@ARS-coding</sub>](https://github.com/ARS-coding) | [<img alt="aziza" src="https://avatars.githubusercontent.com/u/49067055?v=4?v=4?size=115" width="115"><br><sub>@mimisha25</sub>](https://github.com/mimisha25) | [<img alt="nur" src="https://avatars.githubusercontent.com/u/79417435?v=4?size=115" width="115"><br><sub>@nurbacaksiz</sub>](https://github.com/nurbacaksiz) | [<img alt="kutay" src="https://avatars.githubusercontent.com/u/63947758?v=4?size=115" width="115"><br><sub>@Iseluin</sub>](https://github.com/Iseluin) | [<img alt="moulham" src="https://avatars.githubusercontent.com/u/81989914?v=4?size=115" width="115"><br><sub>@MoulhamHallak</sub>](https://github.com/MoulhamHallak) |
 | :---: |:---: |:---: |:---: |:---: |:---: |
@@ -95,4 +96,4 @@ Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The app is ready to be deployed!
