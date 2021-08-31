@@ -7,6 +7,10 @@ const BaseButton = styled.button`
   color: var(--white);
 `;
 
+export const LanguageButton = styled(BaseButton)`
+  background: transparent;
+`;
+
 export const CTAButton = styled(BaseButton)`
   padding: 13px 65px;
   margin-top: 13px;

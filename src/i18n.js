@@ -5,10 +5,10 @@ import translationEN from "./locales/en/translationEN.json";
 import translationTR from "./locales/tr/translationTR.json";
 
 const resources = {
-  en: {
+  EN: {
     translation: translationEN,
   },
-  tr: {
+  TR: {
     translation: translationTR,
   },
 };
@@ -16,7 +16,7 @@ i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    lng: "tr",
+    lng: "EN",
     keySeparator: false,
     interpolation: {
       escapeValue: false, // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape

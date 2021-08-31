@@ -11,6 +11,7 @@ import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebaseConfig";
 
 import logo from "../../images/logo.svg";
+
 import "./index.scss";
 
 function NavBar() {
@@ -43,6 +44,7 @@ function NavBar() {
               </>
             )}
           </Nav>
+
           <Nav>
             {isSignedIn ? (
               <Nav.Link
