@@ -9,10 +9,8 @@ import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import { CTAButton } from "../../components/CustomButtons/index";
 
-// eslint-disable-next-line import/no-unresolved
-import { ReactComponent as CheckIconSVG } from "../../images/checkicon.svg";
-import mainImg from "../../images/firstContactUs.svg";
-import logoimg from "../../images/secondContactUs.svg";
+import { ReactComponent as MainImg } from "../../images/firstContactUs.svg";
+import { ReactComponent as Logoimg } from "../../images/secondContactUs.svg";
 
 import { firestore } from "../../firebaseConfig";
 
@@ -159,13 +157,22 @@ function ContactUs() {
                   </CTAButton>
                   <Modal show={show} onHide={handleClose}>
                     <Modal.Header>
-                      <CheckIconSVG />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20%"
+                        height="20%"
+                        fill="green"
+                        className="check-icon"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112 6.82-8.69a.486.486 0 0 1 .04-.045z" />
+                      </svg>
                     </Modal.Header>
                     <Modal.Body>
                       <h5>
-                        Your message was successfully sent.
+                        The message was successfully sent.
                         <br />
-                        We will get back to you soon!
+                        We will get you back soon!
                       </h5>
                     </Modal.Body>
                     <Modal.Footer>
@@ -179,8 +186,8 @@ function ContactUs() {
             </div>
           </Col>
           <Col xs={12} sm={12} md={6} className="p-0 px-xs-1 px-md-1 h-100">
-            <img src={mainImg} alt="img" className="img-fluid main-img" />
-            <img src={logoimg} alt="img" className="img-fluid logo-img" />
+            <MainImg className="img-fluid main-img" />
+            <Logoimg className="img-fluid logo-img" />
           </Col>
         </Row>
       </Container>
