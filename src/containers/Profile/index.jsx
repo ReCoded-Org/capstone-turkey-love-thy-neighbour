@@ -44,7 +44,10 @@ const Profile = () => {
                 className="profile-photo"
                 alt="profile"
                 style={
-                  gender === "Prefer not to say" ? { width: "190px" } : null
+                  gender === "Prefer not to say" &&
+                  !firestoreDoc.profileImageUrl
+                    ? { width: "190px" }
+                    : null
                 }
                 src={
                   firestoreDoc?.profileImageUrl ||
@@ -75,34 +78,34 @@ const Profile = () => {
                     <Card.Title className="card-title">General</Card.Title>
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
-                        First Name:{" "}
-                        <span>
-                          {firestoreDoc.firstName || "Default first name."}
-                        </span>
+                        First Name: <span>{firestoreDoc.firstName}</span>
                       </li>
                       <li>
-                        Last Name:{" "}
-                        <span>
-                          {firestoreDoc.lastName || "Default last name."}
-                        </span>
+                        Last Name: <span>{firestoreDoc.lastName}</span>
                       </li>
                       <li>
                         Gender:{" "}
-                        <span>{firestoreDoc.gender || "Default gender."}</span>
+                        <span>
+                          {firestoreDoc.gender || "Gender yet to be added."}
+                        </span>
                       </li>
                       <li>
-                        Age: <span>{firestoreDoc.age || "Default age."}</span>
+                        Age:{" "}
+                        <span>
+                          {firestoreDoc.age || "Age yet to be added."}
+                        </span>
                       </li>
                       <li>
                         Education:{" "}
                         <span>
-                          {firestoreDoc.education || "Defualt education."}
+                          {firestoreDoc.education ||
+                            "Education yet to be added."}
                         </span>
                       </li>
                       <li>
                         District:{" "}
                         <span>
-                          {firestoreDoc.district || "Default district."}
+                          {firestoreDoc.district || "District yet to be added."}
                         </span>
                       </li>
                     </ul>
@@ -123,16 +126,13 @@ const Profile = () => {
                       <li>
                         Bio:{" "}
                         <span>
-                          {firestoreDoc.bio ||
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."}
+                          {firestoreDoc.bio || "Bio yet to be added."}
                         </span>
                       </li>
                       <li>
                         Interests:{" "}
                         <span>
-                          {firestoreDoc?.interests ===
-                            "Interests yet to be added." ||
-                          firestoreDoc?.interests === undefined
+                          {!firestoreDoc?.interests
                             ? "Interests yet to be added."
                             : createInterestString(firestoreDoc?.interests)}
                         </span>
@@ -164,7 +164,7 @@ const Profile = () => {
                       <li>
                         Address:{" "}
                         <span>
-                          {firestoreDoc.address || "Somewhere in the world"}
+                          {firestoreDoc.address || "Address yet to be added."}
                         </span>
                       </li>
                     </ul>
