@@ -9,6 +9,8 @@ import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import { CTAButton } from "../../components/CustomButtons/index";
 
+// eslint-disable-next-line import/no-unresolved
+import { ReactComponent as CheckIconSVG } from "../../images/checkicon.svg";
 import mainImg from "../../images/firstContactUs.svg";
 import logoimg from "../../images/secondContactUs.svg";
 
@@ -157,22 +159,13 @@ function ContactUs() {
                   </CTAButton>
                   <Modal show={show} onHide={handleClose}>
                     <Modal.Header>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20%"
-                        height="20%"
-                        fill="green"
-                        className="check-icon"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112 6.82-8.69a.486.486 0 0 1 .04-.045z" />
-                      </svg>
+                      <CheckIconSVG />
                     </Modal.Header>
                     <Modal.Body>
                       <h5>
-                        The message was successfully sent.
+                        Your message was successfully sent.
                         <br />
-                        We will get you back soon!
+                        We will get back to you soon!
                       </h5>
                     </Modal.Body>
                     <Modal.Footer>
