@@ -44,7 +44,8 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
               className="profile-photo"
               alt="profile"
               style={
-                selectedNeighbor?.gender === "Prefer not to say"
+                selectedNeighbor.gender === "Prefer not to say" &&
+                !selectedNeighbor.profileImageUrl
                   ? { width: "190px" }
                   : null
               }
@@ -64,21 +65,19 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
                   <li>
                     Age:{" "}
                     <span>
-                      {selectedNeighbor?.age || "Age was not specified"}
+                      {selectedNeighbor?.age || "Age yet to be added."}
                     </span>
                   </li>
                   <li>
-                    Gender:{" "}
-                    <span>
-                      {selectedNeighbor?.gender || "Gender was not specified"}
-                    </span>
+                    Gender: <span>{selectedNeighbor?.gender}</span>
                   </li>
                   <li>
                     Interests:{" "}
                     <span>
-                      {selectedNeighbor?.interests === "Default interest." ||
+                      {selectedNeighbor?.interests ===
+                        "Interests yet to be added." ||
                       selectedNeighbor?.interests === undefined
-                        ? "Default interest."
+                        ? "Interests yet to be added."
                         : createInterestString(selectedNeighbor.interests)}
                     </span>
                   </li>

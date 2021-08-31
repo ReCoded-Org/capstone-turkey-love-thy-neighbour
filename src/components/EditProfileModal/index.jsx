@@ -12,8 +12,9 @@ import { firestore } from "../../firebaseConfig";
 
 import constants, { newActivityList } from "../../utils/constants";
 
-import { ReactComponent as Logo } from "../../images/logo.svg";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
+
+import { ReactComponent as Logo } from "../../images/logo.svg";
 import "./index.scss";
 
 const EditProfileModal = () => {
@@ -28,7 +29,6 @@ const EditProfileModal = () => {
     dispatch({ type: "editProfile" });
   }
 
-  // TODO: Add the validation errors for other stuff.
   const validate = (values) => {
     const errors = {};
 
@@ -274,12 +274,6 @@ const EditProfileModal = () => {
                   value={formik.values.profileImageUrl}
                   onBlur={formik.handleBlur}
                 />
-                {formik.touched.profileImageUrl &&
-                formik.errors.profileImageUrl ? (
-                  <div className="error-msg">
-                    {formik.errors.profileImageUrl}
-                  </div>
-                ) : null}
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <input
@@ -292,12 +286,6 @@ const EditProfileModal = () => {
                   value={formik.values.backgroundImageUrl}
                   onBlur={formik.handleBlur}
                 />
-                {formik.touched.backgroundImageUrl &&
-                formik.errors.backgroundImageUrl ? (
-                  <div className="error-msg">
-                    {formik.errors.backgroundImageUrl}
-                  </div>
-                ) : null}
               </div>
             </form>
           </Card.Body>
