@@ -118,10 +118,10 @@ function Neighbors() {
                         <option defaultValue value="All">
                           {t("neighbors_filter_all")}
                         </option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
+                        <option value="Male">{t("male")}</option>
+                        <option value="Female">{t("female")}</option>
                         <option value="Prefer not to say">
-                          Prefer not to say
+                          {t("prefernottosay")}
                         </option>
                       </select>
                     </div>

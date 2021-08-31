@@ -78,6 +78,12 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
                     <span>{selectedNeighbor?.gender}</span>
                   </li>
                   <li>
+                    {t("profile_about_you_bio")}{" "}
+                    <span>
+                      {selectedNeighbor?.bio || "Bio yet to be added."}
+                    </span>
+                  </li>
+                  <li>
                     {t("profile_about_you_interests")}{" "}
                     <span>
                       {selectedNeighbor?.interests ===

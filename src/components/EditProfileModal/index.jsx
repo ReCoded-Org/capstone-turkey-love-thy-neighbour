@@ -11,11 +11,8 @@ import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 
 import { firestore } from "../../firebaseConfig";
-
 import constants, { newActivityList } from "../../utils/constants";
-
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
-
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import "./index.scss";
 

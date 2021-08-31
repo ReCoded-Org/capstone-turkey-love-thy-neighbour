@@ -22,15 +22,15 @@
   "newsletter_subscribe": "Haftalık bir özet almak için bültenimize kaydolun.",
   "newsletter_email_pholder": "email",
   "profile_edit_button": "Profili Düzenle",
-  "profile_general_info_card_title": "Genel Bilgiler",
+  "profile_general_info_card_title": "Genel",
   "profile_general_info_card_firstname": "Ad: ",
   "profile_general_info_card_lastname": "Soyad: ",
   "profile_general_info_card_gender": "Cinsiyet: ",
   "profile_general_info_card_age": "Yaş: ",
   "profile_general_info_card_education": "Eğitim Durumu: ",
   "profile_general_info_card_district": "Semt: ",
-  "profile_about_you_title": "Hakkında",
-  "profile_about_you_bio": "Özet: ",
+  "profile_about_you_title": "Kişisel",
+  "profile_about_you_bio": "Hakkında: ",
   "profile_about_you_interests": "İlgi Alanları: ",
   "profile_contact_card_title": "İletişim",
   "profile_contact_card_email": "Email: ",
@@ -111,5 +111,8 @@
   "footer_team": "Geliştiriciler",
   "footer_contact": "Bize Ulaşın",
   "footer_faq": "SSS",
-  "footer_copyright": "Her hakkı saklıdır © Re:Coded 2021"
+  "footer_copyright": "Her hakkı saklıdır © Re:Coded 2021",
+  "male": "Erkek",
+  "female": "Kadın",
+  "prefernottosay": "Belirtilmedi"
 }
