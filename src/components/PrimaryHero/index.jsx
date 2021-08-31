@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
 import { Container, Row, Col } from "react-bootstrap";
 
 import { useDispatch } from "react-redux";
@@ -10,7 +12,7 @@ import "./index.scss";
 
 function PrimaryHero() {
   const dispatch = useDispatch();
-
+  const { t, i18n } = useTranslation();
   return (
     <section className="snapping-section primary-hero-img-bg container-fluid">
       <Container className="primary-hero-content-container d-flex align-items-center">
@@ -21,7 +23,7 @@ function PrimaryHero() {
             md={6}
             className="first-column p-0 pb-2 pb-sm-2 pb-md-0 d-flex flex-column justify-content-center align-items-start"
           >
-            <h1>Love Thy Neighbor!</h1>
+            <h1>{t("PrimaryHeroTitle")}</h1>
             <p>
               Let’s build a strong, dynamic and caring community that uplifts
               each other.
