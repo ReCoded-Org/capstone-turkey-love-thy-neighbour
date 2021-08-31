@@ -86,10 +86,9 @@
           font-size: 14px;
         }
       }
-      @media screen and (max-width: 375px) {
-        font-size: 30px;
-        padding-bottom: 380px;
-      }
+      // @media screen and (max-width: 375px) {
+      //   font-size: 30px;
+      // }
     }
 
     svg:not(.check-icon) {
