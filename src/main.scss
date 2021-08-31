@@ -11,12 +11,12 @@ body {
 
 .main-wrapper {
   min-height: 100vh;
-  scroll-snap-type: y mandatory;
 }
 
 .container,
 .container-fluid {
-  padding: 0 !important;
+  padding-right: 0 !important;
+  padding-left: 0;
 }
 
 h1,

@@ -1,44 +1,69 @@
 @import "../../style/variables";
 
 #sign-up-modal {
-  .modal-header {
-    h2 {
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 0;
+  .modal-content {
+    & > div.modal-header {
+      h2 {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+      }
+
+      button {
+        margin: 0;
+      }
     }
 
-    button {
-      margin: 0;
+    & > div.modal-body {
+      .card {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+        .card-body {
+          form {
+            input {
+              width: 100%;
+              margin-top: 10px;
+              border: 1px solid $dark-blue;
+            }
+
+            select {
+              height: 42px;
+              margin: 0;
+              margin-top: 10px;
+              border: 1px solid $black;
+            }
+
+            div.error-msg {
+              font-size: 12px;
+              color: rgb(122, 12, 22);
+              margin-top: 5px;
+              margin-bottom: 5px;
+              margin-left: 3px;
+            }
+          }
+        }
+      }
     }
-  }
 
-  form {
-    .error-msg {
-      font-size: 12px;
-      color: rgb(122, 12, 22);
-      margin-top: 5px;
-      margin-bottom: 5px;
-      margin-left: 3px;
+    & > div.two-footer-wrapper {
+      & > div.modal-footer:first-child {
+        padding: 16px;
+        button {
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+        }
+        button:nth-child(2) {
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+      }
+
+      & > div.modal-footer:last-child {
+        a {
+          text-decoration: none;
+        }
+      }
     }
-  }
-
-  .sign-up-buttons {
-    padding: 16px;
-
-    button {
-      margin-right: 0 !important;
-      margin-left: 0 !important;
-    }
-
-    button:nth-child(2) {
-      margin-top: 5px;
-      margin-bottom: 5px;
-    }
-  }
-
-  .sign-up-form-item {
-    margin-top: 10px;
-    border: 1px solid $dark-blue;
   }
 }
