@@ -67,7 +67,7 @@ function ContactUs() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <section className="container-fluid">
+    <section className="contactus-section">
       <Container className="contactus-content-container d-flex align-items-center">
         <Row className="contactus-content-row m-0">
           <Col
