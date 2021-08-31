@@ -86,11 +86,11 @@
           font-size: 14px;
         }
       }
-
-      .button-input-wrapper {
-        display: flex;
-        flex-direction: row;
+      @media screen and (max-width: 375px) {
+        font-size: 30px;
+        padding-bottom: 380px;
       }
+    }
 
       svg:not(.check-icon) {
         @media screen and (min-width: 768px) {
