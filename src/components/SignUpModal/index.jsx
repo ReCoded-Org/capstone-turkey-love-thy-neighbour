@@ -1,5 +1,5 @@
-import React from "react";
-import { Modal, Button, Card } from "react-bootstrap";
+import React, { useState } from "react";
+import { Modal, Button, Card, Alert } from "react-bootstrap";
 import { useFormik } from "formik";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import { removeOneProp, setUserDocument } from "../../utils/helpers";
+import constants from "../../utils/constants";
 
 import { auth } from "../../firebaseConfig";
 
-import "./index.scss";
 import logo from "../../images/logo.svg";
 import {
   SignInUpButton,
@@ -18,10 +18,14 @@ import {
   SignInUpFacebookButton,
 } from "../CustomButtons";
 
-// refactor styling
+import "./index.scss";
 
 const SignUpModal = () => {
   const dispatch = useDispatch();
+
+  const initialSignUpState = { isOpen: false, message: "" };
+  const [signUpAlertState, setSignUpAlertState] = useState(initialSignUpState);
+
   const isSignUpOpen = useSelector((state) => state.popup.isSignUpOpen);
   const history = useHistory();
 
@@ -33,14 +37,24 @@ const SignUpModal = () => {
     if (!values.lastName) {
       errors.lastName = "Required";
     }
+    if (!values.gender) {
+      errors.gender = "Required";
+    }
+    if (!values.district) {
+      errors.district = "Required";
+    }
     if (!values.email) {
       errors.email = "Required";
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+      errors.email = "Invalid email";
     }
     if (!values.password) {
       errors.password = "Required";
     }
     if (!values.repeatedPassword) {
       errors.repeatedPassword = "Required";
+    } else if (values.repeatedPassword !== values.password) {
+      errors.repeatedPassword = "Passwords do not match";
     }
     return errors;
   };
@@ -49,6 +63,8 @@ const SignUpModal = () => {
     initialValues: {
       firstName: "",
       lastName: "",
+      gender: "",
+      district: "",
       email: "",
       password: "",
       repeatedPassword: "",
@@ -56,6 +72,7 @@ const SignUpModal = () => {
     validate,
     onSubmit: (values, { resetForm, setSubmitting }) => {
       resetForm();
+      setSignUpAlertState(initialSignUpState);
       const objWithoutPasswordConfigProp = removeOneProp(
         values,
         "repeatedPassword"
@@ -65,13 +82,15 @@ const SignUpModal = () => {
         .then((userCred) => {
           setUserDocument(userCred.user.uid, objWithoutPasswordConfigProp);
           return userCred;
-        }) // set the document in firestore
+        })
         .then((userCred) => {
           dispatch({ type: "signUp" });
           history.push(`/profile/${userCred.user.uid}`);
           dispatch({ type: "editProfile" });
-        }); // take the user to their profile
-      // TODO: Show the error within a modal
+        })
+        .catch((err) =>
+          setSignUpAlertState({ isOpen: true, message: err.message })
+        );
       setSubmitting(false);
     },
   });
@@ -125,6 +144,48 @@ const SignUpModal = () => {
               {formik.touched.lastName && formik.errors.lastName ? (
                 <div className="error-msg">{formik.errors.lastName}</div>
               ) : null}
+              <select
+                className="p-2 "
+                id="gender"
+                name="gender"
+                onChange={formik.handleChange}
+                value={formik.values.gender}
+                onBlur={formik.handleBlur}
+                required
+              >
+                <option disabled defaultValue value="">
+                  Select a gender...
+                </option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+              {formik.touched.gender && formik.errors.gender ? (
+                <div className="error-msg">{formik.errors.gender}</div>
+              ) : null}
+              <select
+                className="p-2 flex-fill"
+                id="district"
+                name="district"
+                onChange={formik.handleChange}
+                value={formik.values.district}
+                onBlur={formik.handleBlur}
+                required
+              >
+                <option disabled defaultValue value="">
+                  Select a district...
+                </option>
+                {constants.districtList.map((district) => {
+                  return (
+                    <option key={district} value={district}>
+                      {district}
+                    </option>
+                  );
+                })}
+              </select>
+              {formik.touched.district && formik.errors.district ? (
+                <div className="error-msg">{formik.errors.district}</div>
+              ) : null}
               <input
                 className="p-2"
                 id="email"
@@ -161,8 +222,11 @@ const SignUpModal = () => {
                 value={formik.values.repeatedPassword}
                 onBlur={formik.handleBlur}
               />
-              {formik.touched.password && formik.errors.password ? (
-                <div className="error-msg">{formik.errors.password}</div>
+              {formik.touched.repeatedPassword &&
+              formik.errors.repeatedPassword ? (
+                <div className="error-msg">
+                  {formik.errors.repeatedPassword}
+                </div>
               ) : null}
             </form>
           </Card.Body>
@@ -200,6 +264,14 @@ const SignUpModal = () => {
           ?
         </span>
       </Modal.Footer>
+      <Alert
+        variant="danger"
+        show={signUpAlertState.isOpen}
+        onClick={() => setSignUpAlertState(initialSignUpState)}
+        dismissible
+      >
+        {signUpAlertState.message}
+      </Alert>
     </Modal>
   );
 };

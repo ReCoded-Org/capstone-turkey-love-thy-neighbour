@@ -2,12 +2,12 @@ import React from "react";
 
 import { Container } from "react-bootstrap";
 
+import FAQContent from "../../components/FAQContent";
+
 function FAQ() {
   return (
-    <Container fluid>
-      <Container>
-        <p>FAQ</p>
-      </Container>
+    <Container fluid style={{ height: "calc(100vh - 120px)" }}>
+      <FAQContent />
     </Container>
   );
 }
