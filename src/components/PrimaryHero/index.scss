@@ -6,6 +6,8 @@
   .primary-hero-content-container {
     .primary-hero-content-row {
       & > div:first-child {
+        padding-right: 10px !important;
+
         h1 {
           color: $logo-blue;
           font-weight: bold;
