@@ -33,7 +33,7 @@ function Subscription() {
                 type="email"
                 className="form-email"
                 aria-describedby="emailHelp"
-                placeholder="E-Mail"
+                placeholder="Email"
                 value={email}
                 onChange={handleChange}
               />
