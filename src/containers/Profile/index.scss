@@ -49,17 +49,20 @@
               width: 100% !important;
               margin-bottom: 16px;
             }
+            @media screen and (max-width: 575px) {
+              padding-right: 10px !important;
+              padding-left: 10px !important;
+            }
 
             & > div.card {
-              // <Card></Card> component
               border-radius: 15px !important;
               height: 100%;
               margin: 0 !important;
 
-              @media screen and (min-width: 768px) {
+              @media screen and (min-width: 992px) {
                 width: 95% !important;
               }
-              @media screen and (max-width: 767px) {
+              @media screen and (max-width: 991px) {
                 width: 100% !important;
               }
 
