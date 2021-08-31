@@ -21,11 +21,11 @@ function Footer() {
             md={4}
             className="mt-3 mt-sm-3 mt-md-0 d-flex justify-content-center justify-content-sm-center justify-content-md-start align-items-center"
           >
-            <Link to="our-team">Our Team</Link>
-            <Link to="contact-us" className="mx-3">
+            <Link to={{ pathname: "/our-team" }}>Our Team</Link>
+            <Link to={{ pathname: "/contact-us" }} className="mx-3">
               Contact Us
             </Link>
-            <Link to="faq">FAQ</Link>
+            <Link to={{ pathname: "/faq" }}>FAQ</Link>
           </Col>
           <Col
             xs={12}
