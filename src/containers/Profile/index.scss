@@ -1,14 +1,14 @@
 @import "../../style/variables";
 
 .profile-page-bg {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 120px) !important;
   background-image: url("../../images/Profile/PBG.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
   .profile-content-container {
-    min-height: calc(100vh - 60px);
+    height: 100%;
 
     & > div.row {
       width: 100%;
@@ -29,12 +29,14 @@
         .profile-photo {
           width: 150px;
           height: 150px;
+          border-radius: 50%;
         }
       }
 
       & > div:last-child {
         // cards column
         padding: 0;
+        margin: 0 !important;
 
         & > div.cards-row {
           // cards row

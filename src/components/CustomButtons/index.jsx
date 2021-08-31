@@ -44,3 +44,15 @@ export const SignInUpFacebookButton = styled(BaseButton)`
   width: 100%;
   padding: 8px;
 `;
+
+export const NeighborCardButton = styled(BaseButton)`
+  background-color: var(--dark-blue) !important;
+  color: var(--white);
+  border: none !important;
+  padding: 8px;
+`;
+
+export const NeighborsFilterButton = styled(BaseButton)`
+  width: 49%;
+  height: 40px;
+`;

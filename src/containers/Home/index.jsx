@@ -7,6 +7,7 @@ import SecondaryHero from "../../components/SecondaryHero";
 import SocialProof from "../../components/SocialProof";
 import Features from "../../components/Features";
 import FAQ from "../../components/FAQ";
+import Subscription from "../../components/Subscription";
 
 import "./index.scss";
 
@@ -18,6 +19,7 @@ function Home() {
       <SocialProof />
       <Features />
       <FAQ />
+      <Subscription />
     </Container>
   );
 }

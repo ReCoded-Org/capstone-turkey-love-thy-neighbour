@@ -1,0 +1,21 @@
+.neighbor-card {
+  cursor: pointer;
+  max-width: 250px;
+  height: 320px;
+
+  @media screen and (max-width: 991px) {
+    width: 230px;
+    margin: 0 auto;
+  }
+
+  & > img {
+    width: 100%;
+    min-height: 180px;
+    max-height: 180px;
+    padding: 10px 10px 0 10px;
+  }
+
+  & > div.card-body {
+    padding: 10px;
+  }
+}
