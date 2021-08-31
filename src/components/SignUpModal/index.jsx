@@ -11,7 +11,6 @@ import constants from "../../utils/constants";
 
 import { auth } from "../../firebaseConfig";
 
-import "./index.scss";
 import logo from "../../images/logo.svg";
 import {
   SignInUpButton,
@@ -19,8 +18,7 @@ import {
   SignInUpFacebookButton,
 } from "../CustomButtons";
 
-// refactor styling
-// handle the styling of the district select
+import "./index.scss";
 
 const SignUpModal = () => {
   const dispatch = useDispatch();

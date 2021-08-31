@@ -2,8 +2,6 @@ import React from "react";
 
 import { Modal, Button, Card } from "react-bootstrap";
 
-import Multiselect from "multiselect-react-dropdown";
-
 import { useFormik } from "formik";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -165,9 +163,11 @@ const EditProfileModal = () => {
                     <option disabled value="">
                       Select your Gender
                     </option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female </option>
-                    <option value="Prefer not to say">Prefer not to say</option>
+                    <option defaultValue="Male">Male</option>
+                    <option defaultValue="Female">Female </option>
+                    <option defaultValue="Prefer not to say">
+                      Prefer not to say
+                    </option>
                   </select>
 
                   {formik.touched.gender && formik.errors.gender ? (
