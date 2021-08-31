@@ -25,14 +25,11 @@ function PrimaryHero() {
             md={6}
             className="first-column p-0 pb-2 pb-sm-2 pb-md-0 d-flex flex-column justify-content-center align-items-start"
           >
-            <h1>{t("PrimaryHeroTitle")}</h1>
-            <p>
-              Let’s build a strong, dynamic and caring community that uplifts
-              each other.
-            </p>
+            <h1>Love Thy Neighbor</h1>
+            <p>{t("home_slogan")}</p>
             {!isSignedIn && (
               <CTAButton onClick={() => dispatch({ type: "signUp" })}>
-                Join Us!
+                {t("home_join_us_button")}
               </CTAButton>
             )}
           </Col>
