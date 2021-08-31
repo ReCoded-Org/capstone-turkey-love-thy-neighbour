@@ -1,11 +1,22 @@
+html {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 60px;
+}
+
 body {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 60px;
   margin: 0;
+}
+
+.main-wrapper {
   min-height: 100vh;
 }
 
 .container,
 .container-fluid {
-  padding: 0 !important;
+  padding-right: 0 !important;
+  padding-left: 0;
 }
 
 h1,
