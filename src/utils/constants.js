@@ -113,36 +113,47 @@ export const recommendedPlaces = {
   ],
   ŞİŞLİ: [
     {
-      image: "",
-      address: "",
-      name: "",
+      name: "Starbucks",
+      address:
+        "Merkez Mah. Abide-i Hürriyet Cad. No:211 Bolkan Center A-B-C Blok, 34384 Şişli/İstanbul",
+      image:
+        "https://lh5.googleusercontent.com/p/AF1QipMycl8J6vaaacODjOVPR1Yz3aF1h5eIGbLGm7_-=w408-h306-k-no",
     },
     {
-      image: "",
-      address: "",
-      name: "",
+      name: "Tuğra Restaurant",
+      address:
+        "Ciragan Palace Kempinski Hotel, Ciragan Caddesi 32, Çiragan Cd, 34349 Besiktas/İstanbul",
+      image:
+        "https://lh5.googleusercontent.com/p/AF1QipMwUyDiuhAunLhMkAwizzbCiEyZskoKJnaBQTku=w426-h240-k-no",
     },
     {
-      image: "",
-      address: "",
-      name: "",
+      name: "Banyan Restaurant",
+      address:
+        "Yıldız Muallim Naci Caddesi &, Salhane Sokak No:3, 34347 Beşiktaş/İstanbul",
+      image:
+        "https://lh5.googleusercontent.com/p/AF1QipMyxGeh6o3Myy3JtVWp9dauZQmh2vY62n10Fw0T=w408-h306-k-no",
     },
   ],
   FATİH: [
     {
-      image: "",
-      address: "",
-      name: "",
+      name: "Pierre Loti Roof Pub",
+      address:
+        "Binbirdirek, Pierre Loti Hotel, Piyer Loti Cd. No:1, 34122 Fatih/İstanbul ",
+      image:
+        "https://media-cdn.tripadvisor.com/media/photo-s/06/e1/1e/d5/pierre-loti-roof-pub.jpg ",
     },
     {
-      image: "",
-      address: "",
-      name: "",
+      name: "Reggae BR Shot & Food",
+      address:
+        "Küçük Ayasofya Mahallesi, Kadırga Limanı Cd. No:147, 34122 Fatih/İstanbul",
+      image:
+        "https://lh3.googleusercontent.com/3Tg-lj_a45SF0dVjItEnxfBRiw2ovDw8N45nEQToFX0xucklRphWv8Kuw04GmObxkxU7ui05=w1080-h608-p-no-v0 ",
     },
     {
-      image: "",
-      address: "",
-      name: "",
+      name: "Cozy Pub & Restaurant",
+      address: "Alemdar, Divan Yolu Cd. No:60, 34110 Fatih/İstanbul",
+      image:
+        "https://m.fourseasons.com/alt/img-opt/~70.1530.0,0000-377,5877-3000,0000-1687,5000/publish/content/dam/fourseasons/images/web/IST/IST_380_original.jpg ",
     },
   ],
 };

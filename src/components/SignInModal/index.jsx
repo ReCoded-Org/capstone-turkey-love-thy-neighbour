@@ -1,5 +1,7 @@
-import React from "react";
-import { Modal, Button, Card } from "react-bootstrap";
+import React, { useState } from "react";
+
+import { Modal, Button, Card, Alert } from "react-bootstrap";
+
 import { useFormik } from "formik";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -23,6 +25,10 @@ import "./index.scss";
 const SignInModal = () => {
   const history = useHistory();
   const dispatch = useDispatch();
+
+  const initialSignInState = { isOpen: false, message: "" };
+  const [signInAlertState, setSignInAlertState] = useState(initialSignInState);
+
   const isSignInOpen = useSelector((state) => state.popup.isSignInOpen);
   const isSignedIn = useSelector((state) => state.user.isSignedIn);
 
@@ -32,7 +38,7 @@ const SignInModal = () => {
     if (!values.email) {
       errors.email = "Required";
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-      errors.email = "Email address is invalid.";
+      errors.email = "Invalid email";
     }
     if (!values.password) {
       errors.password = "Required";
@@ -48,14 +54,17 @@ const SignInModal = () => {
     validate,
     onSubmit: (values, { setSubmitting, resetForm }) => {
       resetForm();
+      setSignInAlertState(initialSignInState);
       if (!isSignedIn) {
         auth
           .signInWithEmailAndPassword(values.email, values.password)
           .then(() => {
             history.push(`/meet`);
             dispatch({ type: "signIn" });
-          });
-        // TODO: Show the error within a modal
+          })
+          .catch((err) =>
+            setSignInAlertState({ isOpen: true, message: err.message })
+          );
         setSubmitting(false);
       }
     },
@@ -221,6 +230,14 @@ const SignInModal = () => {
           ?
         </span>
       </Modal.Footer>
+      <Alert
+        variant="danger"
+        show={signInAlertState.isOpen}
+        onClick={() => setSignInAlertState(initialSignInState)}
+        dismissible
+      >
+        {signInAlertState.message}
+      </Alert>
     </Modal>
   );
 };

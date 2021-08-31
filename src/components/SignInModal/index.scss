@@ -59,5 +59,9 @@
         text-decoration: none;
       }
     }
+
+    & > .alert {
+      margin: 0 16px 16px 16px;
+    }
   }
 }

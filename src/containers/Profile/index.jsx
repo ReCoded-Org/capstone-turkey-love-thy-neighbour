@@ -4,18 +4,14 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { createInterestString } from "../../utils/helpers";
-
-import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
-import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
-import PPGenderless from "../../images/Profile/PPGenderless.png";
+import {
+  createInterestString,
+  getDefaultGenderImage,
+} from "../../utils/helpers";
 
 import EditProfileModal from "../../components/EditProfileModal";
 import { EditProfileButton } from "../../components/CustomButtons";
 import "./index.scss";
-
-// alternative bg image url: https://img.freepik.com/free-photo/abstract-flowing-neon-wave-background_53876-101942.jpg?size=626&ext=jpg
-// alternative image url: https://www.acibadem.com.tr/assets/images/doctors/kutay-colakoglu-banner.png
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -23,8 +19,7 @@ const Profile = () => {
     (state) => state.popup.isEditProfileOpen
   );
   const { firestoreDoc, authCred } = useSelector((state) => state.user);
-  const { backgroundImageUrl, profileImageUrl, interests, gender } =
-    firestoreDoc;
+  const { gender } = firestoreDoc;
   const { email } = authCred;
 
   return (
@@ -32,8 +27,8 @@ const Profile = () => {
       fluid
       className="profile-page-bg d-flex align-items-center"
       style={
-        backgroundImageUrl
-          ? { backgroundImage: `url(${backgroundImageUrl})` }
+        firestoreDoc?.backgroundImageUrl
+          ? { backgroundImage: `url(${firestoreDoc.backgroundImageUrl})` }
           : null
       }
     >
@@ -49,18 +44,14 @@ const Profile = () => {
                 className="profile-photo"
                 alt="profile"
                 style={
-                  !profileImageUrl && gender === "Prefer not to say"
+                  gender === "Prefer not to say" &&
+                  !firestoreDoc.profileImageUrl
                     ? { width: "190px" }
                     : null
                 }
                 src={
-                  profileImageUrl ||
-                  /* eslint-disable-next-line no-nested-ternary */
-                  (gender === "Male"
-                    ? PPMaleSVG
-                    : gender === "Female"
-                    ? PPFemaleSVG
-                    : PPGenderless)
+                  firestoreDoc?.profileImageUrl ||
+                  getDefaultGenderImage(firestoreDoc.gender)
                 }
               />
             </div>
@@ -141,9 +132,9 @@ const Profile = () => {
                       <li>
                         Interests:{" "}
                         <span>
-                          {interests === undefined || interests.length === 0
+                          {!firestoreDoc?.interests
                             ? "Interests yet to be added."
-                            : createInterestString(interests)}
+                            : createInterestString(firestoreDoc?.interests)}
                         </span>
                       </li>
                     </ul>

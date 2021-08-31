@@ -1,5 +1,5 @@
-import React from "react";
-import { Modal, Button, Card } from "react-bootstrap";
+import React, { useState } from "react";
+import { Modal, Button, Card, Alert } from "react-bootstrap";
 import { useFormik } from "formik";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -11,7 +11,6 @@ import constants from "../../utils/constants";
 
 import { auth, googleProvider, facebookProvider } from "../../firebaseConfig";
 
-import "./index.scss";
 import logo from "../../images/logo.svg";
 import {
   SignInUpButton,
@@ -19,8 +18,14 @@ import {
   SignInUpFacebookButton,
 } from "../CustomButtons";
 
+import "./index.scss";
+
 const SignUpModal = () => {
   const dispatch = useDispatch();
+
+  const initialSignUpState = { isOpen: false, message: "" };
+  const [signUpAlertState, setSignUpAlertState] = useState(initialSignUpState);
+
   const isSignUpOpen = useSelector((state) => state.popup.isSignUpOpen);
   const history = useHistory();
 
@@ -41,7 +46,7 @@ const SignUpModal = () => {
     if (!values.email) {
       errors.email = "Required";
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-      errors.email = "Email address is invalid.";
+      errors.email = "Invalid email";
     }
     if (!values.password) {
       errors.password = "Required";
@@ -68,6 +73,7 @@ const SignUpModal = () => {
     validate,
     onSubmit: (values, { resetForm, setSubmitting }) => {
       resetForm();
+      setSignUpAlertState(initialSignUpState);
       const objWithoutPasswordConfigProp = removeOneProp(
         values,
         "repeatedPassword"
@@ -77,13 +83,15 @@ const SignUpModal = () => {
         .then((userCred) => {
           setUserDocument(userCred.user.uid, objWithoutPasswordConfigProp);
           return userCred;
-        }) // set the document in firestore
+        })
         .then((userCred) => {
           dispatch({ type: "signUp" });
           history.push(`/profile/${userCred.user.uid}`);
           dispatch({ type: "editProfile" });
-        }); // take the user to their profile
-      // TODO: Show the error within a modal
+        })
+        .catch((err) =>
+          setSignUpAlertState({ isOpen: true, message: err.message })
+        );
       setSubmitting(false);
     },
   });
@@ -335,6 +343,14 @@ const SignUpModal = () => {
           ?
         </span>
       </Modal.Footer>
+      <Alert
+        variant="danger"
+        show={signUpAlertState.isOpen}
+        onClick={() => setSignUpAlertState(initialSignUpState)}
+        dismissible
+      >
+        {signUpAlertState.message}
+      </Alert>
     </Modal>
   );
 };

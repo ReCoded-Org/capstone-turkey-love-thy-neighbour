@@ -24,12 +24,6 @@ import FAQ from "./containers/FAQ";
 import SignInModal from "./components/SignInModal";
 import SignUpModal from "./components/SignUpModal";
 
-// TODO: if the users are signed in, show them their profile when they click on the navbar logo
-
-// TODO: add more recommended places
-
-// TODO: redirect users whenever they sign in with google or facebook to profile
-
 function App() {
   const dispatch = useDispatch();
   const isSignedIn = useSelector((state) => state.user.isSignedIn);

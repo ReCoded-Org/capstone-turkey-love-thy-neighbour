@@ -1,15 +1,12 @@
 @import "../../style/variables";
 
-.primary-hero-section {
-  height: calc(100vh - 60px);
+.faq-content-container {
+  height: 100%;
 
-  .faq-content-container {
-    height: 100%;
+  .faq-content-row {
+    & > div {
+      padding: 0 !important;
 
-    .faq-content-row {
-      & > div {
-        padding: 0 !important;
-      }
       h2 {
         color: $logo-red;
         font-weight: bold;
@@ -34,9 +31,12 @@
           width: 100%;
           height: 450px !important;
         }
-        @media screen and (max-width: 364px) {
+        @media screen and (max-width: 495px) {
           width: 60%;
           height: 130px;
+        }
+        @media screen and (max-width: 340px) {
+          display: none;
         }
       }
     }
