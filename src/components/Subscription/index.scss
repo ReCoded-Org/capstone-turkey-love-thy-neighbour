@@ -1,7 +1,7 @@
 @import "../../style/variables";
 
 //laptop background
-@media screen and (min-width: 987px) {
+@media screen and (min-width: 992px) {
   .subscription-img-bg {
     background-image: url("../../images/laptop-background-image.png");
     background-size: cover;
@@ -13,33 +13,35 @@
 
 // tablet&phone background
 .subscription-img-bg {
-  @media screen and (min-width: 375px) and (max-width: 768px) {
+  @media screen and (min-width: 427px) and (max-width: 767px) {
     background-image: url("../../images/PhoneandNotificationsBG.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center right;
-    background-size: 45%;
-    img {
+    background-size: 35%;
+    svg:not(.check-icon) {
       display: none;
     }
   }
+
+  @media screen and (min-width: 376px) and (max-width: 426px) {
+    background-image: url("../../images/PhoneandNotificationsBG.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center right;
+    background-size: 200px 350px;
+    svg:not(.check-icon) {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: 375px) {
     background-image: url("../../images/PhoneandNotificationsBG.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center right;
     background-size: 250px 390px;
-    img {
-      display: none;
-    }
-  }
-  @media screen and (min-width: 376px) and (max-width: 426px) {
-    background-image: url("../../images/PhoneandNotificationsBG.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center right;
-    background-size: 230px 380px;
-    img {
+    svg:not(.check-icon) {
       display: none;
     }
   }
@@ -49,16 +51,30 @@
   height: calc(100vh - 120px);
 
   .subscription-content-container {
+    height: 100%;
+
     .subscription-content-row {
+      & > div {
+        padding: 0;
+      }
       h1 {
         color: $dark-blue;
         font-weight: bold;
-
-        @media screen and (min-width: 769px) {
-          padding-bottom: 200px;
+        @media screen and (min-width: 1200px) {
           font-size: 50px;
+          margin-bottom: 115px;
         }
-        @media screen and (min-width: 426px) and (max-width: 768px) {
+        @media screen and (min-width: 992px) and (max-width: 1199px) {
+          font-size: 48px;
+          margin-bottom: 115px;
+        }
+        // @media screen and (max-width: 992px) {
+        // }
+        // @media screen and (min-width: 769px) {
+        //   padding-bottom: 45px;
+        //   font-size: 50px;
+        // }
+        @media screen and (min-width: 426px) and (max-width: 991px) {
           font-size: 38px;
           padding-bottom: 220px;
           padding-top: 50px;
@@ -76,28 +92,15 @@
       h3 {
         color: $logo-red;
         font-weight: bold;
-        @media screen and (min-width: 768px) {
-          font-size: 30px;
-          margin-top: 60px;
-        }
-        @media screen and (max-width: 767px) {
-          font-size: 20px;
+        @media screen and (min-width: 991px) {
+          font-size: 25px;
         }
       }
 
       p {
         color: $black;
-        @media screen and (min-width: 768px) {
-          font-size: 15px;
-        }
-        @media screen and (max-width: 767px) {
-          font-size: 11px;
-        }
-        @media screen and (min-width: 376px) and (max-width: 425px) {
-          font-size: 15px;
-        }
-        @media screen and (max-width: 375px) {
-          font-size: 15px;
+        @media screen and (max-width: 991px) {
+          font-size: 14px;
         }
       }
 
@@ -106,10 +109,10 @@
         flex-direction: row;
       }
 
-      img {
+      svg:not(.check-icon) {
         @media screen and (min-width: 768px) {
           width: 100%;
-          height: 550px !important;
+          height: 450px !important;
         }
       }
     }
