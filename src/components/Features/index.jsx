@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
 import { Container, Row, Col, Card } from "react-bootstrap";
 
 import { ReactComponent as NetworkImg } from "../../images/network.svg";
@@ -12,6 +14,7 @@ import "./index.scss";
 // TODO: update the branch with develop
 
 function Features() {
+  const { t, i18n } = useTranslation();
   return (
     <section className="features-section container-fluid">
       <Container className="features-content-container d-flex flex-column justify-content-center">
