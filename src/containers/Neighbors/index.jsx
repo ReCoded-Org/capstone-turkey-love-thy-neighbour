@@ -4,6 +4,8 @@ import { Container, Row, Col, Accordion } from "react-bootstrap";
 
 import { useSelector } from "react-redux";
 
+import { useTranslation } from "react-i18next";
+
 import { useFormik } from "formik";
 
 import Multiselect from "multiselect-react-dropdown";
@@ -27,6 +29,7 @@ import "./index.scss";
 function Neighbors() {
   const [selectedNeighbor, setSelectedNeighbor] = useState({});
   const [neighborsData, setNeighborsData] = useState([]);
+  const { t, i18n } = useTranslation();
 
   const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
   const { district, email } = firestoreDoc;
@@ -90,30 +93,30 @@ function Neighbors() {
       <Container className="neighbors-content-container d-flex flex-column align-items-center">
         <div className="pt-2 pb-4 mx-3 mx-sm-0 text-center">
           <h1>
-            Neighbors in{" "}
+            {t("neighbors_title")}{" "}
             {district.charAt(0) + district.slice(1).toLocaleLowerCase()}
           </h1>
-          <p>
-            By clicking on “Invite to Meet” an email which includes your email
-            address will be sent from our team to the invited neighbor and if
-            they choose to meet, they will contact with you via email.
-          </p>
+          <p>{t("neighbors_text")}</p>
           <Accordion>
             <Accordion.Item eventKey="0">
-              <Accordion.Header>Filter Your Neighbors</Accordion.Header>
+              <Accordion.Header>
+                {t("neighbors_filter_pholder")}
+              </Accordion.Header>
               <Accordion.Body>
                 <form onSubmit={formik.handleSubmit}>
                   <div className="gender-age-wrapper d-flex justify-content-between">
                     <div>
                       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                      <label htmlFor="gender">Gender</label>
+                      <label htmlFor="gender">
+                        {t("neighbors_filter_gender")}
+                      </label>
                       <select
                         id="gender"
                         name="gender"
                         onChange={formik.handleChange}
                       >
                         <option defaultValue value="All">
-                          All
+                          {t("neighbors_filter_all")}
                         </option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -124,13 +127,15 @@ function Neighbors() {
                     </div>
                     <div>
                       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                      <label htmlFor="age">Age</label>
+                      <label htmlFor="age">{t("neighbors_filter_age")}</label>
                       <select
                         id="age"
                         name="age"
                         onChange={formik.handleChange}
                       >
-                        <option value="15 99">All</option>
+                        <option value="15 99">
+                          {t("neighbors_filter_all")}
+                        </option>
                         <option value="15 25">15 - 25</option>
                         <option value="26 35">26 - 35</option>
                         <option value="36 45">36 - 45</option>
@@ -139,7 +144,7 @@ function Neighbors() {
                     </div>
                   </div>
                   <Multiselect
-                    placeholder="Select interests..."
+                    placeholder={t("neighbors_filter_select_interests")}
                     displayValue="content"
                     onRemove={(selectedOptions) => {
                       formik.values.interests = selectedOptions;
@@ -155,7 +160,7 @@ function Neighbors() {
                     }
                   />
                   <NeighborsFilterButton type="submit">
-                    Find!
+                    {t("neighbors_filter_button")}
                   </NeighborsFilterButton>
                 </form>
               </Accordion.Body>

@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
 import { Link } from "react-router-dom";
 
 import { Container, Row, Col } from "react-bootstrap";
@@ -11,6 +13,7 @@ import { ReactComponent as FacebookLogo } from "../../images/facebook-logo.svg";
 import "./index.scss";
 
 function Footer() {
+  const { t, i18n } = useTranslation();
   return (
     <footer className="footer container-fluid d-flex align-items-center pt-2">
       <Container>
@@ -21,11 +24,11 @@ function Footer() {
             md={4}
             className="mt-3 mt-sm-3 mt-md-0 d-flex justify-content-center justify-content-sm-center justify-content-md-start align-items-center"
           >
-            <Link to={{ pathname: "/our-team" }}>Our Team</Link>
+            <Link to={{ pathname: "/our-team" }}>{t("footer_team")}</Link>
             <Link to={{ pathname: "/contact-us" }} className="mx-3">
-              Contact Us
+              {t("footer_contact")}
             </Link>
-            <Link to={{ pathname: "/faq" }}>FAQ</Link>
+            <Link to={{ pathname: "/faq" }}>{t("footer_faq")}</Link>
           </Col>
           <Col
             xs={12}
@@ -33,7 +36,7 @@ function Footer() {
             md={4}
             className="d-flex justify-content-center align-items-center my-2 my-sm-2 my-sm-0"
           >
-            <p>Copyright © Re:Coded 2021</p>
+            <p>{t("footer_copyright")}</p>
           </Col>
           <Col
             xs={12}

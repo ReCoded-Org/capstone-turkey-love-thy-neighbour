@@ -4,6 +4,8 @@ import { Card } from "react-bootstrap";
 
 import { useDispatch } from "react-redux";
 
+import { useTranslation } from "react-i18next";
+
 import { NeighborCardButton } from "../CustomButtons";
 
 import { firestore } from "../../firebaseConfig";
@@ -20,6 +22,7 @@ function NeighborCard({
   setSelectedNeighbor,
 }) {
   const dispatch = useDispatch();
+  const { t, i18n } = useTranslation();
 
   return (
     <Card className="neighbor-card mb-2 mx-auto">
@@ -40,7 +43,7 @@ function NeighborCard({
       <Card.Body className="d-flex flex-column justify-content-center">
         <Card.Title className="text-center">{`${firstName} ${lastName}`}</Card.Title>
         <small className="text-center">{`${age} / ${gender}`}</small>
-        <NeighborCardButton>Invite To Meet!</NeighborCardButton>
+        <NeighborCardButton>{t("neighborcards_button")}</NeighborCardButton>
       </Card.Body>
     </Card>
   );

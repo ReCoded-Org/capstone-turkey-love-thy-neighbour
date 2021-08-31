@@ -1,5 +1,7 @@
 import { React } from "react";
 
+import { useTranslation } from "react-i18next";
+
 import { Modal, Container, Card } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +16,7 @@ import { NeighborCardButton } from "../CustomButtons";
 import "./index.scss";
 
 const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const isNeighborSummaryOpen = useSelector(
     (state) => state.popup.isNeighborSummaryOpen
@@ -60,19 +63,22 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
           <Modal.Body>
             <Card className="info-cards white-card">
               <Card.Body>
-                <Card.Title className="card-title">Details</Card.Title>
+                <Card.Title className="card-title">
+                  {t("summodal_title")}
+                </Card.Title>
                 <ul className="d-flex flex-column justify-content-around  mb-0">
                   <li>
-                    Age:{" "}
+                    {t("profile_general_info_card_age")}{" "}
                     <span>
                       {selectedNeighbor?.age || "Age yet to be added."}
                     </span>
                   </li>
                   <li>
-                    Gender: <span>{selectedNeighbor?.gender}</span>
+                    {t("profile_general_info_card_gender")}{" "}
+                    <span>{selectedNeighbor?.gender}</span>
                   </li>
                   <li>
-                    Interests:{" "}
+                    {t("profile_about_you_interests")}{" "}
                     <span>
                       {selectedNeighbor?.interests ===
                         "Interests yet to be added." ||
@@ -82,7 +88,7 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
                     </span>
                   </li>
                   <li>
-                    Education:{" "}
+                    {t("profile_general_info_card_education")}{" "}
                     <span>
                       {selectedNeighbor?.education ||
                         "Education yet to be added."}
@@ -94,7 +100,7 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
           </Modal.Body>
           <Modal.Footer>
             <NeighborCardButton className="mx-auto">
-              Invite To Meet!
+              {t("neighborcards_button")}
             </NeighborCardButton>
           </Modal.Footer>
         </Container>

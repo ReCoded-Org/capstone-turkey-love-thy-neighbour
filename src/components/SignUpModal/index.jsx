@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Modal, Button, Card, Alert } from "react-bootstrap";
 import { useFormik } from "formik";
 
+import { useTranslation } from "react-i18next";
+
 import { useDispatch, useSelector } from "react-redux";
 
 import { useHistory } from "react-router-dom";
@@ -22,6 +24,7 @@ import "./index.scss";
 
 const SignUpModal = () => {
   const dispatch = useDispatch();
+  const { t, i18n } = useTranslation();
 
   const initialSignUpState = { isOpen: false, message: "" };
   const [signUpAlertState, setSignUpAlertState] = useState(initialSignUpState);
@@ -105,7 +108,7 @@ const SignUpModal = () => {
     >
       <Modal.Header>
         <img src={logo} alt="logo" />
-        <h2>Sign Up</h2>
+        <h2>{t("sign_up_title")}</h2>
         <Button
           type="button"
           data-toggle="modal"
@@ -124,7 +127,7 @@ const SignUpModal = () => {
                 className="p-2"
                 id="firstName"
                 name="firstName"
-                placeholder="First Name"
+                placeholder={t("sign_up_fname_pholder")}
                 onChange={formik.handleChange}
                 value={formik.values.firstName}
                 onBlur={formik.handleBlur}
@@ -136,7 +139,7 @@ const SignUpModal = () => {
                 className="p-2"
                 id="lastName"
                 name="lastName"
-                placeholder="Last Name"
+                placeholder={t("sign_up_lname_pholder")}
                 onChange={formik.handleChange}
                 value={formik.values.lastName}
                 onBlur={formik.handleBlur}
@@ -154,7 +157,7 @@ const SignUpModal = () => {
                 required
               >
                 <option disabled defaultValue value="">
-                  Select a gender...
+                  {t("sign_up_gender_pholder")}
                 </option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -173,7 +176,7 @@ const SignUpModal = () => {
                 required
               >
                 <option disabled defaultValue value="">
-                  Select a district...
+                  {t("sign_up_district_pholder")}
                 </option>
                 {constants.districtList.map((district) => {
                   return (
@@ -191,7 +194,7 @@ const SignUpModal = () => {
                 id="email"
                 name="email"
                 type="email"
-                placeholder="Email"
+                placeholder={t("sign_in_email_pholder")}
                 onChange={formik.handleChange}
                 value={formik.values.email}
                 onBlur={formik.handleBlur}
@@ -204,7 +207,7 @@ const SignUpModal = () => {
                 id="password"
                 name="password"
                 type="password"
-                placeholder="Password"
+                placeholder={t("sign_up_password_pholder")}
                 onChange={formik.handleChange}
                 value={formik.values.password}
                 onBlur={formik.handleBlur}
@@ -217,7 +220,7 @@ const SignUpModal = () => {
                 id="repeatedPassword"
                 name="repeatedPassword"
                 type="password"
-                placeholder="Repeat Password"
+                placeholder={t("sign_up_rpassword_pholder")}
                 onChange={formik.handleChange}
                 value={formik.values.repeatedPassword}
                 onBlur={formik.handleBlur}
@@ -239,18 +242,17 @@ const SignUpModal = () => {
           disabled={formik.isSubmitting}
           form="sign-up-form"
         >
-          Sign Up
+          {t("sign_up_button")}
         </SignInUpButton>
         <SignInUpGoogleButton type="submit" disabled={formik.isSubmitting}>
-          Sign Up With Google
+          {t("sign_up_google")}
         </SignInUpGoogleButton>
         <SignInUpFacebookButton type="submit" disabled={formik.isSubmitting}>
-          Sign Up With Facebook
+          {t("sign_up_fbook")}
         </SignInUpFacebookButton>
       </Modal.Footer>
       <Modal.Footer className="second-sign-up-modal-footer d-flex flex-column align-items-center">
         <span>
-          Already got an{" "}
           <a
             href="/"
             onClick={(event) => {
@@ -259,9 +261,8 @@ const SignUpModal = () => {
               dispatch({ type: "signIn" });
             }}
           >
-            Account
+            {t("sign_up_have_account_anchor")}
           </a>
-          ?
         </span>
       </Modal.Footer>
       <Alert

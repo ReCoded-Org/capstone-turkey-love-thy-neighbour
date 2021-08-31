@@ -15,41 +15,33 @@ import "./index.scss";
 
 function Features() {
   const { t, i18n } = useTranslation();
+
   return (
     <section className="features-section container-fluid">
       <Container className="features-content-container d-flex flex-column justify-content-center">
-        <h2>Features</h2>
+        <h2>{t("features_title")}</h2>
         <Row className="features-content-row d-md-flex justify-content-md-around text-center">
           <Col xs={12} sm={12} md={3}>
             <Card className="d-flex flex-column align-items-center justify-content-center">
               <NetworkImg className="network-svg img-fluid" />
-              <Card.Title>Meet</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card&lsquo;s content.
-              </Card.Text>
+              <Card.Title>{t("features_title_meet")}</Card.Title>
+              <Card.Text>{t("features_title_meet_text")}</Card.Text>
             </Card>
           </Col>
           <Col xs={12} sm={12} md={3} className="my-1 my-sm-2 my-md-0">
             <Card className="d-flex flex-column align-items-center justify-content-center">
               <SpeechBubbleImg className="speech-bubble-svg img-fluid" />
 
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card&lsquo;s content.
-              </Card.Text>
+              <Card.Title>{t("features_title_message")}</Card.Title>
+              <Card.Text>{t("features_title_message_text")}</Card.Text>
             </Card>
           </Col>
           <Col xs={12} sm={12} md={3}>
             <Card className="d-flex flex-column align-items-center justify-content-center">
               <CouponImg className="coupon-svg img-fluid" />
 
-              <Card.Title>Coupons</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card&lsquo;s content.
-              </Card.Text>
+              <Card.Title>{t("features_title_coupons")}</Card.Title>
+              <Card.Text>{t("features_title_coupons_text")}</Card.Text>
             </Card>
           </Col>
         </Row>

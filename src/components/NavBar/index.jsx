@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
 import { useDispatch, useSelector } from "react-redux";
 
 import { Container, Nav, Navbar } from "react-bootstrap";
@@ -12,6 +14,7 @@ import logo from "../../images/logo.svg";
 import "./index.scss";
 
 function NavBar() {
+  const { t, i18n } = useTranslation();
   const history = useHistory();
   const dispatch = useDispatch();
   const isSignedIn = useSelector((state) => state.user.isSignedIn);
@@ -29,13 +32,13 @@ function NavBar() {
             {isSignedIn && (
               <>
                 <Link to={`/profile/${uid}`} className="nav-link">
-                  Profile
+                  {t("navbar_profile")}
                 </Link>
                 <Link to="/meet" className="nav-link">
-                  Meet
+                  {t("navbar_meet")}
                 </Link>
                 <Link to="/neighbors" className="nav-link">
-                  Neighbors
+                  {t("navbar_neighbors")}
                 </Link>
               </>
             )}
@@ -48,15 +51,15 @@ function NavBar() {
                   // TODO: Show the error within a modal
                 }}
               >
-                Sign Out
+                {t("navbar_signout")}
               </Nav.Link>
             ) : (
               <>
                 <Nav.Link onClick={() => dispatch({ type: "signIn" })}>
-                  Sign In
+                  {t("navbar_sign_in")}
                 </Nav.Link>
                 <Nav.Link onClick={() => dispatch({ type: "signUp" })}>
-                  Sign Up
+                  {t("navbar_sign_up")}
                 </Nav.Link>{" "}
               </>
             )}

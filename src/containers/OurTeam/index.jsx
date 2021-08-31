@@ -1,5 +1,6 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
 import { Container, Row, Col, Card } from "react-bootstrap";
 
 import { ReactComponent as Twitter } from "../../images/twitter.svg";
@@ -15,9 +16,10 @@ import imgAziza from "../../images/aziza.jpg";
 import "./index.scss";
 
 function OurTeam() {
+  const { t, i18n } = useTranslation();
   return (
     <Container className="ourteam-content-container d-flex flex-column justify-content-center">
-      <h2>Here’s our hard working development team</h2>
+      <h2>{t("ourteam_title")}</h2>
 
       <Row className="ourteam-content-row">
         <Card className="card d-flex flex-column align-items-center">
