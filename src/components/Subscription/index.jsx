@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
 import { Container, Row, Col } from "react-bootstrap";
 
 import PhoneAndNotificationsImg from "../../images/PhoneandNotifications.svg";
@@ -9,7 +11,7 @@ import "./index.scss";
 
 function Subscription() {
   const [email, setEmail] = React.useState("");
-
+  const { t, i18n } = useTranslation();
   const handleChange = (event) => {
     setEmail(event.target.value);
   };
@@ -24,10 +26,10 @@ function Subscription() {
             className="first-column d-flex flex-column justify-content-center align-items-start"
           >
             <h1>
-              Subscribe to our <br /> newsletter.
+              {t("newsletter_title_one")} <br /> {t("newsletter_title_two")}
             </h1>
-            <h3>Never miss an update !</h3>
-            <p>Signup to our newsletter to get a weekly digest.</p>
+            <h3>{t("newsletter_update")}</h3>
+            <p>{t("newsletter_subscribe")}</p>
             <div className="button-input-wrapper">
               <input
                 type="email"
