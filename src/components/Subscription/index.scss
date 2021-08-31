@@ -6,44 +6,47 @@
     background-image: url("../../images/laptop-background-image.png");
     background-size: cover;
     background-size: contain;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 120px) !important;
     background-repeat: no-repeat;
   }
 }
 
 // tablet&phone background
-.subscription-img-bg{
+.subscription-img-bg {
   @media screen and (min-width: 375px) and (max-width: 768px) {
     background-image: url("../../images/PhoneandNotificationsBG.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center right;
     background-size: 45%;
-  img {
-    display: none;
+    img {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 375px) {
+    background-image: url("../../images/PhoneandNotificationsBG.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center right;
+    background-size: 250px 390px;
+    img {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 376px) and (max-width: 426px) {
+    background-image: url("../../images/PhoneandNotificationsBG.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center right;
+    background-size: 230px 380px;
+    img {
+      display: none;
+    }
   }
 }
-@media screen and (max-width: 375px) {
-  background-image: url("../../images/PhoneandNotificationsBG.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center right;
-  background-size: 250px 390px;
-img {
-  display: none;
-   }
-}
-@media screen and (min-width: 376px) and (max-width: 426px) {
-  background-image: url("../../images/PhoneandNotificationsBG.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center right;
-  background-size: 230px 380px;
-img {
-  display: none;
-  }
- }
-}
+
+.subscription-img-bg {
+  height: calc(100vh - 120px);
 
   .subscription-content-container {
     .subscription-content-row {
@@ -111,6 +114,4 @@ img {
       }
     }
   }
-
-
-
+}

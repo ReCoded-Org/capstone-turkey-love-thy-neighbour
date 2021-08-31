@@ -1,16 +1,21 @@
-h1 {
-  font-size: 36px;
-}
+.section-wrapper {
+  h1 {
+    font-size: 36px;
+  }
 
-// for sections and content containers
-section, // all the sections inside home page
-section > div // all the content containers inside home page
-{
-  height: calc(100vh - 60px);
-  scroll-snap-align: start;
-}
+  & > section {
+    scroll-snap-align: start;
+  }
 
-// section --> content container --> row
-section > div > div.row {
-  width: 100% !important;
+  // for sections and content containers
+  section:not(.subscription-img-bg), // all the sections inside home page
+  section:not(.subscription-img-bg) > div // all the content containers inside home page
+  {
+    height: calc(100vh - 60px);
+  }
+
+  // section --> content container --> row
+  section > div > div.row {
+    width: 100% !important;
+  }
 }
