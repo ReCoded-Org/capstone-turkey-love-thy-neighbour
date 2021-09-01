@@ -30,9 +30,9 @@ function Features() {
             <Card className="d-flex flex-column align-items-center justify-content-center">
               <SpeechBubbleImg className="speech-bubble-svg img-fluid" />
 
-              <Card.Title>Message</Card.Title>
+              <Card.Title>Filtering</Card.Title>
               <Card.Text>
-                Have a conversation, learn more about your neighbor.
+                Filter nearby people by their age, gender and interests.
               </Card.Text>
             </Card>
           </Col>
