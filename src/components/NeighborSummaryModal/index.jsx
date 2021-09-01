@@ -7,7 +7,11 @@ import { send } from "emailjs-com";
 import { useDispatch, useSelector } from "react-redux";
 
 import { v4 as uuidv4 } from "uuid";
-import { createInterestString } from "../../utils/helpers";
+
+import {
+  createInterestString,
+  getDefaultGenderImage,
+} from "../../utils/helpers";
 
 import { NeighborCardButton } from "../CustomButtons";
 
@@ -15,7 +19,13 @@ import firebaseApp, { firestore } from "../../firebaseConfig";
 
 import "./index.scss";
 
-const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
+function NeighborSummaryModal({
+  selectedNeighbor,
+  setSelectedNeighbor,
+  senderEmail,
+  senderFullName,
+  setEmailAlertStatus,
+}) {
   const dispatch = useDispatch();
   const isNeighborSummaryOpen = useSelector(
     (state) => state.popup.isNeighborSummaryOpen
@@ -146,6 +156,6 @@ const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
       </Modal>
     )
   );
-};
+}
 
 export default NeighborSummaryModal;
