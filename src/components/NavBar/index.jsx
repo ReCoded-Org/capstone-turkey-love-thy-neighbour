@@ -10,6 +10,8 @@ import { Link, useHistory } from "react-router-dom";
 
 import { auth } from "../../firebaseConfig";
 
+import NotificationsMenu from "../NotificationsMenu";
+
 import logo from "../../images/logo.svg";
 
 import "./index.scss";
@@ -24,29 +26,32 @@ function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark">
       <Container>
-        <Link to="/" className="navbar-brand">
+        <Link to="/" className="navbar-brand order-lg-6">
           <img src={logo} alt="logo" />
         </Link>
+        {isSignedIn && (
+          <div className="d-flex order-lg-last">
+            <NotificationsMenu />
+          </div>
+        )}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            {isSignedIn && (
-              <>
-                <Link to={`/profile/${uid}`} className="nav-link">
-                  {t("navbar_profile")}
-                </Link>
-                <Link to="/meet" className="nav-link">
-                  {t("navbar_meet")}
-                </Link>
-                <Link to="/neighbors" className="nav-link">
-                  {t("navbar_neighbors")}
-                </Link>
-              </>
-            )}
-          </Nav>
+        <Navbar.Collapse className="order-lg-3" id="responsive-navbar-nav">
+          {isSignedIn && (
+            <Nav className="me-auto">
+              <Link to={`/profile/${uid}`} className="nav-link">
+                {t("navbar_profile")}
+              </Link>
+              <Link to="/meet" className="nav-link">
+                {t("navbar_meet")}
+              </Link>
+              <Link to="/neighbors" className="nav-link">
+                {t("navbar_neighbors")}
+              </Link>
+            </Nav>
+          )}
 
-          <Nav>
-            {isSignedIn ? (
+          {isSignedIn ? (
+            <Nav className="ms-auto">
               <Nav.Link
                 onClick={() => {
                   auth.signOut().then(() => history.push("/"));
@@ -55,17 +60,17 @@ function NavBar() {
               >
                 {t("navbar_signout")}
               </Nav.Link>
-            ) : (
-              <>
-                <Nav.Link onClick={() => dispatch({ type: "signIn" })}>
-                  {t("navbar_sign_in")}
-                </Nav.Link>
-                <Nav.Link onClick={() => dispatch({ type: "signUp" })}>
-                  {t("navbar_sign_up")}
-                </Nav.Link>{" "}
-              </>
-            )}
-          </Nav>
+            </Nav>
+          ) : (
+            <Nav className="ms-auto">
+              <Nav.Link onClick={() => dispatch({ type: "signIn" })}>
+                {t("navbar_sign_in")}
+              </Nav.Link>
+              <Nav.Link onClick={() => dispatch({ type: "signUp" })}>
+                {t("navbar_sign_up")}
+              </Nav.Link>{" "}
+            </Nav>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>

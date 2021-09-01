@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { Container, Row, Col, Accordion } from "react-bootstrap";
+import { Container, Row, Col, Accordion, Alert } from "react-bootstrap";
 
 import { useSelector } from "react-redux";
 
@@ -32,7 +32,9 @@ function Neighbors() {
   const { t } = useTranslation();
 
   const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
-  const { district, email } = firestoreDoc;
+  const { district, email, firstName, lastName } = firestoreDoc;
+
+  const [emailAlertStatus, setEmailAlertStatus] = useState("empty"); // empty, success, danger for the alert
 
   useEffect(() => {
     function fetchAllNearbyNeighbors() {
@@ -89,6 +91,9 @@ function Neighbors() {
       <NeighborSummaryModal
         selectedNeighbor={selectedNeighbor}
         setSelectedNeighbor={setSelectedNeighbor}
+        senderEmail={email} // email of the signed in user
+        senderFullName={`${firstName} ${lastName}`}
+        setEmailAlertStatus={setEmailAlertStatus}
       />
       <Container className="neighbors-content-container d-flex flex-column align-items-center">
         <div className="pt-2 pb-4 mx-3 mx-sm-0 text-center">
@@ -167,6 +172,19 @@ function Neighbors() {
             </Accordion.Item>
           </Accordion>
           <RecommendedPlacesAccordion district={district} />
+          {emailAlertStatus !== "empty" && (
+            <Alert
+              className="mb-4 mt-2 w-100"
+              variant={emailAlertStatus} // danger or success
+              onClose={() => setEmailAlertStatus("empty")}
+              dismissible
+            >
+              {emailAlertStatus === "success" &&
+                "Your email has been successfully sent!"}
+              {emailAlertStatus === "danger" &&
+                "A problem occured while sending your email..."}
+            </Alert>
+          )}
         </div>
         <Row className="neighbors-cards d-flex justify-content-around flex-wrap w-100">
           {neighborsData
@@ -186,6 +204,9 @@ function Neighbors() {
                     age={userDoc.age}
                     email={userDoc.email}
                     setSelectedNeighbor={setSelectedNeighbor}
+                    senderEmail={email} // email of the signed in user
+                    senderFullName={`${firstName} ${lastName}`}
+                    setEmailAlertStatus={setEmailAlertStatus}
                   />
                 </Col>
               );
