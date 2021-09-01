@@ -6,7 +6,6 @@
     background-image: url("../../images/laptop-background-image.png");
     background-size: cover;
     background-size: contain;
-    height: calc(100vh - 120px) !important;
     background-repeat: no-repeat;
   }
 }
@@ -17,7 +16,7 @@
     background-image: url("../../images/PhoneandNotificationsBG.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center right;
+    background-position: top 33% right;
     background-size: 35%;
     svg:not(.check-icon) {
       display: none;
@@ -28,8 +27,8 @@
     background-image: url("../../images/PhoneandNotificationsBG.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: top 40% right;
-    background-size: 200px 250px;
+    background-position: top 38% right;
+    background-size: 180px 240px;
     svg:not(.check-icon) {
       display: none;
     }
@@ -37,7 +36,12 @@
 }
 
 .subscription-img-bg {
-  height: calc(100vh - 120px);
+  @media screen and (min-width: 767px) {
+    height: calc(100vh - 120px);
+  }
+  @media screen and (max-width: 767px) {
+    height: calc(100vh - 187.5px);
+  }
 
   .subscription-content-container {
     height: 100%;
@@ -57,19 +61,22 @@
           font-size: 48px;
           margin-bottom: 115px;
         }
-        @media screen and (min-width: 427px) and (max-width: 991px) {
+        @media screen and (min-width: 768px) and (max-width: 991px) {
           font-size: 38px;
           padding-bottom: 220px;
           padding-top: 50px;
         }
-        @media screen and (min-width: 376px) and (max-width: 426px) {
-          font-size: 34px;
-          padding-bottom: 270px;
+        @media screen and (max-width: 767px) {
+          padding-bottom: 220px;
         }
-        @media screen and (max-width: 375px) {
-          font-size: 30px;
-          padding-bottom: 270px;
-        }
+        // @media screen and (min-width: 376px) and (max-width: 426px) {
+        //   font-size: 34px;
+        //   padding-bottom: 270px;
+        // }
+        // @media screen and (max-width: 375px) {
+        //   font-size: 30px;
+        //   padding-bottom: 270px;
+        // }
       }
 
       h3 {
