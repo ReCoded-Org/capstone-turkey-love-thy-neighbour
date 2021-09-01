@@ -26,7 +26,11 @@ function NavBar() {
         <Link to="/" className="navbar-brand order-lg-6">
           <img src={logo} alt="logo" />
         </Link>
-        {isSignedIn && <NotificationsMenu />}
+        {isSignedIn && (
+          <div className="d-flex order-lg-last">
+            <NotificationsMenu />
+          </div>
+        )}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className="order-lg-3" id="responsive-navbar-nav">
           {isSignedIn && (
