@@ -16,7 +16,7 @@ import { EditProfileButton } from "../../components/CustomButtons";
 import "./index.scss";
 
 const Profile = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector(

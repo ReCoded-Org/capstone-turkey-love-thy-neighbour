@@ -17,7 +17,7 @@ import { ReactComponent as Logo } from "../../images/logo.svg";
 import "./index.scss";
 
 const EditProfileModal = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector(
     (state) => state.popup.isEditProfileOpen

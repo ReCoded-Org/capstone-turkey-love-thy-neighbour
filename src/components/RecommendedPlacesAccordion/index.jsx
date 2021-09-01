@@ -6,7 +6,7 @@ import { Carousel, Accordion } from "react-bootstrap";
 import { recommendedPlaces } from "../../utils/constants";
 
 function RecommendedPlacesAccordion({ district }) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <Accordion>

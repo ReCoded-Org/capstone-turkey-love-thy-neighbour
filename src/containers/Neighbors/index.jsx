@@ -29,7 +29,7 @@ import "./index.scss";
 function Neighbors() {
   const [selectedNeighbor, setSelectedNeighbor] = useState({});
   const [neighborsData, setNeighborsData] = useState([]);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
   const { district, email } = firestoreDoc;

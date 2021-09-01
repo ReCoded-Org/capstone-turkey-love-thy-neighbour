@@ -9,7 +9,7 @@ import questionMarkImg from "../../images/UndrawQuestion.png";
 import "./index.scss";
 
 function FAQContent() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <Container className="faq-content-container d-flex align-items-center">
       <Row className="faq-content-row m-0">

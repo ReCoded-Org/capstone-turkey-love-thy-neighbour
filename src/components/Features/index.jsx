@@ -10,11 +10,8 @@ import { ReactComponent as CouponImg } from "../../images/coupon.svg";
 
 import "./index.scss";
 
-// TODO: add real content
-// TODO: update the branch with develop
-
 function Features() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section className="features-section container-fluid">

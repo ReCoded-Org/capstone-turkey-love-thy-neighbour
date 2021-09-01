@@ -16,7 +16,7 @@ import imgAziza from "../../images/aziza.jpg";
 import "./index.scss";
 
 function OurTeam() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <Container className="ourteam-content-container d-flex flex-column justify-content-center">
       <h2>{t("ourteam_title")}</h2>

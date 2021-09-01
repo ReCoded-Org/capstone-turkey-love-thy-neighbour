@@ -16,7 +16,7 @@ import { NeighborCardButton } from "../CustomButtons";
 import "./index.scss";
 
 const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const isNeighborSummaryOpen = useSelector(
     (state) => state.popup.isNeighborSummaryOpen

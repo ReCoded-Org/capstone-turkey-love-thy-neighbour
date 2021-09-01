@@ -15,7 +15,7 @@ import logo from "../../images/logo.svg";
 import "./index.scss";
 
 function NavBar() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const history = useHistory();
   const dispatch = useDispatch();
   const isSignedIn = useSelector((state) => state.user.isSignedIn);

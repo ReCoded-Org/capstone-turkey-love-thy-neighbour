@@ -13,7 +13,7 @@ import MeetImg from "../../images/meet.jpg";
 import "./index.scss";
 
 function Meet() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const firstName = useSelector((state) => state.user.firestoreDoc?.firstName);
 
   return (

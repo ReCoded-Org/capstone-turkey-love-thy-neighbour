@@ -12,7 +12,7 @@ import "./index.scss";
 
 function PrimaryHero() {
   const dispatch = useDispatch();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const isSignedIn = useSelector((state) => state.user.isSignedIn);
 
   return (

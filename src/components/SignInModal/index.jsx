@@ -20,12 +20,10 @@ import {
 } from "../CustomButtons";
 import "./index.scss";
 
-// refactor styling
-
 const SignInModal = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const initialSignInState = { isOpen: false, message: "" };
   const [signInAlertState, setSignInAlertState] = useState(initialSignInState);

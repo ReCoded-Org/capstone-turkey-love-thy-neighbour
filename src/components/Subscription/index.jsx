@@ -11,7 +11,7 @@ import "./index.scss";
 
 function Subscription() {
   const [email, setEmail] = React.useState("");
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const handleChange = (event) => {
     setEmail(event.target.value);
   };

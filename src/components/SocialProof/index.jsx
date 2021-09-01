@@ -12,7 +12,7 @@ import MeetingThree from "../../images/SocialProof/meeting-three.png";
 import "./index.scss";
 
 function SocialProof() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <section className="snapping-section social-proof-section container-fluid">
       <Container className="social-proof-content-container d-flex align-items-center">

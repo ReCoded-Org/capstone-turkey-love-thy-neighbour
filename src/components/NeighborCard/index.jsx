@@ -22,7 +22,7 @@ function NeighborCard({
   setSelectedNeighbor,
 }) {
   const dispatch = useDispatch();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <Card className="neighbor-card mb-2 mx-auto">

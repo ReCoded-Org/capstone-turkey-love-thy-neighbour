@@ -8,7 +8,7 @@ import img from "../../images/SecondaryHeroContentBgImg.png";
 import "./index.scss";
 
 function SecondaryHero() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <section className="snapping-section secondary-hero-img-bg container-fluid">
       <Container className="secondary-hero-content-container d-flex align-items-center">
