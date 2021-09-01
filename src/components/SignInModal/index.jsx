@@ -56,7 +56,8 @@ const SignInModal = () => {
       if (!isSignedIn) {
         auth
           .signInWithEmailAndPassword(values.email, values.password)
-          .then(() => {
+          .then((authCred) => {
+            console.log("authCred", authCred);
             history.push(`/meet`);
             dispatch({ type: "signIn" });
           })

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SecondaryHero Page renders SecondaryHero Page correctly 1`] = `
+<section
+  className="snapping-section secondary-hero-img-bg container-fluid"
+>
+  <div
+    className="secondary-hero-content-container d-flex align-items-center container"
+  >
+    <div
+      className="secondary-hero-content-row m-0 row"
+    >
+      <div
+        className="p-0 px-xs-1 px-md-1 h-100 d-flex justify-content-xs-start justify-content-sm-start justify-content-md-center align-items-md-center col-md-6 col-sm-12 col-12 order-md-first order-sm-last order-last"
+      >
+        <img
+          alt="img"
+          className="img-fluid"
+          src="SecondaryHeroContentBgImg.png"
+        />
+      </div>
+      <div
+        className="px-0 pt-xs-5 pt-xs-5 pt-md-0 d-flex flex-column justify-content-center align-items-start col-md-6 col-sm-12 col-12 order-md-last order-sm-first order-first"
+      >
+        <h2>
+          Welcome,
+        </h2>
+        <h1>
+          to be welcomed.
+        </h1>
+        <p>
+          Respect each other and feel the genuine 
+          <span>
+            connection.
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+`;

@@ -3,7 +3,7 @@ import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 
 import { ReactComponent as Twitter } from "../../images/twitter.svg";
-import { ReactComponent as Linkedn } from "../../images/linkedn.svg";
+import { ReactComponent as LinkedIn } from "../../images/linkedIn.svg";
 import { ReactComponent as Github } from "../../images/github.svg";
 import imgAli from "../../images/aliriza.jpg";
 import imgKutay from "../../images/kutay.jpg";
@@ -38,7 +38,7 @@ function OurTeam() {
               target="_blank"
               rel="external noreferrer"
             >
-              <Linkedn />
+              <LinkedIn />
             </a>
             <a
               href="https://twitter.com/__shrreya__"
@@ -68,7 +68,7 @@ function OurTeam() {
               target="_blank"
               rel="external noreferrer"
             >
-              <Linkedn />
+              <LinkedIn />
             </a>
             <a
               href="https://twitter.com/ARS_coding"
@@ -98,7 +98,7 @@ function OurTeam() {
               target="_blank"
               rel="external noreferrer"
             >
-              <Linkedn />
+              <LinkedIn />
             </a>
             <a
               href="https://twitter.com"
@@ -128,7 +128,7 @@ function OurTeam() {
               target="_blank"
               rel="external noreferrer"
             >
-              <Linkedn />
+              <LinkedIn />
             </a>
             <a
               href="https://twitter.com/Moulham990"
@@ -158,7 +158,7 @@ function OurTeam() {
               target="_blank"
               rel="external noreferrer"
             >
-              <Linkedn />
+              <LinkedIn />
             </a>
             <a
               href="https://twitter.com"
@@ -188,7 +188,7 @@ function OurTeam() {
               target="_blank"
               rel="external noreferrer"
             >
-              <Linkedn />
+              <LinkedIn />
             </a>
             <a
               href="https://twitter.com"

@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Section renders Footer section correctly 1`] = `
+<footer
+  className="footer container-fluid d-flex align-items-center pt-2"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="footer-content-row w-100 h-100 row"
+    >
+      <div
+        className="mt-3 mt-sm-3 mt-md-0 d-flex justify-content-center justify-content-sm-center justify-content-md-start align-items-center col-md-4 col-sm-12 col-12"
+      >
+        <a
+          href="/our-team"
+          onClick={[Function]}
+        >
+          Our Team
+        </a>
+        <a
+          className="mx-3"
+          href="/contact-us"
+          onClick={[Function]}
+        >
+          Contact Us
+        </a>
+        <a
+          href="/faq"
+          onClick={[Function]}
+        >
+          FAQ
+        </a>
+      </div>
+      <div
+        className="d-flex justify-content-center align-items-center my-2 my-sm-2 my-sm-0 col-md-4 col-sm-12 col-12"
+      >
+        <p>
+          Copyright © Re:Coded 2021
+        </p>
+      </div>
+      <div
+        className="social-media-logos d-flex justify-content-center justify-content-sm-center justify-content-md-end align-items-center col-md-4 col-sm-12 col-12"
+      >
+        <a
+          href="https://twitter.com"
+          rel="external noreferrer"
+          target="_blank"
+        >
+          <svg>
+            twitter-logo.svg
+          </svg>
+        </a>
+        <a
+          href="https://www.instagram.com"
+          rel="external noreferrer"
+          target="_blank"
+        >
+          <svg>
+            instagram-logo.svg
+          </svg>
+        </a>
+        <a
+          href="https://www.facebook.com"
+          rel="external noreferrer"
+          target="_blank"
+        >
+          <svg>
+            facebook-logo.svg
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+`;
