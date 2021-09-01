@@ -1,9 +1,4 @@
-import {
-  firestore,
-  auth,
-  googleProvider,
-  facebookProvider,
-} from "../firebaseConfig";
+import { firestore } from "../firebaseConfig";
 
 import PPMaleSVG from "../images/Profile/PPMaleSVG.svg";
 import PPFemaleSVG from "../images/Profile/PPFemaleSVG.svg";
