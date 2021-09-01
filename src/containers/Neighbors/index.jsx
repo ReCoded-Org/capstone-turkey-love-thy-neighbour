@@ -167,6 +167,19 @@ function Neighbors() {
             </Accordion.Item>
           </Accordion>
           <RecommendedPlacesAccordion district={district} />
+          {emailAlertStatus !== "empty" && (
+            <Alert
+              className="mb-4 mt-2"
+              variant={emailAlertStatus} // danger or success
+              onClose={() => setEmailAlertStatus("empty")}
+              dismissible
+            >
+              {emailAlertStatus === "success" &&
+                "Your email has been successfully sent!"}
+              {emailAlertStatus === "danger" &&
+                "A problem occured while sending your email..."}
+            </Alert>
+          )}
         </div>
         <Row className="neighbors-cards d-flex justify-content-around flex-wrap w-100">
           {neighborsData
@@ -194,19 +207,6 @@ function Neighbors() {
               );
             })}
         </Row>
-        {emailAlertStatus !== "empty" && (
-          <Alert
-            className="mb-4 mt-2"
-            variant={emailAlertStatus} // danger or success
-            onClose={() => setEmailAlertStatus("empty")}
-            dismissible
-          >
-            {emailAlertStatus === "success" &&
-              "Your email has been successfully sent!"}
-            {emailAlertStatus === "danger" &&
-              "A problem occured while sending your email..."}
-          </Alert>
-        )}
       </Container>
     </Container>
   );
