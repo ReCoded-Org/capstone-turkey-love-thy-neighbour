@@ -169,7 +169,7 @@ function Neighbors() {
           <RecommendedPlacesAccordion district={district} />
           {emailAlertStatus !== "empty" && (
             <Alert
-              className="mb-4 mt-2"
+              className="mb-4 mt-2 w-100"
               variant={emailAlertStatus} // danger or success
               onClose={() => setEmailAlertStatus("empty")}
               dismissible
