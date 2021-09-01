@@ -26,7 +26,7 @@ function NotificationMenu() {
   }
 
   return (
-    <Dropdown id="notifications-dropdown" className="order-lg-last">
+    <Dropdown id="notifications-dropdown">
       <Dropdown.Toggle variant="success" id="dropdown-basic">
         <NotificationBellSVG />
       </Dropdown.Toggle>
