@@ -24,6 +24,11 @@
   border-radius: 4px;
 }
 
+.validation{
+  font-size: 15px;
+  padding-left: 19px;
+}
+
 h1 {
     color: $logo-red;
     font-size: max(40px);
@@ -98,17 +103,17 @@ input[type='text']::placeholder {
       float: left;
     }
     .first-name {
-      width: 80%;
+      width: 87%;
       height: 45px;
-      margin: 20px 20px 10px 20px;
+      margin: 20px 65px 10px 20px;
       border: 1px solid $bootstrap-blue;
       border-radius: 4px;
       
     }
     .last-name {
-      width: 80%;
+      width: 87%;
       height: 45px;
-      margin: 20px 20px 10px 20px;
+      margin: 20px 20px 10px 75px;
       border: 1px solid $bootstrap-blue;
       border-radius: 4px;
       float:right;
@@ -150,7 +155,7 @@ input[type='text']::placeholder {
       }
 }
 
-@media screen and  (min-width: 1024px) {
+@media screen and  (min-width: 1024px) and (max-width: 1399px) {
 .first-last-names{
   display: flex;
   flex-direction: row;
@@ -193,7 +198,7 @@ input[type='text']::placeholder {
    }
   }
 
-  @media screen and (min-width: 1025px){
+  @media screen and (min-width: 1400px){
     .first-name {
       width:276px;
        height: 45px;
@@ -211,7 +216,13 @@ input[type='text']::placeholder {
       border: 1px solid $bootstrap-blue;
       border-radius: 4px;
      }
+
      .form-box{
       width: 100%;
-    }
+     }
+
+    .contactus-content-row{
+      padding-top: 50px;
+      padding-bottom: 10px;
+     }
   }
