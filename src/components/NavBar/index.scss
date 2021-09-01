@@ -7,4 +7,11 @@
   padding: 0 !important;
   position: sticky !important;
   top: 0px;
+
+  .notifications-bell {
+    .icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }

@@ -56,3 +56,13 @@ export const NeighborsFilterButton = styled(BaseButton)`
   width: 49%;
   height: 40px;
 `;
+
+export const GoodFeedbackButton = styled(BaseButton)`
+  padding: 0 7px;
+  background-color: var(--logo-blue);
+`;
+
+export const BadFeedbackButton = styled(BaseButton)`
+  padding: 0 7px;
+  background-color: var(--logo-red);
+`;
