@@ -8,6 +8,8 @@ import { useFormik } from "formik";
 
 import Multiselect from "multiselect-react-dropdown";
 
+import { getDefaultGenderImage } from "../../utils/helpers";
+
 import { newActivityList } from "../../utils/constants";
 
 import RecommendedPlacesAccordion from "../../components/RecommendedPlacesAccordion";
@@ -18,17 +20,9 @@ import NeighborSummaryModal from "../../components/NeighborSummaryModal";
 
 import { NeighborsFilterButton } from "../../components/CustomButtons";
 
-import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
-import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
-import PPGenderless from "../../images/Profile/PPGenderless.png";
-
 import { firestore } from "../../firebaseConfig";
 
 import "./index.scss";
-
-// Maybe you can search for the people in other districts
-// TODO: THERE'S A POSSIBILITY OF THEM SIGNING UP AND GETTING INTO NEIGHBORS WITHOUT SUBMITTING EDIT PROFILE MODAL FORM AND IT WILL GIVE US AN ERROR!
-// maybe you can solve this issue by making the only way of closing edit profile modal is submitting the form
 
 function Neighbors() {
   const [selectedNeighbor, setSelectedNeighbor] = useState({});
@@ -100,11 +94,14 @@ function Neighbors() {
       />
       <Container className="neighbors-content-container d-flex flex-column align-items-center">
         <div className="pt-2 pb-4 mx-3 mx-sm-0 text-center">
-          <h1>Nearby neighbors to meet :</h1>
+          <h1>
+            Neighbors in{" "}
+            {district.charAt(0) + district.slice(1).toLocaleLowerCase()}
+          </h1>
           <p>
-            By clicking on “Invite to Meet Button” you can notify the user you
-            want to meet with and if he/she returns back to your notification,
-            your e-mail adresses will be visible to each other.
+            By clicking on “Invite to Meet” an email which includes your email
+            address will be sent from our team to the invited neighbor and if
+            they choose to meet, they will contact with you via email.
           </p>
           <Accordion>
             <Accordion.Item eventKey="0">
@@ -114,7 +111,7 @@ function Neighbors() {
                   <div className="gender-age-wrapper d-flex justify-content-between">
                     <div>
                       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                      <label htmlFor="gender">Gender:</label>
+                      <label htmlFor="gender">Gender</label>
                       <select
                         id="gender"
                         name="gender"
@@ -132,7 +129,7 @@ function Neighbors() {
                     </div>
                     <div>
                       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                      <label htmlFor="age">Age:</label>
+                      <label htmlFor="age">Age</label>
                       <select
                         id="age"
                         name="age"
@@ -157,7 +154,7 @@ function Neighbors() {
                     }}
                     options={newActivityList}
                     selectedValues={
-                      formik.values.interests === "Default interest."
+                      formik.values.interests === "Interests yet to be added."
                         ? []
                         : formik.values.interests
                     }
@@ -175,27 +172,14 @@ function Neighbors() {
           {neighborsData
             .filter((userDoc) => userDoc.email !== email)
             .map((userDoc) => {
-              let photo;
-              if (
-                userDoc.profileImageUrl === "" ||
-                userDoc.profileImageUrl === undefined
-              ) {
-                if (userDoc.gender === "Prefer not to say") {
-                  photo = PPGenderless;
-                } else if (userDoc.gender === "Male") {
-                  photo = PPMaleSVG;
-                } else if (userDoc.gender === "Female") {
-                  photo = PPFemaleSVG;
-                }
-              } else if (userDoc.profileImageUrl !== "") {
-                photo = userDoc.profileImageUrl;
-              }
-
               return (
                 <Col xs={12} sm={6} md={4} key={userDoc.email}>
                   <NeighborCard
                     key={userDoc.email}
-                    photo={photo}
+                    photo={
+                      userDoc.profileImageUrl ||
+                      getDefaultGenderImage(userDoc.gender)
+                    }
                     firstName={userDoc.firstName}
                     lastName={userDoc.lastName}
                     gender={userDoc.gender}

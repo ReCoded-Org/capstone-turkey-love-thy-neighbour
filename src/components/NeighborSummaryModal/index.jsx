@@ -13,22 +13,9 @@ import { NeighborCardButton } from "../CustomButtons";
 
 import firebaseApp, { firestore } from "../../firebaseConfig";
 
-import PPMaleSVG from "../../images/Profile/PPMaleSVG.svg";
-import PPFemaleSVG from "../../images/Profile/PPFemaleSVG.svg";
-import PPGenderless from "../../images/Profile/PPGenderless.png";
-
 import "./index.scss";
 
-// first and last name below the image and outside the card
-// we can show their aducation in here
-
-const NeighborSummaryModal = ({
-  selectedNeighbor,
-  setSelectedNeighbor,
-  senderEmail,
-  senderFullName,
-  setEmailAlertStatus,
-}) => {
+const NeighborSummaryModal = ({ selectedNeighbor, setSelectedNeighbor }) => {
   const dispatch = useDispatch();
   const isNeighborSummaryOpen = useSelector(
     (state) => state.popup.isNeighborSummaryOpen
@@ -102,18 +89,14 @@ const NeighborSummaryModal = ({
               className="profile-photo"
               alt="profile"
               style={
-                selectedNeighbor?.gender === "Prefer not to say"
+                selectedNeighbor.gender === "Prefer not to say" &&
+                !selectedNeighbor.profileImageUrl
                   ? { width: "190px" }
                   : null
               }
               src={
-                selectedNeighbor?.profileImageUrl ||
-                /* eslint-disable-next-line no-nested-ternary */
-                (selectedNeighbor?.gender === "Male"
-                  ? PPMaleSVG
-                  : selectedNeighbor?.gender === "Female"
-                  ? PPFemaleSVG
-                  : PPGenderless)
+                selectedNeighbor.profileImageUrl ||
+                getDefaultGenderImage(selectedNeighbor.gender)
               }
             />
             <span>{`${selectedNeighbor?.firstName} ${selectedNeighbor?.lastName}`}</span>
@@ -122,28 +105,32 @@ const NeighborSummaryModal = ({
           <Modal.Body>
             <Card className="info-cards white-card">
               <Card.Body>
-                <Card.Title className="card-title">Furthermore Info</Card.Title>
+                <Card.Title className="card-title">Details</Card.Title>
                 <ul className="d-flex flex-column justify-content-around  mb-0">
                   <li>
-                    Bio:{" "}
+                    Age:{" "}
                     <span>
-                      {selectedNeighbor?.bio ||
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Semper gravida tincidunt aliquam quam."}
+                      {selectedNeighbor?.age || "Age yet to be added."}
                     </span>
+                  </li>
+                  <li>
+                    Gender: <span>{selectedNeighbor?.gender}</span>
                   </li>
                   <li>
                     Interests:{" "}
                     <span>
-                      {selectedNeighbor?.interests === "Default interest." ||
+                      {selectedNeighbor?.interests ===
+                        "Interests yet to be added." ||
                       selectedNeighbor?.interests === undefined
-                        ? "Default interest."
+                        ? "Interests yet to be added."
                         : createInterestString(selectedNeighbor.interests)}
                     </span>
                   </li>
                   <li>
                     Education:{" "}
                     <span>
-                      {selectedNeighbor?.education || "Default education."}
+                      {selectedNeighbor?.education ||
+                        "Education yet to be added."}
                     </span>
                   </li>
                 </ul>
