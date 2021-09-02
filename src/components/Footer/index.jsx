@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { useTranslation } from "react-i18next";
 
@@ -9,17 +9,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import { ReactComponent as TwitterLogo } from "../../images/twitter-logo.svg";
 import { ReactComponent as InstagramLogo } from "../../images/instagram-logo.svg";
 import { ReactComponent as FacebookLogo } from "../../images/facebook-logo.svg";
-import { ReactComponent as Globe } from "../../images/LanguageGlobe/globe.svg";
-import { LanguageButton } from "../CustomButtons";
+
 import "./index.scss";
 
 function Footer() {
-  const { t, i18n } = useTranslation();
-  const [language, setLanguage] = useState("EN");
-
-  useEffect(() => {
-    i18n.changeLanguage(language);
-  }, [language]);
+  const { t } = useTranslation();
 
   return (
     <footer className="footer container-fluid d-flex align-items-center pt-2">
@@ -44,18 +38,6 @@ function Footer() {
             className="d-flex justify-content-center align-items-center my-2 my-sm-2 my-sm-0"
           >
             <div className="d-flex flex-column justify-content-center align-items-center">
-              <LanguageButton
-                onClick={() => {
-                  if (language === "TR") {
-                    setLanguage("EN");
-                    return;
-                  }
-                  setLanguage("TR");
-                }}
-                type="submit"
-              >
-                <Globe /> {language}
-              </LanguageButton>
               <p>{t("footer_copyright")}</p>
             </div>
           </Col>
