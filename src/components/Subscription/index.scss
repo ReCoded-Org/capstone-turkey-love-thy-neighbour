@@ -90,6 +90,16 @@
             font-size: 14px;
           }
         }
+
+        form {
+          input {
+            border: 1px solid var(--dark-blue);
+          }
+          button {
+            border-radius: 0;
+            border: 1px solid var(--dark-blue);
+          }
+        }
       }
     }
 
