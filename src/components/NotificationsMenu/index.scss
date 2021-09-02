@@ -4,13 +4,12 @@ div#notifications-dropdown {
   position: relative;
 
   button.dropdown-toggle {
-    color: rgba(255, 255, 255, 0.55);
     background-color: $dark-blue;
     border: none;
     box-shadow: none !important;
 
     &::after {
-      content: none !important;
+      content: none;
     }
 
     &:hover {
