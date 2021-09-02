@@ -1,6 +1,6 @@
 import { React } from "react";
 
-import { Modal, Container, Card } from "react-bootstrap";
+import { Modal, Container, Card, CloseButton } from "react-bootstrap";
 
 import { send } from "emailjs-com";
 
@@ -94,6 +94,7 @@ function NeighborSummaryModal({
               : null
           }
         >
+          <CloseButton onClick={() => dispatch({ type: "neighborSummary" })} />
           <Modal.Header className="d-flex flex-column flex-sm-row justify-content-center justify-content-sm-start justify-content-sm-start modal-header">
             <img
               className="profile-photo"
