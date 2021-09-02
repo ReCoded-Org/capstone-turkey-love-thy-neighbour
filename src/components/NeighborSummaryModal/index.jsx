@@ -94,7 +94,7 @@ function NeighborSummaryModal({
               : null
           }
         >
-          <Modal.Header className="d-flex justify-content-start">
+          <Modal.Header className="d-flex flex-column flex-sm-row justify-content-center justify-content-sm-start justify-content-sm-start modal-header">
             <img
               className="profile-photo"
               alt="profile"
@@ -109,11 +109,11 @@ function NeighborSummaryModal({
                 getDefaultGenderImage(selectedNeighbor.gender)
               }
             />
-            <span>{`${selectedNeighbor?.firstName} ${selectedNeighbor?.lastName}`}</span>
+            <p className="text-center text-sm-start mb-0">{`${selectedNeighbor?.firstName} ${selectedNeighbor?.lastName}`}</p>
           </Modal.Header>
 
           <Modal.Body>
-            <Card className="info-cards white-card">
+            <Card>
               <Card.Body>
                 <Card.Title className="card-title">Details</Card.Title>
                 <ul className="d-flex flex-column justify-content-around  mb-0">
