@@ -29,7 +29,7 @@ export const listenForAuthChanges = () => {
             return userReduxState;
           })
           .then((userReduxState) => {
-            dispatch(attachListenerToUserDoc(userReduxState.authCred.uid));
+            dispatch(attachListenerToUserDoc(userReduxState.authCred.uid)); // TODO: do i really need dispatch in here?
           });
       } else {
         dispatch({ type: "notSignedIn" }); // set the state to it's initial values

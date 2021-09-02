@@ -6,6 +6,8 @@ import { Container } from "react-bootstrap";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import { init } from "emailjs-com";
+
 import { listenForAuthChanges } from "./slices/userSlice";
 
 import NavBar from "./components/NavBar";
@@ -28,6 +30,7 @@ function App() {
 
   useEffect(() => {
     dispatch(listenForAuthChanges());
+    init("user_pFNaLnNszOqQi0CkGO628");
   }, [dispatch]);
 
   return (
