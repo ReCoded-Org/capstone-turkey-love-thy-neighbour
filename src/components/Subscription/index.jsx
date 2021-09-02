@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -8,11 +8,8 @@ import { ReactComponent as CheckIcon } from "../../images/Check.svg";
 import "./index.scss";
 
 function Subscription() {
-  const [email, setEmail] = React.useState("");
+  const [email, setEmail] = useState("");
 
-  const handleChange = (event) => {
-    setEmail(event.target.value);
-  };
   return (
     <section className="subscription-img-bg container-fluid">
       <Container className="subscription-content-container d-flex align-items-center">
@@ -28,14 +25,20 @@ function Subscription() {
             </h1>
             <h3>Never miss an update!</h3>
             <p>Signup to our newsletter to get a weekly digest.</p>
-            <div className="button-input-wrapper d-flex">
+            <form
+              className="d-flex"
+              onSubmit={(event) => {
+                event.preventDefault();
+                setEmail("");
+              }}
+            >
               <input
                 type="email"
                 className="form-email"
                 aria-describedby="emailHelp"
                 placeholder="Email"
                 value={email}
-                onChange={handleChange}
+                onChange={(event) => setEmail(event.target.value)}
               />
               <button
                 type="submit"
@@ -44,7 +47,7 @@ function Subscription() {
               >
                 <CheckIcon className="check-icon" />
               </button>
-            </div>
+            </form>
           </Col>
 
           <Col
