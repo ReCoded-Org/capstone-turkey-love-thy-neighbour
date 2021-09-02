@@ -6,6 +6,7 @@
 
   & > div {
     padding: 0;
+
     @media screen and (min-width: 768px) {
       width: 49%;
     }
@@ -13,6 +14,7 @@
 
   h2 {
     color: $logo-blue;
+
     @media screen and (min-width: 992px) {
       font-size: 30px !important;
     }
@@ -32,6 +34,50 @@
         margin: 0 auto;
       }
 
+      .first-accordion-item {
+        & > div.accordion-collapse {
+          & > div.accordion-body {
+            @media screen and (max-width: 991px) {
+              font-size: 13px;
+            }
+            @media screen and (min-width: 768px) and (max-width: 991px) {
+              font-size: 13px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+            }
+          }
+        }
+      }
+
+      .second-accordion-item {
+        & > div.accordion-collapse {
+          & > div.accordion-body {
+            @media screen and (max-width: 991px) {
+              font-size: 13px;
+            }
+            @media screen and (min-width: 768px) and (max-width: 991px) {
+              font-size: 13px;
+              padding-top: 21px;
+              padding-bottom: 21px;
+            }
+          }
+        }
+      }
+
+      .third-accordion-item {
+        & > div.accordion-collapse {
+          & > div.accordion-body {
+            @media screen and (max-width: 991px) {
+              font-size: 13px;
+            }
+            @media screen and (min-width: 768px) and (max-width: 991px) {
+              padding-top: 21px;
+              padding-bottom: 21px;
+            }
+          }
+        }
+      }
+
       .first-accordion-item,
       .second-accordion-item,
       .third-accordion-item {
@@ -44,6 +90,7 @@
 
         div {
           margin-left: 23px;
+
           small {
             color: var(--dark-gray);
 
