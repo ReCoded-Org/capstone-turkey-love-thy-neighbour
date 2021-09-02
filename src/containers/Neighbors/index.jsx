@@ -171,6 +171,7 @@ function Neighbors() {
             district === "ŞİŞLİ" ||
             district === "FATİH") && (
             <RecommendedPlacesAccordion district={district} />
+          )}
           {emailAlertStatus !== "empty" && (
             <Alert
               className="mb-4 mt-2 w-100"
