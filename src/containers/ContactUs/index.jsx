@@ -3,7 +3,6 @@ import { Container, Row, Col, Button, Modal } from "react-bootstrap";
 import "./index.scss";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
 import { CTAButton } from "../../components/CustomButtons/index";
 import { ReactComponent as MainImg } from "../../images/firstContactUs.svg";
 import { ReactComponent as LogoImg } from "../../images/secondContactUs.svg";
@@ -33,7 +32,7 @@ function ContactUs() {
         .max(15, "Maximum 500 characters")
         .required("Required!"),
     }),
-    onSubmit: (values, event) => {
+    onSubmit: (values) => {
       firestore.collection("contacts").add({
         first_name: values.first_name,
         last_name: values.last_name,
@@ -109,7 +108,7 @@ function ContactUs() {
                     )}
                   </div>
                   <div>
-                    <input
+                    <textarea
                       className="textarea"
                       type="text"
                       name="user_message"
@@ -126,9 +125,7 @@ function ContactUs() {
                   </div>
                 </div>
                 <div className="send-button">
-                  <CTAButton onClick={handleShow}>
-                    <Link to="/neighbors">Send</Link>
-                  </CTAButton>
+                  <CTAButton onClick={handleShow}>Send</CTAButton>
                   <Modal show={show} onHide={handleClose}>
                     <Modal.Body>
                       <h5>
