@@ -102,6 +102,8 @@
 
         .accordion-body {
           padding-left: 40px;
+          font-family: "Poppins", "sans-serif";
+          font-weight: bold;
 
           @media screen and (max-width: 575px) {
             margin-left: 0;

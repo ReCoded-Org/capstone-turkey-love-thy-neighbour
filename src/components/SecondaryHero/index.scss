@@ -5,12 +5,10 @@
   .secondary-hero-content-container {
     .secondary-hero-content-row {
       & > div:last-child {
-        // background-color: red !important;
         h1 {
           color: $logo-blue;
           font-size: max(40px);
           font-weight: bold;
-          font-family: Roboto, sans-serif;
 
           @media screen and (min-width: 768px) and (max-width: 991px) {
             font-size: 35px;
@@ -26,7 +24,6 @@
           top: 10px;
           font-style: italic;
           font-weight: bold;
-          font-family: Roboto, sans-serif;
 
           @media screen and (min-width: 768px) and (max-width: 991px) {
             font-size: 22px;
