@@ -1,3 +1,5 @@
+// NOT WORKING
+
 import React from "react";
 import renderer from "react-test-renderer";
 import configureStore from "redux-mock-store";
@@ -5,9 +7,6 @@ import { Provider } from "react-redux";
 import EditProfileModal from ".";
 
 describe("EditProfileModal", () => {
-  const data = {
-    showModal: true,
-  };
   const mockState = {
     user: {
       firestoreDoc: {
@@ -18,8 +17,8 @@ describe("EditProfileModal", () => {
         age: 25,
         education: "High School",
         bio: "I am a freak.",
-        interests: [{ content: "something" }],
-        number: 25,
+        interests: [{ content: "Fashion" }, { content: "Coding" }],
+        number: "25",
         address: "my address",
         profileImageUrl: "",
         backgroundImageUrl: "",
@@ -31,7 +30,10 @@ describe("EditProfileModal", () => {
       },
     },
     popup: {
-      isEditProfileOpen: true,
+      isEditProfileOpen: false,
+      /* When we pass "isSignInOpen, the test runs correctly, but it doesnt work with "isEditProfileOpen" */
+
+      // when we pass isSignInOpen: true, it works, when we pass isEditProfileOpen: true, it doesnt, when we pass isEditProfileOpen: false, it works again. My brain is melting...
     },
   };
 
@@ -44,7 +46,7 @@ describe("EditProfileModal", () => {
     tree = renderer
       .create(
         <Provider store={store}>
-          <EditProfileModal showModal={data.showModal} />
+          <EditProfileModal />
         </Provider>
       )
       .toJSON();

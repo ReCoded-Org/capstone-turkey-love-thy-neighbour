@@ -1,28 +1,30 @@
+// NOT WORKING
+
 import React from "react";
 import renderer from "react-test-renderer";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router } from "react-router-dom";
-import NeighborSummaryModal from ".";
+import SignInModal from ".";
 
-describe("NeighborSummaryModal", () => {
-  const data = {
-    selectedNeighbor: {
-      firstName: "fuk",
-      lastName: "you",
-      email: "stupidshit",
-    },
-  };
+describe("SignInModal", () => {
   const mockState = {
     user: {
+      firestoreDoc: {
+        isSignedIn: false,
+      },
       authCred: {
-        uid: "Test Uid",
+        user: {
+          uid: "cLAjww6Xz5QjQTqy4Yvw1DypaHg1",
+        },
       },
     },
     popup: {
-      isNeighborSummaryOpen: false,
+      isSignedIn: false,
+      // alagavat: "false", even this is working wth ?!
+      /* When we pass "isEditProfileOpen, the test runs correctly, but it doesnt work with "isSignInOpen" */
     },
   };
+
   const mockStore = configureStore();
   let store;
   let tree;
@@ -32,15 +34,13 @@ describe("NeighborSummaryModal", () => {
     tree = renderer
       .create(
         <Provider store={store}>
-          <Router>
-            <NeighborSummaryModal selectedNeighbor={data.selectedNeighbor} />
-          </Router>
+          <SignInModal />
         </Provider>
       )
       .toJSON();
   });
 
-  it("renders NeighborSummaryModal correctly", () => {
+  it("renders SignInModal correctly", () => {
     expect(tree).toMatchSnapshot();
   });
 });

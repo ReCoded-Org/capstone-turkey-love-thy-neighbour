@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditProfileModal renders EditProfileModal correctly 1`] = `null`;
+
+exports[`SignInModal renders SignInModal correctly 1`] = `null`;

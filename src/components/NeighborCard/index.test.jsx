@@ -2,25 +2,26 @@ import React from "react";
 import renderer from "react-test-renderer";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router } from "react-router-dom";
-import NeighborSummaryModal from ".";
+import NeighborCard from ".";
 
-describe("NeighborSummaryModal", () => {
+describe("NeighborCard", () => {
   const data = {
-    selectedNeighbor: {
-      firstName: "fuk",
-      lastName: "you",
-      email: "stupidshit",
-    },
+    photo: "test",
+    firstName: "test",
+    lastName: "test",
+    age: "test",
+    gender: "test",
+    email: "test",
+    setSelectedNeighbor: "test",
+    senderEmail: "test",
+    senderFullName: "test",
+    setEmailAlertStatus: "test",
   };
   const mockState = {
     user: {
       authCred: {
         uid: "Test Uid",
       },
-    },
-    popup: {
-      isNeighborSummaryOpen: false,
     },
   };
   const mockStore = configureStore();
@@ -32,15 +33,13 @@ describe("NeighborSummaryModal", () => {
     tree = renderer
       .create(
         <Provider store={store}>
-          <Router>
-            <NeighborSummaryModal selectedNeighbor={data.selectedNeighbor} />
-          </Router>
+          <NeighborCard data={data.invitationNotificationObject} />
         </Provider>
       )
       .toJSON();
   });
 
-  it("renders NeighborSummaryModal correctly", () => {
+  it("renders NeighborCard correctly", () => {
     expect(tree).toMatchSnapshot();
   });
 });

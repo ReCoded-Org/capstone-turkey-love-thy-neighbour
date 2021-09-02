@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeighborCard renders NeighborCard correctly 1`] = `
+<div
+  className="neighbor-card mb-2 mx-auto card"
+>
+  <img
+    className="card-img-top img-fluid"
+    onClick={[Function]}
+  />
+  <div
+    className="d-flex flex-column justify-content-center card-body"
+  >
+    <div
+      className="text-center card-title h5"
+    >
+      undefined undefined
+    </div>
+    <small
+      className="text-center"
+    >
+      undefined / undefined
+    </small>
+    <button
+      className="sc-bdnxRM sc-fujyAs fhyKDU PaHUc"
+      onClick={[Function]}
+    >
+      Invite To Meet!
+    </button>
+  </div>
+</div>
+`;
+
+exports[`NotificationMenuItem renders NotificationMenuItem correctly 1`] = `
+<div
+  className="neighbor-card mb-2 mx-auto card"
+>
+  <img
+    className="card-img-top img-fluid"
+    onClick={[Function]}
+  />
+  <div
+    className="d-flex flex-column justify-content-center card-body"
+  >
+    <div
+      className="text-center card-title h5"
+    >
+      undefined undefined
+    </div>
+    <small
+      className="text-center"
+    >
+      undefined / undefined
+    </small>
+    <button
+      className="sc-bdnxRM sc-fujyAs fhyKDU PaHUc"
+      onClick={[Function]}
+    >
+      Invite To Meet!
+    </button>
+  </div>
+</div>
+`;

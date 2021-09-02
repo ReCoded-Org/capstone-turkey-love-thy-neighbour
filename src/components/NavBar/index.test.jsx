@@ -1,26 +1,19 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import configureStore from "redux-mock-store";
-import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
-import NeighborSummaryModal from ".";
+import { Provider } from "react-redux";
+import Navbar from ".";
 
-describe("NeighborSummaryModal", () => {
-  const data = {
-    selectedNeighbor: {
-      firstName: "fuk",
-      lastName: "you",
-      email: "stupidshit",
-    },
-  };
+describe("Navbar", () => {
   const mockState = {
     user: {
       authCred: {
-        uid: "Test Uid",
+        user: {
+          uid: "Test Uid",
+        },
       },
-    },
-    popup: {
-      isNeighborSummaryOpen: false,
+      isSignedIn: true,
     },
   };
   const mockStore = configureStore();
@@ -33,14 +26,14 @@ describe("NeighborSummaryModal", () => {
       .create(
         <Provider store={store}>
           <Router>
-            <NeighborSummaryModal selectedNeighbor={data.selectedNeighbor} />
+            <Navbar />
           </Router>
         </Provider>
       )
       .toJSON();
   });
 
-  it("renders NeighborSummaryModal correctly", () => {
+  it("renders Navbar correctly", () => {
     expect(tree).toMatchSnapshot();
   });
 });

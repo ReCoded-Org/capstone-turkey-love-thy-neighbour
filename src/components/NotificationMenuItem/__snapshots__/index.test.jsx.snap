@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationMenuItem renders NotificationMenuItem correctly 1`] = `
+<div
+  className="notification-menu-item"
+>
+  <div
+    className="notification-menu-item-content"
+  >
+    <p
+      className="text-center"
+    >
+      test
+    </p>
+    <div
+      className="feedback-buttons d-flex justify-content-center"
+    >
+      <button
+        className="sc-bdnxRM sc-jrsJWt fhyKDU kTNuYI me-3"
+        id="test"
+        onClick={[Function]}
+        type="button"
+      >
+        👍🏼
+      </button>
+      <button
+        className="sc-bdnxRM sc-kEqXSa fhyKDU lcbPMi"
+        id="test"
+        onClick={[Function]}
+        type="button"
+      >
+        👎🏼
+      </button>
+      <button
+        aria-label="Close"
+        className="btn-close"
+        onClick={[Function]}
+        type="button"
+      />
+    </div>
+  </div>
+</div>
+`;
