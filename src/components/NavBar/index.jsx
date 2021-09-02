@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { useTranslation } from "react-i18next";
 
@@ -11,17 +11,24 @@ import { Link, useHistory } from "react-router-dom";
 import { auth } from "../../firebaseConfig";
 
 import NotificationsMenu from "../NotificationsMenu";
+import LanguageMenu from "../LanguageMenu";
 
 import logo from "../../images/logo.svg";
 
 import "./index.scss";
 
 function NavBar() {
-  const { t } = useTranslation();
   const history = useHistory();
   const dispatch = useDispatch();
   const isSignedIn = useSelector((state) => state.user.isSignedIn);
   const uid = useSelector((state) => state.user.authCred?.uid);
+
+  const { t, i18n } = useTranslation();
+  const [language, setLanguage] = useState("EN");
+
+  useEffect(() => {
+    i18n.changeLanguage(language);
+  }, [language, i18n]);
 
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark">
@@ -32,6 +39,7 @@ function NavBar() {
         {isSignedIn && (
           <div className="d-flex order-lg-last">
             <NotificationsMenu />
+            <LanguageMenu language={language} setLanguage={setLanguage} />
           </div>
         )}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
