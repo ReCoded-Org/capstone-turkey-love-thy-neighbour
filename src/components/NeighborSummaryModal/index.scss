@@ -11,26 +11,40 @@
       background-size: cover;
 
       .container-fluid {
+        .btn-close {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 20px;
+        }
+
         .modal-header {
           border: 0;
           img {
-            margin-left: 38px;
+            @media screen and (min-width: 576px) {
+              margin-left: 38px;
+            }
             border-radius: 50%;
             border: 1px solid black;
             width: 150px;
             height: 150px;
           }
 
-          span {
+          p {
+            @media screen and (min-width: 576px) {
+              margin-left: 15px;
+            }
             font-size: 35px;
-            margin-left: 15px;
           }
         }
         .modal-body {
           & > div.card {
             border-radius: 15px !important;
             height: 100%;
-            margin: 10px 40px !important;
+
+            @media screen and (min-width: 576px) {
+              margin: 10px 40px !important;
+            }
 
             & > div.card-body {
               & > ul {
