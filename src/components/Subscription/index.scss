@@ -51,42 +51,44 @@
         padding: 0;
       }
 
-      h1 {
-        color: $dark-blue;
-        font-weight: bold;
+      & > div:first-child {
+        h1 {
+          color: $dark-blue;
+          font-weight: bold;
 
-        @media screen and (min-width: 1200px) {
-          font-size: 50px;
-          margin-bottom: 115px;
+          @media screen and (min-width: 1200px) {
+            font-size: 50px;
+            margin-bottom: 115px;
+          }
+          @media screen and (min-width: 992px) and (max-width: 1199px) {
+            font-size: 48px;
+            margin-bottom: 115px;
+          }
+          @media screen and (min-width: 768px) and (max-width: 991px) {
+            font-size: 38px;
+            padding-bottom: 220px;
+            padding-top: 50px;
+          }
+          @media screen and (max-width: 767px) {
+            padding-bottom: 220px;
+          }
         }
-        @media screen and (min-width: 992px) and (max-width: 1199px) {
-          font-size: 48px;
-          margin-bottom: 115px;
-        }
-        @media screen and (min-width: 768px) and (max-width: 991px) {
-          font-size: 38px;
-          padding-bottom: 220px;
-          padding-top: 50px;
-        }
-        @media screen and (max-width: 767px) {
-          padding-bottom: 220px;
-        }
-      }
 
-      h3 {
-        color: $logo-red;
-        font-weight: bold;
+        h3 {
+          color: $logo-red;
+          font-weight: bold;
 
-        @media screen and (min-width: 991px) {
-          font-size: 25px;
+          @media screen and (min-width: 991px) {
+            font-size: 25px;
+          }
         }
-      }
 
-      p {
-        color: $black;
+        p {
+          color: $black;
 
-        @media screen and (max-width: 991px) {
-          font-size: 14px;
+          @media screen and (max-width: 991px) {
+            font-size: 14px;
+          }
         }
       }
     }
