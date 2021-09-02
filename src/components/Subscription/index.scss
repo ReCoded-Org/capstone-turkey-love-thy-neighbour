@@ -1,6 +1,5 @@
 @import "../../style/variables";
 
-//laptop background
 @media screen and (min-width: 992px) {
   .subscription-img-bg {
     background-image: url("../../images/laptop-background-image.png");
@@ -10,7 +9,6 @@
   }
 }
 
-// tablet&phone background
 .subscription-img-bg {
   @media screen and (min-width: 427px) and (max-width: 767px) {
     background-image: url("../../images/PhoneandNotificationsBG.png");
@@ -18,6 +16,7 @@
     background-attachment: fixed;
     background-position: top 33% right;
     background-size: 35%;
+
     svg:not(.check-icon) {
       display: none;
     }
@@ -29,6 +28,7 @@
     background-attachment: fixed;
     background-position: top 38% right;
     background-size: 180px 240px;
+
     svg:not(.check-icon) {
       display: none;
     }
@@ -50,9 +50,11 @@
       & > div {
         padding: 0;
       }
+
       h1 {
         color: $dark-blue;
         font-weight: bold;
+
         @media screen and (min-width: 1200px) {
           font-size: 50px;
           margin-bottom: 115px;
@@ -69,19 +71,12 @@
         @media screen and (max-width: 767px) {
           padding-bottom: 220px;
         }
-        // @media screen and (min-width: 376px) and (max-width: 426px) {
-        //   font-size: 34px;
-        //   padding-bottom: 270px;
-        // }
-        // @media screen and (max-width: 375px) {
-        //   font-size: 30px;
-        //   padding-bottom: 270px;
-        // }
       }
 
       h3 {
         color: $logo-red;
         font-weight: bold;
+
         @media screen and (min-width: 991px) {
           font-size: 25px;
         }
@@ -89,13 +84,11 @@
 
       p {
         color: $black;
+
         @media screen and (max-width: 991px) {
           font-size: 14px;
         }
       }
-      // @media screen and (max-width: 375px) {
-      //   font-size: 30px;
-      // }
     }
 
     svg:not(.check-icon) {
