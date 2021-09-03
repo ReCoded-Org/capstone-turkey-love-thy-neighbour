@@ -10,8 +10,8 @@ import { firestore } from "../../firebaseConfig";
 
 import EmailSentModal from "../../components/EmailSentModal";
 import { ContactUsSendButton } from "../../components/CustomButtons/index";
-import { ReactComponent as MainImg } from "../../images/firstContactUs.svg";
-import { ReactComponent as LogoSvg } from "../../images/secondContactUs.svg";
+import { ReactComponent as LTNText } from "../../images/LTNText.svg";
+import { ReactComponent as Logo } from "../../images/logo.svg";
 import "./index.scss";
 
 function ContactUs() {
@@ -123,8 +123,8 @@ function ContactUs() {
             md={6}
             className="d-flex flex-column justify-content-center align-items-center"
           >
-            <MainImg className="img-fluid main-img" />
-            <LogoSvg alt="img" className="img-fluid logo-img" />
+            <LTNText />
+            <Logo />
           </Col>
         </Row>
         <EmailSentModal />
