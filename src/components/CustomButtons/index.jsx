@@ -56,3 +56,8 @@ export const NeighborsFilterButton = styled(BaseButton)`
   width: 49%;
   height: 40px;
 `;
+
+export const ContactUsSendButton = styled(BaseButton)`
+  padding: 10px 50px;
+  margin-top: 13px;
+`;
