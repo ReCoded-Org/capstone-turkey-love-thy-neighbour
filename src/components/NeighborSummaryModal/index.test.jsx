@@ -8,9 +8,9 @@ import NeighborSummaryModal from ".";
 describe("NeighborSummaryModal", () => {
   const data = {
     selectedNeighbor: {
-      firstName: "fuk",
-      lastName: "you",
-      email: "stupidshit",
+      firstName: "Test Name",
+      lastName: "Test Name",
+      email: "Test Name",
     },
   };
   const mockState = {
