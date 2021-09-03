@@ -5,7 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { firestore } from "../../firebaseConfig";
 
 import EmailSentModal from "../../components/EmailSentModal";
@@ -28,16 +28,16 @@ function ContactUs() {
       first_name: Yup.string()
         .min(2, "Mininum 2 characters")
         .max(15, "Maximum 15 characters")
-        .required("Required!"),
+        .required("Required"),
       last_name: Yup.string()
         .min(2, "Mininum 2 characters")
         .max(15, "Maximum 15 characters")
-        .required("Required!"),
-      email: Yup.string().email("Invalid email format").required("Required!"),
+        .required("Required"),
+      email: Yup.string().email("Invalid email format").required("Required"),
       user_message: Yup.string()
         .min(2, "Mininum 10 characters")
         .max(15, "Maximum 500 characters")
-        .required("Required!"),
+        .required("Required"),
     }),
     onSubmit: (values) => {
       firestore
@@ -54,13 +54,14 @@ function ContactUs() {
 
   return (
     <section className="contact-us-section container-fluid">
-      <Container className="contactus-content-container">
-        <Row className="contactus-content-row ">
+      <Container className="contactus-content-container h-100 d-flex align-items-center">
+        <Row className="contactus-content-row w-100">
           <Col
             xs={12}
             sm={12}
-            md={6}
-            className="d-flex flex-column justify-content-center align-items-center"
+            md={12}
+            lg={6}
+            className="d-flex flex-column justify-content-center align-items-center order-last order-sm-last order-md-last order-lg-first"
           >
             <h1>Contact Us</h1>
             <p>
@@ -68,8 +69,8 @@ function ContactUs() {
               with us!
             </p>
             <form className="d-flex flex-column" onSubmit={formik.handleSubmit}>
-              <div className="d-flex">
-                <div>
+              <div className="d-flex justify-content-between">
+                <div className="d-flex flex-column">
                   <input
                     type="text"
                     name="first_name"
@@ -81,7 +82,8 @@ function ContactUs() {
                     <div className="error-msg">{formik.errors.first_name}</div>
                   )}
                 </div>
-                <div>
+
+                <div className="d-flex flex-column">
                   <input
                     type="text"
                     name="last_name"
@@ -94,6 +96,7 @@ function ContactUs() {
                   )}
                 </div>
               </div>
+
               <input
                 type="email"
                 name="email"
@@ -113,6 +116,7 @@ function ContactUs() {
               {formik.errors.user_message && formik.touched.user_message && (
                 <div className="error-msg">{formik.errors.user_message}</div>
               )}
+
               <ContactUsSendButton>Send</ContactUsSendButton>
             </form>
           </Col>
@@ -120,7 +124,8 @@ function ContactUs() {
           <Col
             xs={12}
             sm={12}
-            md={6}
+            md={12}
+            lg={6}
             className="d-flex flex-column justify-content-center align-items-center"
           >
             <LTNText />

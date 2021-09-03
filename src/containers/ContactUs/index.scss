@@ -26,10 +26,32 @@ section.contact-us-section {
         p {
           color: $black;
           text-align: center;
-          padding: 0px 50px 20px 50px;
+
+          @media screen and (max-width: 767px) {
+            display: none;
+          }
         }
+
         form {
-          box-shadow: 5px 5px 5px 5px lightgray;
+          width: 100%;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+            rgba(0, 0, 0, 0.23) 0px 3px 6px;
+          border-radius: 3px;
+          padding: 15px;
+
+          input,
+          textarea {
+            width: 100%;
+            padding: 8px !important;
+            border: 1px solid $dark-blue;
+            margin: 5px;
+          }
+
+          & > div {
+            & > div {
+              width: 49%;
+            }
+          }
 
           .error-msg {
             font-size: 12px;
@@ -42,6 +64,21 @@ section.contact-us-section {
       }
 
       & > div:last-child {
+        svg {
+          @media screen and (max-width: 991px) {
+            display: none;
+          }
+        }
+
+        svg:first-child {
+          @media screen and (min-width: 992px) {
+            width: 440px;
+          }
+        }
+        svg:last-child {
+          width: 100px;
+          height: 100px;
+        }
       }
     }
   }
