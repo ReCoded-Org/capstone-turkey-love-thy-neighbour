@@ -11,7 +11,7 @@ import constants from "../../utils/constants";
 
 import { auth } from "../../firebaseConfig";
 
-import { ReactComponent as Logo } from "../../images/logo.svg";
+import { ReactComponent as Logo } from "../../images/logoGrayBg.svg";
 import {
   SignInUpButton,
   SignInUpGoogleButton,

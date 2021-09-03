@@ -11,7 +11,7 @@ import { firestore } from "../../firebaseConfig";
 import EmailSentModal from "../../components/EmailSentModal";
 import { ContactUsSendButton } from "../../components/CustomButtons/index";
 import { ReactComponent as LTNText } from "../../images/LTNText.svg";
-import { ReactComponent as Logo } from "../../images/logo.svg";
+import { ReactComponent as Logo } from "../../images/logoGrayBg.svg";
 import "./index.scss";
 
 function ContactUs() {

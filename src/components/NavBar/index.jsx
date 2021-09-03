@@ -8,7 +8,7 @@ import { Link, useHistory } from "react-router-dom";
 
 import { auth } from "../../firebaseConfig";
 
-import { ReactComponent as Logo } from "../../images/logo.svg";
+import { ReactComponent as Logo } from "../../images/logoGrayBg.svg";
 import NotificationsMenu from "../NotificationsMenu";
 
 import "./index.scss";
