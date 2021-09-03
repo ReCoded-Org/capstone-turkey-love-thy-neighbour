@@ -1,26 +1,21 @@
+// NOT WORKING
+
 import React from "react";
 import renderer from "react-test-renderer";
 import configureStore from "redux-mock-store";
-import { Provider } from "react-redux";
-import Profile from ".";
 
-describe("Profile page", () => {
+import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
+
+import App from ".";
+
+describe("App", () => {
   const mockState = {
     user: {
-      firestoreDoc: {
-        firstName: "Test User",
-        gender: "Test Gender",
-      },
-      authCred: {
-        user: {
-          email: "Test Email",
-        },
-      },
-    },
-    popup: {
-      isEditProfileOpen: false,
+      isSignedIn: false,
     },
   };
+
   const mockStore = configureStore();
   let store;
   let tree;
@@ -30,13 +25,15 @@ describe("Profile page", () => {
     tree = renderer
       .create(
         <Provider store={store}>
-          <Profile />
+          <Router>
+            <App />
+          </Router>
         </Provider>
       )
       .toJSON();
   });
 
-  it("renders Profile correctly", () => {
+  it("renders App correctly", () => {
     expect(tree).toMatchSnapshot();
   });
 });
