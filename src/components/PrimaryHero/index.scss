@@ -29,7 +29,11 @@
 
       & > div:last-child {
         img {
-          width: 100%;
+          max-width: 90%;
+          border-radius: 5px;
+          @media screen and (max-width: 400px) {
+            width: 100%;
+          }
 
           @media screen and (max-width: 281px) {
             max-height: 310px;
