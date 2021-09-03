@@ -20,7 +20,6 @@ describe("SignInModal", () => {
     },
     popup: {
       isSignedIn: false,
-      // alagavat: "false", even this is working wth ?!
       /* When we pass "isEditProfileOpen, the test runs correctly, but it doesnt work with "isSignInOpen" */
     },
   };

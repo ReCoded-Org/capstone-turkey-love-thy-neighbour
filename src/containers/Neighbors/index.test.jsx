@@ -7,36 +7,40 @@ import { Provider } from "react-redux";
 import Neighbors from ".";
 
 describe("Neighbors Page", () => {
-    const mockState = {
-        user: {
-            firestoreDoc: {
-                firstName: "Test Name",
-                lastName: "Test Name",
-                email: "Test Email",
-                district: ["aDistrict"],
-            }
-        },
-        popup: {
-            isNeighborSummaryOpen: false,
-        }
-    };
+  const mockState = {
+    user: {
+      firestoreDoc: {
+        firstName: "Test Name",
+        lastName: "Test Name",
+        email: "Test Email",
+        district: "KADIKÖY",
+      },
+      authCred: {
+        uid: "Test Uid",
+      },
+    },
 
-    const mockStore = configureStore();
-    let store;
-    let tree;
+    popup: {
+      isNeighborSummaryOpen: false,
+    },
+  };
 
-    beforeEach(() => {
-        store = mockStore(mockState);
-        tree = renderer
-            .create(
-                <Provider store={store}>
-                    <Neighbors />
-                </Provider>
-            )
-            .toJSON();
-    });
+  const mockStore = configureStore();
+  let store;
+  let tree;
 
-    it("renders Neighbors correctly", () => {
-        expect(tree).toMatchSnapshot();
-    });
+  beforeEach(() => {
+    store = mockStore(mockState);
+    tree = renderer
+      .create(
+        <Provider store={store}>
+          <Neighbors />
+        </Provider>
+      )
+      .toJSON();
+  });
+
+  it("renders Neighbors correctly", () => {
+    expect(tree).toMatchSnapshot();
+  });
 });
