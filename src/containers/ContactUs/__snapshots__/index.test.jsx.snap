@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactUS renders ContactUS correctly 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="container"
+  >
+    <p>
+      Contact Us
+    </p>
+  </div>
+</div>
+`;

@@ -2,14 +2,24 @@ import React from "react";
 import renderer from "react-test-renderer";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
-import Profile from ".";
+import Home from ".";
 
-describe("Profile page", () => {
+describe("Home page", () => {
     const mockState = {
         user: {
             firestoreDoc: {
-                firstName: "Test User",
-                gender: "Test Gender"
+                firstName: "Ali Riza",
+                lastName: "Sahin",
+                district: "KADIKÖY",
+                gender: "Male",
+                age: 25,
+                education: "High School",
+                bio: "I am a freak.",
+                interests: [{ content: "Fashion" }, { content: "Coding" }],
+                number: "25",
+                address: "my address",
+                profileImageUrl: "",
+                backgroundImageUrl: "",
             },
             authCred: {
                 user: {
@@ -30,13 +40,13 @@ describe("Profile page", () => {
         tree = renderer
             .create(
                 <Provider store={store}>
-                    <Profile />
+                    <Home />
                 </Provider>
             )
             .toJSON();
     });
 
-    it("renders Profile correctly", () => {
+    it("renders Home correctly", () => {
         expect(tree).toMatchSnapshot();
     });
 });

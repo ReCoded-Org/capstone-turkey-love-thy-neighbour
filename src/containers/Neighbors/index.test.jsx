@@ -13,7 +13,7 @@ describe("Neighbors Page", () => {
                 firstName: "Test Name",
                 lastName: "Test Name",
                 email: "Test Email",
-                district: ["ADistrict"],
+                district: ["aDistrict"],
             }
         },
         popup: {
