@@ -8,7 +8,7 @@ import { Link, useHistory } from "react-router-dom";
 
 import { auth } from "../../firebaseConfig";
 
-import logo from "../../images/logo.svg";
+import { ReactComponent as Logo } from "../../images/logo.svg";
 import "./index.scss";
 
 function NavBar() {
@@ -21,7 +21,7 @@ function NavBar() {
     <Navbar collapseOnSelect expand="lg" variant="dark">
       <Container>
         <Link to="/" className="navbar-brand">
-          <img src={logo} alt="logo" />
+          <Logo className="logo-svg" />
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
