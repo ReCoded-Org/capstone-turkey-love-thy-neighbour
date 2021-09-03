@@ -3,6 +3,11 @@
 #sign-up-modal {
   .modal-content {
     & > div.modal-header {
+      svg {
+        width: 45px;
+        height: 45px;
+      }
+
       h2 {
         margin-left: auto;
         margin-right: auto;
