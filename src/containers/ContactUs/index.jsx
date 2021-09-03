@@ -12,6 +12,7 @@ import EmailSentModal from "../../components/EmailSentModal";
 import { ContactUsSendButton } from "../../components/CustomButtons/index";
 import { ReactComponent as LTNText } from "../../images/LTNText.svg";
 import { ReactComponent as Logo } from "../../images/logoTransparentBg.svg";
+
 import "./index.scss";
 
 function ContactUs() {
@@ -39,7 +40,7 @@ function ContactUs() {
         .max(15, "Maximum 500 characters")
         .required("Required"),
     }),
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       firestore
         .collection("contacts")
         .add({
@@ -48,6 +49,7 @@ function ContactUs() {
           email: values.email,
           user_message: values.user_message,
         })
+        .then(() => resetForm())
         .then(() => dispatch({ type: "emailSent" }));
     },
   });
