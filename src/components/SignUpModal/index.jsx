@@ -68,6 +68,7 @@ const SignUpModal = () => {
       email: "",
       password: "",
       repeatedPassword: "",
+      invitationNotifications: [],
     },
     validate,
     onSubmit: (values, { resetForm, setSubmitting }) => {

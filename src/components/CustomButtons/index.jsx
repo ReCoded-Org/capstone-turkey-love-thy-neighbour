@@ -57,7 +57,17 @@ export const NeighborsFilterButton = styled(BaseButton)`
   height: 40px;
 `;
 
+export const GoodFeedbackButton = styled(BaseButton)`
+padding: 0 7px;
+background-color: var(--logo-blue);
+`;
+
+export const BadFeedbackButton = styled(BaseButton)`
+padding: 0 7px;
+background-color: var(--logo-red);
+`;
+
 export const ContactUsSendButton = styled(BaseButton)`
   padding: 10px 50px;
   margin-top: 13px;
-`;
+`
