@@ -47,7 +47,9 @@
       & > div:first-child {
         img {
           width: 270px;
+          border-radius: 5px;
           max-height: 350px;
+
           @media screen and (min-width: 282px) and (max-width: 767px) {
             max-height: 350px;
           }
