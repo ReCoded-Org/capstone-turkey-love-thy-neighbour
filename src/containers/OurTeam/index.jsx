@@ -5,12 +5,12 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { ReactComponent as Twitter } from "../../images/twitter.svg";
 import { ReactComponent as Linkedn } from "../../images/linkedn.svg";
 import { ReactComponent as Github } from "../../images/github.svg";
-import imgAli from "../../images/aliriza.jpg";
-import imgKutay from "../../images/kutay.jpg";
-import imgMoulham from "../../images/moulham.png";
-import imgNur from "../../images/nur.jpg";
-import imgShrreya from "../../images/shrreya.jpeg";
-import imgAziza from "../../images/aziza.jpg";
+import imgAli from "../../images/OurTeam/aliriza.jpg";
+import imgKutay from "../../images/OurTeam/kutay.jpg";
+import imgMoulham from "../../images/OurTeam/moulham.png";
+import imgNur from "../../images/OurTeam/nur.jpg";
+import imgShrreya from "../../images/OurTeam/shrreya.jpeg";
+import imgAziza from "../../images/OurTeam/aziza.jpg";
 
 import "./index.scss";
 
