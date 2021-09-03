@@ -123,5 +123,14 @@
   "footer_copyright": "Copyright © Re:Coded 2021",
   "male": "Male",
   "female": "Female",
-  "prefernottosay": "Prefer not to say"
+  "prefernottosay": "Prefer not to say",
+  "neighbors_alert_success": "Your email has been successfully sent!",
+  "neighbors_alert_danger": "A problem occured while sending your email...",
+  "language_title": "Language",
+  "language_en": "English",
+  "language_tr": "Türkçe",
+  "notification_title": "Notifications",
+  "notification_clear_all": "Clear All",
+  "notification_no_notificatons": "No current notifications...",
+  "ourteam_title": "Here's Our Hardworking Team:"
 }

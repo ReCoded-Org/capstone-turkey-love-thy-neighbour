@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
 import { Dropdown } from "react-bootstrap";
 
 import { ReactComponent as LanguageTogglerImage } from "../../images/languageTogglerImage.svg";
@@ -9,10 +11,11 @@ import { ReactComponent as TurkeyFlag } from "../../images/turkey.svg";
 import "./index.scss";
 
 function LanguageMenu({ language, setLanguage }) {
+  const { t } = useTranslation();
   function changeLanguage(event) {
     const selectedLanguage = event.currentTarget.children[1].innerText;
 
-    if (selectedLanguage === "Turkish") {
+    if (selectedLanguage === "Türkçe") {
       setLanguage("TR");
     } else if (selectedLanguage === "English") {
       setLanguage("EN");
@@ -27,7 +30,7 @@ function LanguageMenu({ language, setLanguage }) {
 
       <Dropdown.Menu>
         <Dropdown.Header>
-          <small>Languages</small>
+          <small>{t("language_title")}</small>
         </Dropdown.Header>
 
         <Dropdown.Divider />
@@ -40,7 +43,7 @@ function LanguageMenu({ language, setLanguage }) {
           onClick={(event) => changeLanguage(event)}
         >
           <USFlag />
-          <span>English</span>
+          <span>{t("language_en")}</span>
         </button>
         <button
           type="button"
@@ -50,7 +53,7 @@ function LanguageMenu({ language, setLanguage }) {
           onClick={(event) => changeLanguage(event)}
         >
           <TurkeyFlag />
-          <span>Turkish</span>
+          <span>{t("language_tr")}</span>
         </button>
       </Dropdown.Menu>
     </Dropdown>

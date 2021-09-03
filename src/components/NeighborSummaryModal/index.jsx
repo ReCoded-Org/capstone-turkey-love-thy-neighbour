@@ -162,7 +162,7 @@ function NeighborSummaryModal({
           </Modal.Body>
           <Modal.Footer>
             <NeighborCardButton className="mx-auto" onClick={handleInvitation}>
-              Invite To Meet!
+              {t("neighborcards_button")}
             </NeighborCardButton>
           </Modal.Footer>
         </Container>

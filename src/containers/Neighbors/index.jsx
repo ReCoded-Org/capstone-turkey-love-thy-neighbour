@@ -179,10 +179,8 @@ function Neighbors() {
               onClose={() => setEmailAlertStatus("empty")}
               dismissible
             >
-              {emailAlertStatus === "success" &&
-                "Your email has been successfully sent!"}
-              {emailAlertStatus === "danger" &&
-                "A problem occured while sending your email..."}
+              {emailAlertStatus === "success" && t("neighbors_alert_success")}
+              {emailAlertStatus === "danger" && t("neighbors_alert_danger")}
             </Alert>
           )}
         </div>
