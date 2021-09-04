@@ -35,12 +35,14 @@ function NavBar() {
         <Link to="/" className="navbar-brand">
           <Logo className="logo-svg" />
         </Link>
-        {isSignedIn && (
-          <div className="d-flex order-lg-last">
-            <NotificationsMenu />
-            <LanguageMenu language={language} setLanguage={setLanguage} />
-          </div>
-        )}
+        <div className="d-flex order-lg-last">
+          <LanguageMenu language={language} setLanguage={setLanguage} />
+          {isSignedIn && (
+            <div className="d-flex order-lg-last">
+              <NotificationsMenu />
+            </div>
+          )}
+        </div>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className="order-lg-3" id="responsive-navbar-nav">
           {isSignedIn && (
