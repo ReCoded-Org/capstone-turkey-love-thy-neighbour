@@ -12,7 +12,7 @@ export function removeOneProp(object, propToBeRemoved) {
 }
 
 export function setUserDocument(docTitle, docData) {
-  firestore.collection("users").doc(docTitle).set(docData);
+  return firestore.collection("users").doc(docTitle).set(docData);
 }
 
 export function createInterestString(interests) {

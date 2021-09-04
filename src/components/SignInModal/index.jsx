@@ -8,7 +8,9 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { useHistory } from "react-router-dom";
 
-import { auth } from "../../firebaseConfig";
+import { auth, googleProvider, facebookProvider } from "../../firebaseConfig";
+
+import { setUserDocument } from "../../utils/helpers";
 
 import { ReactComponent as Logo } from "../../images/logoGrayBg.svg";
 import {
@@ -68,6 +70,86 @@ const SignInModal = () => {
     },
   });
 
+  function handleGoogleSignIn() {
+    auth.signInWithPopup(googleProvider).then((credObj) => {
+      const { isNewUser } = credObj.additionalUserInfo;
+
+      if (isNewUser) {
+        const firestoreDocUid = credObj.user.uid;
+        const userData = credObj.additionalUserInfo.profile;
+        const {
+          // eslint-disable-next-line camelcase
+          given_name,
+          // eslint-disable-next-line camelcase
+          family_name,
+          email,
+          picture,
+          gender = "Prefer not to say",
+          district = "",
+          invitationNotifications = [],
+        } = userData;
+
+        const firestoreDoc = {
+          firstName: given_name,
+          lastName: family_name,
+          email,
+          profileImageUrl: picture,
+          gender,
+          district,
+          invitationNotifications,
+        };
+        setUserDocument(firestoreDocUid, firestoreDoc)
+          .then(() => dispatch({ type: "signIn" }))
+          .then(() => history.push(`/profile/${firestoreDocUid}`))
+          .then(() => dispatch({ type: "editProfile" }));
+        return;
+      }
+
+      dispatch({ type: "signIn" });
+      history.push("/meet");
+    });
+  }
+
+  function handleFacebookSignIn() {
+    auth.signInWithPopup(facebookProvider).then((credObj) => {
+      const { isNewUser } = credObj.additionalUserInfo;
+
+      if (isNewUser) {
+        const firestoreDocUid = credObj.user.uid;
+        const userData = credObj.additionalUserInfo.profile;
+        const {
+          // eslint-disable-next-line camelcase
+          first_name,
+          // eslint-disable-next-line camelcase
+          last_name,
+          email,
+          picture,
+          gender = "Prefer not to say",
+          district = "",
+          invitationNotifications = [],
+        } = userData;
+
+        const firestoreDoc = {
+          firstName: first_name,
+          lastName: last_name,
+          email,
+          profileImageUrl: picture.data.url,
+          gender,
+          district,
+          invitationNotifications,
+        };
+        setUserDocument(firestoreDocUid, firestoreDoc)
+          .then(() => dispatch({ type: "signIn" }))
+          .then(() => history.push(`/profile/${firestoreDocUid}`))
+          .then(() => dispatch({ type: "editProfile" }));
+        return;
+      }
+
+      dispatch({ type: "signIn" });
+      history.push("/meet");
+    });
+  }
+
   return (
     <Modal
       show={isSignInOpen}
@@ -125,10 +207,10 @@ const SignInModal = () => {
         <SignInUpButton type="submit" form="sign-in-form">
           Sign In
         </SignInUpButton>
-        <SignInUpGoogleButton type="submit">
+        <SignInUpGoogleButton type="submit" onClick={handleGoogleSignIn}>
           Sign In With Google
         </SignInUpGoogleButton>
-        <SignInUpFacebookButton type="submit">
+        <SignInUpFacebookButton type="submit" onClick={handleFacebookSignIn}>
           Sign In With Facebook
         </SignInUpFacebookButton>
       </Modal.Footer>

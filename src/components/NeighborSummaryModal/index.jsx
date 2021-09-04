@@ -1,4 +1,4 @@
-import { React } from "react";
+import React from "react";
 
 import { Modal, Container, Card } from "react-bootstrap";
 
@@ -127,11 +127,16 @@ function NeighborSummaryModal({
                     Gender: <span>{selectedNeighbor?.gender}</span>
                   </li>
                   <li>
+                    Bio:{" "}
+                    <span>
+                      {selectedNeighbor?.bio || "Bio yet to be added."}
+                    </span>
+                  </li>
+                  <li>
                     Interests:{" "}
                     <span>
-                      {selectedNeighbor?.interests ===
-                        "Interests yet to be added." ||
-                      selectedNeighbor?.interests === undefined
+                      {selectedNeighbor?.interests === undefined ||
+                      selectedNeighbor?.interests.length === 0
                         ? "Interests yet to be added."
                         : createInterestString(selectedNeighbor.interests)}
                     </span>

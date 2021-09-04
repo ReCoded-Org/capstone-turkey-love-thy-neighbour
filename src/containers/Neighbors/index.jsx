@@ -166,7 +166,12 @@ function Neighbors() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <RecommendedPlacesAccordion district={district} />
+          {(district === "KADIKÖY" ||
+            district === "BEYOĞLU" ||
+            district === "ŞİŞLİ" ||
+            district === "FATİH") && (
+            <RecommendedPlacesAccordion district={district} />
+          )}
           {emailAlertStatus !== "empty" && (
             <Alert
               className="mb-4 mt-2 w-100"
@@ -199,9 +204,6 @@ function Neighbors() {
                     age={userDoc.age}
                     email={userDoc.email}
                     setSelectedNeighbor={setSelectedNeighbor}
-                    senderEmail={email} // email of the signed in user
-                    senderFullName={`${firstName} ${lastName}`}
-                    setEmailAlertStatus={setEmailAlertStatus}
                   />
                 </Col>
               );
