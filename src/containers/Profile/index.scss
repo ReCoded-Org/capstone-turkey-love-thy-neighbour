@@ -27,8 +27,10 @@
         }
 
         .profile-photo {
-          width: 150px;
-          height: 150px;
+          max-width: 125px;
+          min-width: 125px;
+          max-height: 125px;
+          min-height: 125px;
           border-radius: 50%;
         }
       }
