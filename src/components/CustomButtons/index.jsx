@@ -5,6 +5,7 @@ const BaseButton = styled.button`
   border-radius: 5px;
   background-color: var(--dark-blue);
   color: var(--white);
+  font-family: "Courgette";
 `;
 
 export const CTAButton = styled(BaseButton)`

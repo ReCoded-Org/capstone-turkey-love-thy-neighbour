@@ -14,7 +14,6 @@
       width: 100%;
 
       & > div:first-child {
-        // picture and button column
         padding-right: 0 !important;
         padding-left: 0 !important;
 
@@ -36,18 +35,17 @@
       }
 
       & > div:last-child {
-        // cards column
         padding: 0;
         margin: 0 !important;
 
         & > div.cards-row {
-          // cards row
           margin: 0;
 
           & > div {
-            // card column
             padding: 0;
             min-height: 250px;
+
+            font-family: "P";
 
             @media screen and (max-width: 991px) {
               width: 100% !important;
@@ -55,7 +53,6 @@
             }
 
             & > div.card {
-              // <Card></Card> component
               border-radius: 15px !important;
               height: 100%;
               margin: 0 !important;
@@ -84,6 +81,7 @@
                 }
 
                 & > div.card-title {
+                  font-family: "Courgette";
                   font-weight: bold;
                   margin-left: 30px;
                 }
