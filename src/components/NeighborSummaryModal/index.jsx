@@ -127,7 +127,9 @@ function NeighborSummaryModal({
                   <li>
                     {t("profile_general_info_card_age")}{" "}
                     <span>
-                      {selectedNeighbor?.age || "Age yet to be added."}
+                      {selectedNeighbor?.age
+                        ? selectedNeighbor?.age
+                        : t("neighborssummod_age_tba")}
                     </span>
                   </li>
                   <li>
@@ -137,7 +139,9 @@ function NeighborSummaryModal({
                   <li>
                     {t("profile_about_you_bio")}{" "}
                     <span>
-                      {selectedNeighbor?.bio || "Bio yet to be added."}
+                      {selectedNeighbor?.bio
+                        ? selectedNeighbor?.bio
+                        : t("neighborssummod_bio_tba")}
                     </span>
                   </li>
                   <li>

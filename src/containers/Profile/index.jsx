@@ -94,26 +94,28 @@ const Profile = () => {
                       <li>
                         {t("profile_general_info_card_gender")}{" "}
                         <span>
-                          {firestoreDoc.gender || "Gender yet to be added."}
+                          {firestoreDoc.gender ||
+                            t("neighborssummod_gender_tba")}
                         </span>
                       </li>
                       <li>
                         {t("profile_general_info_card_age")}{" "}
                         <span>
-                          {firestoreDoc.age || "Age yet to be added."}
+                          {firestoreDoc.age || t("neighborssummod_age_tba")}
                         </span>
                       </li>
                       <li>
                         {t("profile_general_info_card_education")}{" "}
                         <span>
                           {firestoreDoc.education ||
-                            "Education yet to be added."}
+                            t("neighborssummod_education_tba")}
                         </span>
                       </li>
                       <li>
                         {t("profile_general_info_card_district")}{" "}
                         <span>
-                          {firestoreDoc.district || "District yet to be added."}
+                          {firestoreDoc.district ||
+                            t("neighborssummod_district_tba")}
                         </span>
                       </li>
                     </ul>
@@ -136,14 +138,14 @@ const Profile = () => {
                       <li>
                         {t("profile_about_you_bio")}{" "}
                         <span>
-                          {firestoreDoc.bio || "Bio yet to be added."}
+                          {firestoreDoc.bio || t("neighborssummod_bio_tba")}
                         </span>
                       </li>
                       <li>
                         {t("profile_about_you_interests")}{" "}
                         <span>
                           {!firestoreDoc?.interests
-                            ? "Interests yet to be added."
+                            ? t("neighborssummod_interests_tba")
                             : createInterestString(firestoreDoc?.interests)}
                         </span>
                       </li>
@@ -177,7 +179,8 @@ const Profile = () => {
                       <li>
                         {t("profile_contact_card_adress")}{" "}
                         <span>
-                          {firestoreDoc.address || "Address yet to be added."}
+                          {firestoreDoc.address ||
+                            t("neighborssummod_adress_tba")}
                         </span>
                       </li>
                     </ul>
