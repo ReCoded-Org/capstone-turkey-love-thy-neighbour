@@ -3,11 +3,17 @@
 #edit-profile-modal {
   .modal-content {
     & > div.modal-header {
-      button {
-        margin: 0;
+      svg {
+        width: 45px;
+        height: 45px;
       }
+
       h2 {
         margin-bottom: 0;
+      }
+
+      button {
+        margin: 0;
       }
     }
 

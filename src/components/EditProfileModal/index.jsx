@@ -14,7 +14,7 @@ import constants, { newActivityList } from "../../utils/constants";
 
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 
-import { ReactComponent as Logo } from "../../images/logo.svg";
+import { ReactComponent as Logo } from "../../images/logoGrayBg.svg";
 import "./index.scss";
 
 const EditProfileModal = () => {

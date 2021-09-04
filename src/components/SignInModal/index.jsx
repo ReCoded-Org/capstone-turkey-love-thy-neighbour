@@ -12,7 +12,7 @@ import { auth, googleProvider, facebookProvider } from "../../firebaseConfig";
 
 import { setUserDocument } from "../../utils/helpers";
 
-import { ReactComponent as Logo } from "../../images/logo.svg";
+import { ReactComponent as Logo } from "../../images/logoGrayBg.svg";
 import {
   SignInUpButton,
   SignInUpGoogleButton,

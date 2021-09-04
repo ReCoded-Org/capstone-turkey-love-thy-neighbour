@@ -11,7 +11,7 @@ import constants from "../../utils/constants";
 
 import { auth, googleProvider, facebookProvider } from "../../firebaseConfig";
 
-import logo from "../../images/logo.svg";
+import { ReactComponent as Logo } from "../../images/logoGrayBg.svg";
 import {
   SignInUpButton,
   SignInUpGoogleButton,
@@ -183,7 +183,7 @@ const SignUpModal = () => {
       id="sign-up-modal"
     >
       <Modal.Header>
-        <img src={logo} alt="logo" />
+        <Logo />
         <h2>Sign Up</h2>
         <Button
           type="button"
