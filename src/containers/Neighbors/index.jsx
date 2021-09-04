@@ -207,6 +207,7 @@ function Neighbors() {
                     age={userDoc.age}
                     email={userDoc.email}
                     setSelectedNeighbor={setSelectedNeighbor}
+                    setEmailAlertStatus={setEmailAlertStatus}
                   />
                 </Col>
               );
