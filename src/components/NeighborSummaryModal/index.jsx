@@ -149,7 +149,7 @@ function NeighborSummaryModal({
                     <span>
                       {selectedNeighbor?.interests === undefined ||
                       selectedNeighbor?.interests.length === 0
-                        ? "Interests yet to be added."
+                        ? t("neighborssummod_interests_tba")
                         : createInterestString(selectedNeighbor.interests)}
                     </span>
                   </li>
@@ -157,7 +157,7 @@ function NeighborSummaryModal({
                     {t("profile_general_info_card_education")}{" "}
                     <span>
                       {selectedNeighbor?.education ||
-                        "Education yet to be added."}
+                        t("neighborssummod_education_tba")}
                     </span>
                   </li>
                 </ul>
