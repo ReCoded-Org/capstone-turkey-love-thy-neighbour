@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
 html {
   scroll-snap-type: y mandatory;
   scroll-padding-top: 60px;
@@ -23,7 +27,15 @@ h1,
 h2,
 h3,
 h4,
-h5,
+h5 {
+  font-family: "Courgette", "Roboto", sans-serif;
+}
+
 p {
-  font-family: Roboto, sans-serif;
+  font-family: "Poppins";
+}
+
+.error-msg {
+  font-family: "Courgette";
+  margin-left: 9px !important;
 }

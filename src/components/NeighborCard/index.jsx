@@ -89,7 +89,9 @@ function NeighborCard({
         }}
       />
       <Card.Body className="d-flex flex-column justify-content-center">
-        <Card.Title className="text-center">{`${firstName} ${lastName}`}</Card.Title>
+        <h2 className="text-center">
+          {firstName} <br /> {lastName}
+        </h2>
         <small className="text-center">{`${age} / ${gender}`}</small>
         <NeighborCardButton onClick={handleInvitation}>
           {t("neighborcards_button")}

@@ -3,16 +3,17 @@
 #sign-in-modal {
   & > .modal-content {
     & > .modal-header {
-      button {
-        margin: 0;
+      svg {
+        width: 45px;
+        height: 45px;
       }
 
       h2 {
         margin: 0 auto;
       }
 
-      svg {
-        margin-left: 0;
+      button {
+        margin: 0;
       }
     }
 

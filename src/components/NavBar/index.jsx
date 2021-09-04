@@ -10,10 +10,9 @@ import { Link, useHistory } from "react-router-dom";
 
 import { auth } from "../../firebaseConfig";
 
+import { ReactComponent as Logo } from "../../images/logoGrayBg.svg";
 import NotificationsMenu from "../NotificationsMenu";
 import LanguageMenu from "../LanguageMenu";
-
-import logo from "../../images/logo.svg";
 
 import "./index.scss";
 
@@ -33,8 +32,8 @@ function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark">
       <Container>
-        <Link to="/" className="navbar-brand order-lg-6">
-          <img src={logo} alt="logo" />
+        <Link to="/" className="navbar-brand">
+          <Logo className="logo-svg" />
         </Link>
         {isSignedIn && (
           <div className="d-flex order-lg-last">

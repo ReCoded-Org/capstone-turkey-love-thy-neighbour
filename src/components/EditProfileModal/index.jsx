@@ -13,7 +13,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { firestore } from "../../firebaseConfig";
 import constants, { newActivityList } from "../../utils/constants";
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
-import { ReactComponent as Logo } from "../../images/logo.svg";
+
+import { ReactComponent as Logo } from "../../images/logoGrayBg.svg";
 import "./index.scss";
 
 const EditProfileModal = () => {
@@ -23,6 +24,7 @@ const EditProfileModal = () => {
     (state) => state.popup.isEditProfileOpen
   );
   const { firestoreDoc, authCred } = useSelector((state) => state.user);
+  const { district } = firestoreDoc;
   const { uid } = authCred;
 
   function toggleEditProfileModal() {
@@ -81,7 +83,7 @@ const EditProfileModal = () => {
   return (
     <Modal
       show={isEditProfileOpen}
-      onHide={toggleEditProfileModal}
+      onHide={district && toggleEditProfileModal}
       id="edit-profile-modal"
     >
       <Modal.Header className="d-flex justify-content-between">
@@ -92,7 +94,7 @@ const EditProfileModal = () => {
           data-toggle="modal"
           className="btn-close"
           aria-label="Close"
-          onClick={toggleEditProfileModal}
+          onClick={district && toggleEditProfileModal}
         />
       </Modal.Header>
 
@@ -140,10 +142,10 @@ const EditProfileModal = () => {
                   <option disabled value="">
                     {t("edit_profile_district_pholder")}
                   </option>
-                  {constants.districtList.map((district) => {
+                  {constants.districtList.map((districtInfo) => {
                     return (
-                      <option key={district} value={district}>
-                        {district}
+                      <option key={districtInfo} value={districtInfo}>
+                        {districtInfo}
                       </option>
                     );
                   })}
@@ -292,9 +294,11 @@ const EditProfileModal = () => {
         </Card>
       </Modal.Body>
       <Modal.Footer>
-        <DiscardChangesButton onClick={toggleEditProfileModal}>
-          {t("edit_profile_discard_button")}
-        </DiscardChangesButton>
+        {district && (
+          <DiscardChangesButton onClick={toggleEditProfileModal}>
+            {t("edit_profile_discard_button")}
+          </DiscardChangesButton>
+        )}
         <SaveChangesButton type="submit" form="edit-profile-form">
           {t("edit_profile_save_button")}
         </SaveChangesButton>

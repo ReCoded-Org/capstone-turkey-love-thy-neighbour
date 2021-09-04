@@ -2,10 +2,48 @@
 
 exports[`Meet page renders Meet page correctly 1`] = `
 <div
-  className="container"
+  className="meet-container-fluid d-flex align-items-center container-fluid"
 >
-  <p>
-    Meet
-  </p>
+  <div
+    className="meet-content-container d-flex align-items-start align-items-sm-start align-items-md-center container"
+  >
+    <div
+      className="meet-row row"
+    >
+      <div
+        className="d-flex flex-column justify-content-center align-items-center align-items-sm-center align-items-md-start text-center text-sm-center text-md-start mb-3 mb-sm-3 mb-md-0 col-md-6 col-sm-12 col-12 order-md-first order-sm-last order-last"
+      >
+        <h3>
+          Hello, 
+          Test User
+        </h3>
+        <h1>
+          Meet nearby people with our cutting edge algorithms.
+        </h1>
+        <p>
+          After you have been matched with people near you, you can send them a message and meet up quickly !
+        </p>
+        <button
+          className="sc-bdnxRM sc-gtsrHT fhyKDU bLMOay"
+        >
+          <a
+            href="/neighbors"
+            onClick={[Function]}
+          >
+            Meet Now
+          </a>
+        </button>
+      </div>
+      <div
+        className="d-flex justify-content-end col-md-6 col-sm-12 col-12 order-md-last order-sm-first order-first"
+      >
+        <img
+          alt="meet img"
+          className="img-fluid"
+          src="meet.jpg"
+        />
+      </div>
+    </div>
+  </div>
 </div>
 `;

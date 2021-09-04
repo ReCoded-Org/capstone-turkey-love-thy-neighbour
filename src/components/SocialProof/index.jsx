@@ -26,7 +26,6 @@ function SocialProof() {
             >
               <Accordion.Item className="first-accordion-item" eventKey="0">
                 <Accordion.Header className="d-flex align-items-center">
-                  {/* <img src={MaleAvatarSVG} alt="avatar svg" /> */}
                   <MaleAvatarSVG />
                   <div className="d-flex flex-column">
                     <p style={{ padding: "0", margin: "0" }}>Sammy Walson</p>
@@ -55,7 +54,6 @@ function SocialProof() {
               </Accordion.Item>
               <Accordion.Item className="third-accordion-item" eventKey="2">
                 <Accordion.Header className="d-flex align-items-center">
-                  {/* <img src={MaleAvatarSVG} alt="avatar svg" /> */}
                   <MaleAvatarSVG />
                   <div className="d-flex flex-column">
                     <p style={{ padding: "0", margin: "0" }}>

@@ -1,20 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useTranslation } from "react-i18next";
 
 import { Container, Row, Col } from "react-bootstrap";
 
-import PhoneAndNotificationsImg from "../../images/PhoneandNotifications.svg";
+import { ReactComponent as PhoneAndNotificationsImg } from "../../images/PhoneandNotifications.svg";
 import { ReactComponent as CheckIcon } from "../../images/Check.svg";
 
 import "./index.scss";
 
 function Subscription() {
-  const [email, setEmail] = React.useState("");
+  const [email, setEmail] = useState("");
   const { t } = useTranslation();
-  const handleChange = (event) => {
-    setEmail(event.target.value);
-  };
+
   return (
     <section className="subscription-img-bg container-fluid">
       <Container className="subscription-content-container d-flex align-items-center">
@@ -30,23 +28,29 @@ function Subscription() {
             </h1>
             <h3>{t("newsletter_update")}</h3>
             <p>{t("newsletter_subscribe")}</p>
-            <div className="button-input-wrapper">
+            <form
+              className="d-flex"
+              onSubmit={(event) => {
+                event.preventDefault();
+                setEmail("");
+              }}
+            >
               <input
                 type="email"
                 className="form-email"
                 aria-describedby="emailHelp"
-                placeholder="E-Mail"
+                placeholder="Email"
                 value={email}
-                onChange={handleChange}
+                onChange={(event) => setEmail(event.target.value)}
               />
               <button
                 type="submit"
                 className="btn btn-primary"
                 disabled={!email}
               >
-                <CheckIcon />
+                <CheckIcon className="check-icon" />
               </button>
-            </div>
+            </form>
           </Col>
 
           <Col
@@ -55,11 +59,7 @@ function Subscription() {
             md={6}
             className="my-md-auto d-flex d-sm-flex d-md-block justify-content-center justify-content-sm-center justify-content-md-center"
           >
-            <img
-              src={PhoneAndNotificationsImg}
-              alt="phoneimg"
-              className="img-fluid"
-            />
+            <PhoneAndNotificationsImg />
           </Col>
         </Row>
       </Container>
