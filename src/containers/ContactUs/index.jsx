@@ -36,8 +36,8 @@ function ContactUs() {
         .required("Required"),
       email: Yup.string().email("Invalid email format").required("Required"),
       user_message: Yup.string()
-        .min(2, "Mininum 10 characters")
-        .max(15, "Maximum 500 characters")
+        .min(10, "Mininum 10 characters")
+        .max(500, "Maximum 500 characters")
         .required("Required"),
     }),
     onSubmit: (values, { resetForm }) => {
