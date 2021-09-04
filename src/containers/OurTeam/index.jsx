@@ -36,8 +36,8 @@ function OurTeam() {
             linkedInUrl="https://www.linkedin.com/in/ars-coding/"
             twitterUrl="https://twitter.com/ARS_coding"
             jobTitle="Front End Web Developer"
-            firstName="Ali Riza"
-            lastName="Sahin"
+            firstName="Ali Rıza"
+            lastName="Şahin"
           />
           <TeammateCard
             image={imgMoulham}
@@ -54,8 +54,8 @@ function OurTeam() {
             linkedInUrl="https://www.linkedin.com"
             twitterUrl="https://twitter.com"
             jobTitle="Front End Web Developer"
-            firstName="Kutay Kagan"
-            lastName="Ozen"
+            firstName="Kutay Kağan"
+            lastName="Özen"
           />
           <TeammateCard
             image={imgAziza}
@@ -73,7 +73,7 @@ function OurTeam() {
             twitterUrl="https://twitter.com"
             jobTitle="Front End Web Developer"
             firstName="Hafise Nur"
-            lastName="Bacaksiz"
+            lastName="Bacaksız"
           />
         </Row>
       </Container>
