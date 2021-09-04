@@ -15,11 +15,9 @@
       margin: 0 !important;
 
       & > div {
-        // columns inside the row
         padding: 0;
 
         div.card {
-          // card divs inside the columns
           margin: 0;
           padding: 10px;
           transition: all ease-in-out 300ms;
@@ -68,7 +66,6 @@
           }
 
           &:hover {
-            // whenever the card gets hovered on...
             background-color: #8dd6f5;
             transition: all ease-in-out 300ms;
 
@@ -88,8 +85,9 @@
             }
           }
 
-          & > .card-title {
+          & > div.card-title {
             color: $logo-orange;
+            font-family: "Courgette";
             transition: all ease-in-out 300ms;
 
             @media screen and (min-width: 992px) and (max-width: 1259px) {

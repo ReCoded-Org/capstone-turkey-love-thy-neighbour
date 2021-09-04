@@ -1,206 +1,84 @@
 import React from "react";
 
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
-import { ReactComponent as Twitter } from "../../images/twitter.svg";
-import { ReactComponent as Linkedn } from "../../images/linkedn.svg";
-import { ReactComponent as Github } from "../../images/github.svg";
-import imgAli from "../../images/aliriza.jpg";
-import imgKutay from "../../images/kutay.jpg";
-import imgMoulham from "../../images/moulham.png";
-import imgNur from "../../images/nur.jpg";
-import imgShrreya from "../../images/shrreya.jpeg";
-import imgAziza from "../../images/aziza.jpg";
+import TeammateCard from "../../components/TeammateCard";
+
+import imgAli from "../../images/OurTeam/aliriza.jpg";
+import imgKutay from "../../images/OurTeam/kutay.jpg";
+import imgMoulham from "../../images/OurTeam/moulham.png";
+import imgNur from "../../images/OurTeam/nur.jpg";
+import imgShrreya from "../../images/OurTeam/shrreya.jpeg";
+import imgAziza from "../../images/OurTeam/aziza.jpg";
 
 import "./index.scss";
 
 function OurTeam() {
   return (
-    <Container className="ourteam-content-container d-flex flex-column justify-content-center">
-      <h2>Here’s our hard working development team</h2>
+    <section className="ourteam-section container-fluid d-flex flex-column justify-content-center">
+      <Container className="ourteam-content-container">
+        <h2 className="text-center mt-4 mb-4">
+          Here’s our <span>hard working</span> development team
+        </h2>
 
-      <Row className="ourteam-content-row">
-        <Card className="card d-flex flex-column align-items-center">
-          <img src={imgShrreya} alt="img" className="img-fluid" />
-          <Card.Title> Shrreya Bhatachaarya </Card.Title>
-          <p className="short-define">Lead Trainer</p>
-          <Col className="social-media-logos d-flex flex-row justify-content-center">
-            {" "}
-            <a
-              href="https://github.com/Shrreya"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Github />
-            </a>{" "}
-            <a
-              href="https://www.linkedin.com/in/shrreya/"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Linkedn />
-            </a>
-            <a
-              href="https://twitter.com/__shrreya__"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Twitter />
-            </a>
-          </Col>
-        </Card>
-
-        <Card className="card d-flex flex-column align-items-center">
-          <img src={imgAli} alt="img" className="img-fluid" />
-          <Card.Title>Ali Rıza Şahin</Card.Title>
-          <p>Junior Developer</p>
-          <Col className="social-media-logos d-flex flex-row justify-content-center">
-            {" "}
-            <a
-              href="https://github.com/ARS-coding"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Github />
-            </a>{" "}
-            <a
-              href="https://www.linkedin.com/in/ars-coding/"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Linkedn />
-            </a>
-            <a
-              href="https://twitter.com/ARS_coding"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Twitter />
-            </a>
-          </Col>
-        </Card>
-
-        <Card className="card d-flex flex-column align-items-center">
-          <img src={imgKutay} alt="img" className="img-fluid" />
-          <Card.Title>Kutay Kağan Özen</Card.Title>
-          <p>Junior Developer</p>
-          <Col className="social-media-logos d-flex flex-row justify-content-center">
-            {" "}
-            <a
-              href="https://github.com/Iseluin"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Github />
-            </a>{" "}
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Linkedn />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Twitter />
-            </a>
-          </Col>
-        </Card>
-
-        <Card className="card d-flex flex-column align-items-center">
-          <img src={imgMoulham} alt="img" className="img-fluid" />
-          <Card.Title>Moulham Hallak</Card.Title>
-          <p>Junior Developer</p>
-          <Col className="social-media-logos d-flex flex-row justify-content-center">
-            {" "}
-            <a
-              href="https://github.com/MoulhamHallak"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Github />
-            </a>{" "}
-            <a
-              href="https://www.linkedin.com/in/mahmoud-moulham-hallak-a2a688147/"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Linkedn />
-            </a>
-            <a
-              href="https://twitter.com/Moulham990"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Twitter />
-            </a>
-          </Col>
-        </Card>
-
-        <Card className="card d-flex flex-column align-items-center">
-          <img src={imgAziza} alt="img" className="img-fluid" />
-          <Card.Title>Aziza Iliasova </Card.Title>
-          <p>Junior Developer</p>
-          <Col className="social-media-logos d-flex flex-row justify-content-center">
-            {" "}
-            <a
-              href="https://github.com/mimisha25"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Github />
-            </a>{" "}
-            <a
-              href="https://www.linkedin.com/in/mia-l-10b9a81b1/"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Linkedn />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Twitter />
-            </a>
-          </Col>
-        </Card>
-
-        <Card className="card d-flex flex-column align-items-center">
-          <img src={imgNur} alt="img" className="img-fluid" />
-          <Card.Title>Nur Hafise Bacaksiz </Card.Title>
-          <p>Junior Developer</p>
-          <Col className="social-media-logos d-flex flex-row justify-content-center">
-            {" "}
-            <a
-              href="https://github.com/nurbacaksiz"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Github />
-            </a>{" "}
-            <a
-              href="https://www.linkedin.com/in/h-nur-bacaks%C4%B1z-b352b2182"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Linkedn />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="external noreferrer"
-            >
-              <Twitter />
-            </a>
-          </Col>
-        </Card>
-      </Row>
-    </Container>
+        <Row className="ourteam-content-row m-0">
+          <TeammateCard
+            image={imgShrreya}
+            githubUrl="https://github.com/Shrreya"
+            linkedInUrl="https://www.linkedin.com/in/shrreya/"
+            twitterUrl="https://twitter.com/__shrreya__"
+            jobTitle="Team Lead"
+            firstName="Shrreya"
+            lastName="Bhatachaarya"
+          />
+          <TeammateCard
+            image={imgAli}
+            githubUrl="https://github.com/ARS-coding"
+            linkedInUrl="https://www.linkedin.com/in/ars-coding/"
+            twitterUrl="https://twitter.com/ARS_coding"
+            jobTitle="Front End Web Developer"
+            firstName="Ali Riza"
+            lastName="Sahin"
+          />
+          <TeammateCard
+            image={imgMoulham}
+            githubUrl="https://github.com/MoulhamHallak"
+            linkedInUrl="https://www.linkedin.com/in/mahmoud-moulham-hallak-a2a688147/"
+            twitterUrl="https://twitter.com/Moulham990"
+            jobTitle="Front End Web Developer"
+            firstName="Moulham"
+            lastName="Hallak"
+          />
+          <TeammateCard
+            image={imgKutay}
+            githubUrl="https://github.com/Iseluin"
+            linkedInUrl="https://www.linkedin.com"
+            twitterUrl="https://twitter.com"
+            jobTitle="Front End Web Developer"
+            firstName="Kutay Kagan"
+            lastName="Ozen"
+          />
+          <TeammateCard
+            image={imgAziza}
+            githubUrl="https://github.com/mimisha25"
+            linkedInUrl="https://www.linkedin.com/in/mia-l-10b9a81b1/"
+            twitterUrl="https://twitter.com"
+            jobTitle="Front End Web Developer"
+            firstName="Aziza"
+            lastName="Iliasova"
+          />
+          <TeammateCard
+            image={imgNur}
+            githubUrl="https://github.com/nurbacaksiz"
+            linkedInUrl="https://www.linkedin.com/in/h-nur-bacaks%C4%B1z-b352b2182"
+            twitterUrl="https://twitter.com"
+            jobTitle="Front End Web Developer"
+            firstName="Hafise Nur"
+            lastName="Bacaksiz"
+          />
+        </Row>
+      </Container>
+    </section>
   );
 }
 
