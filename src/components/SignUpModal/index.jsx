@@ -35,29 +35,29 @@ const SignUpModal = () => {
   const validate = (values) => {
     const errors = {};
     if (!values.firstName) {
-      errors.firstName = "Required";
+      errors.firstName = t("required");
     }
     if (!values.lastName) {
-      errors.lastName = "Required";
+      errors.lastName = t("required");
     }
     if (!values.gender) {
-      errors.gender = "Required";
+      errors.gender = t("required");
     }
     if (!values.district) {
-      errors.district = "Required";
+      errors.district = t("required");
     }
     if (!values.email) {
-      errors.email = "Required";
+      errors.email = t("required");
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-      errors.email = "Invalid email";
+      errors.email = t("invalid_email_format");
     }
     if (!values.password) {
-      errors.password = "Required";
+      errors.password = t("required");
     }
     if (!values.repeatedPassword) {
-      errors.repeatedPassword = "Required";
+      errors.repeatedPassword = t("required");
     } else if (values.repeatedPassword !== values.password) {
-      errors.repeatedPassword = "Passwords do not match";
+      errors.repeatedPassword = t("passwords_do_not_match");
     }
     return errors;
   };
