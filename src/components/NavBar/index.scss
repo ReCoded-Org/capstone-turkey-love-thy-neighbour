@@ -9,7 +9,7 @@
   font-family: "Poppins";
 
   @media screen and (min-width: 576px) {
-    padding: 0;
+    padding: 0 !important;
   }
   @media screen and (max-width: 575px) {
     padding: 0 10px 0 10px;
