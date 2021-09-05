@@ -39,3 +39,18 @@ export function getDefaultGenderImage(gender) {
       return undefined;
   }
 }
+
+export function extractFullNameFromNotificationMessage(feedbackMessage) {
+  const words = feedbackMessage.split(" ");
+
+  const lastWordLetters = words[words.length - 1].split("");
+  lastWordLetters.splice(lastWordLetters.length - 1, 1);
+  const newLastWord = lastWordLetters.join("");
+
+  const fullNameWords = words.slice(5);
+  fullNameWords.splice([fullNameWords.length - 1], 1, newLastWord);
+
+  const fullName = fullNameWords.join(" ");
+
+  return fullName;
+}
