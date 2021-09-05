@@ -167,10 +167,10 @@ const EditProfileModal = () => {
                     <option disabled value="">
                       {t("edit_profile_gender_pholder")}
                     </option>
-                    <option defaultValue="Male">Male</option>
-                    <option defaultValue="Female">Female </option>
+                    <option defaultValue="Male">{t("male")}</option>
+                    <option defaultValue="Female">{t("female")} </option>
                     <option defaultValue="Prefer not to say">
-                      Prefer not to say
+                      {t("prefernottosay")}
                     </option>
                   </select>
 
