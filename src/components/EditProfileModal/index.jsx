@@ -39,22 +39,22 @@ const EditProfileModal = () => {
     const errors = {};
 
     if (!values.firstName) {
-      errors.firstName = "Required";
+      errors.firstName = t("required");
     }
     if (!values.lastName) {
-      errors.lastName = "Required";
+      errors.lastName = t("required");
     }
     if (!values.district) {
-      errors.district = "Required";
+      errors.district = t("required");
     }
     if (!values.gender) {
-      errors.gender = "Required";
+      errors.gender = t("required");
     }
     if (!values.age) {
-      errors.age = "Required";
+      errors.age = t("required");
     }
     if (values.interests.length === 0) {
-      errors.interests = "Required";
+      errors.interests = t("required");
     }
     return errors;
   };
