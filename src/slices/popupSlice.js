@@ -2,6 +2,8 @@ const initialState = {
   isSignInOpen: false,
   isSignUpOpen: false,
   isEditProfileOpen: false,
+  isNeighborSummaryOpen: false,
+  isEmailSentOpen: false,
 };
 
 const popupReducer = (state = initialState, action) => {
@@ -14,6 +16,18 @@ const popupReducer = (state = initialState, action) => {
 
     case "editProfile":
       return { ...initialState, isEditProfileOpen: !state.isEditProfileOpen };
+
+    case "neighborSummary":
+      return {
+        ...initialState,
+        isNeighborSummaryOpen: !state.isNeighborSummaryOpen,
+      };
+
+    case "emailSent":
+      return {
+        ...initialState,
+        isEmailSentOpen: !state.isEmailSentOpen,
+      };
 
     default:
       return state;

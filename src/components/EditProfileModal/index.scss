@@ -3,19 +3,28 @@
 #edit-profile-modal {
   .modal-content {
     & > div.modal-header {
-      button {
-        margin: 0;
+      svg {
+        width: 45px;
+        height: 45px;
       }
+
       h2 {
         margin-bottom: 0;
+      }
+
+      button {
+        margin: 0;
       }
     }
 
     & > div.modal-body {
       .card {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
         .card-body {
           form {
-            input,
+            input:not(#search_input),
             select,
             textarea {
               margin: 3px;
@@ -30,6 +39,12 @@
             textarea {
               margin: 3px;
               border: 1px solid $dark-blue;
+            }
+
+            div.search-wrapper {
+              margin: 3px;
+              border: 1px solid var(--dark-blue);
+              border-radius: 0px;
             }
 
             .error-msg {

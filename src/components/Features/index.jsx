@@ -3,13 +3,10 @@ import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 
 import { ReactComponent as NetworkImg } from "../../images/network.svg";
-import { ReactComponent as SpeechBubbleImg } from "../../images/speech-bubble.svg";
+import { ReactComponent as FilterImg } from "../../images/filter.svg";
 import { ReactComponent as CouponImg } from "../../images/coupon.svg";
 
 import "./index.scss";
-
-// TODO: add real content
-// TODO: update the branch with develop
 
 function Features() {
   return (
@@ -22,19 +19,17 @@ function Features() {
               <NetworkImg className="network-svg img-fluid" />
               <Card.Title>Meet</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card&lsquo;s content.
+                Find people in your neighborhood and expand your network.
               </Card.Text>
             </Card>
           </Col>
           <Col xs={12} sm={12} md={3} className="my-1 my-sm-2 my-md-0">
             <Card className="d-flex flex-column align-items-center justify-content-center">
-              <SpeechBubbleImg className="speech-bubble-svg img-fluid" />
+              <FilterImg className="speech-bubble-svg img-fluid" />
 
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>Filtering</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card&lsquo;s content.
+                Filter nearby people by their age, gender and interests.
               </Card.Text>
             </Card>
           </Col>
@@ -44,8 +39,7 @@ function Features() {
 
               <Card.Title>Coupons</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card&lsquo;s content.
+                Get coupons from our sponsored places and pay less.
               </Card.Text>
             </Card>
           </Col>

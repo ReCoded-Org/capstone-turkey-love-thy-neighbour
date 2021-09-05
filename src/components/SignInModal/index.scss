@@ -3,21 +3,25 @@
 #sign-in-modal {
   & > .modal-content {
     & > .modal-header {
-      button {
-        margin: 0;
+      svg {
+        width: 45px;
+        height: 45px;
       }
 
       h2 {
         margin: 0 auto;
       }
 
-      svg {
-        margin-left: 0;
+      button {
+        margin: 0;
       }
     }
 
     & > .modal-body {
       & > .card {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
         & > .card-body {
           form {
             input {
@@ -55,6 +59,10 @@
       a {
         text-decoration: none;
       }
+    }
+
+    & > .alert {
+      margin: 0 16px 16px 16px;
     }
   }
 }
