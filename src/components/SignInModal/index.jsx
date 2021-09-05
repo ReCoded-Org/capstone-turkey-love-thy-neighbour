@@ -37,12 +37,12 @@ const SignInModal = () => {
     const errors = {};
 
     if (!values.email) {
-      errors.email = "Required";
+      errors.email = t("required");
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-      errors.email = "Invalid email";
+      errors.email = t("invalid_email_format");
     }
     if (!values.password) {
-      errors.password = "Required";
+      errors.password = t("required");
     }
     return errors;
   };
