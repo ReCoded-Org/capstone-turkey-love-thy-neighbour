@@ -129,5 +129,6 @@
   "neighborssummod_adress_tba" : "Adres bilgisi henüz eklenmedi.",
   "neighborssummod_bio_tba" : "Özet bilgisi henüz eklenmedi.",
   "neighborssummod_education_tba" : "Eğitim bilgisi henüz eklenmedi.",
-  "neighborssummod_interests_tba" : "İlgi alanları henüz eklenmedi."
+  "neighborssummod_interests_tba" : "İlgi alanları henüz eklenmedi.",
+  "required": "Gerekli"
 }

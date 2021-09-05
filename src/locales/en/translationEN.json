@@ -139,5 +139,6 @@
   "neighborssummod_adress_tba" : "Adress yet to be added.",
   "neighborssummod_bio_tba" : "Bio yet to be added.",
   "neighborssummod_education_tba" : "Education yet to be added.",
-  "neighborssummod_interests_tba" : "Interests yet to be added."
+  "neighborssummod_interests_tba" : "Interests yet to be added.",
+  "required": "Required"
 }
