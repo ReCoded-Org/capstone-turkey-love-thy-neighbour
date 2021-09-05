@@ -238,9 +238,9 @@ const SignUpModal = () => {
                 <option disabled defaultValue value="">
                   {t("sign_up_gender_pholder")}
                 </option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Prefer not to say">Prefer not to say</option>
+                <option value="Male">{t("male")}</option>
+                <option value="Female">{t("female")}</option>
+                <option value="Prefer not to say">{t("prefernottosay")}</option>
               </select>
               {formik.touched.gender && formik.errors.gender ? (
                 <div className="error-msg">{formik.errors.gender}</div>
