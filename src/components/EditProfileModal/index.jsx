@@ -2,6 +2,8 @@ import React from "react";
 
 import { Modal, Button, Card } from "react-bootstrap";
 
+import i18next from "i18next";
+
 import Multiselect from "multiselect-react-dropdown";
 
 import { useFormik } from "formik";
@@ -19,6 +21,8 @@ import "./index.scss";
 
 const EditProfileModal = () => {
   const { t } = useTranslation();
+  const { language: currentLanguage } = i18next;
+
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector(
     (state) => state.popup.isEditProfileOpen
@@ -205,13 +209,26 @@ const EditProfileModal = () => {
                   <option disabled value="">
                     {t("edit_profile_education_pholder")}
                   </option>
-                  {constants.educationList.map((education) => {
-                    return (
-                      <option key={education} value={education}>
-                        {education}
-                      </option>
-                    );
-                  })}
+                  {currentLanguage === "EN" &&
+                    constants.educationListEN.map((education) => {
+                      return (
+                        <option key={education} value={education}>
+                          {education}
+                        </option>
+                      );
+                    })}
+
+                  {currentLanguage === "TR" &&
+                    constants.educationListTR.map((education, index) => {
+                      return (
+                        <option
+                          key={education}
+                          value={constants.educationListEN[index]}
+                        >
+                          {education}
+                        </option>
+                      );
+                    })}
                 </select>
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
