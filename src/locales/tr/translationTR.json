@@ -131,5 +131,6 @@
   "neighborssummod_education_tba" : "Eğitim bilgisi henüz eklenmedi.",
   "neighborssummod_interests_tba" : "İlgi alanları henüz eklenmedi.",
   "required": "Gerekli",
-  "invalid_email_format": "Geçersiz email formatı"
+  "invalid_email_format": "Geçersiz email formatı",
+  "passwords_do_not_match": "Şifreler aynı değil"
 }

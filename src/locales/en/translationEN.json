@@ -140,5 +140,6 @@
   "neighborssummod_education_tba" : "Education yet to be added.",
   "neighborssummod_interests_tba" : "Interests yet to be added.",
   "required": "Required",
-  "invalid_email_format": "Invalid email format"
+  "invalid_email_format": "Invalid email format",
+  "passwords_do_not_match": "Passwords do not match"
 }
