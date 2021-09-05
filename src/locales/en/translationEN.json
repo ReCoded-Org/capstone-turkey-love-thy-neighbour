@@ -34,7 +34,7 @@
   "profile_general_info_card_lastname": "Last Name: ",
   "profile_general_info_card_gender": "Gender: ",
   "profile_general_info_card_age": "Age: ",
-  "profile_general_info_card_education": "Education",
+  "profile_general_info_card_education": "Education: ",
   "profile_general_info_card_district": "District:",
   "profile_about_you_title": "About You",
   "profile_about_you_bio": "Bio: ",
@@ -58,7 +58,7 @@
   "neighbors_recommended_pholder": "Recommended Places",
   "neighborcards_button": "Invite To Meet!",
 
-  "ourteam_title": "Çalışkan geliştirici ekibimiz:",
+  "ourteam_title": "Our hardworking development team:",
 
   "contactus_title": "Contact Us",
   "contactus_text": "Help us create effective and active communities by communicating with us!",
@@ -141,5 +141,10 @@
   "neighborssummod_interests_tba" : "Interests yet to be added.",
   "required": "Required",
   "invalid_email_format": "Invalid email format",
-  "passwords_do_not_match": "Passwords do not match"
+  "passwords_do_not_match": "Passwords do not match",
+  "contactus_min_2_char" : "Mininum 2 characters",
+  "contactus_min_10_char" : "Mininum 10 characters",
+  "contactus_max_15_char" : "Maximum 15 characters",
+  "contactus_max_500_char" : "Maximum 500 characters"
+
 }

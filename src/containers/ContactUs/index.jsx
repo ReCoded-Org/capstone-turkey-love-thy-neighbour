@@ -31,19 +31,19 @@ function ContactUs() {
     },
     validationSchema: Yup.object().shape({
       first_name: Yup.string()
-        .min(2, "Mininum 2 characters")
-        .max(15, "Maximum 15 characters")
+        .min(2, t("contactus_min_2_char"))
+        .max(15, t("contactus_max_15_char"))
         .required(t("required")),
       last_name: Yup.string()
-        .min(2, "Mininum 2 characters")
-        .max(15, "Maximum 15 characters")
+        .min(2, t("contactus_min_2_char"))
+        .max(15, t("contactus_max_15_char"))
         .required(t("required")),
       email: Yup.string()
         .email(t("invalid_email_format"))
         .required(t("required")),
       user_message: Yup.string()
-        .min(10, "Mininum 10 characters")
-        .max(500, "Maximum 500 characters")
+        .min(10, t("contactus_min_10_char"))
+        .max(500, t("contactus_max_500_char"))
         .required(t("required")),
     }),
     onSubmit: (values, { resetForm }) => {
