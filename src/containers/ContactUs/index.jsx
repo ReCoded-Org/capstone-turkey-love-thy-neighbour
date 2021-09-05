@@ -38,7 +38,9 @@ function ContactUs() {
         .min(2, "Mininum 2 characters")
         .max(15, "Maximum 15 characters")
         .required(t("required")),
-      email: Yup.string().email("Invalid email format").required(t("required")),
+      email: Yup.string()
+        .email(t("invalid_email_format"))
+        .required(t("required")),
       user_message: Yup.string()
         .min(10, "Mininum 10 characters")
         .max(500, "Maximum 500 characters")

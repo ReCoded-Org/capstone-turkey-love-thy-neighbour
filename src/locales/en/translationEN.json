@@ -140,5 +140,6 @@
   "neighborssummod_bio_tba" : "Bio yet to be added.",
   "neighborssummod_education_tba" : "Education yet to be added.",
   "neighborssummod_interests_tba" : "Interests yet to be added.",
-  "required": "Required"
+  "required": "Required",
+  "invalid_email_format": "Invalid email format"
 }
