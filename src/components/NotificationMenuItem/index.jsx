@@ -1,8 +1,12 @@
 import React from "react";
 
+import i18n from "i18next";
+
 import { CloseButton } from "react-bootstrap";
 
 import { useSelector } from "react-redux";
+
+import { extractFullNameFromNotificationMessage } from "../../utils/helpers";
 
 import { GoodFeedbackButton, BadFeedbackButton } from "../CustomButtons/index";
 
@@ -13,6 +17,8 @@ import "./index.scss";
 function NotificationMenuItem({ invitationNotificationObject }) {
   const { message, id } = invitationNotificationObject;
   const uid = useSelector((state) => state.user.authCred?.uid);
+
+  const { language: currentLanguage } = i18n;
 
   function handleButtonClick(event) {
     const buttonText = event.target.innerText;
@@ -51,7 +57,13 @@ function NotificationMenuItem({ invitationNotificationObject }) {
   return (
     <div className="notification-menu-item">
       <div className="notification-menu-item-content">
-        <p className="text-center">{message}</p>
+        <p className="text-center">
+          {currentLanguage === "EN"
+            ? message
+            : `${extractFullNameFromNotificationMessage(
+                message
+              )} ile olan buluşmanız nasıl geçti?`}
+        </p>
         <div className="feedback-buttons d-flex justify-content-center">
           <GoodFeedbackButton
             type="button"
