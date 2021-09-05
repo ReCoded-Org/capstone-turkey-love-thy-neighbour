@@ -1,20 +1,19 @@
 @import "../../style/variables";
 
 .profile-page-bg {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 120px) !important;
   background-image: url("../../images/Profile/PBG.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
   .profile-content-container {
-    min-height: calc(100vh - 60px);
+    height: 100%;
 
     & > div.row {
       width: 100%;
 
       & > div:first-child {
-        // picture and button column
         padding-right: 0 !important;
         padding-left: 0 !important;
 
@@ -27,23 +26,26 @@
         }
 
         .profile-photo {
-          width: 150px;
-          height: 150px;
+          max-width: 125px;
+          min-width: 125px;
+          max-height: 125px;
+          min-height: 125px;
+          border-radius: 50%;
         }
       }
 
       & > div:last-child {
-        // cards column
         padding: 0;
+        margin: 0 !important;
 
         & > div.cards-row {
-          // cards row
           margin: 0;
 
           & > div {
-            // card column
             padding: 0;
             min-height: 250px;
+
+            font-family: "P";
 
             @media screen and (max-width: 991px) {
               width: 100% !important;
@@ -83,6 +85,7 @@
                 }
 
                 & > div.card-title {
+                  font-family: "Courgette";
                   font-weight: bold;
                   margin-left: 30px;
                 }

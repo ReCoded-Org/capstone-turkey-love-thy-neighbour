@@ -5,6 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Container } from "react-bootstrap";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import { init } from "emailjs-com";
+
 import { listenForAuthChanges } from "./slices/userSlice";
 
 import NavBar from "./components/NavBar";
@@ -27,13 +30,14 @@ function App() {
 
   useEffect(() => {
     dispatch(listenForAuthChanges());
+    init("user_pFNaLnNszOqQi0CkGO628");
   }, [dispatch]);
 
   return (
     <Container fluid className="main-wrapper">
       <Router>
-        <NavBar />
         {/* Always display it at the top */}
+        <NavBar />
         <SignInModal />
         <SignUpModal />
         <Switch>
@@ -43,11 +47,9 @@ function App() {
           <Route path="/profile/:uid">
             {isSignedIn ? <Profile /> : <Home />}
           </Route>
+          <Route path="/meet">{isSignedIn ? <Meet /> : <Home />}</Route>
           <Route path="/neighbors">
-            <Neighbors />
-          </Route>
-          <Route path="/meet">
-            <Meet />
+            {isSignedIn ? <Neighbors /> : <Home />}
           </Route>
           <Route path="/our-team">
             <OurTeam />
@@ -60,6 +62,7 @@ function App() {
           </Route>
         </Switch>
         <Footer />
+        {/* Always display it at the bottom */}
       </Router>
     </Container>
   );
