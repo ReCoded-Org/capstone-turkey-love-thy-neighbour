@@ -51,7 +51,6 @@ function NavBar() {
               <Nav.Link
                 onClick={() => {
                   auth.signOut().then(() => history.push("/"));
-                  // TODO: Show the error within a modal
                 }}
               >
                 Sign Out
