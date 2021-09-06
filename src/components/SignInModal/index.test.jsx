@@ -1,6 +1,5 @@
-// NOT WORKING
-
 import React from "react";
+import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
@@ -14,13 +13,12 @@ describe("SignInModal", () => {
       },
       authCred: {
         user: {
-          uid: "cLAjww6Xz5QjQTqy4Yvw1DypaHg1",
+          uid: "",
         },
       },
     },
     popup: {
-      isSignedIn: false,
-      /* When we pass "isEditProfileOpen, the test runs correctly, but it doesnt work with "isSignInOpen" */
+      isSignedInOpen: true,
     },
   };
 
@@ -30,6 +28,11 @@ describe("SignInModal", () => {
 
   beforeEach(() => {
     store = mockStore(mockState);
+
+    ReactDOM.createPortal = jest.fn((element) => {
+      return element;
+    });
+
     tree = renderer
       .create(
         <Provider store={store}>
