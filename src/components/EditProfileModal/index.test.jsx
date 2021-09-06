@@ -29,9 +29,6 @@ describe("EditProfileModal", () => {
     },
     popup: {
       isEditProfileOpen: false,
-      /* When we pass "isSignInOpen, the test runs correctly, but it doesnt work with "isEditProfileOpen" */
-
-      // when we pass isSignInOpen: true, it works, when we pass isEditProfileOpen: true, it doesnt, when we pass isEditProfileOpen: false, it works again. My brain is melting...
     },
   };
 
