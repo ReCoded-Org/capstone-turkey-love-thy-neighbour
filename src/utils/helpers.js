@@ -54,3 +54,25 @@ export function extractFullNameFromNotificationMessage(feedbackMessage) {
 
   return fullName;
 }
+
+export function getTurkishEducationStatus(ENEducationStatus) {
+  let turkishVersion;
+
+  switch (ENEducationStatus) {
+    case "Primary School Grad":
+      turkishVersion = "İlk okul mezunu";
+      break;
+    case "High School Grad":
+      turkishVersion = "Lise Mezunu";
+      break;
+    case "University Grad":
+      turkishVersion = "Üniversite Mezunu";
+      break;
+    case "Higher Education":
+      turkishVersion = "Yüksek Ögretim";
+      break;
+    default:
+  }
+
+  return turkishVersion;
+}
