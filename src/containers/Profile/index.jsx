@@ -1,5 +1,6 @@
 import React from "react";
 
+import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
 import { Container, Row, Col, Card } from "react-bootstrap";
@@ -17,6 +18,7 @@ import "./index.scss";
 
 const Profile = () => {
   const { t } = useTranslation();
+  const { language: currentLanguage } = i18next;
 
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector(
@@ -25,6 +27,28 @@ const Profile = () => {
   const { firestoreDoc, authCred } = useSelector((state) => state.user);
   const { gender } = firestoreDoc;
   const { email } = authCred;
+
+  function getTurkishEducationStatus(ENEducationStatus) {
+    let turkishVersion;
+
+    switch (ENEducationStatus) {
+      case "Primary School Grad":
+        turkishVersion = "İlk okul mezunu";
+        break;
+      case "High School Grad":
+        turkishVersion = "Lise Mezunu";
+        break;
+      case "University Grad":
+        turkishVersion = "Üniversite Mezunu";
+        break;
+      case "Higher Education":
+        turkishVersion = "Yüksek Ögretim";
+        break;
+      default:
+    }
+
+    return turkishVersion;
+  }
 
   return (
     <Container
@@ -107,8 +131,11 @@ const Profile = () => {
                       <li>
                         {t("profile_general_info_card_education")}{" "}
                         <span>
-                          {firestoreDoc.education ||
-                            t("neighborssummod_education_tba")}
+                          {(currentLanguage === "EN"
+                            ? firestoreDoc.education
+                            : getTurkishEducationStatus(
+                                firestoreDoc.education
+                              )) || t("neighborssummod_education_tba")}
                         </span>
                       </li>
                       <li>
