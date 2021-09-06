@@ -133,8 +133,8 @@
   "required": "Gerekli",
   "invalid_email_format": "Geçersiz email formatı",
   "passwords_do_not_match": "Şifreler eşleşmiyor",
-  "contactus_min_2_char" : "Lütfen en az 2 harf ekleyin",
-  "contactus_min_10_char" : "Lütfen en az 10 harf ekleyin",
-  "contactus_max_15_char" : "Lütfen en fazla 15 harf kullanın",
-  "contactus_max_500_char" : "Lütfen en fazla 500 harf kullanın"
+  "contactus_min_2_char": "Lütfen en az 2 harf ekleyin",
+  "contactus_min_10_char": "Lütfen en az 10 harf ekleyin",
+  "contactus_max_15_char": "Lütfen en fazla 15 harf kullanın",
+  "contactus_max_500_char": "Lütfen en fazla 500 harf kullanın"
 }

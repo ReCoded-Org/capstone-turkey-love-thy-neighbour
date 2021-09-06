@@ -209,17 +209,8 @@ const EditProfileModal = () => {
                   <option disabled value="">
                     {t("edit_profile_education_pholder")}
                   </option>
-                  {currentLanguage === "EN" &&
-                    constants.educationListEN.map((education) => {
-                      return (
-                        <option key={education} value={education}>
-                          {education}
-                        </option>
-                      );
-                    })}
-
-                  {currentLanguage === "TR" &&
-                    constants.educationListTR.map((education, index) => {
+                  {constants[`educationList${currentLanguage}`].map(
+                    (education, index) => {
                       return (
                         <option
                           key={education}
@@ -228,7 +219,8 @@ const EditProfileModal = () => {
                           {education}
                         </option>
                       );
-                    })}
+                    }
+                  )}
                 </select>
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
