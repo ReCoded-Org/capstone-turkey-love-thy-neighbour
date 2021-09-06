@@ -31,7 +31,7 @@ function Neighbors() {
   const firestoreDoc = useSelector((state) => state.user.firestoreDoc);
   const { district, email, firstName, lastName } = firestoreDoc;
 
-  const [emailAlertStatus, setEmailAlertStatus] = useState("empty"); // empty, success, danger for the alert
+  const [emailAlertStatus, setEmailAlertStatus] = useState("empty");
 
   useEffect(() => {
     function fetchAllNearbyNeighbors() {
@@ -88,7 +88,7 @@ function Neighbors() {
       <NeighborSummaryModal
         selectedNeighbor={selectedNeighbor}
         setSelectedNeighbor={setSelectedNeighbor}
-        senderEmail={email} // email of the signed in user
+        senderEmail={email}
         senderFullName={`${firstName} ${lastName}`}
         setEmailAlertStatus={setEmailAlertStatus}
       />
@@ -166,11 +166,16 @@ function Neighbors() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          <RecommendedPlacesAccordion district={district} />
+          {(district === "KADIKÖY" ||
+            district === "BEYOĞLU" ||
+            district === "ŞİŞLİ" ||
+            district === "FATİH") && (
+            <RecommendedPlacesAccordion district={district} />
+          )}
           {emailAlertStatus !== "empty" && (
             <Alert
               className="mb-4 mt-2 w-100"
-              variant={emailAlertStatus} // danger or success
+              variant={emailAlertStatus}
               onClose={() => setEmailAlertStatus("empty")}
               dismissible
             >
@@ -199,9 +204,6 @@ function Neighbors() {
                     age={userDoc.age}
                     email={userDoc.email}
                     setSelectedNeighbor={setSelectedNeighbor}
-                    senderEmail={email} // email of the signed in user
-                    senderFullName={`${firstName} ${lastName}`}
-                    setEmailAlertStatus={setEmailAlertStatus}
                   />
                 </Col>
               );

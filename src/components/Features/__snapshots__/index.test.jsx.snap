@@ -45,7 +45,7 @@ exports[`Features Section renders Features section correctly 1`] = `
           <svg
             className="speech-bubble-svg img-fluid"
           >
-            speech-bubble.svg
+            filter.svg
           </svg>
           <div
             className="card-title h5"

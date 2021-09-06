@@ -16,7 +16,7 @@ exports[`SocialProof Page renders SocialProof Page correctly 1`] = `
         <h2
           className="text-center text-sm-center text-md-start"
         >
-          What our Neighbours say:
+          What our Neighbours say
         </h2>
         <div
           className="accordion"
@@ -188,7 +188,7 @@ exports[`SocialProof Page renders SocialProof Page correctly 1`] = `
         <h2
           className="text-center text-sm-center text-md-start"
         >
-          When our Neighbours met:
+          When our Neighbours met
         </h2>
         <div
           className="carousel slide"

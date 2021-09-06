@@ -24,7 +24,7 @@ exports[`Meet page renders Meet page correctly 1`] = `
           After you have been matched with people near you, you can send them a message and meet up quickly !
         </p>
         <button
-          className="sc-bdnxRM sc-gtsrHT fhyKDU bLMOay"
+          className="sc-bdnxRM sc-gtsrHT hPJaof bLMOay"
         >
           <a
             href="/neighbors"

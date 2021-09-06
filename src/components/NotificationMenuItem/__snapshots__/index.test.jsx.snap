@@ -16,7 +16,7 @@ exports[`NotificationMenuItem renders NotificationMenuItem correctly 1`] = `
       className="feedback-buttons d-flex justify-content-center"
     >
       <button
-        className="sc-bdnxRM sc-jrsJWt fhyKDU kTNuYI me-3"
+        className="sc-bdnxRM sc-jrsJWt hPJaof kTNuYI me-3"
         id="test"
         onClick={[Function]}
         type="button"
@@ -24,7 +24,7 @@ exports[`NotificationMenuItem renders NotificationMenuItem correctly 1`] = `
         👍🏼
       </button>
       <button
-        className="sc-bdnxRM sc-kEqXSa fhyKDU lcbPMi"
+        className="sc-bdnxRM sc-kEqXSa hPJaof lcbPMi"
         id="test"
         onClick={[Function]}
         type="button"

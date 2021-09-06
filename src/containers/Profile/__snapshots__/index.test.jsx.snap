@@ -23,7 +23,7 @@ exports[`Profile page renders Profile correctly 1`] = `
         </div>
         <div>
           <button
-            className="sc-bdnxRM sc-dlnjwi fhyKDU dxVdiR"
+            className="sc-bdnxRM sc-dlnjwi hPJaof dxVdiR"
             onClick={[Function]}
           >
             Edit Profile

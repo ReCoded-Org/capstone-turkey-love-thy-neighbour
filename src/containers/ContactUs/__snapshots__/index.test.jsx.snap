@@ -1,15 +1,130 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContactUS renders ContactUS correctly 1`] = `
-<div
-  className="container-fluid"
+exports[`ContactUs renders ContactUs correctly 1`] = `
+<section
+  className="contact-us-section container-fluid"
 >
   <div
-    className="container"
+    className="contactus-content-container h-100 d-flex align-items-center container"
   >
-    <p>
-      Contact Us
-    </p>
+    <div
+      className="contactus-content-row w-100 row"
+    >
+      <div
+        className="d-flex flex-column justify-content-center align-items-center order-last order-sm-last order-md-last order-lg-first col-lg-6 col-md-12 col-sm-12 col-12"
+      >
+        <h1>
+          Contact Us
+        </h1>
+        <p>
+          Help us create effective and active communities by communicating with us!
+        </p>
+        <form
+          className="d-flex flex-column"
+          onSubmit={[Function]}
+        >
+          <div
+            className="d-flex justify-content-between"
+          >
+            <div
+              className="d-flex flex-column"
+            >
+              <input
+                name="first_name"
+                onChange={[Function]}
+                placeholder="First Name"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              className="d-flex flex-column"
+            >
+              <input
+                name="last_name"
+                onChange={[Function]}
+                placeholder="Last Name"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <input
+            name="email"
+            onChange={[Function]}
+            placeholder="Email"
+            type="email"
+            value=""
+          />
+          <textarea
+            name="user_message"
+            onChange={[Function]}
+            placeholder="Message"
+            value=""
+          />
+          <button
+            className="sc-bdnxRM sc-iqAclL hPJaof cAKSQb"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+      <div
+        className="d-flex flex-column justify-content-center align-items-center col-lg-6 col-md-12 col-sm-12 col-12"
+      >
+        <svg>
+          LTNText.svg
+        </svg>
+        <svg>
+          logoTransparentBg.svg
+        </svg>
+      </div>
+    </div>
+    <div
+      className="fade modal-backdrop show"
+      onClick={[Function]}
+    />
+    <div
+      aria-modal={true}
+      className="fade email-sent-modal modal show"
+      onClick={[Function]}
+      onMouseUp={[Function]}
+      role="dialog"
+      style={Object {}}
+      tabIndex={-1}
+    >
+      <div
+        className="modal-dialog"
+        onMouseDown={[Function]}
+      >
+        <div
+          className="modal-content"
+        >
+          <div
+            className="d-flex flex-column justify-content-center align-items-center modal-body"
+          >
+            <svg>
+              checkicon.svg
+            </svg>
+            <h3
+              className="mt-3 text-center"
+            >
+              Your message has been successfully sent!
+            </h3>
+            <br />
+            <p>
+              We will get back to you soon.
+            </p>
+            <button
+              aria-label="Close"
+              className="btn-close"
+              onClick={[Function]}
+              type="button"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 `;

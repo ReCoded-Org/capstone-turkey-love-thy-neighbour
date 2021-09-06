@@ -1,0 +1,33 @@
+@import "../../style/variables";
+
+.email-sent-modal {
+  .modal-dialog {
+    .modal-content {
+      .modal-body {
+        position: relative;
+
+        .check-icon {
+          width: 150px;
+          height: 150px;
+        }
+
+        h3 {
+          color: $logo-blue;
+          font-weight: bold;
+          font-size: 30px;
+        }
+
+        p {
+          font-size: 18px;
+        }
+
+        .btn-close {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          font-size: 19px;
+        }
+      }
+    }
+  }
+}

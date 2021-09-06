@@ -1,0 +1,88 @@
+@import "../../style/variables";
+
+section.contact-us-section {
+  @media screen and (min-width: 767px) {
+    height: calc(100vh - 120px);
+  }
+  @media screen and (max-width: 767px) {
+    height: calc(100vh - 187.5px);
+  }
+
+  .contactus-content-container {
+    @media screen and (max-width: 575px) {
+      padding: 0 10px !important;
+    }
+    .contactus-content-row {
+      margin: 0;
+
+      & > div {
+        padding: 0 !important;
+      }
+
+      & > div:first-child {
+        h1 {
+          color: $logo-red;
+          font-size: 40px;
+          text-align: center;
+        }
+
+        p {
+          color: $black;
+          text-align: center;
+
+          @media screen and (max-width: 767px) {
+            display: none;
+          }
+        }
+
+        form {
+          width: 100%;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+            rgba(0, 0, 0, 0.23) 0px 3px 6px;
+          border-radius: 3px;
+          padding: 15px;
+
+          input,
+          textarea {
+            width: 100%;
+            padding: 8px !important;
+            border: 1px solid $dark-blue;
+            margin: 5px;
+          }
+
+          & > div {
+            & > div {
+              width: 49%;
+            }
+          }
+
+          .error-msg {
+            font-size: 12px;
+            color: rgb(122, 12, 22);
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 3px;
+          }
+        }
+      }
+
+      & > div:last-child {
+        svg {
+          @media screen and (max-width: 991px) {
+            display: none;
+          }
+        }
+
+        svg:first-child {
+          @media screen and (min-width: 992px) {
+            width: 400px;
+          }
+        }
+        svg:last-child {
+          width: 130px;
+          height: 130px;
+        }
+      }
+    }
+  }
+}

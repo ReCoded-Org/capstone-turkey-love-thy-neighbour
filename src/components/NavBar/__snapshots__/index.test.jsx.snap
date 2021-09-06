@@ -8,14 +8,15 @@ exports[`Navbar renders Navbar correctly 1`] = `
     className="container"
   >
     <a
-      className="navbar-brand order-lg-6"
+      className="navbar-brand"
       href="/"
       onClick={[Function]}
     >
-      <img
-        alt="logo"
-        src="logo.svg"
-      />
+      <svg
+        className="logo-svg"
+      >
+        logoGrayBg.svg
+      </svg>
     </a>
     <div
       className="d-flex order-lg-last"

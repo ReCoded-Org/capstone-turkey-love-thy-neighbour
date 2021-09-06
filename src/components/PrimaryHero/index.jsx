@@ -33,7 +33,12 @@ function PrimaryHero() {
               </CTAButton>
             )}
           </Col>
-          <Col xs={12} sm={12} md={6} className="px-0 ps-0 ps-sm-0 ps-md-3 ">
+          <Col
+            xs={12}
+            sm={12}
+            md={6}
+            className="d-flex justify-content-sm-start justify-content-sm-start justify-content-md-center px-0 ps-0 ps-sm-0 ps-md-3 "
+          >
             <img src={BeKindImage} alt="img" className="img-fluid" />
           </Col>
         </Row>

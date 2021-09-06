@@ -20,14 +20,14 @@ exports[`PrimaryHero page renders PrimaryHero page correctly 1`] = `
           Let’s build a strong, dynamic and caring community that uplifts each other.
         </p>
         <button
-          className="sc-bdnxRM sc-gtsrHT fhyKDU bLMOay"
+          className="sc-bdnxRM sc-gtsrHT hPJaof bLMOay"
           onClick={[Function]}
         >
           Join Us!
         </button>
       </div>
       <div
-        className="px-0 ps-0 ps-sm-0 ps-md-3  col-md-6 col-sm-12 col-12"
+        className="d-flex justify-content-sm-start justify-content-sm-start justify-content-md-center px-0 ps-0 ps-sm-0 ps-md-3  col-md-6 col-sm-12 col-12"
       >
         <img
           alt="img"

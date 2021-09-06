@@ -23,14 +23,14 @@ exports[`Home page renders Home correctly 1`] = `
             Let’s build a strong, dynamic and caring community that uplifts each other.
           </p>
           <button
-            className="sc-bdnxRM sc-gtsrHT fhyKDU bLMOay"
+            className="sc-bdnxRM sc-gtsrHT hPJaof bLMOay"
             onClick={[Function]}
           >
             Join Us!
           </button>
         </div>
         <div
-          className="px-0 ps-0 ps-sm-0 ps-md-3  col-md-6 col-sm-12 col-12"
+          className="d-flex justify-content-sm-start justify-content-sm-start justify-content-md-center px-0 ps-0 ps-sm-0 ps-md-3  col-md-6 col-sm-12 col-12"
         >
           <img
             alt="img"
@@ -93,7 +93,7 @@ exports[`Home page renders Home correctly 1`] = `
           <h2
             className="text-center text-sm-center text-md-start"
           >
-            What our Neighbours say:
+            What our Neighbours say
           </h2>
           <div
             className="accordion"
@@ -265,7 +265,7 @@ exports[`Home page renders Home correctly 1`] = `
           <h2
             className="text-center text-sm-center text-md-start"
           >
-            When our Neighbours met:
+            When our Neighbours met
           </h2>
           <div
             className="carousel slide"
@@ -416,7 +416,7 @@ exports[`Home page renders Home correctly 1`] = `
             <svg
               className="speech-bubble-svg img-fluid"
             >
-              speech-bubble.svg
+              filter.svg
             </svg>
             <div
               className="card-title h5"
@@ -520,19 +520,20 @@ exports[`Home page renders Home correctly 1`] = `
              newsletter.
           </h1>
           <h3>
-            Never miss an update !
+            Never miss an update!
           </h3>
           <p>
             Signup to our newsletter to get a weekly digest.
           </p>
-          <div
-            className="button-input-wrapper"
+          <form
+            className="d-flex"
+            onSubmit={[Function]}
           >
             <input
               aria-describedby="emailHelp"
               className="form-email"
               onChange={[Function]}
-              placeholder="E-Mail"
+              placeholder="Email"
               type="email"
               value=""
             />
@@ -541,20 +542,20 @@ exports[`Home page renders Home correctly 1`] = `
               disabled={true}
               type="submit"
             >
-              <svg>
+              <svg
+                className="check-icon"
+              >
                 Check.svg
               </svg>
             </button>
-          </div>
+          </form>
         </div>
         <div
           className="my-md-auto d-flex d-sm-flex d-md-block justify-content-center justify-content-sm-center justify-content-md-center col-md-6 col-sm-12 col-12"
         >
-          <img
-            alt="phoneimg"
-            className="img-fluid"
-            src="PhoneandNotifications.svg"
-          />
+          <svg>
+            PhoneandNotifications.svg
+          </svg>
         </div>
       </div>
     </div>

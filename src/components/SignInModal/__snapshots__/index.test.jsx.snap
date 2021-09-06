@@ -27,7 +27,7 @@ Array [
           className="d-flex justify-content-between modal-header"
         >
           <svg>
-            logo.svg
+            logoGrayBg.svg
           </svg>
           <h2
             className="mx-auto"
@@ -84,20 +84,22 @@ Array [
           className="first-sign-in-modal-footer d-flex flex-column align-items-stretch modal-footer"
         >
           <button
-            className="sc-bdnxRM sc-jSFjdj fhyKDU kySEpq"
+            className="sc-bdnxRM sc-jSFjdj hPJaof kySEpq"
             form="sign-in-form"
             type="submit"
           >
             Sign In
           </button>
           <button
-            className="sc-bdnxRM sc-gKAaRy fhyKDU gsgZIm"
+            className="sc-bdnxRM sc-gKAaRy hPJaof gsgZIm"
+            onClick={[Function]}
             type="submit"
           >
             Sign In With Google
           </button>
           <button
-            className="sc-bdnxRM sc-iCoGMd fhyKDU jgJmMT"
+            className="sc-bdnxRM sc-iCoGMd hPJaof jgJmMT"
+            onClick={[Function]}
             type="submit"
           >
             Sign In With Facebook

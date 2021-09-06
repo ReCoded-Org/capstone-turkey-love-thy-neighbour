@@ -13,18 +13,22 @@ exports[`NeighborCard renders NeighborCard correctly 1`] = `
   <div
     className="d-flex flex-column justify-content-center card-body"
   >
-    <div
-      className="text-center card-title h5"
+    <h2
+      className="text-center"
     >
-      test test
-    </div>
+      test
+       
+      <br />
+       
+      test
+    </h2>
     <small
       className="text-center"
     >
       test / test
     </small>
     <button
-      className="sc-bdnxRM sc-fujyAs fhyKDU PaHUc"
+      className="sc-bdnxRM sc-fujyAs hPJaof PaHUc"
       onClick={[Function]}
     >
       Invite To Meet!

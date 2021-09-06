@@ -26,11 +26,12 @@ Array [
         <div
           className="modal-header"
         >
-          <img
-            alt="logo"
-            src="logo.svg"
-          />
-          <h2>
+          <svg>
+            logoGrayBg.svg
+          </svg>
+          <h2
+            className="mx-auto"
+          >
             Sign Up
           </h2>
           <button
@@ -355,7 +356,7 @@ Array [
           className="first-sign-up-modal-footer d-flex flex-column align-items-stretch modal-footer"
         >
           <button
-            className="sc-bdnxRM sc-jSFjdj fhyKDU kySEpq"
+            className="sc-bdnxRM sc-jSFjdj hPJaof kySEpq"
             disabled={false}
             form="sign-up-form"
             type="submit"
@@ -363,15 +364,15 @@ Array [
             Sign Up
           </button>
           <button
-            className="sc-bdnxRM sc-gKAaRy fhyKDU gsgZIm"
-            disabled={false}
+            className="sc-bdnxRM sc-gKAaRy hPJaof gsgZIm"
+            onClick={[Function]}
             type="submit"
           >
             Sign Up With Google
           </button>
           <button
-            className="sc-bdnxRM sc-iCoGMd fhyKDU jgJmMT"
-            disabled={false}
+            className="sc-bdnxRM sc-iCoGMd hPJaof jgJmMT"
+            onClick={[Function]}
             type="submit"
           >
             Sign Up With Facebook

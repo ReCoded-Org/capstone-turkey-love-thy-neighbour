@@ -27,23 +27,31 @@ Array [
           className="container-fluid"
           style={null}
         >
+          <button
+            aria-label="Close"
+            className="btn-close"
+            onClick={[Function]}
+            type="button"
+          />
           <div
-            className="d-flex justify-content-start modal-header"
+            className="d-flex flex-column flex-sm-row justify-content-center justify-content-sm-start justify-content-sm-start modal-header modal-header"
           >
             <img
               alt="profile"
               className="profile-photo"
               style={null}
             />
-            <span>
+            <p
+              className="text-center text-sm-start mb-0"
+            >
               Test Name Test Name
-            </span>
+            </p>
           </div>
           <div
             className="modal-body"
           >
             <div
-              className="info-cards white-card card"
+              className="card"
             >
               <div
                 className="card-body"
@@ -68,6 +76,13 @@ Array [
                     <span />
                   </li>
                   <li>
+                    Bio:
+                     
+                    <span>
+                      Bio yet to be added.
+                    </span>
+                  </li>
+                  <li>
                     Interests:
                      
                     <span>
@@ -89,7 +104,7 @@ Array [
             className="modal-footer"
           >
             <button
-              className="sc-bdnxRM sc-fujyAs fhyKDU PaHUc mx-auto"
+              className="sc-bdnxRM sc-fujyAs hPJaof PaHUc mx-auto"
               onClick={[Function]}
             >
               Invite To Meet!

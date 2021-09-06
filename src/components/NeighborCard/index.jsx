@@ -42,7 +42,7 @@ function NeighborCard({
 
   function handleInvitation() {
     sendEmail();
-    firestore // create invitation notification for the invited user
+    firestore
       .collection("users")
       .where("email", "==", email)
       .get()
@@ -56,7 +56,7 @@ function NeighborCard({
         });
         firstDoc.ref.update(firstDocData);
       });
-    firestore // create invitation for the inviter user
+    firestore
       .collection("users")
       .doc(uid)
       .update({
@@ -85,7 +85,9 @@ function NeighborCard({
         }}
       />
       <Card.Body className="d-flex flex-column justify-content-center">
-        <Card.Title className="text-center">{`${firstName} ${lastName}`}</Card.Title>
+        <h2 className="text-center">
+          {firstName} <br /> {lastName}
+        </h2>
         <small className="text-center">{`${age} / ${gender}`}</small>
         <NeighborCardButton onClick={handleInvitation}>
           Invite To Meet!
