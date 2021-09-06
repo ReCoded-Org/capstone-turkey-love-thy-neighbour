@@ -1,19 +1,14 @@
-// NOT WORKING
-
 import React from "react";
+import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
-import { validateYupSchema } from "formik";
 import SignUpModal from ".";
 
 describe("SignUpModal", () => {
   const mockState = {
     popup: {
-      isSignUpOpen: false,
-      /* When we pass "isEditProfileOpen, the test runs correctly, but it doesnt work with "isSignUpOpen" */
-
-      //   But when we pass false as the value, it works for some reason
+      isSignUpOpen: true,
     },
   };
 
@@ -22,6 +17,9 @@ describe("SignUpModal", () => {
   let tree;
 
   beforeEach(() => {
+    ReactDOM.createPortal = jest.fn((element) => {
+      return element;
+    });
     store = mockStore(mockState);
     tree = renderer
       .create(

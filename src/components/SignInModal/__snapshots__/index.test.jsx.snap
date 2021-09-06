@@ -1,3 +1,125 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SignInModal renders SignInModal correctly 1`] = `null`;
+exports[`SignInModal renders SignInModal correctly 1`] = `
+Array [
+  <div
+    className="fade modal-backdrop show"
+    onClick={[Function]}
+  />,
+  <div
+    aria-modal={true}
+    className="fade modal show"
+    onClick={[Function]}
+    onMouseUp={[Function]}
+    role="dialog"
+    style={Object {}}
+    tabIndex={-1}
+  >
+    <div
+      className="modal-dialog"
+      id="sign-in-modal"
+      onMouseDown={[Function]}
+    >
+      <div
+        className="modal-content"
+      >
+        <div
+          className="d-flex justify-content-between modal-header"
+        >
+          <svg>
+            logo.svg
+          </svg>
+          <h2
+            className="mx-auto"
+          >
+            Sign In
+          </h2>
+          <button
+            aria-label="Close"
+            className="btn-close btn btn-primary"
+            data-toggle="modal"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          />
+        </div>
+        <div
+          className="modal-body"
+        >
+          <div
+            className="card"
+          >
+            <div
+              className="d-flex flex-column card-body"
+            >
+              <form
+                id="sign-in-form"
+                onSubmit={[Function]}
+              >
+                <input
+                  className="p-2"
+                  id="email"
+                  name="email"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Email"
+                  type="email"
+                  value=""
+                />
+                <input
+                  className="p-2"
+                  id="password"
+                  name="password"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Password"
+                  type="password"
+                  value=""
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+        <div
+          className="first-sign-in-modal-footer d-flex flex-column align-items-stretch modal-footer"
+        >
+          <button
+            className="sc-bdnxRM sc-jSFjdj fhyKDU kySEpq"
+            form="sign-in-form"
+            type="submit"
+          >
+            Sign In
+          </button>
+          <button
+            className="sc-bdnxRM sc-gKAaRy fhyKDU gsgZIm"
+            type="submit"
+          >
+            Sign In With Google
+          </button>
+          <button
+            className="sc-bdnxRM sc-iCoGMd fhyKDU jgJmMT"
+            type="submit"
+          >
+            Sign In With Facebook
+          </button>
+        </div>
+        <div
+          className="second-sign-in-modal-footer d-flex flex-column align-items-center modal-footer"
+        >
+          <span>
+            Don‘t have an
+             
+            <a
+              href="/"
+              onClick={[Function]}
+            >
+              Account
+            </a>
+            ?
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

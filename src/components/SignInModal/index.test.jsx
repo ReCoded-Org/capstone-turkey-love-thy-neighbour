@@ -18,7 +18,7 @@ describe("SignInModal", () => {
       },
     },
     popup: {
-      isSignedInOpen: true,
+      isSignInOpen: true,
     },
   };
 
@@ -27,12 +27,10 @@ describe("SignInModal", () => {
   let tree;
 
   beforeEach(() => {
-    store = mockStore(mockState);
-
     ReactDOM.createPortal = jest.fn((element) => {
       return element;
     });
-
+    store = mockStore(mockState);
     tree = renderer
       .create(
         <Provider store={store}>
