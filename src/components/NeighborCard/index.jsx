@@ -4,11 +4,14 @@ import { Card } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
 
+import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
 import { send } from "emailjs-com";
 
 import { v4 as uuidv4 } from "uuid";
+import { getTranslatedGender } from "../../utils/helpers";
+
 import { NeighborCardButton } from "../CustomButtons";
 
 import firebaseApp, { firestore } from "../../firebaseConfig";
@@ -31,6 +34,7 @@ function NeighborCard({
   const uid = useSelector((state) => state.user.authCred?.uid);
 
   const { t } = useTranslation();
+  const { language: currentLanguage } = i18next;
 
   function sendEmail() {
     setEmailAlertStatus("empty");
@@ -92,7 +96,9 @@ function NeighborCard({
         <h2 className="text-center">
           {firstName} <br /> {lastName}
         </h2>
-        <small className="text-center">{`${age} / ${gender}`}</small>
+        <small className="text-center">{`${age} / ${
+          currentLanguage === "EN" ? gender : getTranslatedGender(gender)
+        }`}</small>
         <NeighborCardButton onClick={handleInvitation}>
           {t("neighborcards_button")}
         </NeighborCardButton>

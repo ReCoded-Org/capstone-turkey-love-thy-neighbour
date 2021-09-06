@@ -75,3 +75,16 @@ export function getTurkishEducationStatus(ENEducationStatus) {
 
   return turkishVersion;
 }
+
+export function getTranslatedGender(ENGender) {
+  if (ENGender === "Male") {
+    return "Erkek";
+  }
+  if (ENGender === "Female") {
+    return "Kadın";
+  }
+  if (ENGender === "Prefer not to say") {
+    return "Belirtilmedi";
+  }
+  return "";
+}
