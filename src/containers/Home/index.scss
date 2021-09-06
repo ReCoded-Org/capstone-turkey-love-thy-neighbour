@@ -7,14 +7,11 @@
     scroll-snap-align: start;
   }
 
-  // for sections and content containers
-  section:not(.subscription-img-bg), // all the sections inside home page
-  section:not(.subscription-img-bg) > div // all the content containers inside home page
-  {
+  section:not(.subscription-img-bg),
+  section:not(.subscription-img-bg) > div {
     height: calc(100vh - 60px);
   }
 
-  // section --> content container --> row
   section > div > div.row {
     width: 100% !important;
   }

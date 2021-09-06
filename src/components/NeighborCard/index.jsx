@@ -42,7 +42,7 @@ function NeighborCard({
 
   function handleInvitation() {
     sendEmail();
-    firestore // create invitation notification for the invited user
+    firestore
       .collection("users")
       .where("email", "==", email)
       .get()
@@ -56,7 +56,7 @@ function NeighborCard({
         });
         firstDoc.ref.update(firstDocData);
       });
-    firestore // create invitation for the inviter user
+    firestore
       .collection("users")
       .doc(uid)
       .update({

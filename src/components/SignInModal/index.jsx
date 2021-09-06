@@ -20,8 +20,6 @@ import {
 } from "../CustomButtons";
 import "./index.scss";
 
-// refactor styling
-
 const SignInModal = () => {
   const history = useHistory();
   const dispatch = useDispatch();

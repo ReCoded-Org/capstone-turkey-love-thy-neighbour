@@ -184,7 +184,7 @@ const SignUpModal = () => {
     >
       <Modal.Header>
         <Logo />
-        <h2>Sign Up</h2>
+        <h2 className="mx-auto">Sign Up</h2>
         <Button
           type="button"
           data-toggle="modal"
