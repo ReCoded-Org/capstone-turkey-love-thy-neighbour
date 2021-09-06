@@ -6,7 +6,9 @@ exports[`NeighborCard renders NeighborCard correctly 1`] = `
 >
   <img
     className="card-img-top img-fluid"
+    id="test"
     onClick={[Function]}
+    src="test"
   />
   <div
     className="d-flex flex-column justify-content-center card-body"
@@ -14,12 +16,12 @@ exports[`NeighborCard renders NeighborCard correctly 1`] = `
     <div
       className="text-center card-title h5"
     >
-      undefined undefined
+      test test
     </div>
     <small
       className="text-center"
     >
-      undefined / undefined
+      test / test
     </small>
     <button
       className="sc-bdnxRM sc-fujyAs fhyKDU PaHUc"

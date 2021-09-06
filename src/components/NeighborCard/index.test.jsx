@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import NeighborCard from ".";
 
 describe("NeighborCard", () => {
-  const data = {
+  const props = {
     photo: "test",
     firstName: "test",
     lastName: "test",
@@ -33,7 +33,7 @@ describe("NeighborCard", () => {
     tree = renderer
       .create(
         <Provider store={store}>
-          <NeighborCard data={data.invitationNotificationObject} />
+          <NeighborCard {...props} />
         </Provider>
       )
       .toJSON();
