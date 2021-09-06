@@ -60,13 +60,14 @@ Meet our team members through their GitHub profiles
 
 ### Home Page
 
-![Home Page 1](https://ibb.co/L1bR5KS)
+![Home Page 1](https://user-images.githubusercontent.com/79417435/132253645-89c057ec-95e6-48ab-a32a-09322a8c57b5.PNG)
 
-![Home Page 2](https://ibb.co/Mk0n6ST)
+![Home Page 2](https://user-images.githubusercontent.com/79417435/132253614-8b19cfe1-743e-4bdc-9512-d9b48ecfcea5.PNG)
 
-![Meet Page](https://ibb.co/c8qrYR3)
+![Meet Page](https://user-images.githubusercontent.com/79417435/132253587-15fd498b-f9ed-4f33-a5c3-f5a549754d66.PNG)
 
-![Profile Page](https://ibb.co/Kb9RhX8)
+![Profile Page](https://user-images.githubusercontent.com/79417435/132253548-289652c4-edb1-4e30-8eb6-9d2979cc8fbb.PNG)
+
 
 ## Project Setup
 
