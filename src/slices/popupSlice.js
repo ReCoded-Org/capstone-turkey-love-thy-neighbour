@@ -3,6 +3,7 @@ const initialState = {
   isSignUpOpen: false,
   isEditProfileOpen: false,
   isNeighborSummaryOpen: false,
+  isEmailSentOpen: false,
 };
 
 const popupReducer = (state = initialState, action) => {
@@ -20,6 +21,12 @@ const popupReducer = (state = initialState, action) => {
       return {
         ...initialState,
         isNeighborSummaryOpen: !state.isNeighborSummaryOpen,
+      };
+
+    case "emailSent":
+      return {
+        ...initialState,
+        isEmailSentOpen: !state.isEmailSentOpen,
       };
 
     default:

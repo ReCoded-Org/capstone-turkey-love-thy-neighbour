@@ -1,17 +1,17 @@
-div.section-wrapper {
+.section-wrapper {
   h1 {
     font-size: 36px;
   }
 
-  // for sections and content containers
-  section, // all the sections inside home page
-  section > div // all the content containers inside home page
-  {
-    height: calc(100vh - 60px);
+  & > section {
     scroll-snap-align: start;
   }
 
-  // section --> content container --> row
+  section:not(.subscription-img-bg),
+  section:not(.subscription-img-bg) > div {
+    height: calc(100vh - 60px);
+  }
+
   section > div > div.row {
     width: 100% !important;
   }

@@ -5,6 +5,7 @@ const BaseButton = styled.button`
   border-radius: 5px;
   background-color: var(--dark-blue);
   color: var(--white);
+  font-family: "Courgette";
 `;
 
 export const CTAButton = styled(BaseButton)`
@@ -65,4 +66,9 @@ export const GoodFeedbackButton = styled(BaseButton)`
 export const BadFeedbackButton = styled(BaseButton)`
   padding: 0 7px;
   background-color: var(--logo-red);
+`;
+
+export const ContactUsSendButton = styled(BaseButton)`
+  padding: 10px 50px;
+  margin-top: 13px;
 `;
