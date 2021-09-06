@@ -15,12 +15,19 @@ body {
 
 .main-wrapper {
   min-height: 100vh;
+
+  div.section-wrapper {
+    & > section {
+      padding-right: 10px !important;
+      padding-left: 10px !important;
+    }
+  }
 }
 
 .container,
 .container-fluid {
   padding-right: 0 !important;
-  padding-left: 0;
+  padding-left: 0 !important;
 }
 
 h1,
