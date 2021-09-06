@@ -4,8 +4,8 @@
   "home_second_slogan_big": "Welcome,",
   "home_second_slogan_small": "to be welcomed.",
   "home_lesser_slogan": "Respect each other and feel the genuine connection.",
-  "home_what_neighbors_say": "What our Neighbours say:",
-  "home_when_neighbors_meet": "When our Neighbours Met:",
+  "home_what_neighbors_say": "What our Neighbours say",
+  "home_when_neighbors_meet": "When our Neighbours Met",
   "home_sammy_walson": "It definitely has been a great experiance connecting with my neighbors on LTN.",
   "home_violet_jenning": "LTN, definitely is the right place to find like-minded people around you.",
   "home_andrew_fitzgerald": "Had a lot of chances to connect with my community... Amazing  app!",
@@ -57,9 +57,7 @@
   "neighbors_filter_button": "Find!",
   "neighbors_recommended_pholder": "Recommended Places",
   "neighborcards_button": "Invite To Meet!",
-
-  "ourteam_title": "Our hardworking development team:",
-
+  "ourteam_title": "Our hardworking development team",
   "contactus_title": "Contact Us",
   "contactus_text": "Help us create effective and active communities by communicating with us!",
   "contactus_name_pholder": "First Name",
@@ -69,16 +67,13 @@
   "contactus_button": "Send",
   "contactus_modal": "The message was succesfully sent. We will get you back soon!",
   "contact_us_modal_button": "Close",
-
   "sign_in_title": "Sign In",
   "sign_in_email_pholder": "Email",
   "sign_in_password_pholder": "Passward",
   "sign_in_button": "Sign In",
   "sign_in_google_button": "Sign in with Google",
   "sign_in_fbook_button": "Sign in with Facebook",
-
   "sign_in_dont_have_account_anchor": "Don't have an Account?",
-
   "sign_up_title": "Sign Up",
   "sign_up_fname_pholder": "First Name",
   "sign_up_lname_pholder": "Last Name",
@@ -91,7 +86,6 @@
   "sign_up_google": "Sign Up with Google",
   "sign_up_fbook": "Sign Up with Facebook",
   "sign_up_have_account_anchor": "Already got an Account?",
-
   "edit_profile_title": "Edit Profile",
   "edit_profile_name_pholder": "First Name",
   "edit_profile_last_name_pholder": "Last Name",
@@ -107,16 +101,13 @@
   "edit_profile_background_image_pholder": "Background Image URL",
   "edit_profile_save_button": "Save Changes",
   "edit_profile_discard_button": "Discard Changes",
-
   "summodal_title": "Details",
-
   "navbar_sign_in": "Sign In",
   "navbar_sign_up": "Sign Up",
   "navbar_profile": "Profile",
   "navbar_meet": "Meet",
   "navbar_neighbors": "Neighbors",
   "navbar_signout": "Sign Out",
-
   "footer_team": "Our Team",
   "footer_contact": "Contact Us",
   "footer_faq": "FAQ",
@@ -132,19 +123,18 @@
   "notification_title": "Notifications",
   "notification_clear_all": "Clear All",
   "notification_no_notificatons": "No current notifications...",
-  "neighborssummod_age_tba":"Age yet to be added.",
-  "neighborssummod_gender_tba" : "Gender yet to be added.",
-  "neighborssummod_district_tba" : "District yet to be added.",
-  "neighborssummod_adress_tba" : "Adress yet to be added.",
-  "neighborssummod_bio_tba" : "Bio yet to be added.",
-  "neighborssummod_education_tba" : "Education yet to be added.",
-  "neighborssummod_interests_tba" : "Interests yet to be added.",
+  "neighborssummod_age_tba": "Age yet to be added.",
+  "neighborssummod_gender_tba": "Gender yet to be added.",
+  "neighborssummod_district_tba": "District yet to be added.",
+  "neighborssummod_adress_tba": "Adress yet to be added.",
+  "neighborssummod_bio_tba": "Bio yet to be added.",
+  "neighborssummod_education_tba": "Education yet to be added.",
+  "neighborssummod_interests_tba": "Interests yet to be added.",
   "required": "Required",
   "invalid_email_format": "Invalid email format",
   "passwords_do_not_match": "Passwords do not match",
-  "contactus_min_2_char" : "Mininum 2 characters",
-  "contactus_min_10_char" : "Mininum 10 characters",
-  "contactus_max_15_char" : "Maximum 15 characters",
-  "contactus_max_500_char" : "Maximum 500 characters"
-
+  "contactus_min_2_char": "Mininum 2 characters",
+  "contactus_min_10_char": "Mininum 10 characters",
+  "contactus_max_15_char": "Maximum 15 characters",
+  "contactus_max_500_char": "Maximum 500 characters"
 }
