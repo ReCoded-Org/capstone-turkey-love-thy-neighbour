@@ -10,7 +10,9 @@
       margin: 0;
 
       & > div:first-child {
-        padding: 0;
+        @media screen and (max-width: 575px) {
+          padding: 0 10px;
+        }
 
         h1 {
           color: $logo-red;

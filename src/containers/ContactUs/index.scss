@@ -9,6 +9,9 @@ section.contact-us-section {
   }
 
   .contactus-content-container {
+    @media screen and (max-width: 575px) {
+      padding: 0 10px !important;
+    }
     .contactus-content-row {
       margin: 0;
 
