@@ -1,11 +1,14 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
 import { Container, Row, Col } from "react-bootstrap";
 
 import img from "../../images/SecondaryHeroContentBgImg.png";
 import "./index.scss";
 
 function SecondaryHero() {
+  const { t } = useTranslation();
   return (
     <section className="snapping-section secondary-hero-img-bg container-fluid">
       <Container className="secondary-hero-content-container d-flex align-items-center">
@@ -24,11 +27,9 @@ function SecondaryHero() {
             md={{ span: 6, order: "last" }}
             className="px-0 pt-xs-5 pt-xs-5 pt-md-0 d-flex flex-column justify-content-center align-items-start"
           >
-            <h2>Welcome,</h2>
-            <h1>to be welcomed.</h1>
-            <p>
-              Respect each other and feel the genuine <span>connection.</span>
-            </p>
+            <h2>{t("home_second_slogan_big")}</h2>
+            <h1>{t("home_second_slogan_small")}</h1>
+            <p>{t("home_lesser_slogan")}</p>
           </Col>
         </Row>
       </Container>

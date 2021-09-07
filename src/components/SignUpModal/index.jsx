@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Modal, Button, Card, Alert } from "react-bootstrap";
 import { useFormik } from "formik";
 
+import { useTranslation } from "react-i18next";
+
 import { useDispatch, useSelector } from "react-redux";
 
 import { useHistory } from "react-router-dom";
@@ -22,6 +24,7 @@ import "./index.scss";
 
 const SignUpModal = () => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const initialSignUpState = { isOpen: false, message: "" };
   const [signUpAlertState, setSignUpAlertState] = useState(initialSignUpState);
@@ -32,29 +35,29 @@ const SignUpModal = () => {
   const validate = (values) => {
     const errors = {};
     if (!values.firstName) {
-      errors.firstName = "Required";
+      errors.firstName = t("required");
     }
     if (!values.lastName) {
-      errors.lastName = "Required";
+      errors.lastName = t("required");
     }
     if (!values.gender) {
-      errors.gender = "Required";
+      errors.gender = t("required");
     }
     if (!values.district) {
-      errors.district = "Required";
+      errors.district = t("required");
     }
     if (!values.email) {
-      errors.email = "Required";
+      errors.email = t("required");
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-      errors.email = "Invalid email";
+      errors.email = t("invalid_email_format");
     }
     if (!values.password) {
-      errors.password = "Required";
+      errors.password = t("required");
     }
     if (!values.repeatedPassword) {
-      errors.repeatedPassword = "Required";
+      errors.repeatedPassword = t("required");
     } else if (values.repeatedPassword !== values.password) {
-      errors.repeatedPassword = "Passwords do not match";
+      errors.repeatedPassword = t("passwords_do_not_match");
     }
     return errors;
   };
@@ -184,7 +187,7 @@ const SignUpModal = () => {
     >
       <Modal.Header>
         <Logo />
-        <h2 className="mx-auto">Sign Up</h2>
+        <h2>{t("sign_up_title")}</h2>
         <Button
           type="button"
           data-toggle="modal"
@@ -203,7 +206,7 @@ const SignUpModal = () => {
                 className="p-2"
                 id="firstName"
                 name="firstName"
-                placeholder="First Name"
+                placeholder={t("sign_up_fname_pholder")}
                 onChange={formik.handleChange}
                 value={formik.values.firstName}
                 onBlur={formik.handleBlur}
@@ -215,7 +218,7 @@ const SignUpModal = () => {
                 className="p-2"
                 id="lastName"
                 name="lastName"
-                placeholder="Last Name"
+                placeholder={t("sign_up_lname_pholder")}
                 onChange={formik.handleChange}
                 value={formik.values.lastName}
                 onBlur={formik.handleBlur}
@@ -233,11 +236,11 @@ const SignUpModal = () => {
                 required
               >
                 <option disabled defaultValue value="">
-                  Select a gender...
+                  {t("sign_up_gender_pholder")}
                 </option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Prefer not to say">Prefer not to say</option>
+                <option value="Male">{t("male")}</option>
+                <option value="Female">{t("female")}</option>
+                <option value="Prefer not to say">{t("prefernottosay")}</option>
               </select>
               {formik.touched.gender && formik.errors.gender ? (
                 <div className="error-msg">{formik.errors.gender}</div>
@@ -252,7 +255,7 @@ const SignUpModal = () => {
                 required
               >
                 <option disabled defaultValue value="">
-                  Select a district...
+                  {t("sign_up_district_pholder")}
                 </option>
                 {constants.districtList.map((district) => {
                   return (
@@ -270,7 +273,7 @@ const SignUpModal = () => {
                 id="email"
                 name="email"
                 type="email"
-                placeholder="Email"
+                placeholder={t("sign_in_email_pholder")}
                 onChange={formik.handleChange}
                 value={formik.values.email}
                 onBlur={formik.handleBlur}
@@ -283,7 +286,7 @@ const SignUpModal = () => {
                 id="password"
                 name="password"
                 type="password"
-                placeholder="Password"
+                placeholder={t("sign_up_password_pholder")}
                 onChange={formik.handleChange}
                 value={formik.values.password}
                 onBlur={formik.handleBlur}
@@ -296,7 +299,7 @@ const SignUpModal = () => {
                 id="repeatedPassword"
                 name="repeatedPassword"
                 type="password"
-                placeholder="Repeat Password"
+                placeholder={t("sign_up_rpassword_pholder")}
                 onChange={formik.handleChange}
                 value={formik.values.repeatedPassword}
                 onBlur={formik.handleBlur}
@@ -318,18 +321,17 @@ const SignUpModal = () => {
           disabled={formik.isSubmitting}
           form="sign-up-form"
         >
-          Sign Up
+          {t("sign_up_button")}
         </SignInUpButton>
         <SignInUpGoogleButton type="submit" onClick={handleGoogleSignIn}>
-          Sign Up With Google
+          {t("sign_up_google")}
         </SignInUpGoogleButton>
         <SignInUpFacebookButton type="submit" onClick={handleFacebookSignIn}>
-          Sign Up With Facebook
+          {t("sign_up_fbook")}
         </SignInUpFacebookButton>
       </Modal.Footer>
       <Modal.Footer className="second-sign-up-modal-footer d-flex flex-column align-items-center">
         <span>
-          Already got an{" "}
           <a
             href="/"
             onClick={(event) => {
@@ -338,9 +340,8 @@ const SignUpModal = () => {
               dispatch({ type: "signIn" });
             }}
           >
-            Account
+            {t("sign_up_have_account_anchor")}
           </a>
-          ?
         </span>
       </Modal.Footer>
       <Alert

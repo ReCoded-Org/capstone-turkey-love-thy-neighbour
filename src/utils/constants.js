@@ -54,11 +54,17 @@ const constants = {
     "ÜSKÜDAR",
     "ZEYTİNBURNU",
   ],
-  educationList: [
+  educationListEN: [
     "Primary School Grad",
     "High School Grad",
-    "University",
+    "University Grad",
     "Higher Education",
+  ],
+  educationListTR: [
+    "İlk okul mezunu",
+    "Lise Mezunu",
+    "Üniversite Mezunu",
+    "Yüksek Ögretim",
   ],
 };
 

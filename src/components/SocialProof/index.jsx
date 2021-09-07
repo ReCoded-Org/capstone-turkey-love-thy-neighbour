@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
 import { Container, Row, Col, Accordion, Carousel } from "react-bootstrap";
 import { ReactComponent as MaleAvatarSVG } from "../../images/SocialProof/male-avatar.svg";
 import { ReactComponent as FemaleAvatarSVG } from "../../images/SocialProof/female-avatar.svg";
@@ -10,13 +12,14 @@ import MeetingThree from "../../images/SocialProof/meeting-three.png";
 import "./index.scss";
 
 function SocialProof() {
+  const { t } = useTranslation();
   return (
     <section className="snapping-section social-proof-section container-fluid">
       <Container className="social-proof-content-container d-flex align-items-center">
         <Row className="social-proof-content-row m-0 gap-2">
           <Col xs={12} sm={12} md={5} className="first-column">
             <h2 className="text-center text-sm-center text-md-start">
-              What our Neighbours say
+              {t("home_what_neighbors_say")}
             </h2>
             <Accordion
               defaultActiveKey={window.innerWidth >= 768 ? "0" : undefined}
@@ -33,10 +36,7 @@ function SocialProof() {
                     </small>
                   </div>
                 </Accordion.Header>
-                <Accordion.Body>
-                  It definitely has been a great experiance connecting with my
-                  neighbors on LTN.
-                </Accordion.Body>
+                <Accordion.Body>{t("home_sammy_walson")}</Accordion.Body>
               </Accordion.Item>
               <Accordion.Item className="second-accordion-item" eventKey="1">
                 <Accordion.Header className="d-flex align-items-center">
@@ -50,10 +50,7 @@ function SocialProof() {
                     </small>
                   </div>
                 </Accordion.Header>
-                <Accordion.Body>
-                  LTN, definitely is the right place to find like-minded people
-                  around you.
-                </Accordion.Body>
+                <Accordion.Body>{t("home_violet_jenning")}</Accordion.Body>
               </Accordion.Item>
               <Accordion.Item className="third-accordion-item" eventKey="2">
                 <Accordion.Header className="d-flex align-items-center">
@@ -69,10 +66,7 @@ function SocialProof() {
                     </small>
                   </div>
                 </Accordion.Header>
-                <Accordion.Body>
-                  Had a lot of chances to connect with my community... Amazing
-                  app!
-                </Accordion.Body>
+                <Accordion.Body>{t("home_andrew_fitzgerald")}</Accordion.Body>
               </Accordion.Item>
             </Accordion>
           </Col>
@@ -83,7 +77,7 @@ function SocialProof() {
             className="second-column mt-xs-4 mt-sm-4 mt-md-0"
           >
             <h2 className="text-center text-sm-center text-md-start">
-              When our Neighbours met
+              {t("home_when_neighbors_meet")}
             </h2>
             <Carousel>
               <Carousel.Item>

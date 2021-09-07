@@ -1,5 +1,8 @@
 import React from "react";
 
+import i18next from "i18next";
+import { useTranslation } from "react-i18next";
+
 import { Container, Row, Col, Card } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -7,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   createInterestString,
   getDefaultGenderImage,
+  getTurkishEducationStatus,
 } from "../../utils/helpers";
 
 import EditProfileModal from "../../components/EditProfileModal";
@@ -14,6 +18,9 @@ import { EditProfileButton } from "../../components/CustomButtons";
 import "./index.scss";
 
 const Profile = () => {
+  const { t } = useTranslation();
+  const { language: currentLanguage } = i18next;
+
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector(
     (state) => state.popup.isEditProfileOpen
@@ -59,7 +66,7 @@ const Profile = () => {
               <EditProfileButton
                 onClick={() => dispatch({ type: "editProfile" })}
               >
-                Edit Profile
+                {t("profile_edit_button")}
               </EditProfileButton>
               <EditProfileModal showModal={isEditProfileOpen} />
             </div>
@@ -75,37 +82,46 @@ const Profile = () => {
               >
                 <Card className="info-cards white-card">
                   <Card.Body>
-                    <Card.Title className="card-title">General</Card.Title>
+                    <Card.Title className="card-title">
+                      {t("profile_general_info_card_title")}
+                    </Card.Title>
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
-                        First Name: <span>{firestoreDoc.firstName}</span>
+                        {t("profile_general_info_card_firstname")}{" "}
+                        <span>{firestoreDoc.firstName}</span>
                       </li>
                       <li>
-                        Last Name: <span>{firestoreDoc.lastName}</span>
+                        {t("profile_general_info_card_lastname")}{" "}
+                        <span>{firestoreDoc.lastName}</span>
                       </li>
                       <li>
-                        Gender:{" "}
+                        {t("profile_general_info_card_gender")}{" "}
                         <span>
-                          {firestoreDoc.gender || "Gender yet to be added."}
+                          {firestoreDoc.gender ||
+                            t("neighborssummod_gender_tba")}
                         </span>
                       </li>
                       <li>
-                        Age:{" "}
+                        {t("profile_general_info_card_age")}{" "}
                         <span>
-                          {firestoreDoc.age || "Age yet to be added."}
+                          {firestoreDoc.age || t("neighborssummod_age_tba")}
                         </span>
                       </li>
                       <li>
-                        Education:{" "}
+                        {t("profile_general_info_card_education")}{" "}
                         <span>
-                          {firestoreDoc.education ||
-                            "Education yet to be added."}
+                          {(currentLanguage === "EN"
+                            ? firestoreDoc.education
+                            : getTurkishEducationStatus(
+                                firestoreDoc.education
+                              )) || t("neighborssummod_education_tba")}
                         </span>
                       </li>
                       <li>
-                        District:{" "}
+                        {t("profile_general_info_card_district")}{" "}
                         <span>
-                          {firestoreDoc.district || "District yet to be added."}
+                          {firestoreDoc.district ||
+                            t("neighborssummod_district_tba")}
                         </span>
                       </li>
                     </ul>
@@ -121,19 +137,21 @@ const Profile = () => {
               >
                 <Card className="info-cards" id="blue-card">
                   <Card.Body>
-                    <Card.Title className="card-title">About You</Card.Title>
+                    <Card.Title className="card-title">
+                      {t("profile_about_you_title")}
+                    </Card.Title>
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
-                        Bio:{" "}
+                        {t("profile_about_you_bio")}{" "}
                         <span>
-                          {firestoreDoc.bio || "Bio yet to be added."}
+                          {firestoreDoc.bio || t("neighborssummod_bio_tba")}
                         </span>
                       </li>
                       <li>
-                        Interests:{" "}
+                        {t("profile_about_you_interests")}{" "}
                         <span>
                           {!firestoreDoc?.interests
-                            ? "Interests yet to be added."
+                            ? t("neighborssummod_interests_tba")
                             : createInterestString(firestoreDoc?.interests)}
                         </span>
                       </li>
@@ -150,21 +168,25 @@ const Profile = () => {
               >
                 <Card className="info-cards white-card">
                   <Card.Body>
-                    <Card.Title className="card-title">Contact</Card.Title>
+                    <Card.Title className="card-title">
+                      {t("profile_contact_card_title")}
+                    </Card.Title>
                     <ul className="d-flex flex-column justify-content-around  mb-0">
                       <li>
-                        Email: <span>{email}</span>
+                        {t("profile_contact_card_email")}
+                        <span>{email}</span>
                       </li>
                       <li>
-                        Phone:{" "}
+                        {t("profile_contact_card_phone")}{" "}
                         <span>
                           {firestoreDoc.number || "+90 123 456 78 90"}
                         </span>
                       </li>
                       <li>
-                        Address:{" "}
+                        {t("profile_contact_card_adress")}{" "}
                         <span>
-                          {firestoreDoc.address || "Address yet to be added."}
+                          {firestoreDoc.address ||
+                            t("neighborssummod_adress_tba")}
                         </span>
                       </li>
                     </ul>

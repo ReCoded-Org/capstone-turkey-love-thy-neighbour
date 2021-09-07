@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
 import { Modal, Container, Card, CloseButton } from "react-bootstrap";
 
 import { send } from "emailjs-com";
@@ -32,6 +34,8 @@ function NeighborSummaryModal({
   );
   const { firstName, lastName, email } = selectedNeighbor;
   const uid = useSelector((state) => state.user.authCred?.uid);
+
+  const { t } = useTranslation();
 
   function sendEmail() {
     setEmailAlertStatus("empty");
@@ -116,37 +120,44 @@ function NeighborSummaryModal({
           <Modal.Body>
             <Card>
               <Card.Body>
-                <Card.Title className="card-title">Details</Card.Title>
+                <Card.Title className="card-title">
+                  {t("summodal_title")}
+                </Card.Title>
                 <ul className="d-flex flex-column justify-content-around  mb-0">
                   <li>
-                    Age:{" "}
+                    {t("profile_general_info_card_age")}{" "}
                     <span>
-                      {selectedNeighbor?.age || "Age yet to be added."}
+                      {selectedNeighbor?.age
+                        ? selectedNeighbor?.age
+                        : t("neighborssummod_age_tba")}
                     </span>
                   </li>
                   <li>
-                    Gender: <span>{selectedNeighbor?.gender}</span>
+                    {t("profile_general_info_card_gender")}{" "}
+                    <span>{selectedNeighbor?.gender}</span>
                   </li>
                   <li>
-                    Bio:{" "}
+                    {t("profile_about_you_bio")}{" "}
                     <span>
-                      {selectedNeighbor?.bio || "Bio yet to be added."}
+                      {selectedNeighbor?.bio
+                        ? selectedNeighbor?.bio
+                        : t("neighborssummod_bio_tba")}
                     </span>
                   </li>
                   <li>
-                    Interests:{" "}
+                    {t("profile_about_you_interests")}{" "}
                     <span>
                       {selectedNeighbor?.interests === undefined ||
                       selectedNeighbor?.interests.length === 0
-                        ? "Interests yet to be added."
+                        ? t("neighborssummod_interests_tba")
                         : createInterestString(selectedNeighbor.interests)}
                     </span>
                   </li>
                   <li>
-                    Education:{" "}
+                    {t("profile_general_info_card_education")}{" "}
                     <span>
                       {selectedNeighbor?.education ||
-                        "Education yet to be added."}
+                        t("neighborssummod_education_tba")}
                     </span>
                   </li>
                 </ul>
@@ -155,7 +166,7 @@ function NeighborSummaryModal({
           </Modal.Body>
           <Modal.Footer>
             <NeighborCardButton className="mx-auto" onClick={handleInvitation}>
-              Invite To Meet!
+              {t("neighborcards_button")}
             </NeighborCardButton>
           </Modal.Footer>
         </Container>

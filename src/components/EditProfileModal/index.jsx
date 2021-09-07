@@ -2,22 +2,27 @@ import React from "react";
 
 import { Modal, Button, Card } from "react-bootstrap";
 
+import i18next from "i18next";
+
 import Multiselect from "multiselect-react-dropdown";
 
 import { useFormik } from "formik";
 
+import { useTranslation } from "react-i18next";
+
 import { useSelector, useDispatch } from "react-redux";
 
 import { firestore } from "../../firebaseConfig";
-
 import constants, { newActivityList } from "../../utils/constants";
-
 import { SaveChangesButton, DiscardChangesButton } from "../CustomButtons";
 
 import { ReactComponent as Logo } from "../../images/logoGrayBg.svg";
 import "./index.scss";
 
 const EditProfileModal = () => {
+  const { t } = useTranslation();
+  const { language: currentLanguage } = i18next;
+
   const dispatch = useDispatch();
   const isEditProfileOpen = useSelector(
     (state) => state.popup.isEditProfileOpen
@@ -34,22 +39,22 @@ const EditProfileModal = () => {
     const errors = {};
 
     if (!values.firstName) {
-      errors.firstName = "Required";
+      errors.firstName = t("required");
     }
     if (!values.lastName) {
-      errors.lastName = "Required";
+      errors.lastName = t("required");
     }
     if (!values.district) {
-      errors.district = "Required";
+      errors.district = t("required");
     }
     if (!values.gender) {
-      errors.gender = "Required";
+      errors.gender = t("required");
     }
     if (!values.age) {
-      errors.age = "Required";
+      errors.age = t("required");
     }
     if (values.interests.length === 0) {
-      errors.interests = "Required";
+      errors.interests = t("required");
     }
     return errors;
   };
@@ -87,7 +92,7 @@ const EditProfileModal = () => {
     >
       <Modal.Header className="d-flex justify-content-between">
         <Logo />
-        <h2 className="mx-auto">Edit Profile</h2>
+        <h2 className="mx-auto">{t("edit_profile_title")}</h2>
         <Button
           type="button"
           data-toggle="modal"
@@ -106,7 +111,7 @@ const EditProfileModal = () => {
                   className="p-2 flex-fill"
                   id="firstName"
                   name="firstName"
-                  placeholder="First Name"
+                  placeholder={t("edit_profile_name_pholder")}
                   onChange={formik.handleChange}
                   value={formik.values.firstName}
                   onBlur={formik.handleBlur}
@@ -120,7 +125,7 @@ const EditProfileModal = () => {
                   className="p-2 flex-fill"
                   id="lastName"
                   name="lastName"
-                  placeholder="Last Name"
+                  placeholder={t("edit_profile_last_name_pholder")}
                   onChange={formik.handleChange}
                   value={formik.values.lastName}
                   onBlur={formik.handleBlur}
@@ -139,7 +144,7 @@ const EditProfileModal = () => {
                   onBlur={formik.handleBlur}
                 >
                   <option disabled value="">
-                    Districts
+                    {t("edit_profile_district_pholder")}
                   </option>
                   {constants.districtList.map((districtInfo) => {
                     return (
@@ -164,12 +169,12 @@ const EditProfileModal = () => {
                     onBlur={formik.handleBlur}
                   >
                     <option disabled value="">
-                      Select your Gender
+                      {t("edit_profile_gender_pholder")}
                     </option>
-                    <option defaultValue="Male">Male</option>
-                    <option defaultValue="Female">Female </option>
-                    <option defaultValue="Prefer not to say">
-                      Prefer not to say
+                    <option value="Male">{t("male")}</option>
+                    <option value="Female">{t("female")} </option>
+                    <option value="Prefer not to say">
+                      {t("prefernottosay")}
                     </option>
                   </select>
 
@@ -183,7 +188,7 @@ const EditProfileModal = () => {
                     id="age"
                     name="age"
                     type="number"
-                    placeholder="Enter your Age"
+                    placeholder={t("edit_profile_age_pholder")}
                     min="15"
                     max="99"
                     onChange={formik.handleChange}
@@ -202,15 +207,20 @@ const EditProfileModal = () => {
                   onBlur={formik.handleBlur}
                 >
                   <option disabled value="">
-                    Select your Education
+                    {t("edit_profile_education_pholder")}
                   </option>
-                  {constants.educationList.map((education) => {
-                    return (
-                      <option key={education} value={education}>
-                        {education}
-                      </option>
-                    );
-                  })}
+                  {constants[`educationList${currentLanguage}`].map(
+                    (education, index) => {
+                      return (
+                        <option
+                          key={education}
+                          value={constants.educationListEN[index]}
+                        >
+                          {education}
+                        </option>
+                      );
+                    }
+                  )}
                 </select>
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
@@ -218,7 +228,7 @@ const EditProfileModal = () => {
                   className="p-2 flex-fill"
                   id="bio"
                   name="bio"
-                  placeholder="Your bio..."
+                  placeholder={t("edit_profile_bio_pholder")}
                   onChange={formik.handleChange}
                   value={formik.values.bio}
                   onBlur={formik.handleBlur}
@@ -226,7 +236,7 @@ const EditProfileModal = () => {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-stretch">
                 <Multiselect
-                  placeholder="Select interests..."
+                  placeholder={t("edit_profile_interests_pholder")}
                   displayValue="content"
                   onRemove={(selectedOptions) => {
                     formik.values.interests = selectedOptions;
@@ -247,7 +257,7 @@ const EditProfileModal = () => {
                   id="number"
                   name="number"
                   type="tel"
-                  placeholder="Number"
+                  placeholder={t("edit_profile_phone_pholder")}
                   onChange={formik.handleChange}
                   value={formik.values.number}
                   onBlur={formik.handleBlur}
@@ -258,7 +268,7 @@ const EditProfileModal = () => {
                   className="p-2 flex-fill"
                   id="address"
                   name="address"
-                  placeholder="Write your Address"
+                  placeholder={t("edit_profile_adress_pholder")}
                   onChange={formik.handleChange}
                   value={formik.values.address}
                   onBlur={formik.handleBlur}
@@ -270,7 +280,7 @@ const EditProfileModal = () => {
                   id="profileImageUrl"
                   name="profileImageUrl"
                   type="url"
-                  placeholder="Profile Image URL"
+                  placeholder={t("edit_profile_profile_image_pholder")}
                   onChange={formik.handleChange}
                   value={formik.values.profileImageUrl}
                   onBlur={formik.handleBlur}
@@ -282,7 +292,7 @@ const EditProfileModal = () => {
                   id="backgroundImageUrl"
                   name="backgroundImageUrl"
                   type="url"
-                  placeholder="Background Image URL"
+                  placeholder={t("edit_profile_background_image_pholder")}
                   onChange={formik.handleChange}
                   value={formik.values.backgroundImageUrl}
                   onBlur={formik.handleBlur}
@@ -295,11 +305,11 @@ const EditProfileModal = () => {
       <Modal.Footer>
         {district && (
           <DiscardChangesButton onClick={toggleEditProfileModal}>
-            Discard Changes
+            {t("edit_profile_discard_button")}
           </DiscardChangesButton>
         )}
         <SaveChangesButton type="submit" form="edit-profile-form">
-          Save Changes
+          {t("edit_profile_save_button")}
         </SaveChangesButton>
       </Modal.Footer>
     </Modal>

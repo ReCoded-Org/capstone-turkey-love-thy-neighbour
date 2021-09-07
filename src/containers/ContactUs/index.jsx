@@ -2,6 +2,8 @@ import React from "react";
 
 import { Container, Row, Col } from "react-bootstrap";
 
+import { useTranslation } from "react-i18next";
+
 import * as Yup from "yup";
 import { useFormik } from "formik";
 
@@ -18,6 +20,8 @@ import "./index.scss";
 function ContactUs() {
   const dispatch = useDispatch();
 
+  const { t } = useTranslation();
+
   const formik = useFormik({
     initialValues: {
       first_name: "",
@@ -27,18 +31,20 @@ function ContactUs() {
     },
     validationSchema: Yup.object().shape({
       first_name: Yup.string()
-        .min(2, "Mininum 2 characters")
-        .max(15, "Maximum 15 characters")
-        .required("Required"),
+        .min(2, t("contactus_min_2_char"))
+        .max(15, t("contactus_max_15_char"))
+        .required(t("required")),
       last_name: Yup.string()
-        .min(2, "Mininum 2 characters")
-        .max(15, "Maximum 15 characters")
-        .required("Required"),
-      email: Yup.string().email("Invalid email format").required("Required"),
+        .min(2, t("contactus_min_2_char"))
+        .max(15, t("contactus_max_15_char"))
+        .required(t("required")),
+      email: Yup.string()
+        .email(t("invalid_email_format"))
+        .required(t("required")),
       user_message: Yup.string()
-        .min(10, "Mininum 10 characters")
-        .max(500, "Maximum 500 characters")
-        .required("Required"),
+        .min(10, t("contactus_min_10_char"))
+        .max(500, t("contactus_max_500_char"))
+        .required(t("required")),
     }),
     onSubmit: (values, { resetForm }) => {
       firestore
@@ -65,18 +71,15 @@ function ContactUs() {
             lg={6}
             className="d-flex flex-column justify-content-center align-items-center order-last order-sm-last order-md-last order-lg-first"
           >
-            <h1>Contact Us</h1>
-            <p>
-              Help us create effective and active communities by communicating
-              with us!
-            </p>
+            <h1>{t("contactus_title")}</h1>
+            <p>{t("contactus_text")}</p>
             <form className="d-flex flex-column" onSubmit={formik.handleSubmit}>
               <div className="d-flex justify-content-between">
                 <div className="d-flex flex-column">
                   <input
                     type="text"
                     name="first_name"
-                    placeholder="First Name"
+                    placeholder={t("contactus_name_pholder")}
                     value={formik.values.first_name}
                     onChange={formik.handleChange}
                   />
@@ -89,7 +92,7 @@ function ContactUs() {
                   <input
                     type="text"
                     name="last_name"
-                    placeholder="Last Name"
+                    placeholder={t("contactus_lastname_pholder")}
                     value={formik.values.last_name}
                     onChange={formik.handleChange}
                   />
@@ -102,7 +105,7 @@ function ContactUs() {
               <input
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder={t("contactus_email_pholder")}
                 value={formik.values.email}
                 onChange={formik.handleChange}
               />
@@ -111,7 +114,7 @@ function ContactUs() {
               )}
               <textarea
                 name="user_message"
-                placeholder="Message"
+                placeholder={t("contactus_message_pholder")}
                 value={formik.values.user_message}
                 onChange={formik.handleChange}
               />
@@ -119,7 +122,7 @@ function ContactUs() {
                 <div className="error-msg">{formik.errors.user_message}</div>
               )}
 
-              <ContactUsSendButton>Send</ContactUsSendButton>
+              <ContactUsSendButton>{t("contactus_button")}</ContactUsSendButton>
             </form>
           </Col>
 

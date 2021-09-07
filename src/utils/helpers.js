@@ -38,3 +38,53 @@ export function getDefaultGenderImage(gender) {
       return undefined;
   }
 }
+
+export function extractFullNameFromNotificationMessage(feedbackMessage) {
+  const words = feedbackMessage.split(" ");
+
+  const lastWordLetters = words[words.length - 1].split("");
+  lastWordLetters.splice(lastWordLetters.length - 1, 1);
+  const newLastWord = lastWordLetters.join("");
+
+  const fullNameWords = words.slice(5);
+  fullNameWords.splice([fullNameWords.length - 1], 1, newLastWord);
+
+  const fullName = fullNameWords.join(" ");
+
+  return fullName;
+}
+
+export function getTurkishEducationStatus(ENEducationStatus) {
+  let turkishVersion;
+
+  switch (ENEducationStatus) {
+    case "Primary School Grad":
+      turkishVersion = "İlk okul mezunu";
+      break;
+    case "High School Grad":
+      turkishVersion = "Lise Mezunu";
+      break;
+    case "University Grad":
+      turkishVersion = "Üniversite Mezunu";
+      break;
+    case "Higher Education":
+      turkishVersion = "Yüksek Ögretim";
+      break;
+    default:
+  }
+
+  return turkishVersion;
+}
+
+export function getTranslatedGender(ENGender) {
+  if (ENGender === "Male") {
+    return "Erkek";
+  }
+  if (ENGender === "Female") {
+    return "Kadın";
+  }
+  if (ENGender === "Prefer not to say") {
+    return "Belirtilmedi";
+  }
+  return "";
+}

@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
 import { Container, Row, Col } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -10,6 +12,7 @@ import "./index.scss";
 
 function PrimaryHero() {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const isSignedIn = useSelector((state) => state.user.isSignedIn);
 
   return (
@@ -22,14 +25,11 @@ function PrimaryHero() {
             md={6}
             className="first-column p-0 pb-2 pb-sm-2 pb-md-0 d-flex flex-column justify-content-center align-items-start"
           >
-            <h1>Love Thy Neighbor!</h1>
-            <p>
-              Let’s build a strong, dynamic and caring community that uplifts
-              each other.
-            </p>
+            <h1>Love Thy Neighbor</h1>
+            <p>{t("home_slogan")}</p>
             {!isSignedIn && (
               <CTAButton onClick={() => dispatch({ type: "signUp" })}>
-                Join Us!
+                {t("home_join_us_button")}
               </CTAButton>
             )}
           </Col>

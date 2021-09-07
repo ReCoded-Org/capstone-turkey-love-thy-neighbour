@@ -4,6 +4,8 @@ import { Dropdown } from "react-bootstrap";
 
 import { useSelector } from "react-redux";
 
+import { useTranslation } from "react-i18next";
+
 import NotificationMenuItem from "../NotificationMenuItem";
 
 import { ReactComponent as NotificationBellSVG } from "../../images/notification-bell.svg";
@@ -13,6 +15,7 @@ import { firestore } from "../../firebaseConfig";
 import "./index.scss";
 
 function NotificationMenu() {
+  const { t } = useTranslation();
   const invitationNotifications = useSelector(
     (state) => state.user.firestoreDoc?.invitationNotifications
   );
@@ -33,13 +36,13 @@ function NotificationMenu() {
 
       <Dropdown.Menu>
         <Dropdown.Header className="d-flex justify-content-between align-items-center">
-          <p>Notifications</p>
+          <p>{t("notification_title")}</p>
           <button
             type="button"
             className="clear-all-btn"
             onClick={handleClearAll}
           >
-            Clear All
+            {t("notification_clear_all")}
           </button>
         </Dropdown.Header>
 
@@ -55,7 +58,7 @@ function NotificationMenu() {
             />
           ))
         ) : (
-          <p className="no-items-p ms-3">No current notifications...</p>
+          <p className="no-items-p ms-3">{t("notification_no_notificatons")}</p>
         )}
       </Dropdown.Menu>
     </Dropdown>

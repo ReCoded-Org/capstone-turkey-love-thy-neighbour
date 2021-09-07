@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import { Modal, Button, Card, Alert } from "react-bootstrap";
 
+import { useTranslation } from "react-i18next";
+
 import { useFormik } from "formik";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -23,6 +25,7 @@ import "./index.scss";
 const SignInModal = () => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const initialSignInState = { isOpen: false, message: "" };
   const [signInAlertState, setSignInAlertState] = useState(initialSignInState);
@@ -34,12 +37,12 @@ const SignInModal = () => {
     const errors = {};
 
     if (!values.email) {
-      errors.email = "Required";
+      errors.email = t("required");
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-      errors.email = "Invalid email";
+      errors.email = t("invalid_email_format");
     }
     if (!values.password) {
-      errors.password = "Required";
+      errors.password = t("required");
     }
     return errors;
   };
@@ -156,7 +159,7 @@ const SignInModal = () => {
     >
       <Modal.Header className="d-flex justify-content-between">
         <Logo />
-        <h2 className="mx-auto">Sign In</h2>
+        <h2 className="mx-auto">{t("sign_in_title")}</h2>
         <Button
           type="button"
           data-toggle="modal"
@@ -175,7 +178,7 @@ const SignInModal = () => {
                 id="email"
                 name="email"
                 type="email"
-                placeholder="Email"
+                placeholder={t("sign_in_email_pholder")}
                 onChange={formik.handleChange}
                 value={formik.values.email}
                 onBlur={formik.handleBlur}
@@ -188,7 +191,7 @@ const SignInModal = () => {
                 id="password"
                 name="password"
                 type="password"
-                placeholder="Password"
+                placeholder={t("sign_in_password_pholder")}
                 onChange={formik.handleChange}
                 value={formik.values.password}
                 onBlur={formik.handleBlur}
@@ -203,18 +206,17 @@ const SignInModal = () => {
 
       <Modal.Footer className="first-sign-in-modal-footer d-flex flex-column align-items-stretch">
         <SignInUpButton type="submit" form="sign-in-form">
-          Sign In
+          {t("sign_in_button")}
         </SignInUpButton>
         <SignInUpGoogleButton type="submit" onClick={handleGoogleSignIn}>
-          Sign In With Google
+          {t("sign_in_google_button")}
         </SignInUpGoogleButton>
         <SignInUpFacebookButton type="submit" onClick={handleFacebookSignIn}>
-          Sign In With Facebook
+          {t("sign_in_fbook_button")}
         </SignInUpFacebookButton>
       </Modal.Footer>
       <Modal.Footer className="second-sign-in-modal-footer d-flex flex-column align-items-center">
         <span>
-          Don&lsquo;t have an{" "}
           <a
             href="/"
             onClick={(event) => {
@@ -223,9 +225,8 @@ const SignInModal = () => {
               dispatch({ type: "signUp" });
             }}
           >
-            Account
+            {t("sign_in_dont_have_account_anchor")}
           </a>
-          ?
         </span>
       </Modal.Footer>
       <Alert

@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+import { useTranslation } from "react-i18next";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -10,6 +12,7 @@ import { auth } from "../../firebaseConfig";
 
 import { ReactComponent as Logo } from "../../images/logoGrayBg.svg";
 import NotificationsMenu from "../NotificationsMenu";
+import LanguageMenu from "../LanguageMenu";
 
 import "./index.scss";
 
@@ -19,29 +22,39 @@ function NavBar() {
   const isSignedIn = useSelector((state) => state.user.isSignedIn);
   const uid = useSelector((state) => state.user.authCred?.uid);
 
+  const { t, i18n } = useTranslation();
+  const [language, setLanguage] = useState("EN");
+
+  useEffect(() => {
+    i18n.changeLanguage(language);
+  }, [language, i18n]);
+
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark">
       <Container>
         <Link to="/" className="navbar-brand">
           <Logo className="logo-svg" />
         </Link>
-        {isSignedIn && (
-          <div className="d-flex order-lg-last">
-            <NotificationsMenu />
-          </div>
-        )}
+        <div className="d-flex order-lg-last">
+          <LanguageMenu language={language} setLanguage={setLanguage} />
+          {isSignedIn && (
+            <div className="d-flex order-lg-last">
+              <NotificationsMenu />
+            </div>
+          )}
+        </div>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className="order-lg-3" id="responsive-navbar-nav">
           {isSignedIn && (
             <Nav className="me-auto">
               <Link to={`/profile/${uid}`} className="nav-link">
-                Profile
+                {t("navbar_profile")}
               </Link>
               <Link to="/meet" className="nav-link">
-                Meet
+                {t("navbar_meet")}
               </Link>
               <Link to="/neighbors" className="nav-link">
-                Neighbors
+                {t("navbar_neighbors")}
               </Link>
             </Nav>
           )}
@@ -53,16 +66,16 @@ function NavBar() {
                   auth.signOut().then(() => history.push("/"));
                 }}
               >
-                Sign Out
+                {t("navbar_signout")}
               </Nav.Link>
             </Nav>
           ) : (
             <Nav className="ms-auto">
               <Nav.Link onClick={() => dispatch({ type: "signIn" })}>
-                Sign In
+                {t("navbar_sign_in")}
               </Nav.Link>
               <Nav.Link onClick={() => dispatch({ type: "signUp" })}>
-                Sign Up
+                {t("navbar_sign_up")}
               </Nav.Link>{" "}
             </Nav>
           )}

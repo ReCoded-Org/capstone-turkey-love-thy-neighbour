@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
 import { Container, Row, Col } from "react-bootstrap";
 
 import { useSelector } from "react-redux";
@@ -11,6 +13,7 @@ import MeetImg from "../../images/meet.jpg";
 import "./index.scss";
 
 function Meet() {
+  const { t } = useTranslation();
   const firstName = useSelector((state) => state.user.firestoreDoc?.firstName);
 
   return (
@@ -23,14 +26,13 @@ function Meet() {
             md={{ span: 6, order: "first" }}
             className="d-flex flex-column justify-content-center align-items-center align-items-sm-center align-items-md-start text-center text-sm-center text-md-start mb-3 mb-sm-3 mb-md-0"
           >
-            <h3>Hello, {firstName}</h3>
-            <h1>Meet nearby people with our cutting edge algorithms.</h1>
-            <p>
-              After you have been matched with people near you, you can send
-              them a message and meet up quickly !
-            </p>
+            <h3>
+              {t("meet_hello")} {firstName}
+            </h3>
+            <h1>{t("meet_nearby")}</h1>
+            <p>{t("meet_info_text")}</p>
             <CTAButton>
-              <Link to="/neighbors">Meet Now</Link>
+              <Link to="/neighbors">{t("meet_button")}</Link>
             </CTAButton>
           </Col>
           <Col

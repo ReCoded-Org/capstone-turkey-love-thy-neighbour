@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { useTranslation } from "react-i18next";
+
 import { Container, Row, Col } from "react-bootstrap";
 
 import { ReactComponent as PhoneAndNotificationsImg } from "../../images/PhoneandNotifications.svg";
@@ -9,6 +11,7 @@ import "./index.scss";
 
 function Subscription() {
   const [email, setEmail] = useState("");
+  const { t } = useTranslation();
 
   return (
     <section className="subscription-img-bg container-fluid">
@@ -21,10 +24,10 @@ function Subscription() {
             className="first-column d-flex flex-column justify-content-center align-items-start"
           >
             <h1>
-              Subscribe to our <br /> newsletter.
+              {t("newsletter_title_one")} <br /> {t("newsletter_title_two")}
             </h1>
-            <h3>Never miss an update!</h3>
-            <p>Signup to our newsletter to get a weekly digest.</p>
+            <h3>{t("newsletter_update")}</h3>
+            <p>{t("newsletter_subscribe")}</p>
             <form
               className="d-flex"
               onSubmit={(event) => {

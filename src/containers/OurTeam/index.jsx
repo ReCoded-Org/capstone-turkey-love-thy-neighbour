@@ -1,5 +1,6 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
 import { Container, Row } from "react-bootstrap";
 
 import TeammateCard from "../../components/TeammateCard";
@@ -14,13 +15,11 @@ import imgAziza from "../../images/OurTeam/aziza.jpg";
 import "./index.scss";
 
 function OurTeam() {
+  const { t } = useTranslation();
   return (
     <section className="ourteam-section container-fluid d-flex flex-column justify-content-center">
       <Container className="ourteam-content-container">
-        <h2 className="text-center mt-4 mb-4">
-          Here’s our <span>hard working</span> development team
-        </h2>
-
+        <h2 className="text-center mt-4 mb-4">{t("ourteam_title")}</h2>
         <Row className="ourteam-content-row m-0">
           <TeammateCard
             image={imgShrreya}
@@ -37,8 +36,8 @@ function OurTeam() {
             linkedInUrl="https://www.linkedin.com/in/ars-coding/"
             twitterUrl="https://twitter.com/ARS_coding"
             jobTitle="Front End Web Developer"
-            firstName="Ali Riza"
-            lastName="Sahin"
+            firstName="Ali Rıza"
+            lastName="Şahin"
           />
           <TeammateCard
             image={imgMoulham}
@@ -55,8 +54,8 @@ function OurTeam() {
             linkedInUrl="https://www.linkedin.com"
             twitterUrl="https://twitter.com"
             jobTitle="Front End Web Developer"
-            firstName="Kutay Kagan"
-            lastName="Ozen"
+            firstName="Kutay Kağan"
+            lastName="Özen"
           />
           <TeammateCard
             image={imgAziza}
@@ -74,7 +73,7 @@ function OurTeam() {
             twitterUrl="https://twitter.com"
             jobTitle="Front End Web Developer"
             firstName="Hafise Nur"
-            lastName="Bacaksiz"
+            lastName="Bacaksız"
           />
         </Row>
       </Container>
