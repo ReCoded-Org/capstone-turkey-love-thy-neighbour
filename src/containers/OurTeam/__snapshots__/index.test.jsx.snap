@@ -1,0 +1,421 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
+<section
+  className="ourteam-section container-fluid d-flex flex-column justify-content-center"
+>
+  <div
+    className="ourteam-content-container container"
+  >
+    <h2
+      className="text-center mt-4 mb-4"
+    >
+      Here’s our 
+      <span>
+        hard working
+      </span>
+       development team
+    </h2>
+    <div
+      className="ourteam-content-row m-0 row"
+    >
+      <div
+        className="teammate-card-column p-0 mb-3 mx-auto d-flex justify-content-center col-md-4 col-sm-6 col-12"
+      >
+        <div
+          className="teammate-card card"
+        >
+          <img
+            alt="teammate"
+            className="card-img"
+            src="shrreya.jpeg"
+          />
+          <div
+            className="p-0 d-flex flex-column justify-content-between card-body"
+          >
+            <div
+              className="mt-2"
+            >
+              <h2
+                className="mx-auto my-0 text-center"
+              >
+                Shrreya
+                <br />
+                Bhatachaarya
+              </h2>
+              <p
+                className="mx-auto text-center card-text"
+              >
+                Team Lead
+              </p>
+            </div>
+            <div
+              className="d-flex justify-content-around mb-2 mt-3"
+            >
+               
+              <a
+                href="https://github.com/Shrreya"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  github.svg
+                </svg>
+              </a>
+               
+              <a
+                href="https://www.linkedin.com/in/shrreya/"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  linkedIn.svg
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com/__shrreya__"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  twitter.svg
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="teammate-card-column p-0 mb-3 mx-auto d-flex justify-content-center col-md-4 col-sm-6 col-12"
+      >
+        <div
+          className="teammate-card card"
+        >
+          <img
+            alt="teammate"
+            className="card-img"
+            src="aliriza.jpg"
+          />
+          <div
+            className="p-0 d-flex flex-column justify-content-between card-body"
+          >
+            <div
+              className="mt-2"
+            >
+              <h2
+                className="mx-auto my-0 text-center"
+              >
+                Ali Riza
+                <br />
+                Sahin
+              </h2>
+              <p
+                className="mx-auto text-center card-text"
+              >
+                Front End Web Developer
+              </p>
+            </div>
+            <div
+              className="d-flex justify-content-around mb-2 mt-3"
+            >
+               
+              <a
+                href="https://github.com/ARS-coding"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  github.svg
+                </svg>
+              </a>
+               
+              <a
+                href="https://www.linkedin.com/in/ars-coding/"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  linkedIn.svg
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com/ARS_coding"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  twitter.svg
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="teammate-card-column p-0 mb-3 mx-auto d-flex justify-content-center col-md-4 col-sm-6 col-12"
+      >
+        <div
+          className="teammate-card card"
+        >
+          <img
+            alt="teammate"
+            className="card-img"
+            src="moulham.png"
+          />
+          <div
+            className="p-0 d-flex flex-column justify-content-between card-body"
+          >
+            <div
+              className="mt-2"
+            >
+              <h2
+                className="mx-auto my-0 text-center"
+              >
+                Moulham
+                <br />
+                Hallak
+              </h2>
+              <p
+                className="mx-auto text-center card-text"
+              >
+                Front End Web Developer
+              </p>
+            </div>
+            <div
+              className="d-flex justify-content-around mb-2 mt-3"
+            >
+               
+              <a
+                href="https://github.com/MoulhamHallak"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  github.svg
+                </svg>
+              </a>
+               
+              <a
+                href="https://www.linkedin.com/in/mahmoud-moulham-hallak-a2a688147/"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  linkedIn.svg
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com/Moulham990"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  twitter.svg
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="teammate-card-column p-0 mb-3 mx-auto d-flex justify-content-center col-md-4 col-sm-6 col-12"
+      >
+        <div
+          className="teammate-card card"
+        >
+          <img
+            alt="teammate"
+            className="card-img"
+            src="kutay.jpg"
+          />
+          <div
+            className="p-0 d-flex flex-column justify-content-between card-body"
+          >
+            <div
+              className="mt-2"
+            >
+              <h2
+                className="mx-auto my-0 text-center"
+              >
+                Kutay Kagan
+                <br />
+                Ozen
+              </h2>
+              <p
+                className="mx-auto text-center card-text"
+              >
+                Front End Web Developer
+              </p>
+            </div>
+            <div
+              className="d-flex justify-content-around mb-2 mt-3"
+            >
+               
+              <a
+                href="https://github.com/Iseluin"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  github.svg
+                </svg>
+              </a>
+               
+              <a
+                href="https://www.linkedin.com"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  linkedIn.svg
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  twitter.svg
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="teammate-card-column p-0 mb-3 mx-auto d-flex justify-content-center col-md-4 col-sm-6 col-12"
+      >
+        <div
+          className="teammate-card card"
+        >
+          <img
+            alt="teammate"
+            className="card-img"
+            src="aziza.jpg"
+          />
+          <div
+            className="p-0 d-flex flex-column justify-content-between card-body"
+          >
+            <div
+              className="mt-2"
+            >
+              <h2
+                className="mx-auto my-0 text-center"
+              >
+                Aziza
+                <br />
+                Iliasova
+              </h2>
+              <p
+                className="mx-auto text-center card-text"
+              >
+                Front End Web Developer
+              </p>
+            </div>
+            <div
+              className="d-flex justify-content-around mb-2 mt-3"
+            >
+               
+              <a
+                href="https://github.com/mimisha25"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  github.svg
+                </svg>
+              </a>
+               
+              <a
+                href="https://www.linkedin.com/in/mia-l-10b9a81b1/"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  linkedIn.svg
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  twitter.svg
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="teammate-card-column p-0 mb-3 mx-auto d-flex justify-content-center col-md-4 col-sm-6 col-12"
+      >
+        <div
+          className="teammate-card card"
+        >
+          <img
+            alt="teammate"
+            className="card-img"
+            src="nur.jpg"
+          />
+          <div
+            className="p-0 d-flex flex-column justify-content-between card-body"
+          >
+            <div
+              className="mt-2"
+            >
+              <h2
+                className="mx-auto my-0 text-center"
+              >
+                Hafise Nur
+                <br />
+                Bacaksiz
+              </h2>
+              <p
+                className="mx-auto text-center card-text"
+              >
+                Front End Web Developer
+              </p>
+            </div>
+            <div
+              className="d-flex justify-content-around mb-2 mt-3"
+            >
+               
+              <a
+                href="https://github.com/nurbacaksiz"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  github.svg
+                </svg>
+              </a>
+               
+              <a
+                href="https://www.linkedin.com/in/h-nur-bacaks%C4%B1z-b352b2182"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  linkedIn.svg
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com"
+                rel="external noreferrer"
+                target="_blank"
+              >
+                <svg>
+                  twitter.svg
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

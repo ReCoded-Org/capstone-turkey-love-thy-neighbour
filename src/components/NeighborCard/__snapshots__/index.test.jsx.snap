@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeighborCard renders NeighborCard correctly 1`] = `
+<div
+  className="neighbor-card mb-2 mx-auto card"
+>
+  <img
+    className="card-img-top img-fluid"
+    id="test"
+    onClick={[Function]}
+    src="test"
+  />
+  <div
+    className="d-flex flex-column justify-content-center card-body"
+  >
+    <h2
+      className="text-center"
+    >
+      test
+       
+      <br />
+       
+      test
+    </h2>
+    <small
+      className="text-center"
+    >
+      test / test
+    </small>
+    <button
+      className="sc-bdnxRM sc-fujyAs hPJaof PaHUc"
+      onClick={[Function]}
+    >
+      Invite To Meet!
+    </button>
+  </div>
+</div>
+`;

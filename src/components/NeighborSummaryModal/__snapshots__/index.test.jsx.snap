@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NeighborSummaryModal renders NeighborSummaryModal correctly 1`] = `
+Array [
+  <div
+    className="fade modal-backdrop show"
+    onClick={[Function]}
+  />,
+  <div
+    aria-modal={true}
+    className="fade modal show"
+    onClick={[Function]}
+    onMouseUp={[Function]}
+    role="dialog"
+    style={Object {}}
+    tabIndex={-1}
+  >
+    <div
+      className="modal-dialog"
+      id="neighbor-summary-modal"
+      onMouseDown={[Function]}
+    >
+      <div
+        className="modal-content"
+      >
+        <div
+          className="container-fluid"
+          style={null}
+        >
+          <button
+            aria-label="Close"
+            className="btn-close"
+            onClick={[Function]}
+            type="button"
+          />
+          <div
+            className="d-flex flex-column flex-sm-row justify-content-center justify-content-sm-start justify-content-sm-start modal-header modal-header"
+          >
+            <img
+              alt="profile"
+              className="profile-photo"
+              style={null}
+            />
+            <p
+              className="text-center text-sm-start mb-0"
+            >
+              Test Name Test Name
+            </p>
+          </div>
+          <div
+            className="modal-body"
+          >
+            <div
+              className="card"
+            >
+              <div
+                className="card-body"
+              >
+                <div
+                  className="card-title card-title h5"
+                >
+                  Details
+                </div>
+                <ul
+                  className="d-flex flex-column justify-content-around  mb-0"
+                >
+                  <li>
+                    Age:
+                     
+                    <span>
+                      Age yet to be added.
+                    </span>
+                  </li>
+                  <li>
+                    Gender: 
+                    <span />
+                  </li>
+                  <li>
+                    Bio:
+                     
+                    <span>
+                      Bio yet to be added.
+                    </span>
+                  </li>
+                  <li>
+                    Interests:
+                     
+                    <span>
+                      Interests yet to be added.
+                    </span>
+                  </li>
+                  <li>
+                    Education:
+                     
+                    <span>
+                      Education yet to be added.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            className="modal-footer"
+          >
+            <button
+              className="sc-bdnxRM sc-fujyAs hPJaof PaHUc mx-auto"
+              onClick={[Function]}
+            >
+              Invite To Meet!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

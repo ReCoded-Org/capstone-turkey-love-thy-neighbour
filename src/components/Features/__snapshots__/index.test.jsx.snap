@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Features Section renders Features section correctly 1`] = `
+<section
+  className="features-section container-fluid"
+>
+  <div
+    className="features-content-container d-flex flex-column justify-content-center container"
+  >
+    <h2>
+      Features
+    </h2>
+    <div
+      className="features-content-row d-md-flex justify-content-md-around text-center row"
+    >
+      <div
+        className="col-md-3 col-sm-12 col-12"
+      >
+        <div
+          className="d-flex flex-column align-items-center justify-content-center card"
+        >
+          <svg
+            className="network-svg img-fluid"
+          >
+            network.svg
+          </svg>
+          <div
+            className="card-title h5"
+          >
+            Meet
+          </div>
+          <p
+            className="card-text"
+          >
+            Find people in your neighborhood and expand your network.
+          </p>
+        </div>
+      </div>
+      <div
+        className="my-1 my-sm-2 my-md-0 col-md-3 col-sm-12 col-12"
+      >
+        <div
+          className="d-flex flex-column align-items-center justify-content-center card"
+        >
+          <svg
+            className="speech-bubble-svg img-fluid"
+          >
+            filter.svg
+          </svg>
+          <div
+            className="card-title h5"
+          >
+            Filtering
+          </div>
+          <p
+            className="card-text"
+          >
+            Filter nearby people by their age, gender and interests.
+          </p>
+        </div>
+      </div>
+      <div
+        className="col-md-3 col-sm-12 col-12"
+      >
+        <div
+          className="d-flex flex-column align-items-center justify-content-center card"
+        >
+          <svg
+            className="coupon-svg img-fluid"
+          >
+            coupon.svg
+          </svg>
+          <div
+            className="card-title h5"
+          >
+            Coupons
+          </div>
+          <p
+            className="card-text"
+          >
+            Get coupons from our sponsored places and pay less.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

@@ -3,7 +3,7 @@ import React from "react";
 import { Col, Card } from "react-bootstrap";
 
 import { ReactComponent as Twitter } from "../../images/twitter.svg";
-import { ReactComponent as Linkedn } from "../../images/linkedn.svg";
+import { ReactComponent as LinkedIn } from "../../images/linkedIn.svg";
 import { ReactComponent as Github } from "../../images/github.svg";
 
 import "./index.scss";
@@ -43,7 +43,7 @@ function TeammateCard({
               <Github />
             </a>{" "}
             <a href={linkedInUrl} target="_blank" rel="external noreferrer">
-              <Linkedn />
+              <LinkedIn />
             </a>
             <a href={twitterUrl} target="_blank" rel="external noreferrer">
               <Twitter />

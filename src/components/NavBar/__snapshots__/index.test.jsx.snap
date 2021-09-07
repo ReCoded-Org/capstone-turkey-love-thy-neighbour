@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar renders Navbar correctly 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-dark"
+>
+  <div
+    className="container"
+  >
+    <a
+      className="navbar-brand"
+      href="/"
+      onClick={[Function]}
+    >
+      <svg
+        className="logo-svg"
+      >
+        logoGrayBg.svg
+      </svg>
+    </a>
+    <div
+      className="d-flex order-lg-last"
+    >
+      <div
+        className="dropdown"
+        id="notifications-dropdown"
+      >
+        <button
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="dropdown-toggle btn btn-success"
+          disabled={false}
+          id="dropdown-basic"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg>
+            notification-bell.svg
+          </svg>
+        </button>
+      </div>
+    </div>
+    <button
+      aria-controls="responsive-navbar-nav"
+      aria-label="Toggle navigation"
+      className="navbar-toggler collapsed"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      aria-expanded={null}
+      className="order-lg-3 navbar-collapse collapse"
+      id="responsive-navbar-nav"
+    >
+      <div
+        className="me-auto navbar-nav"
+        onKeyDown={[Function]}
+      >
+        <a
+          className="nav-link"
+          href="/profile/undefined"
+          onClick={[Function]}
+        >
+          Profile
+        </a>
+        <a
+          className="nav-link"
+          href="/meet"
+          onClick={[Function]}
+        >
+          Meet
+        </a>
+        <a
+          className="nav-link"
+          href="/neighbors"
+          onClick={[Function]}
+        >
+          Neighbors
+        </a>
+      </div>
+      <div
+        className="ms-auto navbar-nav"
+        onKeyDown={[Function]}
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key={null}
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+        >
+          Sign Out
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+`;

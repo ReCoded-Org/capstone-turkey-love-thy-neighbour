@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrimaryHero page renders PrimaryHero page correctly 1`] = `
+<section
+  className="snapping-section primary-hero-img-bg container-fluid"
+>
+  <div
+    className="primary-hero-content-container d-flex align-items-center container"
+  >
+    <div
+      className="primary-hero-content-row m-0 row"
+    >
+      <div
+        className="first-column p-0 pb-2 pb-sm-2 pb-md-0 d-flex flex-column justify-content-center align-items-start col-md-6 col-sm-12 col-12"
+      >
+        <h1>
+          Love Thy Neighbor!
+        </h1>
+        <p>
+          Let’s build a strong, dynamic and caring community that uplifts each other.
+        </p>
+        <button
+          className="sc-bdnxRM sc-gtsrHT hPJaof bLMOay"
+          onClick={[Function]}
+        >
+          Join Us!
+        </button>
+      </div>
+      <div
+        className="d-flex justify-content-sm-start justify-content-sm-start justify-content-md-center px-0 ps-0 ps-sm-0 ps-md-3  col-md-6 col-sm-12 col-12"
+      >
+        <img
+          alt="img"
+          className="img-fluid"
+          src="PrimaryHeroContentBgImg.png"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+`;

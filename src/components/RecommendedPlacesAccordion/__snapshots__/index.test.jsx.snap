@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecommendedPlacesAccordion page renders RecommendedPlacesAccordion page correctly 1`] = `
+<div
+  className="accordion"
+>
+  <div
+    className="accordion-item"
+  >
+    <h2
+      className="accordion-header"
+    >
+      <button
+        aria-expanded={false}
+        className="accordion-button collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        Recommended Places
+      </button>
+    </h2>
+    <div
+      aria-expanded={null}
+      className="accordion-collapse collapse"
+    >
+      <div
+        className="accordion-body"
+      >
+        <div
+          className="carousel slide"
+          onKeyDown={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            className="carousel-indicators"
+          >
+            <button
+              aria-current={true}
+              aria-label="Slide 1"
+              className="active"
+              data-bs-target=""
+              onClick={[Function]}
+              type="button"
+            />
+            <button
+              aria-current={false}
+              aria-label="Slide 2"
+              data-bs-target=""
+              onClick={[Function]}
+              type="button"
+            />
+            <button
+              aria-current={false}
+              aria-label="Slide 3"
+              data-bs-target=""
+              onClick={[Function]}
+              type="button"
+            />
+          </div>
+          <div
+            className="carousel-inner"
+          >
+            <div
+              className="active carousel-item"
+            >
+              <img
+                alt="Ağaç Ev"
+                className="d-block w-100"
+                src="https://b.zmtcdn.com/data/pictures/3/18970253/105a380e6ad9ccdf63b8c9939273ce6f.jpg"
+              />
+              <div
+                className="carousel-caption"
+              >
+                <h3>
+                  Ağaç Ev
+                </h3>
+                <p>
+                  Osmanağa, No: 34104, Osmancık Sk. No:13 B, 34714 Kadıköy/İstanbul
+                </p>
+              </div>
+            </div>
+            <div
+              className="carousel-item"
+            >
+              <img
+                alt="Dorock XL"
+                className="d-block w-100"
+                src="https://b.zmtcdn.com/data/pictures/1/18016871/7548fd97977dd16fc4448828a36dac35.jpg"
+              />
+              <div
+                className="carousel-caption"
+              >
+                <h3>
+                  Dorock XL
+                </h3>
+                <p>
+                  Caferağa, Namlı Market Yanı, Neşet Ömer Sk. 3C, 34710 Kadıköy/İstanbul 
+                </p>
+              </div>
+            </div>
+            <div
+              className="carousel-item"
+            >
+              <img
+                alt="Starbucks"
+                className="d-block w-100"
+                src="https://emoji.com.tr/wp-content/uploads/2017/12/en-guzel-starbucks-subeleri-019.jpg"
+              />
+              <div
+                className="carousel-caption"
+              >
+                <h3>
+                  Starbucks
+                </h3>
+                <p>
+                  Caferağa Mah, Muvakkıthane Cd. No:9, 34710 Kadıköy/İstanbul
+                </p>
+              </div>
+            </div>
+          </div>
+          <a
+            className="carousel-control-prev"
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+          >
+            <span
+              aria-hidden="true"
+              className="carousel-control-prev-icon"
+            />
+            <span
+              className="visually-hidden"
+            >
+              Previous
+            </span>
+          </a>
+          <a
+            className="carousel-control-next"
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+          >
+            <span
+              aria-hidden="true"
+              className="carousel-control-next-icon"
+            />
+            <span
+              className="visually-hidden"
+            >
+              Next
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

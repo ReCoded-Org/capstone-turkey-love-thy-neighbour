@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FAQ Section renders Features section correctly 1`] = `
+<section
+  className="container-fluid"
+>
+  <div
+    className="faq-content-container d-flex align-items-center container"
+  >
+    <div
+      className="faq-content-row m-0 row"
+    >
+      <div
+        className="first-column d-flex flex-column justify-content-center align-items-start col-md-6 col-sm-12 col-12"
+      >
+        <h2>
+          FAQs
+        </h2>
+        <h5>
+          Are meetings safe?
+        </h5>
+        <p>
+          For this important topic, we have collaborated with popular cafes and places all around of Istanbul so that our neighbours would be able to meet with each other without worries.
+        </p>
+        <h5>
+          What is the point?
+        </h5>
+        <p>
+          More than 264 million people suffer from depression worldwide and with quarantine, it was not getting any better. That’s why it’s so important for us to solve the problem of people feeling more and more isolated as time progresses. We care about you, and would like you to care about your neighbour so that, we could be a stronger community.
+        </p>
+        <h5>
+          How does all of this work?
+        </h5>
+        <p>
+          With the data that you provide in your profile, we are carefully filtering neighbours that you may want to meet and network with.
+        </p>
+      </div>
+      <div
+        className="my-md-auto d-flex d-sm-flex d-md-block justify-content-center justify-content-sm-center justify-content-md-center col-md-6 col-sm-12 col-12"
+      >
+        <img
+          alt="img"
+          className="img-fluid"
+          src="UndrawQuestion.png"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+`;
