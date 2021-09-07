@@ -205,6 +205,8 @@ function Neighbors() {
                     lastName={userDoc.lastName}
                     gender={userDoc.gender}
                     age={userDoc.age}
+                    senderEmail={email}
+                    senderFullName={`${firstName} ${lastName}`}
                     email={userDoc.email}
                     setSelectedNeighbor={setSelectedNeighbor}
                     setEmailAlertStatus={setEmailAlertStatus}

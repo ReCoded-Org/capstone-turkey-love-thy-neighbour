@@ -37,6 +37,7 @@ function NeighborCard({
   const { language: currentLanguage } = i18next;
 
   function sendEmail() {
+    console.log(senderEmail, senderFullName);
     setEmailAlertStatus("empty");
     send("service_9rwjsp6", "template_qlu5ttf", {
       from_name: senderFullName,
