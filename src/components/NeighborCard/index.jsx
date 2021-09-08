@@ -37,7 +37,6 @@ function NeighborCard({
   const { language: currentLanguage } = i18next;
 
   function sendEmail() {
-    console.log(senderEmail, senderFullName);
     setEmailAlertStatus("empty");
     send("service_9rwjsp6", "template_qlu5ttf", {
       from_name: senderFullName,
@@ -97,9 +96,8 @@ function NeighborCard({
         <h2 className="text-center">
           {firstName} <br /> {lastName}
         </h2>
-        <small className="text-center">{`${age} / ${
-          currentLanguage === "EN" ? gender : getTranslatedGender(gender)
-        }`}</small>
+        <small className="text-center">{`${age} / ${currentLanguage === "EN" ? gender : getTranslatedGender(gender)
+          }`}</small>
         <NeighborCardButton onClick={handleInvitation}>
           {t("neighborcards_button")}
         </NeighborCardButton>
