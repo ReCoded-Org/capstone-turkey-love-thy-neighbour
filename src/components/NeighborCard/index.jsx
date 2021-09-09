@@ -96,9 +96,11 @@ function NeighborCard({
         <h2 className="text-center">
           {firstName} <br /> {lastName}
         </h2>
-        <small className="text-center">{`${age} / ${
-          currentLanguage === "EN" ? gender : getTranslatedGender(gender)
-        }`}</small>
+        <small className="text-center">
+          {`${age} / ${
+            currentLanguage === "EN" ? gender : getTranslatedGender(gender)
+          }`}
+        </small>
         <NeighborCardButton onClick={handleInvitation}>
           {t("neighborcards_button")}
         </NeighborCardButton>
