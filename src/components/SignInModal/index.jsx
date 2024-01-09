@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 
 import { Modal, Button, Card, Alert } from "react-bootstrap";
 
@@ -71,7 +71,7 @@ const SignInModal = () => {
     },
   });
 
-  function handleGoogleSignIn() {
+  const handleGoogleSignIn = useCallback(() => {
     auth.signInWithPopup(googleProvider).then((credObj) => {
       const { isNewUser } = credObj.additionalUserInfo;
 
@@ -109,9 +109,9 @@ const SignInModal = () => {
       dispatch({ type: "signIn" });
       history.push("/meet");
     });
-  }
+  }, [dispatch, history]);
 
-  function handleFacebookSignIn() {
+  const handleFacebookSignIn = useCallback(() => {
     auth.signInWithPopup(facebookProvider).then((credObj) => {
       const { isNewUser } = credObj.additionalUserInfo;
 
@@ -149,7 +149,7 @@ const SignInModal = () => {
       dispatch({ type: "signIn" });
       history.push("/meet");
     });
-  }
+  }, [dispatch, history]);
 
   return (
     <Modal
