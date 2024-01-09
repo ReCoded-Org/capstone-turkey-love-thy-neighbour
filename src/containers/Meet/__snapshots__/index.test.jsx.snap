@@ -14,23 +14,24 @@ exports[`Meet page renders Meet page correctly 1`] = `
         className="d-flex flex-column justify-content-center align-items-center align-items-sm-center align-items-md-start text-center text-sm-center text-md-start mb-3 mb-sm-3 mb-md-0 col-md-6 col-sm-12 col-12 order-md-first order-sm-last order-last"
       >
         <h3>
-          Hello, 
+          meet_hello
+           
           Test User
         </h3>
         <h1>
-          Meet nearby people with our cutting edge algorithms.
+          meet_nearby
         </h1>
         <p>
-          After you have been matched with people near you, you can send them a message and meet up quickly !
+          meet_info_text
         </p>
         <button
-          className="sc-bdnxRM sc-gtsrHT hPJaof bLMOay"
+          className="sc-aXZVg sc-gEvEer fNOrQy gjskzS"
         >
           <a
             href="/neighbors"
             onClick={[Function]}
           >
-            Meet Now
+            meet_button
           </a>
         </button>
       </div>
