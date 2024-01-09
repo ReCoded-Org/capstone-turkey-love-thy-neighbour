@@ -23,16 +23,13 @@ exports[`SecondaryHero Page renders SecondaryHero Page correctly 1`] = `
         className="px-0 pt-xs-5 pt-xs-5 pt-md-0 d-flex flex-column justify-content-center align-items-start col-md-6 col-sm-12 col-12 order-md-last order-sm-first order-first"
       >
         <h2>
-          Welcome,
+          home_second_slogan_big
         </h2>
         <h1>
-          to be welcomed.
+          home_second_slogan_small
         </h1>
         <p>
-          Respect each other and feel the genuine 
-          <span>
-            connection.
-          </span>
+          home_lesser_slogan
         </p>
       </div>
     </div>

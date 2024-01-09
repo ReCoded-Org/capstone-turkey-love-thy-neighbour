@@ -10,13 +10,13 @@ exports[`NotificationMenuItem renders NotificationMenuItem correctly 1`] = `
     <p
       className="text-center"
     >
-      test
+      tes ile olan buluşmanız nasıl geçti?
     </p>
     <div
       className="feedback-buttons d-flex justify-content-center"
     >
       <button
-        className="sc-bdnxRM sc-jrsJWt hPJaof kTNuYI me-3"
+        className="sc-aXZVg sc-dhKdcB fNOrQy kpDLMY me-3"
         id="test"
         onClick={[Function]}
         type="button"
@@ -24,7 +24,7 @@ exports[`NotificationMenuItem renders NotificationMenuItem correctly 1`] = `
         👍🏼
       </button>
       <button
-        className="sc-bdnxRM sc-kEqXSa hPJaof lcbPMi"
+        className="sc-aXZVg sc-kpDqfm fNOrQy fcKoOW"
         id="test"
         onClick={[Function]}
         type="button"

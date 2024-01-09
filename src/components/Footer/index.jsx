@@ -52,6 +52,7 @@ function Footer() {
               href="https://www.twitter.com"
               target="_blank"
               rel="external noreferrer"
+              aria-label="Twitter Logo"
             >
               <TwitterLogo />
             </a>
@@ -59,6 +60,7 @@ function Footer() {
               href="https://www.instagram.com"
               target="_blank"
               rel="external noreferrer"
+              aria-label="Instagram Logo"
             >
               <InstagramLogo />
             </a>
@@ -66,6 +68,7 @@ function Footer() {
               href="https://www.facebook.com"
               target="_blank"
               rel="external noreferrer"
+              aria-label="Facebook Logo"
             >
               <FacebookLogo />
             </a>

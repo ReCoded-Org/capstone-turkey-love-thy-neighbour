@@ -29,10 +29,8 @@ Array [
           <svg>
             logoGrayBg.svg
           </svg>
-          <h2
-            className="mx-auto"
-          >
-            Sign Up
+          <h2>
+            sign_up_title
           </h2>
           <button
             aria-label="Close"
@@ -62,7 +60,7 @@ Array [
                   name="firstName"
                   onBlur={[Function]}
                   onChange={[Function]}
-                  placeholder="First Name"
+                  placeholder="sign_up_fname_pholder"
                   value=""
                 />
                 <input
@@ -71,7 +69,7 @@ Array [
                   name="lastName"
                   onBlur={[Function]}
                   onChange={[Function]}
-                  placeholder="Last Name"
+                  placeholder="sign_up_lname_pholder"
                   value=""
                 />
                 <select
@@ -88,22 +86,22 @@ Array [
                     disabled={true}
                     value=""
                   >
-                    Select a gender...
+                    sign_up_gender_pholder
                   </option>
                   <option
                     value="Male"
                   >
-                    Male
+                    male
                   </option>
                   <option
                     value="Female"
                   >
-                    Female
+                    female
                   </option>
                   <option
                     value="Prefer not to say"
                   >
-                    Prefer not to say
+                    prefernottosay
                   </option>
                 </select>
                 <select
@@ -120,7 +118,7 @@ Array [
                     disabled={true}
                     value=""
                   >
-                    Select a district...
+                    sign_up_district_pholder
                   </option>
                   <option
                     value="ADALAR"
@@ -324,7 +322,7 @@ Array [
                   name="email"
                   onBlur={[Function]}
                   onChange={[Function]}
-                  placeholder="Email"
+                  placeholder="sign_in_email_pholder"
                   type="email"
                   value=""
                 />
@@ -334,7 +332,7 @@ Array [
                   name="password"
                   onBlur={[Function]}
                   onChange={[Function]}
-                  placeholder="Password"
+                  placeholder="sign_up_password_pholder"
                   type="password"
                   value=""
                 />
@@ -344,7 +342,7 @@ Array [
                   name="repeatedPassword"
                   onBlur={[Function]}
                   onChange={[Function]}
-                  placeholder="Repeat Password"
+                  placeholder="sign_up_rpassword_pholder"
                   type="password"
                   value=""
                 />
@@ -356,41 +354,38 @@ Array [
           className="first-sign-up-modal-footer d-flex flex-column align-items-stretch modal-footer"
         >
           <button
-            className="sc-bdnxRM sc-jSFjdj hPJaof kySEpq"
+            className="sc-aXZVg sc-iGgWBj fNOrQy cHgqEP"
             disabled={false}
             form="sign-up-form"
             type="submit"
           >
-            Sign Up
+            sign_up_button
           </button>
           <button
-            className="sc-bdnxRM sc-gKAaRy hPJaof gsgZIm"
+            className="sc-aXZVg sc-gsFSXq fNOrQy dEZiMd"
             onClick={[Function]}
             type="submit"
           >
-            Sign Up With Google
+            sign_up_google
           </button>
           <button
-            className="sc-bdnxRM sc-iCoGMd hPJaof jgJmMT"
+            className="sc-aXZVg sc-kAyceB fNOrQy krgvsX"
             onClick={[Function]}
             type="submit"
           >
-            Sign Up With Facebook
+            sign_up_fbook
           </button>
         </div>
         <div
           className="second-sign-up-modal-footer d-flex flex-column align-items-center modal-footer"
         >
           <span>
-            Already got an
-             
             <a
               href="/"
               onClick={[Function]}
             >
-              Account
+              sign_up_have_account_anchor
             </a>
-            ?
           </span>
         </div>
       </div>

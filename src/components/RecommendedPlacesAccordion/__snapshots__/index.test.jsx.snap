@@ -16,7 +16,7 @@ exports[`RecommendedPlacesAccordion page renders RecommendedPlacesAccordion page
         onClick={[Function]}
         type="button"
       >
-        Recommended Places
+        neighbors_recommended_pholder
       </button>
     </h2>
     <div

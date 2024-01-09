@@ -10,11 +10,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
     <h2
       className="text-center mt-4 mb-4"
     >
-      Here’s our 
-      <span>
-        hard working
-      </span>
-       development team
+      ourteam_title
     </h2>
     <div
       className="ourteam-content-row m-0 row"
@@ -54,6 +50,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
             >
                
               <a
+                aria-label="GitHub Logo"
                 href="https://github.com/Shrreya"
                 rel="external noreferrer"
                 target="_blank"
@@ -64,6 +61,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
               </a>
                
               <a
+                aria-label="LinkedIn Logo"
                 href="https://www.linkedin.com/in/shrreya/"
                 rel="external noreferrer"
                 target="_blank"
@@ -73,6 +71,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
                 </svg>
               </a>
               <a
+                aria-label="Twitter Logo"
                 href="https://twitter.com/__shrreya__"
                 rel="external noreferrer"
                 target="_blank"
@@ -105,9 +104,9 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
               <h2
                 className="mx-auto my-0 text-center"
               >
-                Ali Riza
+                Ali Rıza
                 <br />
-                Sahin
+                Şahin
               </h2>
               <p
                 className="mx-auto text-center card-text"
@@ -120,6 +119,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
             >
                
               <a
+                aria-label="GitHub Logo"
                 href="https://github.com/ARS-coding"
                 rel="external noreferrer"
                 target="_blank"
@@ -130,6 +130,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
               </a>
                
               <a
+                aria-label="LinkedIn Logo"
                 href="https://www.linkedin.com/in/ars-coding/"
                 rel="external noreferrer"
                 target="_blank"
@@ -139,6 +140,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
                 </svg>
               </a>
               <a
+                aria-label="Twitter Logo"
                 href="https://twitter.com/ARS_coding"
                 rel="external noreferrer"
                 target="_blank"
@@ -186,6 +188,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
             >
                
               <a
+                aria-label="GitHub Logo"
                 href="https://github.com/MoulhamHallak"
                 rel="external noreferrer"
                 target="_blank"
@@ -196,6 +199,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
               </a>
                
               <a
+                aria-label="LinkedIn Logo"
                 href="https://www.linkedin.com/in/mahmoud-moulham-hallak-a2a688147/"
                 rel="external noreferrer"
                 target="_blank"
@@ -205,6 +209,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
                 </svg>
               </a>
               <a
+                aria-label="Twitter Logo"
                 href="https://twitter.com/Moulham990"
                 rel="external noreferrer"
                 target="_blank"
@@ -237,9 +242,9 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
               <h2
                 className="mx-auto my-0 text-center"
               >
-                Kutay Kagan
+                Kutay Kağan
                 <br />
-                Ozen
+                Özen
               </h2>
               <p
                 className="mx-auto text-center card-text"
@@ -252,6 +257,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
             >
                
               <a
+                aria-label="GitHub Logo"
                 href="https://github.com/Iseluin"
                 rel="external noreferrer"
                 target="_blank"
@@ -262,6 +268,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
               </a>
                
               <a
+                aria-label="LinkedIn Logo"
                 href="https://www.linkedin.com"
                 rel="external noreferrer"
                 target="_blank"
@@ -271,6 +278,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
                 </svg>
               </a>
               <a
+                aria-label="Twitter Logo"
                 href="https://twitter.com"
                 rel="external noreferrer"
                 target="_blank"
@@ -318,6 +326,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
             >
                
               <a
+                aria-label="GitHub Logo"
                 href="https://github.com/mimisha25"
                 rel="external noreferrer"
                 target="_blank"
@@ -328,6 +337,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
               </a>
                
               <a
+                aria-label="LinkedIn Logo"
                 href="https://www.linkedin.com/in/mia-l-10b9a81b1/"
                 rel="external noreferrer"
                 target="_blank"
@@ -337,6 +347,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
                 </svg>
               </a>
               <a
+                aria-label="Twitter Logo"
                 href="https://twitter.com"
                 rel="external noreferrer"
                 target="_blank"
@@ -371,7 +382,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
               >
                 Hafise Nur
                 <br />
-                Bacaksiz
+                Bacaksız
               </h2>
               <p
                 className="mx-auto text-center card-text"
@@ -384,6 +395,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
             >
                
               <a
+                aria-label="GitHub Logo"
                 href="https://github.com/nurbacaksiz"
                 rel="external noreferrer"
                 target="_blank"
@@ -394,6 +406,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
               </a>
                
               <a
+                aria-label="LinkedIn Logo"
                 href="https://www.linkedin.com/in/h-nur-bacaks%C4%B1z-b352b2182"
                 rel="external noreferrer"
                 target="_blank"
@@ -403,6 +416,7 @@ exports[`OurTeam Page renders OurTeam Page correctly 1`] = `
                 </svg>
               </a>
               <a
+                aria-label="Twitter Logo"
                 href="https://twitter.com"
                 rel="external noreferrer"
                 target="_blank"

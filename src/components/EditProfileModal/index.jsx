@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 import { Modal, Button, Card } from "react-bootstrap";
 
@@ -31,9 +31,9 @@ const EditProfileModal = () => {
   const { district } = firestoreDoc;
   const { uid } = authCred;
 
-  function toggleEditProfileModal() {
+  const toggleEditProfileModal = useCallback(() => {
     dispatch({ type: "editProfile" });
-  }
+  }, [dispatch]);
 
   const validate = (values) => {
     const errors = {};

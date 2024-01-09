@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Modal, Button, Card, Alert } from "react-bootstrap";
 import { useFormik } from "formik";
 
@@ -99,7 +99,7 @@ const SignUpModal = () => {
     },
   });
 
-  function handleGoogleSignIn() {
+  const handleGoogleSignIn = useCallback(() => {
     auth.signInWithPopup(googleProvider).then((credObj) => {
       const { isNewUser } = credObj.additionalUserInfo;
       const firestoreDocUid = credObj.user.uid;
@@ -135,9 +135,9 @@ const SignUpModal = () => {
       dispatch({ type: "signUp" });
       history.push("/meet");
     });
-  }
+  }, [dispatch, history]);
 
-  function handleFacebookSignIn() {
+  const handleFacebookSignIn = useCallback(() => {
     auth.signInWithPopup(facebookProvider).then((credObj) => {
       const { isNewUser } = credObj.additionalUserInfo;
 
@@ -175,7 +175,7 @@ const SignUpModal = () => {
       dispatch({ type: "signUp" });
       history.push("/meet");
     });
-  }
+  }, [dispatch, history]);
 
   return (
     <Modal

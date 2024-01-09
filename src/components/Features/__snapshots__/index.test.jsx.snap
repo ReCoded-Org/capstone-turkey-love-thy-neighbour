@@ -8,7 +8,7 @@ exports[`Features Section renders Features section correctly 1`] = `
     className="features-content-container d-flex flex-column justify-content-center container"
   >
     <h2>
-      Features
+      features_title
     </h2>
     <div
       className="features-content-row d-md-flex justify-content-md-around text-center row"
@@ -27,12 +27,12 @@ exports[`Features Section renders Features section correctly 1`] = `
           <div
             className="card-title h5"
           >
-            Meet
+            features_title_meet
           </div>
           <p
             className="card-text"
           >
-            Find people in your neighborhood and expand your network.
+            features_title_meet_text
           </p>
         </div>
       </div>
@@ -50,12 +50,12 @@ exports[`Features Section renders Features section correctly 1`] = `
           <div
             className="card-title h5"
           >
-            Filtering
+            features_title_message
           </div>
           <p
             className="card-text"
           >
-            Filter nearby people by their age, gender and interests.
+            features_title_message_text
           </p>
         </div>
       </div>
@@ -73,12 +73,12 @@ exports[`Features Section renders Features section correctly 1`] = `
           <div
             className="card-title h5"
           >
-            Coupons
+            features_title_coupons
           </div>
           <p
             className="card-text"
           >
-            Get coupons from our sponsored places and pay less.
+            features_title_coupons_text
           </p>
         </div>
       </div>

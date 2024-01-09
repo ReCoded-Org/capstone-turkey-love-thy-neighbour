@@ -14,10 +14,10 @@ exports[`ContactUs renders ContactUs correctly 1`] = `
         className="d-flex flex-column justify-content-center align-items-center order-last order-sm-last order-md-last order-lg-first col-lg-6 col-md-12 col-sm-12 col-12"
       >
         <h1>
-          Contact Us
+          contactus_title
         </h1>
         <p>
-          Help us create effective and active communities by communicating with us!
+          contactus_text
         </p>
         <form
           className="d-flex flex-column"
@@ -32,7 +32,7 @@ exports[`ContactUs renders ContactUs correctly 1`] = `
               <input
                 name="first_name"
                 onChange={[Function]}
-                placeholder="First Name"
+                placeholder="contactus_name_pholder"
                 type="text"
                 value=""
               />
@@ -43,7 +43,7 @@ exports[`ContactUs renders ContactUs correctly 1`] = `
               <input
                 name="last_name"
                 onChange={[Function]}
-                placeholder="Last Name"
+                placeholder="contactus_lastname_pholder"
                 type="text"
                 value=""
               />
@@ -52,20 +52,20 @@ exports[`ContactUs renders ContactUs correctly 1`] = `
           <input
             name="email"
             onChange={[Function]}
-            placeholder="Email"
+            placeholder="contactus_email_pholder"
             type="email"
             value=""
           />
           <textarea
             name="user_message"
             onChange={[Function]}
-            placeholder="Message"
+            placeholder="contactus_message_pholder"
             value=""
           />
           <button
-            className="sc-bdnxRM sc-iqAclL hPJaof cAKSQb"
+            className="sc-aXZVg sc-dAlyuH fNOrQy htxXsw"
           >
-            Send
+            contactus_button
           </button>
         </form>
       </div>
