@@ -36,7 +36,7 @@ function NeighborCard({
   const { t } = useTranslation();
   const { language: currentLanguage } = i18next;
 
-  const sendEmail = useSelector(() => {
+  const sendEmail = useCallback(() => {
     setEmailAlertStatus("empty");
     send("service_9rwjsp6", "template_qlu5ttf", {
       from_name: senderFullName,
@@ -46,7 +46,14 @@ function NeighborCard({
     })
       .then(() => setEmailAlertStatus("success"))
       .catch(() => setEmailAlertStatus("danger"));
-  }, []);
+  }, [
+    email,
+    firstName,
+    lastName,
+    senderEmail,
+    senderFullName,
+    setEmailAlertStatus,
+  ]);
 
   const handleInvitation = useCallback(() => {
     sendEmail();
