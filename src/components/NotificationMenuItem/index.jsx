@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 import i18n from "i18next";
 
@@ -20,39 +20,44 @@ function NotificationMenuItem({ invitationNotificationObject }) {
 
   const { language: currentLanguage } = i18n;
 
-  function handleButtonClick(event) {
-    const buttonText = event.target.innerText;
+  const handleButtonClick = useCallback(
+    (event) => {
+      const buttonText = event.target.innerText;
 
-    firestore
-      .collection("users")
-      .doc(uid)
-      .update({
-        // eslint-disable-next-line import/no-named-as-default-member
-        invitationNotifications: firebaseApp.firestore.FieldValue.arrayRemove({
-          message,
-          id,
-        }),
-      });
-
-    if (buttonText === "👍🏼") {
       firestore
-        .collection("data")
-        .doc("feedbackData")
+        .collection("users")
+        .doc(uid)
         .update({
           // eslint-disable-next-line import/no-named-as-default-member
-          positiveFeedback: firebaseApp.firestore.FieldValue.increment(1),
+          invitationNotifications: firebaseApp.firestore.FieldValue.arrayRemove(
+            {
+              message,
+              id,
+            }
+          ),
         });
-    }
-    if (buttonText === "👎🏼") {
-      firestore
-        .collection("data")
-        .doc("feedbackData")
-        .update({
-          // eslint-disable-next-line import/no-named-as-default-member
-          negativeFeedback: firebaseApp.firestore.FieldValue.increment(1),
-        });
-    }
-  }
+
+      if (buttonText === "👍🏼") {
+        firestore
+          .collection("data")
+          .doc("feedbackData")
+          .update({
+            // eslint-disable-next-line import/no-named-as-default-member
+            positiveFeedback: firebaseApp.firestore.FieldValue.increment(1),
+          });
+      }
+      if (buttonText === "👎🏼") {
+        firestore
+          .collection("data")
+          .doc("feedbackData")
+          .update({
+            // eslint-disable-next-line import/no-named-as-default-member
+            negativeFeedback: firebaseApp.firestore.FieldValue.increment(1),
+          });
+      }
+    },
+    [id, message, uid]
+  );
 
   return (
     <div className="notification-menu-item">
