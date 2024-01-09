@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 import { useTranslation } from "react-i18next";
 
@@ -37,7 +37,7 @@ function NeighborSummaryModal({
 
   const { t } = useTranslation();
 
-  function sendEmail() {
+  const sendEmail = useCallback(() => {
     setEmailAlertStatus("empty");
     send("service_9rwjsp6", "template_qlu5ttf", {
       from_name: senderFullName,
@@ -47,9 +47,16 @@ function NeighborSummaryModal({
     })
       .then(() => setEmailAlertStatus("success"))
       .catch(() => setEmailAlertStatus("danger"));
-  }
+  }, [
+    email,
+    firstName,
+    lastName,
+    senderEmail,
+    senderFullName,
+    setEmailAlertStatus,
+  ]);
 
-  function handleInvitation() {
+  const handleInvitation = useCallback(() => {
     dispatch({ type: "neighborSummary" });
     sendEmail();
     firestore
@@ -76,7 +83,7 @@ function NeighborSummaryModal({
           id: uuidv4(),
         }),
       });
-  }
+  }, [dispatch, email, firstName, lastName, sendEmail, senderFullName, uid]);
 
   return (
     Object.keys(selectedNeighbor).length !== 0 && (
