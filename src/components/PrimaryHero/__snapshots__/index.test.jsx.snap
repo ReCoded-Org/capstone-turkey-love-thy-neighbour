@@ -14,16 +14,16 @@ exports[`PrimaryHero page renders PrimaryHero page correctly 1`] = `
         className="first-column p-0 pb-2 pb-sm-2 pb-md-0 d-flex flex-column justify-content-center align-items-start col-md-6 col-sm-12 col-12"
       >
         <h1>
-          Love Thy Neighbor!
+          Love Thy Neighbor
         </h1>
         <p>
-          Let’s build a strong, dynamic and caring community that uplifts each other.
+          home_slogan
         </p>
         <button
-          className="sc-bdnxRM sc-gtsrHT hPJaof bLMOay"
+          className="sc-aXZVg sc-gEvEer fNOrQy gjskzS"
           onClick={[Function]}
         >
-          Join Us!
+          home_join_us_button
         </button>
       </div>
       <div

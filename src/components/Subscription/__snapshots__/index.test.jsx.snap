@@ -14,15 +14,17 @@ exports[`Subscription Section renders Subscription section correctly 1`] = `
         className="first-column d-flex flex-column justify-content-center align-items-start col-md-6 col-sm-12 col-12"
       >
         <h1>
-          Subscribe to our 
+          newsletter_title_one
+           
           <br />
-           newsletter.
+           
+          newsletter_title_two
         </h1>
         <h3>
-          Never miss an update!
+          newsletter_update
         </h3>
         <p>
-          Signup to our newsletter to get a weekly digest.
+          newsletter_subscribe
         </p>
         <form
           className="d-flex"
@@ -37,6 +39,7 @@ exports[`Subscription Section renders Subscription section correctly 1`] = `
             value=""
           />
           <button
+            aria-label="Check Icon"
             className="btn btn-primary"
             disabled={true}
             type="submit"

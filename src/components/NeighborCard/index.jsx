@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 import { Card } from "react-bootstrap";
 
@@ -36,7 +36,7 @@ function NeighborCard({
   const { t } = useTranslation();
   const { language: currentLanguage } = i18next;
 
-  function sendEmail() {
+  const sendEmail = useCallback(() => {
     setEmailAlertStatus("empty");
     send("service_9rwjsp6", "template_qlu5ttf", {
       from_name: senderFullName,
@@ -46,9 +46,16 @@ function NeighborCard({
     })
       .then(() => setEmailAlertStatus("success"))
       .catch(() => setEmailAlertStatus("danger"));
-  }
+  }, [
+    email,
+    firstName,
+    lastName,
+    senderEmail,
+    senderFullName,
+    setEmailAlertStatus,
+  ]);
 
-  function handleInvitation() {
+  const handleInvitation = useCallback(() => {
     sendEmail();
     firestore
       .collection("users")
@@ -74,7 +81,7 @@ function NeighborCard({
           id: uuidv4(),
         }),
       });
-  }
+  }, [email, firstName, lastName, sendEmail, senderFullName, uid]);
 
   return (
     <Card className="neighbor-card mb-2 mx-auto">

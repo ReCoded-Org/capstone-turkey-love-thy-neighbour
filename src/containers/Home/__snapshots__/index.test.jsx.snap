@@ -17,16 +17,16 @@ exports[`Home page renders Home correctly 1`] = `
           className="first-column p-0 pb-2 pb-sm-2 pb-md-0 d-flex flex-column justify-content-center align-items-start col-md-6 col-sm-12 col-12"
         >
           <h1>
-            Love Thy Neighbor!
+            Love Thy Neighbor
           </h1>
           <p>
-            Let’s build a strong, dynamic and caring community that uplifts each other.
+            home_slogan
           </p>
           <button
-            className="sc-bdnxRM sc-gtsrHT hPJaof bLMOay"
+            className="sc-aXZVg sc-gEvEer fNOrQy gjskzS"
             onClick={[Function]}
           >
-            Join Us!
+            home_join_us_button
           </button>
         </div>
         <div
@@ -63,16 +63,13 @@ exports[`Home page renders Home correctly 1`] = `
           className="px-0 pt-xs-5 pt-xs-5 pt-md-0 d-flex flex-column justify-content-center align-items-start col-md-6 col-sm-12 col-12 order-md-last order-sm-first order-first"
         >
           <h2>
-            Welcome,
+            home_second_slogan_big
           </h2>
           <h1>
-            to be welcomed.
+            home_second_slogan_small
           </h1>
           <p>
-            Respect each other and feel the genuine 
-            <span>
-              connection.
-            </span>
+            home_lesser_slogan
           </p>
         </div>
       </div>
@@ -93,7 +90,7 @@ exports[`Home page renders Home correctly 1`] = `
           <h2
             className="text-center text-sm-center text-md-start"
           >
-            What our Neighbours say
+            home_what_neighbors_say
           </h2>
           <div
             className="accordion"
@@ -147,7 +144,7 @@ exports[`Home page renders Home correctly 1`] = `
                 <div
                   className="accordion-body"
                 >
-                  It definitely has been a great experiance connecting with my neighbors on LTN.
+                  home_sammy_walson
                 </div>
               </div>
             </div>
@@ -200,7 +197,7 @@ exports[`Home page renders Home correctly 1`] = `
                 <div
                   className="accordion-body"
                 >
-                  LTN, definitely is the right place to find like-minded people around you.
+                  home_violet_jenning
                 </div>
               </div>
             </div>
@@ -253,7 +250,7 @@ exports[`Home page renders Home correctly 1`] = `
                 <div
                   className="accordion-body"
                 >
-                  Had a lot of chances to connect with my community... Amazing app!
+                  home_andrew_fitzgerald
                 </div>
               </div>
             </div>
@@ -265,7 +262,7 @@ exports[`Home page renders Home correctly 1`] = `
           <h2
             className="text-center text-sm-center text-md-start"
           >
-            When our Neighbours met
+            home_when_neighbors_meet
           </h2>
           <div
             className="carousel slide"
@@ -379,7 +376,7 @@ exports[`Home page renders Home correctly 1`] = `
       className="features-content-container d-flex flex-column justify-content-center container"
     >
       <h2>
-        Features
+        features_title
       </h2>
       <div
         className="features-content-row d-md-flex justify-content-md-around text-center row"
@@ -398,12 +395,12 @@ exports[`Home page renders Home correctly 1`] = `
             <div
               className="card-title h5"
             >
-              Meet
+              features_title_meet
             </div>
             <p
               className="card-text"
             >
-              Find people in your neighborhood and expand your network.
+              features_title_meet_text
             </p>
           </div>
         </div>
@@ -421,12 +418,12 @@ exports[`Home page renders Home correctly 1`] = `
             <div
               className="card-title h5"
             >
-              Filtering
+              features_title_message
             </div>
             <p
               className="card-text"
             >
-              Filter nearby people by their age, gender and interests.
+              features_title_message_text
             </p>
           </div>
         </div>
@@ -444,12 +441,12 @@ exports[`Home page renders Home correctly 1`] = `
             <div
               className="card-title h5"
             >
-              Coupons
+              features_title_coupons
             </div>
             <p
               className="card-text"
             >
-              Get coupons from our sponsored places and pay less.
+              features_title_coupons_text
             </p>
           </div>
         </div>
@@ -469,25 +466,25 @@ exports[`Home page renders Home correctly 1`] = `
           className="first-column d-flex flex-column justify-content-center align-items-start col-md-6 col-sm-12 col-12"
         >
           <h2>
-            FAQs
+            global_FAQ
           </h2>
           <h5>
-            Are meetings safe?
+            global_safety
           </h5>
           <p>
-            For this important topic, we have collaborated with popular cafes and places all around of Istanbul so that our neighbours would be able to meet with each other without worries.
+            global_safety-text
           </p>
           <h5>
-            What is the point?
+            global_the_point
           </h5>
           <p>
-            More than 264 million people suffer from depression worldwide and with quarantine, it was not getting any better. That’s why it’s so important for us to solve the problem of people feeling more and more isolated as time progresses. We care about you, and would like you to care about your neighbour so that, we could be a stronger community.
+            global_the_point_text
           </p>
           <h5>
-            How does all of this work?
+            global_how_it_works
           </h5>
           <p>
-            With the data that you provide in your profile, we are carefully filtering neighbours that you may want to meet and network with.
+            global_how_it_works_text
           </p>
         </div>
         <div
@@ -515,15 +512,17 @@ exports[`Home page renders Home correctly 1`] = `
           className="first-column d-flex flex-column justify-content-center align-items-start col-md-6 col-sm-12 col-12"
         >
           <h1>
-            Subscribe to our 
+            newsletter_title_one
+             
             <br />
-             newsletter.
+             
+            newsletter_title_two
           </h1>
           <h3>
-            Never miss an update!
+            newsletter_update
           </h3>
           <p>
-            Signup to our newsletter to get a weekly digest.
+            newsletter_subscribe
           </p>
           <form
             className="d-flex"
@@ -538,6 +537,7 @@ exports[`Home page renders Home correctly 1`] = `
               value=""
             />
             <button
+              aria-label="Check Icon"
               className="btn btn-primary"
               disabled={true}
               type="submit"

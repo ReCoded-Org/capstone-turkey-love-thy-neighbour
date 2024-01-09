@@ -47,6 +47,7 @@ function Subscription() {
                 type="submit"
                 className="btn btn-primary"
                 disabled={!email}
+                aria-label="Check Icon"
               >
                 <CheckIcon className="check-icon" />
               </button>

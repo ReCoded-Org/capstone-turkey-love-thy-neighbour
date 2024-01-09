@@ -32,7 +32,7 @@ Array [
           <h2
             className="mx-auto"
           >
-            Sign In
+            sign_in_title
           </h2>
           <button
             aria-label="Close"
@@ -62,7 +62,7 @@ Array [
                   name="email"
                   onBlur={[Function]}
                   onChange={[Function]}
-                  placeholder="Email"
+                  placeholder="sign_in_email_pholder"
                   type="email"
                   value=""
                 />
@@ -72,7 +72,7 @@ Array [
                   name="password"
                   onBlur={[Function]}
                   onChange={[Function]}
-                  placeholder="Password"
+                  placeholder="sign_in_password_pholder"
                   type="password"
                   value=""
                 />
@@ -84,40 +84,37 @@ Array [
           className="first-sign-in-modal-footer d-flex flex-column align-items-stretch modal-footer"
         >
           <button
-            className="sc-bdnxRM sc-jSFjdj hPJaof kySEpq"
+            className="sc-aXZVg sc-iGgWBj fNOrQy cHgqEP"
             form="sign-in-form"
             type="submit"
           >
-            Sign In
+            sign_in_button
           </button>
           <button
-            className="sc-bdnxRM sc-gKAaRy hPJaof gsgZIm"
+            className="sc-aXZVg sc-gsFSXq fNOrQy dEZiMd"
             onClick={[Function]}
             type="submit"
           >
-            Sign In With Google
+            sign_in_google_button
           </button>
           <button
-            className="sc-bdnxRM sc-iCoGMd hPJaof jgJmMT"
+            className="sc-aXZVg sc-kAyceB fNOrQy krgvsX"
             onClick={[Function]}
             type="submit"
           >
-            Sign In With Facebook
+            sign_in_fbook_button
           </button>
         </div>
         <div
           className="second-sign-in-modal-footer d-flex flex-column align-items-center modal-footer"
         >
           <span>
-            Don‘t have an
-             
             <a
               href="/"
               onClick={[Function]}
             >
-              Account
+              sign_in_dont_have_account_anchor
             </a>
-            ?
           </span>
         </div>
       </div>

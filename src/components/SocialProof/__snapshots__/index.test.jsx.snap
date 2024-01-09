@@ -16,7 +16,7 @@ exports[`SocialProof Page renders SocialProof Page correctly 1`] = `
         <h2
           className="text-center text-sm-center text-md-start"
         >
-          What our Neighbours say
+          home_what_neighbors_say
         </h2>
         <div
           className="accordion"
@@ -70,7 +70,7 @@ exports[`SocialProof Page renders SocialProof Page correctly 1`] = `
               <div
                 className="accordion-body"
               >
-                It definitely has been a great experiance connecting with my neighbors on LTN.
+                home_sammy_walson
               </div>
             </div>
           </div>
@@ -123,7 +123,7 @@ exports[`SocialProof Page renders SocialProof Page correctly 1`] = `
               <div
                 className="accordion-body"
               >
-                LTN, definitely is the right place to find like-minded people around you.
+                home_violet_jenning
               </div>
             </div>
           </div>
@@ -176,7 +176,7 @@ exports[`SocialProof Page renders SocialProof Page correctly 1`] = `
               <div
                 className="accordion-body"
               >
-                Had a lot of chances to connect with my community... Amazing app!
+                home_andrew_fitzgerald
               </div>
             </div>
           </div>
@@ -188,7 +188,7 @@ exports[`SocialProof Page renders SocialProof Page correctly 1`] = `
         <h2
           className="text-center text-sm-center text-md-start"
         >
-          When our Neighbours met
+          home_when_neighbors_meet
         </h2>
         <div
           className="carousel slide"

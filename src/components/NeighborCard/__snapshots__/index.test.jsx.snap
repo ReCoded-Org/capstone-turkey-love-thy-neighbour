@@ -25,13 +25,13 @@ exports[`NeighborCard renders NeighborCard correctly 1`] = `
     <small
       className="text-center"
     >
-      test / test
+      test / 
     </small>
     <button
-      className="sc-bdnxRM sc-fujyAs hPJaof PaHUc"
+      className="sc-aXZVg sc-imWYAI fNOrQy czbMBo"
       onClick={[Function]}
     >
-      Invite To Meet!
+      neighborcards_button
     </button>
   </div>
 </div>

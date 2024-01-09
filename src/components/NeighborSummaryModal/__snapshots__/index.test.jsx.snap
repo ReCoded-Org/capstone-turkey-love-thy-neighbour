@@ -59,41 +59,42 @@ Array [
                 <div
                   className="card-title card-title h5"
                 >
-                  Details
+                  summodal_title
                 </div>
                 <ul
                   className="d-flex flex-column justify-content-around  mb-0"
                 >
                   <li>
-                    Age:
+                    profile_general_info_card_age
                      
                     <span>
-                      Age yet to be added.
+                      neighborssummod_age_tba
                     </span>
                   </li>
                   <li>
-                    Gender: 
+                    profile_general_info_card_gender
+                     
                     <span />
                   </li>
                   <li>
-                    Bio:
+                    profile_about_you_bio
                      
                     <span>
-                      Bio yet to be added.
+                      neighborssummod_bio_tba
                     </span>
                   </li>
                   <li>
-                    Interests:
+                    profile_about_you_interests
                      
                     <span>
-                      Interests yet to be added.
+                      neighborssummod_interests_tba
                     </span>
                   </li>
                   <li>
-                    Education:
+                    profile_general_info_card_education
                      
                     <span>
-                      Education yet to be added.
+                      neighborssummod_education_tba
                     </span>
                   </li>
                 </ul>
@@ -104,10 +105,10 @@ Array [
             className="modal-footer"
           >
             <button
-              className="sc-bdnxRM sc-fujyAs hPJaof PaHUc mx-auto"
+              className="sc-aXZVg sc-imWYAI fNOrQy czbMBo mx-auto"
               onClick={[Function]}
             >
-              Invite To Meet!
+              neighborcards_button
             </button>
           </div>
         </div>
