@@ -2,9 +2,9 @@ import React from "react";
 
 import { Col, Card } from "react-bootstrap";
 
-import { ReactComponent as Twitter } from "../../images/twitter.svg";
-import { ReactComponent as LinkedIn } from "../../images/linkedIn.svg";
-import { ReactComponent as Github } from "../../images/github.svg";
+import { ReactComponent as TwitterLogo } from "../../images/twitter.svg";
+import { ReactComponent as LinkedInLogo } from "../../images/linkedIn.svg";
+import { ReactComponent as GithubLogo } from "../../images/github.svg";
 
 import "./index.scss";
 
@@ -39,14 +39,29 @@ function TeammateCard({
 
           <div className="d-flex justify-content-around mb-2 mt-3">
             {" "}
-            <a href={githubUrl} target="_blank" rel="external noreferrer">
-              <Github />
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="external noreferrer"
+              aria-label="GitHub Logo"
+            >
+              <GithubLogo />
             </a>{" "}
-            <a href={linkedInUrl} target="_blank" rel="external noreferrer">
-              <LinkedIn />
+            <a
+              href={linkedInUrl}
+              target="_blank"
+              rel="external noreferrer"
+              aria-label="LinkedIn Logo"
+            >
+              <LinkedInLogo />
             </a>
-            <a href={twitterUrl} target="_blank" rel="external noreferrer">
-              <Twitter />
+            <a
+              href={twitterUrl}
+              target="_blank"
+              rel="external noreferrer"
+              aria-label="Twitter Logo"
+            >
+              <TwitterLogo />
             </a>
           </div>
         </Card.Body>
